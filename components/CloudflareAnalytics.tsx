@@ -8,8 +8,10 @@ import Script from 'next/script'
  * (Dashboard → Analytics & Logs → Web Analytics → Add a site). It's a public
  * token, safe to expose. Nothing renders until it's set.
  */
+const DEFAULT_TOKEN = '4a00ce1ab338477181b2b36b6d00c63f'
+
 export default function CloudflareAnalytics() {
-  const token = process.env.NEXT_PUBLIC_CF_BEACON_TOKEN
+  const token = process.env.NEXT_PUBLIC_CF_BEACON_TOKEN || DEFAULT_TOKEN
   if (!token) return null
   return (
     <Script
