@@ -1,0 +1,10 @@
+# Add this block to your existing Caddyfile (do NOT remove your n8n block).
+# Caddy provisions HTTPS automatically via Let's Encrypt — no certbot needed.
+#
+# Typical location: /etc/caddy/Caddyfile
+# After editing:  sudo systemctl reload caddy   (or: caddy reload)
+
+privamesh.org, www.privamesh.org {
+	encode zstd gzip
+	reverse_proxy 127.0.0.1:3000
+}
