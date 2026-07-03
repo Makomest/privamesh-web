@@ -36,7 +36,10 @@ export default async function RuBlogPostPage({ params }: { params: { slug: strin
   const { content } = await compileMDX({
     source: raw.content,
     components: useMDXComponents({}),
-    options: { parseFrontmatter: false, mdxOptions: { rehypePlugins: [rehypeSlug] } },
+    options: {
+      parseFrontmatter: false,
+      mdxOptions: { format: 'md', rehypePlugins: [rehypeSlug] },
+    },
   })
 
   return (

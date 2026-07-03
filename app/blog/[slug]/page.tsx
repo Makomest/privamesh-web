@@ -35,7 +35,12 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
   const { content } = await compileMDX({
     source: raw.content,
     components: useMDXComponents({}),
-    options: { parseFrontmatter: false, mdxOptions: { rehypePlugins: [rehypeSlug] } },
+    // format: 'md' → parse as plain CommonMark, NOT MDX. This keeps AI-generated
+    // posts safe: literal { } and < in the text won't be treated as JSX/JS.
+    options: {
+      parseFrontmatter: false,
+      mdxOptions: { format: 'md', rehypePlugins: [rehypeSlug] },
+    },
   })
 
   return (
