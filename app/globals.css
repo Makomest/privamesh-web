@@ -1,0 +1,147 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-base: #ffffff;
+  --bg-surface: #f5f8f6;
+  --bg-elevated: #edf2ef;
+  --border-default: #e4e9e6;
+  --border-hover: #cfd8d3;
+  --border-accent: #00A8964d;
+  --text-primary: #0c1a14;
+  --text-secondary: #33413b;
+  --text-muted: #5c6b64;
+  --text-faint: #94a29b;
+  --accent: #00A896;
+  --accent-hover: #008C7E;
+  --accent-glow: #00a8961f;
+  --accent-secondary: #00c0a8;
+  --success: #00A896;
+  --warning: #c9820a;
+  --negative: #e5484d;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--bg-base);
+  color: var(--text-muted);
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Subtle grain/noise overlay (~3%) - fixed, non-interactive, no layout impact */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.02;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Dot-grid mesh pattern utility (hero) */
+.mesh-grid {
+  background-image: radial-gradient(circle, #d6ddd9 1px, transparent 1px);
+  background-size: 26px 26px;
+  -webkit-mask-image: radial-gradient(75% 60% at 50% 40%, #000 0%, transparent 78%);
+  mask-image: radial-gradient(75% 60% at 50% 40%, #000 0%, transparent 78%);
+}
+
+/* Fade-up on scroll (IntersectionObserver toggles .is-visible) */
+.fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+/* transform:none after animating so the element stops being a backdrop-filter
+   root - lets frosted (backdrop-blur) children sample the page background. */
+.fade-up.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Gentle floating bob for the hero phone */
+@keyframes float-bob {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-16px) rotate(-0.4deg);
+  }
+}
+.animate-float {
+  animation: float-bob 6s ease-in-out infinite;
+}
+
+/* Auto-scrolling marquee (screenshot carousel) */
+@keyframes marquee-x {
+  to {
+    transform: translateX(-50%);
+  }
+}
+.marquee-track {
+  animation: marquee-x 48s linear infinite;
+}
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+}
+
+/* Horizontal snap-scroll strip */
+.snap-x-strip {
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.snap-x-strip::-webkit-scrollbar {
+  display: none;
+}
+.snap-item {
+  scroll-snap-align: center;
+}
+
+/* Accent link underline in prose */
+.prose-content a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid #00A89640;
+  transition: border-color 0.15s ease;
+}
+.prose-content a:hover {
+  border-color: var(--accent);
+}
+
+::selection {
+  background: #00A89626;
+  color: var(--text-primary);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .fade-up {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
