@@ -35,11 +35,11 @@ export default function Footer() {
           <div>
             <Link href="/" className="flex items-center gap-2.5" aria-label="PrivaMesh home">
               <Image
-                src="/logo.png"
+                src="/icon.png"
                 alt="PrivaMesh logo"
                 width={30}
                 height={30}
-                className="rounded-md"
+                className="rounded-full"
               />
               <span className="text-[15px] font-bold tracking-tight text-text-primary">
                 PrivaMesh

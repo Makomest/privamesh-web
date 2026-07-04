@@ -46,8 +46,8 @@ export const metadata: Metadata = {
     googleBot: { index: true, follow: true, 'max-image-preview': 'large' },
   },
   icons: {
-    icon: '/logo.png',
-    apple: '/logo.png',
+    icon: '/icon.png',
+    apple: '/icon.png',
   },
   alternates: {
     canonical: SITE.domain,
