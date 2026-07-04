@@ -41,10 +41,12 @@ export default function NetworkBackground() {
 
     let width = 0
     let height = 0
+    let lastW = -1
     let dpr = Math.min(window.devicePixelRatio || 1, 2)
     let nodes: Node[] = []
     let packets: Packet[] = []
     let raf = 0
+    let resizeTimer = 0
     const LINK_DIST = 200
 
     const rand = (min: number, max: number) => min + Math.random() * (max - min)
@@ -71,7 +73,19 @@ export default function NetworkBackground() {
       canvas!.width = Math.floor(width * dpr)
       canvas!.height = Math.floor(height * dpr)
       ctx!.setTransform(dpr, 0, 0, dpr, 0, 0)
-      build()
+      // Only rebuild nodes when WIDTH changes. On mobile, scrolling collapses the
+      // URL bar → height-only resize; rebuilding there reshuffles the whole
+      // network and looks like it "breaks". Keep the nodes, just resize the buffer.
+      if (width !== lastW) {
+        lastW = width
+        build()
+      }
+    }
+
+    // Debounce resize so rapid mobile URL-bar events don't thrash.
+    function onResize() {
+      window.clearTimeout(resizeTimer)
+      resizeTimer = window.setTimeout(resize, 150)
     }
 
     function spawnPacket() {
@@ -228,12 +242,13 @@ export default function NetworkBackground() {
       start()
     }
 
-    window.addEventListener('resize', resize)
+    window.addEventListener('resize', onResize)
     window.addEventListener('scroll', onScroll, { passive: true })
     document.addEventListener('visibilitychange', onVisibility)
     return () => {
       stop()
-      window.removeEventListener('resize', resize)
+      window.clearTimeout(resizeTimer)
+      window.removeEventListener('resize', onResize)
       window.removeEventListener('scroll', onScroll)
       document.removeEventListener('visibilitychange', onVisibility)
     }
