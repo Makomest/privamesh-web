@@ -22,7 +22,7 @@ export default function ScreenshotGallery() {
               <div className="w-full max-w-[340px]">
                 <Image
                   src={s.src}
-                  alt={dup ? '' : s.alt}
+                  alt={s.alt}
                   width={1200}
                   height={1500}
                   sizes="(max-width: 640px) 300px, 340px"

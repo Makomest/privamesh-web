@@ -1,10 +1,16 @@
-# Add this block to your existing Caddyfile (do NOT remove your n8n block).
+# PrivaMesh site in your Caddyfile (do NOT remove your n8n block).
 # Caddy provisions HTTPS automatically via Let's Encrypt — no certbot needed.
 #
-# Typical location: /etc/caddy/Caddyfile
-# After editing:  sudo systemctl reload caddy   (or: caddy reload)
+# Location: /etc/caddy/Caddyfile   →   after editing: sudo systemctl reload caddy
+#
+# www → non-www is a 301 permanent redirect (canonical host = privamesh.org),
+# which fixes the "use 301 redirects for www/non-www" SEO error.
 
-privamesh.org, www.privamesh.org {
+www.privamesh.org {
+	redir https://privamesh.org{uri} permanent
+}
+
+privamesh.org {
 	encode zstd gzip
 	reverse_proxy 127.0.0.1:3000
 }
