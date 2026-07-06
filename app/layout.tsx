@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next'
 import { Inter, JetBrains_Mono } from 'next/font/google'
 import './globals.css'
 import CloudflareAnalytics from '@/components/CloudflareAnalytics'
+import GoogleAnalytics from '@/components/GoogleAnalytics'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import JsonLd from '@/components/JsonLd'
@@ -86,6 +87,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Footer />
         </div>
         <CloudflareAnalytics />
+        <GoogleAnalytics />
       </body>
     </html>
   )
