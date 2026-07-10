@@ -36,6 +36,9 @@ export default function Navbar() {
           <Link href="/alternatives" className="nav-link">
             Alternatives
           </Link>
+          <Link href="/guides" className="nav-link">
+            Guides
+          </Link>
           <Link href="/privacy" className="nav-link">
             Privacy
           </Link>
@@ -82,7 +85,9 @@ export default function Navbar() {
           <MobileGroup label="Compare" links={NAV_COMPARE} onNavigate={() => setOpen(false)} />
           <div className="mt-2 flex flex-col gap-1">
             {[
+              { href: '/best-private-messaging-apps', label: 'Best apps 2026' },
               { href: '/alternatives', label: 'Alternatives' },
+              { href: '/guides', label: 'Guides' },
               { href: '/privacy', label: 'Privacy' },
               { href: '/blog', label: 'Blog' },
               { href: '/glossary', label: 'Glossary' },

@@ -157,6 +157,10 @@ export const HOME_FAQ: { q: string; a: string }[] = [
     q: 'What happens if I lose my phone?',
     a: 'Restore your BIP-39 seed phrase on a new device to recover your funds and identity. By design your chat history is not recovered - forward secrecy means old message keys are deleted, so nobody, including you, can decrypt past messages from the seed alone.',
   },
+  {
+    q: 'Is PrivaMesh a private messaging app?',
+    a: 'Yes - PrivaMesh is a private messaging app for iPhone built for maximum privacy: no servers, no phone number, no email, and no metadata collection. It is end-to-end encrypted on Solana, which makes it one of the most private messaging apps available in 2026.',
+  },
 ]
 
 export const PRICING_FAQ: { q: string; a: string }[] = [

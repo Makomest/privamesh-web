@@ -26,7 +26,7 @@ import {
 export const metadata: Metadata = pageMetadata({
   title: 'PrivaMesh - Serverless Private Messenger on Solana',
   description:
-    'The most private messenger: no servers, no phone number, no metadata. End-to-end encrypted on Solana. Trust math, not companies.',
+    'The most private messaging app: no servers, no phone number, no metadata. End-to-end encrypted on Solana. Trust math, not companies.',
   path: '/',
   languages: { en: '/', ru: '/ru' },
 })
@@ -357,6 +357,9 @@ export default function HomePage() {
             </Link>
             <Link href="/compare/privamesh-vs-session" className="text-accent hover:underline">
               PrivaMesh vs Session →
+            </Link>
+            <Link href="/best-private-messaging-apps" className="text-accent hover:underline">
+              Best private messaging apps 2026 →
             </Link>
           </div>
         </Container>

@@ -3,6 +3,7 @@ import { SITE } from '@/lib/site'
 import { getPosts, getAllTags, hasTranslation, PER_PAGE } from '@/lib/posts'
 import { GLOSSARY } from '@/lib/glossary'
 import { ALTERNATIVES } from '@/lib/alternatives'
+import { GUIDES } from '@/lib/guides'
 
 type Freq = MetadataRoute.Sitemap[number]['changeFrequency']
 
@@ -17,7 +18,9 @@ const STATIC_PATHS: { path: string; priority: number; freq: Freq }[] = [
   { path: '/compare/privamesh-vs-signal', priority: 0.8, freq: 'monthly' },
   { path: '/compare/privamesh-vs-telegram', priority: 0.8, freq: 'monthly' },
   { path: '/compare/privamesh-vs-session', priority: 0.7, freq: 'monthly' },
+  { path: '/best-private-messaging-apps', priority: 0.9, freq: 'monthly' },
   { path: '/alternatives', priority: 0.8, freq: 'monthly' },
+  { path: '/guides', priority: 0.8, freq: 'monthly' },
   { path: '/glossary', priority: 0.7, freq: 'monthly' },
   { path: '/about', priority: 0.6, freq: 'yearly' },
   { path: '/blog', priority: 0.6, freq: 'weekly' },
@@ -67,6 +70,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const ruTags = getAllTags('ru').map((t) => entry(`/ru/blog/tag/${t.slug}`, 0.4, 'weekly'))
   const glossary = GLOSSARY.map((t) => entry(`/glossary/${t.slug}`, 0.6, 'monthly'))
   const alternatives = ALTERNATIVES.map((a) => entry(`/alternatives/${a.slug}`, 0.7, 'monthly'))
+  const guides = GUIDES.map((g) => entry(`/guides/${g.slug}`, 0.7, 'monthly'))
 
   const totalPages = Math.max(1, Math.ceil(enPosts.length / PER_PAGE))
   const paged = Array.from({ length: Math.max(0, totalPages - 1) }, (_, i) =>
@@ -82,6 +86,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...ruTags,
     ...glossary,
     ...alternatives,
+    ...guides,
     ...paged,
   ]
 }

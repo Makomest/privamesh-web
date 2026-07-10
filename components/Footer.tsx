@@ -5,6 +5,7 @@ import { NAV_PRODUCT, NAV_COMPARE, SITE } from '@/lib/site'
 
 const RESOURCES = [
   { href: '/privacy', label: 'Why Private' },
+  { href: '/guides', label: 'Guides' },
   { href: '/blog', label: 'Blog' },
   { href: '/glossary', label: 'Glossary' },
   { href: '/about', label: 'About' },
@@ -12,7 +13,11 @@ const RESOURCES = [
   { href: SITE.github, label: 'GitHub', external: true },
 ]
 
-const COMPARE_COL = [...NAV_COMPARE, { href: '/alternatives', label: 'All alternatives' }]
+const COMPARE_COL = [
+  ...NAV_COMPARE,
+  { href: '/alternatives', label: 'All alternatives' },
+  { href: '/best-private-messaging-apps', label: 'Best apps 2026' },
+]
 
 const LEGAL = [
   { href: '/privacy', label: 'Privacy Approach' },

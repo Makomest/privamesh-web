@@ -55,6 +55,18 @@ export const softwareApplicationLd = {
       },
     },
   ],
+  // Star rating rich result — only when real App Store reviews exist (SITE.rating).
+  ...(SITE.rating
+    ? {
+        aggregateRating: {
+          '@type': 'AggregateRating',
+          ratingValue: SITE.rating.value,
+          ratingCount: SITE.rating.count,
+          bestRating: '5',
+          worstRating: '1',
+        },
+      }
+    : {}),
   publisher: { '@id': `${SITE.domain}/#organization` },
 }
 

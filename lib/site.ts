@@ -18,6 +18,10 @@ export const SITE = {
     plus: '1.99',
     currency: 'USD',
   },
+  // App Store rating for AggregateRating rich snippet (stars in search).
+  // Keep null until you have REAL App Store reviews — fake ratings violate
+  // Google's guidelines. Then set e.g. { value: '4.8', count: 210 }.
+  rating: null as null | { value: string; count: number },
   locales: ['en', 'ru', 'uk'] as const,
   defaultLocale: 'en' as const,
 } as const
