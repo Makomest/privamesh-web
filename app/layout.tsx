@@ -30,15 +30,6 @@ export const metadata: Metadata = {
   },
   description: SITE.description,
   applicationName: SITE.name,
-  keywords: [
-    'private messenger',
-    'serverless messenger',
-    'encrypted messenger without phone number',
-    'solana messenger',
-    'decentralized messenger',
-    'signal alternative',
-    'metadata private messenger',
-  ],
   authors: [{ name: 'PrivaMesh' }],
   creator: 'PrivaMesh',
   robots: {

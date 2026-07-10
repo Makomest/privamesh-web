@@ -29,8 +29,8 @@ export function pageMetadata({
   languages,
 }: PageSeo): Metadata {
   const url = `${SITE.domain}${path === '/' ? '' : path}`
-  const image = ogImage ?? `${SITE.domain}/opengraph-image`
   const abs = (p: string) => `${SITE.domain}${p === '/' ? '' : p}`
+  void ogImage // reserved for future per-page override; images now via file convention
 
   return {
     title,
@@ -48,6 +48,9 @@ export function pageMetadata({
           }
         : {}),
     },
+    // NOTE: no explicit openGraph/twitter images here — Next's file-based
+    // opengraph-image convention supplies them (root OG for most pages,
+    // per-route opengraph-image.tsx overrides for compare/alternatives/blog).
     openGraph: {
       type,
       url,
@@ -55,7 +58,6 @@ export function pageMetadata({
       description,
       siteName: SITE.name,
       locale: locale === 'ru' ? 'ru_RU' : 'en_US',
-      images: [{ url: image, width: 1200, height: 630, alt: `${SITE.name} - ${SITE.tagline}` }],
       ...(publishedTime ? { publishedTime } : {}),
     },
     twitter: {
@@ -64,7 +66,6 @@ export function pageMetadata({
       description,
       site: SITE.twitterHandle,
       creator: SITE.twitterHandle,
-      images: [image],
     },
   }
 }
