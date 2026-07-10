@@ -45,11 +45,14 @@ export const metadata: Metadata = {
     canonical: SITE.domain,
     types: { 'application/rss+xml': `${SITE.domain}/rss.xml` },
   },
-  // Google Search Console verification. Set GOOGLE_SITE_VERIFICATION in env
-  // (Vercel) to the content value Google gives you.
-  verification: process.env.GOOGLE_SITE_VERIFICATION
-    ? { google: process.env.GOOGLE_SITE_VERIFICATION }
-    : undefined,
+  // Search engine verification. Google via env; Bing (msvalidate.01) hardcoded
+  // (public token, safe) so DuckDuckGo can index via Bing.
+  verification: {
+    ...(process.env.GOOGLE_SITE_VERIFICATION
+      ? { google: process.env.GOOGLE_SITE_VERIFICATION }
+      : {}),
+    other: { 'msvalidate.01': '0373245D227374D2432F219C6D72805F' },
+  },
 }
 
 export const viewport: Viewport = {
