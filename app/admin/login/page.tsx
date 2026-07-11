@@ -7,6 +7,7 @@ import { Container } from '@/components/Container'
 
 export default function AdminLogin() {
   const router = useRouter()
+  const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
@@ -19,7 +20,7 @@ export default function AdminLogin() {
       const res = await fetch('/api/admin/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ password }),
+        body: JSON.stringify({ username, password }),
       })
       if (!res.ok) {
         setError('Wrong password.')
@@ -42,10 +43,19 @@ export default function AdminLogin() {
         </div>
         <h1 className="mt-4 text-xl font-bold tracking-tight text-text-primary">Admin</h1>
         <p className="mt-1 text-sm text-text-muted">Sign in to manage news and the waitlist.</p>
-        <form onSubmit={submit} className="mt-5">
+        <form onSubmit={submit} className="mt-5 space-y-3">
+          <input
+            type="text"
+            autoFocus
+            autoComplete="username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            placeholder="Username"
+            className="w-full rounded-btn border border-border bg-bg-surface px-4 py-3 text-sm text-text-primary outline-none placeholder:text-text-faint focus:border-accent"
+          />
           <input
             type="password"
-            autoFocus
+            autoComplete="current-password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Password"
