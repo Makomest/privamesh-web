@@ -1,6 +1,6 @@
-import { Lock } from 'lucide-react'
 import { Button } from './Button'
 import { SITE } from '@/lib/site'
+import WaitlistTrigger from './WaitlistTrigger'
 
 function AppleGlyph({ size = 16 }: { size?: number }) {
   return (
@@ -10,14 +10,10 @@ function AppleGlyph({ size = 16 }: { size?: number }) {
   )
 }
 
-const base =
-  'inline-flex items-center justify-center gap-2 rounded-btn px-5 py-3 text-sm font-semibold tracking-tight transition-all duration-150'
-
 /**
- * Primary CTA that sends the visitor to the PrivaMesh App Store page.
- * While SITE.appStoreLive is false the button is disabled: it shows a lock and a
- * "Soon on the App Store" tooltip on hover. Set appStoreLive = true (and the real
- * appStore URL) to activate every instance at once.
+ * Primary CTA. When SITE.appStoreLive is false, "Get PrivaMesh" opens the
+ * waitlist modal (email signup) instead of linking to the App Store. Flip
+ * appStoreLive = true (and set the real appStore URL) to link to the store.
  */
 export default function AppStoreButton({
   variant = 'primary',
@@ -43,27 +39,5 @@ export default function AppStoreButton({
     )
   }
 
-  const disabledStyle =
-    variant === 'ghost' ? 'border border-border-hover text-text-muted' : 'bg-accent/55 text-white'
-
-  return (
-    <span className={`group relative inline-flex ${className}`}>
-      <button
-        type="button"
-        disabled
-        aria-disabled="true"
-        aria-label="Get PrivaMesh - coming soon on the App Store"
-        className={`${base} ${disabledStyle} w-full cursor-not-allowed`}
-      >
-        <Lock size={15} aria-hidden="true" />
-        {label}
-      </button>
-      <span
-        role="tooltip"
-        className="pointer-events-none absolute -top-9 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-md bg-text-primary px-2.5 py-1 text-xs font-medium text-white opacity-0 shadow-lg transition-opacity duration-150 group-hover:opacity-100"
-      >
-        Soon on the App Store
-      </span>
-    </span>
-  )
+  return <WaitlistTrigger variant={variant} className={className} label={label} />
 }
