@@ -6,10 +6,14 @@ export const runtime = 'nodejs'
 export const dynamic = 'force-dynamic'
 
 /**
- * Waitlist signup. Stores emails in data/waitlist.jsonl (which is gitignored —
- * the repo is public, so emails must never be committed). Optionally forwards
- * each signup to WAITLIST_WEBHOOK_URL (e.g. an n8n webhook) for storage/notify.
+ * Waitlist signup. On each valid email:
+ *   1. append to data/waitlist.jsonl (gitignored — repo is public)
+ *   2. add to a Resend Audience (RESEND_AUDIENCE_ID) for a launch Broadcast
+ *   3. send a confirmation email via Resend (RESEND_API_KEY)
+ * All three are best-effort; the signup succeeds even if email/audience fail.
  *
+ * At launch: send one Broadcast to the audience from the Resend dashboard, or
+ * run  node scripts/announce-launch.mjs  to blast the file-based list.
  * Read the list on the server with:  cat ~/privamesh/data/waitlist.jsonl
  */
 
@@ -51,22 +55,26 @@ export async function POST(req: Request) {
     // If disk write fails, still try the webhook below; don't hard-fail the user.
   }
 
-  // 2) Optional forward to a webhook (n8n) for storage / notification.
-  const hook = process.env.WAITLIST_WEBHOOK_URL
-  if (hook) {
+  const resendKey = process.env.RESEND_API_KEY
+
+  // 2) Add the email to a Resend Audience (a managed contact list) so you can
+  //    later send ONE Broadcast to everyone at launch. Set RESEND_AUDIENCE_ID.
+  if (resendKey && process.env.RESEND_AUDIENCE_ID) {
     try {
-      await fetch(hook, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(record),
-      })
+      await fetch(
+        `https://api.resend.com/audiences/${process.env.RESEND_AUDIENCE_ID}/contacts`,
+        {
+          method: 'POST',
+          headers: { Authorization: `Bearer ${resendKey}`, 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, unsubscribed: false }),
+        },
+      )
     } catch {
       // non-fatal
     }
   }
 
-  // 3) Optional confirmation email via Resend (set RESEND_API_KEY + WAITLIST_FROM).
-  const resendKey = process.env.RESEND_API_KEY
+  // 3) Confirmation email via Resend (set RESEND_API_KEY + WAITLIST_FROM).
   if (resendKey) {
     const from = process.env.WAITLIST_FROM || 'PrivaMesh <onboarding@resend.dev>'
     try {
