@@ -45,6 +45,9 @@ export default function Navbar() {
           <Link href="/blog" className="nav-link">
             Blog
           </Link>
+          <Link href="/news" className="nav-link">
+            News
+          </Link>
         </div>
 
         <div className="hidden items-center gap-3 md:flex">
@@ -90,6 +93,7 @@ export default function Navbar() {
               { href: '/guides', label: 'Guides' },
               { href: '/privacy', label: 'Privacy' },
               { href: '/blog', label: 'Blog' },
+              { href: '/news', label: 'News' },
               { href: '/glossary', label: 'Glossary' },
             ].map((l) => (
               <Link

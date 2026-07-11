@@ -7,6 +7,7 @@ const RESOURCES = [
   { href: '/privacy', label: 'Why Private' },
   { href: '/guides', label: 'Guides' },
   { href: '/blog', label: 'Blog' },
+  { href: '/news', label: 'News' },
   { href: '/glossary', label: 'Glossary' },
   { href: '/about', label: 'About' },
   { href: SITE.whitepaper, label: 'White Paper', external: true },
