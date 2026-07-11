@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server'
 import fs from 'node:fs'
 import path from 'node:path'
+import { waitlistConfirmationEmail } from '@/lib/email'
 
 export const runtime = 'nodejs'
 export const dynamic = 'force-dynamic'
@@ -77,26 +78,12 @@ export async function POST(req: Request) {
   // 3) Confirmation email via Resend (set RESEND_API_KEY + WAITLIST_FROM).
   if (resendKey) {
     const from = process.env.WAITLIST_FROM || 'PrivaMesh <onboarding@resend.dev>'
+    const mail = waitlistConfirmationEmail()
     try {
       await fetch('https://api.resend.com/emails', {
         method: 'POST',
-        headers: {
-          Authorization: `Bearer ${resendKey}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          from,
-          to: [email],
-          subject: "You're on the PrivaMesh waitlist",
-          html: `<div style="font-family:-apple-system,Segoe UI,Roboto,sans-serif;max-width:520px;margin:0 auto;padding:24px;color:#0c1a14">
-  <p style="font-size:13px;letter-spacing:2px;text-transform:uppercase;color:#00a896;font-weight:600;margin:0 0 12px">PrivaMesh</p>
-  <h1 style="font-size:22px;font-weight:700;margin:0 0 12px">You're on the list.</h1>
-  <p style="font-size:15px;line-height:1.6;color:#5c6b64;margin:0 0 16px">Thanks for joining the PrivaMesh waitlist. We'll email you the moment the app is live on the App Store — one message, no spam.</p>
-  <p style="font-size:15px;line-height:1.6;color:#5c6b64;margin:0 0 16px">PrivaMesh is a serverless, end-to-end encrypted messenger on Solana. No servers, no phone number, no metadata. <strong>Trust math, not companies.</strong></p>
-  <p style="font-size:13px;color:#94a29b;margin:20px 0 0">privamesh.org</p>
-</div>`,
-          text: "You're on the PrivaMesh waitlist. We'll email you the moment the app is live on the App Store. Trust math, not companies. — privamesh.org",
-        }),
+        headers: { Authorization: `Bearer ${resendKey}`, 'Content-Type': 'application/json' },
+        body: JSON.stringify({ from, to: [email], ...mail }),
       })
     } catch {
       // non-fatal — signup still succeeded

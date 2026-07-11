@@ -66,14 +66,31 @@ console.log(`${emails.length} unique recipients${DRY ? ' (dry run — nothing se
 if (DRY || emails.length === 0) process.exit(0)
 
 const subject = 'PrivaMesh is live on the App Store 🎉'
-const html = (to) => `<div style="font-family:-apple-system,Segoe UI,Roboto,sans-serif;max-width:520px;margin:0 auto;padding:24px;color:#0c1a14">
-  <p style="font-size:13px;letter-spacing:2px;text-transform:uppercase;color:#00a896;font-weight:600;margin:0 0 12px">PrivaMesh</p>
-  <h1 style="font-size:22px;font-weight:700;margin:0 0 12px">It's here. PrivaMesh is live.</h1>
-  <p style="font-size:15px;line-height:1.6;color:#5c6b64;margin:0 0 16px">You joined the waitlist — thank you. PrivaMesh is now on the App Store: a serverless, end-to-end encrypted messenger on Solana. No servers, no phone number, no metadata.</p>
-  <p style="margin:0 0 20px"><a href="${APP_URL}" style="display:inline-block;background:#00a896;color:#fff;font-weight:600;font-size:15px;text-decoration:none;padding:12px 22px;border-radius:9px">Download PrivaMesh</a></p>
-  <p style="font-size:15px;line-height:1.6;color:#5c6b64;margin:0 0 16px"><strong>Trust math, not companies.</strong></p>
-  <p style="font-size:12px;color:#94a29b;margin:20px 0 0">privamesh.org · You received this because you joined the waitlist.</p>
-</div>`
+const SITE = 'https://privamesh.org'
+const html = () => `<!doctype html><html><body style="margin:0;padding:0;background:#f5f8f6">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f5f8f6"><tr><td align="center" style="padding:32px 16px">
+  <table role="presentation" width="560" cellpadding="0" cellspacing="0" style="max-width:560px;width:100%">
+    <tr><td style="padding:4px 8px 20px">
+      <table role="presentation" cellpadding="0" cellspacing="0"><tr>
+        <td style="padding-right:10px"><img src="${SITE}/icon.png" width="34" height="34" alt="PrivaMesh" style="border-radius:50%;display:block"></td>
+        <td style="font-size:19px;font-weight:700;color:#0c1a14;font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif">PrivaMesh</td>
+      </tr></table>
+    </td></tr>
+    <tr><td style="background:#ffffff;border:1px solid #e4e9e6;border-radius:16px;padding:32px;font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif">
+      <p style="margin:0 0 12px;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#00A896;font-weight:700">It&rsquo;s here</p>
+      <h1 style="margin:0 0 16px;font-size:23px;line-height:1.2;font-weight:700;color:#0c1a14">PrivaMesh is live.</h1>
+      <p style="margin:0 0 16px;font-size:15px;line-height:1.65;color:#5c6b64">You joined the waitlist &mdash; thank you. PrivaMesh is now on the App Store: a serverless, end-to-end encrypted messenger on Solana. No servers, no phone number, no metadata.</p>
+      <table role="presentation" cellpadding="0" cellspacing="0" style="margin:8px 0 20px"><tr><td bgcolor="#00A896" style="border-radius:9px">
+        <a href="${APP_URL}" style="display:inline-block;padding:13px 26px;font-size:15px;font-weight:600;color:#ffffff;text-decoration:none;border-radius:9px">Download PrivaMesh</a>
+      </td></tr></table>
+      <p style="margin:8px 0 0;font-size:15px;line-height:1.65;color:#00A896;font-weight:600">Trust math, not companies.</p>
+    </td></tr>
+    <tr><td style="padding:18px 8px 0;font-size:12px;line-height:1.6;color:#94a29b;font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif">
+      <a href="${SITE}" style="color:#94a29b;text-decoration:none">privamesh.org</a> · You received this because you joined the waitlist.
+    </td></tr>
+  </table>
+</td></tr></table>
+</body></html>`
 
 let sent = 0
 for (const to of emails) {
