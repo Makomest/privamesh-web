@@ -3,7 +3,7 @@ import { readFileSync } from 'node:fs'
 import { join } from 'node:path'
 
 export const runtime = 'nodejs'
-export const alt = 'PrivaMesh - Serverless private messenger on Solana. Trust math, not companies.'
+export const alt = 'PrivaMesh - Private, end-to-end encrypted messenger. Trust math, not companies.'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 

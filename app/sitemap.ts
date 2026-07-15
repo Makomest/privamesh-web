@@ -9,6 +9,8 @@ type Freq = MetadataRoute.Sitemap[number]['changeFrequency']
 
 const STATIC_PATHS: { path: string; priority: number; freq: Freq }[] = [
   { path: '/', priority: 1.0, freq: 'weekly' },
+  { path: '/privacy-policy', priority: 0.7, freq: 'monthly' },
+  { path: '/terms', priority: 0.5, freq: 'monthly' },
   { path: '/privacy', priority: 0.9, freq: 'monthly' },
   { path: '/features/no-servers', priority: 0.9, freq: 'monthly' },
   { path: '/features/e2e-encryption', priority: 0.8, freq: 'monthly' },

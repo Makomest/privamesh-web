@@ -1,18 +1,18 @@
 /** Shared content data used across the home page and inner pages. */
 
-export const TRUST_ROW = ['Open Source', 'No Servers', 'E2E Encrypted'] as const
+export const TRUST_ROW = ['No Phone Number', 'No Servers', 'E2E Encrypted'] as const
 
-/** The "no servers, concretely" table from the repo. */
+/** The "no servers, concretely" table - where every piece of your data lives. */
 export const NO_SERVERS_TABLE: { what: string; where: string; how: string }[] = [
   {
     what: 'Your messages',
-    where: 'Solana transaction memos (on-chain)',
-    how: 'Encrypted blobs in 0-lamport transactions',
+    where: 'A public, decentralized transport',
+    how: 'Encrypted blobs, addressed to one-time addresses',
   },
   {
     what: 'Your inbox',
-    where: 'The Solana blockchain itself',
-    how: 'Read via one-time stealth addresses',
+    where: 'The public transport itself',
+    how: 'Retrieved and decrypted only on your device',
   },
   {
     what: 'Your keys',
@@ -26,21 +26,21 @@ export const NO_SERVERS_TABLE: { what: string; where: string; how: string }[] = 
   },
   {
     what: 'Your identity',
-    where: 'A BIP-39 seed phrase you hold',
-    how: 'Self-custodial keypair - no phone, no email',
+    where: 'A recovery phrase you hold',
+    how: 'Encryption keys on your device - no phone, no email',
   },
   {
     what: 'The "PrivaMesh server"',
     where: 'Does not exist',
-    how: 'Only dependency is a swappable Solana RPC',
+    how: 'No account server; the transport is public and swappable',
   },
 ]
 
 export const METADATA_CARDS = [
   {
     icon: 'EyeOff',
-    title: 'Stealth addresses',
-    body: 'Every message goes to a fresh one-time address. Watching the chain reveals no social graph - who talks to whom stays hidden.',
+    title: 'One-time addresses',
+    body: 'Every message is delivered to a fresh one-time address, so an observer cannot reconstruct who talks to whom. The social graph stays hidden.',
     href: '/features/metadata-protection',
   },
   {
@@ -50,9 +50,9 @@ export const METADATA_CARDS = [
     href: '/features/metadata-protection',
   },
   {
-    icon: 'Wallet',
-    title: 'Gas wallet',
-    body: 'A throwaway fee-payer covers network costs, so the wallet paying for a transaction is never the wallet sending the message.',
+    icon: 'Ruler',
+    title: 'Fixed-size padding',
+    body: 'Every message is padded to a fixed size before it is sealed, so its length leaks nothing about the content inside.',
     href: '/features/metadata-protection',
   },
 ]
@@ -61,17 +61,17 @@ export const LIFECYCLE_STEPS = [
   {
     step: '01',
     label: 'Send',
-    body: 'Your message is padded to a fixed bucket, encrypted with AES-256-GCM under a Double Ratchet key, and wrapped in a 0-lamport Solana transaction.',
+    body: 'Your message is padded to a fixed size and sealed with AES-256-GCM under a fresh Double Ratchet key - on your device, before it ever leaves.',
   },
   {
     step: '02',
-    label: 'Chain',
-    body: 'The encrypted blob lands in a transaction memo on Solana mainnet-beta, addressed to a one-time stealth address. No server ever touches it.',
+    label: 'Transport',
+    body: 'The encrypted blob travels over a public, decentralized transport, addressed to a one-time address. No account server ever holds it.',
   },
   {
     step: '03',
     label: 'Receive',
-    body: 'Your device scans the chain for your stealth addresses, decrypts locally, and advances the ratchet. Only your keys can read it.',
+    body: 'Your device retrieves and decrypts it locally with keys only you hold, then advances the ratchet. Only your device can read it.',
   },
 ]
 
@@ -136,30 +136,53 @@ export const SCREENSHOTS = [
   },
 ]
 
+/**
+ * Clean screenshot subset for the App-Store-review-facing landing page. Shows
+ * only the messenger surface (onboarding, encrypted chat, add-by-nickname) -
+ * no crypto/market screens.
+ */
+export const HOME_SCREENSHOTS = [
+  {
+    src: '/screenshots/01.png?v=2',
+    title: 'Private by default',
+    alt: 'PrivaMesh onboarding screen, private by default and end-to-end encrypted, on iPhone',
+  },
+  {
+    src: '/screenshots/02.png?v=2',
+    title: 'End-to-end encrypted chat',
+    alt: 'PrivaMesh encrypted chat screen showing a private conversation on iPhone',
+  },
+  {
+    src: '/screenshots/03.png?v=2',
+    title: 'No phone, just a nickname',
+    alt: 'PrivaMesh add-contact screen, find a user by nickname with no phone number, on iPhone',
+  },
+]
+
 export const HOME_FAQ: { q: string; a: string }[] = [
   {
     q: 'Is PrivaMesh really serverless?',
-    a: "Yes. There is no PrivaMesh server, relay, or account database. The app's only network dependency is a Solana RPC endpoint, which is swappable and self-hostable. Messages live as encrypted blobs in Solana transaction memos, so there is nothing central to breach, subpoena, log, or shut down.",
+    a: 'Yes. There is no PrivaMesh account server, relay, or message database. Encrypted messages travel over a public, decentralized transport, so there is nothing central to breach, subpoena, log, or shut down.',
   },
   {
     q: 'How is PrivaMesh encrypted?',
-    a: 'PrivaMesh uses an X3DH handshake over Curve25519 to establish keys, then a Double Ratchet (HKDF and HMAC-SHA256) that gives every message a new key. Payloads are sealed with AES-256-GCM and padded to fixed-size buckets. You get forward secrecy and post-compromise security by default.',
+    a: 'PrivaMesh uses an X3DH handshake over Curve25519 to establish keys, then a Double Ratchet (HKDF and HMAC-SHA256) that gives every message a new key. Payloads are sealed with AES-256-GCM and padded to a fixed size. You get forward secrecy and post-compromise security by default.',
   },
   {
     q: 'Can I use PrivaMesh without a phone number or email?',
-    a: 'Yes. There is no phone number and no email. Your account is a BIP-39 seed phrase that maps to a self-custodial Solana keypair. Keys are stored in the iOS Keychain, device-only and biometric-lockable.',
+    a: 'Yes. There is no phone number and no email. Your account is a recovery phrase that maps to encryption keys stored in the iOS Keychain - device-only and protected by Face ID or Touch ID.',
+  },
+  {
+    q: 'Does PrivaMesh involve any cryptocurrency or a wallet?',
+    a: 'No. PrivaMesh is purely a private messenger. Users never buy, hold, or spend any cryptocurrency, and there is no wallet in the app. Your account is simply a recovery phrase that unlocks the encryption keys on your device.',
   },
   {
     q: 'What metadata does PrivaMesh collect?',
-    a: 'None on any server, because there is no server. On-chain, stealth addresses hide the social graph, cover traffic hides timing, and a throwaway gas wallet hides who pays the network fee.',
+    a: 'None on any server, because there is no server. Delivery uses one-time addresses to hide the social graph, cover traffic hides when you send, and fixed-size padding hides message length.',
   },
   {
     q: 'What happens if I lose my phone?',
-    a: 'Restore your BIP-39 seed phrase on a new device to recover your funds and identity. By design your chat history is not recovered - forward secrecy means old message keys are deleted, so nobody, including you, can decrypt past messages from the seed alone.',
-  },
-  {
-    q: 'Is PrivaMesh a private messaging app?',
-    a: 'Yes - PrivaMesh is a private messaging app for iPhone built for maximum privacy: no servers, no phone number, no email, and no metadata collection. It is end-to-end encrypted on Solana, which makes it one of the most private messaging apps available in 2026.',
+    a: 'Restore your recovery phrase on a new device to recover your identity. By design your chat history is not recovered - forward secrecy means old message keys are deleted, so nobody, including you, can decrypt past messages from the phrase alone.',
   },
 ]
 

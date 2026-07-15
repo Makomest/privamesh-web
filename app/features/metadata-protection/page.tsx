@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { EyeOff, Shuffle, Wallet } from 'lucide-react'
+import { EyeOff, Shuffle, Ruler } from 'lucide-react'
 import { Container } from '@/components/Container'
 import PageHeader from '@/components/PageHeader'
 import PhoneMockup from '@/components/PhoneMockup'
@@ -8,27 +8,26 @@ import { Prose, RelatedLinks } from '@/components/Prose'
 import FadeUp from '@/components/FadeUp'
 import { Button } from '@/components/Button'
 import { pageMetadata } from '@/lib/seo'
-import { SITE } from '@/lib/site'
 import AppStoreButton from '@/components/AppStoreButton'
 
 export const metadata: Metadata = pageMetadata({
   title: 'Metadata Protection: Hide Who, When & How You Message',
   description:
-    'A messenger that doesn’t collect metadata. PrivaMesh uses stealth addresses, cover traffic and a gas wallet to hide who you talk to, when, and who pays.',
+    'A messenger that doesn’t collect metadata. PrivaMesh uses one-time addresses, cover traffic and fixed-size padding to hide who you talk to, when, and how much.',
   path: '/features/metadata-protection',
 })
 
 const CARDS = [
   {
     icon: EyeOff,
-    title: 'Stealth addresses',
+    title: 'One-time addresses',
     text: 'A fresh one-time address per message hides the social graph.',
   },
   { icon: Shuffle, title: 'Cover traffic', text: 'Decoy messages hide when you actually send.' },
   {
-    icon: Wallet,
-    title: 'Gas wallet',
-    text: 'A throwaway fee payer hides who pays for a message.',
+    icon: Ruler,
+    title: 'Fixed-size padding',
+    text: 'Uniform message size hides how much you say.',
   },
 ]
 
@@ -47,8 +46,8 @@ export default function MetadataPage() {
       >
         <div className="flex flex-wrap gap-3">
           <AppStoreButton />
-          <Button href="/privacy" variant="ghost">
-            Why it&rsquo;s private
+          <Button href="/privacy-policy" variant="ghost">
+            Privacy Policy
           </Button>
         </div>
       </PageHeader>
@@ -69,46 +68,44 @@ export default function MetadataPage() {
         <Prose>
           <p>
             Two people can exchange perfectly encrypted messages and still be fully exposed. If an
-            observer knows that address A messaged address B at 2:14am, then again after B replied,
-            they&rsquo;ve learned the relationship, the rhythm, and the timing - without reading a
-            single word. That is metadata, and on a public blockchain it would normally be trivial
-            to collect. PrivaMesh is engineered so it isn&rsquo;t. This is what makes it a genuine{' '}
+            observer knows that A messaged B at 2:14am, then again after B replied, they&rsquo;ve
+            learned the relationship, the rhythm, and the timing - without reading a single word.
+            That is metadata, and most messengers leak it freely. PrivaMesh is engineered so it
+            doesn&rsquo;t. This is what makes it a genuine{' '}
             <strong>messenger that doesn&rsquo;t collect metadata</strong>: there is no collector,
-            and the on-chain trail is deliberately unlinkable.
+            and the delivery trail is deliberately unlinkable.
           </p>
 
-          <h2>Stealth addresses - hide who</h2>
+          <h2>One-time addresses - hide who</h2>
           <p>
-            Every message is sent to a <strong>fresh one-time stealth address</strong> derived so
-            that only the intended recipient can recognize and spend it. Two messages to the same
-            person go to two unrelated-looking addresses. Anyone scanning Solana sees a scatter of
-            one-off addresses with no way to cluster them into a conversation or a social graph. The{' '}
-            <em>who talks to whom</em> simply isn&rsquo;t written down anywhere.
+            Every message is delivered to a <strong>fresh one-time address</strong> that only the
+            intended recipient can recognize. Two messages to the same person go to two
+            unrelated-looking addresses. An observer sees a scatter of one-off addresses with no way
+            to cluster them into a conversation or a social graph. The <em>who talks to whom</em>{' '}
+            simply isn&rsquo;t written down anywhere.
           </p>
 
           <h2>Cover traffic - hide when</h2>
           <p>
-            Timing is its own leak. If your real messages are the only transactions you ever
-            produce, their timing reveals your activity pattern. PrivaMesh mixes in{' '}
-            <strong>cover traffic</strong> - decoy messages indistinguishable from real ones - so
-            that an observer watching the chain cannot tell a genuine send from noise. Frequency
-            analysis and timing correlation lose their signal.
+            Timing is its own leak. If your real messages are the only activity you ever produce,
+            their timing reveals your pattern. PrivaMesh mixes in <strong>cover traffic</strong> -
+            decoy messages indistinguishable from real ones - so an observer cannot tell a genuine
+            send from noise. Frequency analysis and timing correlation lose their signal.
           </p>
 
-          <h2>Gas wallet - hide who pays</h2>
+          <h2>Fixed-size padding - hide how much</h2>
           <p>
-            Solana transactions need a fee payer, and a naive design would let the paying wallet
-            unmask the sender. PrivaMesh uses a <strong>throwaway gas wallet</strong> as the fee
-            payer, so the wallet funding a transaction is never the wallet sending the message.
-            Combined with <strong>unlinkable multi-accounts</strong> - you can run several
-            identities that can&rsquo;t be tied together - the payment trail stops pointing back at
-            you.
+            Message length leaks meaning too - a one-word &ldquo;yes&rdquo; and a long confession
+            look very different if their sizes differ. PrivaMesh <strong>pads every message to a
+            fixed size</strong> before sealing it, so a short reply and a long paragraph are
+            identical on the wire. A separate fee payer covers any network cost, so the account
+            paying is never the account sending.
           </p>
 
           <h2>Why this needs no server to work</h2>
           <p>
             None of this relies on a trusted party promising not to look. It is built into how
-            messages are addressed and paid for on-chain. Because there is{' '}
+            messages are addressed and delivered. Because there is{' '}
             <Link href="/features/no-servers">no PrivaMesh server</Link>, there is also no
             server-side log of IP addresses, timestamps, or contact lists - the metadata most apps
             leak first.
@@ -116,18 +113,16 @@ export default function MetadataPage() {
 
           <h2>The honest trade-off</h2>
           <p>
-            Metadata protection is strong but not magic. Your anonymity still depends on{' '}
-            <strong>wallet funding hygiene</strong>: if you fund your gas wallet from an exchange
-            account tied to your identity, you create a link the app can&rsquo;t erase. Good
-            practice matters. We&rsquo;d rather tell you where the edges are than pretend they
-            don&rsquo;t exist.
+            Metadata protection is strong but not magic. Your anonymity still depends on good
+            operational hygiene - for example, the network you connect from. Good practice matters.
+            We&rsquo;d rather tell you where the edges are than pretend they don&rsquo;t exist.
           </p>
         </Prose>
 
         <FadeUp className="lg:sticky lg:top-24">
           <PhoneMockup
             src="/screenshots/03.png?v=2"
-            alt="PrivaMesh metadata protection screen showing stealth addresses and cover traffic hiding who, when and how on iPhone"
+            alt="PrivaMesh metadata protection screen hiding who, when and how much, on iPhone"
             sizes="(max-width: 1024px) 60vw, 360px"
           />
         </FadeUp>
@@ -146,9 +141,9 @@ export default function MetadataPage() {
             blurb: 'Metadata hides who and when; encryption hides what.',
           },
           {
-            href: '/compare/privamesh-vs-signal',
-            label: 'PrivaMesh vs Signal',
-            blurb: 'Signal protects content well but still handles connection metadata.',
+            href: '/privacy-policy',
+            label: 'Privacy Policy',
+            blurb: 'What PrivaMesh does and does not collect, in plain language.',
           },
         ]}
       />

@@ -9,7 +9,7 @@ export const organizationLd = {
   url: SITE.domain,
   logo: `${SITE.domain}/logo.png`,
   slogan: SITE.tagline,
-  sameAs: [SITE.twitter, SITE.github],
+  sameAs: [SITE.twitter],
 }
 
 export const websiteLd = {

@@ -3,9 +3,10 @@ export const SITE = {
   domain: 'https://privamesh.org',
   tagline: 'Trust math, not companies.',
   description:
-    'PrivaMesh is a serverless, end-to-end encrypted messenger on Solana. No servers, no phone number, no metadata. Trust math, not companies.',
+    'Private, end-to-end encrypted messenger. No phone number, no email, no servers. Your keys and chats stay on your device.',
   twitter: 'https://x.com/PrivaMesh',
   twitterHandle: '@PrivaMesh',
+  supportEmail: 'privamesh@proton.me',
   github: 'https://github.com/Makomest/PrivaMesh',
   whitepaper: 'https://github.com/Makomest/PrivaMesh/blob/main/WHITEPAPER.md',
   // App Store listing for the PrivaMesh iOS app.
@@ -28,28 +29,18 @@ export const SITE = {
 
 export type NavLink = { href: string; label: string }
 
-export const NAV_PRODUCT: NavLink[] = [
+/**
+ * Clean, App-Store-review-facing navigation. Presents PrivaMesh purely as a
+ * private encrypted messenger. Intentionally links to NO crypto/SEO pages.
+ */
+export const NAV_FEATURES: NavLink[] = [
   { href: '/features/no-servers', label: 'No Servers' },
-  { href: '/features/e2e-encryption', label: 'E2E Encryption' },
+  { href: '/features/e2e-encryption', label: 'End-to-End Encryption' },
   { href: '/features/metadata-protection', label: 'Metadata Protection' },
-  { href: '/features/seed-phrase-accounts', label: 'Seed Phrase Accounts' },
-  { href: '/features/sol-transfers', label: 'SOL Transfers' },
 ]
 
-export const NAV_COMPARE: NavLink[] = [
-  { href: '/compare/privamesh-vs-signal', label: 'vs Signal' },
-  { href: '/compare/privamesh-vs-telegram', label: 'vs Telegram' },
-  { href: '/compare/privamesh-vs-session', label: 'vs Session' },
-]
-
-export const NAV_RESOURCES: NavLink[] = [
-  { href: '/privacy', label: 'Why Private' },
-  { href: '/blog', label: 'Blog' },
-  { href: SITE.whitepaper, label: 'White Paper' },
-  { href: SITE.github, label: 'GitHub' },
-]
-
-export const NAV_LEGAL: NavLink[] = [
-  { href: '/privacy', label: 'Privacy Approach' },
-  { href: SITE.github, label: 'Open Source License' },
+export const NAV_MAIN: NavLink[] = [
+  { href: '/privacy-policy', label: 'Privacy Policy' },
+  { href: '/terms', label: 'Terms' },
+  { href: `mailto:${SITE.supportEmail}`, label: 'Support' },
 ]

@@ -26,7 +26,7 @@ const jetbrains = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.domain),
   title: {
-    default: 'PrivaMesh - Serverless Private Messenger on Solana',
+    default: 'PrivaMesh - Private Encrypted Messenger',
     template: '%s · PrivaMesh',
   },
   description: SITE.description,

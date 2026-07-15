@@ -3,15 +3,12 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { useState } from 'react'
-import { usePathname } from 'next/navigation'
-import { Menu, X, Github } from 'lucide-react'
-import { NAV_PRODUCT, NAV_COMPARE, SITE } from '@/lib/site'
+import { Menu, X } from 'lucide-react'
+import { NAV_FEATURES, NAV_MAIN, SITE } from '@/lib/site'
 import AppStoreButton from '@/components/AppStoreButton'
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
-  const pathname = usePathname()
-  const isRu = pathname?.startsWith('/ru')
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/70 bg-bg-base/70 backdrop-blur-[12px]">
@@ -31,43 +28,19 @@ export default function Navbar() {
         </Link>
 
         <div className="hidden items-center gap-7 md:flex">
-          <NavDropdown label="Features" links={NAV_PRODUCT} />
-          <NavDropdown label="Compare" links={NAV_COMPARE} />
-          <Link href="/alternatives" className="nav-link">
-            Alternatives
+          <NavDropdown label="Features" links={NAV_FEATURES} />
+          <Link href="/privacy-policy" className="nav-link">
+            Privacy Policy
           </Link>
-          <Link href="/guides" className="nav-link">
-            Guides
+          <Link href="/terms" className="nav-link">
+            Terms
           </Link>
-          <Link href="/privacy" className="nav-link">
-            Privacy
-          </Link>
-          <Link href="/blog" className="nav-link">
-            Blog
-          </Link>
-          <Link href="/news" className="nav-link">
-            News
-          </Link>
+          <a href={`mailto:${SITE.supportEmail}`} className="nav-link">
+            Support
+          </a>
         </div>
 
         <div className="hidden items-center gap-3 md:flex">
-          <Link
-            href={isRu ? '/' : '/ru'}
-            hrefLang={isRu ? 'en' : 'ru'}
-            className="rounded-md border border-border px-2 py-1 font-mono text-[11px] text-text-muted transition-colors hover:border-border-hover hover:text-accent"
-            aria-label={isRu ? 'Switch to English' : 'Переключить на русский'}
-          >
-            {isRu ? 'EN' : 'RU'}
-          </Link>
-          <a
-            href={SITE.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-text-muted transition-colors hover:text-accent"
-            aria-label="PrivaMesh on GitHub"
-          >
-            <Github size={19} />
-          </a>
           <AppStoreButton className="px-4 py-2 text-[13px]" />
         </div>
 
@@ -84,27 +57,24 @@ export default function Navbar() {
 
       {open && (
         <div className="border-t border-border bg-white/20 backdrop-blur-sm px-5 py-4 md:hidden">
-          <MobileGroup label="Features" links={NAV_PRODUCT} onNavigate={() => setOpen(false)} />
-          <MobileGroup label="Compare" links={NAV_COMPARE} onNavigate={() => setOpen(false)} />
+          <MobileGroup label="Features" links={NAV_FEATURES} onNavigate={() => setOpen(false)} />
           <div className="mt-2 flex flex-col gap-1">
-            {[
-              { href: '/best-private-messaging-apps', label: 'Best apps 2026' },
-              { href: '/alternatives', label: 'Alternatives' },
-              { href: '/guides', label: 'Guides' },
-              { href: '/privacy', label: 'Privacy' },
-              { href: '/blog', label: 'Blog' },
-              { href: '/news', label: 'News' },
-              { href: '/glossary', label: 'Glossary' },
-            ].map((l) => (
-              <Link
-                key={l.href}
-                href={l.href}
-                className="py-2 text-sm text-text-secondary"
-                onClick={() => setOpen(false)}
-              >
-                {l.label}
-              </Link>
-            ))}
+            {NAV_MAIN.map((l) =>
+              l.href.startsWith('mailto:') ? (
+                <a key={l.href} href={l.href} className="py-2 text-sm text-text-secondary">
+                  {l.label}
+                </a>
+              ) : (
+                <Link
+                  key={l.href}
+                  href={l.href}
+                  className="py-2 text-sm text-text-secondary"
+                  onClick={() => setOpen(false)}
+                >
+                  {l.label}
+                </Link>
+              ),
+            )}
           </div>
           <AppStoreButton className="mt-4 w-full" />
         </div>
@@ -136,7 +106,7 @@ function NavDropdown({
       <button className="nav-link flex items-center gap-1" type="button">
         {label}
       </button>
-      <div className="invisible absolute left-1/2 top-full z-50 w-60 -translate-x-1/2 pt-3 opacity-0 transition-all duration-150 group-hover:visible group-hover:opacity-100">
+      <div className="invisible absolute left-1/2 top-full z-50 w-64 -translate-x-1/2 pt-3 opacity-0 transition-all duration-150 group-hover:visible group-hover:opacity-100">
         <div className="rounded-card border border-border bg-bg-elevated p-2 shadow-2xl">
           {links.map((l) => (
             <Link

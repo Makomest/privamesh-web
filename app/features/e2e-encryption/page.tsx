@@ -7,7 +7,6 @@ import { Prose, RelatedLinks } from '@/components/Prose'
 import FadeUp from '@/components/FadeUp'
 import { Button } from '@/components/Button'
 import { pageMetadata } from '@/lib/seo'
-import { SITE } from '@/lib/site'
 import AppStoreButton from '@/components/AppStoreButton'
 
 export const metadata: Metadata = pageMetadata({
@@ -28,12 +27,12 @@ export default function E2EPage() {
           { name: 'E2E Encryption', path: '/features/e2e-encryption' },
         ]}
         title="End-to-end encryption, explained for humans"
-        lead="PrivaMesh uses the same proven cryptography that secures Signal - X3DH, Double Ratchet and AES-256-GCM - adapted for a serverless world. Here it is without the math."
+        lead="PrivaMesh uses the same proven cryptography that secures the best encrypted messengers - X3DH, Double Ratchet and AES-256-GCM - adapted for a serverless world. Here it is without the math."
       >
         <div className="flex flex-wrap gap-3">
           <AppStoreButton />
-          <Button href="/blog/how-double-ratchet-encryption-works" variant="ghost">
-            Deep dive: Double Ratchet
+          <Button href="/features/metadata-protection" variant="ghost">
+            Metadata protection
           </Button>
         </div>
       </PageHeader>
@@ -55,9 +54,9 @@ export default function E2EPage() {
             <code>Curve25519</code>, lets your devices agree on one even when one of you is offline.
             It combines several key exchanges so that a first message can be sent immediately and
             securely. PrivaMesh publishes the needed prekeys as{' '}
-            <strong>wallet-signed prekey bundles in an on-chain registry</strong>, so there is no
-            trusted key server that could hand out a fake key - the signature proves the key belongs
-            to the right wallet. That is the anti-MITM foundation of the whole system.
+            <strong>signed prekey bundles</strong>, so there is no trusted key server that could hand
+            out a fake key - the signature proves the key belongs to the right account. That is the
+            anti-MITM foundation of the whole system.
           </p>
 
           <h2>Double Ratchet - a new key for every message</h2>
@@ -78,11 +77,6 @@ export default function E2EPage() {
               ratchet heals with the next exchange and locks them back out.
             </li>
           </ul>
-          <p>
-            <Link href="/blog/how-double-ratchet-encryption-works">
-              Read the full plain-English Double Ratchet explainer.
-            </Link>
-          </p>
 
           <h2>AES-256-GCM - sealing the payload</h2>
           <p>
@@ -90,28 +84,24 @@ export default function E2EPage() {
             authenticated encryption scheme, to seal the actual content. GCM doesn&rsquo;t just hide
             the message - it also detects tampering, so a modified ciphertext is rejected rather
             than silently decrypted wrong. Before encryption, PrivaMesh{' '}
-            <strong>pads every message to a fixed-size bucket</strong>, so an observer can&rsquo;t
-            infer anything from length. A one-word reply and a long paragraph look identical on the
-            wire.
+            <strong>pads every message to a fixed size</strong>, so an observer can&rsquo;t infer
+            anything from length. A one-word reply and a long paragraph look identical on the wire.
           </p>
 
           <h2>Where the keys live</h2>
           <p>
             All of this depends on keys that only you hold. PrivaMesh stores them in the{' '}
-            <strong>iOS Keychain</strong> - device-only and biometric-lockable. They never sync,
-            never upload, and never touch a server, because there isn&rsquo;t one.{' '}
-            <Link href="/features/seed-phrase-accounts">
-              See how your seed phrase and keys work.
-            </Link>
+            <strong>iOS Keychain</strong> - device-only and protected by Face ID or Touch ID. They
+            never sync, never upload, and never touch a server, because there isn&rsquo;t one.
           </p>
 
           <h2>The honest trade-off</h2>
           <p>
             Forward secrecy has a real cost: deleted keys can&rsquo;t decrypt old messages, so your
-            chat history cannot be restored from your seed phrase alone. Your seed brings back your
-            funds and identity, not your conversations. That&rsquo;s the price of true forward
-            secrecy, and we think it&rsquo;s the right default for a{' '}
-            <Link href="/privacy">privacy-first messenger</Link>.
+            chat history cannot be restored from your recovery phrase alone. Your phrase brings back
+            your identity, not your conversations. That&rsquo;s the price of true forward secrecy,
+            and we think it&rsquo;s the right default for a{' '}
+            <Link href="/privacy-policy">privacy-first messenger</Link>.
           </p>
         </Prose>
 
@@ -129,8 +119,7 @@ export default function E2EPage() {
           {
             href: '/features/metadata-protection',
             label: 'Metadata protection',
-            blurb:
-              'Encryption hides content; stealth addresses and cover traffic hide the metadata.',
+            blurb: 'Encryption hides content; one-time addresses and cover traffic hide metadata.',
           },
           {
             href: '/features/no-servers',
@@ -138,9 +127,9 @@ export default function E2EPage() {
             blurb: 'Why removing the server makes end-to-end encryption end-to-end for real.',
           },
           {
-            href: '/blog/how-double-ratchet-encryption-works',
-            label: 'Double Ratchet explained',
-            blurb: 'A plain-English walkthrough of the algorithm behind forward secrecy.',
+            href: '/privacy-policy',
+            label: 'Privacy Policy',
+            blurb: 'What PrivaMesh does and does not collect, in plain language.',
           },
         ]}
       />

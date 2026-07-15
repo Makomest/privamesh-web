@@ -1,18 +1,21 @@
 import Image from 'next/image'
-import { SCREENSHOTS } from '@/lib/data'
+import { HOME_SCREENSHOTS } from '@/lib/data'
+
+type Shot = { src: string; title: string; alt: string }
 
 /**
- * Auto-scrolling infinite carousel of the six app screenshots. Pure CSS marquee
- * (the track is duplicated and translated -50% for a seamless loop). Pauses on
+ * Auto-scrolling infinite carousel of app screenshots. Pure CSS marquee (the
+ * track is duplicated and translated -50% for a seamless loop). Pauses on
  * hover; stops entirely under prefers-reduced-motion. Edges fade out via a mask.
+ * Defaults to the clean HOME_SCREENSHOTS set used on the landing page.
  */
-export default function ScreenshotGallery() {
-  const items = [...SCREENSHOTS, ...SCREENSHOTS]
+export default function ScreenshotGallery({ shots = HOME_SCREENSHOTS }: { shots?: Shot[] }) {
+  const items = [...shots, ...shots]
   return (
     <div className="marquee relative w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,#000_7%,#000_93%,transparent)]">
       <div className="marquee-track flex w-max gap-5 sm:gap-6">
         {items.map((s, i) => {
-          const dup = i >= SCREENSHOTS.length
+          const dup = i >= shots.length
           return (
             <figure
               key={i}
