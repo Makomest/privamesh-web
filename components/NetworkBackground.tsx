@@ -223,16 +223,11 @@ export default function NetworkBackground() {
       cancelAnimationFrame(raf)
     }
 
-    // Pause the loop once the user scrolls past the first couple of screens -
-    // the canvas is fixed/decorative, so freezing it deep in the page saves
-    // main-thread work (better INP / Core Web Vitals). Resume near the top.
-    function onScroll() {
-      if (window.scrollY > window.innerHeight * 1.5) stop()
-      else start()
-    }
+    // Keep animating regardless of scroll position. Only pause when the tab is
+    // hidden (saves work with no visible cost).
     function onVisibility() {
       if (document.hidden) stop()
-      else onScroll()
+      else start()
     }
 
     resize()
@@ -243,13 +238,11 @@ export default function NetworkBackground() {
     }
 
     window.addEventListener('resize', onResize)
-    window.addEventListener('scroll', onScroll, { passive: true })
     document.addEventListener('visibilitychange', onVisibility)
     return () => {
       stop()
       window.clearTimeout(resizeTimer)
       window.removeEventListener('resize', onResize)
-      window.removeEventListener('scroll', onScroll)
       document.removeEventListener('visibilitychange', onVisibility)
     }
   }, [])
