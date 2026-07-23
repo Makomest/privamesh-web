@@ -22,7 +22,7 @@ export default function OgImage() {
         height: '100%',
         width: '100%',
         display: 'flex',
-        background: '#0A0B0F',
+        background: '#000000',
         fontFamily: 'sans-serif',
         position: 'relative',
         overflow: 'hidden',
@@ -37,7 +37,7 @@ export default function OgImage() {
           right: 0,
           bottom: 0,
           background:
-            'radial-gradient(circle at 78% 30%, rgba(0,168,150,0.28), transparent 55%), radial-gradient(circle at 95% 85%, rgba(0,192,168,0.20), transparent 55%)',
+            'radial-gradient(circle at 78% 30%, rgba(255,255,255,0.12), transparent 55%), radial-gradient(circle at 95% 85%, rgba(255,255,255,0.07), transparent 55%)',
         }}
       />
 
@@ -73,7 +73,7 @@ export default function OgImage() {
             }}
           >
             <span style={{ marginRight: 14 }}>The private messenger that knows</span>
-            <span style={{ color: '#14D9B4', marginRight: 14 }}>nothing</span>
+            <span style={{ color: '#FFFFFF', marginRight: 14 }}>nothing</span>
             <span>about you</span>
           </div>
           <div style={{ display: 'flex', color: '#B4B8C5', fontSize: 25, marginTop: 22 }}>
@@ -82,7 +82,7 @@ export default function OgImage() {
         </div>
 
         <div style={{ display: 'flex', flexDirection: 'column' }}>
-          <span style={{ color: '#14D9B4', fontSize: 26, fontWeight: 600 }}>
+          <span style={{ color: '#FFFFFF', fontSize: 26, fontWeight: 600 }}>
             Trust math, not companies.
           </span>
           <span style={{ color: '#8B90A0', fontSize: 22, marginTop: 6 }}>privamesh.org</span>
@@ -102,8 +102,8 @@ export default function OgImage() {
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={phoneSrc}
-          width={452}
-          height={565}
+          width={520}
+          height={520}
           alt=""
           style={{ filter: 'drop-shadow(0 30px 60px rgba(0,0,0,0.55))' }}
         />

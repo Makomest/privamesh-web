@@ -19,7 +19,7 @@ export default function PostList({ posts }: { posts: Post[] }) {
         <FadeUp key={post.slug} delay={i * 60}>
           <Link
             href={`${blogBase(post.locale)}/${post.slug}`}
-            className="group block rounded-card border border-border bg-white/20 p-6 backdrop-blur-sm transition-all duration-150 hover:-translate-y-0.5 hover:border-border-hover sm:p-8"
+            className="group block rounded-card border border-border bg-white/[0.03] p-6 backdrop-blur-sm transition-all duration-150 hover:-translate-y-0.5 hover:border-border-hover sm:p-8"
           >
             <div className="flex flex-wrap items-center gap-3 font-mono text-xs text-text-muted">
               <time dateTime={post.date}>{fmtDate(post.date, post.locale)}</time>

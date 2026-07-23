@@ -37,7 +37,7 @@ export default function AdminLogin() {
 
   return (
     <Container className="flex min-h-[70vh] items-center justify-center">
-      <div className="w-full max-w-sm rounded-2xl border border-border bg-white/20 p-7 backdrop-blur-sm">
+      <div className="w-full max-w-sm rounded-2xl border border-border bg-white/[0.03] p-7 backdrop-blur-sm">
         <div className="flex h-11 w-11 items-center justify-center rounded-full bg-accent/15 text-accent">
           <Lock size={20} />
         </div>
@@ -65,7 +65,7 @@ export default function AdminLogin() {
           <button
             type="submit"
             disabled={loading}
-            className="mt-3 flex w-full items-center justify-center gap-2 rounded-btn bg-accent px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent-hover disabled:opacity-60"
+            className="mt-3 flex w-full items-center justify-center gap-2 rounded-btn bg-accent px-5 py-3 text-sm font-semibold text-black transition-colors hover:bg-accent-hover disabled:opacity-60"
           >
             {loading ? <Loader2 size={16} className="animate-spin" /> : 'Sign in'}
           </button>

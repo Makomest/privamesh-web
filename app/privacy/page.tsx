@@ -149,8 +149,8 @@ export default function PrivacyPage() {
 
           <FadeUp className="lg:sticky lg:top-24">
             <PhoneMockup
-              src="/screenshots/05.png?v=2"
-              alt="PrivaMesh message info screen showing a message stored on Solana with no server, viewable in the Solana Explorer, on iPhone"
+              src="/screenshots/03.png?v=3"
+              alt="PrivaMesh on-device security screen - keys behind Face ID, disappearing messages and signed contacts, on iPhone"
               sizes="(max-width: 1024px) 60vw, 360px"
             />
           </FadeUp>

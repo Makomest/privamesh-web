@@ -117,7 +117,7 @@ export default function BlogLayout({
             <Link
               key={tag}
               href={`${base}/tag/${slugifyTag(tag)}`}
-              className="rounded-full border border-border bg-white/20 px-2.5 py-1 font-mono text-[11px] text-text-muted backdrop-blur-sm transition-colors hover:border-border-hover hover:text-accent"
+              className="rounded-full border border-border bg-white/[0.03] px-2.5 py-1 font-mono text-[11px] text-text-muted backdrop-blur-sm transition-colors hover:border-border-hover hover:text-accent"
             >
               {tag}
             </Link>
@@ -127,7 +127,7 @@ export default function BlogLayout({
         {headings.length >= 3 && (
           <nav
             aria-label={t.onThisPage}
-            className="mt-8 max-w-prose rounded-2xl border border-border bg-white/20 p-5 backdrop-blur-sm"
+            className="mt-8 max-w-prose rounded-2xl border border-border bg-white/[0.03] p-5 backdrop-blur-sm"
           >
             <p className="font-mono text-xs uppercase tracking-wider text-text-secondary">
               {t.onThisPage}

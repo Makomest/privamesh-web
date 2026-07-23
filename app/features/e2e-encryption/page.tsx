@@ -98,7 +98,7 @@ export default function E2EPage() {
           <h2>The honest trade-off</h2>
           <p>
             Forward secrecy has a real cost: deleted keys can&rsquo;t decrypt old messages, so your
-            chat history cannot be restored from your recovery phrase alone. Your phrase brings back
+            chat history cannot be restored from your account phrase alone. Your phrase brings back
             your identity, not your conversations. That&rsquo;s the price of true forward secrecy,
             and we think it&rsquo;s the right default for a{' '}
             <Link href="/privacy-policy">privacy-first messenger</Link>.
@@ -107,7 +107,7 @@ export default function E2EPage() {
 
         <FadeUp className="lg:sticky lg:top-24">
           <PhoneMockup
-            src="/screenshots/02.png?v=2"
+            src="/screenshots/04.png?v=3"
             alt="PrivaMesh end-to-end encrypted chat screen protected by X3DH, Double Ratchet and AES-256-GCM on iPhone"
             sizes="(max-width: 1024px) 60vw, 360px"
           />

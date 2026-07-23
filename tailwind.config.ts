@@ -11,28 +11,28 @@ const config: Config = {
     extend: {
       colors: {
         bg: {
-          base: '#FFFFFF',
-          surface: '#F5F8F6',
-          elevated: '#EDF2EF',
+          base: '#000000',
+          surface: '#0D0D0D',
+          elevated: '#171717',
         },
         border: {
-          DEFAULT: '#E4E9E6',
-          hover: '#CFD8D3',
-          accent: '#00A8964D',
+          DEFAULT: '#232323',
+          hover: '#383838',
+          accent: '#FFFFFF38',
         },
         text: {
-          primary: '#0C1A14',
-          secondary: '#33413B',
-          muted: '#5C6B64',
-          faint: '#94A29B',
+          primary: '#FFFFFF',
+          secondary: '#C4C4C4',
+          muted: '#8C8C8C',
+          faint: '#5A5A5A',
         },
         accent: {
-          DEFAULT: '#00A896',
-          hover: '#008C7E',
-          glow: '#00A8961F',
-          secondary: '#00C0A8',
+          DEFAULT: '#FFFFFF',
+          hover: '#E2E2E2',
+          glow: '#FFFFFF14',
+          secondary: '#C4C4C4',
         },
-        success: '#00A896',
+        success: '#FFFFFF',
         warning: '#C9820A',
         negative: '#E5484D',
       },
@@ -54,8 +54,8 @@ const config: Config = {
       },
       backgroundImage: {
         'hero-glow':
-          'radial-gradient(120% 120% at 50% 40%, #00A8961F 0%, #00C0A814 45%, transparent 70%)',
-        'accent-gradient': 'linear-gradient(90deg, #00A896 0%, #00C0A8 100%)',
+          'radial-gradient(120% 120% at 50% 40%, #FFFFFF1A 0%, #FFFFFF0A 45%, transparent 70%)',
+        'accent-gradient': 'linear-gradient(90deg, #FFFFFF 0%, #C4C4C4 100%)',
       },
       keyframes: {
         'fade-up': {

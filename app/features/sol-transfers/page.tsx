@@ -95,8 +95,8 @@ export default function SolTransfersPage() {
 
         <FadeUp className="lg:sticky lg:top-24">
           <PhoneMockup
-            src="/screenshots/06.png?v=2"
-            alt="PrivaMesh in-chat SOL transfer screen sending a Solana payment inside an encrypted conversation on iPhone"
+            src="/screenshots/04.png?v=3"
+            alt="PrivaMesh end-to-end encrypted chat screen on iPhone"
             sizes="(max-width: 1024px) 60vw, 360px"
           />
         </FadeUp>

@@ -39,7 +39,7 @@ export default function GuidesIndex() {
           <FadeUp key={g.slug} delay={(i % 2) * 60}>
             <Link
               href={`/guides/${g.slug}`}
-              className="group flex h-full flex-col rounded-card border border-border bg-white/20 p-6 backdrop-blur-sm transition-all duration-150 hover:-translate-y-0.5 hover:border-border-hover"
+              className="group flex h-full flex-col rounded-card border border-border bg-white/[0.03] p-6 backdrop-blur-sm transition-all duration-150 hover:-translate-y-0.5 hover:border-border-hover"
             >
               <h2 className="text-lg font-semibold text-text-primary">{g.h1}</h2>
               <p className="mt-2 flex-1 text-sm leading-relaxed text-text-muted">{g.description}</p>

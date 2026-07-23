@@ -100,7 +100,7 @@ export default function SeedPhrasePage() {
 
         <FadeUp className="lg:sticky lg:top-24">
           <PhoneMockup
-            src="/screenshots/01.png?v=2"
+            src="/screenshots/01.png?v=3"
             alt="PrivaMesh onboarding screen - account is a seed phrase, no phone number or email required, on iPhone"
             sizes="(max-width: 1024px) 60vw, 360px"
           />

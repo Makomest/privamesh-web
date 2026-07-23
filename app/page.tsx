@@ -7,6 +7,7 @@ import PhoneMockup from '@/components/PhoneMockup'
 import HeroScramble from '@/components/HeroScramble'
 import FadeUp from '@/components/FadeUp'
 import ScreenshotGallery from '@/components/ScreenshotGallery'
+import CompareCell from '@/components/CompareCell'
 import FAQ from '@/components/FAQ'
 import JsonLd from '@/components/JsonLd'
 import { pageMetadata } from '@/lib/seo'
@@ -18,6 +19,8 @@ import {
   METADATA_CARDS,
   LIFECYCLE_STEPS,
   HOME_FAQ,
+  SCREENSHOTS,
+  COMPARE_TEASER,
 } from '@/lib/data'
 
 export const metadata: Metadata = pageMetadata({
@@ -41,7 +44,7 @@ export default function HomePage() {
         <Container>
           <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
             <div className="relative rounded-3xl p-6 backdrop-blur-sm sm:p-8">
-              <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-border bg-white/20 backdrop-blur-sm px-3 py-1 font-mono text-xs text-text-muted">
+              <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-border bg-white/[0.03] backdrop-blur-sm px-3 py-1 font-mono text-xs text-text-muted">
                 <span className="h-1.5 w-1.5 rounded-full bg-accent" /> End-to-end encrypted · No
                 phone number
               </p>
@@ -77,8 +80,8 @@ export default function HomePage() {
                 aria-hidden="true"
               />
               <PhoneMockup
-                src="/screenshots/01.png?v=2"
-                alt="PrivaMesh private messenger open on iPhone showing an end-to-end encrypted chat"
+                src="/screenshots/01.png?v=3"
+                alt="PrivaMesh private messenger onboarding on iPhone - privacy by default, end-to-end encrypted"
                 priority
                 sizes="(max-width: 768px) 78vw, 520px"
                 className="animate-float"
@@ -109,7 +112,7 @@ export default function HomePage() {
             </p>
           </FadeUp>
 
-          <FadeUp className="mt-8 overflow-x-auto rounded-card bg-white/20 backdrop-blur-sm">
+          <FadeUp className="mt-8 overflow-x-auto rounded-card bg-white/[0.03] backdrop-blur-sm">
             <table className="w-full min-w-[640px] border-collapse overflow-hidden rounded-card border border-border font-mono text-sm">
               <thead>
                 <tr className="border-b border-border text-left text-text-secondary">
@@ -160,7 +163,7 @@ export default function HomePage() {
             />
             {LIFECYCLE_STEPS.map((s, i) => (
               <FadeUp key={s.step} delay={i * 80}>
-                <div className="relative h-full rounded-card border border-border bg-white/20 backdrop-blur-sm p-6">
+                <div className="relative h-full rounded-card border border-border bg-white/[0.03] backdrop-blur-sm p-6">
                   <span className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-border-accent bg-bg-base font-mono text-sm text-accent">
                     {s.step}
                   </span>
@@ -197,7 +200,7 @@ export default function HomePage() {
                 <FadeUp key={c.title} delay={i * 80}>
                   <Link
                     href={c.href}
-                    className="group flex h-full flex-col rounded-card border border-border bg-white/20 backdrop-blur-sm p-6 transition-all duration-150 hover:-translate-y-0.5 hover:border-border-hover"
+                    className="group flex h-full flex-col rounded-card border border-border bg-white/[0.03] backdrop-blur-sm p-6 transition-all duration-150 hover:-translate-y-0.5 hover:border-border-hover"
                   >
                     <Icon size={22} strokeWidth={1.5} className="text-accent" aria-hidden="true" />
                     <h3 className="mt-4 text-lg font-semibold text-text-primary">{c.title}</h3>
@@ -260,7 +263,7 @@ export default function HomePage() {
                 },
               ].map((row, i) => (
                 <FadeUp key={row.name} delay={i * 70}>
-                  <div className="flex items-start gap-4 rounded-card border border-border bg-white/20 backdrop-blur-sm p-5">
+                  <div className="flex items-start gap-4 rounded-card border border-border bg-white/[0.03] backdrop-blur-sm p-5">
                     <code className="whitespace-nowrap rounded bg-bg-elevated px-2 py-1 font-mono text-[13px] text-accent">
                       {row.name}
                     </code>
@@ -291,14 +294,79 @@ export default function HomePage() {
             </p>
           </FadeUp>
           <div className="mt-10">
-            <ScreenshotGallery />
+            <ScreenshotGallery shots={SCREENSHOTS} />
           </div>
         </Container>
       </section>
 
       <SectionDivider />
 
-      {/* 7 - FAQ */}
+      {/* 7 - COMPARISON TEASER */}
+      <section className="py-16 sm:py-20" aria-labelledby="compare-heading">
+        <Container>
+          <FadeUp className="w-fit max-w-full rounded-2xl px-6 py-5 backdrop-blur-sm">
+            <h2
+              id="compare-heading"
+              className="text-3xl font-bold tracking-tight text-text-primary sm:text-4xl"
+            >
+              PrivaMesh vs the messengers you know
+            </h2>
+            <p className="mt-4 max-w-2xl text-text-muted">
+              Signal is excellent. Telegram is popular. Neither is serverless. Here is the short
+              version.
+            </p>
+          </FadeUp>
+          <FadeUp className="mt-8 overflow-x-auto rounded-card bg-white/[0.03] backdrop-blur-sm">
+            <table className="w-full min-w-[560px] border-collapse overflow-hidden rounded-card border border-border text-sm">
+              <thead>
+                <tr className="border-b border-border">
+                  <th className="px-5 py-4 text-left font-semibold text-text-secondary">Feature</th>
+                  {COMPARE_TEASER.columns.map((c, i) => (
+                    <th
+                      key={c}
+                      className={`px-5 py-4 text-center font-semibold ${i === 0 ? 'text-accent' : 'text-text-secondary'}`}
+                    >
+                      {c}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {COMPARE_TEASER.rows.map((row) => (
+                  <tr key={row.feature} className="border-b border-border last:border-0">
+                    <td className="px-5 py-4 text-text-primary">{row.feature}</td>
+                    {row.values.map((v, i) => (
+                      <td key={i} className="px-5 py-4 text-center">
+                        <span className="inline-flex justify-center">
+                          <CompareCell state={v} />
+                        </span>
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </FadeUp>
+          <div className="mt-6 flex flex-wrap gap-4 text-sm">
+            <Link href="/compare/privamesh-vs-signal" className="text-accent hover:underline">
+              PrivaMesh vs Signal →
+            </Link>
+            <Link href="/compare/privamesh-vs-telegram" className="text-accent hover:underline">
+              PrivaMesh vs Telegram →
+            </Link>
+            <Link href="/compare/privamesh-vs-session" className="text-accent hover:underline">
+              PrivaMesh vs Session →
+            </Link>
+            <Link href="/best-private-messaging-apps" className="text-accent hover:underline">
+              Best private messaging apps 2026 →
+            </Link>
+          </div>
+        </Container>
+      </section>
+
+      <SectionDivider />
+
+      {/* 8 - FAQ */}
       <section className="py-16 sm:py-20" aria-labelledby="faq-heading">
         <Container>
           <FadeUp className="mx-auto w-fit max-w-full rounded-2xl px-6 py-5 backdrop-blur-sm">
@@ -317,7 +385,7 @@ export default function HomePage() {
 
       {/* 8 - FINAL CTA */}
       <section
-        className="border-t border-border bg-white/20 backdrop-blur-sm py-20"
+        className="border-t border-border bg-white/[0.03] backdrop-blur-sm py-20"
         aria-labelledby="cta-heading"
       >
         <Container className="text-center">

@@ -55,7 +55,7 @@ export default function MetadataPage() {
       <div className="mt-10 grid gap-4 sm:grid-cols-3">
         {CARDS.map((c, i) => (
           <FadeUp key={c.title} delay={i * 70}>
-            <div className="h-full rounded-card border border-border bg-white/20 backdrop-blur-sm p-5">
+            <div className="h-full rounded-card border border-border bg-white/[0.03] backdrop-blur-sm p-5">
               <c.icon size={22} strokeWidth={1.5} className="text-accent" aria-hidden="true" />
               <h2 className="mt-3 text-base font-semibold text-text-primary">{c.title}</h2>
               <p className="mt-1.5 text-sm text-text-muted">{c.text}</p>
@@ -121,8 +121,8 @@ export default function MetadataPage() {
 
         <FadeUp className="lg:sticky lg:top-24">
           <PhoneMockup
-            src="/screenshots/03.png?v=2"
-            alt="PrivaMesh metadata protection screen hiding who, when and how much, on iPhone"
+            src="/screenshots/06.png?v=3"
+            alt="PrivaMesh private social graph hiding who talks to whom, no phone numbers, on iPhone"
             sizes="(max-width: 1024px) 60vw, 360px"
           />
         </FadeUp>

@@ -3,21 +3,22 @@
 @tailwind utilities;
 
 :root {
-  --bg-base: #ffffff;
-  --bg-surface: #f5f8f6;
-  --bg-elevated: #edf2ef;
-  --border-default: #e4e9e6;
-  --border-hover: #cfd8d3;
-  --border-accent: #00A8964d;
-  --text-primary: #0c1a14;
-  --text-secondary: #33413b;
-  --text-muted: #5c6b64;
-  --text-faint: #94a29b;
-  --accent: #00A896;
-  --accent-hover: #008C7E;
-  --accent-glow: #00a8961f;
-  --accent-secondary: #00c0a8;
-  --success: #00A896;
+  color-scheme: dark;
+  --bg-base: #000000;
+  --bg-surface: #0d0d0d;
+  --bg-elevated: #171717;
+  --border-default: #232323;
+  --border-hover: #383838;
+  --border-accent: #ffffff38;
+  --text-primary: #ffffff;
+  --text-secondary: #c4c4c4;
+  --text-muted: #8c8c8c;
+  --text-faint: #5a5a5a;
+  --accent: #ffffff;
+  --accent-hover: #e2e2e2;
+  --accent-glow: #ffffff14;
+  --accent-secondary: #c4c4c4;
+  --success: #ffffff;
   --warning: #c9820a;
   --negative: #e5484d;
 }
@@ -48,7 +49,7 @@ body::before {
 
 /* Dot-grid mesh pattern utility (hero) */
 .mesh-grid {
-  background-image: radial-gradient(circle, #d6ddd9 1px, transparent 1px);
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
   background-size: 26px 26px;
   -webkit-mask-image: radial-gradient(75% 60% at 50% 40%, #000 0%, transparent 78%);
   mask-image: radial-gradient(75% 60% at 50% 40%, #000 0%, transparent 78%);
@@ -116,7 +117,7 @@ body::before {
 .prose-content a {
   color: var(--accent);
   text-decoration: none;
-  border-bottom: 1px solid #00A89640;
+  border-bottom: 1px solid #ffffff40;
   transition: border-color 0.15s ease;
 }
 .prose-content a:hover {
@@ -124,8 +125,8 @@ body::before {
 }
 
 ::selection {
-  background: #00A89626;
-  color: var(--text-primary);
+  background: #ffffff26;
+  color: #000000;
 }
 
 @media (prefers-reduced-motion: reduce) {

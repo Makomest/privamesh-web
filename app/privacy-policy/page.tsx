@@ -43,7 +43,7 @@ export default function PrivacyPolicyPage() {
           <p>
             You do not create an account with us. There is no phone number, no email address, and no
             username tied to your real-world identity. Your identity is a{' '}
-            <strong>recovery phrase</strong> generated on your device that unlocks the encryption
+            <strong>account phrase</strong> generated on your device that unlocks the encryption
             keys stored locally. We never receive it.
           </p>
 
@@ -52,12 +52,12 @@ export default function PrivacyPolicyPage() {
           <ul>
             <li>Your encryption keys, held in the iOS Keychain and protected by Face ID or Touch ID.</li>
             <li>Your contacts, chat history, and app settings.</li>
-            <li>Your recovery phrase, which only you hold.</li>
+            <li>Your account phrase, which only you hold.</li>
           </ul>
           <p>
             None of this is synced to a PrivaMesh server, because there is no PrivaMesh server. If
             you delete the app or lose your device, this data is gone unless you have saved your
-            recovery phrase.
+            account phrase.
           </p>
 
           <h2>4. How messages are delivered</h2>
@@ -74,7 +74,7 @@ export default function PrivacyPolicyPage() {
           <h2>5. No cryptocurrency and no wallet</h2>
           <p>
             PrivaMesh is purely a messenger. Users never buy, hold, or spend any cryptocurrency, and
-            there is no wallet in the app. Your recovery phrase exists only to protect and restore
+            there is no wallet in the app. Your account phrase exists only to protect and restore
             your encryption keys.
           </p>
 

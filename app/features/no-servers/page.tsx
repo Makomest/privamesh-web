@@ -53,7 +53,7 @@ export default function NoServersPage() {
             has a concrete home, and none of them is a company&rsquo;s database:
           </p>
 
-          <div className="not-prose my-6 overflow-x-auto rounded-card bg-white/20 backdrop-blur-sm">
+          <div className="not-prose my-6 overflow-x-auto rounded-card bg-white/[0.03] backdrop-blur-sm">
             <table className="w-full min-w-[560px] border-collapse overflow-hidden rounded-card border border-border font-mono text-sm">
               <thead>
                 <tr className="border-b border-border text-left text-text-secondary">
@@ -111,8 +111,8 @@ export default function NoServersPage() {
 
         <FadeUp className="lg:sticky lg:top-24">
           <PhoneMockup
-            src="/screenshots/02.png?v=2"
-            alt="PrivaMesh encrypted chat screen showing a private conversation with no servers, on iPhone"
+            src="/screenshots/02.png?v=3"
+            alt="PrivaMesh onboarding screen - no central server, nothing to hack or coerce, on iPhone"
             sizes="(max-width: 1024px) 60vw, 360px"
           />
         </FadeUp>

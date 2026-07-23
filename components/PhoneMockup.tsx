@@ -24,7 +24,7 @@ export default function PhoneMockup({
         src={src}
         alt={alt}
         width={1200}
-        height={1500}
+        height={1200}
         sizes={sizes}
         priority={priority}
         className="h-auto w-full"

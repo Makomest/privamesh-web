@@ -35,9 +35,9 @@ export default function NetworkBackground() {
 
     const reduce = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
 
-    // Theme-aware colors (site is light; accent is emerald green)
-    const ACCENT = '0, 168, 150' // #00A896
-    const LINE = '90, 107, 100' // muted gray-green
+    // Theme-aware colors (site is dark; monochrome white network)
+    const ACCENT = '255, 255, 255' // white hubs/packets
+    const LINE = '120, 120, 120' // muted gray links
 
     let width = 0
     let height = 0

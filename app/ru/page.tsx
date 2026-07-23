@@ -108,7 +108,7 @@ export default function HomeRu() {
         <Container>
           <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
             <div className="relative rounded-3xl p-6 backdrop-blur-sm sm:p-8">
-              <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-border bg-white/20 px-3 py-1 font-mono text-xs text-text-muted backdrop-blur-sm">
+              <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-border bg-white/[0.03] px-3 py-1 font-mono text-xs text-text-muted backdrop-blur-sm">
                 <span className="h-1.5 w-1.5 rounded-full bg-accent" /> Работает на Solana
                 mainnet-beta
               </p>
@@ -144,7 +144,7 @@ export default function HomeRu() {
                 aria-hidden="true"
               />
               <PhoneMockup
-                src="/screenshots/01.png?v=2"
+                src="/screenshots/01.png?v=3"
                 alt="Приложение PrivaMesh на iPhone: приватный мессенджер со сквозным шифрованием без серверов"
                 priority
                 sizes="(max-width: 768px) 78vw, 520px"
@@ -176,7 +176,7 @@ export default function HomeRu() {
             </p>
           </FadeUp>
 
-          <FadeUp className="mt-8 overflow-x-auto rounded-card bg-white/20 backdrop-blur-sm">
+          <FadeUp className="mt-8 overflow-x-auto rounded-card bg-white/[0.03] backdrop-blur-sm">
             <table className="w-full min-w-[640px] border-collapse overflow-hidden rounded-card border border-border font-mono text-sm">
               <thead>
                 <tr className="border-b border-border text-left text-text-secondary">
@@ -219,7 +219,7 @@ export default function HomeRu() {
           <div className="mt-10 grid gap-5 md:grid-cols-3">
             {METADATA_RU.map((c, i) => (
               <FadeUp key={c.title} delay={i * 80}>
-                <div className="flex h-full flex-col rounded-card border border-border bg-white/20 p-6 backdrop-blur-sm">
+                <div className="flex h-full flex-col rounded-card border border-border bg-white/[0.03] p-6 backdrop-blur-sm">
                   <c.icon size={22} strokeWidth={1.5} className="text-accent" aria-hidden="true" />
                   <h3 className="mt-4 text-lg font-semibold text-text-primary">{c.title}</h3>
                   <p className="mt-2 flex-1 text-sm leading-relaxed text-text-muted">{c.body}</p>
@@ -266,7 +266,7 @@ export default function HomeRu() {
                 },
               ].map((row, i) => (
                 <FadeUp key={row.name} delay={i * 70}>
-                  <div className="flex items-start gap-4 rounded-card border border-border bg-white/20 p-5 backdrop-blur-sm">
+                  <div className="flex items-start gap-4 rounded-card border border-border bg-white/[0.03] p-5 backdrop-blur-sm">
                     <code className="whitespace-nowrap rounded bg-bg-elevated px-2 py-1 font-mono text-[13px] text-accent">
                       {row.name}
                     </code>
@@ -300,7 +300,7 @@ export default function HomeRu() {
 
       {/* CTA */}
       <section
-        className="border-t border-border bg-white/20 py-20 backdrop-blur-sm"
+        className="border-t border-border bg-white/[0.03] py-20 backdrop-blur-sm"
         aria-labelledby="ru-cta"
       >
         <Container className="text-center">

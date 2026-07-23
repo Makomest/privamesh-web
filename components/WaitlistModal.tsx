@@ -100,7 +100,7 @@ export default function WaitlistModal() {
             <button
               type="button"
               onClick={() => setOpen(false)}
-              className="mt-6 rounded-btn bg-accent px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-accent-hover"
+              className="mt-6 rounded-btn bg-accent px-5 py-2.5 text-sm font-semibold text-black transition-colors hover:bg-accent-hover"
             >
               Done
             </button>
@@ -133,7 +133,7 @@ export default function WaitlistModal() {
               <button
                 type="submit"
                 disabled={state === 'loading'}
-                className="mt-3 flex w-full items-center justify-center gap-2 rounded-btn bg-accent px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent-hover disabled:opacity-60"
+                className="mt-3 flex w-full items-center justify-center gap-2 rounded-btn bg-accent px-5 py-3 text-sm font-semibold text-black transition-colors hover:bg-accent-hover disabled:opacity-60"
               >
                 {state === 'loading' ? (
                   <>

@@ -45,7 +45,7 @@ export default function NewsPage() {
           <article
             key={u.id}
             id={u.id}
-            className="scroll-mt-24 rounded-card border border-border bg-white/20 p-6 backdrop-blur-sm sm:p-8"
+            className="scroll-mt-24 rounded-card border border-border bg-white/[0.03] p-6 backdrop-blur-sm sm:p-8"
           >
             <div className="flex flex-wrap items-center gap-3 font-mono text-xs text-text-muted">
               <span className="rounded-full border border-border-accent px-2.5 py-0.5 text-accent">

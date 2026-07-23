@@ -28,7 +28,7 @@ export function RelatedLinks({
           <FadeUp key={l.href} delay={i * 60}>
             <Link
               href={l.href}
-              className="group flex h-full flex-col rounded-card border border-border bg-white/20 backdrop-blur-sm p-5 transition-all duration-150 hover:-translate-y-0.5 hover:border-border-hover"
+              className="group flex h-full flex-col rounded-card border border-border bg-white/[0.03] backdrop-blur-sm p-5 transition-all duration-150 hover:-translate-y-0.5 hover:border-border-hover"
             >
               <span className="flex items-center gap-1.5 text-sm font-semibold text-text-primary">
                 {l.label}

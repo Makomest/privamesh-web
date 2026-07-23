@@ -25,7 +25,7 @@ export const COMPARISONS: Record<string, Comparison> = {
       'An honest PrivaMesh vs Signal comparison. Signal is the gold standard, but runs servers and needs a phone number. See the serverless difference.',
     lead: 'Signal set the standard for encrypted messaging. PrivaMesh keeps the cryptography and removes the two things Signal still keeps: servers and your phone number.',
     screenshot: {
-      src: '/screenshots/02.png?v=2',
+      src: '/screenshots/02.png?v=3',
       alt: 'PrivaMesh serverless architecture screen compared with Signal on iPhone',
     },
     rows: [
@@ -71,7 +71,7 @@ export const COMPARISONS: Record<string, Comparison> = {
       'An honest PrivaMesh vs Telegram comparison. Telegram is popular and feature-rich, but chats aren’t E2E by default and it runs servers. See the difference.',
     lead: 'Telegram is fast, fun and huge. But its cloud chats are not end-to-end encrypted, and everything runs on Telegram’s servers. PrivaMesh is the opposite trade.',
     screenshot: {
-      src: '/screenshots/01.png?v=2',
+      src: '/screenshots/01.png?v=3',
       alt: 'PrivaMesh end-to-end encrypted chat screen compared with Telegram on iPhone',
     },
     rows: [
@@ -117,7 +117,7 @@ export const COMPARISONS: Record<string, Comparison> = {
       'PrivaMesh vs Session: both drop phone numbers and decentralize, but differently. See onion routing vs on-chain messaging, compared honestly.',
     lead: 'Session and PrivaMesh share a goal - private messaging without a phone number or a central company. They reach it differently: onion routing versus the Solana blockchain.',
     screenshot: {
-      src: '/screenshots/03.png?v=2',
+      src: '/screenshots/03.png?v=3',
       alt: 'PrivaMesh add contact by nickname screen compared with Session on iPhone',
     },
     rows: [

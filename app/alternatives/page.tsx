@@ -39,7 +39,7 @@ export default function AlternativesIndex() {
           <FadeUp key={a.slug} delay={(i % 2) * 60}>
             <Link
               href={`/alternatives/${a.slug}`}
-              className="group flex h-full flex-col rounded-card border border-border bg-white/20 p-6 backdrop-blur-sm transition-all duration-150 hover:-translate-y-0.5 hover:border-border-hover"
+              className="group flex h-full flex-col rounded-card border border-border bg-white/[0.03] p-6 backdrop-blur-sm transition-all duration-150 hover:-translate-y-0.5 hover:border-border-hover"
             >
               <h2 className="text-lg font-semibold text-text-primary">
                 Private {a.name} alternative

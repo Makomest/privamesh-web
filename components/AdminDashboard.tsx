@@ -64,7 +64,7 @@ export default function AdminDashboard() {
     router.refresh()
   }
 
-  const card = 'rounded-card border border-border bg-white/20 p-5 backdrop-blur-sm'
+  const card = 'rounded-card border border-border bg-white/[0.03] p-5 backdrop-blur-sm'
 
   return (
     <div>
@@ -145,7 +145,7 @@ export default function AdminDashboard() {
           <button
             type="submit"
             disabled={posting}
-            className="mt-3 inline-flex items-center gap-2 rounded-btn bg-accent px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-accent-hover disabled:opacity-60"
+            className="mt-3 inline-flex items-center gap-2 rounded-btn bg-accent px-5 py-2.5 text-sm font-semibold text-black transition-colors hover:bg-accent-hover disabled:opacity-60"
           >
             {posting ? <Loader2 size={16} className="animate-spin" /> : 'Publish'}
           </button>

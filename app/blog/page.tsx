@@ -40,7 +40,7 @@ export default function BlogIndex() {
             <Link
               key={t.slug}
               href={`/blog/tag/${t.slug}`}
-              className="rounded-full border border-border bg-white/20 px-3 py-1 font-mono text-[11px] text-text-muted backdrop-blur-sm transition-colors hover:border-border-hover hover:text-accent"
+              className="rounded-full border border-border bg-white/[0.03] px-3 py-1 font-mono text-[11px] text-text-muted backdrop-blur-sm transition-colors hover:border-border-hover hover:text-accent"
             >
               {t.tag} ({t.count})
             </Link>

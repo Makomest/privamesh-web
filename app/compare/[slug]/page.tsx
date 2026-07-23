@@ -58,7 +58,7 @@ export default function ComparePage({ params }: { params: { slug: string } }) {
       </PageHeader>
 
       {/* Comparison table */}
-      <FadeUp className="mt-12 overflow-x-auto rounded-card bg-white/20 backdrop-blur-sm">
+      <FadeUp className="mt-12 overflow-x-auto rounded-card bg-white/[0.03] backdrop-blur-sm">
         <table className="w-full min-w-[640px] border-collapse overflow-hidden rounded-card border border-border text-sm">
           <caption className="sr-only">Feature comparison of PrivaMesh and {c.competitor}</caption>
           <thead>

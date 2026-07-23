@@ -26,7 +26,7 @@ export const NO_SERVERS_TABLE: { what: string; where: string; how: string }[] = 
   },
   {
     what: 'Your identity',
-    where: 'A recovery phrase you hold',
+    where: 'An account phrase you hold',
     how: 'Encryption keys on your device - no phone, no email',
   },
   {
@@ -105,57 +105,57 @@ export const HOME_FEATURES = [
 
 export const SCREENSHOTS = [
   {
-    src: '/screenshots/01.png?v=2',
-    title: 'Private by default',
-    alt: 'PrivaMesh onboarding screen - private by default, end-to-end encrypted with a new key for every message on iPhone',
+    src: '/screenshots/01.png?v=3',
+    title: 'Privacy by default',
+    alt: 'PrivaMesh onboarding screen - privacy by default, Double Ratchet key per message and one-time addresses, on iPhone',
   },
   {
-    src: '/screenshots/02.png?v=2',
+    src: '/screenshots/04.png?v=3',
     title: 'End-to-end encrypted chat',
-    alt: 'PrivaMesh encrypted chat screen - a private conversation with no servers stored on the Solana blockchain',
+    alt: 'PrivaMesh encrypted chat screen showing a private conversation, end-to-end encrypted, on iPhone',
   },
   {
-    src: '/screenshots/03.png?v=2',
-    title: 'No phone, just a nickname',
-    alt: 'PrivaMesh add contact screen - find a user by nickname or Solana address, no phone number required',
+    src: '/screenshots/05.png?v=3',
+    title: 'Your chats',
+    alt: 'PrivaMesh chat list showing conversations with names and nicknames, no phone numbers, on iPhone',
   },
   {
-    src: '/screenshots/04.png?v=2',
-    title: 'On-chain nicknames & NFT avatars',
-    alt: 'PrivaMesh market screen for buying on-chain NFT avatars and nicknames with SOL',
+    src: '/screenshots/02.png?v=3',
+    title: 'No servers, seriously',
+    alt: 'PrivaMesh onboarding screen explaining there is no central server - nothing to hack or coerce, on iPhone',
   },
   {
-    src: '/screenshots/05.png?v=2',
-    title: 'Every message on-chain',
-    alt: 'PrivaMesh message info screen showing a message stored on Solana, viewable in the Solana Explorer',
+    src: '/screenshots/03.png?v=3',
+    title: 'On-device security',
+    alt: 'PrivaMesh onboarding screen - keys behind Face ID, disappearing messages and signed contacts, on iPhone',
   },
   {
-    src: '/screenshots/06.png?v=2',
-    title: 'Send SOL in chat',
-    alt: 'PrivaMesh in-chat SOL transfer screen sending a Solana payment inside an encrypted conversation',
+    src: '/screenshots/06.png?v=3',
+    title: 'A private social graph',
+    alt: 'PrivaMesh anonymous contact graph visualising your connections privately, no phone numbers, on iPhone',
   },
 ]
 
 /**
  * Clean screenshot subset for the App-Store-review-facing landing page. Shows
- * only the messenger surface (onboarding, encrypted chat, add-by-nickname) -
- * no crypto/market screens.
+ * only the messenger surface (onboarding, encrypted chat, chat list) - no
+ * crypto/market screens.
  */
 export const HOME_SCREENSHOTS = [
   {
-    src: '/screenshots/01.png?v=2',
-    title: 'Private by default',
-    alt: 'PrivaMesh onboarding screen, private by default and end-to-end encrypted, on iPhone',
+    src: '/screenshots/01.png?v=3',
+    title: 'Privacy by default',
+    alt: 'PrivaMesh onboarding screen, privacy by default and end-to-end encrypted, on iPhone',
   },
   {
-    src: '/screenshots/02.png?v=2',
+    src: '/screenshots/04.png?v=3',
     title: 'End-to-end encrypted chat',
     alt: 'PrivaMesh encrypted chat screen showing a private conversation on iPhone',
   },
   {
-    src: '/screenshots/03.png?v=2',
-    title: 'No phone, just a nickname',
-    alt: 'PrivaMesh add-contact screen, find a user by nickname with no phone number, on iPhone',
+    src: '/screenshots/05.png?v=3',
+    title: 'Your chats',
+    alt: 'PrivaMesh chat list with names and nicknames and no phone numbers, on iPhone',
   },
 ]
 
@@ -170,11 +170,7 @@ export const HOME_FAQ: { q: string; a: string }[] = [
   },
   {
     q: 'Can I use PrivaMesh without a phone number or email?',
-    a: 'Yes. There is no phone number and no email. Your account is a recovery phrase that maps to encryption keys stored in the iOS Keychain - device-only and protected by Face ID or Touch ID.',
-  },
-  {
-    q: 'Does PrivaMesh involve any cryptocurrency or a wallet?',
-    a: 'No. PrivaMesh is purely a private messenger. Users never buy, hold, or spend any cryptocurrency, and there is no wallet in the app. Your account is simply a recovery phrase that unlocks the encryption keys on your device.',
+    a: 'Yes. There is no phone number and no email. Your account is an account phrase that maps to encryption keys stored in the iOS Keychain - device-only and protected by Face ID or Touch ID.',
   },
   {
     q: 'What metadata does PrivaMesh collect?',
@@ -182,7 +178,7 @@ export const HOME_FAQ: { q: string; a: string }[] = [
   },
   {
     q: 'What happens if I lose my phone?',
-    a: 'Restore your recovery phrase on a new device to recover your identity. By design your chat history is not recovered - forward secrecy means old message keys are deleted, so nobody, including you, can decrypt past messages from the phrase alone.',
+    a: 'Restore your account phrase on a new device to recover your identity. By design your chat history is not recovered - forward secrecy means old message keys are deleted, so nobody, including you, can decrypt past messages from the phrase alone.',
   },
 ]
 
@@ -212,7 +208,7 @@ export const COMPARE_TEASER = {
     { feature: 'No servers', values: ['yes', 'no', 'no'] as CellState[] },
     { feature: 'No phone number', values: ['yes', 'no', 'no'] as CellState[] },
     { feature: 'Metadata protection', values: ['yes', 'partial', 'no'] as CellState[] },
-    { feature: 'Built-in payments', values: ['yes', 'no', 'no'] as CellState[] },
+    { feature: 'End-to-end encrypted', values: ['yes', 'yes', 'partial'] as CellState[] },
     { feature: 'Open source', values: ['yes', 'yes', 'partial'] as CellState[] },
   ],
 }

@@ -29,18 +29,16 @@ export const SITE = {
 
 export type NavLink = { href: string; label: string }
 
-/**
- * Clean, App-Store-review-facing navigation. Presents PrivaMesh purely as a
- * private encrypted messenger. Intentionally links to NO crypto/SEO pages.
- */
-export const NAV_FEATURES: NavLink[] = [
+export const NAV_PRODUCT: NavLink[] = [
   { href: '/features/no-servers', label: 'No Servers' },
-  { href: '/features/e2e-encryption', label: 'End-to-End Encryption' },
+  { href: '/features/e2e-encryption', label: 'E2E Encryption' },
   { href: '/features/metadata-protection', label: 'Metadata Protection' },
+  { href: '/features/seed-phrase-accounts', label: 'Account Phrase' },
+  { href: '/features/sol-transfers', label: 'In-Chat Transfers' },
 ]
 
-export const NAV_MAIN: NavLink[] = [
-  { href: '/privacy-policy', label: 'Privacy Policy' },
-  { href: '/terms', label: 'Terms' },
-  { href: `mailto:${SITE.supportEmail}`, label: 'Support' },
+export const NAV_COMPARE: NavLink[] = [
+  { href: '/compare/privamesh-vs-signal', label: 'vs Signal' },
+  { href: '/compare/privamesh-vs-telegram', label: 'vs Telegram' },
+  { href: '/compare/privamesh-vs-session', label: 'vs Session' },
 ]

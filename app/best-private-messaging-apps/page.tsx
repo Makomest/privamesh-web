@@ -134,7 +134,7 @@ export default function BestPrivateMessagingApps() {
       </PageHeader>
 
       {/* Comparison table */}
-      <div className="mt-12 overflow-x-auto rounded-card bg-white/20 backdrop-blur-sm">
+      <div className="mt-12 overflow-x-auto rounded-card bg-white/[0.03] backdrop-blur-sm">
         <table className="w-full min-w-[640px] border-collapse overflow-hidden rounded-card border border-border text-sm">
           <thead>
             <tr className="border-b border-border">
@@ -218,7 +218,7 @@ export default function BestPrivateMessagingApps() {
             {RANKED.map((r) => (
               <div
                 key={r.name}
-                className="rounded-card border border-border bg-white/20 p-6 backdrop-blur-sm"
+                className="rounded-card border border-border bg-white/[0.03] p-6 backdrop-blur-sm"
               >
                 <div className="flex items-baseline gap-3">
                   <span className="font-mono text-sm text-accent">#{r.n}</span>
@@ -252,7 +252,7 @@ export default function BestPrivateMessagingApps() {
         </div>
 
         <aside className="lg:sticky lg:top-24">
-          <div className="rounded-card border border-border-accent bg-white/20 p-6 backdrop-blur-sm">
+          <div className="rounded-card border border-border-accent bg-white/[0.03] p-6 backdrop-blur-sm">
             <p className="font-mono text-xs uppercase tracking-wider text-accent">Our #1 pick</p>
             <h2 className="mt-2 text-lg font-bold text-text-primary">PrivaMesh</h2>
             <p className="mt-2 text-sm leading-relaxed text-text-muted">
