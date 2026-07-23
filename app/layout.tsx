@@ -38,10 +38,8 @@ export const metadata: Metadata = {
     follow: true,
     googleBot: { index: true, follow: true, 'max-image-preview': 'large' },
   },
-  icons: {
-    icon: '/icon.png',
-    apple: '/icon.png',
-  },
+  // Favicon + apple-touch icon come from app/icon.png and app/apple-icon.png
+  // (Next file convention -> content-hashed URLs that bust browser cache).
   alternates: {
     canonical: SITE.domain,
     types: { 'application/rss+xml': `${SITE.domain}/rss.xml` },
