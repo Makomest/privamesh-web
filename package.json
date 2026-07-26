@@ -8,7 +8,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "indexnow": "node scripts/indexnow.mjs"
+    "indexnow": "node scripts/indexnow.mjs",
+    "bing": "node scripts/bing-report.mjs"
   },
   "dependencies": {
     "@mdx-js/loader": "3.0.1",
