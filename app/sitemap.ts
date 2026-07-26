@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next'
 import { SITE } from '@/lib/site'
-import { getPosts, getAllTags, hasTranslation, PER_PAGE } from '@/lib/posts'
+import { getPosts, hasTranslation, PER_PAGE } from '@/lib/posts'
 import { GLOSSARY } from '@/lib/glossary'
 import { ALTERNATIVES } from '@/lib/alternatives'
 import { GUIDES } from '@/lib/guides'
@@ -69,8 +69,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     entry(`/ru/blog/${post.slug}`, 0.6, 'yearly', new Date(post.updated ?? post.date)),
   )
 
-  const tags = getAllTags('en').map((t) => entry(`/blog/tag/${t.slug}`, 0.5, 'weekly'))
-  const ruTags = getAllTags('ru').map((t) => entry(`/ru/blog/tag/${t.slug}`, 0.4, 'weekly'))
+  // Tag archives are intentionally absent: they carry robots noindex,follow
+  // (thin, overlapping listings), so listing them here would contradict that.
   const glossary = GLOSSARY.map((t) => entry(`/glossary/${t.slug}`, 0.6, 'monthly'))
   const alternatives = ALTERNATIVES.map((a) => entry(`/alternatives/${a.slug}`, 0.7, 'monthly'))
   const guides = GUIDES.map((g) => entry(`/guides/${g.slug}`, 0.7, 'monthly'))
@@ -85,8 +85,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...ruLanding,
     ...posts,
     ...ruPosts,
-    ...tags,
-    ...ruTags,
     ...glossary,
     ...alternatives,
     ...guides,
