@@ -13,7 +13,7 @@ import { itemListLd, faqPageLd } from '@/lib/jsonld'
 export const metadata: Metadata = pageMetadata({
   title: 'Best Private Messaging Apps 2026 (Honestly Ranked)',
   description:
-    'The best private messaging apps of 2026, ranked honestly: PrivaMesh, Signal, Session, Threema, SimpleX and more — by encryption, metadata, phone number and servers.',
+    'The best private messaging apps of 2026, ranked honestly by encryption, metadata, phone number and servers: PrivaMesh, Signal, Session, Threema, SimpleX.',
   path: '/best-private-messaging-apps',
 })
 

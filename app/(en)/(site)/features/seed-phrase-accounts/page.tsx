@@ -6,9 +6,13 @@ import PhoneMockup from '@/components/PhoneMockup'
 import { Prose, RelatedLinks } from '@/components/Prose'
 import FadeUp from '@/components/FadeUp'
 import { Button } from '@/components/Button'
+import JsonLd from '@/components/JsonLd'
 import PageFaq from '@/components/PageFaq'
+import References from '@/components/References'
 import { pageMetadata } from '@/lib/seo'
 import { FEATURE_FAQ } from '@/lib/faq'
+import { softwareApplicationLd } from '@/lib/jsonld'
+import { FEATURE_REFS } from '@/lib/references'
 import { SITE } from '@/lib/site'
 import AppStoreButton from '@/components/AppStoreButton'
 
@@ -22,6 +26,7 @@ export const metadata: Metadata = pageMetadata({
 export default function SeedPhrasePage() {
   return (
     <Container>
+      <JsonLd data={softwareApplicationLd} />
       <PageHeader
         eyebrow="No phone, no email"
         trail={[
@@ -110,6 +115,8 @@ export default function SeedPhrasePage() {
       </div>
 
       <PageFaq items={FEATURE_FAQ['seed-phrase-accounts']} />
+
+      <References items={FEATURE_REFS['seed-phrase-accounts']} />
 
       <RelatedLinks
         links={[

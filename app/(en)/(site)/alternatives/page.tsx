@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import { Container } from '@/components/Container'
 import PageHeader from '@/components/PageHeader'
+import { Prose } from '@/components/Prose'
 import FadeUp from '@/components/FadeUp'
 import JsonLd from '@/components/JsonLd'
 import { pageMetadata } from '@/lib/seo'
@@ -25,6 +26,32 @@ export default function AlternativesIndex() {
           ALTERNATIVES.map((a) => `${a.name} alternative`),
         )}
       />
+      <div className="mt-12">
+        <Prose>
+          <h2>How to read these comparisons</h2>
+          <p>
+            Every page here follows the same shape: what the other app genuinely gets right, the
+            specific gap PrivaMesh closes, a side-by-side table, and an honest list of reasons to
+            stay where you are. That last section matters most. For a lot of people the right
+            answer really is to keep using Signal or WhatsApp, and a comparison that never says so
+            is marketing rather than information.
+          </p>
+          <p>
+            The apps below fall into three groups. Mainstream encrypted messengers - Signal,
+            WhatsApp, iMessage - protect message content well but tie your account to a phone
+            number or an Apple ID, and route traffic through servers that see connection metadata.
+            Privacy-first alternatives - Threema, Session, SimpleX - already solve the identifier
+            problem and differ mainly in what carries the messages. Telegram is its own case: an
+            excellent product whose default chats are not end-to-end encrypted at all.
+          </p>
+          <p>
+            PrivaMesh sits at one end of that spectrum. It removes the operator entirely rather
+            than choosing a trustworthy one, which buys metadata resistance and costs reach,
+            platform coverage and a fraction of a cent per message. Whether that trade is worth
+            making depends on what you are actually defending against.
+          </p>
+        </Prose>
+      </div>
       <PageHeader
         eyebrow="Alternatives"
         trail={[

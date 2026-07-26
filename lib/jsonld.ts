@@ -195,3 +195,20 @@ export function videoObjectLd({
 export function jsonLdScript(data: unknown) {
   return { __html: JSON.stringify(data) }
 }
+
+/** The glossary as a single vocabulary, so the 8 DefinedTerms hang off one set. */
+export function definedTermSetLd(terms: { slug: string; term: string; short: string }[]) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'DefinedTermSet',
+    '@id': `${SITE.domain}/glossary#set`,
+    name: 'PrivaMesh private messaging glossary',
+    url: `${SITE.domain}/glossary`,
+    hasDefinedTerm: terms.map((t) => ({
+      '@type': 'DefinedTerm',
+      name: t.term,
+      description: t.short,
+      url: `${SITE.domain}/glossary/${t.slug}`,
+    })),
+  }
+}

@@ -24,7 +24,7 @@ const config: Config = {
           primary: '#FFFFFF',
           secondary: '#C4C4C4',
           muted: '#8C8C8C',
-          faint: '#5A5A5A',
+          faint: '#767676',
         },
         accent: {
           DEFAULT: '#FFFFFF',

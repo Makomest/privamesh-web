@@ -3,10 +3,11 @@ import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import { Container } from '@/components/Container'
 import PageHeader from '@/components/PageHeader'
+import { Prose } from '@/components/Prose'
 import FadeUp from '@/components/FadeUp'
 import JsonLd from '@/components/JsonLd'
 import { pageMetadata } from '@/lib/seo'
-import { itemListLd } from '@/lib/jsonld'
+import { itemListLd, definedTermSetLd } from '@/lib/jsonld'
 import { GLOSSARY } from '@/lib/glossary'
 
 export const metadata: Metadata = pageMetadata({
@@ -19,12 +20,38 @@ export const metadata: Metadata = pageMetadata({
 export default function GlossaryIndex() {
   return (
     <Container>
+      <JsonLd data={definedTermSetLd(GLOSSARY)} />
       <JsonLd
         data={itemListLd(
           'Private messaging glossary',
           GLOSSARY.map((t) => t.term),
         )}
       />
+      <div className="mt-12">
+        <Prose>
+          <h2>Why these terms matter</h2>
+          <p>
+            Privacy marketing leans on vocabulary that sounds precise and often is not.
+            &ldquo;End-to-end encrypted&rdquo; means something exact, and an app can satisfy it
+            while still recording who you talked to and when. &ldquo;Serverless&rdquo; means the
+            opposite of what a cloud engineer means by it. &ldquo;Anonymous&rdquo; is used for
+            apps that are merely pseudonymous.
+          </p>
+          <p>
+            The definitions below are the ones PrivaMesh is built on, written in plain English
+            with the trade-offs left in. Each links to the primary specification where one exists,
+            so you can check the claim at the source rather than taking a marketing page&rsquo;s
+            word for it - including ours.
+          </p>
+          <p>
+            If you read only two, make them{' '}
+            <Link href="/glossary/metadata">metadata</Link> and{' '}
+            <Link href="/glossary/forward-secrecy">forward secrecy</Link>. Between them they
+            explain most of the distance between an app that encrypts your messages and an app
+            that actually protects your privacy.
+          </p>
+        </Prose>
+      </div>
       <PageHeader
         eyebrow="Glossary"
         trail={[

@@ -26,6 +26,11 @@ export default function GuidePage({ params }: { params: { slug: string } }) {
   const g = getGuide(params.slug)
   if (!g) notFound()
 
+  // Rotate through the list so every guide is linked from its peers, not just
+  // from the index. Without this the tail of the array has one inbound link.
+  const gi = GUIDES.findIndex((x) => x.slug === g.slug)
+  const moreGuides = Array.from({ length: 3 }, (_, n) => GUIDES[(gi + n + 1) % GUIDES.length])
+
   return (
     <Container>
       <JsonLd data={faqPageLd(g.faq)} />
@@ -61,6 +66,15 @@ export default function GuidePage({ params }: { params: { slug: string } }) {
         </h2>
         <FAQ items={g.faq} />
       </section>
+
+      <RelatedLinks
+        title="More guides"
+        links={moreGuides.map((o) => ({
+          href: `/guides/${o.slug}`,
+          label: o.h1,
+          blurb: o.description,
+        }))}
+      />
 
       <RelatedLinks links={g.related} />
     </Container>

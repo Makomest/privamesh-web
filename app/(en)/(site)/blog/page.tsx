@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Container } from '@/components/Container'
 import PageHeader from '@/components/PageHeader'
+import { Prose } from '@/components/Prose'
 import PostList from '@/components/PostList'
 import { pageMetadata } from '@/lib/seo'
 import { getPosts, getAllTags, PER_PAGE } from '@/lib/posts'
@@ -31,6 +32,26 @@ export default function BlogIndex() {
         title="Notes on private messaging"
         lead="Plain-English explainers on encryption, metadata and why a truly private messenger can’t run on servers."
       />
+      <div className="mt-12">
+        <Prose>
+          <h2>What we write about</h2>
+          <p>
+            These are explainers, not announcements. The recurring argument is that encrypting
+            message content is the easy half of private messaging, and the half every app has
+            already solved. The hard half is metadata - who contacted whom, when, and how often -
+            which leaks through the infrastructure rather than through the ciphertext.
+          </p>
+          <p>
+            So the posts tend to work through one mechanism at a time: how the Double Ratchet
+            derives a fresh key per message, why a server in the path sees things its operator
+            cannot un-see, what a public blockchain does and does not reveal. Where a competitor
+            does something better, we say so - a comparison that only flatters the author is not
+            worth reading. Shorter definitions live in the{' '}
+            <Link href="/glossary">glossary</Link>, and the practical walkthroughs are in the{' '}
+            <Link href="/guides">guides</Link>.
+          </p>
+        </Prose>
+      </div>
 
       {tags.length > 0 && (
         <div className="mt-8 flex flex-wrap items-center gap-2">

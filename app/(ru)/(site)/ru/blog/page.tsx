@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Container } from '@/components/Container'
 import PageHeader from '@/components/PageHeader'
+import { Prose } from '@/components/Prose'
 import PostList from '@/components/PostList'
 import { pageMetadata } from '@/lib/seo'
 import { getPosts, getAllTags, PER_PAGE } from '@/lib/posts'
@@ -31,6 +32,24 @@ export default function RuBlogIndex() {
         title="Заметки о приватных сообщениях"
         lead="Понятным языком: шифрование, метаданные и почему по-настоящему приватный мессенджер не может работать на серверах."
       />
+      <div className="mt-12">
+        <Prose>
+          <h2>О чём мы пишем</h2>
+          <p>
+            Это разборы, а не анонсы. Главная мысль повторяется из статьи в статью: шифрование
+            содержимого - простая половина задачи, и её уже решили все мессенджеры. Сложная
+            половина - метаданные: кто с кем связался, когда и как часто. Они утекают через
+            инфраструктуру, а не через шифротекст.
+          </p>
+          <p>
+            Поэтому посты разбирают по одному механизму за раз: как Double Ratchet выводит новый
+            ключ для каждого сообщения, почему сервер в цепочке видит то, что уже не может
+            «развидеть», что публичный блокчейн раскрывает, а что нет. Если конкурент делает
+            что-то лучше, мы так и пишем - сравнение, которое льстит только автору, читать
+            незачем.
+          </p>
+        </Prose>
+      </div>
 
       {tags.length > 0 && (
         <div className="mt-8 flex flex-wrap items-center gap-2">

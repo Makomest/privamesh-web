@@ -8,12 +8,20 @@ import { getUpdates, typeLabel } from '@/lib/updates'
 
 export const dynamic = 'force-dynamic'
 
-export const metadata: Metadata = pageMetadata({
-  title: 'PrivaMesh News & Updates',
-  description:
-    'The latest PrivaMesh news, product updates and release notes — a serverless, end-to-end encrypted messenger on Solana.',
-  path: '/news',
-})
+// Keep an empty news page out of the index rather than shipping a 26-word
+// shell. It flips back to indexable on its own once the first update lands.
+export function generateMetadata(): Metadata {
+  const hasUpdates = getUpdates().length > 0
+  return {
+    ...pageMetadata({
+      title: 'PrivaMesh News & Updates',
+      description:
+        'The latest PrivaMesh news, product updates and release notes — a serverless, end-to-end encrypted messenger on Solana.',
+      path: '/news',
+    }),
+    ...(hasUpdates ? {} : { robots: { index: false, follow: true } }),
+  }
+}
 
 function fmt(d: string) {
   return new Date(d).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })

@@ -8,7 +8,7 @@ import { SITE } from '@/lib/site'
 export const metadata: Metadata = pageMetadata({
   title: 'Terms of Use',
   description:
-    'PrivaMesh Terms of Use. Acceptable use, our zero-tolerance policy for objectionable content, block and report tools, and the terms of the PrivaMesh+ subscription.',
+    'PrivaMesh Terms of Use: acceptable use, zero tolerance for objectionable content, block and report tools, and the PrivaMesh+ subscription terms.',
   path: '/terms',
 })
 

@@ -64,6 +64,63 @@ export default function AboutPage() {
             . Open source matters for a security tool: you don&rsquo;t have to take our word for how
             it works - you can read the code and the protocol yourself.
           </p>
+          <p>
+            We publish under a project name rather than personal ones. That is a deliberate choice
+            for a privacy tool and it is also a fair thing to hold against us: you cannot check our
+            CVs. What you can check is everything that actually determines whether the app is
+            private - the source, the protocol, the on-chain behaviour, and the cryptographic
+            primitives, all of which are public and none of which depend on who we are. We would
+            rather be judged on that than on a photograph and a job title.
+          </p>
+
+          <h2>What we have not done yet</h2>
+          <p>
+            PrivaMesh has not been through an independent security audit. It is pre-launch, iOS
+            only, and has no published App Store rating - if you see a rating attributed to us,
+            it did not come from us. We would rather state all of that plainly than let a
+            confident marketing page imply otherwise.
+          </p>
+          <p>
+            An audit is the single most valuable thing that could be added to this page, and until
+            it exists the honest position is that our claims are verifiable in principle - the code
+            and protocol are public - but have not been verified by a qualified third party. Treat
+            them accordingly.
+          </p>
+
+          <h2>The cryptography we build on</h2>
+          <p>
+            PrivaMesh does not invent cryptography. It composes well-studied primitives that have
+            been public and analysed for years:{' '}
+            <a
+              href="https://signal.org/docs/specifications/x3dh/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              X3DH
+            </a>{' '}
+            for key agreement, the{' '}
+            <a
+              href="https://signal.org/docs/specifications/doubleratchet/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Double Ratchet
+            </a>{' '}
+            for per-message forward secrecy,{' '}
+            <a href="https://csrc.nist.gov/pubs/sp/800/38/d/final" target="_blank" rel="noopener noreferrer">
+              AES-256-GCM
+            </a>{' '}
+            for authenticated encryption, and{' '}
+            <a
+              href="https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              BIP-39
+            </a>{' '}
+            for seed phrases. Novel cryptography in a shipping messenger is a warning sign, not a
+            feature.
+          </p>
 
           <h2>What we stand for</h2>
           <ul>

@@ -6,6 +6,8 @@ import { Prose, RelatedLinks } from '@/components/Prose'
 import JsonLd from '@/components/JsonLd'
 import { pageMetadata } from '@/lib/seo'
 import { faqPageLd } from '@/lib/jsonld'
+import References from '@/components/References'
+import { TERM_REFS } from '@/lib/references'
 import { SITE } from '@/lib/site'
 import { GLOSSARY, getTerm } from '@/lib/glossary'
 
@@ -29,12 +31,16 @@ export default function TermPage({ params }: { params: { term: string } }) {
   const t = getTerm(params.term)
   if (!t) notFound()
 
+  // Same rotation as the guides: keeps every term reachable from its peers.
+  const ti = GLOSSARY.findIndex((x) => x.slug === t.slug)
+  const moreTerms = Array.from({ length: 3 }, (_, n) => GLOSSARY[(ti + n + 1) % GLOSSARY.length])
+
   const definedTerm = {
     '@context': 'https://schema.org',
     '@type': 'DefinedTerm',
     name: t.term,
     description: t.short,
-    inDefinedTermSet: `${SITE.domain}/glossary`,
+    inDefinedTermSet: { '@id': `${SITE.domain}/glossary#set` },
     url: `${SITE.domain}/glossary/${t.slug}`,
   }
 
@@ -61,6 +67,17 @@ export default function TermPage({ params }: { params: { term: string } }) {
           ))}
         </Prose>
       </div>
+      <References items={TERM_REFS[t.slug]} />
+
+      <RelatedLinks
+        title="More glossary terms"
+        links={moreTerms.map((o) => ({
+          href: `/glossary/${o.slug}`,
+          label: o.term,
+          blurb: o.short,
+        }))}
+      />
+
       {t.related && t.related.length > 0 && (
         <RelatedLinks
           links={t.related.map((r) => ({
