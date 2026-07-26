@@ -1,6 +1,11 @@
 import type { Metadata } from 'next'
 import { SITE } from './site'
 
+/** Roughly where Google truncates a title in the SERP. */
+const TITLE_MAX_LENGTH = 60
+/** Length of the " · PrivaMesh" suffix the root layout's title template adds. */
+const TITLE_SUFFIX_LENGTH = 12
+
 type PageSeo = {
   title: string
   description: string
@@ -32,8 +37,14 @@ export function pageMetadata({
   const abs = (p: string) => `${SITE.domain}${p === '/' ? '' : p}`
   void ogImage // reserved for future per-page override; images now via file convention
 
+  // The root layout appends " · PrivaMesh" (12 chars). On pages whose own title
+  // is already long that pushes the tag past ~60 chars and Google truncates it,
+  // so those opt out of the template rather than lose the tail of the title.
+  const titled =
+    title.length + TITLE_SUFFIX_LENGTH > TITLE_MAX_LENGTH ? { absolute: title } : title
+
   return {
-    title,
+    title: titled,
     description,
     alternates: {
       canonical: url,

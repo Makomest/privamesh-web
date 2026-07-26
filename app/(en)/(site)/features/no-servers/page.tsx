@@ -5,7 +5,9 @@ import PhoneMockup from '@/components/PhoneMockup'
 import { Prose, RelatedLinks } from '@/components/Prose'
 import FadeUp from '@/components/FadeUp'
 import { Button } from '@/components/Button'
+import PageFaq from '@/components/PageFaq'
 import { pageMetadata } from '@/lib/seo'
+import { FEATURE_FAQ } from '@/lib/faq'
 import { NO_SERVERS_TABLE } from '@/lib/data'
 import AppStoreButton from '@/components/AppStoreButton'
 
@@ -117,6 +119,8 @@ export default function NoServersPage() {
           />
         </FadeUp>
       </div>
+
+      <PageFaq items={FEATURE_FAQ['no-servers']} />
 
       <RelatedLinks
         links={[

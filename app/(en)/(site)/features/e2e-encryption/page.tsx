@@ -6,7 +6,9 @@ import PhoneMockup from '@/components/PhoneMockup'
 import { Prose, RelatedLinks } from '@/components/Prose'
 import FadeUp from '@/components/FadeUp'
 import { Button } from '@/components/Button'
+import PageFaq from '@/components/PageFaq'
 import { pageMetadata } from '@/lib/seo'
+import { FEATURE_FAQ } from '@/lib/faq'
 import AppStoreButton from '@/components/AppStoreButton'
 
 export const metadata: Metadata = pageMetadata({
@@ -113,6 +115,8 @@ export default function E2EPage() {
           />
         </FadeUp>
       </div>
+
+      <PageFaq items={FEATURE_FAQ['e2e-encryption']} />
 
       <RelatedLinks
         links={[

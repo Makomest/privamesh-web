@@ -4,11 +4,18 @@ export type Term = {
   short: string // one-sentence definition (snippet target)
   body: string[] // paragraphs
   related?: { href: string; label: string }[]
+  /**
+   * The headline question for this term. Written per entry because a generated
+   * "What is a {term}?" cannot agree with mass nouns ("a metadata") or vowels
+   * ("a end-to-end encryption"). Also used as the FAQPage question.
+   */
+  question: string
 }
 
 export const GLOSSARY: Term[] = [
   {
     slug: 'stealth-address',
+    question: 'What is a stealth address?',
     term: 'Stealth address',
     short:
       'A stealth address is a fresh, one-time address generated for a single message so that only the intended recipient can recognize it - hiding who is talking to whom.',
@@ -23,6 +30,7 @@ export const GLOSSARY: Term[] = [
   },
   {
     slug: 'metadata',
+    question: 'What is metadata in messaging?',
     term: 'Metadata (in messaging)',
     short:
       'Metadata is the information around a message - who sent it, to whom, when, how often, and from where - as opposed to the message content itself.',
@@ -37,6 +45,7 @@ export const GLOSSARY: Term[] = [
   },
   {
     slug: 'forward-secrecy',
+    question: 'What is forward secrecy?',
     term: 'Forward secrecy',
     short:
       'Forward secrecy means that if an attacker steals a key today, they still cannot decrypt your past messages, because those messages used keys that have already been deleted.',
@@ -51,6 +60,7 @@ export const GLOSSARY: Term[] = [
   },
   {
     slug: 'double-ratchet',
+    question: 'What is the Double Ratchet algorithm?',
     term: 'Double Ratchet',
     short:
       'The Double Ratchet is an algorithm that derives a new encryption key for every message, giving conversations forward secrecy and post-compromise security.',
@@ -65,6 +75,7 @@ export const GLOSSARY: Term[] = [
   },
   {
     slug: 'bip-39-seed-phrase',
+    question: 'What is a BIP-39 seed phrase?',
     term: 'BIP-39 seed phrase',
     short:
       'A BIP-39 seed phrase is a list of words that encodes a private key - a self-custodial account you control, with no phone number or email involved.',
@@ -79,6 +90,7 @@ export const GLOSSARY: Term[] = [
   },
   {
     slug: 'end-to-end-encryption',
+    question: 'What is end-to-end encryption (E2EE)?',
     term: 'End-to-end encryption (E2EE)',
     short:
       'End-to-end encryption means only the sender and recipient can read a message; everything in between - including any server - sees only ciphertext.',
@@ -93,6 +105,7 @@ export const GLOSSARY: Term[] = [
   },
   {
     slug: 'cover-traffic',
+    question: 'What is cover traffic?',
     term: 'Cover traffic',
     short:
       'Cover traffic is decoy messages mixed in with real ones so that an observer cannot tell when you are actually communicating.',
@@ -107,6 +120,7 @@ export const GLOSSARY: Term[] = [
   },
   {
     slug: 'serverless-messenger',
+    question: 'What is a serverless messenger?',
     term: 'Serverless messenger',
     short:
       'A serverless messenger routes messages without any central server - so there is no operator that can be breached, subpoenaed, or forced to log your activity.',

@@ -5,6 +5,7 @@ import PageHeader from '@/components/PageHeader'
 import { Prose, RelatedLinks } from '@/components/Prose'
 import JsonLd from '@/components/JsonLd'
 import { pageMetadata } from '@/lib/seo'
+import { faqPageLd } from '@/lib/jsonld'
 import { SITE } from '@/lib/site'
 import { GLOSSARY, getTerm } from '@/lib/glossary'
 
@@ -18,7 +19,7 @@ export function generateMetadata({ params }: { params: { term: string } }): Meta
   const t = getTerm(params.term)
   if (!t) return {}
   return pageMetadata({
-    title: `What is a ${t.term}? - PrivaMesh Glossary`,
+    title: `${t.question} - Glossary`,
     description: t.short.slice(0, 155),
     path: `/glossary/${t.slug}`,
   })
@@ -40,6 +41,9 @@ export default function TermPage({ params }: { params: { term: string } }) {
   return (
     <Container>
       <JsonLd data={definedTerm} />
+      {/* The H1 is the question and the lead + body are the answer, so the
+          FAQPage markup mirrors what is actually on the page. */}
+      <JsonLd data={faqPageLd([{ q: t.question, a: [t.short, ...t.body].join(' ') }])} />
       <PageHeader
         eyebrow="Glossary"
         trail={[
@@ -47,7 +51,7 @@ export default function TermPage({ params }: { params: { term: string } }) {
           { name: 'Glossary', path: '/glossary' },
           { name: t.term, path: `/glossary/${t.slug}` },
         ]}
-        title={`What is a ${t.term.toLowerCase()}?`}
+        title={t.question}
         lead={t.short}
       />
       <div className="mt-12">

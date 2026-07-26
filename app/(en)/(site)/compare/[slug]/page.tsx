@@ -9,7 +9,9 @@ import CompareCell from '@/components/CompareCell'
 import FadeUp from '@/components/FadeUp'
 import { Button } from '@/components/Button'
 import JsonLd from '@/components/JsonLd'
+import PageFaq from '@/components/PageFaq'
 import { pageMetadata } from '@/lib/seo'
+import { COMPARE_FAQ } from '@/lib/faq'
 import { itemListLd } from '@/lib/jsonld'
 import { SITE } from '@/lib/site'
 import { COMPARISONS, COMPARE_SLUGS } from '@/lib/compare'
@@ -136,6 +138,8 @@ export default function ComparePage({ params }: { params: { slug: string } }) {
           />
         </FadeUp>
       </div>
+
+      <PageFaq items={COMPARE_FAQ[c.slug] ?? []} />
 
       <RelatedLinks
         title="Compare with other messengers"

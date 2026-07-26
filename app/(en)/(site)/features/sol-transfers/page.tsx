@@ -6,7 +6,9 @@ import PhoneMockup from '@/components/PhoneMockup'
 import { Prose, RelatedLinks } from '@/components/Prose'
 import FadeUp from '@/components/FadeUp'
 import { Button } from '@/components/Button'
+import PageFaq from '@/components/PageFaq'
 import { pageMetadata } from '@/lib/seo'
+import { FEATURE_FAQ } from '@/lib/faq'
 import { SITE } from '@/lib/site'
 import AppStoreButton from '@/components/AppStoreButton'
 
@@ -101,6 +103,8 @@ export default function SolTransfersPage() {
           />
         </FadeUp>
       </div>
+
+      <PageFaq items={FEATURE_FAQ['sol-transfers']} />
 
       <RelatedLinks
         links={[
