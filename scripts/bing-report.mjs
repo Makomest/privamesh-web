@@ -12,6 +12,7 @@
  * Usage:
  *   BING_WEBMASTER_API_KEY=xxx node scripts/bing-report.mjs
  *   BING_WEBMASTER_API_KEY=xxx node scripts/bing-report.mjs --json
+ *   BING_WEBMASTER_API_KEY=xxx node scripts/bing-report.mjs --keywords "signal alternative" ...
  *
  * The key is read from the environment or ~/.config/claude-seo/backlinks-api.json
  * ("bing_api_key"). It is never written to the repo.
@@ -24,6 +25,8 @@ import path from 'node:path'
 const SITE = 'https://privamesh.org'
 const BASE = 'https://ssl.bing.com/webmaster/api.svc/json'
 const asJson = process.argv.includes('--json')
+const kwIndex = process.argv.indexOf('--keywords')
+const keywords = kwIndex >= 0 ? process.argv.slice(kwIndex + 1).filter((a) => !a.startsWith('--')) : null
 
 function loadKey() {
   if (process.env.BING_WEBMASTER_API_KEY) return process.env.BING_WEBMASTER_API_KEY
@@ -70,7 +73,7 @@ async function call(method, params = {}) {
 
 /** Bing returns dates as "/Date(1719792000000)/". */
 const bingDate = (v) => {
-  const m = typeof v === 'string' && v.match(/\/Date\((\d+)\)\//)
+  const m = typeof v === 'string' && v.match(/\/Date\((\d+)/)
   return m ? new Date(+m[1]).toISOString().slice(0, 10) : v
 }
 
@@ -79,6 +82,33 @@ const section = (t) => {
 }
 
 const out = {}
+
+// --- Keyword volumes (--keywords mode) --------------------------------------
+if (keywords && keywords.length) {
+  // BroadImpressions is Bing's monthly broad-match impression estimate. Bing is
+  // a minority of search, so treat it as a floor and a relative ranking, not as
+  // a Google figure. "n/a" means Bing returned no row, which is not the same as
+  // zero volume - low-volume queries are often simply not reported.
+  const rows = []
+  for (const q of keywords) {
+    const r = await call('GetKeywordStats', { q, country: 'us', language: 'en-US' })
+    if (!Array.isArray(r) || r.length === 0) {
+      rows.push([q, null])
+    } else {
+      const recent = r.slice(-3).map((x) => x.BroadImpressions ?? 0)
+      rows.push([q, Math.round(recent.reduce((a, b) => a + b, 0) / recent.length)])
+    }
+    await new Promise((s) => setTimeout(s, 150))
+  }
+  rows.sort((a, b) => (b[1] ?? -1) - (a[1] ?? -1))
+  if (asJson) {
+    console.log(JSON.stringify(Object.fromEntries(rows), null, 2))
+  } else {
+    console.log('query'.padEnd(40) + 'Bing broad impressions/mo')
+    for (const [q, v] of rows) console.log(q.padEnd(40) + String(v ?? 'n/a').padStart(8))
+  }
+  process.exit(0)
+}
 
 // --- Rank and traffic -------------------------------------------------------
 section('Rank & traffic (last 6 months)')
@@ -124,8 +154,8 @@ if (!asJson) {
 }
 
 // --- Indexation -------------------------------------------------------------
-section('Indexed URL count')
-const indexed = await call('GetUrlCounts')
+section('Page stats')
+const indexed = await call('GetPageStats')
 out.indexed = indexed
 if (!asJson) {
   if (indexed.__error) console.log('  ', indexed.__error)
@@ -158,13 +188,13 @@ if (!asJson) {
 }
 
 // --- SEO issues Bing found --------------------------------------------------
-section('Bing SEO issues')
-const seo = await call('GetSeoReports')
+section('Crawl issues')
+const seo = await call('GetCrawlIssues')
 out.seo = seo
 if (!asJson) {
   if (seo.__error) console.log('  ', seo.__error)
   else if (!Array.isArray(seo) || seo.length === 0) console.log('   No issues reported.')
-  else for (const s of seo.slice(0, 20)) console.log(`   [${s.Severity}] ${s.Description}`)
+  else for (const s of seo.slice(0, 20)) console.log(`   ${s.Url ?? ''} ${JSON.stringify(s).slice(0, 200)}`)
 }
 
 if (asJson) console.log(JSON.stringify(out, null, 2))
