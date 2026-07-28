@@ -36,6 +36,15 @@ const nextConfig = {
         destination: '/best-private-messaging-apps',
         permanent: true,
       },
+      // The App Store listing and the release repo's static docs reference
+      // .html paths that never existed on this site. Redirect rather than 404 -
+      // an App Review link that dead-ends is a rejection.
+      { source: '/support.html', destination: '/support', statusCode: 301 },
+      { source: '/ru/support.html', destination: '/ru/support', statusCode: 301 },
+      { source: '/privacy-policy.html', destination: '/privacy-policy', statusCode: 301 },
+      { source: '/terms.html', destination: '/terms', statusCode: 301 },
+      { source: '/privacy.html', destination: '/privacy', statusCode: 301 },
+      { source: '/index.html', destination: '/', statusCode: 301 },
     ]
   },
   async headers() {

@@ -4,7 +4,7 @@ import { compileMDX } from 'next-mdx-remote/rsc'
 import rehypeSlug from 'rehype-slug'
 import BlogLayout from '@/components/BlogLayout'
 import { useMDXComponents } from '@/mdx-components'
-import { getPost, getPostContent, getPosts, extractHeadings, hasTranslation } from '@/lib/posts'
+import { getPost, getPostContent, getPosts, extractHeadings, hasTranslation, stripLeadingH1 } from '@/lib/posts'
 import { pageMetadata } from '@/lib/seo'
 
 export const dynamicParams = false
@@ -32,8 +32,10 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
   const raw = getPostContent('en', params.slug)
   if (!raw) notFound()
 
+  const body = stripLeadingH1(raw.content)
+
   const { content } = await compileMDX({
-    source: raw.content,
+    source: body,
     components: useMDXComponents({}),
     // format: 'md' → parse as plain CommonMark, NOT MDX. This keeps AI-generated
     // posts safe: literal { } and < in the text won't be treated as JSX/JS.
@@ -44,7 +46,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
   })
 
   return (
-    <BlogLayout post={raw.meta} headings={extractHeadings(raw.content)}>
+    <BlogLayout post={raw.meta} headings={extractHeadings(body)}>
       {content}
     </BlogLayout>
   )

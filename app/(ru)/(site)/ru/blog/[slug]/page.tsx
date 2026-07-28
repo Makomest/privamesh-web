@@ -4,7 +4,7 @@ import { compileMDX } from 'next-mdx-remote/rsc'
 import rehypeSlug from 'rehype-slug'
 import BlogLayout from '@/components/BlogLayout'
 import { useMDXComponents } from '@/mdx-components'
-import { getPost, getPostContent, getPosts, extractHeadings, hasTranslation } from '@/lib/posts'
+import { getPost, getPostContent, getPosts, extractHeadings, hasTranslation, stripLeadingH1 } from '@/lib/posts'
 import { pageMetadata } from '@/lib/seo'
 
 export const dynamicParams = false
@@ -33,8 +33,10 @@ export default async function RuBlogPostPage({ params }: { params: { slug: strin
   const raw = getPostContent('ru', params.slug)
   if (!raw) notFound()
 
+  const body = stripLeadingH1(raw.content)
+
   const { content } = await compileMDX({
-    source: raw.content,
+    source: body,
     components: useMDXComponents({}),
     options: {
       parseFrontmatter: false,
@@ -43,7 +45,7 @@ export default async function RuBlogPostPage({ params }: { params: { slug: strin
   })
 
   return (
-    <BlogLayout post={raw.meta} headings={extractHeadings(raw.content)}>
+    <BlogLayout post={raw.meta} headings={extractHeadings(body)}>
       {content}
     </BlogLayout>
   )

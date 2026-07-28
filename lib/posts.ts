@@ -188,3 +188,16 @@ export function extractHeadings(md: string): { id: string; text: string; level: 
 
 // ── Back-compat aliases (English default) ───────────────────────────────────
 export const POSTS: Post[] = getPosts('en')
+
+/**
+ * Drop a leading top-level "# Title" from a post body.
+ *
+ * Hand-written posts start at "##" because BlogLayout already renders the title
+ * as the page H1. Posts ingested through /admin include their own "# Title",
+ * which produced two H1s on six live posts. Stripping it here fixes every post
+ * without editing content on the server, and is a no-op for posts that never
+ * had one.
+ */
+export function stripLeadingH1(md: string): string {
+  return md.replace(/^\s*#\s+.+?(\r?\n|$)/, '')
+}
