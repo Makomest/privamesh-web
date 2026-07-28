@@ -26,6 +26,7 @@ const STATIC_PATHS: { path: string; priority: number; freq: Freq }[] = [
   { path: '/guides', priority: 0.8, freq: 'monthly' },
   { path: '/glossary', priority: 0.7, freq: 'monthly' },
   { path: '/about', priority: 0.6, freq: 'yearly' },
+  { path: '/support', priority: 0.6, freq: 'monthly' },
   { path: '/blog', priority: 0.6, freq: 'weekly' },
 ]
 
@@ -43,14 +44,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // /news carries robots noindex until the first update is published, so it
   // only belongs in the sitemap once there is something on it.
   const newsEntries = getUpdates().length > 0 ? [entry('/news', 0.7, 'daily')] : []
-  const staticEntries = STATIC_PATHS.map((p) =>
-    p.path === '/'
-      ? { ...entry(p.path, p.priority, p.freq), alternates: hreflang }
-      : entry(p.path, p.priority, p.freq),
-  )
+  const supportHreflang = {
+    languages: { en: `${SITE.domain}/support`, ru: `${SITE.domain}/ru/support` },
+  }
+  const staticEntries = STATIC_PATHS.map((p) => {
+    if (p.path === '/') return { ...entry(p.path, p.priority, p.freq), alternates: hreflang }
+    if (p.path === '/support')
+      return { ...entry(p.path, p.priority, p.freq), alternates: supportHreflang }
+    return entry(p.path, p.priority, p.freq)
+  })
   const ruLanding = [
     { ...entry('/ru', 0.9, 'weekly'), alternates: hreflang },
     entry('/ru/blog', 0.5, 'weekly'),
+    { ...entry('/ru/support', 0.6, 'monthly'), alternates: supportHreflang },
   ]
 
   const enPosts = getPosts('en')

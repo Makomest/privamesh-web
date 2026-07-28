@@ -23,7 +23,7 @@ const COMPARE_COL = [
 const LEGAL = [
   { href: '/privacy-policy', label: 'Privacy Policy' },
   { href: '/terms', label: 'Terms of Use' },
-  { href: `mailto:${SITE.supportEmail}`, label: 'Support', external: true },
+  { href: '/support', label: 'Support' },
 ]
 
 function XIcon({ size = 18 }: { size?: number }) {
