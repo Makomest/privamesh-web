@@ -45,6 +45,10 @@ const nextConfig = {
       { source: '/terms.html', destination: '/terms', statusCode: 301 },
       { source: '/privacy.html', destination: '/privacy', statusCode: 301 },
       { source: '/index.html', destination: '/', statusCode: 301 },
+      // Page 1 of the blog lives at /blog, so the paginated route starts at 2
+      // and /blog/page/1 404s. It is a guessable URL, so point it home instead.
+      { source: '/blog/page/1', destination: '/blog', statusCode: 301 },
+      { source: '/ru/blog/page/1', destination: '/ru/blog', statusCode: 301 },
     ]
   },
   async headers() {
