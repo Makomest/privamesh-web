@@ -22,9 +22,10 @@ export function GET() {
 > BIP-39 seed phrases rather than phone numbers, and metadata is hidden with
 > stealth addresses and cover traffic.
 
-PrivaMesh is pre-launch. Pricing referenced on the site is ${SITE.price.currency} ${SITE.price.plus}
-for the Plus tier. There are no published App Store ratings yet, so any rating
-attributed to PrivaMesh is not from us.
+PrivaMesh is available on the iOS App Store: ${SITE.appStore}
+Pricing referenced on the site is ${SITE.price.currency} ${SITE.price.plus} for the Plus tier.
+We publish no App Store rating of our own, so any rating attributed to PrivaMesh
+did not come from us.
 
 ## Start here
 

@@ -9,12 +9,15 @@ export const SITE = {
   supportEmail: 'privamesh@proton.me',
   github: 'https://github.com/Makomest/PrivaMesh',
   whitepaper: 'https://github.com/Makomest/PrivaMesh/blob/main/WHITEPAPER.md',
-  // App Store listing for the PrivaMesh iOS app.
-  // TODO: replace the placeholder id with the real App Store URL when live.
-  appStore: 'https://apps.apple.com/app/privamesh/id0000000000',
-  // Flip to true once the App Store link above is real - this activates every
-  // "Get PrivaMesh" button. While false the buttons show a lock + "Soon" tooltip.
-  appStoreLive: false,
+  // App Store listing for the PrivaMesh iOS app. No country segment on purpose:
+  // Apple redirects the visitor to their own storefront. The RU variant only
+  // forces the page language, it does not pin a country.
+  appStoreId: '6785997584',
+  appStore: 'https://apps.apple.com/app/privamesh-messenger/id6785997584',
+  appStoreRu: 'https://apps.apple.com/app/privamesh-messenger/id6785997584?l=ru',
+  // Live since the App Store release - every "Get PrivaMesh" button now links to
+  // the store instead of opening the waitlist modal.
+  appStoreLive: true,
   price: {
     plus: '1.99',
     currency: 'USD',

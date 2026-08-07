@@ -33,6 +33,8 @@ export const softwareApplicationLd = {
   description: SITE.description,
   url: SITE.domain,
   image: `${SITE.domain}/logo.png`,
+  downloadUrl: SITE.appStore,
+  installUrl: SITE.appStore,
   offers: [
     {
       '@type': 'Offer',

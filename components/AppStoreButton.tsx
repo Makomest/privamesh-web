@@ -1,3 +1,6 @@
+'use client'
+
+import { usePathname } from 'next/navigation'
 import { Button } from './Button'
 import { SITE } from '@/lib/site'
 import WaitlistTrigger from './WaitlistTrigger'
@@ -11,33 +14,42 @@ function AppleGlyph({ size = 16 }: { size?: number }) {
 }
 
 /**
- * Primary CTA. When SITE.appStoreLive is false, "Get PrivaMesh" opens the
- * waitlist modal (email signup) instead of linking to the App Store. Flip
- * appStoreLive = true (and set the real appStore URL) to link to the store.
+ * Primary CTA. Links to the App Store, sending visitors on /ru* to the
+ * Russian-language listing. Reading the locale from the pathname keeps the
+ * shared Navbar and Footer correct without threading a prop through every page.
+ *
+ * If SITE.appStoreLive is ever flipped back to false, the button falls back to
+ * the waitlist modal.
  */
 export default function AppStoreButton({
   variant = 'primary',
   className = '',
-  label = 'Get PrivaMesh',
+  label,
 }: {
   variant?: 'primary' | 'ghost'
   className?: string
   label?: string
 }) {
+  const pathname = usePathname()
+  const isRu = pathname === '/ru' || pathname.startsWith('/ru/')
+  // An explicit label always wins; otherwise fall back to the locale default so
+  // the shared Navbar reads correctly on the RU pages too.
+  const text = label ?? (isRu ? 'Скачать PrivaMesh' : 'Get PrivaMesh')
+
   if (SITE.appStoreLive) {
     return (
       <Button
-        href={SITE.appStore}
+        href={isRu ? SITE.appStoreRu : SITE.appStore}
         external
         variant={variant}
         className={className}
-        ariaLabel={`${label} on the App Store`}
+        ariaLabel={isRu ? `${text} в App Store` : `${text} on the App Store`}
       >
         <AppleGlyph />
-        {label}
+        {text}
       </Button>
     )
   }
 
-  return <WaitlistTrigger variant={variant} className={className} label={label} />
+  return <WaitlistTrigger variant={variant} className={className} label={text} />
 }

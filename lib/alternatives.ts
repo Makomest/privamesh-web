@@ -80,7 +80,7 @@ export const ALTERNATIVES: Alternative[] = [
       },
       {
         feature: 'Platforms',
-        privamesh: 'iOS only, pre-launch',
+        privamesh: 'iOS only',
         competitor: 'iOS, Android, desktop, mature',
       },
     ],
@@ -106,7 +106,7 @@ export const ALTERNATIVES: Alternative[] = [
       },
       {
         q: 'Can I use PrivaMesh on Android or desktop?',
-        a: 'Not today. PrivaMesh is iOS-first and pre-launch, where Signal is mature on every platform. If cross-platform matters more than removing the server, Signal is the better choice right now.',
+        a: 'Not today. PrivaMesh is iOS-only, where Signal is mature on every platform. If cross-platform matters more than removing the server, Signal is the better choice right now.',
       },
       {
         q: 'What does Signal do that PrivaMesh does not?',
@@ -230,7 +230,7 @@ export const ALTERNATIVES: Alternative[] = [
       },
       {
         feature: 'Reach',
-        privamesh: 'iOS only, pre-launch',
+        privamesh: 'iOS only',
         competitor: 'Billions of users, every platform',
       },
     ],
