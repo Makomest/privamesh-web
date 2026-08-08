@@ -9,11 +9,18 @@ const CSP = [
   "form-action 'self'",
   "frame-ancestors 'self'",
   "object-src 'none'",
-  "script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com https://www.googletagmanager.com",
+  "script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com https://www.googletagmanager.com https://www.googleadservices.com https://googleads.g.doubleclick.net",
   "style-src 'self' 'unsafe-inline'",
-  "img-src 'self' data: blob: https://www.googletagmanager.com",
+  // Google Ads fires remarketing pixels at the visitor's own google.<tld> -
+  // google.com.ua, google.de and ~190 others - and CSP cannot wildcard a TLD.
+  // Allowing any https image is the only workable rule. Images cannot execute,
+  // so the directive that actually matters for security, script-src, stays a
+  // strict allowlist.
+  "img-src 'self' data: blob: https:",
   "font-src 'self' data:",
-  "connect-src 'self' https://cloudflareinsights.com https://static.cloudflareinsights.com https://www.google-analytics.com https://region1.google-analytics.com https://www.googletagmanager.com",
+  // Google Ads drops a conversion-linker iframe; default-src 'self' would block it.
+  "frame-src 'self' https://td.doubleclick.net https://googleads.g.doubleclick.net https://www.googletagmanager.com",
+  "connect-src 'self' https://cloudflareinsights.com https://static.cloudflareinsights.com https://www.google-analytics.com https://region1.google-analytics.com https://www.googletagmanager.com https://www.googleadservices.com https://*.doubleclick.net https://www.google.com",
   'upgrade-insecure-requests',
 ].join('; ')
 

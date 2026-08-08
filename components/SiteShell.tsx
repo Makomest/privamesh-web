@@ -1,5 +1,5 @@
 import CloudflareAnalytics from '@/components/CloudflareAnalytics'
-import GoogleAnalytics from '@/components/GoogleAnalytics'
+import GoogleTag from '@/components/GoogleTag'
 import WaitlistModal from '@/components/WaitlistModal'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -31,7 +31,7 @@ export default function SiteShell({ children }: { children: React.ReactNode }) {
       </div>
       <WaitlistModal />
       <CloudflareAnalytics />
-      <GoogleAnalytics />
+      <GoogleTag />
     </>
   )
 }
