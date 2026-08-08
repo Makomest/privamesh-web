@@ -17,6 +17,26 @@ export function truncateAtWord(text: string, max = 158): string {
   return (lastSpace > max * 0.6 ? cut.slice(0, lastSpace) : cut).replace(/[,;:.\s]+$/, '') + '…'
 }
 
+/**
+ * Make a description end cleanly.
+ *
+ * Posts ingested through /admin arrive with descriptions already cut to 155
+ * characters by the generator upstream, so they end mid-sentence ("...on
+ * encryption, metadata"). Nothing downstream can recover the lost words, but it
+ * can stop the tag reading like a bug: cut back to the last sentence if one
+ * ends late enough, otherwise drop the dangling fragment and mark the cut.
+ * A description that already ends in punctuation is returned untouched.
+ */
+export function tidyDescription(text: string): string {
+  const clean = text.replace(/\s+/g, ' ').trim()
+  if (!clean || /[.!?…»)]$/.test(clean)) return clean
+
+  const lastStop = Math.max(clean.lastIndexOf('. '), clean.lastIndexOf('! '), clean.lastIndexOf('? '))
+  if (lastStop > clean.length * 0.6) return clean.slice(0, lastStop + 1)
+
+  return clean.replace(/[\s,;:—-]+$/, '') + '…'
+}
+
 /** Roughly where Google truncates a title in the SERP. */
 const TITLE_MAX_LENGTH = 60
 /** Length of the " · PrivaMesh" suffix the root layout's title template adds. */
@@ -61,7 +81,7 @@ export function pageMetadata({
 
   return {
     title: titled,
-    description,
+    description: tidyDescription(description),
     alternates: {
       canonical: url,
       types: { 'application/rss+xml': `${SITE.domain}/rss.xml` },
