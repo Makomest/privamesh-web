@@ -25,7 +25,7 @@ export function generateMetadata({ params }: { params: { tag: string } }): Metad
   return {
     ...pageMetadata({
       title: `${label} - PrivaMesh Blog`,
-      description: `Articles about ${label.toLowerCase()} - private, serverless, end-to-end encrypted messaging on Solana.`,
+      description: `Articles about ${label.toLowerCase()}: how end-to-end encryption, metadata protection and serverless messaging actually work in PrivaMesh.`,
       path: `/blog/tag/${params.tag}`,
     }),
     // Tag archives are thin (~65 words, 1-2 posts each) and several overlap

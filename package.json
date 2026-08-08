@@ -9,7 +9,8 @@
     "start": "next start",
     "lint": "next lint",
     "indexnow": "node scripts/indexnow.mjs",
-    "bing": "node scripts/bing-report.mjs"
+    "bing": "node scripts/bing-report.mjs",
+    "seo:qa": "node scripts/seo-qa.mjs"
   },
   "dependencies": {
     "@mdx-js/loader": "3.0.1",

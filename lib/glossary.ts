@@ -4,6 +4,9 @@ export type Term = {
   short: string // one-sentence definition (snippet target)
   body: string[] // paragraphs
   related?: { href: string; label: string }[]
+  /** SERP description, 130-160 chars. Written per entry rather than sliced from
+   *  `short`, which used to cut mid-word ("...keys that have alre"). */
+  description: string
   /**
    * The headline question for this term. Written per entry because a generated
    * "What is a {term}?" cannot agree with mass nouns ("a metadata") or vowels
@@ -15,6 +18,7 @@ export type Term = {
 export const GLOSSARY: Term[] = [
   {
     slug: 'stealth-address',
+    description: 'A stealth address is a fresh one-time address per message, so an observer cannot link two messages into one conversation. How PrivaMesh hides who talks to whom.',
     question: 'What is a stealth address?',
     term: 'Stealth address',
     short:
@@ -33,6 +37,7 @@ export const GLOSSARY: Term[] = [
   },
   {
     slug: 'metadata',
+    description: 'Metadata is who messaged whom, when and how often - the data surveillance runs on. Why encryption alone does not hide it, and how PrivaMesh removes it.',
     question: 'What is metadata in messaging?',
     term: 'Metadata (in messaging)',
     short:
@@ -51,6 +56,7 @@ export const GLOSSARY: Term[] = [
   },
   {
     slug: 'forward-secrecy',
+    description: 'Forward secrecy means a key stolen today cannot unlock yesterday’s messages: those keys were destroyed after use. What it protects, and what it costs you.',
     question: 'What is forward secrecy?',
     term: 'Forward secrecy',
     short:
@@ -69,6 +75,7 @@ export const GLOSSARY: Term[] = [
   },
   {
     slug: 'double-ratchet',
+    description: 'The Double Ratchet derives a fresh key for every message, giving forward secrecy and post-compromise security. Plain-English guide to how the two ratchets turn.',
     question: 'What is the Double Ratchet algorithm?',
     term: 'Double Ratchet',
     short:
@@ -87,6 +94,7 @@ export const GLOSSARY: Term[] = [
   },
   {
     slug: 'bip-39-seed-phrase',
+    description: 'A BIP-39 seed phrase is a word list encoding a private key - an account with no phone number or email. How it works, and how to store it so you do not lose it.',
     question: 'What is a BIP-39 seed phrase?',
     term: 'BIP-39 seed phrase',
     short:
@@ -105,6 +113,7 @@ export const GLOSSARY: Term[] = [
   },
   {
     slug: 'end-to-end-encryption',
+    description: 'End-to-end encryption means only sender and recipient can read a message. What the term precisely covers, what it does not, and how to test a provider’s claim.',
     question: 'What is end-to-end encryption (E2EE)?',
     term: 'End-to-end encryption (E2EE)',
     short:
@@ -123,6 +132,7 @@ export const GLOSSARY: Term[] = [
   },
   {
     slug: 'cover-traffic',
+    description: 'Cover traffic mixes decoy messages with real ones so an observer cannot tell when you are actually communicating. Why timing leaks, and what the decoys cost.',
     question: 'What is cover traffic?',
     term: 'Cover traffic',
     short:
@@ -141,6 +151,7 @@ export const GLOSSARY: Term[] = [
   },
   {
     slug: 'serverless-messenger',
+    description: 'A serverless messenger routes messages with no central server, so no operator can be breached or subpoenaed. What a server does, and what replaces it.',
     question: 'What is a serverless messenger?',
     term: 'Serverless messenger',
     short:

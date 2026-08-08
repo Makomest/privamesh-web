@@ -56,6 +56,20 @@ const nextConfig = {
       // and /blog/page/1 404s. It is a guessable URL, so point it home instead.
       { source: '/blog/page/1', destination: '/blog', statusCode: 301 },
       { source: '/ru/blog/page/1', destination: '/ru/blog', statusCode: 301 },
+      // Tag slugs Google indexed that no longer exist, or that duplicate a tag
+      // we do keep. Redirecting beats leaving a 404 Search Console keeps
+      // re-reporting. Targets are noindex,follow - they pass link equity on
+      // without competing for the query themselves.
+      { source: '/blog/tag/serverless-chat', destination: '/blog/tag/serverless', statusCode: 301 },
+      { source: '/blog/tag/serverless-messenger', destination: '/blog/tag/serverless', statusCode: 301 },
+      { source: '/blog/tag/serverless-messaging', destination: '/blog/tag/serverless', statusCode: 301 },
+      { source: '/blog/tag/encrypted-chat', destination: '/blog/tag/encryption', statusCode: 301 },
+      { source: '/blog/tag/encrypted-messenger', destination: '/blog/tag/encryption', statusCode: 301 },
+      { source: '/blog/tag/e2e', destination: '/blog/tag/encryption', statusCode: 301 },
+      { source: '/blog/tag/cipher', destination: '/blog/tag/encryption', statusCode: 301 },
+      { source: '/blog/tag/secure-messenger', destination: '/blog/tag/private-messenger', statusCode: 301 },
+      { source: '/blog/tag/anonymous-messenger', destination: '/blog/tag/private-messenger', statusCode: 301 },
+      { source: '/blog/tag/private-messaging', destination: '/blog/tag/private-messenger', statusCode: 301 },
     ]
   },
   async headers() {

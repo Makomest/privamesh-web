@@ -22,7 +22,7 @@ export function generateMetadata({ params }: { params: { term: string } }): Meta
   if (!t) return {}
   return pageMetadata({
     title: `${t.question} - Glossary`,
-    description: t.short.slice(0, 155),
+    description: t.description,
     path: `/glossary/${t.slug}`,
   })
 }

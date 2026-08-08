@@ -3,7 +3,7 @@ export const SITE = {
   domain: 'https://privamesh.org',
   tagline: 'Trust math, not companies.',
   description:
-    'Private, end-to-end encrypted messenger. No phone number, no email, no servers. Your keys and chats stay on your device.',
+    'Private, end-to-end encrypted messenger for iPhone. No phone number, no email, no servers - your keys and chats never leave your device. Free on the App Store.',
   twitter: 'https://x.com/PrivaMesh',
   twitterHandle: '@PrivaMesh',
   supportEmail: 'privamesh@proton.me',

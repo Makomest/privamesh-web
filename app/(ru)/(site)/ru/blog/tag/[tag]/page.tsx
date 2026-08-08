@@ -25,7 +25,7 @@ export function generateMetadata({ params }: { params: { tag: string } }): Metad
   return {
     ...pageMetadata({
       title: `${label} - Блог PrivaMesh`,
-      description: `Статьи про ${label.toLowerCase()} - приватные сообщения без серверов на Solana.`,
+      description: `Статьи про ${label.toLowerCase()}: как устроено сквозное шифрование, защита метаданных и приватная переписка без серверов в PrivaMesh.`,
       path: `/ru/blog/tag/${params.tag}`,
       locale: 'ru',
     }),

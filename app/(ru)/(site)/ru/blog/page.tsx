@@ -10,7 +10,7 @@ import { getPosts, getAllTags, PER_PAGE } from '@/lib/posts'
 export const metadata: Metadata = pageMetadata({
   title: 'Блог PrivaMesh - приватные сообщения и шифрование',
   description:
-    'Понятные объяснения про шифрование, метаданные и приватные сообщения без серверов - как работает PrivaMesh.',
+    'Разборы про шифрование, метаданные и приватную переписку без серверов: как работает Double Ratchet и почему сервер видит больше, чем вы думаете.',
   path: '/ru/blog',
   locale: 'ru',
   languages: { en: '/blog', ru: '/ru/blog' },

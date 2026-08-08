@@ -5,6 +5,10 @@ import PageHeader from '@/components/PageHeader'
 import { Prose, RelatedLinks } from '@/components/Prose'
 import FAQ from '@/components/FAQ'
 import AppStoreButton from '@/components/AppStoreButton'
+import PhoneMockup from '@/components/PhoneMockup'
+import FadeUp from '@/components/FadeUp'
+import { Check } from 'lucide-react'
+import { SITE } from '@/lib/site'
 import JsonLd from '@/components/JsonLd'
 import { pageMetadata } from '@/lib/seo'
 import { faqPageLd } from '@/lib/jsonld'
@@ -44,8 +48,53 @@ export default function GuidePage({ params }: { params: { slug: string } }) {
         title={g.h1}
         lead={g.lead}
       >
-        <AppStoreButton />
+        <AppStoreButton label="Download on the App Store" />
       </PageHeader>
+
+      {/* Direct answer to the search query, before any preamble. */}
+      {g.answer && (
+        <p className="mt-8 max-w-3xl border-l-2 border-border-accent pl-5 text-lg leading-relaxed text-text-secondary">
+          {g.answer}
+        </p>
+      )}
+
+      {/* App Store block for the guides that are landing pages for an install
+          intent: the CTA, real screenshots and the three concrete claims a
+          searcher is checking, all above the fold. */}
+      {g.appCta && (
+        <FadeUp className="mt-10 grid items-center gap-8 rounded-card border border-border bg-white/[0.03] p-6 backdrop-blur-sm sm:p-8 lg:grid-cols-[1fr_260px]">
+          <div>
+            <ul className="space-y-3">
+              {['No phone number required', 'No email, no account, no profile', 'End-to-end encrypted with forward secrecy'].map(
+                (b) => (
+                  <li key={b} className="flex gap-3 text-[15px] leading-relaxed text-text-secondary">
+                    <Check size={18} strokeWidth={2.5} className="mt-0.5 flex-none text-success" aria-hidden="true" />
+                    {b}
+                  </li>
+                ),
+              )}
+            </ul>
+            <div className="mt-6 flex flex-wrap items-center gap-4">
+              <AppStoreButton label="Download on the App Store" />
+              <a
+                href={SITE.appStore}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-mono text-xs text-text-muted hover:text-accent"
+              >
+                apps.apple.com/app/privamesh-messenger
+              </a>
+            </div>
+          </div>
+          <div className="mx-auto w-full max-w-[240px]">
+            <PhoneMockup
+              src="/screenshots/04.png?v=3"
+              alt="PrivaMesh encrypted chat on iPhone - end-to-end encrypted, no phone number"
+              sizes="(max-width: 1024px) 50vw, 240px"
+            />
+          </div>
+        </FadeUp>
+      )}
 
       <div className="mt-12">
         <Prose>

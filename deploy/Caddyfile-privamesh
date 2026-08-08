@@ -6,6 +6,13 @@
 # www → non-www is a 301 permanent redirect (canonical host = privamesh.org),
 # which fixes the "use 301 redirects for www/non-www" SEO error.
 
+# Plain-HTTP www is declared explicitly. Without this block Caddy first upgrades
+# http://www → https://www and only then applies the redirect below, so the
+# visitor takes two hops. This collapses it to one.
+http://www.privamesh.org {
+	redir https://privamesh.org{uri} permanent
+}
+
 www.privamesh.org {
 	redir https://privamesh.org{uri} permanent
 }

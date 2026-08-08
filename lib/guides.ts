@@ -1,5 +1,13 @@
 export type Guide = {
   slug: string
+  /**
+   * One-paragraph direct answer, rendered immediately after the H1. These pages
+   * were earning impressions and no clicks; a searcher who can see the answer
+   * in the first screen is more likely to stay than one who has to hunt for it.
+   */
+  answer?: string
+  /** Show the App Store hero (CTA + screenshots + benefits) above the fold. */
+  appCta?: boolean
   title: string // <60 chars, the target keyword
   description: string // <155
   h1: string
@@ -51,6 +59,8 @@ const R = {
 export const GUIDES: Guide[] = [
   {
     slug: 'private-messaging-app-without-phone-number',
+    answer: "You can message without a phone number by using an app whose account is a key you generate rather than an identifier someone issues. PrivaMesh creates a BIP-39 seed phrase on your device: no SMS code, no email confirmation, and nothing to link the account to your carrier.",
+    appCta: true,
     title: 'Private Messaging App Without a Phone Number',
     description:
       'How to use a private messaging app with no phone number in 2026. Your account is a seed phrase, not a SIM — here is how it works and why it matters.',
@@ -126,6 +136,7 @@ export const GUIDES: Guide[] = [
   },
   {
     slug: 'how-to-evaluate-a-private-messenger',
+    answer: "Judge a private messenger on four things: which identifier it requires to register, who runs the infrastructure, what metadata that infrastructure necessarily sees, and whether you can verify the answers instead of trusting them. Encryption alone no longer separates the field - almost every messenger has it.",
     title: 'How to Evaluate a Private Messenger',
     description:
       'A method for judging privacy claims yourself: which identifier is required, who runs the infrastructure, what metadata it sees, and whether you can verify it.',
@@ -192,6 +203,7 @@ export const GUIDES: Guide[] = [
   },
   {
     slug: 'anonymous-messaging-app',
+    answer: "An anonymous messaging app has no durable identifier to follow: no phone number, no username tied to you, and no delivery trail an observer can group into a conversation. That is a stronger claim than encrypted, which only hides message content, and stronger than pseudonymous, which survives exactly one link to your identity.",
     title: 'Anonymous Messaging App: How Anonymity Works',
     description:
       'What a genuinely anonymous messaging app requires: no phone number, no email, no server-side account, and hidden metadata. Here is how it actually works.',
@@ -257,6 +269,7 @@ export const GUIDES: Guide[] = [
   },
   {
     slug: 'decentralized-messaging-app',
+    answer: "A decentralized messaging app is one where no single organisation controls the infrastructure carrying your messages. That covers federated servers, peer-to-peer connections and blockchain transports - three quite different designs, each removing a different single point of failure at a different cost.",
     title: 'Decentralized Messaging App Explained',
     description:
       'What a decentralized messaging app is, how it removes the central server, and why that matters for privacy. Plain-English guide with real examples.',
@@ -321,6 +334,7 @@ export const GUIDES: Guide[] = [
   },
   {
     slug: 'blockchain-messaging-app',
+    answer: "A blockchain messaging app sends each message as an encrypted blob inside a transaction rather than through a company server. Nothing readable is stored on-chain: the payload is AES-256-GCM ciphertext addressed to a one-time address, so observers see neither the content nor who is talking to whom.",
     title: 'Blockchain Messaging App: How On-Chain Chat Works',
     description:
       'How a blockchain messaging app works: encrypted messages in Solana transaction memos, read via stealth addresses. Private on a public chain, explained.',
@@ -385,6 +399,7 @@ export const GUIDES: Guide[] = [
   },
   {
     slug: 'web3-messaging-app',
+    answer: "A web3 messaging app uses a self-custodial keypair as your identity instead of an account on a company server. You sign in by holding a key, not by registering, and the same key can send payments - which is why chat and wallet end up in one app.",
     title: 'Web3 Messaging App: Wallet-to-Wallet Chat',
     description:
       'A web3 messaging app where your wallet is your identity: no phone number, self-custodial, with in-chat crypto payments. How wallet-based messaging works.',
@@ -449,6 +464,7 @@ export const GUIDES: Guide[] = [
   },
   {
     slug: 'messaging-app-that-doesnt-track-you',
+    answer: "A messaging app that does not track you has no analytics SDK, no crash reporter shipping device fingerprints, no advertising identifier and no server to receive any of it. Encryption is a separate promise: an app can encrypt every message and still record who you are and when you use it.",
     title: "A Messaging App That Doesn't Track You",
     description:
       "How to use a messaging app that doesn't track you: no server-side logs, no phone number, no metadata collection. Why serverless is the only real answer.",
@@ -513,6 +529,8 @@ export const GUIDES: Guide[] = [
   },
   {
     slug: 'encrypted-messaging-app-for-iphone',
+    answer: "PrivaMesh is an encrypted messaging app for iPhone that needs no phone number and no email. Messages are end-to-end encrypted with X3DH and the Double Ratchet, keys live in the iOS Keychain behind Face ID, and nothing syncs to iCloud. It is a free download on the App Store.",
+    appCta: true,
     title: 'Encrypted Messaging App for iPhone (2026)',
     description:
       'The best encrypted messaging app for iPhone in 2026: end-to-end encryption, Keychain-stored keys, no phone number. How iOS keeps your keys safe.',
@@ -577,6 +595,7 @@ export const GUIDES: Guide[] = [
   },
   {
     slug: 'private-messenger-for-crypto',
+    answer: "A private messenger for crypto users has to hide the social graph, not just the message content: public balances make holders identifiable targets. PrivaMesh keeps messaging addresses separate from the address holding your assets and verifies contacts by signature rather than display name.",
     title: 'Private Messenger for Crypto Users',
     description:
       'A private messenger built for crypto: self-custodial wallet identity, in-chat SOL transfers, on-chain nicknames, no phone number. Chat and pay in one app.',
@@ -641,6 +660,7 @@ export const GUIDES: Guide[] = [
   },
   {
     slug: 'serverless-messaging-app',
+    answer: "A serverless messaging app has no backend at all - no account database, no relay, no company machine in the message path. That is different from the cloud-engineering sense of the word, where servers still exist and are simply run by someone else.",
     title: 'Serverless Messaging App: No Backend, No Breach',
     description:
       'A serverless messaging app has no backend to breach, subpoena or shut down. How messaging works with no servers — the biggest privacy differentiator.',

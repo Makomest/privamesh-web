@@ -26,7 +26,7 @@ import {
 export const metadata: Metadata = pageMetadata({
   title: 'PrivaMesh - Private Encrypted Messenger',
   description:
-    'Private, end-to-end encrypted messenger. No phone number, no email, no servers. Your keys and chats stay on your device.',
+    'Private, end-to-end encrypted messenger for iPhone. No phone number, no email, no servers - your keys and chats never leave your device. Free on the App Store.',
   path: '/',
   languages: { en: '/', ru: '/ru' },
 })

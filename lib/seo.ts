@@ -1,6 +1,22 @@
 import type { Metadata } from 'next'
 import { SITE } from './site'
 
+/**
+ * Trim to a length without cutting a word in half.
+ *
+ * Descriptions built with a plain .slice() produced tails like "keys that have
+ * alre" on /glossary/forward-secrecy. Cuts at the last word boundary inside the
+ * limit and adds an ellipsis, or returns the string untouched if it already
+ * fits.
+ */
+export function truncateAtWord(text: string, max = 158): string {
+  const clean = text.replace(/\s+/g, ' ').trim()
+  if (clean.length <= max) return clean
+  const cut = clean.slice(0, max - 1)
+  const lastSpace = cut.lastIndexOf(' ')
+  return (lastSpace > max * 0.6 ? cut.slice(0, lastSpace) : cut).replace(/[,;:.\s]+$/, '') + '…'
+}
+
 /** Roughly where Google truncates a title in the SERP. */
 const TITLE_MAX_LENGTH = 60
 /** Length of the " · PrivaMesh" suffix the root layout's title template adds. */

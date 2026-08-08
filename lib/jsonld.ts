@@ -23,26 +23,45 @@ export const websiteLd = {
   inLanguage: 'en',
 }
 
-/** SoftwareApplication with a free + paid offer, for the home page. */
+/**
+ * SoftwareApplication for the app.
+ *
+ * Every field is checked against the live App Store listing rather than the
+ * marketing copy: the category there is Social Networking, the app itself is a
+ * free download, and PrivaMesh+ is an in-app subscription rather than a
+ * purchase price. Screenshots point at the stable /screenshots files, not at
+ * the generated OG images whose URLs change on every build.
+ */
 export const softwareApplicationLd = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
-  name: SITE.name,
+  name: 'PrivaMesh Messenger',
+  alternateName: SITE.name,
   operatingSystem: 'iOS',
-  applicationCategory: 'CommunicationApplication',
+  applicationCategory: 'SocialNetworkingApplication',
   description: SITE.description,
   url: SITE.domain,
   image: `${SITE.domain}/logo.png`,
+  screenshot: [
+    `${SITE.domain}/screenshots/01.png`,
+    `${SITE.domain}/screenshots/02.png`,
+    `${SITE.domain}/screenshots/03.png`,
+    `${SITE.domain}/screenshots/04.png`,
+    `${SITE.domain}/screenshots/05.png`,
+  ],
   downloadUrl: SITE.appStore,
   installUrl: SITE.appStore,
-  offers: [
-    {
-      '@type': 'Offer',
-      name: 'Free',
-      price: '0',
-      priceCurrency: 'USD',
-    },
-    {
+  author: { '@id': `${SITE.domain}/#organization` },
+  // The App Store lists PrivaMesh as a free download. PrivaMesh+ is an in-app
+  // subscription, so it is described as an addOn rather than a second price for
+  // the app, which would misreport the cost of installing it.
+  offers: {
+    '@type': 'Offer',
+    price: '0',
+    priceCurrency: 'USD',
+    availability: 'https://schema.org/InStock',
+    url: SITE.appStore,
+    addOn: {
       '@type': 'Offer',
       name: 'PrivaMesh+',
       price: SITE.price.plus,
@@ -56,7 +75,7 @@ export const softwareApplicationLd = {
         unitCode: 'MON',
       },
     },
-  ],
+  },
   // Star rating rich result — only when real App Store reviews exist (SITE.rating).
   ...(SITE.rating
     ? {
