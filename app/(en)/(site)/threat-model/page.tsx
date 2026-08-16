@@ -12,6 +12,7 @@ export const metadata: Metadata = pageMetadata({
   description:
     'Adversary by adversary: what the operator, RPC provider, chain observer, a stolen device and a malicious contact can each see, and what remains possible.',
   path: '/threat-model',
+  languages: { en: '/threat-model', ru: '/ru/threat-model' },
 })
 
 type Adversary = {

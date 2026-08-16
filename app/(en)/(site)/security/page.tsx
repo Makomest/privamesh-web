@@ -14,6 +14,7 @@ export const metadata: Metadata = pageMetadata({
   description:
     'PrivaMesh audit status, how to report a vulnerability, what we commit to fixing and when, and which app versions receive security updates.',
   path: '/security',
+  languages: { en: '/security', ru: '/ru/security' },
 })
 
 const FAQS = [

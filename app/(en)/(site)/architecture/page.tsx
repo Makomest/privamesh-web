@@ -14,6 +14,7 @@ export const metadata: Metadata = pageMetadata({
   description:
     'Every component in PrivaMesh and what it can observe: the iOS client, our fee worker, the RPC endpoint, Solana and StoreKit. Named, not hidden.',
   path: '/architecture',
+  languages: { en: '/architecture', ru: '/ru/architecture' },
 })
 
 const FAQS = [

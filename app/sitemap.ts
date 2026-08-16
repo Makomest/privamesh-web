@@ -51,16 +51,27 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const supportHreflang = {
     languages: { en: `${SITE.domain}/support`, ru: `${SITE.domain}/ru/support` },
   }
+  // The trust pages exist in both locales, so each pair is declared explicitly.
+  const TRUST_PAGES = ['architecture', 'threat-model', 'limitations', 'security']
+  const trustHreflang = (slug: string) => ({
+    languages: { en: `${SITE.domain}/${slug}`, ru: `${SITE.domain}/ru/${slug}` },
+  })
   const staticEntries = STATIC_PATHS.map((p) => {
     if (p.path === '/') return { ...entry(p.path, p.priority, p.freq), alternates: hreflang }
     if (p.path === '/support')
       return { ...entry(p.path, p.priority, p.freq), alternates: supportHreflang }
+    const trust = TRUST_PAGES.find((t) => p.path === `/${t}`)
+    if (trust) return { ...entry(p.path, p.priority, p.freq), alternates: trustHreflang(trust) }
     return entry(p.path, p.priority, p.freq)
   })
   const ruLanding = [
     { ...entry('/ru', 0.9, 'weekly'), alternates: hreflang },
     entry('/ru/blog', 0.5, 'weekly'),
     { ...entry('/ru/support', 0.6, 'monthly'), alternates: supportHreflang },
+    ...TRUST_PAGES.map((t) => ({
+      ...entry(`/ru/${t}`, 0.8, 'monthly'),
+      alternates: trustHreflang(t),
+    })),
   ]
 
   const enPosts = getPosts('en')

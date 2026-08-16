@@ -12,6 +12,7 @@ export const metadata: Metadata = pageMetadata({
   description:
     'What PrivaMesh does not protect you from: permanent on-chain ciphertext, visible transaction timing, no audit yet, iPhone only, and unrecoverable history.',
   path: '/limitations',
+  languages: { en: '/limitations', ru: '/ru/limitations' },
 })
 
 type Limit = { title: string; body: string }

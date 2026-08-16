@@ -69,3 +69,55 @@ export const FLOW: FlowStep[] = [
   { label: 'Solana', detail: 'Carries the padded ciphertext to a one-time address' },
   { label: 'Their iPhone', detail: 'Scans for its own one-time addresses and decrypts locally' },
 ]
+
+/** Russian mirror of COMPONENTS. Same rows, same facts, translated. */
+export const COMPONENTS_RU: Component[] = [
+  {
+    name: 'iOS-клиент',
+    operator: 'Вы',
+    sees: 'Открытый текст, ключи, контакты',
+    stores: 'Всё, только на устройстве',
+    replaceable: 'Yes',
+    note: 'Единственное место, где вообще существуют открытый текст и ключи. Ключи лежат в iOS Keychain за Face ID и не синхронизируются с iCloud.',
+  },
+  {
+    name: 'Fee worker',
+    operator: 'PrivaMesh',
+    sees: 'Аккаунт, время запроса, потраченный слепой токен',
+    stores: 'Только рабочие логи — ни текста, ни получателя',
+    replaceable: 'Partly',
+    note: 'Оплачивает сетевую комиссию, чтобы вам не нужно было держать SOL. Это единственная машина, которую мы запускаем, и честная граница дизайна. Слепые токены не дают связать отправку с покупкой.',
+  },
+  {
+    name: 'Solana RPC',
+    operator: 'Сторонний провайдер',
+    sees: 'Ваш IP, время запросов, отправляемые транзакции',
+    stores: 'То, что решит логировать провайдер',
+    replaceable: 'Yes',
+    note: 'Заменяем и разворачивается самостоятельно. Именно этот компонент лучше всего видит вашу сетевую активность и меньше всего нам подконтролен.',
+  },
+  {
+    name: 'Сеть Solana',
+    operator: 'Никто конкретно',
+    sees: 'Шифротекст, одноразовые адреса, время транзакций',
+    stores: 'Постоянно и публично',
+    replaceable: 'No',
+    note: 'Транспорт. Всё записанное — это дополненный шифротекст на одноразовый адрес, но записывается он навсегда.',
+  },
+  {
+    name: 'StoreKit',
+    operator: 'Apple',
+    sees: 'Вашу покупку и Apple ID',
+    stores: 'По правилам Apple',
+    replaceable: 'No',
+    note: 'Неизбежен для покупок внутри приложения на iOS. Слепые токены — то, что не даёт связать покупку с вашей перепиской.',
+  },
+]
+
+export const FLOW_RU: FlowStep[] = [
+  { label: 'Ваш iPhone', detail: 'Шифрует и дополняет сообщение, выводит одноразовый адрес' },
+  { label: 'Fee worker', detail: 'Оплачивает комиссию, тратит один слепой токен' },
+  { label: 'RPC-эндпоинт', detail: 'Отправляет транзакцию в сеть' },
+  { label: 'Solana', detail: 'Несёт дополненный шифротекст на одноразовый адрес' },
+  { label: 'Его iPhone', detail: 'Ищет свои одноразовые адреса и расшифровывает локально' },
+]
