@@ -79,7 +79,7 @@ export const HOME_FEATURES = [
   {
     href: '/features/no-servers',
     title: 'No servers',
-    body: 'There is no PrivaMesh backend to breach, subpoena, or shut down. The chain is the transport.',
+    body: 'No account database, no inbox, no message store to breach or subpoena. The chain is the transport.',
   },
   {
     href: '/features/e2e-encryption',

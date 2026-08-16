@@ -23,7 +23,7 @@ export const metadata: Metadata = pageMetadata({
 const FAQS = [
   {
     q: 'What makes a messenger truly private?',
-    a: 'Three things most apps get partly right: content encryption, metadata protection, and no central server. PrivaMesh does all three - messages are end-to-end encrypted, stealth addresses and cover traffic hide metadata, and there is no server at all.',
+    a: 'Three things most apps get partly right: content encryption, metadata resistance, and keeping the operator out of the message path. PrivaMesh does all three - messages are end-to-end encrypted, stealth addresses reduce linkability and optional cover traffic makes timing correlation harder, and we run no account database or message store.',
   },
   {
     q: 'Is PrivaMesh more private than Signal?',
@@ -31,7 +31,7 @@ const FAQS = [
   },
   {
     q: 'Can PrivaMesh read my messages?',
-    a: 'No. Encryption and decryption happen on your device with keys only you hold in the iOS Keychain. There is no PrivaMesh server in the path, so there is no point at which we could read anything.',
+    a: 'No. Encryption and decryption happen on your device with keys only you hold in the iOS Keychain, and no PrivaMesh server sits in the message path. The one worker we run pays network fees; it sees an account and a timestamp, never plaintext and never a recipient.',
   },
 ]
 
@@ -47,7 +47,7 @@ export default function PrivacyPage() {
             { name: 'Why Private', path: '/privacy' },
           ]}
           title="Why PrivaMesh is the most private messenger"
-          lead="Most apps call themselves private. PrivaMesh proves it structurally: there is no server to trust, no phone number to trace, and no metadata to leak."
+          lead="Most apps call themselves private. PrivaMesh is built to minimise what anyone can hold: no account database, no phone number, and a delivery path designed so the metadata is hard to link - not a promise that it does not exist."
         >
           <div className="flex flex-wrap gap-3">
             <AppStoreButton />
@@ -67,15 +67,16 @@ export default function PrivacyPage() {
               <strong>truly private messenger</strong> rather than a private-ish one.
             </p>
 
-            <h2>No servers means nothing to breach</h2>
+            <h2>No account database, and one worker we name</h2>
             <p>
-              There is no PrivaMesh server, no relay, and no account database. The only network
-              dependency is a Solana RPC endpoint, which is swappable and self-hostable. Your
-              messages are encrypted blobs living in Solana transaction memos. There is no central
-              system to subpoena, breach, log, or shut down - because it does not exist. When a
-              company holds your messages, a court order, a hack, or a policy change can expose
-              them. PrivaMesh removes the company from the equation.{' '}
-              <Link href="/features/no-servers">Read how the serverless architecture works.</Link>
+              There is no account database and no message store. Your messages are encrypted blobs
+              living in Solana transaction memos, and the RPC endpoint is swappable and
+              self-hostable. What we do run is a fee worker that sponsors each transaction so you
+              never have to hold SOL: it sees an account and a timestamp, never plaintext and never
+              a recipient. That is the whole of our infrastructure, and naming it is the point -
+              a claim you can check beats one you have to trust.{' '}
+              <Link href="/architecture">See every component and what it can observe</Link>, or{' '}
+              <Link href="/limitations">read what PrivaMesh does not protect you from</Link>.
             </p>
 
             <h2>No phone number, no email, no identity to leak</h2>

@@ -85,6 +85,50 @@ export default function E2EPage() {
             </li>
           </ul>
 
+          <h2>Post-quantum: X-Wing on iOS 26</h2>
+          <p>
+            Anything written to a public ledger stays there, which turns{' '}
+            <em>harvest now, decrypt later</em> into a real threat model rather than a talking
+            point: an adversary can record ciphertext today and wait for a quantum computer. On iOS
+            26 the handshake mixes <strong>X-Wing</strong> into the root key - a hybrid that
+            combines <strong>ML-KEM-768</strong> with X25519 - so recovering a session means
+            breaking the post-quantum KEM <em>and</em> the elliptic curve, not either one.
+          </p>
+          <p>
+            It is a hybrid on purpose. A pure post-quantum scheme would stake everything on
+            cryptography with far less deployment history than X25519; combining the two means a
+            weakness in either leaves the session standing. Older devices keep the classical
+            handshake and the two interoperate, with the sender falling back automatically when the
+            recipient publishes no post-quantum prekey.
+          </p>
+
+          <h2>Padding buckets, and why they stop at 512 bytes</h2>
+          <p>
+            Ciphertext length leaks meaning, so plaintext is padded into fixed buckets - 32, 64,
+            128, 256 or 512 bytes - before encryption. An observer counting bytes learns which
+            bucket you used, never what you wrote.
+          </p>
+          <p>
+            The 512-byte ceiling is not a design preference. A larger bucket would produce a memo
+            that exceeds Solana&rsquo;s 1232-byte transaction limit, so the transport sets the
+            maximum rather than the privacy model.
+          </p>
+
+          <h2>Paying without becoming identifiable</h2>
+          <p>
+            Metered messaging creates its own privacy problem: proving you paid usually means
+            attaching a receipt to every request, at which point the operator can link your purchase
+            to your activity. PrivaMesh proves the subscription once and receives a pool of{' '}
+            <strong>RSA blind signatures</strong>. Each send spends one token.
+          </p>
+          <p>
+            The relay can check that a token is valid and unspent, and cannot link it to the
+            purchase or to any other token. Because the tokens are anonymous by construction they
+            are not tied to an account at all - losing the pool costs a re-issue and nothing else.
+            This is the part a messenger would usually skip, and it is what decides whether
+            &ldquo;we don&rsquo;t track you&rdquo; is architecture or marketing.
+          </p>
+
           <h2>AES-256-GCM - sealing the payload</h2>
           <p>
             The per-message key from the ratchet is used with <code>AES-256-GCM</code>, an

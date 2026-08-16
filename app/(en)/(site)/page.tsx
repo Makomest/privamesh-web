@@ -13,6 +13,7 @@ import JsonLd from '@/components/JsonLd'
 import { pageMetadata } from '@/lib/seo'
 import { softwareApplicationLd, faqPageLd } from '@/lib/jsonld'
 import AppStoreButton from '@/components/AppStoreButton'
+import { SITE } from '@/lib/site'
 import {
   TRUST_ROW,
   NO_SERVERS_TABLE,
@@ -53,16 +54,36 @@ export default function HomePage() {
                 The <HeroScramble text="Private" /> messenger that knows nothing about you
               </h1>
               <p className="mt-6 max-w-xl text-lg leading-relaxed text-text-secondary">
-                There is no PrivaMesh server. Nothing to subpoena, breach, log, or shut down. Just
-                end-to-end encrypted messages - no phone number, no email, no metadata. Your keys and
-                chats stay on your device. Trust math, not companies.
+                Private messaging with no phone number and no account database. Messages are
+                end-to-end encrypted on your device and delivered to one-time addresses over a
+                public decentralized transport. PrivaMesh is built to minimise metadata - not to
+                pretend it does not exist.
               </p>
               <div className="mt-8 flex flex-wrap items-center gap-3">
-                <AppStoreButton />
-                <Button href="/features/e2e-encryption" variant="ghost">
-                  How the encryption works
+                <AppStoreButton label="Download on the App Store" />
+                <Button href="/threat-model" variant="ghost">
+                  Read the threat model
                 </Button>
               </div>
+              <p className="mt-4 flex flex-wrap gap-x-5 gap-y-2 font-mono text-xs text-text-muted">
+                <Link href="/architecture" className="hover:text-accent">
+                  Architecture
+                </Link>
+                <Link href="/limitations" className="hover:text-accent">
+                  Known limitations
+                </Link>
+                <Link href="/security" className="hover:text-accent">
+                  Audit status
+                </Link>
+                <a
+                  href={SITE.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-accent"
+                >
+                  Source code
+                </a>
+              </p>
               <ul className="mt-8 flex flex-wrap items-center gap-x-3 gap-y-2 font-mono text-xs text-text-muted">
                 {TRUST_ROW.map((t, i) => (
                   <li key={t} className="flex items-center gap-3">

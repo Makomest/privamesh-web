@@ -155,7 +155,7 @@ export const GUIDES: Guide[] = [
       {
         h2: 'Why serverless wins the top spot',
         paras: [
-          'Even excellent apps like Signal run servers and require a phone number, so they protect content better than metadata or identity. An app with no server at all removes the single point that can leak connection metadata or be compelled to change behavior.',
+          'Even excellent apps like Signal run servers and require a phone number, so they protect content better than metadata or identity. Removing the account database and the message store removes the point that can leak a social graph or be compelled to change behaviour - what remains beside the path should be small enough to state in one sentence.',
           'PrivaMesh stores messages as encrypted blobs on Solana, uses a seed phrase instead of a phone number, and hides metadata with stealth addresses and cover traffic — clearing all three layers.',
         ],
       },

@@ -58,7 +58,7 @@ export const COMPARISONS: Record<string, Comparison> = {
     },
     difference: {
       heading: 'Where PrivaMesh goes further',
-      body: 'Signal’s servers still see connection metadata, and its phone-number requirement links your account to your real identity. PrivaMesh has no server to see anything and no phone number to link. Your account is a BIP-39 seed phrase, your messages are encrypted blobs on Solana, and stealth addresses plus cover traffic hide the social graph and timing that Signal’s servers would otherwise handle. There is nothing to subpoena, because there is no company holding your data.',
+      body: 'Signal’s servers still see connection metadata, and its phone-number requirement links your account to your real identity. PrivaMesh has no account database and no phone number to link. Your account is a BIP-39 seed phrase, your messages are encrypted blobs on Solana, and stealth addresses hide the social graph that Signal’s servers would otherwise handle. The one worker we run pays network fees and sees an account and a timestamp - no plaintext, no recipient, no social graph to subpoena.',
     },
     verdict:
       'Choose Signal for a mature, mainstream encrypted messenger with the widest reach. Choose PrivaMesh when you want to remove the server and the phone number from the trust equation entirely.',
@@ -104,7 +104,7 @@ export const COMPARISONS: Record<string, Comparison> = {
     },
     difference: {
       heading: 'Where PrivaMesh goes further',
-      body: 'PrivaMesh is end-to-end encrypted by default on every message, with no cloud copy on anyone’s server, because there is no server. There is no phone number, the account is a self-custodial seed phrase, and stealth addresses plus cover traffic hide metadata that Telegram’s infrastructure necessarily sees. The trade-off is reach and convenience - PrivaMesh is a focused iOS privacy tool, not a mass social platform.',
+      body: 'PrivaMesh is end-to-end encrypted by default on every message, with no cloud copy on anyone’s server, because there is no message store. There is no phone number, the account is a self-custodial seed phrase, and stealth addresses plus cover traffic hide metadata that Telegram’s infrastructure necessarily sees. The trade-off is reach and convenience - PrivaMesh is a focused iOS privacy tool, not a mass social platform.',
     },
     verdict:
       'Choose Telegram for reach, communities and convenience. Choose PrivaMesh when default end-to-end encryption, no servers and no phone number matter more than cloud sync and huge groups.',

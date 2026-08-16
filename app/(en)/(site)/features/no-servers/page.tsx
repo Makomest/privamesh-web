@@ -34,7 +34,7 @@ export default function NoServersPage() {
           { name: 'No Servers', path: '/features/no-servers' },
         ]}
         title="A serverless messenger with no backend to trust"
-        lead="Every other messenger runs servers that see your metadata. PrivaMesh has none - there is no PrivaMesh server to breach, subpoena, log, or shut down."
+        lead="Every other messenger runs servers that hold your account and your metadata. PrivaMesh holds neither - no account database, no inbox, no message store. One worker pays your network fees, and that is the whole of what we run."
       >
         <div className="flex flex-wrap gap-3">
           <AppStoreButton />
@@ -48,8 +48,8 @@ export default function NoServersPage() {
         <Prose>
           <p>
             When people say &ldquo;messenger without servers,&rdquo; they usually mean the servers
-            are somewhere you can&rsquo;t see. PrivaMesh means it literally. There is no PrivaMesh
-            backend, no relay, and no account database anywhere. Encrypted messages travel over a{' '}
+            are somewhere you can&rsquo;t see. PrivaMesh means something narrower and checkable: there is
+            no account database, no inbox and no message store. Encrypted messages travel over a{' '}
             <strong>public, decentralized transport</strong> that no single company owns. This is
             what a genuinely <strong>decentralized messenger</strong> looks like.
           </p>
@@ -86,8 +86,8 @@ export default function NoServersPage() {
             To send, PrivaMesh encrypts your message and pads it to a fixed size on your device, then
             hands the sealed blob to a public, decentralized transport, addressed to a one-time
             address. To receive, your device retrieves messages for its one-time addresses and
-            decrypts them locally. At no point does a PrivaMesh machine handle your message, because
-            there is no PrivaMesh machine.
+            decrypts them locally. The only machine we run pays the network fee for the transaction. It
+            sees an account and a timestamp - never the plaintext, never the recipient.
           </p>
 
           <h2>Why serverless equals private</h2>
@@ -95,17 +95,18 @@ export default function NoServersPage() {
             A server is a single point of failure for privacy. It can be hacked, subpoenaed, or
             quietly instructed to log more than it should. It can go down and take your messages
             with it. It can be sold, and its data policy with it. Remove the server and every one of
-            those risks disappears at once. There is <strong>nothing to breach</strong> because your
-            messages are just encrypted blobs only you can read. There is{' '}
-            <strong>nothing to subpoena</strong> because no company holds your conversations. And
-            there is <strong>nothing to shut down</strong> because there is no central service to
-            switch off.
+            those risks shrinks to what one worker can see. There is <strong>no inbox to breach</strong>,
+            because messages are encrypted blobs only you can read. There is{' '}
+            <strong>no conversation to subpoena</strong>, because no company holds one. What could
+            be compelled from us is that an account paid for a send at a given time - not the
+            message, not the recipient, not who you talk to.
           </p>
 
           <h2>No lock-in by design</h2>
           <p>
-            The transport is public and swappable. PrivaMesh is never tied to infrastructure we
-            control, so nobody can cut you off and no single provider sees all your traffic.
+            The transport is public and swappable, so no single provider sees all your traffic. The
+            fee worker is ours and is the one dependency we do control; if it went away you would
+            fund transactions yourself, and your identity, contacts and history would be untouched.
           </p>
 
           <h2>The honest trade-off</h2>
