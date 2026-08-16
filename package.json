@@ -10,7 +10,8 @@
     "lint": "next lint",
     "indexnow": "node scripts/indexnow.mjs",
     "bing": "node scripts/bing-report.mjs",
-    "seo:qa": "node scripts/seo-qa.mjs"
+    "seo:qa": "node scripts/seo-qa.mjs",
+    "sync:appstore": "node scripts/sync-appstore.mjs"
   },
   "dependencies": {
     "@mdx-js/loader": "3.0.1",

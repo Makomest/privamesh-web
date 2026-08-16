@@ -5,6 +5,7 @@ import { NAV_PRODUCT, NAV_COMPARE, SITE } from '@/lib/site'
 
 const RESOURCES = [
   { href: '/privacy', label: 'Why Private' },
+  { href: '/pricing', label: 'Pricing' },
   { href: '/architecture', label: 'Architecture' },
   { href: '/threat-model', label: 'Threat model' },
   { href: '/limitations', label: 'Limitations' },

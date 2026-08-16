@@ -1,4 +1,5 @@
 import { SITE } from './site'
+import { APP_STORE } from './appstore.generated'
 
 /** Sitewide organization/publisher entity. */
 export const organizationLd = {
@@ -35,11 +36,15 @@ export const websiteLd = {
 export const softwareApplicationLd = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
-  name: 'PrivaMesh Messenger',
+  name: APP_STORE.name,
   alternateName: SITE.name,
-  operatingSystem: 'iOS 26.5 or later',
+  operatingSystem: `iOS ${APP_STORE.minimumOsVersion} or later`,
   applicationCategory: 'SocialNetworkingApplication',
-  softwareVersion: '1.0',
+  softwareVersion: APP_STORE.version,
+  datePublished: APP_STORE.releasedAt.slice(0, 10),
+  dateModified: APP_STORE.updatedAt.slice(0, 10),
+  contentRating: APP_STORE.contentRating,
+  inLanguage: APP_STORE.languages.map((l) => l.toLowerCase()),
   description: SITE.description,
   url: SITE.domain,
   image: `${SITE.domain}/logo.png`,
@@ -58,8 +63,8 @@ export const softwareApplicationLd = {
   // the app, which would misreport the cost of installing it.
   offers: {
     '@type': 'Offer',
-    price: '0',
-    priceCurrency: 'USD',
+    price: APP_STORE.price,
+    priceCurrency: APP_STORE.currency,
     availability: 'https://schema.org/InStock',
     url: SITE.appStore,
     addOn: {

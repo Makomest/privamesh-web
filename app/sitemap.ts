@@ -27,6 +27,7 @@ const STATIC_PATHS: { path: string; priority: number; freq: Freq }[] = [
   { path: '/glossary', priority: 0.7, freq: 'monthly' },
   { path: '/about', priority: 0.6, freq: 'yearly' },
   { path: '/support', priority: 0.6, freq: 'monthly' },
+  { path: '/pricing', priority: 0.8, freq: 'monthly' },
   { path: '/architecture', priority: 0.9, freq: 'monthly' },
   { path: '/threat-model', priority: 0.9, freq: 'monthly' },
   { path: '/limitations', priority: 0.8, freq: 'monthly' },

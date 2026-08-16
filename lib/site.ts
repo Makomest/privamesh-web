@@ -18,10 +18,21 @@ export const SITE = {
   // Live since the App Store release - every "Get PrivaMesh" button now links to
   // the store instead of opening the waitlist modal.
   appStoreLive: true,
+  // Prices and allowances mirror privamesh.storekit in the app repo. Apple
+  // regionalises the actual amount charged; these are the US tier prices.
   price: {
-    plus: '1.99',
+    plus: '5.99',
+    pro: '9.99',
     currency: 'USD',
   },
+  /** Monthly sponsored message allowance per tier, from SubscriptionManager. */
+  allowance: { free: 0, plus: 1200, pro: 2000 },
+  /** One-off message packs: product suffix → [messages, USD price]. */
+  packs: [
+    { messages: 100, price: '0.99' },
+    { messages: 500, price: '3.99' },
+    { messages: 1500, price: '9.99' },
+  ],
   // App Store rating for AggregateRating rich snippet (stars in search).
   // Keep null until you have REAL App Store reviews — fake ratings violate
   // Google's guidelines. Then set e.g. { value: '4.8', count: 210 }.
