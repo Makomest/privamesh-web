@@ -2,9 +2,11 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Container } from '@/components/Container'
 import PageHeader from '@/components/PageHeader'
+import JsonLd from '@/components/JsonLd'
 import { Prose, RelatedLinks } from '@/components/Prose'
 import FadeUp from '@/components/FadeUp'
 import { pageMetadata } from '@/lib/seo'
+import { webPageLd } from '@/lib/jsonld'
 import { SITE } from '@/lib/site'
 import { APP_STORE } from '@/lib/appstore.generated'
 
@@ -18,6 +20,12 @@ export const metadata: Metadata = pageMetadata({
 export default function PressPage() {
   return (
     <Container>
+      <JsonLd data={webPageLd({
+          name: "PrivaMesh press kit",
+          description: "Facts, boilerplate and assets for writing about PrivaMesh.",
+          path: '/press',
+          type: 'WebPage',
+        })} />
       <PageHeader
         eyebrow="Press"
         trail={[

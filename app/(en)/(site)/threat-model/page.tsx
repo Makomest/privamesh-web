@@ -2,10 +2,13 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Container } from '@/components/Container'
 import PageHeader from '@/components/PageHeader'
+import JsonLd from '@/components/JsonLd'
 import { Prose, RelatedLinks } from '@/components/Prose'
 import FadeUp from '@/components/FadeUp'
 import PageFaq from '@/components/PageFaq'
 import { pageMetadata } from '@/lib/seo'
+import { APP_STORE } from '@/lib/appstore.generated'
+import { techArticleLd } from '@/lib/jsonld'
 
 export const metadata: Metadata = pageMetadata({
   title: 'Threat model: who sees what',
@@ -118,6 +121,13 @@ const FAQS = [
 export default function ThreatModelPage() {
   return (
     <Container>
+      <JsonLd data={techArticleLd({
+          headline: "Who can see what, and what stops them",
+          description: "PrivaMesh threat model, adversary by adversary, with residual risk.",
+          path: '/threat-model',
+          datePublished: APP_STORE.releasedAt.slice(0, 10),
+          dateModified: APP_STORE.updatedAt.slice(0, 10),
+        })} />
       <PageHeader
         eyebrow="Threat model"
         trail={[

@@ -7,7 +7,7 @@ import { Button } from '@/components/Button'
 import AppStoreButton from '@/components/AppStoreButton'
 import JsonLd from '@/components/JsonLd'
 import { pageMetadata } from '@/lib/seo'
-import { organizationLd } from '@/lib/jsonld'
+import { organizationLd, webPageLd } from '@/lib/jsonld'
 import { SITE } from '@/lib/site'
 
 export const metadata: Metadata = pageMetadata({
@@ -20,6 +20,12 @@ export const metadata: Metadata = pageMetadata({
 export default function AboutPage() {
   return (
     <Container>
+      <JsonLd data={webPageLd({
+          name: "About PrivaMesh",
+          description: "Who builds PrivaMesh and why.",
+          path: '/about',
+          type: 'AboutPage',
+        })} />
       <JsonLd data={organizationLd} />
       <PageHeader
         eyebrow="About"
@@ -46,8 +52,10 @@ export default function AboutPage() {
             log, leak, or hand over your data. PrivaMesh takes a different position: you
             shouldn&rsquo;t have to trust anyone. We build messaging where privacy is guaranteed by
             cryptography and architecture, not by a promise. There is{' '}
-            <Link href="/features/no-servers">no PrivaMesh server</Link> - nothing to subpoena,
-            breach, log, or shut down.
+            <Link href="/features/no-servers">no account database and no message store</Link> - so
+            there is no conversation to subpoena and no inbox to breach. What we do run is one
+            worker that pays network fees; <Link href="/architecture">it is named and described</Link>
+            {' '}rather than left out of the story.
           </p>
 
           <h2>Who builds it</h2>
@@ -125,8 +133,9 @@ export default function AboutPage() {
           <h2>What we stand for</h2>
           <ul>
             <li>
-              <strong>No servers.</strong> The Solana blockchain is the transport; your device holds
-              your keys, contacts and history.
+              <strong>No account database.</strong> The Solana blockchain is the transport, your
+              device holds your keys, contacts and history, and the single fee worker we run sees an
+              account and a timestamp.
             </li>
             <li>
               <strong>No identity.</strong> No phone number, no email - your account is a{' '}
@@ -134,8 +143,8 @@ export default function AboutPage() {
             </li>
             <li>
               <strong>No metadata harvesting.</strong>{' '}
-              <Link href="/features/metadata-protection">Stealth addresses and cover traffic</Link>{' '}
-              hide who talks to whom, and when.
+              <Link href="/features/metadata-protection">Stealth addresses</Link> hide who talks to
+              whom, and optional cover traffic - off by default - hides when.
             </li>
             <li>
               <strong>Honesty about trade-offs.</strong> Forward secrecy means your seed restores
@@ -146,10 +155,11 @@ export default function AboutPage() {
 
           <h2>How we&rsquo;re funded</h2>
           <p>
-            PrivaMesh has a free tier and an optional paid tier. We never sell data - there is no
-            data to sell, and no server to collect it on. Sending messages costs a tiny Solana
-            network fee paid in SOL, not to us. Our incentives are aligned with your privacy, not
-            against it.
+            PrivaMesh is a free download with paid tiers. We never sell data - there is none to
+            sell. Sending is metered because every message is a Solana transaction with a real
+            network fee, which our fee worker pays on your behalf;{' '}
+            <Link href="/pricing">the pricing page</Link> shows what that costs and why. Our
+            incentives are aligned with your privacy rather than against it.
           </p>
 
           <h2>Get in touch</h2>

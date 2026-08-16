@@ -2,10 +2,12 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Container } from '@/components/Container'
 import PageHeader from '@/components/PageHeader'
+import JsonLd from '@/components/JsonLd'
 import { Prose, RelatedLinks } from '@/components/Prose'
 import FadeUp from '@/components/FadeUp'
 import PageFaq from '@/components/PageFaq'
 import { pageMetadata } from '@/lib/seo'
+import { webPageLd } from '@/lib/jsonld'
 
 export const metadata: Metadata = pageMetadata({
   title: 'Transparency report',
@@ -43,6 +45,12 @@ const FAQS = [
 export default function TransparencyPage() {
   return (
     <Container>
+      <JsonLd data={webPageLd({
+          name: "PrivaMesh transparency report",
+          description: "Legal requests received and what could be produced.",
+          path: '/transparency',
+          type: 'WebPage',
+        })} />
       <PageHeader
         eyebrow="Transparency"
         trail={[

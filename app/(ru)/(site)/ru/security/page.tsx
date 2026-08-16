@@ -3,10 +3,13 @@ import Link from 'next/link'
 import { AlertTriangle, Mail } from 'lucide-react'
 import { Container } from '@/components/Container'
 import PageHeader from '@/components/PageHeader'
+import JsonLd from '@/components/JsonLd'
 import { Prose, RelatedLinks } from '@/components/Prose'
 import FadeUp from '@/components/FadeUp'
 import PageFaq from '@/components/PageFaq'
 import { pageMetadata } from '@/lib/seo'
+import { APP_STORE } from '@/lib/appstore.generated'
+import { techArticleLd } from '@/lib/jsonld'
 import { SITE } from '@/lib/site'
 
 export const metadata: Metadata = pageMetadata({
@@ -40,6 +43,13 @@ const FAQS = [
 export default function RuSecurityPage() {
   return (
     <Container>
+      <JsonLd data={techArticleLd({
+          headline: "Безопасность и раскрытие уязвимостей",
+          description: "Статус аудита и раскрытие уязвимостей PrivaMesh.",
+          path: '/ru/security',
+          datePublished: APP_STORE.releasedAt.slice(0, 10),
+          dateModified: APP_STORE.updatedAt.slice(0, 10),
+        })} />
       <PageHeader
         eyebrow="Безопасность"
         trail={[

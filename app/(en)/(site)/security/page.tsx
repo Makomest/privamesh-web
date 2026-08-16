@@ -3,10 +3,13 @@ import Link from 'next/link'
 import { AlertTriangle, Mail } from 'lucide-react'
 import { Container } from '@/components/Container'
 import PageHeader from '@/components/PageHeader'
+import JsonLd from '@/components/JsonLd'
 import { Prose, RelatedLinks } from '@/components/Prose'
 import FadeUp from '@/components/FadeUp'
 import PageFaq from '@/components/PageFaq'
 import { pageMetadata } from '@/lib/seo'
+import { APP_STORE } from '@/lib/appstore.generated'
+import { techArticleLd } from '@/lib/jsonld'
 import { SITE } from '@/lib/site'
 
 export const metadata: Metadata = pageMetadata({
@@ -39,6 +42,13 @@ const FAQS = [
 export default function SecurityPage() {
   return (
     <Container>
+      <JsonLd data={techArticleLd({
+          headline: "Security and disclosure",
+          description: "Audit status, vulnerability disclosure and response commitments.",
+          path: '/security',
+          datePublished: APP_STORE.releasedAt.slice(0, 10),
+          dateModified: APP_STORE.updatedAt.slice(0, 10),
+        })} />
       <PageHeader
         eyebrow="Security"
         trail={[

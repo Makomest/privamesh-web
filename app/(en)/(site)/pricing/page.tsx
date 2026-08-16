@@ -3,11 +3,13 @@ import Link from 'next/link'
 import { Check } from 'lucide-react'
 import { Container } from '@/components/Container'
 import PageHeader from '@/components/PageHeader'
+import JsonLd from '@/components/JsonLd'
 import { Prose, RelatedLinks } from '@/components/Prose'
 import FadeUp from '@/components/FadeUp'
 import PageFaq from '@/components/PageFaq'
 import AppStoreButton from '@/components/AppStoreButton'
 import { pageMetadata } from '@/lib/seo'
+import { softwareApplicationLd } from '@/lib/jsonld'
 import { SITE } from '@/lib/site'
 
 export const metadata: Metadata = pageMetadata({
@@ -72,6 +74,7 @@ const FAQS = [
 export default function PricingPage() {
   return (
     <Container>
+      <JsonLd data={softwareApplicationLd} />
       <PageHeader
         eyebrow="Pricing"
         trail={[

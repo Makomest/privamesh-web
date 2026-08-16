@@ -2,9 +2,11 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Container } from '@/components/Container'
 import PageHeader from '@/components/PageHeader'
+import JsonLd from '@/components/JsonLd'
 import { Prose } from '@/components/Prose'
 import PostList from '@/components/PostList'
 import { pageMetadata } from '@/lib/seo'
+import { webPageLd } from '@/lib/jsonld'
 import { getPosts, getAllTags, PER_PAGE } from '@/lib/posts'
 
 export const metadata: Metadata = pageMetadata({
@@ -23,6 +25,12 @@ export default function RuBlogIndex() {
 
   return (
     <Container>
+      <JsonLd data={webPageLd({
+          name: "Блог PrivaMesh",
+          description: "Разборы про шифрование, метаданные и приватную переписку.",
+          path: '/ru/blog',
+          type: 'CollectionPage',
+        })} />
       <PageHeader
         eyebrow="Блог"
         trail={[

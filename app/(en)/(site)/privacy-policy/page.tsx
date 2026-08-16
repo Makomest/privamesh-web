@@ -1,8 +1,10 @@
 import type { Metadata } from 'next'
 import { Container } from '@/components/Container'
 import PageHeader from '@/components/PageHeader'
+import JsonLd from '@/components/JsonLd'
 import { Prose } from '@/components/Prose'
 import { pageMetadata } from '@/lib/seo'
+import { webPageLd } from '@/lib/jsonld'
 import { SITE } from '@/lib/site'
 
 export const metadata: Metadata = pageMetadata({
@@ -17,6 +19,12 @@ const UPDATED = 'July 15, 2026'
 export default function PrivacyPolicyPage() {
   return (
     <Container>
+      <JsonLd data={webPageLd({
+          name: "PrivaMesh Privacy Policy",
+          description: "What PrivaMesh does and does not collect.",
+          path: '/privacy-policy',
+          type: 'WebPage',
+        })} />
       <PageHeader
         eyebrow="Legal"
         trail={[

@@ -1,8 +1,10 @@
 import type { Metadata } from 'next'
 import { Container } from '@/components/Container'
 import PageHeader from '@/components/PageHeader'
+import JsonLd from '@/components/JsonLd'
 import { Prose } from '@/components/Prose'
 import { pageMetadata } from '@/lib/seo'
+import { webPageLd } from '@/lib/jsonld'
 import { SITE } from '@/lib/site'
 
 export const metadata: Metadata = pageMetadata({
@@ -17,6 +19,12 @@ const UPDATED = 'July 15, 2026'
 export default function TermsPage() {
   return (
     <Container>
+      <JsonLd data={webPageLd({
+          name: "PrivaMesh Terms of Use",
+          description: "Terms governing use of the PrivaMesh app and website.",
+          path: '/terms',
+          type: 'WebPage',
+        })} />
       <PageHeader
         eyebrow="Legal"
         trail={[

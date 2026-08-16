@@ -2,9 +2,11 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Container } from '@/components/Container'
 import PageHeader from '@/components/PageHeader'
+import JsonLd from '@/components/JsonLd'
 import { Prose, RelatedLinks } from '@/components/Prose'
 import FadeUp from '@/components/FadeUp'
 import { pageMetadata } from '@/lib/seo'
+import { webPageLd } from '@/lib/jsonld'
 import { APP_STORE } from '@/lib/appstore.generated'
 
 export const metadata: Metadata = pageMetadata({
@@ -36,6 +38,12 @@ const RELEASES: Release[] = [
 export default function ChangelogPage() {
   return (
     <Container>
+      <JsonLd data={webPageLd({
+          name: "PrivaMesh changelog",
+          description: "Every PrivaMesh release and what shipped in it.",
+          path: '/changelog',
+          type: 'CollectionPage',
+        })} />
       <PageHeader
         eyebrow="Changelog"
         trail={[

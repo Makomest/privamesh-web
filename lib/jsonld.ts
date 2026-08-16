@@ -10,7 +10,16 @@ export const organizationLd = {
   url: SITE.domain,
   logo: `${SITE.domain}/logo.png`,
   slogan: SITE.tagline,
-  sameAs: [SITE.twitter],
+  // Every profile that confirms this is the same entity. An assistant
+  // reconciling "PrivaMesh" across sources follows these.
+  sameAs: [SITE.twitter, SITE.github, `https://apps.apple.com/app/id${SITE.appStoreId}`],
+  contactPoint: {
+    '@type': 'ContactPoint',
+    contactType: 'customer support',
+    email: SITE.supportEmail,
+    url: `${SITE.domain}/support`,
+    availableLanguage: ['English', 'Russian'],
+  },
 }
 
 export const websiteLd = {
@@ -36,6 +45,7 @@ export const websiteLd = {
 export const softwareApplicationLd = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
+  '@id': `${SITE.domain}/#app`,
   name: APP_STORE.name,
   alternateName: SITE.name,
   operatingSystem: `iOS ${APP_STORE.minimumOsVersion} or later`,
@@ -58,6 +68,21 @@ export const softwareApplicationLd = {
   downloadUrl: SITE.appStore,
   installUrl: SITE.appStore,
   author: { '@id': `${SITE.domain}/#organization` },
+  provider: { '@id': `${SITE.domain}/#organization` },
+  isAccessibleForFree: true,
+  applicationSubCategory: 'Encrypted messaging',
+  // Stated as features rather than prose so a model can list them without
+  // parsing marketing copy. Each one is checkable on the linked page.
+  featureList: [
+    'End-to-end encryption using X3DH and the Double Ratchet with AES-256-GCM',
+    'Post-quantum handshake on iOS 26 using X-Wing (ML-KEM-768 with X25519)',
+    'No phone number, email or account - identity is a BIP-39 recovery phrase',
+    'Stealth addressing: a fresh one-time address per message',
+    'Fixed padding buckets at 32, 64, 128, 256 and 512 bytes',
+    'Optional cover traffic at random 3-10 minute intervals, off by default',
+    'Anonymous payment via RSA blind signatures',
+    'Keys stored in the iOS Keychain behind Face ID or Touch ID',
+  ],
   // The App Store lists PrivaMesh as a free download. PrivaMesh+ is an in-app
   // subscription, so it is described as an addOn rather than a second price for
   // the app, which would misreport the cost of installing it.
@@ -237,5 +262,69 @@ export function definedTermSetLd(terms: { slug: string; term: string; short: str
       description: t.short,
       url: `${SITE.domain}/glossary/${t.slug}`,
     })),
+  }
+}
+
+
+/**
+ * A technical page, declared as a TechArticle that is about the app entity.
+ *
+ * The `about` link is the point: without it a model sees a page with an FAQ and
+ * has to infer the subject from prose. With it, the page is explicitly a
+ * document describing the SoftwareApplication at `/#app`.
+ */
+export function techArticleLd({
+  headline,
+  description,
+  path,
+  datePublished,
+  dateModified,
+}: {
+  headline: string
+  description: string
+  path: string
+  datePublished: string
+  dateModified: string
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'TechArticle',
+    '@id': `${SITE.domain}${path}#article`,
+    headline,
+    description,
+    url: `${SITE.domain}${path}`,
+    datePublished,
+    dateModified,
+    inLanguage: path.startsWith('/ru') ? 'ru' : 'en',
+    author: { '@id': `${SITE.domain}/#organization` },
+    publisher: { '@id': `${SITE.domain}/#organization` },
+    about: { '@id': `${SITE.domain}/#app` },
+    isPartOf: { '@id': `${SITE.domain}/#website` },
+  }
+}
+
+/** A plain page that is still explicitly about the app. */
+export function webPageLd({
+  name,
+  description,
+  path,
+  type = 'WebPage',
+}: {
+  name: string
+  description: string
+  path: string
+  type?: 'WebPage' | 'AboutPage' | 'CollectionPage' | 'ContactPage'
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': type,
+    '@id': `${SITE.domain}${path === '/' ? '' : path}#page`,
+    name,
+    description,
+    url: `${SITE.domain}${path === '/' ? '' : path}`,
+    inLanguage: path.startsWith('/ru') ? 'ru' : 'en',
+    about: { '@id': `${SITE.domain}/#app` },
+    isPartOf: { '@id': `${SITE.domain}/#website` },
+    publisher: { '@id': `${SITE.domain}/#organization` },
   }
 }
