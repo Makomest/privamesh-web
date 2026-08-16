@@ -15,6 +15,7 @@ export const metadata: Metadata = pageMetadata({
   description:
     'What PrivaMesh costs: a free download, Plus at $5.99 for 1,200 messages a month, Pro at $9.99 for 2,000, and one-off packs. Why messages are metered at all.',
   path: '/pricing',
+  languages: { en: '/pricing', ru: '/ru/pricing' },
 })
 
 const TIERS = [

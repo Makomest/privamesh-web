@@ -70,6 +70,11 @@ const nextConfig = {
       { source: '/blog/tag/secure-messenger', destination: '/blog/tag/private-messenger', statusCode: 301 },
       { source: '/blog/tag/anonymous-messenger', destination: '/blog/tag/private-messenger', statusCode: 301 },
       { source: '/blog/tag/private-messaging', destination: '/blog/tag/private-messenger', statusCode: 301 },
+      // /audit and /how-it-works were on the plan but would duplicate the intent
+      // of pages that already exist. Redirect rather than publish two pages
+      // competing for the same query.
+      { source: '/audit', destination: '/security', statusCode: 301 },
+      { source: '/how-it-works', destination: '/architecture', statusCode: 301 },
     ]
   },
   async headers() {

@@ -10,6 +10,7 @@ import FadeUp from '@/components/FadeUp'
 import { Button } from '@/components/Button'
 import JsonLd from '@/components/JsonLd'
 import PageFaq from '@/components/PageFaq'
+import { ExternalLink, X as XIcon } from 'lucide-react'
 import { pageMetadata } from '@/lib/seo'
 import { COMPARE_FAQ } from '@/lib/faq'
 import { itemListLd } from '@/lib/jsonld'
@@ -138,6 +139,62 @@ export default function ComparePage({ params }: { params: { slug: string } }) {
           />
         </FadeUp>
       </div>
+
+      {/* A comparison that only lists the author's wins is an advert. These are
+          the places PrivaMesh loses to {c.competitor}. */}
+      <section className="mt-16" aria-labelledby="weaknesses-heading">
+        <h2
+          id="weaknesses-heading"
+          className="text-2xl font-bold tracking-tight text-text-primary sm:text-3xl"
+        >
+          Where {c.competitor} wins
+        </h2>
+        <ul className="mt-6 max-w-3xl space-y-3">
+          {c.weaknesses.map((w) => (
+            <li key={w} className="flex gap-3 text-[15px] leading-relaxed text-text-muted">
+              <XIcon
+                size={18}
+                strokeWidth={2.5}
+                className="mt-0.5 flex-none text-negative"
+                aria-hidden="true"
+              />
+              {w}
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section className="mt-14 max-w-3xl" aria-labelledby="sources-heading">
+        <h2 id="sources-heading" className="text-xl font-bold tracking-tight text-text-primary">
+          Sources
+        </h2>
+        <p className="mt-3 text-[15px] leading-relaxed text-text-muted">
+          Claims about {c.competitor} were checked against its own documentation on{' '}
+          <time dateTime={c.lastChecked}>
+            {new Date(c.lastChecked).toLocaleDateString('en-US', {
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric',
+            })}
+          </time>
+          . Products change - if something here is out of date, it is a bug worth reporting.
+        </p>
+        <ul className="mt-4 space-y-2">
+          {c.sources.map((src) => (
+            <li key={src.href} className="text-[15px]">
+              <a
+                href={src.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-accent hover:underline"
+              >
+                {src.label}
+                <ExternalLink size={14} aria-hidden="true" />
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
 
       <PageFaq items={COMPARE_FAQ[c.slug] ?? []} />
 

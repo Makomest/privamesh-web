@@ -28,6 +28,10 @@ const STATIC_PATHS: { path: string; priority: number; freq: Freq }[] = [
   { path: '/about', priority: 0.6, freq: 'yearly' },
   { path: '/support', priority: 0.6, freq: 'monthly' },
   { path: '/pricing', priority: 0.8, freq: 'monthly' },
+  { path: '/download', priority: 0.9, freq: 'monthly' },
+  { path: '/transparency', priority: 0.7, freq: 'monthly' },
+  { path: '/changelog', priority: 0.6, freq: 'monthly' },
+  { path: '/press', priority: 0.5, freq: 'yearly' },
   { path: '/architecture', priority: 0.9, freq: 'monthly' },
   { path: '/threat-model', priority: 0.9, freq: 'monthly' },
   { path: '/limitations', priority: 0.8, freq: 'monthly' },
@@ -53,7 +57,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     languages: { en: `${SITE.domain}/support`, ru: `${SITE.domain}/ru/support` },
   }
   // The trust pages exist in both locales, so each pair is declared explicitly.
-  const TRUST_PAGES = ['architecture', 'threat-model', 'limitations', 'security']
+  const TRUST_PAGES = ['architecture', 'threat-model', 'limitations', 'security', 'pricing']
   const trustHreflang = (slug: string) => ({
     languages: { en: `${SITE.domain}/${slug}`, ru: `${SITE.domain}/ru/${slug}` },
   })

@@ -2,9 +2,17 @@ import type { CellState } from './data'
 
 export type CompareRow = { feature: string; a: CellState; b: CellState; note?: string }
 
+export type Source = { label: string; href: string }
+
 export type Comparison = {
   slug: string
   competitor: string
+  /** When these claims were last checked against the competitor's own docs. */
+  lastChecked: string
+  /** Primary sources for the competitor's side, so a reader can verify us. */
+  sources: Source[]
+  /** Where PrivaMesh loses. Stated on its own page, not buried in a table. */
+  weaknesses: string[]
   title: string
   description: string
   lead: string
@@ -19,6 +27,19 @@ export type Comparison = {
 export const COMPARISONS: Record<string, Comparison> = {
   'privamesh-vs-signal': {
     slug: 'privamesh-vs-signal',
+    lastChecked: '2026-08-16',
+    sources: [
+      { label: "Signal: technical documentation", href: 'https://signal.org/docs/' },
+      { label: "Signal: usernames and phone number privacy", href: 'https://support.signal.org/hc/en-us/articles/6712070553754' },
+      { label: "Signal: sealed sender", href: 'https://signal.org/blog/sealed-sender/' },
+    ],
+    weaknesses: [
+      "Signal has years of independent audits; PrivaMesh has none yet",
+      "Signal runs on iOS, Android and desktop; PrivaMesh is iOS 26.5+ only",
+      "Signal has voice and video calls, groups, media and multi-device; PrivaMesh has one-to-one text",
+      "Signal is free with no meter; PrivaMesh charges per message beyond an allowance",
+      "Signal has hundreds of millions of users; the people you message are probably already there",
+    ],
     competitor: 'Signal',
     title: 'PrivaMesh vs Signal: Serverless vs the Gold Standard',
     description:
@@ -65,6 +86,19 @@ export const COMPARISONS: Record<string, Comparison> = {
   },
   'privamesh-vs-telegram': {
     slug: 'privamesh-vs-telegram',
+    lastChecked: '2026-08-16',
+    sources: [
+      { label: "Telegram: FAQ on secret chats and cloud chats", href: 'https://telegram.org/faq#q-what-are-your-thoughts-on-internet-privacy' },
+      { label: "Telegram: MTProto protocol", href: 'https://core.telegram.org/mtproto' },
+      { label: "Telegram: privacy policy", href: 'https://telegram.org/privacy' },
+    ],
+    weaknesses: [
+      "Telegram has channels, huge groups, bots and cloud sync; PrivaMesh has none of them",
+      "Telegram is free and unmetered; PrivaMesh charges per message beyond an allowance",
+      "Telegram runs everywhere; PrivaMesh is iOS 26.5+ only",
+      "Telegram history follows you to a new device; PrivaMesh history is gone by design",
+      "PrivaMesh has no independent audit; Telegram at least publishes its client source",
+    ],
     competitor: 'Telegram',
     title: 'PrivaMesh vs Telegram: Real Privacy vs Popularity',
     description:
@@ -111,6 +145,19 @@ export const COMPARISONS: Record<string, Comparison> = {
   },
   'privamesh-vs-session': {
     slug: 'privamesh-vs-session',
+    lastChecked: '2026-08-16',
+    sources: [
+      { label: "Session: whitepaper", href: 'https://getsession.org/whitepaper' },
+      { label: "Session: protocol documentation", href: 'https://docs.oxen.io/oxen-docs/products-built-on-oxen/session' },
+      { label: "Session: source code", href: 'https://github.com/session-foundation' },
+    ],
+    weaknesses: [
+      "Session is free with no per-message cost; PrivaMesh meters sending",
+      "Session runs on Android, desktop and iOS; PrivaMesh is iOS 26.5+ only",
+      "Session leaves nothing behind; PrivaMesh writes permanent ciphertext to a public chain",
+      "Session has been around far longer and has a larger user base",
+      "Neither has a recent published audit of the current implementation, but Session has more eyes on it",
+    ],
     competitor: 'Session',
     title: 'PrivaMesh vs Session: Two Serverless Privacy Approaches',
     description:

@@ -6,6 +6,8 @@ import { NAV_PRODUCT, NAV_COMPARE, SITE } from '@/lib/site'
 const RESOURCES = [
   { href: '/privacy', label: 'Why Private' },
   { href: '/pricing', label: 'Pricing' },
+  { href: '/download', label: 'Download' },
+  { href: '/changelog', label: 'Changelog' },
   { href: '/architecture', label: 'Architecture' },
   { href: '/threat-model', label: 'Threat model' },
   { href: '/limitations', label: 'Limitations' },
@@ -26,6 +28,8 @@ const COMPARE_COL = [
 
 const LEGAL = [
   { href: '/security', label: 'Security' },
+  { href: '/transparency', label: 'Transparency' },
+  { href: '/press', label: 'Press' },
   { href: '/privacy-policy', label: 'Privacy Policy' },
   { href: '/terms', label: 'Terms of Use' },
   { href: '/support', label: 'Support' },
