@@ -50,6 +50,10 @@ const LIMITS: Limit[] = [
     body: 'Forward secrecy destroys each message key after use, and ratchet state never leaves the device. Your recovery phrase restores your identity and contacts on a new device, never your conversations. Reinstalling the app on the same phone has the same effect.',
   },
   {
+    title: 'No way to verify you added the right person',
+    body: 'Prekey bundles are signed, so a registry cannot substitute a key for an account. Nothing in the app checks the step before that: whether the account is the person you intended. There is no safety number, no fingerprint comparison and no out-of-band verification flow. If an attacker persuades you to add their account, the cryptography works perfectly and protects the wrong conversation.',
+  },
+  {
     title: 'A stolen phrase opens the first message of each conversation',
     body: 'Your identity key, signed prekey and post-quantum prekey are all derived from the recovery phrase, and no one-time prekeys are published. The envelope that opens a conversation stays on the public chain forever and carries the sender\u2019s ephemeral public key. Anyone holding your phrase can therefore recompute the X3DH root and read that first message. Later messages are protected: the ratchet uses random, device-local keys that the phrase cannot reproduce. ML-KEM-768 does not change this, because its seed is derived from the phrase too.',
   },

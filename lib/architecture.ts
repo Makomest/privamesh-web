@@ -32,7 +32,7 @@ export const COMPONENTS: Component[] = [
     sees: 'A valid unspent blind token and the transaction to sponsor - no account on the anonymous path',
     stores: 'Operational logs only - no plaintext, no recipient',
     replaceable: 'Partly',
-    note: 'Sponsors the network fee so you never hold SOL - the one machine we run. Sends authenticate with an anonymous blind token that carries no identity, so the worker cannot link a send to a purchase, to another send, or to an account. A legacy account path still exists and is required for publishing a public discovery nickname, which is identifying by nature.',
+    note: 'Sponsors the network fee so you never hold SOL - the one machine we run. Sends authenticate with an anonymous blind token that carries no identity, so the worker cannot link a send to a purchase, to another send, or to an account. A legacy account path still exists and is required for publishing a public discovery nickname, which is identifying by nature. Its source is public, under relay/ in the same repository as the client.',
   },
   {
     name: 'Solana RPC',

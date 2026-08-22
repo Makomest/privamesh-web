@@ -9,6 +9,7 @@ const RESOURCES = [
   { href: '/download', label: 'Download' },
   { href: '/changelog', label: 'Changelog' },
   { href: '/architecture', label: 'Architecture' },
+  { href: '/protocol', label: 'Protocol' },
   { href: '/threat-model', label: 'Threat model' },
   { href: '/limitations', label: 'Limitations' },
   { href: '/guides', label: 'Guides' },

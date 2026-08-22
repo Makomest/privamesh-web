@@ -74,7 +74,7 @@ export const GUIDES: Guide[] = [
         h2: 'How accounts work without a phone number',
         paras: [
           'PrivaMesh replaces the phone number with a BIP-39 seed phrase — the same standard self-custodial crypto wallets use. The phrase derives a keypair on your device; that keypair is your identity. There is no phone number, no email, and no account stored on any server.',
-          'Keys live in the iOS Keychain, device-only and biometric-lockable. To find and verify contacts without a trusted directory, PrivaMesh publishes wallet-signed prekey bundles on-chain, so you verify a contact cryptographically instead of trusting a key server.',
+          'Keys live in the iOS Keychain, device-only and biometric-lockable. To find contacts without a trusted directory, PrivaMesh publishes wallet-signed prekey bundles on-chain, so no registry can substitute a key. Confirming that an account belongs to the person you meant still has no in-app check.',
         ],
       },
       {
@@ -94,7 +94,7 @@ export const GUIDES: Guide[] = [
         h2: 'How contact discovery works without a directory',
         paras: [
           'The usual objection is practical: if there is no phone number, how do you find anyone? Most apps answer with a central directory, which is exactly the database you were trying to avoid - and a directory can be compelled to hand out the wrong key.',
-          'PrivaMesh publishes wallet-signed prekey bundles to an on-chain registry instead. You verify a signature rather than trust a server, so the anti-MITM guarantee is cryptographic rather than administrative. Contacts are added by nickname or address, not by uploading your address book.',
+          'PrivaMesh publishes wallet-signed prekey bundles to an on-chain registry instead, so no server can hand out an impostor key for an account. What it does not yet do is help you check that the account is the person you wanted - there is no safety number to compare. Contacts are added by nickname or address, not by uploading your address book.',
         ],
       },
       {

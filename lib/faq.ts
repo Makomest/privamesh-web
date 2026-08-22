@@ -35,7 +35,7 @@ export const FEATURE_FAQ: Record<string, FaqItem[]> = {
     },
     {
       q: 'How do you stop a man-in-the-middle attack without a key server?',
-      a: 'Prekey bundles are signed and published on-chain, so the signature proves the key belongs to the right account. There is no trusted key server that could hand out an impostor’s key - you verify cryptographically instead of trusting a directory.',
+      a: 'Prekey bundles are signed and published on-chain, so a registry cannot hand out a key that does not belong to the publishing account. That closes the key-substitution attack, not the introduction attack: nothing in the app yet lets you confirm the account belongs to the person you meant to add. There is no safety number or fingerprint check, which is a real gap and is listed on the limitations page.',
     },
     {
       q: 'Is this the same encryption Signal uses?',

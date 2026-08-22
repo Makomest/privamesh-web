@@ -31,6 +31,11 @@ did not come from us.
 
 ${line('Home', '/', 'What PrivaMesh is and how the serverless model works')}
 ${line('Why PrivaMesh is private', '/privacy', 'The full privacy argument: content, metadata and the threat model')}
+${line('Architecture', '/architecture', 'Every component, its operator, and what each can observe')}
+${line('Protocol', '/protocol', 'Wire formats, HKDF labels, relay endpoints, and what is still unproven')}
+${line('Threat model', '/threat-model', 'Adversary by adversary, including the ones we defend against least well')}
+${line('Known limitations', '/limitations', 'What PrivaMesh does not protect you from')}
+${line('Security', '/security', 'Audit status: no independent audit completed')}
 ${line('About', '/about', 'Mission and the "trust math, not companies" position')}
 ${line('Best private messaging apps', '/best-private-messaging-apps', 'Ranked comparison of the major private messengers')}
 

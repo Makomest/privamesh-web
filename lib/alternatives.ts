@@ -492,7 +492,7 @@ export const ALTERNATIVES: Alternative[] = [
       },
       {
         q: 'How do I verify a contact’s keys?',
-        a: 'PrivaMesh publishes wallet-signed prekey bundles to an on-chain registry, so you verify a signature rather than trust a directory. SimpleX uses one-time invitation links exchanged out of band.',
+        a: 'PrivaMesh publishes wallet-signed prekey bundles to an on-chain registry, so the registry cannot substitute a key. SimpleX uses one-time invitation links exchanged out of band, which also confirms you reached the right person - PrivaMesh has no equivalent user-facing check yet.',
       },
     ],
   },

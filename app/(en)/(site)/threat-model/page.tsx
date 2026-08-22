@@ -80,8 +80,8 @@ const ADVERSARIES: Adversary[] = [
     name: 'An impostor during contact add',
     sees: 'Nothing, if verification succeeds',
     cannot: 'Substitute their key for a contact whose bundle is signed on-chain',
-    defence: 'Wallet-signed prekey bundles published on-chain, verified by signature not by directory',
-    residual: 'You still have to confirm you added the person you meant to add',
+    defence: 'Wallet-signed prekey bundles published on-chain, so no registry can substitute a key for an account',
+    residual: 'There is no safety number or fingerprint to compare, so confirming the account belongs to the intended person is entirely out of band and unaided',
   },
   {
     name: 'Apple',
