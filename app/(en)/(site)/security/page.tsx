@@ -31,7 +31,7 @@ const FAQS = [
   },
   {
     q: 'Is there a bug bounty?',
-    a: 'Not a formal programme with published payouts. We do not want to promise amounts we cannot commit to. Report anything you find and we will discuss a reward case by case, in good faith.',
+    a: 'Yes. Up to $500 for a critical finding, $200 high, $75 medium, $25 low, with severity defined by what the finding breaks in our threat model. Full tiers, scope and exclusions are on the bug bounty page.',
   },
   {
     q: 'Which versions get security fixes?',
@@ -146,6 +146,15 @@ export default function SecurityPage() {
               people&rsquo;s accounts or data.
             </li>
           </ul>
+
+          <h2>Rewards</h2>
+          <p>
+            Confirmed findings are paid through the{' '}
+            <Link href="/bug-bounty">bug bounty program</Link> — up to $500 for a critical
+            vulnerability, and payment happens on confirmation rather than on fix. The tiers, the
+            scope and the known issues that do not qualify are all published there, because a
+            program that quietly pays for its own documented gaps is not a program.
+          </p>
 
           <h2>Supported versions</h2>
           <p>

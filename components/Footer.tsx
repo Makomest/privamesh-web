@@ -29,6 +29,7 @@ const COMPARE_COL = [
 
 const LEGAL = [
   { href: '/security', label: 'Security' },
+  { href: '/bug-bounty', label: 'Bug bounty' },
   { href: '/transparency', label: 'Transparency' },
   { href: '/press', label: 'Press' },
   { href: '/privacy-policy', label: 'Privacy Policy' },
