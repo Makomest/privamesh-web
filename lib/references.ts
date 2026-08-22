@@ -69,7 +69,6 @@ export const FEATURE_REFS: Record<string, Reference[]> = {
   'e2e-encryption': [REF.x3dh, REF.doubleRatchet, REF.aesGcm, REF.curve25519, REF.rfc5869],
   'metadata-protection': [REF.sealedSender, REF.solanaMemo],
   'seed-phrase-accounts': [REF.bip39, REF.bip32, REF.keychain],
-  'sol-transfers': [REF.solanaMemo, REF.bip32],
 }
 
 /** References shown per glossary term. */

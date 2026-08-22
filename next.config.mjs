@@ -75,6 +75,12 @@ const nextConfig = {
       // competing for the same query.
       { source: '/audit', destination: '/security', statusCode: 301 },
       { source: '/how-it-works', destination: '/architecture', statusCode: 301 },
+      // In-chat SOL transfers, NFT avatars and the nickname marketplace were
+      // designed but never shipped: sendSOL and sendSOLNote have no callers, and
+      // mintNickname only writes to a local array. The page marketed a product
+      // that does not exist, so it is gone and the URL points at the page about
+      // what the account actually is.
+      { source: '/features/sol-transfers', destination: '/features/seed-phrase-accounts', statusCode: 301 },
     ]
   },
   async headers() {

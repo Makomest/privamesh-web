@@ -558,7 +558,7 @@ export const ALTERNATIVES: Alternative[] = [
       },
       {
         q: 'Does PrivaMesh back up my chats?',
-        a: 'No, deliberately. Forward secrecy destroys each message key after use, so no backup can exist - your seed phrase restores your identity and funds but never your history.',
+        a: 'No, deliberately. Forward secrecy destroys each message key after use, so no backup can exist - your seed phrase restores your identity and contacts but never your history.',
       },
       {
         q: 'Do I need to leave iMessage to use PrivaMesh?',

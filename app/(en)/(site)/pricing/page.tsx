@@ -43,7 +43,7 @@ const TIERS = [
     price: `$${SITE.price.pro}`,
     per: 'month',
     allowance: `${SITE.allowance.pro.toLocaleString('en-US')} messages a month`,
-    perks: ['Up to 3 accounts', 'Verified checkmark', 'One free nickname mint'],
+    perks: ['Up to 3 accounts', 'Verified checkmark', 'Highest monthly allowance'],
     note: 'For heavy use, or for running cover traffic continuously without watching the counter.',
   },
 ]

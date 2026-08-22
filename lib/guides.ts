@@ -49,11 +49,6 @@ const R = {
     label: 'Best private messaging apps 2026',
     blurb: 'The honest ranked guide.',
   },
-  sol: {
-    href: '/features/sol-transfers',
-    label: 'Send SOL in chat',
-    blurb: 'In-chat payments and on-chain identity.',
-  },
 }
 
 export const GUIDES: Guide[] = [
@@ -106,7 +101,7 @@ export const GUIDES: Guide[] = [
         h2: 'What you take on instead',
         paras: [
           'Removing the phone number moves responsibility to you. There is no password reset, no support desk that can restore your account, and no recovery flow - because none of those can exist without someone holding your identity. Your seed phrase is the account, so it has to be written down and kept safe.',
-          'Forward secrecy adds a second consequence people are often surprised by: restoring your seed brings back your identity and funds, never your message history. Old message keys are destroyed after use, so there is nothing left to decrypt.',
+          'Forward secrecy adds a second consequence people are often surprised by: restoring your seed brings back your identity and contacts, never your message history. Ratchet state is device-local and is not part of what the phrase restores.',
         ],
       },
     ],
@@ -125,7 +120,7 @@ export const GUIDES: Guide[] = [
       },
       {
         q: 'What happens to my account if I lose my phone?',
-        a: 'Your seed phrase restores your identity and funds on a new device. It does not restore your chat history, because forward secrecy destroyed those message keys as they were used.',
+        a: 'Your seed phrase restores your identity and contacts on a new device. It does not restore your chat history, because the ratchet state that could read it never leaves the original device.',
       },
       {
         q: 'Does removing the phone number make me anonymous?',
@@ -460,7 +455,7 @@ export const GUIDES: Guide[] = [
         a: 'Yes. One seed phrase can derive multiple accounts that an outside observer cannot link together, so you can keep separate contexts separate without keeping separate backups.',
       },
     ],
-    related: [R.seed, R.sol, R.privacy],
+    related: [R.seed, R.privacy],
   },
   {
     slug: 'messaging-app-that-doesnt-track-you',
@@ -656,7 +651,7 @@ export const GUIDES: Guide[] = [
         a: 'No. Messages are delivered to one-time stealth addresses and fees are paid from a separate gas wallet, so the address involved in a conversation is not the address holding your assets.',
       },
     ],
-    related: [R.sol, R.seed, R.privacy],
+    related: [R.seed, R.privacy],
   },
   {
     slug: 'serverless-messaging-app',

@@ -40,7 +40,6 @@ ${line('No servers', '/features/no-servers', 'The serverless architecture and it
 ${line('End-to-end encryption', '/features/e2e-encryption', 'X3DH, Double Ratchet and AES-256-GCM')}
 ${line('Metadata protection', '/features/metadata-protection', 'Stealth addresses, cover traffic, gas wallet')}
 ${line('Seed phrase accounts', '/features/seed-phrase-accounts', 'BIP-39 accounts with no phone number or email')}
-${line('In-chat SOL transfers', '/features/sol-transfers', 'Payments, nicknames and NFT avatars inside a chat')}
 
 ## Comparisons
 

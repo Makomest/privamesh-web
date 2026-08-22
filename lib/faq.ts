@@ -71,29 +71,11 @@ export const FEATURE_FAQ: Record<string, FaqItem[]> = {
     },
     {
       q: 'Does my seed phrase restore my chat history?',
-      a: 'No, and that is forward secrecy working as designed. Your seed restores your identity and funds, but old message keys were destroyed after use, so past messages cannot be decrypted again.',
+      a: 'No, and that is forward secrecy working as designed. Your seed restores your identity and contacts, but old message keys were destroyed after use, so those messages cannot be decrypted again.',
     },
     {
       q: 'Where are my keys stored?',
       a: 'In the iOS Keychain, device-only and lockable behind Face ID or Touch ID. They never leave the phone, never sync to a cloud and never touch a server. Contacts and chat history live on the device the same way.',
-    },
-  ],
-  'sol-transfers': [
-    {
-      q: 'How do in-chat SOL transfers work?',
-      a: 'Your PrivaMesh account is already a self-custodial Solana keypair, so it is also a wallet. Anyone you chat with is by definition someone you can pay - a couple of taps, no address copying, no switching apps, no exchange in the middle.',
-    },
-    {
-      q: 'Does PrivaMesh hold my funds?',
-      a: 'Never. You hold the keys in the iOS Keychain, so the built-in wallet is genuinely self-custodial. PrivaMesh cannot touch, freeze or move your SOL.',
-    },
-    {
-      q: 'Do payments make my conversation a public ledger?',
-      a: 'Payments inherit the same privacy model as messages. Combined with stealth addressing and the gas wallet, in-chat transfers avoid broadcasting a simple "wallet A paid wallet B" link.',
-    },
-    {
-      q: 'What does a transfer cost?',
-      a: 'An in-chat transfer is an ordinary Solana transaction settled on mainnet-beta. It clears in seconds for a fraction of a cent in network fees.',
     },
   ],
 }

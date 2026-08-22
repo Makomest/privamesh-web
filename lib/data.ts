@@ -96,11 +96,6 @@ export const HOME_FEATURES = [
     title: 'Seed phrase accounts',
     body: 'No phone number, no email. Your account is a BIP-39 seed phrase and a self-custodial keypair.',
   },
-  {
-    href: '/features/sol-transfers',
-    title: 'SOL transfers in chat',
-    body: 'Send value inside a conversation. On-chain nicknames and NFT avatars, no exchange required.',
-  },
 ]
 
 export const SCREENSHOTS = [

@@ -126,11 +126,6 @@ export default function SeedPhrasePage() {
             blurb: 'How on-chain prekey bundles verify keys without a trusted key server.',
           },
           {
-            href: '/features/sol-transfers',
-            label: 'SOL transfers',
-            blurb: 'Your keypair is also a wallet - send value right inside a chat.',
-          },
-          {
             href: '/features/metadata-protection',
             label: 'Metadata protection',
             blurb: 'No phone number is only step one; stealth addresses hide the rest.',

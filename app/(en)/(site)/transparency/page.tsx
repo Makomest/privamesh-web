@@ -30,7 +30,7 @@ const COUNTS = [
 const FAQS = [
   {
     q: 'What could PrivaMesh actually hand over?',
-    a: 'That an account paid for a send, and when. The fee worker sees an account identifier and a timestamp. There is no message content, no recipient, no contact list, no account record and no connection history, because none of those are stored anywhere we control.',
+    a: 'Less than the phrasing usually suggests. On the anonymous path a send authenticates with a blind token that carries no identity, so the worker sees a valid unspent token and a transaction to sponsor - not who sent it. A legacy account path still exists and is required for publishing a public discovery nickname. There is no message content, no recipient, no contact list and no connection history in either case.',
   },
   {
     q: 'Would you tell me if you received a request?',
@@ -89,9 +89,11 @@ export default function TransparencyPage() {
             it never learns who a message is for.
           </p>
           <p>
-            So a compelled disclosure would show that some account paid for some send at some time.
-            It would not show the message, the recipient, your contacts or your history, because
-            there is no account database and no message store.{' '}
+            So a compelled disclosure would show that valid tokens were spent and transactions were
+            sponsored. On the anonymous path there is no account attached to a send at all; the
+            legacy account path is required only for publishing a public discovery nickname, which
+            identifies you by design. Either way it would not show the message, the recipient, your
+            contacts or your history.{' '}
             <Link href="/architecture">The architecture page</Link> lists every component and what
             each can observe.
           </p>

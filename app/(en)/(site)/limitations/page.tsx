@@ -47,7 +47,11 @@ const LIMITS: Limit[] = [
   },
   {
     title: 'Message history cannot be recovered',
-    body: 'Forward secrecy destroys each message key after use. Your recovery phrase restores your identity and funds on a new device and never your conversations. Reinstalling the app on the same phone has the same effect.',
+    body: 'Forward secrecy destroys each message key after use, and ratchet state never leaves the device. Your recovery phrase restores your identity and contacts on a new device, never your conversations. Reinstalling the app on the same phone has the same effect.',
+  },
+  {
+    title: 'A stolen phrase opens the first message of each conversation',
+    body: 'Your identity key, signed prekey and post-quantum prekey are all derived from the recovery phrase, and no one-time prekeys are published. The envelope that opens a conversation stays on the public chain forever and carries the sender\u2019s ephemeral public key. Anyone holding your phrase can therefore recompute the X3DH root and read that first message. Later messages are protected: the ratchet uses random, device-local keys that the phrase cannot reproduce. ML-KEM-768 does not change this, because its seed is derived from the phrase too.',
   },
   {
     title: 'Losing the recovery phrase loses the account',
@@ -83,6 +87,10 @@ const FAQS = [
   {
     q: 'Why is cover traffic disabled by default?',
     a: 'Decoy transactions spend from your message allowance, so leaving it on would quietly cost you messages. It is a setting rather than a default, which means the shipped configuration is weaker on timing than the strongest one available.',
+  },
+  {
+    q: 'If someone steals my recovery phrase, can they read my old messages?',
+    a: 'The first message of each conversation, yes. That envelope is on the public chain permanently and every key needed to open it is derived from the phrase, because no one-time prekeys are published. The rest of each conversation is protected by ratchet keys that were random and never left the device.',
   },
   {
     q: 'Is PrivaMesh anonymous?',

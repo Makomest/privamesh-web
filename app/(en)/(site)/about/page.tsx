@@ -134,8 +134,8 @@ export default function AboutPage() {
           <ul>
             <li>
               <strong>No account database.</strong> The Solana blockchain is the transport, your
-              device holds your keys, contacts and history, and the single fee worker we run sees an
-              account and a timestamp.
+              device holds your keys, contacts and history, and the single fee worker we run
+              authenticates sends with an anonymous token rather than an account.
             </li>
             <li>
               <strong>No identity.</strong> No phone number, no email - your account is a{' '}
@@ -148,7 +148,7 @@ export default function AboutPage() {
             </li>
             <li>
               <strong>Honesty about trade-offs.</strong> Forward secrecy means your seed restores
-              funds, not chat history. We say so up front, because a tool that hides its trade-offs
+              your identity, not your chat history. We say so up front, because a tool that hides its trade-offs
               is hiding something.
             </li>
           </ul>

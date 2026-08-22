@@ -65,9 +65,9 @@ const ADVERSARIES: Adversary[] = [
   {
     name: 'Someone who has your recovery phrase',
     sees: 'Your identity, and can impersonate you going forward',
-    cannot: 'Read your past conversations - those keys no longer exist',
+    cannot: 'Read the ratcheted body of past conversations - those keys were random and device-local',
     defence: 'The phrase never leaves your device and is never transmitted',
-    residual: 'There is no revocation. If the phrase leaks, the account is theirs too',
+    residual: 'Identity, signed prekey and PQ prekey are all derived from the phrase and no one-time prekeys are published, so the session-opening message of every conversation can be recomputed from the phrase plus the permanent on-chain envelope. There is also no revocation',
   },
   {
     name: 'A malicious contact',

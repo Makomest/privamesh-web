@@ -29,10 +29,10 @@ export const COMPONENTS: Component[] = [
   {
     name: 'Fee worker',
     operator: 'PrivaMesh',
-    sees: 'An account, a timestamp, a spent blind token',
+    sees: 'A valid unspent blind token and the transaction to sponsor - no account on the anonymous path',
     stores: 'Operational logs only - no plaintext, no recipient',
     replaceable: 'Partly',
-    note: 'Sponsors the network fee so you never hold SOL. It is the one machine we run, and the honest limit of the design. Blind tokens mean it cannot link a send back to a purchase.',
+    note: 'Sponsors the network fee so you never hold SOL - the one machine we run. Sends authenticate with an anonymous blind token that carries no identity, so the worker cannot link a send to a purchase, to another send, or to an account. A legacy account path still exists and is required for publishing a public discovery nickname, which is identifying by nature.',
   },
   {
     name: 'Solana RPC',
@@ -83,10 +83,10 @@ export const COMPONENTS_RU: Component[] = [
   {
     name: 'Fee worker',
     operator: 'PrivaMesh',
-    sees: 'Аккаунт, время запроса, потраченный слепой токен',
+    sees: 'Действительный непотраченный слепой токен и транзакцию - на анонимном пути аккаунт не передаётся',
     stores: 'Только рабочие логи — ни текста, ни получателя',
     replaceable: 'Partly',
-    note: 'Оплачивает сетевую комиссию, чтобы вам не нужно было держать SOL. Это единственная машина, которую мы запускаем, и честная граница дизайна. Слепые токены не дают связать отправку с покупкой.',
+    note: 'Оплачивает сетевую комиссию, чтобы вам не нужно было держать SOL, — единственная машина, которую мы запускаем. Отправка авторизуется анонимным слепым токеном без идентичности, поэтому воркер не может связать её ни с покупкой, ни с другой отправкой, ни с аккаунтом. Остаётся legacy-путь с аккаунтом: он нужен для публикации публичного ника, который идентифицирует по своей природе.',
   },
   {
     name: 'Solana RPC',

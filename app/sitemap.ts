@@ -17,7 +17,6 @@ const STATIC_PATHS: { path: string; priority: number; freq: Freq }[] = [
   { path: '/features/e2e-encryption', priority: 0.8, freq: 'monthly' },
   { path: '/features/metadata-protection', priority: 0.8, freq: 'monthly' },
   { path: '/features/seed-phrase-accounts', priority: 0.8, freq: 'monthly' },
-  { path: '/features/sol-transfers', priority: 0.7, freq: 'monthly' },
   { path: '/compare/privamesh-vs-signal', priority: 0.8, freq: 'monthly' },
   { path: '/compare/privamesh-vs-telegram', priority: 0.8, freq: 'monthly' },
   { path: '/compare/privamesh-vs-session', priority: 0.7, freq: 'monthly' },

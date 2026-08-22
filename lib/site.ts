@@ -48,7 +48,6 @@ export const NAV_PRODUCT: NavLink[] = [
   { href: '/features/e2e-encryption', label: 'E2E Encryption' },
   { href: '/features/metadata-protection', label: 'Metadata Protection' },
   { href: '/features/seed-phrase-accounts', label: 'Account Phrase' },
-  { href: '/features/sol-transfers', label: 'In-Chat Transfers' },
 ]
 
 export const NAV_COMPARE: NavLink[] = [

@@ -23,7 +23,7 @@ export const metadata: Metadata = pageMetadata({
 const FAQS = [
   {
     q: 'Does PrivaMesh run any servers?',
-    a: 'One. A fee worker sponsors the Solana network fee for each transaction so you never have to hold SOL. It sees an account and a timestamp and never sees plaintext or a recipient. There is no account database and no message store.',
+    a: 'One. A fee worker sponsors the Solana network fee for each transaction so you never have to hold SOL. On the anonymous path it sees a valid unspent blind token and the transaction to sponsor - no account, no plaintext, no recipient. There is no account database and no message store.',
   },
   {
     q: 'What can the RPC provider see?',
@@ -141,8 +141,9 @@ export default function ArchitecturePage() {
             That creates the obvious question: does the sponsor learn who is talking to whom? It
             does not. The app proves its subscription once and receives a pool of RSA blind
             signatures; each send spends one token. The worker can verify a token is valid and
-            unspent and cannot link it to the purchase or to any other token. What it sees is that
-            some account paid for some send at some time.
+            unspent and cannot link it to the purchase, to any other token, or to an account - the
+            anonymous path sends no account at all. The legacy account path remains only for
+            publishing a public discovery nickname, which is identifying by its nature.
           </p>
 
           <h2>What this design does not fix</h2>

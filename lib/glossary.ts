@@ -63,10 +63,10 @@ export const GLOSSARY: Term[] = [
       'Forward secrecy means that if an attacker steals a key today, they still cannot decrypt your past messages, because those messages used keys that have already been deleted.',
     body: [
       'Systems with forward secrecy give each message a fresh key and destroy old keys after use. So a single compromised key unlocks, at most, one message - not the whole conversation history.',
-      'PrivaMesh gets forward secrecy from the Double Ratchet algorithm. A real consequence: your seed phrase restores your funds and identity, but not your chat history, because the old message keys no longer exist. That is the guarantee working as designed.',
+      'PrivaMesh gets forward secrecy from the Double Ratchet algorithm. A real consequence: your seed phrase restores your identity and contacts, but not your chat history, because the old message keys no longer exist. That is the guarantee working as designed.',
       'The threat this defends against is retrospective decryption. An adversary who cannot break your encryption today can still record your traffic and wait - for a future key compromise, a seized device, or a coerced disclosure. Without forward secrecy, one key recovered years later unlocks everything that was captured.',
       'The mechanism is deletion. Each message uses a key derived from the ratchet and then discarded, so there is no long-term key sitting on the device that maps to old ciphertext. Compromising the device gives an attacker your future messages until the ratchet heals, but not your past ones.',
-      'This has a consequence users notice: message history cannot be restored. Your PrivaMesh seed phrase brings back your identity and funds on a new device but never your old conversations, because the keys that could read them no longer exist anywhere. An app that can restore your full history has, by definition, kept something it could have deleted.',
+      'This has a consequence users notice: message history cannot be restored. Your PrivaMesh seed phrase brings back your identity and contacts on a new device but never the ratchet state of your old conversations, which is what would be needed to read them. An app that can restore your full history has, by definition, kept something it could have deleted.',
     ],
     related: [
       { href: '/blog/how-double-ratchet-encryption-works', label: 'How Double Ratchet works' },
@@ -108,7 +108,6 @@ export const GLOSSARY: Term[] = [
     ],
     related: [
       { href: '/features/seed-phrase-accounts', label: 'Seed phrase accounts' },
-      { href: '/features/sol-transfers', label: 'SOL transfers' },
     ],
   },
   {
