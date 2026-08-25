@@ -54,8 +54,8 @@ const LIMITS: Limit[] = [
     body: 'Prekey bundles are signed, so a registry cannot substitute a key for an account. Nothing in the app checks the step before that: whether the account is the person you intended. There is no safety number, no fingerprint comparison and no out-of-band verification flow. If an attacker persuades you to add their account, the cryptography works perfectly and protects the wrong conversation.',
   },
   {
-    title: 'A stolen phrase opens the first message of each conversation',
-    body: 'Your identity key, signed prekey and post-quantum prekey are all derived from the recovery phrase, and no one-time prekeys are published. The envelope that opens a conversation stays on the public chain forever and carries the sender\u2019s ephemeral public key. Anyone holding your phrase can therefore recompute the X3DH root and read that first message. Later messages are protected: the ratchet uses random, device-local keys that the phrase cannot reproduce. ML-KEM-768 does not change this, because its seed is derived from the phrase too.',
+    title: 'A stolen phrase opens every message sent before the first reply',
+    body: 'Your identity key, signed prekey and post-quantum prekey are all derived from the recovery phrase, and no one-time prekeys are published. The envelope that opens a conversation stays on the public chain forever and carries the sender\u2019s ephemeral public key, so anyone holding your phrase can recompute the X3DH root. It does not stop at that one message: until the sender processes a reply from you, every message they send continues the same chain, one step apart, and the same secret also locates those messages on the chain. Someone who wrote three times while you were offline exposed all three. Once you reply and they receive it, a random device-local key enters the ratchet and the phrase stops being enough. ML-KEM-768 does not change this, because its seed is derived from the phrase too. Reported by Mudit (mudit.raj32@gmail.com) in August 2026; we previously described this as the opening message only.',
   },
   {
     title: 'Losing the recovery phrase loses the account',
@@ -94,7 +94,7 @@ const FAQS = [
   },
   {
     q: 'If someone steals my recovery phrase, can they read my old messages?',
-    a: 'The first message of each conversation, yes. That envelope is on the public chain permanently and every key needed to open it is derived from the phrase, because no one-time prekeys are published. The rest of each conversation is protected by ratchet keys that were random and never left the device.',
+    a: 'Everything sent before your first reply reached the sender, yes. Those envelopes are on the public chain permanently, every key needed to open them is derived from the phrase because no one-time prekeys are published, and the messages after the opener continue the same chain. From your first processed reply onward the conversation is protected by ratchet keys that were random and never left the device.',
   },
   {
     q: 'Is PrivaMesh anonymous?',
