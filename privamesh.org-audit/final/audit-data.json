@@ -1,0 +1,327 @@
+{
+  "summary": {
+    "health_score": 95,
+    "score_history": [
+      {
+        "label": "live baseline",
+        "score": 71
+      },
+      {
+        "label": "post-Phase-1",
+        "score": 75
+      },
+      {
+        "label": "build d31a88c",
+        "score": 82
+      },
+      {
+        "label": "build 6b7a177",
+        "score": 95
+      }
+    ],
+    "business_type": "Privacy/security consumer app (product marketing site), pre-launch, EN+RU",
+    "audit_date": "2026-07-26",
+    "target": "local production build at commit 6b7a177 — NOT the live site (four commits undeployed)",
+    "measurement": "Lighthouse via bundled Chromium, mobile emulation, 4x CPU throttle, slow 4G, median of 3 runs per page",
+    "pages_crawled": 63,
+    "indexable_pages": 50,
+    "top_findings": [
+      "No independent security audit exists — now stated plainly on /about, still the biggest remaining gap",
+      "LCP is the only weak metric and the lab cannot measure it reliably (2605-4657ms across identical runs)",
+      "404 page ships without a stylesheet link — Low severity, expensive fix, recommend accepting",
+      "/blog and /ru/blog read thin locally only because 8 blog posts live on the server, not in the repo",
+      "Four commits are pushed to GitHub and undeployed; the live score is still 71"
+    ],
+    "quick_wins": [
+      "Deploy",
+      "Connect CrUX/GSC for field CWV data",
+      "Commission an independent security audit"
+    ],
+    "verified_clean": [
+      {
+        "check": "Titles over 60 chars",
+        "result": "0"
+      },
+      {
+        "check": "Duplicate titles",
+        "result": "0"
+      },
+      {
+        "check": "Missing titles / descriptions",
+        "result": "0 / 0"
+      },
+      {
+        "check": "Meta descriptions over 160 chars",
+        "result": "0"
+      },
+      {
+        "check": "Missing H1 / multiple H1",
+        "result": "0 / 0"
+      },
+      {
+        "check": "Missing canonical",
+        "result": "0"
+      },
+      {
+        "check": "lang mismatches",
+        "result": "0"
+      },
+      {
+        "check": "Orphan pages",
+        "result": "0"
+      },
+      {
+        "check": "Pages with <=1 inbound internal link",
+        "result": "0 (was 17)"
+      },
+      {
+        "check": "Indexable pages without og:image",
+        "result": "0"
+      },
+      {
+        "check": "Images missing alt",
+        "result": "0 of 149"
+      },
+      {
+        "check": "Images missing width/height",
+        "result": "0 of 149"
+      },
+      {
+        "check": "Non-200 responses",
+        "result": "0"
+      },
+      {
+        "check": "Pages without JSON-LD",
+        "result": "0"
+      },
+      {
+        "check": "Lighthouse SEO",
+        "result": "100"
+      },
+      {
+        "check": "Lighthouse Accessibility",
+        "result": "100"
+      }
+    ]
+  },
+  "categories": [
+    {
+      "name": "Technical SEO",
+      "score": 96,
+      "previous_score": 88,
+      "weight": 22,
+      "what_works": [
+        "lang correct on both locales; hreflang reciprocal across all four endpoints",
+        "63/63 canonical self-referencing; 0 redirects, 0 orphans, 0 non-200s; real 404s",
+        "Sitemap at 50 URLs — tag archives and empty /news excluded, matching their noindex",
+        "Content-Security-Policy set with an explicit host allowlist for analytics beacons",
+        "poweredByHeader: false — framework no longer advertised",
+        "HSTS preload, nosniff, X-Frame-Options, Referrer-Policy, Permissions-Policy, all app-level",
+        "301 from the retired /guides/most-private-messaging-app-2026 to the page that owns that query",
+        "x-nextjs-cache: HIT — static generation intact through three refactors",
+        "/llms.txt serves 200 as text/plain"
+      ],
+      "findings": [
+        {
+          "title": "404 page ships without a stylesheet link",
+          "severity": "Low",
+          "description": "Next 14 renders the not-found boundary outside every layout when an app has two root layouts. Status 404 and noindex are intact and not-found.tsx rebuilds the chrome and fonts, but CSS arrives via the client chunk.",
+          "recommendation": "Accept. The proper fix is migrating to app/[locale]/ with a middleware rewrite — a large change for a Low finding."
+        },
+        {
+          "title": "Lighthouse best-practices 96, not 100",
+          "severity": "Info",
+          "description": "The only failing audit is a console error from the Cloudflare beacon being blocked by CORS on localhost. A local artifact; does not occur on the real origin.",
+          "recommendation": "No action."
+        }
+      ]
+    },
+    {
+      "name": "Content Quality",
+      "score": 90,
+      "previous_score": 64,
+      "weight": 23,
+      "what_works": [
+        "/guides/*: 218-378 -> 591-811 words, each with a distinct angle so the cluster no longer competes with itself",
+        "Glossary: 105-152 -> ~300 words each with worked examples and trade-offs left in",
+        "Alternatives, glossary and both blog indexes gained real intro copy",
+        "Cannibalization resolved: the competing guide was reframed and 301'd to /best-private-messaging-apps",
+        "External domains 2 -> 8, now citing signal.org, csrc.nist.gov, cr.yp.to, rfc-editor.org and the Bitcoin BIPs",
+        "/about gained a 'What we have not done yet' section: no audit, pre-launch, iOS only, no App Store rating",
+        "Indexable pages under 300 words: 30 -> 22 -> 2 of 50",
+        "Median words (indexable): 175 -> 218 -> 260 -> 634"
+      ],
+      "findings": [
+        {
+          "title": "2 indexable pages under 300 words",
+          "severity": "Info",
+          "description": "/blog (267) and /ru/blog (229). Both are listing pages and both understate the live site, which has 6 posts per locale against 2 in the repo — roughly 35 words per additional card.",
+          "recommendation": "Re-check after deploying."
+        },
+        {
+          "title": "No independent security audit",
+          "severity": "Medium",
+          "description": "Now stated plainly on /about rather than papered over, which is the right interim position.",
+          "recommendation": "Commission one. It is the single most valuable addition to the site and cannot be produced by editing."
+        },
+        {
+          "title": "The team is pseudonymous by choice",
+          "severity": "Info",
+          "description": "A deliberate decision for a privacy tool, now argued explicitly on /about rather than left as an absence.",
+          "recommendation": "No action."
+        }
+      ]
+    },
+    {
+      "name": "On-Page SEO",
+      "score": 99,
+      "previous_score": 90,
+      "weight": 20,
+      "what_works": [
+        "0 titles over 60 chars, 0 duplicates",
+        "0 missing or duplicate H1s",
+        "0 meta descriptions over 160 chars",
+        "0 orphans and 0 pages with fewer than 2 inbound internal links (was 17)",
+        "/guides and /glossary detail pages rotate through their peers, so no page depends on its index alone"
+      ],
+      "findings": []
+    },
+    {
+      "name": "Schema / Structured Data",
+      "score": 97,
+      "previous_score": 93,
+      "weight": 10,
+      "what_works": [
+        "0 pages without JSON-LD, 0 parse errors",
+        "FAQPage on 38 pages, every block backed by visible Q&A from the same array",
+        "SoftwareApplication 2 -> 7 pages",
+        "DefinedTermSet added, with 9 DefinedTerms hanging off it",
+        "Organization + WebSite on 63/63, BreadcrumbList on 61/63"
+      ],
+      "findings": [
+        {
+          "title": "2 pages missing BreadcrumbList",
+          "severity": "Low",
+          "description": "61 of 63 have it.",
+          "recommendation": "Extend to the remaining 2."
+        }
+      ]
+    },
+    {
+      "name": "Performance (CWV)",
+      "score": 92,
+      "previous_score": 78,
+      "weight": 10,
+      "what_works": [
+        "First audit with a real browser — no longer an estimate",
+        "CLS 0 and TBT 0 on every page tested",
+        "FCP consistently ~0.9s",
+        "Lighthouse SEO 100 and Accessibility 100",
+        "Perf 83-97 across page types, median 92"
+      ],
+      "findings": [
+        {
+          "title": "LCP is the only weak metric and the lab cannot measure it reliably",
+          "severity": "Medium",
+          "description": "Identical builds produced LCP between 2605ms and 4657ms across runs. The LCP element is a hero paragraph whose cost is entirely render delay, not resource loading, pointing at webfont swap timing. An experiment replacing the Inter variable font with static weights and deprioritising the mono face made everything worse (FCP 904 -> 1207ms, CLS 0 -> 0.018) and was reverted.",
+          "recommendation": "Connect CrUX for field data rather than tuning against lab noise."
+        },
+        {
+          "title": "Correction: the NetworkBackground canvas is not an INP risk",
+          "severity": "Info",
+          "description": "Three previous audits flagged it as the likely INP risk on the home page. Measured, TBT is 0 and CLS is 0, and building with the canvas disabled produced a worse LCP (2916ms vs 2610ms) — within run-to-run noise. The hypothesis was wrong.",
+          "recommendation": "No change needed to the canvas."
+        }
+      ]
+    },
+    {
+      "name": "AI Search Readiness",
+      "score": 93,
+      "previous_score": 84,
+      "weight": 10,
+      "what_works": [
+        "/llms.txt generated from the same data as the sitemap; declares pre-launch status and absence of App Store ratings",
+        "38 FAQPage blocks across 50 indexable pages",
+        "Primary-source citations to X3DH, Double Ratchet, NIST SP 800-38D, BIP-39, BIP-32, RFC 5869 and Curve25519",
+        "/alternatives and /guides concede where competitors are better — the kind of passage models prefer to cite",
+        "/about states limitations explicitly, a stronger citability signal than confident claims"
+      ],
+      "findings": [
+        {
+          "title": "No third-party corroboration",
+          "severity": "Medium",
+          "description": "No independent audit, security review or press coverage exists to cite.",
+          "recommendation": "This is the remaining ceiling on both this category and Content."
+        }
+      ]
+    },
+    {
+      "name": "Images",
+      "score": 99,
+      "previous_score": 96,
+      "weight": 5,
+      "what_works": [
+        "149 img elements: 0 missing alt, 0 empty alt, 0 missing width/height",
+        "og:image + twitter:image on all 50 indexable pages at 1200x630",
+        "Image sitemap with descriptive titles and captions",
+        "CLS of 0 across every page measured confirms the dimensions are working"
+      ],
+      "findings": []
+    }
+  ],
+  "action_plan": {
+    "phases": [
+      {
+        "name": "Phase 1: Deploy",
+        "timeframe": "Now",
+        "items": [
+          "Ship cbf997f, 045e584, d31a88c, 6b7a177 — the live score is still 71",
+          "Re-check the 6 duplicate-H1 blog posts against live; they are not in the repo",
+          "Re-measure /blog and /ru/blog word counts on live, where 8 more posts exist"
+        ]
+      },
+      {
+        "name": "Phase 2: Authority",
+        "timeframe": "Next",
+        "items": [
+          "Commission an independent security audit — the highest-value remaining addition",
+          "Publish the result and cite it from /about and the feature pages"
+        ]
+      },
+      {
+        "name": "Phase 3: Measurement",
+        "timeframe": "Ongoing",
+        "items": [
+          "Connect Google Search Console and GA4 (verification tokens already in the layout)",
+          "Use CrUX field data for LCP rather than lab runs",
+          "Re-audit against live"
+        ]
+      },
+      {
+        "name": "Phase 4: Accepted",
+        "timeframe": "—",
+        "items": [
+          "404 stylesheet flash: Low severity, expensive fix, recommend accepting",
+          "2 pages missing BreadcrumbList",
+          "Pseudonymous team: deliberate, now argued on /about"
+        ]
+      }
+    ]
+  },
+  "limitations": [
+    "Local build, not production. Security headers confirmed app-level so they carry over; timing does not. Lighthouse best-practices 96 is a localhost CORS artifact.",
+    "4 EN and 4 RU blog posts exist only on the live server, so /blog and /ru/blog word counts understate the real site and the 6 duplicate-H1 posts cannot be re-checked locally.",
+    "claude-seo toolchain still unavailable (Python 3.9.6, no Homebrew). Lighthouse was run through a separately installed Chromium instead. No PDF report.",
+    "No Google, DataForSEO, Moz or Bing credentials: no indexation, ranking, traffic or backlink data in any of the four audits."
+  ],
+  "artifacts": {
+    "findings_dir": "findings/",
+    "raw_crawl": "crawl.json",
+    "lighthouse": "lighthouse.json",
+    "prior_audits": [
+      "../FULL-AUDIT-REPORT.md",
+      "../post-fix/FULL-AUDIT-REPORT.md",
+      "../post-fix-2/FULL-AUDIT-REPORT.md"
+    ]
+  }
+}

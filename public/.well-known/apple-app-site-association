@@ -1,0 +1,15 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["8B8Y2LNJ6Y.com.privamesh"],
+        "components": [
+          {
+            "/": "/i/*",
+            "comment": "Invite links. Everything else on this domain stays in the browser."
+          }
+        ]
+      }
+    ]
+  }
+}

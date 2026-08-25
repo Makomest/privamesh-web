@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://privamesh.org</loc>
+    <image:image>
+      <image:loc>https://privamesh.org/screenshots/01.png</image:loc>
+      <image:title>Privacy by default</image:title>
+      <image:caption>PrivaMesh onboarding screen - privacy by default, Double Ratchet key per message and one-time addresses, on iPhone</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://privamesh.org/screenshots/04.png</image:loc>
+      <image:title>End-to-end encrypted chat</image:title>
+      <image:caption>PrivaMesh encrypted chat screen showing a private conversation, end-to-end encrypted, on iPhone</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://privamesh.org/screenshots/05.png</image:loc>
+      <image:title>Your chats</image:title>
+      <image:caption>PrivaMesh chat list showing conversations with names and nicknames, no phone numbers, on iPhone</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://privamesh.org/screenshots/02.png</image:loc>
+      <image:title>No servers, seriously</image:title>
+      <image:caption>PrivaMesh onboarding screen explaining there is no central server - nothing to hack or coerce, on iPhone</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://privamesh.org/screenshots/03.png</image:loc>
+      <image:title>On-device security</image:title>
+      <image:caption>PrivaMesh onboarding screen - keys behind Face ID, disappearing messages and signed contacts, on iPhone</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://privamesh.org/screenshots/06.png</image:loc>
+      <image:title>A private social graph</image:title>
+      <image:caption>PrivaMesh anonymous contact graph visualising your connections privately, no phone numbers, on iPhone</image:caption>
+    </image:image>
+  </url>
+</urlset>

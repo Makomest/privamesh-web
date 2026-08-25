@@ -1,0 +1,394 @@
+{
+  "summary": {
+    "health_score": 82,
+    "score_history": [
+      {
+        "label": "live baseline",
+        "score": 71
+      },
+      {
+        "label": "post-Phase-1",
+        "score": 75
+      },
+      {
+        "label": "build d31a88c",
+        "score": 82
+      }
+    ],
+    "business_type": "Privacy/security consumer app (product marketing site), pre-launch, EN+RU",
+    "audit_date": "2026-07-26",
+    "target": "local production build at commit d31a88c — NOT the live site, which still serves the pre-fix build",
+    "pages_crawled": 63,
+    "indexable_pages": 51,
+    "top_findings": [
+      "10 /guides/* pages at 218-273 words — the last thin commercial cluster",
+      "8 glossary pages at 105-152 words — thinnest section on the site",
+      "Head-term cannibalization unresolved: /best-private-messaging-apps vs /guides/most-private-messaging-app-2026",
+      "E-E-A-T unchanged: /about 353 words, only two external domains linked sitewide",
+      "Performance still unmeasured — 171KB home page with an always-on canvas has never had an INP reading"
+    ],
+    "quick_wins": [
+      "Deploy — seven points of score are sitting in GitHub undeployed",
+      "Fill or de-index /news (26 words)",
+      "Link the 17 pages stuck at 1 inbound link",
+      "Add a CSP header and set poweredByHeader: false",
+      "Install Chrome and take the first real CWV measurement"
+    ],
+    "verified_clean": [
+      {
+        "check": "Titles over 60 chars",
+        "result": "0 (was 30 on live)"
+      },
+      {
+        "check": "Duplicate titles",
+        "result": "0"
+      },
+      {
+        "check": "Missing titles / descriptions",
+        "result": "0 / 0"
+      },
+      {
+        "check": "Missing H1",
+        "result": "0"
+      },
+      {
+        "check": "Multiple H1",
+        "result": "0 (was 6 on live)"
+      },
+      {
+        "check": "Missing canonical",
+        "result": "0"
+      },
+      {
+        "check": "lang mismatches",
+        "result": "0 (was 25 on live)"
+      },
+      {
+        "check": "Indexable pages without og:image",
+        "result": "0 (was 70 on live)"
+      },
+      {
+        "check": "Images missing alt",
+        "result": "0 of 149"
+      },
+      {
+        "check": "Images missing width/height",
+        "result": "0 of 149"
+      },
+      {
+        "check": "Orphan pages",
+        "result": "0"
+      },
+      {
+        "check": "Non-200 responses",
+        "result": "0"
+      }
+    ]
+  },
+  "categories": [
+    {
+      "name": "Technical SEO",
+      "score": 88,
+      "previous_score": 88,
+      "weight": 22,
+      "what_works": [
+        "lang correct on both locales: 53 en, 10 ru, 0 mismatches",
+        "hreflang reciprocal across all four endpoints in both pairs",
+        "63/63 canonical, self-referencing, 0 mismatches",
+        "63/63 pages return 200, 0 redirects, 0 orphans, 404s return a real 404",
+        "Sitemap at 51 URLs with tag archives excluded, matching their noindex",
+        "Security headers all app-level: HSTS preload, nosniff, X-Frame-Options, Referrer-Policy, Permissions-Policy",
+        "x-nextjs-cache: HIT — static generation intact through two refactors",
+        "/llms.txt serves 200 as text/plain"
+      ],
+      "findings": [
+        {
+          "title": "No Content-Security-Policy header",
+          "severity": "Medium",
+          "description": "The one missing control on an otherwise hardened privacy-branded site.",
+          "recommendation": "Add a CSP header in next.config.mjs or Caddy."
+        },
+        {
+          "title": "x-powered-by: Next.js still exposed",
+          "severity": "Low",
+          "description": "Response header discloses the framework.",
+          "recommendation": "Set poweredByHeader: false in next.config.mjs."
+        },
+        {
+          "title": "404 page ships without a stylesheet link",
+          "severity": "Low",
+          "description": "Next 14 renders the not-found boundary outside every layout when an app has two root layouts. Status 404 and noindex are intact and not-found.tsx rebuilds the chrome, but CSS arrives via the client chunk.",
+          "recommendation": "Accept, or migrate to app/[locale]/ with a middleware rewrite — a large change for a Low finding."
+        },
+        {
+          "title": "/ru/* misses render the English 404",
+          "severity": "Low",
+          "description": "Same root cause as above.",
+          "recommendation": "Accept, or address with the item above."
+        }
+      ]
+    },
+    {
+      "name": "Content Quality",
+      "score": 64,
+      "previous_score": 52,
+      "weight": 23,
+      "what_works": [
+        "8 /alternatives/* pages rewritten from 170-195 to 626-679 words",
+        "Each has a fair 'what they get right' section, a named gap, a six-row table, switch-if/stay-if lists and 4 FAQs",
+        "Feature pages now 573-727 words, comparison pages 562-619",
+        "Pages under 300 words: 63/94 live -> 42/63 -> 34/63",
+        "Median words: 175 -> 218 -> 260",
+        "0 pages missing H1, 0 heading-level skips"
+      ],
+      "findings": [
+        {
+          "title": "10 /guides/* pages at 218-273 words",
+          "severity": "High",
+          "description": "private-messenger-for-crypto 218, decentralized-messaging-app 220, encrypted-messaging-app-for-iphone 230, messaging-app-that-doesnt-track-you 231, blockchain-messaging-app 232, serverless-messaging-app 238, web3-messaging-app 239, anonymous-messaging-app 265, most-private-messaging-app-2026 273, private-messaging-app-without-phone-number 378. They already carry FAQ blocks and FAQPage schema, so only the body copy is thin.",
+          "recommendation": "Apply the /alternatives/* template: fair framing, concrete implementation, a decision table, and who-this-is-not-for. Target 600+."
+        },
+        {
+          "title": "Head-term cannibalization, unresolved",
+          "severity": "High",
+          "description": "/best-private-messaging-apps (786w) and /guides/most-private-messaging-app-2026 (273w) still target the same query.",
+          "recommendation": "Editorial decision: pick the canonical target, subordinate or merge the other, have it link up."
+        },
+        {
+          "title": "8 glossary pages at 105-152 words",
+          "severity": "Medium",
+          "description": "cover-traffic 105, serverless-messenger 114, end-to-end-encryption 117, double-ratchet 120, forward-secrecy 128, metadata 135, bip-39-seed-phrase 146, stealth-address 152. Now the thinnest section on the site.",
+          "recommendation": "Take each to ~300 with a worked example, why it matters, and how PrivaMesh implements it."
+        },
+        {
+          "title": "/news still 26 words",
+          "severity": "Medium",
+          "description": "4 empty H2s, indexed and in the sitemap.",
+          "recommendation": "Populate or de-index."
+        },
+        {
+          "title": "E-E-A-T unchanged",
+          "severity": "Medium",
+          "description": "/about 353 words with no named team. Only two external domains linked sitewide: github.com (257) and x.com (64). No citations to X3DH, Double Ratchet or BIP-39 despite the product being built on them.",
+          "recommendation": "Cite the specifications, name the team, link third-party coverage."
+        },
+        {
+          "title": "Section index pages read thin by word count",
+          "severity": "Info",
+          "description": "/blog 131, /ru/blog 132, /alternatives 219, /glossary 260. Navigational pages — the count is expected.",
+          "recommendation": "No action."
+        }
+      ]
+    },
+    {
+      "name": "On-Page SEO",
+      "score": 90,
+      "previous_score": 76,
+      "weight": 20,
+      "what_works": [
+        "0 titles over 60 characters — handled centrally in pageMetadata(), 23 pages opt out of the suffix, 40 keep it",
+        "63/63 titles present, 0 duplicates",
+        "63/63 descriptions present, 0 duplicates",
+        "0 pages with multiple H1, 0 missing H1, 0 heading-level skips",
+        "Glossary grammar fixed — each term carries an explicit question",
+        "/alternatives/* inbound links went from 1-2 to 4-5 each via a cyclic related-links block"
+      ],
+      "findings": [
+        {
+          "title": "17 pages at exactly 1 inbound internal link",
+          "severity": "Medium",
+          "description": "All 10 /guides/* and all 7 /glossary/* detail pages are reachable only from their own index.",
+          "recommendation": "Add contextual links inside body copy; rotating the guides index like /alternatives/* is a cheap start."
+        },
+        {
+          "title": "3 meta descriptions over 160 chars",
+          "severity": "Low",
+          "description": "/terms (162), /best-private-messaging-apps (164), /ru/blog/why-a-messenger-with-servers-can-never-be-fully-private (174).",
+          "recommendation": "Trim to 150-160."
+        },
+        {
+          "title": "4 RU tag descriptions under 70 chars",
+          "severity": "Info",
+          "description": "All on noindexed pages.",
+          "recommendation": "No action."
+        }
+      ]
+    },
+    {
+      "name": "Schema / Structured Data",
+      "score": 93,
+      "previous_score": 88,
+      "weight": 10,
+      "what_works": [
+        "FAQPage on 38 of 51 indexable pages, up from 14",
+        "Every FAQ block is backed by visible Q&A — PageFaq renders the questions and emits the schema from the same array",
+        "0 pages without JSON-LD, 0 parse errors",
+        "Organization + WebSite on 63/63, BreadcrumbList on 61/63",
+        "ItemList 19, DefinedTerm 8, Article+Person 4"
+      ],
+      "findings": [
+        {
+          "title": "The 13 indexable pages without FAQPage are the right ones",
+          "severity": "Info",
+          "description": "/privacy-policy, /terms, /about, /news, the 4 blog posts and the 5 section indexes. FAQ markup would not be appropriate on any of them.",
+          "recommendation": "No action."
+        },
+        {
+          "title": "SoftwareApplication on only 2 pages",
+          "severity": "Low",
+          "description": "Should appear on the home page and every feature page.",
+          "recommendation": "Emit sitewide on product pages."
+        },
+        {
+          "title": "No DefinedTermSet",
+          "severity": "Low",
+          "description": "The 8 glossary entries are not linked into one vocabulary.",
+          "recommendation": "Add a DefinedTermSet for /glossary."
+        },
+        {
+          "title": "2 pages missing BreadcrumbList",
+          "severity": "Low",
+          "description": "61 of 63 have it.",
+          "recommendation": "Extend to the remaining 2."
+        }
+      ]
+    },
+    {
+      "name": "Performance (CWV)",
+      "score": 78,
+      "previous_score": 78,
+      "weight": 10,
+      "what_works": [
+        "x-nextjs-cache: HIT — full static generation",
+        "Median HTML 71KB"
+      ],
+      "findings": [
+        {
+          "title": "Home page still 171KB with an always-on canvas",
+          "severity": "Medium",
+          "description": "Heaviest page on the site, then /best-private-messaging-apps 122KB and /compare/privamesh-vs-signal 111KB. NetworkBackground has run continuously during scroll since 32440a1, and this is the LCP page. Untouched by any of the three commits.",
+          "recommendation": "Measure INP; consider pausing the canvas off-viewport."
+        },
+        {
+          "title": "No LCP/INP/CLS measurement exists",
+          "severity": "Info",
+          "description": "No Chrome installed. This category has been an estimate in all three audits.",
+          "recommendation": "Install Chrome, run Lighthouse, connect CrUX."
+        }
+      ]
+    },
+    {
+      "name": "AI Search Readiness",
+      "score": 84,
+      "previous_score": 73,
+      "weight": 10,
+      "what_works": [
+        "/llms.txt live, generated from the same data as the sitemap so new content appears automatically",
+        "Declares pre-launch status and the absence of App Store ratings, so answer engines cannot invent one",
+        "38 FAQPage blocks — a large directly citable Q&A surface",
+        "Rewritten /alternatives/* pages answer comparison questions the way people prompt LLMs, and concede when a competitor is the better choice",
+        "All AI crawlers unblocked; Bing verification wired in",
+        "RU content declares Russian, so locale attribution is correct"
+      ],
+      "findings": [
+        {
+          "title": "Only two external domains linked sitewide",
+          "severity": "Medium",
+          "description": "github.com and x.com. No citations to the X3DH, Double Ratchet or BIP-39 specifications the product is built on, no third-party coverage, no security audit.",
+          "recommendation": "Cite specifications and independent sources on the technical pages."
+        },
+        {
+          "title": "Thin passages remain on guides and glossary",
+          "severity": "Medium",
+          "description": "18 pages still lack a self-contained citable passage.",
+          "recommendation": "Address with the content work in Phase 1."
+        }
+      ]
+    },
+    {
+      "name": "Images",
+      "score": 96,
+      "previous_score": 94,
+      "weight": 5,
+      "what_works": [
+        "149 img elements: 0 missing alt, 0 empty alt, 0 missing width/height",
+        "og:image + twitter:image on all 51 indexable pages at 1200x630",
+        "Per-section OG cards; /guides/[slug] and /glossary/[term] render the page's own title",
+        "Image sitemap with descriptive titles and captions"
+      ],
+      "findings": [
+        {
+          "title": "12 tag archives have no og:image",
+          "severity": "Info",
+          "description": "Deliberate — they are noindexed.",
+          "recommendation": "No action."
+        },
+        {
+          "title": "The 5 images without loading are priority hero images",
+          "severity": "Info",
+          "description": "ScreenshotGallery.tsx:32, i < 3 — correct for above-fold LCP images. This was a false positive in the first audit.",
+          "recommendation": "No action."
+        }
+      ]
+    }
+  ],
+  "action_plan": {
+    "phases": [
+      {
+        "name": "Phase 0: Deploy",
+        "timeframe": "Now",
+        "items": [
+          "Ship cbf997f, 045e584, d31a88c — seven points of score are sitting in GitHub",
+          "Verify lang, sitemap count, llms.txt and the alternatives rewrite on live",
+          "Re-check the 6 duplicate-H1 blog posts against live — they are not in the repo"
+        ]
+      },
+      {
+        "name": "Phase 1: The last thin cluster",
+        "timeframe": "Week 1",
+        "items": [
+          "Rewrite the 10 /guides/* pages from 218-273 to 600+ words",
+          "Resolve the head-term cannibalization",
+          "Deepen the 8 glossary pages to ~300 words and add DefinedTermSet"
+        ]
+      },
+      {
+        "name": "Phase 2: Linking and authority",
+        "timeframe": "Weeks 2-3",
+        "items": [
+          "Link the 17 one-inbound pages with contextual links",
+          "Build out E-E-A-T: cite the specs, name the team, link third-party coverage",
+          "Fill or de-index /news",
+          "Emit SoftwareApplication sitewide on product pages"
+        ]
+      },
+      {
+        "name": "Phase 3: Infrastructure",
+        "timeframe": "Ongoing",
+        "items": [
+          "Install Python 3.10+ and Chrome",
+          "Measure INP on the 171KB home page",
+          "Connect Google Search Console and GA4",
+          "Add a CSP header and set poweredByHeader: false",
+          "Decide on the 404 stylesheet flash — recommend accepting it",
+          "Re-audit against live after Phase 1"
+        ]
+      }
+    ]
+  },
+  "limitations": [
+    "Local build, not production: no Caddy, no HTTP/3, no edge cache, no real latency. Security headers were confirmed app-level so they carry over; timing numbers do not.",
+    "4 EN and 4 RU blog posts exist only on the live server, so content and internal-link figures understate the real site. The 6 duplicate-H1 pages are among them and still cannot be re-checked.",
+    "claude-seo toolchain unavailable (Python 3.9.6, no Homebrew): no Lighthouse, no screenshots, no PDF report.",
+    "No Google, DataForSEO, Moz or Bing credentials: no indexation, ranking, traffic or backlink data in any of the three audits."
+  ],
+  "artifacts": {
+    "findings_dir": "findings/",
+    "raw_crawl": "crawl.json",
+    "raw_analysis": "analysis.txt",
+    "prior_audits": [
+      "../FULL-AUDIT-REPORT.md",
+      "../post-fix/FULL-AUDIT-REPORT.md"
+    ]
+  }
+}

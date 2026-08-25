@@ -1,0 +1,68 @@
+[
+  {
+    "url": "/",
+    "perf": 83,
+    "a11y": 96,
+    "bp": 96,
+    "seo": 100,
+    "LCP": 4657,
+    "CLS": 0,
+    "TBT": 0,
+    "FCP": 905
+  },
+  {
+    "url": "/guides/serverless-messaging-app",
+    "perf": 92,
+    "a11y": 96,
+    "bp": 96,
+    "seo": 100,
+    "LCP": 3305,
+    "CLS": 0,
+    "TBT": 0,
+    "FCP": 905
+  },
+  {
+    "url": "/alternatives/signal",
+    "perf": 92,
+    "a11y": 96,
+    "bp": 96,
+    "seo": 100,
+    "LCP": 3305,
+    "CLS": 0,
+    "TBT": 0,
+    "FCP": 904
+  },
+  {
+    "url": "/glossary/metadata",
+    "perf": 94,
+    "a11y": 96,
+    "bp": 96,
+    "seo": 100,
+    "LCP": 3154,
+    "CLS": 0,
+    "TBT": 0,
+    "FCP": 754
+  },
+  {
+    "url": "/best-private-messaging-apps",
+    "perf": 92,
+    "a11y": 96,
+    "bp": 96,
+    "seo": 100,
+    "LCP": 3306,
+    "CLS": 0,
+    "TBT": 0,
+    "FCP": 905
+  },
+  {
+    "url": "/features/no-servers",
+    "perf": 97,
+    "a11y": 96,
+    "bp": 96,
+    "seo": 100,
+    "LCP": 2605,
+    "CLS": 0,
+    "TBT": 0,
+    "FCP": 904
+  }
+]

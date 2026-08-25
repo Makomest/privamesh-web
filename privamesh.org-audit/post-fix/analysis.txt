@@ -1,0 +1,377 @@
+== CRAWL SUMMARY ==
+total 63 | 200: 63 | non-200: 0 | errors: 0
+
+== INTERNAL LINK GRAPH ==
+unique internal link edges: 1369
+ORPHANS (0 inbound internal links): 0
+LOW inbound (<=2): 34
+    1 http://localhost:3111/glossary/stealth-address
+    1 http://localhost:3111/glossary/double-ratchet
+    1 http://localhost:3111/glossary/forward-secrecy
+    1 http://localhost:3111/glossary/bip-39-seed-phrase
+    1 http://localhost:3111/glossary/end-to-end-encryption
+    1 http://localhost:3111/glossary/cover-traffic
+    1 http://localhost:3111/glossary/serverless-messenger
+    1 http://localhost:3111/alternatives/imessage
+    1 http://localhost:3111/alternatives/wickr
+    1 http://localhost:3111/guides/private-messaging-app-without-phone-number
+    1 http://localhost:3111/guides/decentralized-messaging-app
+    1 http://localhost:3111/guides/anonymous-messaging-app
+    1 http://localhost:3111/guides/most-private-messaging-app-2026
+    1 http://localhost:3111/guides/blockchain-messaging-app
+    1 http://localhost:3111/guides/encrypted-messaging-app-for-iphone
+    1 http://localhost:3111/guides/web3-messaging-app
+    1 http://localhost:3111/guides/messaging-app-that-doesnt-track-you
+    1 http://localhost:3111/guides/private-messenger-for-crypto
+    1 http://localhost:3111/guides/serverless-messaging-app
+    2 http://localhost:3111/glossary/metadata
+    2 http://localhost:3111/alternatives/threema
+    2 http://localhost:3111/alternatives/simplex
+    2 http://localhost:3111/blog/tag/privacy
+    2 http://localhost:3111/blog/tag/serverless
+    2 http://localhost:3111/blog/tag/metadata
+    2 http://localhost:3111/blog/tag/encryption
+    2 http://localhost:3111/blog/tag/forward-secrecy
+    2 http://localhost:3111/ru/blog/tag/bez-serverov
+    2 http://localhost:3111/blog/tag/double-ratchet
+    2 http://localhost:3111/ru/blog/tag/privatnost
+    2 http://localhost:3111/ru/blog/tag/metadannye
+    2 http://localhost:3111/ru/blog/tag/shifrovanie
+    2 http://localhost:3111/ru/blog/tag/double-ratchet
+    2 http://localhost:3111/ru/blog/tag/pryamaya-sekretnost
+
+== TITLES ==
+missing title: 0
+dup titles: 0
+title >60 chars: 22
+    78 http://localhost:3111/ru/blog/why-a-messenger-with-servers-can-never-be-fully-private | Почему мессенджер с серверами никогда не будет полностью приватным · PrivaMesh
+    72 http://localhost:3111/glossary/end-to-end-encryption | What is a End-to-end encryption (E2EE)? - PrivaMesh Glossary · PrivaMesh
+    68 http://localhost:3111/features/no-servers | Serverless Messenger: How PrivaMesh Runs Without Servers · PrivaMesh
+    68 http://localhost:3111/alternatives | Private Messenger Alternatives - Signal, Telegram & More · PrivaMesh
+    68 http://localhost:3111/glossary | Private Messaging Glossary - Encryption & Metadata Terms · PrivaMesh
+    67 http://localhost:3111/compare/privamesh-vs-session | PrivaMesh vs Session: Two Serverless Privacy Approaches · PrivaMesh
+    67 http://localhost:3111/ru | PrivaMesh - Приватный мессенджер без серверов на Solana · PrivaMesh
+    67 http://localhost:3111/blog/why-a-messenger-with-servers-can-never-be-fully-private | Why a messenger with servers can never be fully private · PrivaMesh
+    67 http://localhost:3111/ru/blog/how-double-ratchet-encryption-works | Как работает шифрование Double Ratchet (простым языком) · PrivaMesh
+    67 http://localhost:3111/glossary/metadata | What is a Metadata (in messaging)? - PrivaMesh Glossary · PrivaMesh
+    66 http://localhost:3111/features/e2e-encryption | End-to-End Encryption Explained: X3DH & Double Ratchet · PrivaMesh
+    65 http://localhost:3111/features/metadata-protection | Metadata Protection: Hide Who, When & How You Message · PrivaMesh
+    64 http://localhost:3111/features/sol-transfers | Send SOL in Chat - Payments, Nicknames & NFT Avatars · PrivaMesh
+    64 http://localhost:3111/compare/privamesh-vs-signal | PrivaMesh vs Signal: Serverless vs the Gold Standard · PrivaMesh
+    64 http://localhost:3111/glossary/serverless-messenger | What is a Serverless messenger? - PrivaMesh Glossary · PrivaMesh
+    63 http://localhost:3111/blog/how-double-ratchet-encryption-works | How Double Ratchet encryption works (plain English) · PrivaMesh
+    62 http://localhost:3111/features/seed-phrase-accounts | Messenger With No Phone Number - Seed Phrase Login · PrivaMesh
+    62 http://localhost:3111/best-private-messaging-apps | Best Private Messaging Apps 2026 (Honestly Ranked) · PrivaMesh
+    62 http://localhost:3111/glossary/bip-39-seed-phrase | What is a BIP-39 seed phrase? - PrivaMesh Glossary · PrivaMesh
+    61 http://localhost:3111/compare/privamesh-vs-telegram | PrivaMesh vs Telegram: Real Privacy vs Popularity · PrivaMesh
+    61 http://localhost:3111/ru/blog | Блог PrivaMesh - приватные сообщения и шифрование · PrivaMesh
+    61 http://localhost:3111/guides/blockchain-messaging-app | Blockchain Messaging App: How On-Chain Chat Works · PrivaMesh
+title <30 chars: 2
+    24 http://localhost:3111/terms | Terms of Use · PrivaMesh
+    26 http://localhost:3111/privacy-policy | Privacy Policy · PrivaMesh
+
+== META DESCRIPTIONS ==
+missing: 0
+desc >160: 3
+    162 http://localhost:3111/terms
+    164 http://localhost:3111/best-private-messaging-apps
+    174 http://localhost:3111/ru/blog/why-a-messenger-with-servers-can-never-be-fully-private
+desc <70: 4
+    69 http://localhost:3111/ru/blog/tag/bez-serverov | Статьи про без серверов - приватные сообщения без серверов на Solana.
+    68 http://localhost:3111/ru/blog/tag/privatnost | Статьи про приватность - приватные сообщения без серверов на Solana.
+    67 http://localhost:3111/ru/blog/tag/metadannye | Статьи про метаданные - приватные сообщения без серверов на Solana.
+    67 http://localhost:3111/ru/blog/tag/shifrovanie | Статьи про шифрование - приватные сообщения без серверов на Solana.
+
+== CANONICALS ==
+missing canonical: 0
+canonical != self: 63
+    http://localhost:3111/ -> https://privamesh.org
+    http://localhost:3111/terms -> https://privamesh.org/terms
+    http://localhost:3111/privacy-policy -> https://privamesh.org/privacy-policy
+    http://localhost:3111/privacy -> https://privamesh.org/privacy
+    http://localhost:3111/features/no-servers -> https://privamesh.org/features/no-servers
+    http://localhost:3111/features/metadata-protection -> https://privamesh.org/features/metadata-protection
+    http://localhost:3111/features/e2e-encryption -> https://privamesh.org/features/e2e-encryption
+    http://localhost:3111/features/sol-transfers -> https://privamesh.org/features/sol-transfers
+    http://localhost:3111/features/seed-phrase-accounts -> https://privamesh.org/features/seed-phrase-accounts
+    http://localhost:3111/compare/privamesh-vs-signal -> https://privamesh.org/compare/privamesh-vs-signal
+    http://localhost:3111/compare/privamesh-vs-telegram -> https://privamesh.org/compare/privamesh-vs-telegram
+    http://localhost:3111/compare/privamesh-vs-session -> https://privamesh.org/compare/privamesh-vs-session
+    http://localhost:3111/alternatives -> https://privamesh.org/alternatives
+    http://localhost:3111/guides -> https://privamesh.org/guides
+    http://localhost:3111/best-private-messaging-apps -> https://privamesh.org/best-private-messaging-apps
+    http://localhost:3111/about -> https://privamesh.org/about
+    http://localhost:3111/glossary -> https://privamesh.org/glossary
+    http://localhost:3111/news -> https://privamesh.org/news
+    http://localhost:3111/blog -> https://privamesh.org/blog
+    http://localhost:3111/ru -> https://privamesh.org/ru
+    http://localhost:3111/ru/blog -> https://privamesh.org/ru/blog
+    http://localhost:3111/blog/why-a-messenger-with-servers-can-never-be-fully-private -> https://privamesh.org/blog/why-a-messenger-with-servers-can-never-be-fully-private
+    http://localhost:3111/ru/blog/how-double-ratchet-encryption-works -> https://privamesh.org/ru/blog/how-double-ratchet-encryption-works
+    http://localhost:3111/ru/blog/why-a-messenger-with-servers-can-never-be-fully-private -> https://privamesh.org/ru/blog/why-a-messenger-with-servers-can-never-be-fully-private
+    http://localhost:3111/blog/how-double-ratchet-encryption-works -> https://privamesh.org/blog/how-double-ratchet-encryption-works
+    http://localhost:3111/glossary/stealth-address -> https://privamesh.org/glossary/stealth-address
+    http://localhost:3111/glossary/double-ratchet -> https://privamesh.org/glossary/double-ratchet
+    http://localhost:3111/glossary/metadata -> https://privamesh.org/glossary/metadata
+    http://localhost:3111/glossary/forward-secrecy -> https://privamesh.org/glossary/forward-secrecy
+    http://localhost:3111/glossary/bip-39-seed-phrase -> https://privamesh.org/glossary/bip-39-seed-phrase
+    http://localhost:3111/glossary/end-to-end-encryption -> https://privamesh.org/glossary/end-to-end-encryption
+    http://localhost:3111/glossary/cover-traffic -> https://privamesh.org/glossary/cover-traffic
+    http://localhost:3111/glossary/serverless-messenger -> https://privamesh.org/glossary/serverless-messenger
+    http://localhost:3111/alternatives/telegram -> https://privamesh.org/alternatives/telegram
+    http://localhost:3111/alternatives/signal -> https://privamesh.org/alternatives/signal
+    http://localhost:3111/alternatives/whatsapp -> https://privamesh.org/alternatives/whatsapp
+    http://localhost:3111/alternatives/threema -> https://privamesh.org/alternatives/threema
+    http://localhost:3111/alternatives/simplex -> https://privamesh.org/alternatives/simplex
+    http://localhost:3111/alternatives/session -> https://privamesh.org/alternatives/session
+    http://localhost:3111/alternatives/imessage -> https://privamesh.org/alternatives/imessage
+    http://localhost:3111/alternatives/wickr -> https://privamesh.org/alternatives/wickr
+    http://localhost:3111/guides/private-messaging-app-without-phone-number -> https://privamesh.org/guides/private-messaging-app-without-phone-number
+    http://localhost:3111/guides/decentralized-messaging-app -> https://privamesh.org/guides/decentralized-messaging-app
+    http://localhost:3111/guides/anonymous-messaging-app -> https://privamesh.org/guides/anonymous-messaging-app
+    http://localhost:3111/guides/most-private-messaging-app-2026 -> https://privamesh.org/guides/most-private-messaging-app-2026
+    http://localhost:3111/guides/blockchain-messaging-app -> https://privamesh.org/guides/blockchain-messaging-app
+    http://localhost:3111/guides/encrypted-messaging-app-for-iphone -> https://privamesh.org/guides/encrypted-messaging-app-for-iphone
+    http://localhost:3111/guides/web3-messaging-app -> https://privamesh.org/guides/web3-messaging-app
+    http://localhost:3111/guides/messaging-app-that-doesnt-track-you -> https://privamesh.org/guides/messaging-app-that-doesnt-track-you
+    http://localhost:3111/guides/private-messenger-for-crypto -> https://privamesh.org/guides/private-messenger-for-crypto
+    http://localhost:3111/guides/serverless-messaging-app -> https://privamesh.org/guides/serverless-messaging-app
+    http://localhost:3111/blog/tag/privacy -> https://privamesh.org/blog/tag/privacy
+    http://localhost:3111/blog/tag/serverless -> https://privamesh.org/blog/tag/serverless
+    http://localhost:3111/blog/tag/metadata -> https://privamesh.org/blog/tag/metadata
+    http://localhost:3111/blog/tag/encryption -> https://privamesh.org/blog/tag/encryption
+    http://localhost:3111/blog/tag/forward-secrecy -> https://privamesh.org/blog/tag/forward-secrecy
+    http://localhost:3111/ru/blog/tag/bez-serverov -> https://privamesh.org/ru/blog/tag/bez-serverov
+    http://localhost:3111/blog/tag/double-ratchet -> https://privamesh.org/blog/tag/double-ratchet
+    http://localhost:3111/ru/blog/tag/privatnost -> https://privamesh.org/ru/blog/tag/privatnost
+    http://localhost:3111/ru/blog/tag/metadannye -> https://privamesh.org/ru/blog/tag/metadannye
+    http://localhost:3111/ru/blog/tag/shifrovanie -> https://privamesh.org/ru/blog/tag/shifrovanie
+    http://localhost:3111/ru/blog/tag/double-ratchet -> https://privamesh.org/ru/blog/tag/double-ratchet
+    http://localhost:3111/ru/blog/tag/pryamaya-sekretnost -> https://privamesh.org/ru/blog/tag/pryamaya-sekretnost
+
+== ROBOTS META / INDEXABILITY ==
+noindex pages: 12
+    http://localhost:3111/blog/tag/privacy noindex, follow
+    http://localhost:3111/blog/tag/serverless noindex, follow
+    http://localhost:3111/blog/tag/metadata noindex, follow
+    http://localhost:3111/blog/tag/encryption noindex, follow
+    http://localhost:3111/blog/tag/forward-secrecy noindex, follow
+    http://localhost:3111/ru/blog/tag/bez-serverov noindex, follow
+    http://localhost:3111/blog/tag/double-ratchet noindex, follow
+    http://localhost:3111/ru/blog/tag/privatnost noindex, follow
+    http://localhost:3111/ru/blog/tag/metadannye noindex, follow
+    http://localhost:3111/ru/blog/tag/shifrovanie noindex, follow
+    http://localhost:3111/ru/blog/tag/double-ratchet noindex, follow
+    http://localhost:3111/ru/blog/tag/pryamaya-sekretnost noindex, follow
+
+== HREFLANG ==
+pages with hreflang: 8 / 63
+pages WITHOUT hreflang: 55
+    http://localhost:3111/terms
+    http://localhost:3111/privacy-policy
+    http://localhost:3111/privacy
+    http://localhost:3111/features/no-servers
+    http://localhost:3111/features/metadata-protection
+    http://localhost:3111/features/e2e-encryption
+    http://localhost:3111/features/sol-transfers
+    http://localhost:3111/features/seed-phrase-accounts
+    http://localhost:3111/compare/privamesh-vs-signal
+    http://localhost:3111/compare/privamesh-vs-telegram
+    http://localhost:3111/compare/privamesh-vs-session
+    http://localhost:3111/alternatives
+    http://localhost:3111/guides
+    http://localhost:3111/best-private-messaging-apps
+    http://localhost:3111/about
+    http://localhost:3111/glossary
+    http://localhost:3111/news
+    http://localhost:3111/glossary/stealth-address
+    http://localhost:3111/glossary/double-ratchet
+    http://localhost:3111/glossary/metadata
+    http://localhost:3111/glossary/forward-secrecy
+    http://localhost:3111/glossary/bip-39-seed-phrase
+    http://localhost:3111/glossary/end-to-end-encryption
+    http://localhost:3111/glossary/cover-traffic
+    http://localhost:3111/glossary/serverless-messenger
+    http://localhost:3111/alternatives/telegram
+    http://localhost:3111/alternatives/signal
+    http://localhost:3111/alternatives/whatsapp
+    http://localhost:3111/alternatives/threema
+    http://localhost:3111/alternatives/simplex
+    http://localhost:3111/alternatives/session
+    http://localhost:3111/alternatives/imessage
+    http://localhost:3111/alternatives/wickr
+    http://localhost:3111/guides/private-messaging-app-without-phone-number
+    http://localhost:3111/guides/decentralized-messaging-app
+    http://localhost:3111/guides/anonymous-messaging-app
+    http://localhost:3111/guides/most-private-messaging-app-2026
+    http://localhost:3111/guides/blockchain-messaging-app
+    http://localhost:3111/guides/encrypted-messaging-app-for-iphone
+    http://localhost:3111/guides/web3-messaging-app
+    http://localhost:3111/guides/messaging-app-that-doesnt-track-you
+    http://localhost:3111/guides/private-messenger-for-crypto
+    http://localhost:3111/guides/serverless-messaging-app
+    http://localhost:3111/blog/tag/privacy
+    http://localhost:3111/blog/tag/serverless
+    http://localhost:3111/blog/tag/metadata
+    http://localhost:3111/blog/tag/encryption
+    http://localhost:3111/blog/tag/forward-secrecy
+    http://localhost:3111/ru/blog/tag/bez-serverov
+    http://localhost:3111/blog/tag/double-ratchet
+    http://localhost:3111/ru/blog/tag/privatnost
+    http://localhost:3111/ru/blog/tag/metadannye
+    http://localhost:3111/ru/blog/tag/shifrovanie
+    http://localhost:3111/ru/blog/tag/double-ratchet
+    http://localhost:3111/ru/blog/tag/pryamaya-sekretnost
+with hreflang but no x-default: 0
+sample hreflang: [{"lang":"en","href":"https://privamesh.org"},{"lang":"ru","href":"https://privamesh.org/ru"},{"lang":"x-default","href":"https://privamesh.org"}]
+
+== LANG ATTR ==
+{"en":53,"ru":10}
+RU pages with wrong lang attr: 0
+
+== HEADINGS ==
+h1 missing: 0
+multiple h1: 0
+h3 without h2: 0
+
+== CONTENT DEPTH ==
+thin (<300 words): 42
+    26 http://localhost:3111/news
+    59 http://localhost:3111/ru/blog/tag/shifrovanie
+    61 http://localhost:3111/ru/blog/tag/double-ratchet
+    61 http://localhost:3111/ru/blog/tag/pryamaya-sekretnost
+    62 http://localhost:3111/blog/tag/encryption
+    64 http://localhost:3111/blog/tag/forward-secrecy
+    64 http://localhost:3111/blog/tag/double-ratchet
+    67 http://localhost:3111/blog/tag/privacy
+    67 http://localhost:3111/blog/tag/serverless
+    67 http://localhost:3111/blog/tag/metadata
+    68 http://localhost:3111/ru/blog/tag/privatnost
+    68 http://localhost:3111/ru/blog/tag/metadannye
+    70 http://localhost:3111/ru/blog/tag/bez-serverov
+    106 http://localhost:3111/glossary/cover-traffic
+    114 http://localhost:3111/glossary/serverless-messenger
+    118 http://localhost:3111/glossary/end-to-end-encryption
+    119 http://localhost:3111/glossary/double-ratchet
+    129 http://localhost:3111/glossary/forward-secrecy
+    131 http://localhost:3111/blog
+    133 http://localhost:3111/ru/blog
+    136 http://localhost:3111/glossary/metadata
+    146 http://localhost:3111/glossary/bip-39-seed-phrase
+    152 http://localhost:3111/glossary/stealth-address
+    170 http://localhost:3111/alternatives/whatsapp
+    171 http://localhost:3111/alternatives/simplex
+    171 http://localhost:3111/alternatives/wickr
+    175 http://localhost:3111/alternatives/threema
+    179 http://localhost:3111/alternatives/telegram
+    181 http://localhost:3111/alternatives/imessage
+    182 http://localhost:3111/alternatives/session
+    195 http://localhost:3111/alternatives/signal
+    218 http://localhost:3111/guides/private-messenger-for-crypto
+    219 http://localhost:3111/alternatives
+    220 http://localhost:3111/guides/decentralized-messaging-app
+    230 http://localhost:3111/guides/encrypted-messaging-app-for-iphone
+    231 http://localhost:3111/guides/messaging-app-that-doesnt-track-you
+    232 http://localhost:3111/guides/blockchain-messaging-app
+    238 http://localhost:3111/guides/serverless-messaging-app
+    239 http://localhost:3111/guides/web3-messaging-app
+    260 http://localhost:3111/glossary
+    265 http://localhost:3111/guides/anonymous-messaging-app
+    273 http://localhost:3111/guides/most-private-messaging-app-2026
+300-600: 16
+    353 http://localhost:3111/about
+    357 http://localhost:3111/guides
+    378 http://localhost:3111/guides/private-messaging-app-without-phone-number
+    420 http://localhost:3111/compare/privamesh-vs-session
+    428 http://localhost:3111/features/sol-transfers
+    428 http://localhost:3111/compare/privamesh-vs-telegram
+    447 http://localhost:3111/terms
+    447 http://localhost:3111/compare/privamesh-vs-signal
+    473 http://localhost:3111/features/metadata-protection
+    502 http://localhost:3111/features/seed-phrase-accounts
+    507 http://localhost:3111/features/no-servers
+    521 http://localhost:3111/features/e2e-encryption
+    523 http://localhost:3111/ru
+    553 http://localhost:3111/privacy-policy
+    571 http://localhost:3111/ru/blog/how-double-ratchet-encryption-works
+    571 http://localhost:3111/ru/blog/why-a-messenger-with-servers-can-never-be-fully-private
+median words: 218
+top 5 longest: 658 http://localhost:3111/blog/why-a-messenger-with-servers-can-never-be-fully-private | 688 http://localhost:3111/blog/how-double-ratchet-encryption-works | 774 http://localhost:3111/privacy | 786 http://localhost:3111/best-private-messaging-apps | 848 http://localhost:3111/
+
+== SCHEMA ==
+{
+ "Organization": 63,
+ "WebSite": 63,
+ "SoftwareApplication": 2,
+ "Offer": 2,
+ "UnitPriceSpecification": 2,
+ "FAQPage": 14,
+ "Question": 14,
+ "Answer": 14,
+ "BreadcrumbList": 61,
+ "ListItem": 61,
+ "ItemList": 19,
+ "Article": 4,
+ "Person": 4,
+ "DefinedTerm": 8
+}
+pages with NO schema: 0
+
+== IMAGES ==
+total <img>: 149
+missing alt attr: 0
+empty alt: 0
+no width/height: 0
+no loading attr: 5
+pages with 0 images: 0
+
+== OG / SOCIAL ==
+missing og:title: 0
+missing og:desc: 0
+missing og:image: 12
+    http://localhost:3111/blog/tag/privacy
+    http://localhost:3111/blog/tag/serverless
+    http://localhost:3111/blog/tag/metadata
+    http://localhost:3111/blog/tag/encryption
+    http://localhost:3111/blog/tag/forward-secrecy
+    http://localhost:3111/ru/blog/tag/bez-serverov
+    http://localhost:3111/blog/tag/double-ratchet
+    http://localhost:3111/ru/blog/tag/privatnost
+    http://localhost:3111/ru/blog/tag/metadannye
+    http://localhost:3111/ru/blog/tag/shifrovanie
+    http://localhost:3111/ru/blog/tag/double-ratchet
+    http://localhost:3111/ru/blog/tag/pryamaya-sekretnost
+distinct og:image: 51 {"https://privamesh.org/opengraph-image-d7eprh?c36d500ffe535565":1,"https://privamesh.org/terms/opengraph-image-4cedlz?8562c001c812fd82":1,"https://privamesh.org/privacy-policy/opengraph-image-10xyu9?b9dfb69b1ad96bb5":1,"https://privamesh.org/privacy/opengraph-image-10vpwb?3e84053b5215addc":1,"https://privamesh.org/features/no-servers/opengraph-image-hmv4m6?234ef59ee1c70bec":1,"https://privamesh.org/features/metadata-protection/opengraph-image-122ht7?700c623c2c486cd1":1,"https://privamesh.org/features/e2e-encryption/opengraph-image-i7lzlq?174e249f1c5fb7d3":1,"https://privamesh.org/features/sol-transfers/opengraph-image-5t42l9?e64e983df3a03b00":1,"https://privamesh.org/features/seed-phrase-accounts/opengraph-image-1lmsiw?21f0a83272c1ee18":1,"https://privamesh.org/compare/privamesh-vs-signal/opengraph-image-1yz54q?bb56f3265407ef93":1,"https://privamesh.org/compare/privamesh-vs-telegram/opengraph-image-1yz54q?bb56f3265407ef93":1,"https://privamesh.org/compare/privamesh-vs-session/opengraph-image-1yz54q?bb56f3265407ef93":1,"https://privamesh.org/alternatives/opengraph-image-3be8zy?611e6e5fd7fd9158":1,"https://privamesh.org/guides/opengraph-image-1s89gy?a450d049dd74d12c":1,"https://privamesh.org/best-private-messaging-apps/opengraph-image-hocmu6?7686748bd8680234":1,"https://privamesh.org/about/opengraph-image-3yx1x3?7069969e92967938":1,"https://privamesh.org/glossary/opengraph-image-5kez80?e8e3947804c6ed2e":1,"https://privamesh.org/news/opengraph-image-aw1vx5?32efab6aa1bbe276":1,"https://privamesh.org/blog/opengraph-image-avssu8?4d816ffe72729f53":1,"https://privamesh.org/ru/opengraph-image-19j5a8?6b788fdeb4355e91":1,"https://privamesh.org/ru/blog/opengraph-image-gvgju2?51e0a6a8bc117fc9":1,"https://privamesh.org/blog/why-a-messenger-with-servers-can-never-be-fully-private/opengraph-image-tgevhe?6a5429e2b1b78a27":1,"https://privamesh.org/ru/blog/how-double-ratchet-encryption-works/opengraph-image-gmg7bg?3831232938cc64de":1,"https://privamesh.org/ru/blog/why-a-messenger-with-servers-can-never-be-fully-private/opengraph-image-gmg7bg?3831232938cc64de":1,"https://privamesh.org/blog/how-double-ratchet-encryption-works/opengraph-image-tgevhe?6a5429e2b1b78a27":1,"https://privamesh.org/glossary/stealth-address/opengraph-image-1rky8p?37453fcb4da42f14":1,"https://privamesh.org/glossary/double-ratchet/opengraph-image-1rky8p?37453fcb4da42f14":1,"https://privamesh.org/glossary/metadata/opengraph-image-1rky8p?37453fcb4da42f14":1,"https://privamesh.org/glossary/forward-secrecy/opengraph-image-1rky8p?37453fcb4da42f14":1,"https://privamesh.org/glossary/bip-39-seed-phrase/opengraph-image-1rky8p?37453fcb4da42f14":1,"https://privamesh.org/glossary/end-to-end-encryption/opengraph-image-1rky8p?37453fcb4da42f14":1,"https://privamesh.org/glossary/cover-traffic/opengraph-image-1rky8p?37453fcb4da42f14":1,"https://privamesh.org/glossary/serverless-messenger/opengraph-image-1rky8p?37453fcb4da42f14":1,"https://privamesh.org/alternatives/telegram/opengraph-image-w9rsq8?d8082cd443d8a322":1,"https://privamesh.org/alternatives/signal/opengraph-image-w9rsq8?d8082cd443d8a322":1,"https://privamesh.org/alternatives/whatsapp/opengraph-image-w9rsq8?d8082cd443d8a322":1,"https://privamesh.org/alternatives/threema/opengraph-image-w9rsq8?d8082cd443d8a322":1,"https://privamesh.org/alternatives/simplex/opengraph-image-w9rsq8?d8082cd443d8a322":1,"https://privamesh.org/alternatives/session/opengraph-image-w9rsq8?d8082cd443d8a322":1,"https://privamesh.org/alternatives/imessage/opengraph-image-w9rsq8?d8082cd443d8a322":1,"https://privamesh.org/alternatives/wickr/opengraph-image-w9rsq8?d8082cd443d8a322":1,"https://privamesh.org/guides/private-messaging-app-without-phone-number/opengraph-image-1lwd3d?f786ac1af37c6ee0":1,"https://privamesh.org/guides/decentralized-messaging-app/opengraph-image-1lwd3d?f786ac1af37c6ee0":1,"https://privamesh.org/guides/anonymous-messaging-app/opengraph-image-1lwd3d?f786ac1af37c6ee0":1,"https://privamesh.org/guides/most-private-messaging-app-2026/opengraph-image-1lwd3d?f786ac1af37c6ee0":1,"https://privamesh.org/guides/blockchain-messaging-app/opengraph-image-1lwd3d?f786ac1af37c6ee0":1,"https://privamesh.org/guides/encrypted-messaging-app-for-iphone/opengraph-image-1lwd3d?f786ac1af37c6ee0":1,"https://privamesh.org/guides/web3-messaging-app/opengraph-image-1lwd3d?f786ac1af37c6ee0":1,"https://privamesh.org/guides/messaging-app-that-doesnt-track-you/opengraph-image-1lwd3d?f786ac1af37c6ee0":1,"https://privamesh.org/guides/private-messenger-for-crypto/opengraph-image-1lwd3d?f786ac1af37c6ee0":1,"https://privamesh.org/guides/serverless-messaging-app/opengraph-image-1lwd3d?f786ac1af37c6ee0":1}
+missing twitter:card: 0
+
+== PERF (server response) ==
+slowest 10:
+    124ms 86KB http://localhost:3111/blog/how-double-ratchet-encryption-works
+    121ms 82KB http://localhost:3111/ru/blog/why-a-messenger-with-servers-can-never-be-fully-private
+    120ms 86KB http://localhost:3111/blog/why-a-messenger-with-servers-can-never-be-fully-private
+    119ms 81KB http://localhost:3111/ru/blog/how-double-ratchet-encryption-works
+    86ms 74KB http://localhost:3111/glossary
+    85ms 54KB http://localhost:3111/news
+    83ms 65KB http://localhost:3111/blog
+    82ms 99KB http://localhost:3111/ru
+    80ms 70KB http://localhost:3111/about
+    47ms 171KB http://localhost:3111/
+median ms: 24
+heaviest HTML:
+    171KB http://localhost:3111/
+    122KB http://localhost:3111/best-private-messaging-apps
+    99KB http://localhost:3111/compare/privamesh-vs-telegram
+    99KB http://localhost:3111/compare/privamesh-vs-signal
+    99KB http://localhost:3111/ru
+    98KB http://localhost:3111/compare/privamesh-vs-session
+    86KB http://localhost:3111/blog/how-double-ratchet-encryption-works
+    86KB http://localhost:3111/blog/why-a-messenger-with-servers-can-never-be-fully-private
+median HTML KB: 68
+
+== EXTERNAL LINKS ==
+{
+ "github.com": 257,
+ "x.com": 64
+}
+
+== HEADERS (homepage) ==

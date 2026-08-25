@@ -1,0 +1,343 @@
+{
+  "summary": {
+    "health_score": 71,
+    "business_type": "Privacy/security consumer app (product marketing site), pre-launch, EN+RU",
+    "audit_date": "2026-07-26",
+    "pages_crawled": 94,
+    "top_findings": [
+      "All 25 Russian pages declare <html lang=\"en\">",
+      "hreflang non-reciprocal for / <-> /ru and /blog <-> /ru/blog",
+      "70 of 94 pages have no og:image despite twitter:card=summary_large_image sitewide",
+      "63 of 94 pages are thin (<300 words); site median 175 words",
+      "Head-term cannibalization across 3 pages targeting 'best/most private messenger 2026'"
+    ],
+    "quick_wins": [
+      "Set lang from route locale in app/layout.tsx:66",
+      "Pass languages to pageMetadata() on EN home and EN /blog",
+      "Add segment-level opengraph-image.tsx (or default openGraph.images in lib/seo.ts)",
+      "Trim the 30 titles over 60 chars by dropping the '· PrivaMesh' suffix",
+      "noindex the 31 thin tag archives and drop them from the sitemap"
+    ]
+  },
+  "categories": [
+    {
+      "name": "Technical SEO",
+      "score": 74,
+      "weight": 22,
+      "what_works": [
+        "HTTPS with HSTS preload (max-age=63072000, includeSubDomains)",
+        "http:// and www. both resolve to canonical host, no redirect chains",
+        "nosniff, X-Frame-Options, Referrer-Policy, Permissions-Policy all set",
+        "robots.txt valid with Host + 2 sitemaps; blocks only /admin and /api/",
+        "Canonical on 94/94 pages, self-referencing, 0 mismatches",
+        "0 noindex pages, 0 non-200s, 0 orphans across 94 URLs",
+        "404s return real HTTP 404",
+        "Edge cached (x-nextjs-cache: HIT) behind Caddy, HTTP/3 advertised"
+      ],
+      "findings": [
+        {
+          "title": "Russian pages declare English as their language",
+          "severity": "Critical",
+          "description": "All 25 /ru* URLs serve <html lang=\"en\">. app/layout.tsx:66 hardcodes lang=\"en\" in the single root layout, so the /ru subtree inherits it.",
+          "recommendation": "Add app/ru/layout.tsx setting lang=\"ru\", or restructure to an app/[locale]/ segment."
+        },
+        {
+          "title": "hreflang non-reciprocal on / and /blog",
+          "severity": "Critical",
+          "description": "Verified: /ru emits en/ru/x-default alternates pointing at /; / emits no rel=alternate hreflang at all. Same for /blog vs /ru/blog. The 12 blog posts are correct. The sitemap declares xhtml:link alternates for the home URL, conflicting with page markup.",
+          "recommendation": "Pass languages:{en:'/',ru:'/ru'} to pageMetadata() in app/page.tsx and {en:'/blog',ru:'/ru/blog'} in app/blog/page.tsx."
+        },
+        {
+          "title": "No Content-Security-Policy header",
+          "severity": "Medium",
+          "description": "All other security headers present; CSP is the only gap on a privacy-branded site.",
+          "recommendation": "Add a CSP header in next.config.mjs or Caddy."
+        },
+        {
+          "title": "x-powered-by: Next.js exposed",
+          "severity": "Low",
+          "description": "Response header discloses the framework.",
+          "recommendation": "Set poweredByHeader: false in next.config.mjs."
+        },
+        {
+          "title": "No llms.txt",
+          "severity": "Low",
+          "description": "/llms.txt returns 404.",
+          "recommendation": "Publish /llms.txt. Ignored by Google Search, read by some AI crawlers."
+        }
+      ]
+    },
+    {
+      "name": "Content Quality",
+      "score": 52,
+      "weight": 23,
+      "what_works": [
+        "12 long-form blog posts at 1162-1515 words (6 EN + 6 RU)",
+        "/privacy 774w, /best-private-messaging-apps 786w, home 848w have real depth",
+        "0 pages missing H1, 0 H3-without-H2 skips",
+        "Person schema on all 12 articles"
+      ],
+      "findings": [
+        {
+          "title": "63 of 94 pages under 300 words",
+          "severity": "High",
+          "description": "Site median 175 words. By section: blog tags ~70w (31 pages), glossary 142w (9), alternatives 183w (9), guides 262w (11). The commercial-intent sections are the thinnest non-tag content; /alternatives/whatsapp is 170 words.",
+          "recommendation": "Take /alternatives/* and /guides/* to 600+ words with comparison tables, who-should-switch sections, and FAQ blocks."
+        },
+        {
+          "title": "31 near-empty tag archives are indexable",
+          "severity": "High",
+          "description": "/blog/tag/* and /ru/blog/tag/* average ~65 words listing 1-2 posts. Nine EN tags are semantic duplicates (serverless / serverless-messaging / serverless-messenger; private-messenger / private-messaging / encrypted-messenger / encrypted-chat). All are in the sitemap.",
+          "recommendation": "noindex,follow the tag archives and remove from sitemap, or consolidate to ~6 tags with real intro copy."
+        },
+        {
+          "title": "Head-term cannibalization",
+          "severity": "High",
+          "description": "/best-private-messaging-apps (786w), /blog/best-private-messenger-2026 (1515w) and /guides/most-private-messaging-app-2026 (273w) target the same query. Title-overlap also flags /blog/privamesh-vs-{simplex,whatsapp,threema} against /alternatives/{simplex,whatsapp,threema}, and / against /privacy (Jaccard 0.60).",
+          "recommendation": "Designate one canonical target per cluster; convert the rest to supporting pages that link up."
+        },
+        {
+          "title": "/news is an empty shell",
+          "severity": "Medium",
+          "description": "26 words, 4 H2s, no items — indexed and in the sitemap.",
+          "recommendation": "Populate it or remove it from the index."
+        },
+        {
+          "title": "Weak sitewide E-E-A-T surface",
+          "severity": "Medium",
+          "description": "/about is 353 words with no named team or external corroboration. Only 2 external domains linked sitewide: github.com (381 links), x.com (95).",
+          "recommendation": "Add named authors with credentials, cite the cryptographic specifications claimed (X3DH, Double Ratchet, BIP-39), link third-party coverage."
+        }
+      ]
+    },
+    {
+      "name": "On-Page SEO",
+      "score": 76,
+      "weight": 20,
+      "what_works": [
+        "94/94 titles present, 0 duplicates",
+        "94/94 meta descriptions present, 0 duplicates",
+        "94/94 H1 present",
+        "2191 unique internal link edges, 0 orphan pages"
+      ],
+      "findings": [
+        {
+          "title": "30 titles exceed 60 characters",
+          "severity": "Medium",
+          "description": "Worst: /ru/blog/privamesh-vs-simplex (80), /ru/blog/why-a-messenger-with-servers-can-never-be-fully-private (78), /blog/privamesh-vs-threema (73), /glossary/end-to-end-encryption (72). The '%s · PrivaMesh' template at app/layout.tsx:29 adds 12 chars.",
+          "recommendation": "Drop the suffix on routes whose own title already exceeds ~48 chars."
+        },
+        {
+          "title": "Grammar error in glossary title template",
+          "severity": "Medium",
+          "description": "'What is a End-to-end encryption (E2EE)?', 'What is a Metadata (in messaging)?' — hardcoded article breaks agreement.",
+          "recommendation": "Drop the article or make it agree with the term."
+        },
+        {
+          "title": "6 pages render duplicate H1s",
+          "severity": "Medium",
+          "description": "Identical H1 text twice on /blog/best-private-messenger-2026, /blog/privamesh-vs-threema, /blog/privamesh-vs-simplex and their RU counterparts.",
+          "recommendation": "Remove either the page-header component H1 or the MDX '#' heading."
+        },
+        {
+          "title": "12 commercial pages have only 1 inbound internal link",
+          "severity": "Medium",
+          "description": "All 10 /guides/* plus /alternatives/imessage and /alternatives/wickr are reachable only from their hub. 41 pages sit at <=2 inbound, 29 of them tag pages.",
+          "recommendation": "Add contextual cross-links from blog posts and comparison pages."
+        },
+        {
+          "title": "3 meta descriptions over 160 chars",
+          "severity": "Low",
+          "description": "/terms (162), /best-private-messaging-apps (164), /ru/blog/why-a-messenger-with-servers-can-never-be-fully-private (174).",
+          "recommendation": "Trim to 150-160."
+        },
+        {
+          "title": "6 RU tag descriptions under 70 chars",
+          "severity": "Low",
+          "description": "All built from the same 'Статьи про {tag} - ...' template.",
+          "recommendation": "Moot if tag pages are de-indexed; otherwise write per-tag copy."
+        }
+      ]
+    },
+    {
+      "name": "Schema / Structured Data",
+      "score": 88,
+      "weight": 10,
+      "what_works": [
+        "0 pages without JSON-LD, 0 parse errors",
+        "Organization + WebSite on 94/94",
+        "BreadcrumbList on 92/94",
+        "ItemList on 42, FAQPage on 14, Article+Person on 12, DefinedTerm on 8",
+        "SoftwareApplication with Offer and UnitPriceSpecification"
+      ],
+      "findings": [
+        {
+          "title": "FAQPage on only 14 of 94 pages",
+          "severity": "Medium",
+          "description": "Absent from all 5 /features/*, 11 /guides/*, 9 /alternatives/*, 3 /compare/* — exactly the pages that earn AI Overview and PAA placement.",
+          "recommendation": "Add a 4-5 question FAQ block with FAQPage schema to each money page."
+        },
+        {
+          "title": "2 pages missing BreadcrumbList",
+          "severity": "Low",
+          "description": "92 of 94 have it.",
+          "recommendation": "Extend to the 2 remaining pages."
+        },
+        {
+          "title": "SoftwareApplication on only 2 pages",
+          "severity": "Low",
+          "description": "The app entity should appear on the home page and every feature page.",
+          "recommendation": "Emit SoftwareApplication sitewide on product pages."
+        },
+        {
+          "title": "DefinedTerm present without DefinedTermSet",
+          "severity": "Low",
+          "description": "8 glossary entries are not linked into one vocabulary.",
+          "recommendation": "Add a DefinedTermSet for /glossary."
+        }
+      ]
+    },
+    {
+      "name": "Performance (CWV)",
+      "score": 78,
+      "weight": 10,
+      "what_works": [
+        "Median TTFB 74ms across 94 pages",
+        "Median HTML payload 53KB",
+        "Full-page edge caching: x-nextjs-cache HIT, s-maxage=31536000, stale-while-revalidate",
+        "HTTP/2 with alt-svc h3 advertised"
+      ],
+      "findings": [
+        {
+          "title": "Home page HTML is 156KB",
+          "severity": "Medium",
+          "description": "Nearly 3x the site median and the slowest response (280ms). It also carries NetworkBackground, an animated canvas that commit 32440a1 made run continuously during scroll — the most likely INP/CLS risk on the site.",
+          "recommendation": "Measure INP on the home page; consider pausing the canvas off-viewport or reducing initial payload."
+        },
+        {
+          "title": "No field or lab CWV data collected",
+          "severity": "Info",
+          "description": "No Chrome or Playwright browsers installed, so no Lighthouse run. LCP, INP and CLS are unmeasured; this score is inferred from payload and TTFB only.",
+          "recommendation": "Install Chrome, then run Lighthouse and connect CrUX/GSC for field data."
+        }
+      ]
+    },
+    {
+      "name": "AI Search Readiness",
+      "score": 72,
+      "weight": 10,
+      "what_works": [
+        "GPTBot, OAI-SearchBot, PerplexityBot, ClaudeBot, Google-Extended and bingbot all return 200",
+        "robots.txt blocks no AI crawler",
+        "Bing msvalidate.01 token wired in, so the Copilot/DuckDuckGo path is live",
+        "14 FAQPage blocks and 8 DefinedTerm entries give directly citable passages",
+        "Six vs-competitor comparison pages match how users prompt LLMs"
+      ],
+      "findings": [
+        {
+          "title": "No llms.txt",
+          "severity": "Medium",
+          "description": "/llms.txt returns 404.",
+          "recommendation": "Publish one listing the key pages and their purpose."
+        },
+        {
+          "title": "Thin passages limit citability",
+          "severity": "Medium",
+          "description": "LLMs cite self-contained passages; 63 pages lack the substance to form one.",
+          "recommendation": "Address alongside the content-depth work."
+        },
+        {
+          "title": "Almost no external corroboration",
+          "severity": "Medium",
+          "description": "Only github.com and x.com are linked sitewide. No citations to the cryptographic primitives claimed, no third-party coverage, no audit references — weak grounding for a 'trust math, not companies' positioning.",
+          "recommendation": "Cite specifications and independent sources on the technical pages."
+        }
+      ]
+    },
+    {
+      "name": "Images",
+      "score": 82,
+      "weight": 5,
+      "what_works": [
+        "211 img elements, 0 missing alt, 0 empty alt",
+        "0 images missing width/height — CLS from images structurally prevented",
+        "Image sitemap with descriptive image:title and image:caption per screenshot"
+      ],
+      "findings": [
+        {
+          "title": "70 of 94 pages have no og:image",
+          "severity": "High",
+          "description": "All 94 pages declare twitter:card=summary_large_image. Verified on /features/no-servers: og:title, og:description, og:url and twitter:card present, no og:image or twitter:image. Next's opengraph-image.tsx exists at only 5 segments (app/, blog/[slug], compare/[slug], alternatives/[slug], ru/blog/[slug]) and does not cascade to siblings, so /features/*, /guides/*, /glossary/*, /blog/tag/*, /about, /news, /privacy, /terms and both blog indexes ship cardless.",
+          "recommendation": "Add segment-level opengraph-image.tsx, or set a default openGraph.images in lib/seo.ts so no route can ship without one."
+        },
+        {
+          "title": "5 images have no loading attribute",
+          "severity": "Low",
+          "description": "Of 211 total.",
+          "recommendation": "Add loading=\"lazy\" to below-fold images."
+        }
+      ]
+    }
+  ],
+  "action_plan": {
+    "phases": [
+      {
+        "name": "Phase 1: Critical Fixes",
+        "timeframe": "Week 1",
+        "items": [
+          "Fix lang on the Russian subtree (app/layout.tsx:66) — 25 pages",
+          "Restore hreflang reciprocity on / and /blog via pageMetadata() languages",
+          "Add og:image to the 70 pages missing it",
+          "De-index the 31 thin tag archives and drop them from the sitemap"
+        ]
+      },
+      {
+        "name": "Phase 2: High-Impact Improvements",
+        "timeframe": "Weeks 2-3",
+        "items": [
+          "Resolve head-term cannibalization across the 3 competing pages",
+          "Expand the 9 /alternatives/* pages from 183 to 600+ words",
+          "Expand the 11 /guides/* pages from 262 to 600+ words",
+          "Trim the 30 titles over 60 characters",
+          "Fix the glossary title grammar template",
+          "Remove the duplicate H1s on 6 blog posts"
+        ]
+      },
+      {
+        "name": "Phase 3: Content & Authority",
+        "timeframe": "Month 2",
+        "items": [
+          "Add FAQPage schema to the 28 money pages that lack it",
+          "Add internal links to the 12 one-inbound commercial pages",
+          "Build out E-E-A-T: named authors, spec citations, third-party sources",
+          "Fill or remove /news (26 words)",
+          "Deepen the 9 glossary pages and add DefinedTermSet",
+          "Publish /llms.txt"
+        ]
+      },
+      {
+        "name": "Phase 4: Monitoring & Iteration",
+        "timeframe": "Ongoing",
+        "items": [
+          "Install Python 3.10+ and Chrome to unblock the claude-seo toolchain",
+          "Measure Core Web Vitals on the 156KB home page with its canvas animation",
+          "Connect Google Search Console and GA4",
+          "Add a Content-Security-Policy header and set poweredByHeader: false",
+          "Establish a monthly drift baseline"
+        ]
+      }
+    ]
+  },
+  "limitations": [
+    "claude-seo helper scripts require Python >=3.10; this machine has 3.9.6 with no Homebrew. Audit performed inline with curl and a custom Node crawler.",
+    "No Chrome or Playwright browsers: no Lighthouse, no Core Web Vitals, no screenshots.",
+    "No PDF report — google_report.py shares the Python 3.10 requirement.",
+    "No Google (CrUX/GSC/GA4), DataForSEO, Moz or Bing Webmaster credentials detected: no indexation, ranking, traffic or backlink data."
+  ],
+  "artifacts": {
+    "findings_dir": "findings/",
+    "screenshots_dir": "screenshots/",
+    "raw_crawl": "crawl.json",
+    "raw_analysis": "analysis.txt"
+  }
+}

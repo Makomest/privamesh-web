@@ -98,7 +98,19 @@ const nextConfig = {
       },
       { key: 'Content-Security-Policy', value: CSP },
     ]
-    return [{ source: '/:path*', headers: securityHeaders }]
+    return [
+      { source: '/:path*', headers: securityHeaders },
+      {
+        // Apple fetches this file with no Accept header and refuses anything that
+        // is not application/json. Served from /public it would go out as
+        // application/octet-stream and universal links would silently never work.
+        source: '/.well-known/apple-app-site-association',
+        headers: [
+          ...securityHeaders,
+          { key: 'Content-Type', value: 'application/json' },
+        ],
+      },
+    ]
   },
 }
 
