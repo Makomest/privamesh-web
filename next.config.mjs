@@ -110,18 +110,6 @@ const nextConfig = {
           { key: 'Content-Type', value: 'application/json' },
         ],
       },
-      {
-        // Android's equivalent. The fingerprint in the file is the upload key
-        // that signs the sideloaded APK we publish. If Play App Signing is ever
-        // enabled, Google re-signs with a different key and its fingerprint has
-        // to be ADDED to the array - not swapped in, or sideloaded installs
-        // stop verifying. Play Console shows that fingerprint.
-        source: '/.well-known/assetlinks.json',
-        headers: [
-          ...securityHeaders,
-          { key: 'Content-Type', value: 'application/json' },
-        ],
-      },
     ]
   },
 }
