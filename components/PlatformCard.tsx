@@ -5,8 +5,6 @@ import type { Platform } from '@/lib/platforms'
 
 export type PlatformCardLabels = {
   notAvailable: string
-  verify: string
-  allChecksums: string
 }
 
 export default function PlatformCard({
@@ -67,24 +65,6 @@ export default function PlatformCard({
             </div>
           )}
 
-          {p.checksum && (
-            <div className="mt-4">
-              <p className="text-[13px] text-text-muted">{labels.verify}</p>
-              {/* The digest is 64 characters and must stay copyable in one piece,
-                  so it scrolls inside its own box rather than wrapping mid-hash. */}
-              <p className="mt-1.5 overflow-x-auto rounded-btn border border-border bg-black/30 px-3 py-2 font-mono text-[11px] leading-relaxed text-text-secondary">
-                <code className="whitespace-nowrap">{p.checksum.sha256}</code>
-              </p>
-              <p className="mt-1.5">
-                <a
-                  href={p.checksum.href}
-                  className="text-[13px] text-text-muted underline underline-offset-4 hover:text-text-secondary"
-                >
-                  {labels.allChecksums}
-                </a>
-              </p>
-            </div>
-          )}
         </>
       ) : (
         <>

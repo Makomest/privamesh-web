@@ -16,7 +16,6 @@ export type Platform = {
   secondary?: { href: string; label: string }
   /** Something the visitor will hit and should not meet unprepared. */
   warning?: { heading: string; body: string }
-  checksum?: { sha256: string; href: string }
 }
 
 export const PLATFORMS: Platform[] = [
@@ -43,11 +42,7 @@ export const PLATFORMS: Platform[] = [
     },
     warning: {
       heading: 'Windows will warn you',
-      body: 'You will see "Windows protected your PC". This build carries no code-signing certificate, so Windows does not recognise the publisher - it is not a report of anything found in the file. Click "More info", then "Run anyway". Verify the download first with the checksum below; being told to click past a security warning without being told why is how people learn to click past the next one.',
-    },
-    checksum: {
-      sha256: SITE.windowsBuild.sha256,
-      href: SITE.windowsBuild.checksums,
+      body: 'You will see "Windows protected your PC". This build carries no code-signing certificate, so Windows does not recognise the publisher - it is not a report of anything found in the file. Click "More info", then "Run anyway". The certificate is also the thing that would let you check this really came from us, so until it exists there is nothing here worth checking it against - that is a gap, and it is ours to close.',
     },
   },
   {
@@ -85,11 +80,7 @@ export const PLATFORMS_RU: Platform[] = [
     },
     warning: {
       heading: 'Windows покажет предупреждение',
-      body: 'Вы увидите «Windows protected your PC». У сборки нет сертификата подписи кода, поэтому Windows не узнаёт издателя — это не сообщение о том, что в файле что-то нашли. Нажмите «More info», затем «Run anyway». Сначала сверьте SHA-256 ниже: приучать людей проматывать предупреждения о безопасности — верный способ, чтобы они промотали и то, которое окажется настоящим.',
-    },
-    checksum: {
-      sha256: SITE.windowsBuild.sha256,
-      href: SITE.windowsBuild.checksums,
+      body: 'Вы увидите «Windows protected your PC». У сборки нет сертификата подписи кода, поэтому Windows не узнаёт издателя — это не сообщение о том, что в файле что-то нашли. Нажмите «More info», затем «Run anyway». Тот же сертификат позволил бы убедиться, что файл действительно от нас, так что пока его нет — сверять по сути не с чем. Это пробел, и закрыть его наша задача.',
     },
   },
   {

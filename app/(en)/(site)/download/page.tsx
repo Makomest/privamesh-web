@@ -38,7 +38,7 @@ const FAQS = [
   },
   {
     q: 'Why does the Windows installer trigger a security warning?',
-    a: 'The build is not code-signed, so Windows does not recognise the publisher and shows "Windows protected your PC". It is not a report of anything found in the file. Verify the SHA-256 on this page before running it, then click "More info" and "Run anyway". A signing certificate is what removes the warning and this build does not have one yet.',
+    a: 'The build is not code-signed, so Windows does not recognise the publisher and shows "Windows protected your PC". It is not a report of anything found in the file - click "More info", then "Run anyway". The same missing certificate is why there is no real way to confirm the file came from us, and a published checksum would not fix that: anyone able to replace the download could replace the checksum beside it. A signing certificate is the fix, and this build does not have one yet.',
   },
   {
     q: 'When is the Android APK available?',
@@ -74,11 +74,7 @@ export default function DownloadPage() {
             key={p.id}
             platform={p}
             delay={i * 60}
-            labels={{
-              notAvailable: 'Not available',
-              verify: 'SHA-256 of the installer:',
-              allChecksums: 'Checksums for both files',
-            }}
+            labels={{ notAvailable: 'Not available' }}
           />
         ))}
       </div>

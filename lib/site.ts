@@ -45,10 +45,7 @@ export const SITE = {
     version: '1.0.0',
     portable:
       'https://github.com/Makomest/PrivaMesh/releases/download/windows-v1.0.0/PrivaMesh-1.0.0-windows-x64-portable.zip',
-    checksums:
-      'https://github.com/Makomest/PrivaMesh/releases/download/windows-v1.0.0/SHA256SUMS.txt',
     release: 'https://github.com/Makomest/PrivaMesh/releases/tag/windows-v1.0.0',
-    sha256: 'F779640D558C21E2F0D00786C05E01FC5D4557A957C9A3459ADE235B8A04F49E',
   },
   // Prices and allowances mirror privamesh.storekit in the app repo. Apple
   // regionalises the actual amount charged; these are the US tier prices.
