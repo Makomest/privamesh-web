@@ -80,7 +80,7 @@ export const ALTERNATIVES: Alternative[] = [
       },
       {
         feature: 'Platforms',
-        privamesh: 'iPhone and Windows; no Android build yet',
+        privamesh: 'iPhone shipping; Android and Windows early',
         competitor: 'iOS, Android, desktop, mature',
       },
     ],
@@ -230,7 +230,7 @@ export const ALTERNATIVES: Alternative[] = [
       },
       {
         feature: 'Reach',
-        privamesh: 'iPhone and Windows',
+        privamesh: 'iPhone, Android, Windows',
         competitor: 'Billions of users, every platform',
       },
     ],

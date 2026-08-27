@@ -18,7 +18,7 @@ import { APP_STORE } from '@/lib/appstore.generated'
 export const metadata: Metadata = pageMetadata({
   title: 'Download PrivaMesh',
   description:
-    'PrivaMesh for iPhone on the App Store and for Windows 10 or later, with checksums. No phone number, no email, no account. Android is written but not yet signed.',
+    'PrivaMesh for iPhone on the App Store, an APK for Android 8.0 or later, and an installer for Windows 10. No phone number, no email, no account.',
   path: '/download',
   languages: { en: '/download', ru: '/ru/download' },
 })
@@ -41,8 +41,8 @@ const FAQS = [
     a: 'The build is not code-signed, so Windows does not recognise the publisher and shows "Windows protected your PC". It is not a report of anything found in the file - click "More info", then "Run anyway". The same missing certificate is why there is no real way to confirm the file came from us, and a published checksum would not fix that: anyone able to replace the download could replace the checksum beside it. A signing certificate is the fix, and this build does not have one yet.',
   },
   {
-    q: 'When is the Android APK available?',
-    a: 'The client is written and interoperates with the iPhone app. The only build that exists is debug-signed and marked debuggable, which would let adb read the message database off a phone without root, and its throwaway signing key would force everyone to uninstall - destroying their history - to take the first real release. There is no date; there is a build that is deliberately not being handed out.',
+    q: 'What is different about the Android build?',
+    a: 'It is version 0.1 rather than 1.0, and that is not modesty. It has been driven through account creation, phrase generation and a relaunch on an emulator - the checks that catch R8 breaking the crypto and database code - but it has not run on a real device, and no Android build has yet sent a message on mainnet. It is signed with the real key, so later versions install over it as an update.',
   },
   {
     q: 'Do paid tiers work on Windows and Android?',
@@ -63,7 +63,7 @@ export default function DownloadPage() {
           { name: 'Download', path: '/download' },
         ]}
         title="Download PrivaMesh"
-        lead="iPhone and Windows have builds you can install today. Android is written and interoperates, but the only APK that exists is a debug build - this page says why that is not something to hand out."
+        lead="All three platforms have a build you can install today. What differs is how you pay and how much has been tested, and both are written on the card rather than left for you to find out."
       >
         <AppStoreButton label="Download on the App Store" />
       </PageHeader>

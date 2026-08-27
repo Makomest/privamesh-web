@@ -43,7 +43,7 @@ export default function PressPage() {
             {[
               ['Product', APP_STORE.name],
               ['Publisher', APP_STORE.seller],
-              ['Platform', `iPhone on iOS ${APP_STORE.minimumOsVersion} or later; Windows 10 64-bit. No Android or web client.`],
+              ['Platform', `iPhone on iOS ${APP_STORE.minimumOsVersion} or later; Android 8.0 or later; Windows 10 64-bit. No web client.`],
               ['Version', APP_STORE.version],
               ['Released', APP_STORE.releasedAt.slice(0, 10)],
               ['Price', `${APP_STORE.formattedPrice} download; Plus $${SITE.price.plus}/mo, Pro $${SITE.price.pro}/mo`],

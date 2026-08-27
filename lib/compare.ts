@@ -153,7 +153,7 @@ export const COMPARISONS: Record<string, Comparison> = {
     ],
     weaknesses: [
       "Session is free with no per-message cost; PrivaMesh meters sending",
-      "Session runs on Android, desktop and iOS; PrivaMesh has iPhone and an unsigned Windows build, and no Android APK",
+      "Session ships mature clients on every platform; PrivaMesh has a shipping iPhone app plus a 0.1 Android APK and an unsigned Windows installer",
       "Session leaves nothing behind; PrivaMesh writes permanent ciphertext to a public chain",
       "Session has been around far longer and has a larger user base",
       "Neither has a recent published audit of the current implementation, but Session has more eyes on it",

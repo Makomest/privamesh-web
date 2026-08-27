@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.privamesh",
+      "sha256_cert_fingerprints": [
+        "88:C3:BE:5F:87:33:0F:53:75:3C:70:7A:A4:FE:1C:04:64:1C:19:E6:B0:77:A8:43:A5:B0:46:AA:A7:B3:F9:8A"
+      ]
+    }
+  }
+]

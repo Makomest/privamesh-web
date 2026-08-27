@@ -48,11 +48,15 @@ export const PLATFORMS: Platform[] = [
   {
     id: 'android',
     name: 'Android',
-    requirement: 'Written, not yet signed',
+    requirement: `Android 8.0 or later · version ${SITE.androidBuild.version}`,
     href: SITE.downloads.android,
     cta: 'Download the APK',
-    status:
-      'The Android client is built and talks to the iPhone app, but the only APK that exists is a debug build and publishing it would do real harm. It is marked debuggable, so adb can read the message database off the phone without root, and it is signed with a throwaway key - when the first properly signed release ships, Android would refuse the update and everyone would have to uninstall. Uninstalling PrivaMesh destroys your history permanently. Paid tiers will not work on Android at first either: the relay verifies Apple receipts and has no Google Play path yet.',
+    blurb:
+      'A release build signed with the real key, so later versions install over it as an update and your account survives. Paid tiers do not work here yet - the relay verifies Apple receipts and has no Google Play path - so Android is free tier only for now.',
+    warning: {
+      heading: 'Sideloading, and what was tested',
+      body: 'Android will ask you to allow installs from wherever you downloaded this. The build was driven through account creation, phrase generation and a relaunch on an Android 15 emulator, which is the check that matters after R8 rewrites the crypto and database code. It has not been run on a real device, and no Android build has yet sent a message on mainnet.',
+    },
   },
 ]
 
@@ -86,10 +90,14 @@ export const PLATFORMS_RU: Platform[] = [
   {
     id: 'android',
     name: 'Android',
-    requirement: 'Написан, но не подписан',
+    requirement: `Android 8.0 или новее · версия ${SITE.androidBuild.version}`,
     href: SITE.downloads.android,
     cta: 'Скачать APK',
-    status:
-      'Клиент под Android готов и общается с приложением на iPhone, но единственная существующая сборка — отладочная, и публиковать её означало бы навредить. В ней выставлен флаг debuggable: adb вычитает базу сообщений с телефона без root. И подписана она одноразовым ключом — когда выйдет нормально подписанный релиз, Android откажется обновлять, и всем придётся удалить приложение. А удаление PrivaMesh уничтожает переписку навсегда. Платные тарифы на Android поначалу тоже не заработают: релей проверяет чеки Apple и пути для Google Play пока не имеет.',
+    blurb:
+      'Release-сборка, подписанная настоящим ключом, — следующие версии встанут поверх как обновление, аккаунт сохранится. Платные тарифы тут пока не работают: релей проверяет чеки Apple и пути для Google Play не имеет, так что на Android доступен только бесплатный тариф.',
+    warning: {
+      heading: 'Установка со стороны и что проверено',
+      body: 'Android попросит разрешить установку из источника, откуда вы скачали файл. Сборку прогнали через создание аккаунта, генерацию фразы и перезапуск на эмуляторе Android 15 — это и есть проверка, которая важна после того, как R8 переписывает код криптографии и базы. На реальном устройстве она не запускалась, и ни одна сборка под Android ещё не отправляла сообщение в mainnet.',
+    },
   },
 ]

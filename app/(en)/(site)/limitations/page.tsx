@@ -70,8 +70,8 @@ const LIMITS: Limit[] = [
     body: 'The primitives PrivaMesh builds on - X3DH, the Double Ratchet, AES-256-GCM, ML-KEM-768 - are well studied. Our implementation of them is not. It is open source and can be reviewed, but no qualified third party has signed off on it, and you should weight our claims accordingly.',
   },
   {
-    title: 'iPhone and Windows, and no Android build you can install',
-    body: 'The iPhone app requires iOS 26.5 or later: post-quantum X-Wing needs iOS 26, and rather than quietly fall back to the classical handshake the app does not run on older systems at all. A Windows build exists but carries no code-signing certificate, so every download raises a publisher warning. The Android client is written and interoperates, but the only APK built so far is debug-signed and marked debuggable - adb could read the message database off the phone without root - so it is not published. There is no web client.',
+    title: 'Three platforms, two of them barely tested',
+    body: 'The iPhone app requires iOS 26.5 or later: post-quantum X-Wing needs iOS 26, and rather than quietly fall back to the classical handshake the app does not run on older systems at all. It is the only platform with real use behind it. The Windows installer carries no code-signing certificate, so every download raises a publisher warning. The Android APK is version 0.1, checked on an emulator rather than a real device, and no Android or Windows build has yet sent a message on mainnet. Paid tiers work on iPhone only. There is no web client.',
   },
   {
     title: 'Features a mainstream messenger has and this does not',
