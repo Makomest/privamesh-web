@@ -16,7 +16,7 @@ export function generateMetadata(): Metadata {
     ...pageMetadata({
       title: 'PrivaMesh News & Updates',
       description:
-        'The latest PrivaMesh news, product updates and release notes — a serverless, end-to-end encrypted messenger on Solana.',
+        'Release notes and product news from PrivaMesh: the Windows desktop client, the Android APK, and what each build does and does not do yet.',
       path: '/news',
     }),
     ...(hasUpdates ? {} : { robots: { index: false, follow: true } }),
