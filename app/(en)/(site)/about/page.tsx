@@ -83,7 +83,9 @@ export default function AboutPage() {
 
           <h2>What we have not done yet</h2>
           <p>
-            PrivaMesh has not been through an independent security audit. It is iOS only, and we
+            PrivaMesh has not been through an independent security audit. It runs on iPhone and,
+            since the first desktop build, on Windows - the Windows installer is not code-signed
+            yet, and the Android client is written but has no build we are willing to hand out. We
             publish no App Store rating of our own - if you see a rating attributed to us, it did
             not come from us. We would rather state all of that plainly than let a confident
             marketing page imply otherwise.

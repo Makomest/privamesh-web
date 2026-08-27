@@ -25,8 +25,30 @@ export const SITE = {
    */
   downloads: {
     ios: 'https://apps.apple.com/app/privamesh-messenger/id6785997584' as string | null,
+    /**
+     * The Android client is written and interoperates, but the only build that
+     * exists is debug-signed and debuggable - adb can read the message database
+     * out of it without root, and its throwaway key would force every installer
+     * to uninstall (losing all history) to take the first real release. It
+     * stays null until a build signed with the upload key exists.
+     */
     android: null as string | null,
-    windows: null as string | null,
+    windows:
+      'https://github.com/Makomest/PrivaMesh/releases/download/windows-v1.0.0/PrivaMesh-Setup-1.0.0.exe' as
+        | string
+        | null,
+  },
+
+  /** Binaries live on GitHub Releases rather than in this repo - 190 MB of
+   *  installers do not belong in every clone and every server build. */
+  windowsBuild: {
+    version: '1.0.0',
+    portable:
+      'https://github.com/Makomest/PrivaMesh/releases/download/windows-v1.0.0/PrivaMesh-1.0.0-windows-x64-portable.zip',
+    checksums:
+      'https://github.com/Makomest/PrivaMesh/releases/download/windows-v1.0.0/SHA256SUMS.txt',
+    release: 'https://github.com/Makomest/PrivaMesh/releases/tag/windows-v1.0.0',
+    sha256: 'F779640D558C21E2F0D00786C05E01FC5D4557A957C9A3459ADE235B8A04F49E',
   },
   // Prices and allowances mirror privamesh.storekit in the app repo. Apple
   // regionalises the actual amount charged; these are the US tier prices.

@@ -80,7 +80,7 @@ export const ALTERNATIVES: Alternative[] = [
       },
       {
         feature: 'Platforms',
-        privamesh: 'iOS only',
+        privamesh: 'iPhone and Windows; no Android build yet',
         competitor: 'iOS, Android, desktop, mature',
       },
     ],
@@ -91,7 +91,7 @@ export const ALTERNATIVES: Alternative[] = [
       'You want in-chat payments tied to the same self-custodial key',
     ],
     stayIf: [
-      'You need Android, desktop, or a mature cross-platform app today',
+      'You need Android, or a cross-platform app with years behind it, today',
       'The people you message are already on Signal and will not move',
       'You want a messenger with years of independent audit history behind it',
     ],
@@ -230,7 +230,7 @@ export const ALTERNATIVES: Alternative[] = [
       },
       {
         feature: 'Reach',
-        privamesh: 'iOS only',
+        privamesh: 'iPhone and Windows',
         competitor: 'Billions of users, every platform',
       },
     ],

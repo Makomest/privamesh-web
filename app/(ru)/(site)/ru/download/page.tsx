@@ -1,55 +1,26 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { Ban, Check } from 'lucide-react'
+import { Check } from 'lucide-react'
 import { Container } from '@/components/Container'
 import PageHeader from '@/components/PageHeader'
 import JsonLd from '@/components/JsonLd'
 import { Prose, RelatedLinks } from '@/components/Prose'
 import FadeUp from '@/components/FadeUp'
 import PageFaq from '@/components/PageFaq'
-import AppStoreButton from '@/components/AppStoreButton'
+import PlatformCard from '@/components/PlatformCard'
 import { pageMetadata } from '@/lib/seo'
 import { softwareApplicationLd } from '@/lib/jsonld'
 import { APP_STORE } from '@/lib/appstore.generated'
-import { SITE } from '@/lib/site'
+import { PLATFORMS_RU } from '@/lib/platforms'
 
 export const metadata: Metadata = pageMetadata({
   title: 'Скачать PrivaMesh',
   description:
-    'PrivaMesh для iPhone в App Store: iOS 26.5 или новее, бесплатно, без номера телефона и почты. Сборок для Android и Windows пока нет.',
+    'PrivaMesh для iPhone в App Store и для Windows 10 или новее, с контрольными суммами. Без номера телефона, почты и аккаунта. Android пока не подписан.',
   path: '/ru/download',
   locale: 'ru',
   languages: { en: '/download', ru: '/ru/download' },
 })
-
-const PLATFORMS_RU = [
-  {
-    id: 'ios',
-    name: 'iPhone',
-    requirement: `iOS ${APP_STORE.minimumOsVersion} или новее · версия ${APP_STORE.version}`,
-    href: SITE.downloads.ios,
-    cta: 'Скачать в App Store',
-    status: '',
-  },
-  {
-    id: 'android',
-    name: 'Android',
-    requirement: 'Сборки нет',
-    href: SITE.downloads.android,
-    cta: 'Скачать APK',
-    status:
-      'Клиента для Android нет. Криптография построена на CryptoKit и Secure Enclave, поэтому версия под Android — это переписывание работы с ключами, а не портирование. Ничего из этого пока не существует. Если Android нужен сегодня — честная рекомендация Signal.',
-  },
-  {
-    id: 'windows',
-    name: 'Windows',
-    requirement: 'Сборки нет',
-    href: SITE.downloads.windows,
-    cta: 'Скачать установщик',
-    status:
-      'Десктопного клиента нет. Для нескольких устройств понадобился бы способ передавать состояние ratchet между ними, а его в текущем дизайне намеренно нет: история сообщений никогда не покидает телефон, на котором была получена.',
-  },
-]
 
 const FAQS = [
   {
@@ -61,8 +32,16 @@ const FAQS = [
     a: 'Ничего. Ни номера телефона, ни почты, ни имени пользователя. Приложение генерирует фразу восстановления из 12 слов прямо на устройстве при первом запуске — запишите её, это единственный способ вернуться в аккаунт.',
   },
   {
-    q: 'Есть ли APK для Android или установщик для Windows?',
-    a: 'Пока нет, и сроков мы не называем. Android требует переписать работу с ключами без CryptoKit и Secure Enclave, а десктоп — механизм переноса состояния ratchet между устройствами, которого в дизайне намеренно нет. Если кроссплатформенность нужна сегодня — Signal.',
+    q: 'Почему установщик Windows вызывает предупреждение безопасности?',
+    a: 'Сборка не подписана сертификатом, поэтому Windows не узнаёт издателя и показывает «Windows protected your PC». Это не сообщение о находке в файле. Сверьте SHA-256 с этой страницы, затем нажмите «More info» и «Run anyway». Убирает предупреждение только сертификат подписи кода, а его у этой сборки пока нет.',
+  },
+  {
+    q: 'Когда будет APK для Android?',
+    a: 'Клиент написан и совместим с приложением на iPhone. Но единственная сборка — отладочная, с флагом debuggable: adb вычитает базу сообщений с телефона без root. И подписана она одноразовым ключом, из-за чего при первом настоящем релизе всем пришлось бы удалить приложение и потерять переписку. Даты нет — есть сборка, которую сознательно не раздают.',
+  },
+  {
+    q: 'Работают ли платные тарифы на Windows и Android?',
+    a: 'Не так, как на iPhone. Релей проверяет чеки Apple и пути для Google Play не имеет, поэтому Android стартовал бы только с бесплатным тарифом. Windows релей не использует вовсе: десктопный клиент заводит собственный кошелёк Solana, который вы пополняете сами, так что переносить подписку неоткуда.',
   },
   {
     q: 'Это бесплатно?',
@@ -81,41 +60,21 @@ export default function RuDownloadPage() {
           { name: 'Скачать', path: '/ru/download' },
         ]}
         title="Скачать PrivaMesh"
-        lead="Сегодня PrivaMesh выходит на iPhone. Сборок для Android и Windows нет, и эта страница говорит об этом прямо, а не собирает почту под то, чего не существует."
+        lead="Для iPhone и Windows есть сборки, которые можно поставить сегодня. Клиент под Android написан и совместим, но существует только отладочная сборка — здесь написано, почему такое не раздают."
       />
 
       <div className="mt-12 grid gap-4 md:grid-cols-3">
         {PLATFORMS_RU.map((p, i) => (
-          <FadeUp
+          <PlatformCard
             key={p.id}
+            platform={p}
             delay={i * 60}
-            className={`flex flex-col rounded-card border p-6 backdrop-blur-sm ${
-              p.href ? 'border-border-accent bg-accent/[0.06]' : 'border-border bg-white/[0.03]'
-            }`}
-          >
-            <h2 className="text-lg font-bold tracking-tight text-text-primary">{p.name}</h2>
-            <p className="mt-2 font-mono text-[13px] text-text-muted">{p.requirement}</p>
-
-            {p.href ? (
-              <>
-                <p className="mt-4 flex-1 text-[15px] leading-relaxed text-text-muted">
-                  Установка бесплатна. Ни номера телефона, ни почты, ни аккаунта — приложение
-                  создаёт вашу личность на устройстве при первом запуске.
-                </p>
-                <div className="mt-5">
-                  <AppStoreButton label={p.cta} />
-                </div>
-              </>
-            ) : (
-              <>
-                <p className="mt-4 flex-1 text-[15px] leading-relaxed text-text-muted">{p.status}</p>
-                <p className="mt-5 inline-flex w-fit items-center gap-2 rounded-btn border border-border px-3 py-2 font-mono text-xs text-text-muted">
-                  <Ban size={14} aria-hidden="true" />
-                  Недоступно
-                </p>
-              </>
-            )}
-          </FadeUp>
+            labels={{
+              notAvailable: 'Недоступно',
+              verify: 'SHA-256 установщика:',
+              allChecksums: 'Контрольные суммы обоих файлов',
+            }}
+          />
         ))}
       </div>
 
@@ -126,7 +85,7 @@ export default function RuDownloadPage() {
             {[
               'Приложение сгенерирует фразу восстановления из 12 слов на вашем устройстве',
               'Запишите её на бумаге — сброса нет, и резервной копии у нас тоже',
-              'Задайте код-пароль и включите Face ID или Touch ID',
+              'Задайте код-пароль и биометрию, если устройство её поддерживает',
               'Выберите ник, чтобы вас находили без номера телефона',
               'Добавьте контакт по QR-коду или нику; добавить друг друга должны обе стороны',
             ].map((step) => (
@@ -137,8 +96,9 @@ export default function RuDownloadPage() {
             ))}
           </ul>
           <p className="mt-5 text-[13px] leading-relaxed text-text-muted">
-            Версия, минимальная iOS и цена берутся прямо из карточки App Store, а не поддерживаются
-            вручную, — поэтому разойтись с тем, что показывает Apple, они не могут.
+            Версия для iPhone, минимальная iOS и цена берутся прямо из карточки App Store, а не
+            поддерживаются вручную, — разойтись с тем, что показывает Apple, они не могут. Данные по
+            Windows берутся из релиза, откуда скачивается сам файл.
           </p>
         </FadeUp>
       </div>
@@ -155,9 +115,12 @@ export default function RuDownloadPage() {
             <Link href="/ru/pricing">странице цен</Link>.
           </p>
           <p>
-            Что именно приложение и наш единственный сервер могут наблюдать — на{' '}
-            <Link href="/ru/architecture">странице архитектуры</Link>, а от чего оно не защищает —
-            в <Link href="/ru/limitations">ограничениях</Link>.
+            Это верно для всех платформ. Различается плательщик: на iPhone подписка покупает слепые
+            токены, которые погашает наш единственный fee-worker, а клиент под Windows этот worker не
+            задействует вовсе и тратит из кошелька Solana, который вы пополняете сами. Что именно
+            наблюдает каждый компонент — на <Link href="/ru/architecture">странице архитектуры</Link>,
+            а от чего не защищает ничего из этого — в{' '}
+            <Link href="/ru/limitations">ограничениях</Link>.
           </p>
         </Prose>
       </div>

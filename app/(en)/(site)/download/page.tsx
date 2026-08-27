@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { Ban, Check } from 'lucide-react'
+import { Check } from 'lucide-react'
 import { Container } from '@/components/Container'
 import PageHeader from '@/components/PageHeader'
 import JsonLd from '@/components/JsonLd'
@@ -8,6 +8,7 @@ import { Prose, RelatedLinks } from '@/components/Prose'
 import FadeUp from '@/components/FadeUp'
 import PageFaq from '@/components/PageFaq'
 import AppStoreButton from '@/components/AppStoreButton'
+import PlatformCard from '@/components/PlatformCard'
 import { pageMetadata } from '@/lib/seo'
 import { softwareApplicationLd } from '@/lib/jsonld'
 import { SITE } from '@/lib/site'
@@ -15,9 +16,9 @@ import { PLATFORMS } from '@/lib/platforms'
 import { APP_STORE } from '@/lib/appstore.generated'
 
 export const metadata: Metadata = pageMetadata({
-  title: 'Download PrivaMesh for iPhone',
+  title: 'Download PrivaMesh',
   description:
-    'Download PrivaMesh from the App Store. Requires iOS 26.5 or later, needs no phone number or email, and is free to install. What to expect on first launch.',
+    'PrivaMesh for iPhone on the App Store and for Windows 10 or later, with checksums. No phone number, no email, no account. Android is written but not yet signed.',
   path: '/download',
   languages: { en: '/download', ru: '/ru/download' },
 })
@@ -36,8 +37,16 @@ const FAQS = [
     a: 'The download is free. Sending is metered because every message is a paid transaction on a public chain - the pricing page lists allowances and tier prices.',
   },
   {
-    q: 'Is there an Android APK or a Windows installer?',
-    a: 'Not yet, and neither is planned with a date. Android needs the key handling rewritten off CryptoKit and the Secure Enclave, and a desktop client needs a way to move ratchet state between devices that the design deliberately does not have. If you need cross-platform today, Signal is the honest recommendation.',
+    q: 'Why does the Windows installer trigger a security warning?',
+    a: 'The build is not code-signed, so Windows does not recognise the publisher and shows "Windows protected your PC". It is not a report of anything found in the file. Verify the SHA-256 on this page before running it, then click "More info" and "Run anyway". A signing certificate is what removes the warning and this build does not have one yet.',
+  },
+  {
+    q: 'When is the Android APK available?',
+    a: 'The client is written and interoperates with the iPhone app. The only build that exists is debug-signed and marked debuggable, which would let adb read the message database off a phone without root, and its throwaway signing key would force everyone to uninstall - destroying their history - to take the first real release. There is no date; there is a build that is deliberately not being handed out.',
+  },
+  {
+    q: 'Do paid tiers work on Windows and Android?',
+    a: 'Not the way they do on iPhone. The relay verifies Apple receipts and has no Google Play path, so Android would start free-tier only. Windows does not use the relay at all: the desktop client makes its own Solana fee wallet that you fund directly, so there is no subscription to carry over.',
   },
 ]
 
@@ -53,44 +62,24 @@ export default function DownloadPage() {
           { name: 'Home', path: '/' },
           { name: 'Download', path: '/download' },
         ]}
-        title="Download PrivaMesh for iPhone"
-        lead="PrivaMesh ships on iPhone today. Android and Windows have no build yet, and this page says so plainly rather than collecting emails for something that does not exist."
+        title="Download PrivaMesh"
+        lead="iPhone and Windows have builds you can install today. Android is written and interoperates, but the only APK that exists is a debug build - this page says why that is not something to hand out."
       >
         <AppStoreButton label="Download on the App Store" />
       </PageHeader>
 
       <div className="mt-12 grid gap-4 md:grid-cols-3">
         {PLATFORMS.map((p, i) => (
-          <FadeUp
+          <PlatformCard
             key={p.id}
+            platform={p}
             delay={i * 60}
-            className={`flex flex-col rounded-card border p-6 backdrop-blur-sm ${
-              p.href ? 'border-border-accent bg-accent/[0.06]' : 'border-border bg-white/[0.03]'
-            }`}
-          >
-            <h2 className="text-lg font-bold tracking-tight text-text-primary">{p.name}</h2>
-            <p className="mt-2 font-mono text-[13px] text-text-muted">{p.requirement}</p>
-
-            {p.href ? (
-              <>
-                <p className="mt-4 flex-1 text-[15px] leading-relaxed text-text-muted">
-                  Free to install. No phone number, no email, no account - the app generates your
-                  identity on the device when you first open it.
-                </p>
-                <div className="mt-5">
-                  <AppStoreButton label={p.cta} />
-                </div>
-              </>
-            ) : (
-              <>
-                <p className="mt-4 flex-1 text-[15px] leading-relaxed text-text-muted">{p.status}</p>
-                <p className="mt-5 inline-flex w-fit items-center gap-2 rounded-btn border border-border px-3 py-2 font-mono text-xs text-text-muted">
-                  <Ban size={14} aria-hidden="true" />
-                  Not available
-                </p>
-              </>
-            )}
-          </FadeUp>
+            labels={{
+              notAvailable: 'Not available',
+              verify: 'SHA-256 of the installer:',
+              allChecksums: 'Checksums for both files',
+            }}
+          />
         ))}
       </div>
 
@@ -101,7 +90,7 @@ export default function DownloadPage() {
             {[
               'The app generates a 12-word recovery phrase on your device',
               'Write it down on paper - there is no reset and no backup we hold',
-              'Set a passcode and enable Face ID or Touch ID',
+              'Set a passcode, and biometric unlock if the device offers it',
               'Pick a nickname so people can find you without a phone number',
               'Add a contact by QR code or nickname; both sides must add each other',
             ].map((step) => (
@@ -112,8 +101,9 @@ export default function DownloadPage() {
             ))}
           </ul>
           <p className="mt-5 text-[13px] leading-relaxed text-text-muted">
-            Version, minimum iOS and price come straight from the App Store listing rather than
-            being maintained by hand, so they cannot drift from what Apple shows.
+            The iPhone version, minimum iOS and price come straight from the App Store listing
+            rather than being maintained by hand, so they cannot drift from what Apple shows. The
+            Windows figures come from the release that hosts the file you download.
           </p>
         </FadeUp>
       </div>
@@ -130,9 +120,11 @@ export default function DownloadPage() {
             <Link href="/pricing">pricing</Link> for what that costs.
           </p>
           <p>
-            If you want to know exactly what the app and its one server can observe before you
-            install, that is on <Link href="/architecture">the architecture page</Link>, and what it
-            does not protect you from is on <Link href="/limitations">limitations</Link>.
+            Those two apply to every platform. What differs is who pays: on iPhone a subscription
+            buys blind tokens that our one fee worker redeems, while the Windows client skips that
+            worker entirely and spends from a Solana wallet you fund yourself. Exactly what each
+            component can observe is on <Link href="/architecture">the architecture page</Link>, and
+            what none of it protects you from is on <Link href="/limitations">limitations</Link>.
           </p>
         </Prose>
       </div>

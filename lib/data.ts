@@ -16,12 +16,12 @@ export const NO_SERVERS_TABLE: { what: string; where: string; how: string }[] = 
   },
   {
     what: 'Your keys',
-    where: 'Your iPhone Keychain only',
+    where: 'Your device keystore only',
     how: 'Biometric-locked, never leave the device',
   },
   {
     what: 'Your contacts & history',
-    where: 'Your iPhone only',
+    where: 'The device that received them',
     how: 'Never synced, never uploaded anywhere',
   },
   {
