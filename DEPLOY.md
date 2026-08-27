@@ -131,6 +131,28 @@ on the same box, wire it up like this:
 
 ---
 
+## Publishing a news update
+
+`/news` reads `data/updates.json`, and `/data` is in `.gitignore` on purpose:
+the `/admin` UI writes that file at runtime on the server, so a `git pull` must
+never overwrite it. That also means **news entries do not ship in a commit** —
+pushing one changes nothing on the live site.
+
+Two ways to publish:
+
+- **The intended one.** Log in at `https://privamesh.org/admin` and add the
+  entry there. The API behind it (`/api/admin/updates`) is cookie-protected, so
+  there is no token to curl with.
+- **By hand**, when the text was drafted locally:
+  ```bash
+  scp data/updates.json ubuntu@18.197.243.40:/home/ubuntu/privamesh/data/updates.json
+  ```
+  The news page is `force-dynamic`, so it picks the file up on the next request
+  with no rebuild and no `pm2 reload`.
+
+The page carries `robots: noindex` while the file is empty or missing, and adds
+itself to the sitemap once it is not — both automatic, neither needs an edit.
+
 ## Updating the site later
 
 ```bash
