@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { Check } from 'lucide-react'
+import { Ban, Check } from 'lucide-react'
 import { Container } from '@/components/Container'
 import PageHeader from '@/components/PageHeader'
 import JsonLd from '@/components/JsonLd'
@@ -11,6 +11,7 @@ import AppStoreButton from '@/components/AppStoreButton'
 import { pageMetadata } from '@/lib/seo'
 import { softwareApplicationLd } from '@/lib/jsonld'
 import { SITE } from '@/lib/site'
+import { PLATFORMS } from '@/lib/platforms'
 import { APP_STORE } from '@/lib/appstore.generated'
 
 export const metadata: Metadata = pageMetadata({
@@ -18,6 +19,7 @@ export const metadata: Metadata = pageMetadata({
   description:
     'Download PrivaMesh from the App Store. Requires iOS 26.5 or later, needs no phone number or email, and is free to install. What to expect on first launch.',
   path: '/download',
+  languages: { en: '/download', ru: '/ru/download' },
 })
 
 const FAQS = [
@@ -34,8 +36,8 @@ const FAQS = [
     a: 'The download is free. Sending is metered because every message is a paid transaction on a public chain - the pricing page lists allowances and tier prices.',
   },
   {
-    q: 'Is there an Android or desktop version?',
-    a: 'No. PrivaMesh is iOS only, with no Android, desktop or web client. If you need cross-platform, Signal is the honest recommendation.',
+    q: 'Is there an Android APK or a Windows installer?',
+    a: 'Not yet, and neither is planned with a date. Android needs the key handling rewritten off CryptoKit and the Secure Enclave, and a desktop client needs a way to move ratchet state between devices that the design deliberately does not have. If you need cross-platform today, Signal is the honest recommendation.',
   },
 ]
 
@@ -52,37 +54,48 @@ export default function DownloadPage() {
           { name: 'Download', path: '/download' },
         ]}
         title="Download PrivaMesh for iPhone"
-        lead="Free on the App Store. No phone number, no email, no account - the app generates your identity on the device when you first open it."
+        lead="PrivaMesh ships on iPhone today. Android and Windows have no build yet, and this page says so plainly rather than collecting emails for something that does not exist."
       >
         <AppStoreButton label="Download on the App Store" />
       </PageHeader>
 
-      <div className="mt-12 grid gap-4 md:grid-cols-2">
-        <FadeUp className="rounded-card border border-border bg-white/[0.03] p-6 backdrop-blur-sm">
-          <h2 className="text-lg font-bold tracking-tight text-text-primary">Requirements</h2>
-          <dl className="mt-4 space-y-3 text-[15px]">
-            {[
-              ['Platform', 'iPhone'],
-              ['iOS version', `${APP_STORE.minimumOsVersion} or later`],
-              ['App version', APP_STORE.version],
-              ['Download price', APP_STORE.formattedPrice],
-              ['Age rating', APP_STORE.contentRating],
-              ['Languages', APP_STORE.languages.join(', ')],
-              ['Last updated', updated.toISOString().slice(0, 10)],
-            ].map(([k, v]) => (
-              <div key={k} className="flex justify-between gap-4 border-b border-border pb-2 last:border-0">
-                <dt className="text-text-muted">{k}</dt>
-                <dd className="text-right font-medium text-text-secondary">{v}</dd>
-              </div>
-            ))}
-          </dl>
-          <p className="mt-4 text-[13px] leading-relaxed text-text-muted">
-            These figures come straight from the App Store listing rather than being maintained by
-            hand, so they cannot drift from what Apple shows.
-          </p>
-        </FadeUp>
+      <div className="mt-12 grid gap-4 md:grid-cols-3">
+        {PLATFORMS.map((p, i) => (
+          <FadeUp
+            key={p.id}
+            delay={i * 60}
+            className={`flex flex-col rounded-card border p-6 backdrop-blur-sm ${
+              p.href ? 'border-border-accent bg-accent/[0.06]' : 'border-border bg-white/[0.03]'
+            }`}
+          >
+            <h2 className="text-lg font-bold tracking-tight text-text-primary">{p.name}</h2>
+            <p className="mt-2 font-mono text-[13px] text-text-muted">{p.requirement}</p>
 
-        <FadeUp delay={60} className="rounded-card border border-border bg-white/[0.03] p-6 backdrop-blur-sm">
+            {p.href ? (
+              <>
+                <p className="mt-4 flex-1 text-[15px] leading-relaxed text-text-muted">
+                  Free to install. No phone number, no email, no account - the app generates your
+                  identity on the device when you first open it.
+                </p>
+                <div className="mt-5">
+                  <AppStoreButton label={p.cta} />
+                </div>
+              </>
+            ) : (
+              <>
+                <p className="mt-4 flex-1 text-[15px] leading-relaxed text-text-muted">{p.status}</p>
+                <p className="mt-5 inline-flex w-fit items-center gap-2 rounded-btn border border-border px-3 py-2 font-mono text-xs text-text-muted">
+                  <Ban size={14} aria-hidden="true" />
+                  Not available
+                </p>
+              </>
+            )}
+          </FadeUp>
+        ))}
+      </div>
+
+      <div className="mt-8 max-w-3xl">
+        <FadeUp className="rounded-card border border-border bg-white/[0.03] p-6 backdrop-blur-sm">
           <h2 className="text-lg font-bold tracking-tight text-text-primary">What happens first</h2>
           <ul className="mt-4 space-y-3">
             {[
@@ -98,6 +111,10 @@ export default function DownloadPage() {
               </li>
             ))}
           </ul>
+          <p className="mt-5 text-[13px] leading-relaxed text-text-muted">
+            Version, minimum iOS and price come straight from the App Store listing rather than
+            being maintained by hand, so they cannot drift from what Apple shows.
+          </p>
         </FadeUp>
       </div>
 

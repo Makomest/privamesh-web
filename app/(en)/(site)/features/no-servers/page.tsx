@@ -13,7 +13,7 @@ import { FEATURE_FAQ } from '@/lib/faq'
 import { softwareApplicationLd } from '@/lib/jsonld'
 import { FEATURE_REFS } from '@/lib/references'
 import { NO_SERVERS_TABLE } from '@/lib/data'
-import AppStoreButton from '@/components/AppStoreButton'
+import DownloadButton from '@/components/DownloadButton'
 
 export const metadata: Metadata = pageMetadata({
   title: 'Serverless Messenger: How PrivaMesh Runs Without Servers',
@@ -37,7 +37,7 @@ export default function NoServersPage() {
         lead="Every other messenger runs servers that hold your account and your metadata. PrivaMesh holds neither - no account database, no inbox, no message store. One worker pays your network fees, and that is the whole of what we run."
       >
         <div className="flex flex-wrap gap-3">
-          <AppStoreButton />
+          <DownloadButton />
           <Button href="/features/e2e-encryption" variant="ghost">
             How the encryption works
           </Button>

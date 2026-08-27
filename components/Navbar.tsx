@@ -6,7 +6,7 @@ import { useState } from 'react'
 import { usePathname } from 'next/navigation'
 import { Menu, X, Github } from 'lucide-react'
 import { NAV_PRODUCT, NAV_COMPARE, SITE } from '@/lib/site'
-import AppStoreButton from '@/components/AppStoreButton'
+import DownloadButton from '@/components/DownloadButton'
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
@@ -68,7 +68,7 @@ export default function Navbar() {
           >
             <Github size={19} />
           </a>
-          <AppStoreButton className="px-4 py-2 text-[13px]" />
+          <DownloadButton className="px-4 py-2 text-[13px]" />
         </div>
 
         <button
@@ -106,7 +106,7 @@ export default function Navbar() {
               </Link>
             ))}
           </div>
-          <AppStoreButton className="mt-4 w-full" />
+          <DownloadButton className="mt-4 w-full" />
         </div>
       )}
 

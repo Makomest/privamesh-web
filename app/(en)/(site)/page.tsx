@@ -12,7 +12,7 @@ import FAQ from '@/components/FAQ'
 import JsonLd from '@/components/JsonLd'
 import { pageMetadata } from '@/lib/seo'
 import { softwareApplicationLd, faqPageLd } from '@/lib/jsonld'
-import AppStoreButton from '@/components/AppStoreButton'
+import DownloadButton from '@/components/DownloadButton'
 import { SITE } from '@/lib/site'
 import {
   TRUST_ROW,
@@ -60,7 +60,7 @@ export default function HomePage() {
                 pretend it does not exist.
               </p>
               <div className="mt-8 flex flex-wrap items-center gap-3">
-                <AppStoreButton label="Download on the App Store" />
+                <DownloadButton label="Get PrivaMesh" />
                 <Button href="/threat-model" variant="ghost">
                   Read the threat model
                 </Button>
@@ -423,7 +423,7 @@ export default function HomePage() {
               transport. Your keys, your device, your words.
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-              <AppStoreButton />
+              <DownloadButton />
               <Button href="/privacy-policy" variant="ghost">
                 Read the Privacy Policy
               </Button>

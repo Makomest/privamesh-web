@@ -14,7 +14,7 @@ import { pageMetadata } from '@/lib/seo'
 import { FEATURE_FAQ } from '@/lib/faq'
 import { softwareApplicationLd } from '@/lib/jsonld'
 import { FEATURE_REFS } from '@/lib/references'
-import AppStoreButton from '@/components/AppStoreButton'
+import DownloadButton from '@/components/DownloadButton'
 
 export const metadata: Metadata = pageMetadata({
   title: 'Metadata Protection: Hide Who, When & How You Message',
@@ -52,7 +52,7 @@ export default function MetadataPage() {
         lead="Encryption hides what you say. Metadata - who, when and how often - is what surveillance actually runs on. PrivaMesh hides that too."
       >
         <div className="flex flex-wrap gap-3">
-          <AppStoreButton />
+          <DownloadButton />
           <Button href="/privacy-policy" variant="ghost">
             Privacy Policy
           </Button>

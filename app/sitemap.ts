@@ -58,7 +58,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     languages: { en: `${SITE.domain}/support`, ru: `${SITE.domain}/ru/support` },
   }
   // The trust pages exist in both locales, so each pair is declared explicitly.
-  const TRUST_PAGES = ['architecture', 'threat-model', 'limitations', 'security', 'pricing']
+  const TRUST_PAGES = ['architecture', 'threat-model', 'limitations', 'security', 'pricing', 'download']
   const trustHreflang = (slug: string) => ({
     languages: { en: `${SITE.domain}/${slug}`, ru: `${SITE.domain}/ru/${slug}` },
   })

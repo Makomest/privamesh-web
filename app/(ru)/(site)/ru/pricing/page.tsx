@@ -7,7 +7,7 @@ import JsonLd from '@/components/JsonLd'
 import { Prose, RelatedLinks } from '@/components/Prose'
 import FadeUp from '@/components/FadeUp'
 import PageFaq from '@/components/PageFaq'
-import AppStoreButton from '@/components/AppStoreButton'
+import DownloadButton from '@/components/DownloadButton'
 import { pageMetadata } from '@/lib/seo'
 import { softwareApplicationLd } from '@/lib/jsonld'
 import { SITE } from '@/lib/site'
@@ -85,7 +85,7 @@ export default function RuPricingPage() {
         title="Цены и лимиты сообщений"
         lead="Приложение бесплатно. Отправка тарифицируется, потому что каждое сообщение — платная транзакция в публичной сети. Здесь точно сколько это стоит и почему."
       >
-        <AppStoreButton />
+        <DownloadButton />
       </PageHeader>
 
       <p className="mt-8 max-w-3xl border-l-2 border-border-accent pl-5 text-lg leading-relaxed text-text-secondary">

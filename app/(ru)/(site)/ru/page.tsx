@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { EyeOff, Shuffle, Wallet, Check } from 'lucide-react'
 import { Container, SectionDivider } from '@/components/Container'
 import { Button } from '@/components/Button'
-import AppStoreButton from '@/components/AppStoreButton'
+import DownloadButton from '@/components/DownloadButton'
 import PhoneMockup from '@/components/PhoneMockup'
 import HeroScramble from '@/components/HeroScramble'
 import FadeUp from '@/components/FadeUp'
@@ -121,7 +121,7 @@ export default function HomeRu() {
                 без почты, без метаданных. Доверяй математике, а не компаниям.
               </p>
               <div className="mt-8 flex flex-wrap items-center gap-3">
-                <AppStoreButton label="Скачать PrivaMesh" />
+                <DownloadButton label="Скачать PrivaMesh" />
                 <Button href={SITE.whitepaper} external variant="ghost">
                   Читать Whitepaper
                 </Button>
@@ -316,7 +316,7 @@ export default function HomeRu() {
               устройство, ваши слова.
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-              <AppStoreButton label="Скачать PrivaMesh" />
+              <DownloadButton label="Скачать PrivaMesh" />
               <Link
                 href="/"
                 className="inline-flex items-center rounded-btn border border-border-hover px-5 py-3 text-sm font-semibold text-text-primary transition-colors hover:border-accent hover:text-accent"

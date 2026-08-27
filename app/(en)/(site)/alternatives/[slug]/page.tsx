@@ -8,7 +8,7 @@ import { Prose, RelatedLinks } from '@/components/Prose'
 import { Button } from '@/components/Button'
 import FadeUp from '@/components/FadeUp'
 import PageFaq from '@/components/PageFaq'
-import AppStoreButton from '@/components/AppStoreButton'
+import DownloadButton from '@/components/DownloadButton'
 import { pageMetadata } from '@/lib/seo'
 import { ALTERNATIVES, getAlternative } from '@/lib/alternatives'
 
@@ -58,7 +58,7 @@ export default function AlternativePage({ params }: { params: { slug: string } }
         lead={a.what}
       >
         <div className="flex flex-wrap gap-3">
-          <AppStoreButton />
+          <DownloadButton />
           {a.comparePath && (
             <Button href={a.comparePath} variant="ghost">
               Full PrivaMesh vs {a.name}

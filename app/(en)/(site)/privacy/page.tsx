@@ -11,7 +11,7 @@ import JsonLd from '@/components/JsonLd'
 import { pageMetadata } from '@/lib/seo'
 import { faqPageLd } from '@/lib/jsonld'
 import { SITE } from '@/lib/site'
-import AppStoreButton from '@/components/AppStoreButton'
+import DownloadButton from '@/components/DownloadButton'
 
 export const metadata: Metadata = pageMetadata({
   title: 'Why PrivaMesh Is the Most Private Messenger',
@@ -50,7 +50,7 @@ export default function PrivacyPage() {
           lead="Most apps call themselves private. PrivaMesh is built to minimise what anyone can hold: no account database, no phone number, and a delivery path designed so the metadata is hard to link - not a promise that it does not exist."
         >
           <div className="flex flex-wrap gap-3">
-            <AppStoreButton />
+            <DownloadButton />
             <Button href="/features/no-servers" variant="ghost">
               How it works
             </Button>

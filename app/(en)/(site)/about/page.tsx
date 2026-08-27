@@ -4,7 +4,7 @@ import { Container } from '@/components/Container'
 import PageHeader from '@/components/PageHeader'
 import { Prose, RelatedLinks } from '@/components/Prose'
 import { Button } from '@/components/Button'
-import AppStoreButton from '@/components/AppStoreButton'
+import DownloadButton from '@/components/DownloadButton'
 import JsonLd from '@/components/JsonLd'
 import { pageMetadata } from '@/lib/seo'
 import { organizationLd, webPageLd } from '@/lib/jsonld'
@@ -37,7 +37,7 @@ export default function AboutPage() {
         lead="PrivaMesh exists because privacy shouldn't depend on trusting a company to behave. We removed the company."
       >
         <div className="flex flex-wrap gap-3">
-          <AppStoreButton />
+          <DownloadButton />
           <Button href={SITE.whitepaper} external variant="ghost">
             Read the White Paper
           </Button>

@@ -7,7 +7,7 @@ import JsonLd from '@/components/JsonLd'
 import { Prose, RelatedLinks } from '@/components/Prose'
 import FadeUp from '@/components/FadeUp'
 import PageFaq from '@/components/PageFaq'
-import AppStoreButton from '@/components/AppStoreButton'
+import DownloadButton from '@/components/DownloadButton'
 import { pageMetadata } from '@/lib/seo'
 import { softwareApplicationLd } from '@/lib/jsonld'
 import { SITE } from '@/lib/site'
@@ -84,7 +84,7 @@ export default function PricingPage() {
         title="Pricing and message allowances"
         lead="The app is a free download. Sending is metered because every message is a paid transaction on a public chain - here is exactly what that costs and why."
       >
-        <AppStoreButton label="Download on the App Store" />
+        <DownloadButton label="Get PrivaMesh" />
       </PageHeader>
 
       <p className="mt-8 max-w-3xl border-l-2 border-border-accent pl-5 text-lg leading-relaxed text-text-secondary">

@@ -4,7 +4,7 @@ import { Container } from '@/components/Container'
 import PageHeader from '@/components/PageHeader'
 import { Prose, RelatedLinks } from '@/components/Prose'
 import FAQ from '@/components/FAQ'
-import AppStoreButton from '@/components/AppStoreButton'
+import DownloadButton from '@/components/DownloadButton'
 import PhoneMockup from '@/components/PhoneMockup'
 import FadeUp from '@/components/FadeUp'
 import { Check } from 'lucide-react'
@@ -48,7 +48,7 @@ export default function GuidePage({ params }: { params: { slug: string } }) {
         title={g.h1}
         lead={g.lead}
       >
-        <AppStoreButton label="Download on the App Store" />
+        <DownloadButton label="Get PrivaMesh" />
       </PageHeader>
 
       {/* Direct answer to the search query, before any preamble. */}
@@ -75,7 +75,7 @@ export default function GuidePage({ params }: { params: { slug: string } }) {
               )}
             </ul>
             <div className="mt-6 flex flex-wrap items-center gap-4">
-              <AppStoreButton label="Download on the App Store" />
+              <DownloadButton label="Get PrivaMesh" />
               <a
                 href={SITE.appStore}
                 target="_blank"

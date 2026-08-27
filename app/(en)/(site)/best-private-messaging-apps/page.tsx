@@ -5,7 +5,7 @@ import { Container } from '@/components/Container'
 import PageHeader from '@/components/PageHeader'
 import { Prose, RelatedLinks } from '@/components/Prose'
 import FAQ from '@/components/FAQ'
-import AppStoreButton from '@/components/AppStoreButton'
+import DownloadButton from '@/components/DownloadButton'
 import JsonLd from '@/components/JsonLd'
 import { pageMetadata } from '@/lib/seo'
 import { itemListLd, faqPageLd } from '@/lib/jsonld'
@@ -130,7 +130,7 @@ export default function BestPrivateMessagingApps() {
         title="Best private messaging apps in 2026"
         lead="An honest ranking of the most private messaging apps — judged on encryption, metadata protection, whether they need a phone number, and whether they run servers at all."
       >
-        <AppStoreButton />
+        <DownloadButton />
       </PageHeader>
 
       {/* Comparison table */}
@@ -258,7 +258,7 @@ export default function BestPrivateMessagingApps() {
             <p className="mt-2 text-sm leading-relaxed text-text-muted">
               Serverless, no phone number, no metadata. End-to-end encrypted on Solana.
             </p>
-            <AppStoreButton className="mt-4 w-full" />
+            <DownloadButton className="mt-4 w-full" />
           </div>
         </aside>
       </div>

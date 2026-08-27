@@ -13,7 +13,7 @@ import { pageMetadata } from '@/lib/seo'
 import { FEATURE_FAQ } from '@/lib/faq'
 import { softwareApplicationLd } from '@/lib/jsonld'
 import { FEATURE_REFS } from '@/lib/references'
-import AppStoreButton from '@/components/AppStoreButton'
+import DownloadButton from '@/components/DownloadButton'
 
 export const metadata: Metadata = pageMetadata({
   title: 'End-to-End Encryption Explained: X3DH & Double Ratchet',
@@ -37,7 +37,7 @@ export default function E2EPage() {
         lead="PrivaMesh uses the same proven cryptography that secures the best encrypted messengers - X3DH, Double Ratchet and AES-256-GCM - adapted for a serverless world. Here it is without the math."
       >
         <div className="flex flex-wrap gap-3">
-          <AppStoreButton />
+          <DownloadButton />
           <Button href="/features/metadata-protection" variant="ghost">
             Metadata protection
           </Button>

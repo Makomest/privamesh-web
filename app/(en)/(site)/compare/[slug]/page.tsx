@@ -16,7 +16,7 @@ import { COMPARE_FAQ } from '@/lib/faq'
 import { itemListLd } from '@/lib/jsonld'
 import { SITE } from '@/lib/site'
 import { COMPARISONS, COMPARE_SLUGS } from '@/lib/compare'
-import AppStoreButton from '@/components/AppStoreButton'
+import DownloadButton from '@/components/DownloadButton'
 
 export function generateStaticParams() {
   return COMPARE_SLUGS.map((slug) => ({ slug }))
@@ -53,7 +53,7 @@ export default function ComparePage({ params }: { params: { slug: string } }) {
         lead={c.lead}
       >
         <div className="flex flex-wrap gap-3">
-          <AppStoreButton />
+          <DownloadButton />
           <Button href="/privacy" variant="ghost">
             Why PrivaMesh is private
           </Button>

@@ -14,7 +14,7 @@ import { FEATURE_FAQ } from '@/lib/faq'
 import { softwareApplicationLd } from '@/lib/jsonld'
 import { FEATURE_REFS } from '@/lib/references'
 import { SITE } from '@/lib/site'
-import AppStoreButton from '@/components/AppStoreButton'
+import DownloadButton from '@/components/DownloadButton'
 
 export const metadata: Metadata = pageMetadata({
   title: 'Messenger With No Phone Number - Seed Phrase Login',
@@ -38,7 +38,7 @@ export default function SeedPhrasePage() {
         lead="No phone number. No email. No sign-up form. Your account is a BIP-39 seed phrase that only you hold - the cleanest way to stay anonymous."
       >
         <div className="flex flex-wrap gap-3">
-          <AppStoreButton />
+          <DownloadButton />
           <Button href="/privacy" variant="ghost">
             Why it&rsquo;s private
           </Button>

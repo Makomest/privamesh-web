@@ -18,6 +18,16 @@ export const SITE = {
   // Live since the App Store release - every "Get PrivaMesh" button now links to
   // the store instead of opening the waitlist modal.
   appStoreLive: true,
+  /**
+   * Per-platform builds. null means the build does not exist yet - the download
+   * page renders the platform as unavailable rather than linking somewhere
+   * broken. Dropping a URL in here is the only edit needed when one ships.
+   */
+  downloads: {
+    ios: 'https://apps.apple.com/app/privamesh-messenger/id6785997584' as string | null,
+    android: null as string | null,
+    windows: null as string | null,
+  },
   // Prices and allowances mirror privamesh.storekit in the app repo. Apple
   // regionalises the actual amount charged; these are the US tier prices.
   price: {
