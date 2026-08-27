@@ -16,6 +16,9 @@ export type Platform = {
   secondary?: { href: string; label: string }
   /** Something the visitor will hit and should not meet unprepared. */
   warning?: { heading: string; body: string }
+  /** Same slot as `warning`, for a platform that has nothing to warn about.
+   *  Keeps the subgrid row filled rather than leaving one card with a hole. */
+  note?: { heading: string; body: string }
 }
 
 export const PLATFORMS: Platform[] = [
@@ -27,11 +30,15 @@ export const PLATFORMS: Platform[] = [
     cta: 'Download on the App Store',
     blurb:
       'Free to install. No phone number, no email, no account - the app generates your identity on the device when you first open it. Paid tiers work here and only here.',
+    note: {
+      heading: 'The one with real use behind it',
+      body: 'This is the client that ships on the App Store and the one people actually run. It is also the reference the others are measured against: the Android and Windows clients derive their protocol layers from this source and are vector-checked against it, so where they disagree, this is what is correct.',
+    },
   },
   {
     id: 'windows',
     name: 'Windows',
-    requirement: `Windows 10 64-bit or later · version ${SITE.windowsBuild.version}`,
+    requirement: `Windows 10 64-bit · version ${SITE.windowsBuild.version}`,
     href: SITE.downloads.windows,
     cta: 'Download the installer',
     blurb:
@@ -69,11 +76,15 @@ export const PLATFORMS_RU: Platform[] = [
     cta: 'Скачать в App Store',
     blurb:
       'Установка бесплатна. Ни номера телефона, ни почты, ни аккаунта — приложение создаёт вашу личность на устройстве при первом запуске. Платные тарифы работают здесь и только здесь.',
+    note: {
+      heading: 'Единственный с реальным использованием',
+      body: 'Это клиент, который выходит в App Store и которым действительно пользуются. Он же эталон для остальных: клиенты под Android и Windows берут свои протокольные слои из этого исходника и сверяются с ним по векторам, так что при расхождении правильный — этот.',
+    },
   },
   {
     id: 'windows',
     name: 'Windows',
-    requirement: `Windows 10 64-bit или новее · версия ${SITE.windowsBuild.version}`,
+    requirement: `Windows 10 64-bit · версия ${SITE.windowsBuild.version}`,
     href: SITE.downloads.windows,
     cta: 'Скачать установщик',
     blurb:

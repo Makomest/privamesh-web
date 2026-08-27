@@ -7,7 +7,7 @@ import JsonLd from '@/components/JsonLd'
 import { Prose, RelatedLinks } from '@/components/Prose'
 import FadeUp from '@/components/FadeUp'
 import PageFaq from '@/components/PageFaq'
-import PlatformCard from '@/components/PlatformCard'
+import PlatformCard, { PLATFORM_GRID } from '@/components/PlatformCard'
 import { pageMetadata } from '@/lib/seo'
 import { softwareApplicationLd } from '@/lib/jsonld'
 import { APP_STORE } from '@/lib/appstore.generated'
@@ -63,7 +63,7 @@ export default function RuDownloadPage() {
         lead="Для всех трёх платформ есть сборка, которую можно поставить сегодня. Различаются способ оплаты и глубина проверки — и то и другое написано на карточке, а не оставлено выясняться потом."
       />
 
-      <div className="mt-12 grid gap-4 md:grid-cols-3">
+      <div className={PLATFORM_GRID}>
         {PLATFORMS_RU.map((p, i) => (
           <PlatformCard
             key={p.id}

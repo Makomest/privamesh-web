@@ -8,7 +8,7 @@ import { Prose, RelatedLinks } from '@/components/Prose'
 import FadeUp from '@/components/FadeUp'
 import PageFaq from '@/components/PageFaq'
 import AppStoreButton from '@/components/AppStoreButton'
-import PlatformCard from '@/components/PlatformCard'
+import PlatformCard, { PLATFORM_GRID } from '@/components/PlatformCard'
 import { pageMetadata } from '@/lib/seo'
 import { softwareApplicationLd } from '@/lib/jsonld'
 import { SITE } from '@/lib/site'
@@ -68,7 +68,7 @@ export default function DownloadPage() {
         <AppStoreButton label="Download on the App Store" />
       </PageHeader>
 
-      <div className="mt-12 grid gap-4 md:grid-cols-3">
+      <div className={PLATFORM_GRID}>
         {PLATFORMS.map((p, i) => (
           <PlatformCard
             key={p.id}
