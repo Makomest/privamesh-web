@@ -162,17 +162,28 @@ Run the script — it is idempotent, so a second run is safe:
 bash ~/privamesh/deploy/setup-umami.sh
 ```
 
-It checks there is memory to spare, installs Docker if it is missing, starts
-Umami **bound to 127.0.0.1:3001**, patches the Nginx site in place (with a
-backup, and only reloading after `nginx -t` passes), then stops and tells you to
-register the website. Finish with the ID it asks for:
+It checks there is memory to spare, installs Docker if missing, starts Umami
+**bound to 127.0.0.1:3001**, then finds whether Caddy or Nginx serves the site
+and patches that config in place — backup first, `validate`/`nginx -t` before
+any reload. Neither file is ever replaced: the Caddyfile also carries the n8n
+block, and an Nginx site has been rewritten by certbot.
+
+It then stops, because only you can register the website. Umami's dashboard is
+deliberately not on the internet, so reach it through a tunnel — **from your
+laptop, in a separate terminal, not from the server**:
 
 ```bash
-UMAMI_WEBSITE_ID=<id> UMAMI_PASSWORD=<the password you set> \
-  bash ~/privamesh/deploy/setup-umami.sh
+ssh -L 3001:127.0.0.1:3001 ubuntu@18.197.243.40
 ```
 
-That second run writes `.env.local`, rebuilds and reloads.
+Leave that open, visit `http://127.0.0.1:3001`, log in with `admin` / `umami`,
+change that password, add a website (`PrivaMesh`, domain `privamesh.org`), and
+copy its Website ID from Settings.
+
+Then run the script again. It asks for the ID and the password rather than
+taking them on the command line — a placeholder like `<id>` is read by the
+shell as a redirect from a file called `id`, and a password typed on a command
+line lands in shell history. It writes `.env.local`, rebuilds and reloads.
 
 **Why there is no analytics subdomain.** Nginx proxies `/script.js` and
 `/api/send` from privamesh.org straight to Umami, so the beacon is same-origin.

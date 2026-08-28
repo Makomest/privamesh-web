@@ -16,7 +16,6 @@ set -euo pipefail
 APP_DIR="${APP_DIR:-$HOME/privamesh}"
 UMAMI_DIR="${UMAMI_DIR:-$HOME/umami}"
 PORT=3001
-NGINX_SITE=/etc/nginx/sites-available/privamesh
 ENV_FILE="$APP_DIR/.env.local"
 
 say() { printf '\n\033[1m==> %s\033[0m\n' "$*"; }
@@ -61,68 +60,85 @@ for i in $(seq 1 60); do
   sleep 2
 done
 
-say "Nginx"
-if [ ! -f "$NGINX_SITE" ]; then
-  die "no $NGINX_SITE - the site is served some other way; add the two location blocks from deploy/nginx-privamesh.conf by hand"
-fi
-if grep -q "location = /api/send" "$NGINX_SITE"; then
-  echo "already patched, leaving it alone"
-else
-  sudo cp "$NGINX_SITE" "${NGINX_SITE}.bak.$(date +%s)"
-  # Insert before the FIRST "location / {" in each server block that has one.
-  sudo python3 - "$NGINX_SITE" "$PORT" <<'PY'
-import re, sys
-path, port = sys.argv[1], sys.argv[2]
-block = """    # Umami analytics, proxied through this origin so the beacon is same-origin.
-    location = /script.js {
-        proxy_pass http://127.0.0.1:%s/script.js;
-        proxy_set_header Host $host;
-        proxy_set_header X-Real-IP $remote_addr;
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header X-Forwarded-Proto $scheme;
-    }
-    location = /api/send {
-        proxy_pass http://127.0.0.1:%s/api/send;
-        proxy_set_header Host $host;
-        proxy_set_header X-Real-IP $remote_addr;
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header X-Forwarded-Proto $scheme;
-    }
+say "Web server"
+# Caddy serves this box; an Nginx install exists in the docs for other hosts.
+# Find out which rather than assume, then edit in place - never replace. The
+# Caddyfile also carries the n8n block and the Nginx site has been rewritten by
+# certbot, so a clobber would take down more than analytics.
+HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-""" % (port, port)
-src = open(path).read()
-out, n = re.subn(r'(?m)^([ \t]*)location / \{', lambda m: block + m.group(0), src, count=0)
-if n == 0:
-    sys.exit("no `location / {` found to insert before")
-open(path, 'w').write(out)
-print(f"inserted into {n} server block(s)")
-PY
-  sudo nginx -t || die "nginx config test failed - restore the .bak file next to $NGINX_SITE"
+CADDYFILE=""
+for f in /etc/caddy/Caddyfile "$HOME/Caddyfile"; do
+  if [ -f "$f" ] && grep -q "privamesh.org" "$f" 2>/dev/null; then CADDYFILE="$f"; break; fi
+done
+
+NGINX_FILE=""
+if [ -d /etc/nginx/sites-available ]; then
+  NGINX_FILE=$(sudo grep -rls "server_name.*privamesh" /etc/nginx/sites-available 2>/dev/null | head -1 || true)
+fi
+
+if [ -n "$CADDYFILE" ]; then
+  echo "Caddy, at $CADDYFILE"
+  sudo cp "$CADDYFILE" "${CADDYFILE}.bak.$(date +%s)"
+  sudo python3 "$HERE/patch-caddy.py" "$CADDYFILE" "$PORT" || die "could not patch $CADDYFILE"
+  sudo caddy validate --config "$CADDYFILE" --adapter caddyfile \
+    || die "Caddy rejected the edited file. Restore the newest .bak next to $CADDYFILE"
+  sudo systemctl reload caddy
+elif [ -n "$NGINX_FILE" ]; then
+  echo "Nginx, at $NGINX_FILE"
+  sudo cp "$NGINX_FILE" "${NGINX_FILE}.bak.$(date +%s)"
+  sudo python3 "$HERE/patch-nginx.py" "$NGINX_FILE" "$PORT" || die "could not patch $NGINX_FILE"
+  sudo nginx -t || die "nginx rejected the edited file. Restore the newest .bak next to $NGINX_FILE"
   sudo systemctl reload nginx
+else
+  die "could not find what serves privamesh.org - checked /etc/caddy/Caddyfile and /etc/nginx/sites-available"
 fi
 
 say "Site configuration"
+# Asked for rather than passed in. A placeholder like <id> on a command line is
+# read by the shell as a redirect from a file named id, and a password on a
+# command line lands in shell history; a prompt avoids both.
 WEBSITE_ID="${UMAMI_WEBSITE_ID:-}"
+UMAMI_PW="${UMAMI_PASSWORD:-}"
+
+# Already registered on a previous run? Then just ask for the ID.
+if [ -z "$WEBSITE_ID" ] && [ -f "$ENV_FILE" ]; then
+  WEBSITE_ID=$(sed -n 's/^UMAMI_WEBSITE_ID=//p' "$ENV_FILE" | head -1)
+fi
+if [ -z "$WEBSITE_ID" ] && [ -t 0 ]; then
+  read -r -p "Umami Website ID (blank if you have not registered the site yet): " WEBSITE_ID
+fi
+
 if [ -z "$WEBSITE_ID" ]; then
   cat <<'MSG'
 
-Umami is running but has no website registered yet, and only you can do that:
+Umami is up on 127.0.0.1:3001, but no website is registered yet and only you can
+do that. Its dashboard is deliberately not on the internet, so reach it through
+a tunnel.
 
-  1. From your laptop, open a tunnel:
+  1. On YOUR LAPTOP - a new terminal window, NOT this server - run:
+
        ssh -L 3001:127.0.0.1:3001 ubuntu@18.197.243.40
-  2. Visit http://127.0.0.1:3001 and log in with admin / umami.
-  3. CHANGE THAT PASSWORD FIRST - it is a published default.
-  4. Add a website: name PrivaMesh, domain privamesh.org.
-  5. Copy its Website ID from Settings.
 
-Then finish with:
+     Leave that window open. Running it here would only try to ssh from the
+     server back to itself.
 
-  UMAMI_WEBSITE_ID=<id> UMAMI_PASSWORD=<new password> bash ~/privamesh/deploy/setup-umami.sh
+  2. In your browser, open http://127.0.0.1:3001 and log in: admin / umami
+  3. Change that password immediately - it is a published default.
+  4. Add a website: name PrivaMesh, domain privamesh.org
+  5. Settings shows its Website ID. Copy it.
+
+Then run this script again - it will ask for the ID and the password.
 
 MSG
   exit 0
 fi
-: "${UMAMI_PASSWORD:?set UMAMI_PASSWORD to the password you chose in the Umami dashboard}"
+
+if [ -z "$UMAMI_PW" ]; then
+  read -r -s -p "Umami password for user ${UMAMI_USERNAME:-admin}: " UMAMI_PW
+  echo
+  [ -n "$UMAMI_PW" ] || die "no password given"
+fi
 
 touch "$ENV_FILE"
 set_var() {
@@ -138,7 +154,7 @@ set_var NEXT_PUBLIC_UMAMI_WEBSITE_ID "$WEBSITE_ID"
 set_var UMAMI_URL "http://127.0.0.1:${PORT}"
 set_var UMAMI_WEBSITE_ID "$WEBSITE_ID"
 set_var UMAMI_USERNAME "${UMAMI_USERNAME:-admin}"
-set_var UMAMI_PASSWORD "$UMAMI_PASSWORD"
+set_var UMAMI_PASSWORD "$UMAMI_PW"
 chmod 600 "$ENV_FILE"
 
 say "Rebuilding the site"
