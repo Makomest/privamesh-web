@@ -1,12 +1,15 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { Users, Newspaper, Trash2, Loader2, LogOut } from 'lucide-react'
+import AdminAnalytics, { type DownloadStats, type TrafficStats } from './AdminAnalytics'
 
 type Stats = {
   waitlist: { total: number; last7: number; recent: { email: string; ts: string }[] }
   updates: number
+  downloads?: DownloadStats
+  traffic?: TrafficStats
 }
 type Update = { id: string; type: string; title: string; body: string; date: string }
 
@@ -22,18 +25,20 @@ export default function AdminDashboard() {
   const [title, setTitle] = useState('')
   const [body, setBody] = useState('')
   const [posting, setPosting] = useState(false)
+  const [range, setRange] = useState<TrafficStats['range']>('7d')
 
-  async function load() {
+  const load = useCallback(async () => {
     const [s, u] = await Promise.all([
-      fetch('/api/admin/stats').then((r) => r.json()),
+      fetch(`/api/admin/stats?range=${range}`).then((r) => r.json()),
       fetch('/api/admin/updates').then((r) => r.json()),
     ])
     if (s.ok) setStats(s)
     if (u.ok) setUpdates(u.updates)
-  }
+  }, [range])
+
   useEffect(() => {
     load()
-  }, [])
+  }, [load])
 
   async function post(e: React.FormEvent) {
     e.preventDefault()
@@ -113,6 +118,13 @@ export default function AdminDashboard() {
           </ul>
         </div>
       )}
+
+      <AdminAnalytics
+        downloads={stats?.downloads}
+        traffic={stats?.traffic}
+        range={range}
+        onRange={setRange}
+      />
 
       {/* Post form */}
       <div className="mt-10">

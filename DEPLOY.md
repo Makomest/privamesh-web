@@ -131,6 +131,83 @@ on the same box, wire it up like this:
 
 ---
 
+## Analytics: downloads and traffic in /admin
+
+The admin panel shows two things it did not before: how many times each build
+was downloaded, and who is on the site.
+
+### Downloads need no setup
+
+They come from the GitHub releases API, which counts every fetch of an asset -
+including downloads that never touched this site, which a click handler on our
+own button would miss. Nothing to install and nothing to configure.
+
+iPhone installs are absent on purpose: Apple reports those in App Store Connect
+and does not expose them to us. A number that quietly counted only two of three
+platforms would be worse than an empty slot.
+
+### Traffic needs Umami
+
+[Umami](https://github.com/umami-software/umami) — self-hosted, cookieless,
+stores no IP address, MIT licensed. It was chosen over Plausible mainly for
+what this box can carry: Plausible needs ClickHouse and about 4 GB, Umami runs
+in roughly 200 MB against Postgres. On a privacy product, analytics that ship a
+third party a record of every visitor would be arguing against our own page, so
+self-hosted was the only option worth considering. It also means no consent
+banner is owed.
+
+**Check there is room first.** This instance already runs n8n and the site, and
+`npm run build` is the thing most likely to be killed if memory runs out:
+
+```bash
+free -m          # want a few hundred MB free, plus the 2 GB swap from step 2
+```
+
+Install it alongside, on its own port:
+
+```bash
+mkdir -p ~/umami && cd ~/umami
+curl -fsSL https://raw.githubusercontent.com/umami-software/umami/master/docker-compose.yml -o docker-compose.yml
+# bind the app to localhost only - Nginx will be the way in
+sed -i 's/"3000:3000"/"127.0.0.1:3001:3000"/' docker-compose.yml
+docker compose up -d
+```
+
+Log in at `http://127.0.0.1:3001` (default `admin` / `umami`) — **change that
+password immediately**, it is a published default. Add the website, and copy
+the website ID from Settings.
+
+Serve it from a subdomain so the tracking script is not blocked as third-party.
+Add an Nginx server block for `analytics.privamesh.org` proxying to
+`127.0.0.1:3001`, point an A record at this box, then:
+
+```bash
+sudo certbot --nginx -d analytics.privamesh.org
+```
+
+Then tell the site about it, in `~/privamesh/.env.local`:
+
+```bash
+NEXT_PUBLIC_UMAMI_URL=https://analytics.privamesh.org
+NEXT_PUBLIC_UMAMI_WEBSITE_ID=<the website ID>
+UMAMI_URL=http://127.0.0.1:3001
+UMAMI_USERNAME=admin
+UMAMI_PASSWORD=<the password you just set>
+```
+
+The two `NEXT_PUBLIC_` values are read **at build time** - they go into the
+page source and into the Content-Security-Policy host allowlist - so the build
+must run after they are set, or the beacon ships and our own policy blocks it:
+
+```bash
+cd ~/privamesh && npm run build && pm2 reload privamesh --update-env
+```
+
+The other three are read at request time and never leave the server: the admin
+browser talks to our API, our API talks to Umami. With any of them missing the
+panel says Umami is not connected rather than showing zeroes, which would read
+as a traffic collapse.
+
 ## Publishing a news update
 
 `/news` reads `data/updates.json`, and `/data` is in `.gitignore` on purpose:

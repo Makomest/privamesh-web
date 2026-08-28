@@ -1,5 +1,19 @@
 import createMDX from '@next/mdx'
 
+// The self-hosted Umami origin, when one is configured. It has to reach the CSP
+// as a host rather than a wildcard, so it is read at build time from the same
+// variable the tracking script uses - set it before `npm run build`, or the
+// beacon ships and is then blocked by our own policy.
+const UMAMI_ORIGIN = (() => {
+  try {
+    return process.env.NEXT_PUBLIC_UMAMI_URL
+      ? new URL(process.env.NEXT_PUBLIC_UMAMI_URL).origin
+      : null
+  } catch {
+    return null
+  }
+})()
+
 // Content-Security-Policy. 'unsafe-inline' on script-src is required by Next's
 // hydration bootstrap and by the inline gtag/beacon config snippets; the host
 // allowlist is what does the real work. Styles are inline by Tailwind + Next.
@@ -9,7 +23,7 @@ const CSP = [
   "form-action 'self'",
   "frame-ancestors 'self'",
   "object-src 'none'",
-  "script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com https://www.googletagmanager.com https://www.googleadservices.com https://googleads.g.doubleclick.net",
+  `script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com https://www.googletagmanager.com https://www.googleadservices.com https://googleads.g.doubleclick.net${UMAMI_ORIGIN ? ` ${UMAMI_ORIGIN}` : ''}`,
   "style-src 'self' 'unsafe-inline'",
   // Google Ads fires remarketing pixels at the visitor's own google.<tld> -
   // google.com.ua, google.de and ~190 others - and CSP cannot wildcard a TLD.
@@ -20,7 +34,7 @@ const CSP = [
   "font-src 'self' data:",
   // Google Ads drops a conversion-linker iframe; default-src 'self' would block it.
   "frame-src 'self' https://td.doubleclick.net https://googleads.g.doubleclick.net https://www.googletagmanager.com",
-  "connect-src 'self' https://cloudflareinsights.com https://static.cloudflareinsights.com https://www.google-analytics.com https://region1.google-analytics.com https://www.googletagmanager.com https://www.googleadservices.com https://*.doubleclick.net https://www.google.com",
+  `connect-src 'self' https://cloudflareinsights.com https://static.cloudflareinsights.com https://www.google-analytics.com https://region1.google-analytics.com https://www.googletagmanager.com https://www.googleadservices.com https://*.doubleclick.net https://www.google.com${UMAMI_ORIGIN ? ` ${UMAMI_ORIGIN}` : ''}`,
   'upgrade-insecure-requests',
 ].join('; ')
 

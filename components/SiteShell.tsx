@@ -1,5 +1,6 @@
 import CloudflareAnalytics from '@/components/CloudflareAnalytics'
 import GoogleTag from '@/components/GoogleTag'
+import UmamiAnalytics from '@/components/UmamiAnalytics'
 import WaitlistModal from '@/components/WaitlistModal'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -32,6 +33,7 @@ export default function SiteShell({ children }: { children: React.ReactNode }) {
       <WaitlistModal />
       <CloudflareAnalytics />
       <GoogleTag />
+      <UmamiAnalytics />
     </>
   )
 }

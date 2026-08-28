@@ -2,13 +2,22 @@ import { NextResponse } from 'next/server'
 import fs from 'node:fs'
 import path from 'node:path'
 import { getUpdates } from '@/lib/updates'
+import { getDownloadCounts } from '@/lib/downloads'
+import { getUmamiStats, type UmamiRange } from '@/lib/umami'
 
 export const runtime = 'nodejs'
 export const dynamic = 'force-dynamic'
 
 // Protected by middleware.
 
-export async function GET() {
+export async function GET(req: Request) {
+  const param = new URL(req.url).searchParams.get('range')
+  const range: UmamiRange = param === '24h' || param === '30d' ? param : '7d'
+
+  // Both are network calls to third parties; neither should hold up the other,
+  // and neither is allowed to fail the whole panel - each reports its own state.
+  const [downloads, traffic] = await Promise.all([getDownloadCounts(), getUmamiStats(range)])
+
   const file = path.join(process.cwd(), 'data', 'waitlist.jsonl')
   let total = 0
   let last7 = 0
@@ -45,5 +54,7 @@ export async function GET() {
     ok: true,
     waitlist: { total, last7, recent },
     updates: getUpdates().length,
+    downloads,
+    traffic,
   })
 }
