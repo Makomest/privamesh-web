@@ -13,6 +13,10 @@
 # over an SSH tunnel; the numbers you actually look at come through /admin.
 set -euo pipefail
 
+# Resolved before anything changes directory - later steps cd into ~/umami and
+# ~/privamesh, so a relative path worked out down there points nowhere.
+HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
 APP_DIR="${APP_DIR:-$HOME/privamesh}"
 UMAMI_DIR="${UMAMI_DIR:-$HOME/umami}"
 PORT=3001
@@ -26,10 +30,17 @@ die() { printf '\n\033[31mstopped: %s\033[0m\n' "$*" >&2; exit 1; }
 say "Checking there is room"
 free -m || true
 avail=$(awk '/MemAvailable/ {print int($2/1024)}' /proc/meminfo)
-swap=$(awk '/SwapTotal/ {print int($2/1024)}' /proc/meminfo)
-echo "available: ${avail} MB, swap: ${swap} MB"
-if [ "$avail" -lt 400 ] && [ "$swap" -lt 1024 ]; then
-  die "under 400 MB free and less than 1 GB of swap. Add swap first (DEPLOY.md step 2) - the site's own build is what gets killed when this runs out."
+swapfree=$(awk '/SwapFree/ {print int($2/1024)}' /proc/meminfo)
+headroom=$(( avail + swapfree ))
+echo "available: ${avail} MB + ${swapfree} MB free swap = ${headroom} MB"
+# SwapTotal is the wrong number to look at: swap that is already full helps
+# nobody. `next build` is the hungriest thing that runs here and it is what gets
+# killed - or worse, it takes a neighbouring container with it.
+if [ "$headroom" -lt 600 ]; then
+  die "only ${headroom} MB of headroom. A Next.js build needs more, and the OOM killer does not stop at this process. Free something up or add swap (DEPLOY.md step 2)."
+fi
+if [ "$headroom" -lt 1000 ]; then
+  echo "WARNING: ${headroom} MB is tight for a Next.js build. Watch for an OOM kill."
 fi
 
 say "Docker"
@@ -65,8 +76,6 @@ say "Web server"
 # Find out which rather than assume, then edit in place - never replace. The
 # Caddyfile also carries the n8n block and the Nginx site has been rewritten by
 # certbot, so a clobber would take down more than analytics.
-HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-
 CADDYFILE=""
 for f in /etc/caddy/Caddyfile "$HOME/Caddyfile"; do
   if [ -f "$f" ] && grep -q "privamesh.org" "$f" 2>/dev/null; then CADDYFILE="$f"; break; fi
