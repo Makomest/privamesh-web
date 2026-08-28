@@ -12,7 +12,10 @@ import sys
 path, port = sys.argv[1], sys.argv[2]
 src = open(path).read()
 
-if f'127.0.0.1:{port}' in src:
+# Look for our own route, not just the port. This Caddyfile serves several
+# sites and one of the others already mentioned 3001, so a port-anywhere check
+# reported "already patched" on a file that had never been touched.
+if 'reverse_proxy /script.js' in src:
     print('already patched')
     sys.exit(0)
 
