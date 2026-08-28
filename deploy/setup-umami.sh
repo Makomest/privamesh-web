@@ -94,60 +94,39 @@ else
   die "could not find what serves privamesh.org - checked /etc/caddy/Caddyfile and /etc/nginx/sites-available"
 fi
 
-say "Site configuration"
-# Asked for rather than passed in. A placeholder like <id> on a command line is
-# read by the shell as a redirect from a file named id, and a password on a
-# command line lands in shell history; a prompt avoids both.
-WEBSITE_ID="${UMAMI_WEBSITE_ID:-}"
+say "Registering the site in Umami"
+# Done over the API from here rather than by hand in the dashboard. That
+# dashboard is deliberately not on the internet, and this box does not answer on
+# port 22 either, so the "open an SSH tunnel and click around" step is not
+# available at all. Everything the wizard does is an API call over localhost.
 UMAMI_PW="${UMAMI_PASSWORD:-}"
-
-# Already registered on a previous run? Then just ask for the ID.
-if [ -z "$WEBSITE_ID" ] && [ -f "$ENV_FILE" ]; then
-  WEBSITE_ID=$(sed -n 's/^UMAMI_WEBSITE_ID=//p' "$ENV_FILE" | head -1)
-fi
-if [ -z "$WEBSITE_ID" ] && [ -t 0 ]; then
-  read -r -p "Umami Website ID (blank if you have not registered the site yet): " WEBSITE_ID
-fi
-
-if [ -z "$WEBSITE_ID" ]; then
-  cat <<'MSG'
-
-Umami is up on 127.0.0.1:3001, but no website is registered yet and only you can
-do that. Its dashboard is deliberately not on the internet, so reach it through
-a tunnel.
-
-  1. On YOUR LAPTOP - a new terminal window, NOT this server - run:
-
-       ssh -L 3001:127.0.0.1:3001 ubuntu@18.197.243.40
-
-     Leave that window open. Running it here would only try to ssh from the
-     server back to itself.
-
-  2. In your browser, open http://127.0.0.1:3001 and log in: admin / umami
-  3. Change that password immediately - it is a published default.
-  4. Add a website: name PrivaMesh, domain privamesh.org
-  5. Settings shows its Website ID. Copy it.
-
-Then run this script again - it will ask for the ID and the password.
-
-MSG
-  exit 0
-fi
-
 if [ -z "$UMAMI_PW" ]; then
-  read -r -s -p "Umami password for user ${UMAMI_USERNAME:-admin}: " UMAMI_PW
+  if [ -f "$ENV_FILE" ]; then
+    UMAMI_PW=$(sed -n 's/^UMAMI_PASSWORD=//p' "$ENV_FILE" | head -1)
+  fi
+fi
+if [ -z "$UMAMI_PW" ]; then
+  [ -t 0 ] || die "no password: set UMAMI_PASSWORD, or run this from a terminal so it can ask"
+  # Read rather than take on the command line, so it stays out of shell history.
+  read -r -s -p "Password to set for Umami user ${UMAMI_USERNAME:-admin}: " UMAMI_PW
   echo
   [ -n "$UMAMI_PW" ] || die "no password given"
 fi
 
+WEBSITE_ID=$(python3 "$HERE/umami-register.py" \
+  "http://127.0.0.1:${PORT}" "${UMAMI_USERNAME:-admin}" "$UMAMI_PW" "PrivaMesh" "privamesh.org") \
+  || die "could not register the site in Umami"
+[ -n "$WEBSITE_ID" ] || die "Umami returned no website ID"
+echo "website ID: $WEBSITE_ID"
+
+say "Site configuration"
 touch "$ENV_FILE"
 set_var() {
   local k="$1" v="$2"
-  if grep -q "^${k}=" "$ENV_FILE"; then
-    sed -i "s|^${k}=.*|${k}=${v}|" "$ENV_FILE"
-  else
-    printf '%s=%s\n' "$k" "$v" >> "$ENV_FILE"
-  fi
+  # Delete then append. Putting the value into a sed replacement would break on
+  # any password containing & or the delimiter, which is not a limit worth having.
+  sed -i "/^${k}=/d" "$ENV_FILE"
+  printf '%s=%s\n' "$k" "$v" >> "$ENV_FILE"
 }
 # No NEXT_PUBLIC_UMAMI_URL: the beacon is served from this origin.
 set_var NEXT_PUBLIC_UMAMI_WEBSITE_ID "$WEBSITE_ID"

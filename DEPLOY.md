@@ -156,34 +156,36 @@ party a record of every visitor would be arguing against our own pages, so
 self-hosted was the only option worth considering. It also means no consent
 banner is owed.
 
-Run the script — it is idempotent, so a second run is safe:
+Run the script. It is idempotent, so a second run is safe, and it does the whole
+thing in one pass:
 
 ```bash
 bash ~/privamesh/deploy/setup-umami.sh
 ```
 
-It checks there is memory to spare, installs Docker if missing, starts Umami
-**bound to 127.0.0.1:3001**, then finds whether Caddy or Nginx serves the site
-and patches that config in place — backup first, `validate`/`nginx -t` before
-any reload. Neither file is ever replaced: the Caddyfile also carries the n8n
-block, and an Nginx site has been rewritten by certbot.
+It refuses to start if memory is short, installs Docker if missing, brings Umami
+up **bound to 127.0.0.1:3001**, works out whether Caddy or Nginx serves the site
+and patches that config in place — backup first, `caddy validate` or `nginx -t`
+before any reload. Neither file is ever replaced: the Caddyfile also carries the
+n8n block and an Nginx site has been rewritten by certbot.
 
-It then stops, because only you can register the website. Umami's dashboard is
-deliberately not on the internet, so reach it through a tunnel — **from your
-laptop, in a separate terminal, not from the server**:
+It then asks for a password (silently, so it stays out of shell history) and
+**registers the site over Umami's own API**: changes the default `umami`
+password to the one you give, creates the website, reads back its ID, writes
+`.env.local`, rebuilds and reloads.
+
+**There is no dashboard step and no SSH tunnel**, which is deliberate. Umami's
+dashboard is not exposed to the internet, and this box does not answer on port
+22 from every network either — so "open a tunnel and click through the wizard"
+is not a step that can be relied on. Everything that wizard does is an API call,
+and the script makes them over localhost.
+
+If you do want the dashboard later and can reach port 22, forward it **from your
+laptop, not from the server**:
 
 ```bash
-ssh -L 3001:127.0.0.1:3001 ubuntu@18.197.243.40
+ssh -L 3001:127.0.0.1:3001 ubuntu@18.197.243.40   # then open http://127.0.0.1:3001
 ```
-
-Leave that open, visit `http://127.0.0.1:3001`, log in with `admin` / `umami`,
-change that password, add a website (`PrivaMesh`, domain `privamesh.org`), and
-copy its Website ID from Settings.
-
-Then run the script again. It asks for the ID and the password rather than
-taking them on the command line — a placeholder like `<id>` is read by the
-shell as a redirect from a file called `id`, and a password typed on a command
-line lands in shell history. It writes `.env.local`, rebuilds and reloads.
 
 **Why there is no analytics subdomain.** Nginx proxies `/script.js` and
 `/api/send` from privamesh.org straight to Umami, so the beacon is same-origin.
