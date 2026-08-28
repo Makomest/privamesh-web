@@ -6,16 +6,25 @@
  * third party a record of every visitor would be arguing against ourselves.
  * It also means no consent banner is owed.
  *
- * Absent env vars render nothing, so a local checkout and any deploy without
- * Umami configured simply ship no beacon.
+ * By default the beacon is served from this origin, with Nginx proxying
+ * /script.js and /api/send through to Umami on localhost. That is deliberate:
+ * it needs no second domain and no second certificate, the browser makes no
+ * cross-origin request so the CSP needs nothing added, and a blocklist cannot
+ * match it on hostname the way it would match an "analytics." subdomain.
+ *
+ * Set NEXT_PUBLIC_UMAMI_URL only if Umami lives on its own domain instead.
+ * With no website ID nothing renders at all, so a local checkout and any deploy
+ * without Umami configured ship no beacon.
  */
 export default function UmamiAnalytics() {
-  const url = process.env.NEXT_PUBLIC_UMAMI_URL?.replace(/\/+$/, '')
   const websiteId = process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID
-  if (!url || !websiteId) return null
+  if (!websiteId) return null
+
+  const url = process.env.NEXT_PUBLIC_UMAMI_URL?.replace(/\/+$/, '')
+  const src = url ? `${url}/script.js` : '/script.js'
 
   return (
     // eslint-disable-next-line @next/next/no-sync-scripts
-    <script defer src={`${url}/script.js`} data-website-id={websiteId} />
+    <script defer src={src} data-website-id={websiteId} />
   )
 }

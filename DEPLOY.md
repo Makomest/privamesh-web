@@ -149,64 +149,55 @@ platforms would be worse than an empty slot.
 ### Traffic needs Umami
 
 [Umami](https://github.com/umami-software/umami) — self-hosted, cookieless,
-stores no IP address, MIT licensed. It was chosen over Plausible mainly for
-what this box can carry: Plausible needs ClickHouse and about 4 GB, Umami runs
-in roughly 200 MB against Postgres. On a privacy product, analytics that ship a
-third party a record of every visitor would be arguing against our own page, so
+stores no IP address, MIT licensed. Chosen over Plausible mainly for what this
+box can carry: Plausible needs ClickHouse and about 4 GB, Umami runs in roughly
+200 MB against Postgres. On a privacy product, analytics that ship a third
+party a record of every visitor would be arguing against our own pages, so
 self-hosted was the only option worth considering. It also means no consent
 banner is owed.
 
-**Check there is room first.** This instance already runs n8n and the site, and
-`npm run build` is the thing most likely to be killed if memory runs out:
+Run the script — it is idempotent, so a second run is safe:
 
 ```bash
-free -m          # want a few hundred MB free, plus the 2 GB swap from step 2
+bash ~/privamesh/deploy/setup-umami.sh
 ```
 
-Install it alongside, on its own port:
+It checks there is memory to spare, installs Docker if it is missing, starts
+Umami **bound to 127.0.0.1:3001**, patches the Nginx site in place (with a
+backup, and only reloading after `nginx -t` passes), then stops and tells you to
+register the website. Finish with the ID it asks for:
 
 ```bash
-mkdir -p ~/umami && cd ~/umami
-curl -fsSL https://raw.githubusercontent.com/umami-software/umami/master/docker-compose.yml -o docker-compose.yml
-# bind the app to localhost only - Nginx will be the way in
-sed -i 's/"3000:3000"/"127.0.0.1:3001:3000"/' docker-compose.yml
-docker compose up -d
+UMAMI_WEBSITE_ID=<id> UMAMI_PASSWORD=<the password you set> \
+  bash ~/privamesh/deploy/setup-umami.sh
 ```
 
-Log in at `http://127.0.0.1:3001` (default `admin` / `umami`) — **change that
-password immediately**, it is a published default. Add the website, and copy
-the website ID from Settings.
+That second run writes `.env.local`, rebuilds and reloads.
 
-Serve it from a subdomain so the tracking script is not blocked as third-party.
-Add an Nginx server block for `analytics.privamesh.org` proxying to
-`127.0.0.1:3001`, point an A record at this box, then:
+**Why there is no analytics subdomain.** Nginx proxies `/script.js` and
+`/api/send` from privamesh.org straight to Umami, so the beacon is same-origin.
+No DNS record, no second certificate, nothing added to the CSP, and no hostname
+for a blocklist to match the way it would match `analytics.privamesh.org`.
+`/api/send` cannot be renamed: the tracker script has that path compiled into
+it at image build time, so `COLLECT_API_ENDPOINT` changes only where the server
+listens, not where the browser posts.
+
+**Umami's own dashboard is not on the internet**, which is why its default
+`admin` / `umami` login is survivable. Reach it over a tunnel when you want the
+full view:
 
 ```bash
-sudo certbot --nginx -d analytics.privamesh.org
+ssh -L 3001:127.0.0.1:3001 ubuntu@18.197.243.40   # then open http://127.0.0.1:3001
 ```
 
-Then tell the site about it, in `~/privamesh/.env.local`:
+Change that password on first login anyway.
 
-```bash
-NEXT_PUBLIC_UMAMI_URL=https://analytics.privamesh.org
-NEXT_PUBLIC_UMAMI_WEBSITE_ID=<the website ID>
-UMAMI_URL=http://127.0.0.1:3001
-UMAMI_USERNAME=admin
-UMAMI_PASSWORD=<the password you just set>
-```
-
-The two `NEXT_PUBLIC_` values are read **at build time** - they go into the
-page source and into the Content-Security-Policy host allowlist - so the build
-must run after they are set, or the beacon ships and our own policy blocks it:
-
-```bash
-cd ~/privamesh && npm run build && pm2 reload privamesh --update-env
-```
-
-The other three are read at request time and never leave the server: the admin
-browser talks to our API, our API talks to Umami. With any of them missing the
-panel says Umami is not connected rather than showing zeroes, which would read
-as a traffic collapse.
+The site reads Umami server-side: the admin browser calls our API, our API calls
+Umami over localhost, so the password never reaches a browser. Only the website
+ID is public. It is read at **build time**, which is why the script rebuilds —
+set it without rebuilding and no beacon ships. With it unset, none ships at all
+and the panel says Umami is not connected rather than showing zeroes that would
+read as a traffic collapse.
 
 ## Publishing a news update
 
