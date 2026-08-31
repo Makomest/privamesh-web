@@ -14,8 +14,9 @@ import { softwareApplicationLd } from '@/lib/jsonld'
 export const metadata: Metadata = pageMetadata({
   title: 'Duress Code - A Second Passcode That Wipes the Account',
   description:
-    'PrivaMesh lets you set two passcodes. One opens the app. The other erases every message, contact and key on the device and signs you out, with nothing on screen to show it happened.',
+    'Two passcodes instead of one. The first opens PrivaMesh; the second erases every message, contact and key on the device, showing nothing to say which you typed.',
   path: '/features/duress-code',
+  languages: { en: '/features/duress-code', ru: '/ru/features/duress-code' },
 })
 
 type Platform = {
