@@ -89,6 +89,9 @@ const nextConfig = {
       // competing for the same query.
       { source: '/audit', destination: '/security', statusCode: 301 },
       { source: '/how-it-works', destination: '/architecture', statusCode: 301 },
+      // The press kit is gone. It was in the sitemap, so send anyone who has
+      // the URL to the page that now carries what it said about the project.
+      { source: '/press', destination: '/about', statusCode: 301 },
       // In-chat SOL transfers, NFT avatars and the nickname marketplace were
       // designed but never shipped: sendSOL and sendSOLNote have no callers, and
       // mintNickname only writes to a local array. The page marketed a product

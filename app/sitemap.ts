@@ -31,7 +31,6 @@ const STATIC_PATHS: { path: string; priority: number; freq: Freq }[] = [
   { path: '/download', priority: 0.9, freq: 'monthly' },
   { path: '/transparency', priority: 0.7, freq: 'monthly' },
   { path: '/changelog', priority: 0.6, freq: 'monthly' },
-  { path: '/press', priority: 0.5, freq: 'yearly' },
   { path: '/architecture', priority: 0.9, freq: 'monthly' },
   { path: '/protocol', priority: 0.9, freq: 'monthly' },
   { path: '/threat-model', priority: 0.9, freq: 'monthly' },
