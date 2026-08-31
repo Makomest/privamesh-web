@@ -130,6 +130,11 @@ export default function SeedPhrasePage() {
             label: 'Metadata protection',
             blurb: 'No phone number is only step one; stealth addresses hide the rest.',
           },
+          {
+            href: '/features/duress-code',
+            label: 'Duress code',
+            blurb: 'A second passcode that erases the account instead of opening it.',
+          },
         ]}
       />
     </Container>

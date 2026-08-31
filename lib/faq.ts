@@ -60,6 +60,32 @@ export const FEATURE_FAQ: Record<string, FaqItem[]> = {
       a: 'It would, so PrivaMesh pads every message to a fixed size before sealing it. A one-word reply and a long paragraph are the same size on the wire.',
     },
   ],
+  'duress-code': [
+    {
+      q: 'What is a duress code?',
+      a: 'A second passcode that erases the account instead of opening it. You set both; the first unlocks the app, the second deletes every message, contact and key on the device and returns the app to its first-run screen, with nothing to show which one was typed.',
+    },
+    {
+      q: 'Can someone tell the two codes apart?',
+      a: 'Not from the app. Both are stored under the same salt, so one derivation is compared against both in constant time, and the duress code must be the same length as the passcode. After the wipe the app shows the welcome screen a fresh install shows, and the failed-attempt counter is cleared so nothing lingers to contradict that.',
+    },
+    {
+      q: 'Does the duress code delete my messages from the blockchain?',
+      a: 'No. Ciphertext already published to Solana is permanent and public. Nobody can read it without keys that were just destroyed, but the fact that an address sent messages, and when, stays visible. The duress code erases the copy on your device; it cannot unsend.',
+    },
+    {
+      q: 'Does it wipe my whole phone?',
+      a: 'No. Only PrivaMesh data is deleted: its messages, contacts, keys, both passcodes and biometric unlock. Nothing else on the device is touched.',
+    },
+    {
+      q: 'Can I undo it or get my chats back?',
+      a: 'No. Your recovery phrase restores your identity and contacts on a new device, never your conversations - forward secrecy destroyed those message keys after use. Pick two codes you cannot confuse under pressure.',
+    },
+    {
+      q: 'Which versions of PrivaMesh have a duress code?',
+      a: 'The Windows client from 1.0.0 and the Android client from 0.1, both released 27 August 2026. On iPhone the code is written and public but the current App Store build is 1.0 from 7 August and predates it, so it arrives in the next release.',
+    },
+  ],
   'seed-phrase-accounts': [
     {
       q: 'Can I use an encrypted messenger with no phone number?',

@@ -59,8 +59,8 @@ const ADVERSARIES: Adversary[] = [
     name: 'Someone holding your unlocked phone',
     sees: 'Everything: plaintext, contacts, keys',
     cannot: 'Recover messages already deleted by the ratchet',
-    defence: 'Keychain storage behind Face ID or Touch ID; forward secrecy limits the past',
-    residual: 'Device compromise is total for anything currently on the device',
+    defence: 'Keychain storage behind Face ID or Touch ID; forward secrecy limits the past; a duress code erases the account instead of opening it',
+    residual: 'Device compromise is total for anything currently on the device, and a duress code helps only at the moment you are asked to unlock - not if the storage was copied first',
   },
   {
     name: 'Someone who has your recovery phrase',
@@ -106,7 +106,7 @@ const FAQS = [
   },
   {
     q: 'If my device is seized, what is exposed?',
-    a: 'Everything currently on it: plaintext, contacts and keys, unless it is locked and the attacker cannot get past Face ID. Forward secrecy limits the damage to what has not yet been deleted by the ratchet - old messages are already unrecoverable.',
+    a: 'Everything currently on it: plaintext, contacts and keys, unless it is locked and the attacker cannot get past Face ID. Forward secrecy limits the damage to what has not yet been deleted by the ratchet - old messages are already unrecoverable. If you are being made to unlock it yourself, a duress code erases the account instead of opening it.',
   },
   {
     q: 'Can PrivaMesh be forced to hand over my data?',
@@ -213,6 +213,11 @@ export default function ThreatModelPage() {
             href: '/features/metadata-protection',
             label: 'Metadata protection',
             blurb: 'Stealth addresses, padding buckets and optional cover traffic.',
+          },
+          {
+            href: '/features/duress-code',
+            label: 'Duress code',
+            blurb: 'A second passcode that empties the account instead of opening it.',
           },
         ]}
       />
