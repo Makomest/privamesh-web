@@ -6,5 +6,5 @@ export const contentType = ogContentType
 export const alt = 'PrivaMesh Security'
 
 export default function Image() {
-  return ogImage('Audit status and disclosure', 'Security')
+  return ogImage('Vulnerability disclosure', 'Security')
 }

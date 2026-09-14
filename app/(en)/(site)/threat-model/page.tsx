@@ -186,10 +186,9 @@ export default function ThreatModelPage() {
             design does not save you.
           </p>
           <p>
-            It also assumes our implementation of those primitives is correct, which is exactly the
-            assumption an{' '}
-            <Link href="/security">independent audit would test and which has not happened yet</Link>
-            . For the full list of what is not covered, see{' '}
+            It also assumes our implementation of those primitives is correct - which is why the
+            source is public and{' '}
+            <Link href="/bug-bounty">finding a flaw in it pays</Link>. For the full list of what is not covered, see{' '}
             <Link href="/limitations">known limitations</Link>.
           </p>
         </Prose>

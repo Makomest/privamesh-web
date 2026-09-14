@@ -83,18 +83,11 @@ export default function AboutPage() {
 
           <h2>What we have not done yet</h2>
           <p>
-            PrivaMesh has not been through an independent security audit. The iPhone app is the
-            only one with real use behind it; the Android APK and the Windows installer are first
+            The iPhone app is the only one with real use behind it; the Android APK and the Windows installer are first
             builds, the Windows one is not code-signed, and paid tiers work on iPhone only. We
             publish no App Store rating of our own - if you see a rating attributed to us, it did
             not come from us. We would rather state all of that plainly than let a confident
             marketing page imply otherwise.
-          </p>
-          <p>
-            An audit is the single most valuable thing that could be added to this page, and until
-            it exists the honest position is that our claims are verifiable in principle - the code
-            and protocol are public - but have not been verified by a qualified third party. Treat
-            them accordingly.
           </p>
 
           <h2>The cryptography we build on</h2>

@@ -35,7 +35,7 @@ ${line('Architecture', '/architecture', 'Every component, its operator, and what
 ${line('Protocol', '/protocol', 'Wire formats, HKDF labels, relay endpoints, and what is still unproven')}
 ${line('Threat model', '/threat-model', 'Adversary by adversary, including the ones we defend against least well')}
 ${line('Known limitations', '/limitations', 'What PrivaMesh does not protect you from')}
-${line('Security', '/security', 'Audit status: no independent audit completed')}
+${line('Security', '/security', 'Vulnerability disclosure and bug bounty')}
 ${line('Bug bounty', '/bug-bounty', 'Up to $500 for a critical finding; tiers, scope and exclusions')}
 ${line('About', '/about', 'Mission and the "trust math, not companies" position')}
 ${line('Best private messaging apps', '/best-private-messaging-apps', 'Ranked comparison of the major private messengers')}

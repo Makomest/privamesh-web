@@ -172,7 +172,7 @@ export default function RuArchitecturePage() {
           {
             href: '/ru/security',
             label: 'Безопасность',
-            blurb: 'Статус аудита и как сообщить об уязвимости.',
+            blurb: 'Как сообщить об уязвимости.',
           },
         ]}
       />

@@ -73,7 +73,7 @@ export default function HomePage() {
                   Known limitations
                 </Link>
                 <Link href="/security" className="hover:text-accent">
-                  Audit status
+                  Security
                 </Link>
                 <a
                   href={SITE.github}

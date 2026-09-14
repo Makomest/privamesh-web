@@ -13,7 +13,7 @@ import { techArticleLd } from '@/lib/jsonld'
 export const metadata: Metadata = pageMetadata({
   title: 'Known Limitations',
   description:
-    'What PrivaMesh does not protect you from: permanent on-chain ciphertext, visible timing, no audit yet, an unsigned Windows build, unrecoverable history.',
+    'What PrivaMesh does not protect you from: permanent on-chain ciphertext, visible timing, an unsigned Windows build, unrecoverable history.',
   path: '/limitations',
   languages: { en: '/limitations', ru: '/ru/limitations' },
 })
@@ -66,10 +66,6 @@ const LIMITS: Limit[] = [
     body: 'There is no reset, no support override and no backup we hold. Twelve words are the account. That is the direct cost of there being no account database.',
   },
   {
-    title: 'No independent security audit yet',
-    body: 'The primitives PrivaMesh builds on - X3DH, the Double Ratchet, AES-256-GCM, ML-KEM-768 - are well studied. Our implementation of them is not. It is open source and can be reviewed, but no qualified third party has signed off on it, and you should weight our claims accordingly.',
-  },
-  {
     title: 'Three platforms, two of them barely tested',
     body: 'The iPhone app requires iOS 26.5 or later: post-quantum X-Wing needs iOS 26, and rather than quietly fall back to the classical handshake the app does not run on older systems at all. It is the only platform with real use behind it. The Windows installer carries no code-signing certificate, so every download raises a publisher warning. The Android APK is version 0.1, checked on an emulator rather than a real device, and no Android or Windows build has yet sent a message on mainnet. Paid tiers work on iPhone only. There is no web client.',
   },
@@ -84,10 +80,6 @@ const LIMITS: Limit[] = [
 ]
 
 const FAQS = [
-  {
-    q: 'Has PrivaMesh been independently audited?',
-    a: 'No. The implementation is open source and reviewable, but no qualified third party has completed a security audit. The cryptographic primitives it builds on are well studied; our use of them has not been externally verified.',
-  },
   {
     q: 'Can my messages be decrypted in the future?',
     a: 'The ciphertext is on a public chain permanently, so it can be recorded and kept. Forward secrecy destroys each message key after use, and on iOS 26 the handshake mixes in ML-KEM-768 against future quantum attacks. Neither makes recorded ciphertext disappear.',
@@ -128,8 +120,8 @@ export default function LimitationsPage() {
 
       <p className="mt-8 max-w-3xl border-l-2 border-border-accent pl-5 text-lg leading-relaxed text-text-secondary">
         The short version: ciphertext on a public chain is permanent, transaction timing is visible
-        unless you turn cover traffic on, the RPC provider sees your IP, there is no independent
-        audit yet, and message history can never be restored.
+        unless you turn cover traffic on, the RPC provider sees your IP, and message history can
+        never be restored.
       </p>
 
       <div className="mt-12 grid gap-4 md:grid-cols-2">
@@ -178,7 +170,7 @@ export default function LimitationsPage() {
           {
             href: '/security',
             label: 'Security and disclosure',
-            blurb: 'Audit status and how to report a vulnerability.',
+            blurb: 'How to report a vulnerability.',
           },
         ]}
       />

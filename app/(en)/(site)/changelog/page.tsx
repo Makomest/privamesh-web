@@ -91,7 +91,7 @@ export default function ChangelogPage() {
       <RelatedLinks
         links={[
           { href: '/download', label: 'Download', blurb: 'Current version and system requirements.' },
-          { href: '/security', label: 'Security', blurb: 'Audit status and disclosure policy.' },
+          { href: '/security', label: 'Security', blurb: 'Vulnerability disclosure policy.' },
           { href: '/limitations', label: 'Known limitations', blurb: 'What is not in the product yet.' },
         ]}
       />

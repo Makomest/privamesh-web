@@ -175,7 +175,7 @@ export default function ArchitecturePage() {
           {
             href: '/security',
             label: 'Security and disclosure',
-            blurb: 'Audit status, how to report a vulnerability, and what we commit to.',
+            blurb: 'How to report a vulnerability, and what we commit to.',
           },
         ]}
       />

@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { AlertTriangle, Mail } from 'lucide-react'
+import { Bug, Mail } from 'lucide-react'
 import { Container } from '@/components/Container'
 import PageHeader from '@/components/PageHeader'
 import JsonLd from '@/components/JsonLd'
@@ -15,16 +15,12 @@ import { SITE } from '@/lib/site'
 export const metadata: Metadata = pageMetadata({
   title: 'Security and Disclosure',
   description:
-    'PrivaMesh audit status, how to report a vulnerability, what we commit to fixing and when, and which app versions receive security updates.',
+    'How to report a vulnerability in PrivaMesh, the paid bug bounty, what we commit to fixing and when, and which app versions receive security updates.',
   path: '/security',
   languages: { en: '/security', ru: '/ru/security' },
 })
 
 const FAQS = [
-  {
-    q: 'Has PrivaMesh completed an independent security audit?',
-    a: 'No. Independent security audit: not completed yet. The implementation is open source and can be reviewed by anyone, but no qualified third party has signed off on it. When one is completed the report and the reviewed commit will be published here.',
-  },
   {
     q: 'How do I report a vulnerability?',
     a: 'Email privamesh@proton.me with "security" in the subject line. Include the app version, your device and iOS version, and enough detail to reproduce. We aim to acknowledge within 2 business days.',
@@ -44,7 +40,7 @@ export default function SecurityPage() {
     <Container>
       <JsonLd data={techArticleLd({
           headline: "Security and disclosure",
-          description: "Audit status, vulnerability disclosure and response commitments.",
+          description: "Vulnerability disclosure, the bug bounty and response commitments.",
           path: '/security',
           datePublished: APP_STORE.releasedAt.slice(0, 10),
           dateModified: APP_STORE.updatedAt.slice(0, 10),
@@ -56,26 +52,29 @@ export default function SecurityPage() {
           { name: 'Security', path: '/security' },
         ]}
         title="Security and disclosure"
-        lead="Audit status, how to report a vulnerability, and what we commit to. Stated plainly, including the part where the audit has not happened yet."
+        lead="How to report a vulnerability, what finding one pays, and what we commit to once you do."
       />
 
       <div className="mt-10 max-w-3xl">
         <FadeUp className="rounded-card border border-border-accent bg-accent/[0.06] p-6 backdrop-blur-sm sm:p-8">
           <div className="flex items-start gap-3">
-            <AlertTriangle size={20} className="mt-0.5 flex-none text-accent" aria-hidden="true" />
+            <Bug size={20} className="mt-0.5 flex-none text-accent" aria-hidden="true" />
             <div>
               <h2 className="text-xl font-bold tracking-tight text-text-primary">
-                Independent security audit: not completed yet
+                Open source, and finding a flaw pays
               </h2>
               <p className="mt-3 text-[15px] leading-relaxed text-text-secondary">
                 PrivaMesh builds on well-studied primitives - X3DH, the Double Ratchet,
-                AES-256-GCM, and ML-KEM-768 on iOS 26. Those are proven. Our implementation of them
-                has not been reviewed by a qualified third party. The source is public so it can be
-                audited; until someone has, treat our claims as unverified.
+                AES-256-GCM, and ML-KEM-768 on iOS 26. The code that implements them is public for
+                all three clients, so anyone can read exactly what it does rather than take a
+                description on trust.
               </p>
               <p className="mt-3 text-[15px] leading-relaxed text-text-secondary">
-                When an audit is completed this page will carry the auditor, the report as a PDF,
-                the app version and the exact commit that was reviewed.
+                A flaw found in it is worth up to $500 through the{' '}
+                <Link href="/bug-bounty" className="font-medium text-accent hover:underline">
+                  bug bounty
+                </Link>
+                .
               </p>
             </div>
           </div>

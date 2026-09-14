@@ -79,10 +79,6 @@ const FAQS = [
     a: 'Not published yet. Wire formats and KDF labels are documented here and readable in the source, but there is no vector file another implementation could check itself against. That is the next thing this page needs.',
   },
   {
-    q: 'Has the protocol been formally analysed?',
-    a: 'No. The primitives - X3DH, the Double Ratchet, AES-256-GCM, ML-KEM-768 - carry their own analysis. This particular composition of them has had no formal treatment and no independent audit.',
-  },
-  {
     q: 'Why is naming X3DH and the Double Ratchet not enough?',
     a: 'Because a protocol is the composition, not the ingredient list. Where key material comes from, whether one-time prekeys are consumed, how the transport interacts with retries - those decide whether the properties hold. Two of ours are documented below as open.',
   },
@@ -218,10 +214,8 @@ export default function ProtocolPage() {
           <h2>What would actually constitute proof</h2>
           <p>
             None of the above is proof, and it is not offered as such. What would be: published test
-            vectors another implementation can verify itself against; a formal or symbolic analysis
-            of this composition rather than of its parts; and an independent audit of the
-            implementation. <Link href="/security">None of the three exists yet</Link>. Until they
-            do, this page is a description you can check against the source, which is a weaker claim
+            vectors another implementation can verify itself against, and a formal or symbolic analysis
+            of this composition rather than of its parts. Short of that, this page is a description you can check against the source, which is a weaker claim
             than a proof and an honest one.
           </p>
         </Prose>
@@ -237,7 +231,7 @@ export default function ProtocolPage() {
         links={[
           { href: '/architecture', label: 'Architecture', blurb: 'Every component and what it can observe.' },
           { href: '/threat-model', label: 'Threat model', blurb: 'Adversary by adversary, with residual risk.' },
-          { href: '/security', label: 'Security', blurb: 'Audit status and vulnerability disclosure.' },
+          { href: '/security', label: 'Security', blurb: 'Vulnerability disclosure and the bug bounty.' },
         ]}
       />
     </Container>

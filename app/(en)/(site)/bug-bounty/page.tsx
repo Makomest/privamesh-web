@@ -318,7 +318,7 @@ export default function BugBountyPage() {
           {
             href: '/security',
             label: 'Security',
-            blurb: 'Audit status and disclosure policy.',
+            blurb: 'Vulnerability disclosure policy.',
           },
         ]}
       />

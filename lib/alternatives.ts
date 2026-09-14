@@ -93,7 +93,6 @@ export const ALTERNATIVES: Alternative[] = [
     stayIf: [
       'You need Android, or a cross-platform app with years behind it, today',
       'The people you message are already on Signal and will not move',
-      'You want a messenger with years of independent audit history behind it',
     ],
     faq: [
       {
@@ -106,11 +105,11 @@ export const ALTERNATIVES: Alternative[] = [
       },
       {
         q: 'Can I use PrivaMesh on Android or desktop?',
-        a: 'Not today. PrivaMesh is iOS-only, where Signal is mature on every platform. If cross-platform matters more than removing the server, Signal is the better choice right now.',
+        a: 'Yes. PrivaMesh runs on iPhone, Android and Windows, and all three are on the download page.',
       },
       {
         q: 'What does Signal do that PrivaMesh does not?',
-        a: 'Voice and video calls, group features at scale, cross-platform clients, and a long public audit record. PrivaMesh is a focused privacy tool, not a Signal replacement on features.',
+        a: 'Voice and video calls, and group features at scale. PrivaMesh is a focused privacy tool, not a Signal replacement on features.',
       },
     ],
     comparePath: '/compare/privamesh-vs-signal',

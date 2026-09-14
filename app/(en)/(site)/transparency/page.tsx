@@ -119,7 +119,7 @@ export default function TransparencyPage() {
         links={[
           { href: '/architecture', label: 'Architecture', blurb: 'Every component and what it can observe.' },
           { href: '/threat-model', label: 'Threat model', blurb: 'What each adversary sees and what stops them.' },
-          { href: '/security', label: 'Security', blurb: 'Audit status and vulnerability disclosure.' },
+          { href: '/security', label: 'Security', blurb: 'Vulnerability disclosure and the bug bounty.' },
         ]}
       />
     </Container>
