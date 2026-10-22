@@ -8,7 +8,6 @@ const RESOURCES = [
   { href: '/pricing', label: 'Pricing' },
   { href: '/download', label: 'Download' },
   { href: '/changelog', label: 'Changelog' },
-  { href: '/roadmap', label: 'Roadmap' },
   { href: '/architecture', label: 'Architecture' },
   { href: '/protocol', label: 'Protocol' },
   { href: '/threat-model', label: 'Threat model' },

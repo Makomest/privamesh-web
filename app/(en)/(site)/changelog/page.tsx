@@ -108,7 +108,7 @@ export default function ChangelogPage() {
             This page has existed since version one rather than appearing later, because a
             changelog that starts when the history is already flattering is not much of a record.
             Security fixes appear here and on <Link href="/security">the security page</Link> as
-            they ship, and what is being built now is on <Link href="/roadmap">the roadmap</Link>.
+            they ship.
           </p>
         </Prose>
       </div>
@@ -116,7 +116,7 @@ export default function ChangelogPage() {
       <RelatedLinks
         links={[
           { href: '/download', label: 'Download', blurb: 'Current version and system requirements.' },
-          { href: '/roadmap', label: 'Roadmap', blurb: 'What is being built now, and what comes next.' },
+          { href: '/security', label: 'Security', blurb: 'Vulnerability disclosure policy.' },
           { href: '/limitations', label: 'Known limitations', blurb: 'What is not in the product yet.' },
         ]}
       />
