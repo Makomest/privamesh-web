@@ -62,12 +62,16 @@ const LIMITS: Limit[] = [
     body: 'Your identity key, signed prekey and post-quantum prekey are all derived from the recovery phrase, and no one-time prekeys are published. The envelope that opens a conversation stays on the public chain forever and carries the sender\u2019s ephemeral public key, so anyone holding your phrase can recompute the X3DH root. It does not stop at that one message: until the sender processes a reply from you, every message they send continues the same chain, one step apart, and the same secret also locates those messages on the chain. Someone who wrote three times while you were offline exposed all three. Once you reply and they receive it, a random device-local key enters the ratchet and the phrase stops being enough. ML-KEM-768 does not change this, because its seed is derived from the phrase too. Reported externally in August 2026; we previously described this as the opening message only.',
   },
   {
+    title: 'No released build has completed a post-quantum handshake',
+    body: '1.0 shipped with the post-quantum path switched off. 1.1 switched it on for iPhones on iOS 26, but the X-Wing ciphertext travels through an upload to Irys, and in both released versions that upload fails: the request was signed incorrectly, and later went to a route that had moved. The sender then falls back to classical X3DH, so every conversation opened so far is protected by X25519 alone, not by ML-KEM-768. That is still end-to-end encryption, but it is no defence against ciphertext recorded now and attacked with a quantum computer later. The fix ships in the next App Store release.',
+  },
+  {
     title: 'Losing the recovery phrase loses the account',
     body: 'There is no reset, no support override and no backup we hold. Twelve words are the account. That is the direct cost of there being no account database.',
   },
   {
     title: 'Three platforms, two of them barely tested',
-    body: 'The iPhone app requires iOS 26.5 or later: post-quantum X-Wing needs iOS 26, and rather than quietly fall back to the classical handshake the app does not run on older systems at all. It is the only platform with real use behind it. The Windows installer carries no code-signing certificate, so every download raises a publisher warning. The Android APK is version 0.1, checked on an emulator rather than a real device, and no Android or Windows build has yet sent a message on mainnet. Paid tiers work on iPhone only. There is no web client.',
+    body: 'The iPhone app runs on iOS 18 or later, but the post-quantum handshake needs iOS 26, so an iPhone on an older system uses classical X3DH. It is the only platform with real use behind it. The Windows installer carries no code-signing certificate, so every download raises a publisher warning. The Android APK is version 0.1, checked on an emulator rather than a real device, and no Android or Windows build has yet sent a message on mainnet. Paid tiers work on iPhone only. There is no web client.',
   },
   {
     title: 'Features a mainstream messenger has and this does not',
@@ -82,7 +86,7 @@ const LIMITS: Limit[] = [
 const FAQS = [
   {
     q: 'Can my messages be decrypted in the future?',
-    a: 'The ciphertext is on a public chain permanently, so it can be recorded and kept. Forward secrecy destroys each message key after use, and on iOS 26 the handshake mixes in ML-KEM-768 against future quantum attacks. Neither makes recorded ciphertext disappear.',
+    a: 'The ciphertext is on a public chain permanently, so it can be recorded and kept. Forward secrecy destroys each message key after use, and on iOS 26 the handshake is designed to mix in ML-KEM-768 against future quantum attacks - though no released build has yet completed that step, as described above. Neither makes recorded ciphertext disappear.',
   },
   {
     q: 'Why is cover traffic disabled by default?',

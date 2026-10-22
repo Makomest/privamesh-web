@@ -31,7 +31,7 @@ const FAQS = [
   },
   {
     q: 'Which versions get security fixes?',
-    a: 'The current App Store release. Because PrivaMesh requires iOS 26.5 or later and has shipped a single major version, there is no older branch to backport to yet.',
+    a: 'Fixes ship in the next App Store release. PrivaMesh has shipped a single major version, so there is no older branch to backport to yet.',
   },
 ]
 
@@ -157,17 +157,20 @@ export default function SecurityPage() {
 
           <h2>Supported versions</h2>
           <p>
-            Security fixes go to the current App Store release. PrivaMesh requires{' '}
-            <strong>iOS 26.5 or later</strong> and has shipped one major version, so there is no
+            Security fixes ship in the next App Store release. PrivaMesh runs on{' '}
+            <strong>iOS 18 or later</strong> and has shipped one major version, so there is no
             older branch to backport to. When that changes, the supported window will be stated
             here rather than implied.
           </p>
 
           <h2>What has been fixed</h2>
           <p>
-            Nothing has been reported and fixed yet. Rather than leave this section out, it is here
-            empty - a list that starts at zero and grows is more informative than a section that
-            appears only once there is something flattering to put in it.
+            Since August 2026 there have been twelve external reports and two internal audits.
+            The fixes are done, but none of them is on your phone yet: 1.1, the version on the App
+            Store, was built on 13 August, before they were written, and they reach users with the
+            next release. Until then, read the shipped app as having the problems they fix. What
+            was documented instead of fixed is on{' '}
+            <Link href="/limitations">known limitations</Link>. Who reported what is not published.
           </p>
 
           <h2>Scope</h2>

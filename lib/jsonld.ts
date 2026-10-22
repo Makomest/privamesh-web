@@ -75,7 +75,7 @@ export const softwareApplicationLd = {
   // parsing marketing copy. Each one is checkable on the linked page.
   featureList: [
     'End-to-end encryption using X3DH and the Double Ratchet with AES-256-GCM',
-    'Post-quantum handshake on iOS 26 using X-Wing (ML-KEM-768 with X25519)',
+    'Hybrid post-quantum handshake on iOS 26 using X-Wing (ML-KEM-768 with X25519); not yet completing in the released 1.1, see /limitations',
     'No phone number, email or account - identity is a BIP-39 recovery phrase',
     'Stealth addressing: a fresh one-time address per message',
     'Fixed padding buckets at 32, 64, 128, 256 and 512 bytes',

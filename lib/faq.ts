@@ -83,7 +83,7 @@ export const FEATURE_FAQ: Record<string, FaqItem[]> = {
     },
     {
       q: 'Which versions of PrivaMesh have a duress code?',
-      a: 'The Windows client from 1.0.0 and the Android client from 0.1, both released 27 August 2026. On iPhone the code is written and public but the current App Store build is 1.0 from 7 August and predates it, so it arrives in the next release.',
+      a: 'The Windows client from 1.0.0 and the Android client from 0.1, both released 27 August 2026. On iPhone the code is written and public but the current App Store version, 1.1, was built on 13 August and predates it, so it arrives in the next release.',
     },
   ],
   'seed-phrase-accounts': [

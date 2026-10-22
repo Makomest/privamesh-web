@@ -45,7 +45,7 @@ const PLATFORMS: Platform[] = [
     name: 'iPhone',
     status: 'In the source, not yet in the App Store',
     detail:
-      'The code is written, tested and public, but the current App Store build is 1.0 from 7 August 2026 and predates it. It arrives in the next release. Until then, the duress code exists on the desktop and Android clients only.',
+      'The code is written, tested and public, but the current App Store version, 1.1, was built on 13 August 2026 and predates it. It arrives in the next release. Until then, the duress code exists on the desktop and Android clients only.',
     shipped: false,
   },
 ]

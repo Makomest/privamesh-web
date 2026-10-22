@@ -34,7 +34,7 @@ export const COMPARISONS: Record<string, Comparison> = {
       { label: "Signal: sealed sender", href: 'https://signal.org/blog/sealed-sender/' },
     ],
     weaknesses: [
-      "Signal runs on iOS, Android and desktop; PrivaMesh is iOS 26.5+ only",
+      "Signal runs on iOS, Android and desktop; PrivaMesh is in practice iPhone-only (iOS 18+), and its Android and Windows builds have not yet sent a message on mainnet",
       "Signal has voice and video calls, groups, media and multi-device; PrivaMesh has one-to-one text",
       "Signal is free with no meter; PrivaMesh charges per message beyond an allowance",
       "Signal has hundreds of millions of users; the people you message are probably already there",
@@ -94,7 +94,7 @@ export const COMPARISONS: Record<string, Comparison> = {
     weaknesses: [
       "Telegram has channels, huge groups, bots and cloud sync; PrivaMesh has none of them",
       "Telegram is free and unmetered; PrivaMesh charges per message beyond an allowance",
-      "Telegram runs everywhere; PrivaMesh is iOS 26.5+ only",
+      "Telegram runs everywhere; PrivaMesh is in practice iPhone-only (iOS 18+), with no web client",
       "Telegram history follows you to a new device; PrivaMesh history is gone by design",
     ],
     competitor: 'Telegram',

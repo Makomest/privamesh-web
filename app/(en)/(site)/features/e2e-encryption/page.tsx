@@ -101,6 +101,13 @@ export default function E2EPage() {
             handshake and the two interoperate, with the sender falling back automatically when the
             recipient publishes no post-quantum prekey.
           </p>
+          <p>
+            That is the design; the shipped app is behind it. 1.0 had the post-quantum path
+            switched off, and in 1.1 the X-Wing ciphertext travels through an upload that fails, so
+            the sender takes the same fallback every time. No conversation has yet opened with
+            ML-KEM-768 in it. The fix ships in the next App Store release, and{' '}
+            <Link href="/limitations">known limitations</Link> carries this until it does.
+          </p>
 
           <h2>Padding buckets, and why they stop at 512 bytes</h2>
           <p>

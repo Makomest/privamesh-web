@@ -25,8 +25,8 @@ export const metadata: Metadata = pageMetadata({
 
 const FAQS = [
   {
-    q: 'Why does PrivaMesh need iOS 26.5?',
-    a: 'The post-quantum handshake uses X-Wing, which combines ML-KEM-768 with X25519 and relies on cryptography APIs introduced in iOS 26. Supporting older systems would mean shipping only the classical handshake, and the decision was to require the newer one rather than quietly ship a weaker default.',
+    q: 'Which iPhones can run it?',
+    a: 'Any iPhone on iOS 18 or later. Version 1.0 required iOS 26.5, and this page used to say that was for the post-quantum handshake. It was not: the floor came from a few interface APIs, and 1.0 had the post-quantum path switched off anyway. 1.1 dropped the floor. Post-quantum itself (X-Wing, ML-KEM-768 with X25519) does need iOS 26, so it is a per-device capability: an iPhone on iOS 26 publishes a post-quantum prekey, an older one uses classical X3DH, and the two talk to each other. In 1.1 the post-quantum step does not yet complete in practice - the limitations page says why.',
   },
   {
     q: 'What do I need to sign up?',
@@ -88,7 +88,7 @@ export default function DownloadPage() {
               'Write it down on paper - there is no reset and no backup we hold',
               'Set a passcode, and biometric unlock if the device offers it',
               'Pick a nickname so people can find you without a phone number',
-              'Add a contact by QR code or nickname; both sides must add each other',
+              'Add a contact by QR code, invite link or nickname; both sides must add each other',
             ].map((step) => (
               <li key={step} className="flex gap-2.5 text-[15px] leading-relaxed text-text-secondary">
                 <Check size={17} strokeWidth={2.5} className="mt-0.5 flex-none text-success" aria-hidden="true" />
