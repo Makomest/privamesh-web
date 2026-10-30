@@ -72,8 +72,8 @@ export default function TermsPage() {
           <p>
             PrivaMesh lets people send messages directly to one another. You are solely responsible
             for the content you send. We operate a <strong>zero-tolerance policy for objectionable
-            content and abusive behavior</strong>. Because PrivaMesh is end-to-end encrypted and
-            serverless, we cannot read your messages - so enforcement relies on tools we put directly
+            content and abusive behavior</strong>. Because PrivaMesh is end-to-end encrypted, we
+            cannot read your messages - so enforcement relies on tools we put directly
             in your hands:
           </p>
           <ul>

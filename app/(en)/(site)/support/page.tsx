@@ -22,11 +22,11 @@ export const metadata: Metadata = pageMetadata({
 const FAQS = [
   {
     q: 'I reinstalled the app / got a new phone. Where are my chats?',
-    a: 'Contacts and chat history are stored only on your device and are never uploaded anywhere, so they cannot be transferred to a new device. Entering your 12-word recovery phrase restores your identity and handle, so people can reach you again, but past conversations stay on the old device. This is a deliberate privacy property, not a bug.',
+    a: 'Contacts and decrypted chats are kept only on your device, so they do not move to a new one. Entering your 12-word recovery phrase restores your identity, your handle and your Saved Messages, so people can reach you again, but conversations with other people stay on the old device.',
   },
   {
     q: 'I lost my recovery phrase. Can you restore my account?',
-    a: 'No. There is no account server and no copy of your keys anywhere but your device. Without the phrase the account cannot be recovered by anyone, including us. Write the phrase down and store it offline.',
+    a: 'No. We have no copy of your phrase or your keys; they exist only on your device. Without the phrase the account cannot be recovered by anyone, including us. Write the phrase down and store it offline.',
   },
   {
     q: 'How do I sign in on a new device?',
@@ -34,7 +34,7 @@ const FAQS = [
   },
   {
     q: 'How do I add a contact?',
-    a: 'Tap + on the main screen and either scan the other person’s QR code or search for their handle. Both sides must add each other before messages can flow.',
+    a: 'Tap + on the main screen and scan the other person’s QR code, open their invite link, or search for their handle. A first message from someone you have not added appears as a new chat.',
   },
   {
     q: 'A message will not send.',
@@ -46,7 +46,7 @@ const FAQS = [
   },
   {
     q: 'How do I delete my account and data?',
-    a: 'Profile, then "Reset account", erases the keys, contacts and message history from the device. Because nothing is stored on a server, that removes everything there is.',
+    a: 'Profile, then "Reset account", erases the keys, contacts and message history from the device. Messages you already sent stay on the blockchain in encrypted form: nobody can read them without the keys, and nobody can delete them.',
   },
   {
     q: 'How do I report abuse or a security issue?',
