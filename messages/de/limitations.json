@@ -1,0 +1,112 @@
+{
+  "meta": {
+    "title": "Bekannte Einschränkungen",
+    "description": "Wovor PrivaMesh nicht schützt: dauerhafter Chiffretext in der Blockchain, sichtbare Zeitpunkte, ein unsignierter Windows-Build, nicht wiederherstellbarer Verlauf."
+  },
+  "eyebrow": "Einschränkungen",
+  "title": "Wovor PrivaMesh Sie nicht schützt",
+  "lead": "Jedes Datenschutzwerkzeug hat Grenzen. Unsere stehen hier, statt dass Sie sie selbst entdecken müssen - ein Produkt, das nur seine Stärken veröffentlicht, verlangt, dass man ihm blind vertraut.",
+  "summary": "Kurz gesagt: Chiffretext in einer öffentlichen Blockchain ist dauerhaft, der Zeitpunkt von Transaktionen ist sichtbar, solange Sie Cover Traffic nicht einschalten, der RPC-Anbieter sieht Ihre IP, und der Nachrichtenverlauf lässt sich nie wiederherstellen.",
+  "items": [
+    {
+      "title": "Chiffretext bleibt für immer in einer öffentlichen Blockchain",
+      "body": "Jede Nachricht wird als aufgefüllter Chiffretext in Solana geschrieben und läuft nie ab. Ohne die nach Gebrauch vernichteten Schlüssel ist sie unlesbar, aber ein Angreifer kann sie heute aufzeichnen und unbegrenzt aufbewahren. Wird die Kryptografie eines Tages gebrochen, ist das Aufgezeichnete immer noch da."
+    },
+    {
+      "title": "Tatsache und Zeitpunkt einer Transaktion sind öffentlich",
+      "body": "Einmaladressen verbergen, an wen eine Nachricht geht, und Auffüllen verbirgt, wie lang sie war. Keines von beiden verbirgt, dass zu einem bestimmten Zeitpunkt eine Transaktion stattfand. Mit ausgeschaltetem Cover Traffic ist Ihr Aktivitätsmuster für jeden sichtbar, der die Blockchain liest."
+    },
+    {
+      "title": "Auffüllen verrät eine Größenklasse, nicht nichts",
+      "body": "Klartext wird auf 32, 64, 128, 256 oder 512 Byte aufgefüllt. Ein Beobachter erfährt, in welche Größenklasse eine Nachricht fiel - eine Ein-Wort-Antwort und eine 500-Byte-Nachricht lassen sich also noch voneinander unterscheiden, nur nicht von anderen in derselben Klasse."
+    },
+    {
+      "title": "Cover Traffic ist standardmäßig aus",
+      "body": "Der Täuschmodus, der Zeitpunkte verbirgt, verbraucht Ihr Nachrichtenkontingent und ist deshalb ab Werk deaktiviert. Bis Sie ihn einschalten, steht Zeitkorrelation jedem offen, der die Blockchain beobachtet. Das ist eine bewusste Abwägung und kein Versehen, bedeutet aber, dass die Standardkonfiguration schwächer ist als die stärkste."
+    },
+    {
+      "title": "Der RPC-Endpunkt sieht Ihre IP",
+      "body": "Eine Transaktion abzusenden heißt, mit einem RPC-Anbieter zu sprechen, der Ihre Adresse und den Zeitpunkt Ihrer Anfragen sieht. Er ist austauschbar und selbst hostbar, aber ab Werk vertrauen Sie einem Dritten Metadaten auf Netzwerkebene an. Nutzen Sie ein VPN oder Tor, wenn Ihnen das wichtig ist."
+    },
+    {
+      "title": "Zustellung hängt von Solana, dem RPC und unserem Gebühren-Worker ab",
+      "body": "Fällt einer der drei aus oder ist er in Ihrem Land gesperrt, stoppt das Senden. Identität, Kontakte und Verlauf sind nicht betroffen, weil sie auf Ihrem Gerät liegen, aber PrivaMesh ist nicht zensurfest im Sinne von „kommt immer durch“."
+    },
+    {
+      "title": "Der Nachrichtenverlauf lässt sich nicht wiederherstellen",
+      "body": "Forward Secrecy vernichtet jeden Nachrichtenschlüssel nach Gebrauch, und der Ratchet-Zustand verlässt nie das Gerät. Ihre Wiederherstellungsphrase stellt auf einem neuen Gerät Ihre Identität und Kontakte wieder her, nie Ihre Unterhaltungen. Eine Neuinstallation auf demselben Telefon hat dieselbe Wirkung."
+    },
+    {
+      "title": "Keine Möglichkeit zu prüfen, ob Sie die richtige Person hinzugefügt haben",
+      "body": "Prekey-Bundles sind signiert, ein Register kann also keinen Schlüssel für ein Konto unterschieben. Den Schritt davor prüft die App aber nicht: ob das Konto die Person ist, die Sie meinten. Es gibt keine Sicherheitsnummer, keinen Fingerabdruck-Vergleich und keinen Prüfweg außerhalb der App. Überredet Sie ein Angreifer, sein Konto hinzuzufügen, arbeitet die Kryptografie einwandfrei und schützt das falsche Gespräch."
+    },
+    {
+      "title": "Wenn Sie einen Spitznamen veröffentlichen, zeigt die Blockchain, mit wem Sie Gespräche beginnen",
+      "body": "Das Suchregister verknüpft Ihren Spitznamen mit Ihrem öffentlichen Schlüssel, und die erste Nachricht eines Gesprächs trägt genau diesen Schlüssel im Klartext - das muss sie, weil die Gegenseite daraus das gemeinsame Geheimnis ableitet. Außerdem geht sie an die normale Adresse des Empfängers, weil noch keine gemeinsame Adresse existiert. Wer die Blockchain liest, kann beides zuordnen und sehen, dass Sie mit einer bestimmten Person ein Gespräch begonnen haben, und wann. Nicht aber, was gesagt wurde: Der Inhalt bleibt verschlüsselt, und spätere Nachrichten wechseln zu Einmaladressen. Veröffentlichen Sie nie einen Spitznamen, nennt dieselbe erste Nachricht niemanden. Extern gemeldet im August 2026; eine richtige Behebung erfordert ein neues Nachrichtenformat, das ältere Installationen nicht lesen könnten."
+    },
+    {
+      "title": "Eine gestohlene Phrase öffnet jede Nachricht, die vor der ersten Antwort gesendet wurde",
+      "body": "Ihr Identitätsschlüssel, der signierte Prekey und der Post-Quanten-Prekey werden alle aus der Wiederherstellungsphrase abgeleitet, und Einmal-Prekeys werden nicht veröffentlicht. Der Umschlag, der ein Gespräch eröffnet, bleibt für immer in der öffentlichen Blockchain und trägt den ephemeren öffentlichen Schlüssel des Absenders, sodass jeder mit Ihrer Phrase die X3DH-Wurzel nachrechnen kann. Bei dieser einen Nachricht bleibt es nicht: Bis der Absender eine Antwort von Ihnen verarbeitet, setzt jede weitere seiner Nachrichten dieselbe Kette um einen Schritt fort, und dasselbe Geheimnis verrät auch, wo diese Nachrichten in der Blockchain liegen. Wer Ihnen dreimal schrieb, während Sie offline waren, hat alle drei offengelegt. Sobald Sie antworten und die Antwort ankommt, fließt ein zufälliger, nur auf dem Gerät existierender Schlüssel in den Ratchet ein, und die Phrase reicht nicht mehr. ML-KEM-768 ändert daran nichts, weil sein Seed ebenfalls aus der Phrase stammt. Extern gemeldet im August 2026; früher hatten wir das als nur die erste Nachricht beschrieben."
+    },
+    {
+      "title": "Kein veröffentlichter Build hat je einen Post-Quanten-Handshake abgeschlossen",
+      "body": "1.0 wurde mit abgeschaltetem Post-Quanten-Pfad ausgeliefert. 1.1 schaltete ihn für iPhones mit iOS 26 ein, aber der X-Wing-Chiffretext wird über einen Upload zu Irys übertragen, und in beiden veröffentlichten Versionen schlägt dieser Upload fehl: Die Anfrage war falsch signiert und ging später an eine Route, die umgezogen war. Der Absender fällt dann auf klassisches X3DH zurück, also ist jedes bisher eröffnete Gespräch allein durch X25519 geschützt, nicht durch ML-KEM-768. Das ist weiterhin Ende-zu-Ende-Verschlüsselung, aber kein Schutz gegen Chiffretext, der jetzt aufgezeichnet und später mit einem Quantencomputer angegriffen wird. Die Korrektur kommt mit der nächsten Version im App Store."
+    },
+    {
+      "title": "Wer die Wiederherstellungsphrase verliert, verliert das Konto",
+      "body": "Es gibt kein Zurücksetzen, keinen Eingriff durch den Support und keine Sicherung bei uns. Zwölf Wörter sind das Konto. Das ist der direkte Preis dafür, dass es keine Kontodatenbank gibt."
+    },
+    {
+      "title": "Drei Plattformen, zwei davon kaum getestet",
+      "body": "Die iPhone-App läuft ab iOS 18, aber der Post-Quanten-Handshake braucht iOS 26, ein iPhone mit älterem System nutzt also klassisches X3DH. Sie ist die einzige Plattform mit echter Nutzung. Der Windows-Installer hat kein Codesignatur-Zertifikat, daher löst jeder Download eine Herausgeber-Warnung aus. Die Android-APK ist Version 0.1, geprüft auf einem Emulator statt auf einem echten Gerät, und noch kein Android- oder Windows-Build hat eine Nachricht im Mainnet gesendet. Bezahlte Tarife funktionieren nur auf dem iPhone. Einen Web-Client gibt es nicht."
+    },
+    {
+      "title": "Funktionen, die ein gängiger Messenger hat und dieser nicht",
+      "body": "Keine Gruppenchats, keine Datei- oder Medienübertragung, keine Sprach- oder Videoanrufe, keine Synchronisierung über mehrere Geräte, keine geräteübergreifende Nachrichtensuche. PrivaMesh ist ein fokussierter Eins-zu-eins-Textmessenger."
+    },
+    {
+      "title": "Anonymität ist nicht garantiert",
+      "body": "PrivaMesh entfernt die Kennungen, die es kontrolliert. Es kann nicht verhindern, dass Sie sich in einer Nachricht zu erkennen geben, einen Spitznamen aus einem anderen Zusammenhang wiederverwenden oder von Ihrem Netzanbieter identifiziert werden. Anonymität ist eine Praxis, die die Architektur unterstützt, kein Schalter, den sie umlegt."
+    }
+  ],
+  "whyHeading": "Warum es diese Seite gibt",
+  "why": [
+    "Absolute Aussagen sind leicht zu schreiben und unmöglich zu prüfen, und in einem Datenschutzprodukt kosten sie mehr Vertrauen, als sie einbringen. Wer technisch genug ist, um eine Rolle zu spielen, findet die Lücken - und sie unerwähnt zu finden ist schlimmer, als sie hier zu lesen.",
+    "Wenn etwas auf dieser Seite falsch oder veraltet ist, ist das ein Fehler - melden Sie es über [die Sicherheitsseite](/security). Welche Komponente was sehen kann, steht auf [der Architekturseite](/architecture)."
+  ],
+  "faq": [
+    {
+      "q": "Können meine Nachrichten in Zukunft entschlüsselt werden?",
+      "a": "Der Chiffretext liegt dauerhaft in einer öffentlichen Blockchain, er kann also aufgezeichnet und aufbewahrt werden. Forward Secrecy vernichtet jeden Nachrichtenschlüssel nach Gebrauch, und unter iOS 26 ist der Handshake darauf ausgelegt, ML-KEM-768 gegen künftige Quantenangriffe einzumischen - wobei, wie oben beschrieben, noch kein veröffentlichter Build diesen Schritt abgeschlossen hat. Keines von beiden lässt aufgezeichneten Chiffretext verschwinden."
+    },
+    {
+      "q": "Warum ist Cover Traffic standardmäßig deaktiviert?",
+      "a": "Täuschtransaktionen verbrauchen Ihr Nachrichtenkontingent, eingeschaltet würde er Sie also unbemerkt Nachrichten kosten. Er ist eine Einstellung statt eines Standards, was bedeutet, dass die ausgelieferte Konfiguration beim Timing schwächer ist als die stärkste verfügbare."
+    },
+    {
+      "q": "Wenn jemand meine Wiederherstellungsphrase stiehlt, kann er meine alten Nachrichten lesen?",
+      "a": "Alles, was gesendet wurde, bevor Ihre erste Antwort beim Absender ankam - ja. Diese Umschläge liegen dauerhaft in der öffentlichen Blockchain, jeder zum Öffnen nötige Schlüssel wird aus der Phrase abgeleitet, weil keine Einmal-Prekeys veröffentlicht werden, und die Nachrichten nach der ersten setzen dieselbe Kette fort. Ab Ihrer ersten verarbeiteten Antwort schützen Ratchet-Schlüssel das Gespräch, die zufällig waren und das Gerät nie verlassen haben."
+    },
+    {
+      "q": "Ist PrivaMesh anonym?",
+      "a": "Es entfernt die Kennungen, die wir sonst hätten - keine Telefonnummer, keine E-Mail, kein Konto. Es verbirgt Ihre IP nicht vor Ihrem Netzanbieter und kann nicht verhindern, dass Sie sich in einem Gespräch selbst zu erkennen geben."
+    }
+  ],
+  "related": [
+    {
+      "href": "/architecture",
+      "label": "Architektur",
+      "blurb": "Jede Komponente, ihr Betreiber und was sie sehen kann."
+    },
+    {
+      "href": "/threat-model",
+      "label": "Bedrohungsmodell",
+      "blurb": "Gegner für Gegner: was gesehen wird, was gestoppt wird, was bleibt."
+    },
+    {
+      "href": "/security",
+      "label": "Sicherheit und Meldungen",
+      "blurb": "Wie man eine Schwachstelle meldet."
+    }
+  ]
+}
