@@ -1,0 +1,70 @@
+{
+  "meta": {
+    "title": "Assistència",
+    "description": "Ajuda amb PrivaMesh: contacte, frase de recuperació i dispositiu nou, afegir contactes, subscripcions, esborrar el compte i denunciar abusos."
+  },
+  "eyebrow": "Assistència",
+  "title": "Assistència",
+  "lead": "Preguntes, informes d'errors i ajuda amb el compte de PrivaMesh.",
+  "contact": {
+    "heading": "Contacte",
+    "lead": "Escriu a [{email}](mailto:{email}). Responem en **2 dies laborables**, en anglès o en rus.",
+    "tip": "Perquè et puguem respondre abans, indica el model del dispositiu, la versió d'iOS i què feies quan va passar el problema.",
+    "warning": "No ens enviïs mai la teva frase de recuperació de 12 paraules. No te la demanarem mai, i qui te la demani està intentant robar-te el compte.",
+    "email": "Escriu a l'assistència",
+    "privacy": "Política de privadesa",
+    "terms": "Condicions d'ús"
+  },
+  "faq": [
+    {
+      "q": "He reinstal·lat l'app / tinc un telèfon nou. On són els meus xats?",
+      "a": "Els contactes i els xats desxifrats només es guarden al teu dispositiu, així que no passen a un de nou. Introduir la frase de recuperació de 12 paraules restaura la teva identitat, el sobrenom i els missatges desats, perquè et puguin tornar a escriure, però les converses amb altres persones es queden al dispositiu antic."
+    },
+    {
+      "q": "He perdut la frase de recuperació. Podeu restaurar el meu compte?",
+      "a": "No. No tenim cap còpia de la teva frase ni de les teves claus; només existeixen al teu dispositiu. Sense la frase ningú no pot recuperar el compte, ni tan sols nosaltres. Escriu la frase i guarda-la fora de línia."
+    },
+    {
+      "q": "Com inicio sessió en un dispositiu nou?",
+      "a": "A la pantalla de benvinguda toca «Restaura amb la frase de recuperació», introdueix les 12 paraules en ordre i després configura un codi d'accés. No toquis «Crea un compte»: això genera un compte diferent i buit."
+    },
+    {
+      "q": "Com afegeixo un contacte?",
+      "a": "Toca + a la pantalla principal i escaneja el codi QR de l'altra persona, obre el seu enllaç d'invitació o cerca el seu sobrenom. El primer missatge d'algú que no has afegit apareix com un xat nou."
+    },
+    {
+      "q": "Un missatge no s'envia.",
+      "a": "Comprova que tens connexió, que el contacte s'ha afegit correctament i que encara et queden missatges a la quota (es mostra a dalt de la pantalla principal). Si l'enviament continua fallant, escriu-nos amb l'hora de l'intent i ho revisarem."
+    },
+    {
+      "q": "Com gestiono o cancel·lo una subscripció?",
+      "a": "Les subscripcions i els paquets de missatges els cobra Apple. Obre l'app Configuració d'iOS, toca el teu nom i després Subscripcions per canviar-la o cancel·lar-la. Els reemborsaments els gestiona Apple a reportaproblem.apple.com."
+    },
+    {
+      "q": "Com esborro el meu compte i les dades?",
+      "a": "Perfil i després «Restableix el compte» esborra del dispositiu les claus, els contactes i l'historial de missatges. Els missatges ja enviats es queden xifrats a la cadena de blocs: ningú no els pot llegir sense les claus i ningú no els pot esborrar."
+    },
+    {
+      "q": "Com denuncio un abús o un problema de seguretat?",
+      "a": "Bloqueja el contacte des de la pantalla del seu perfil i després escriu a privamesh@proton.me amb els detalls. Per a vulnerabilitats de seguretat, escriu a la mateixa adreça amb «security» a l'assumpte."
+    }
+  ],
+  "refunds": "Els reemborsaments de les subscripcions els gestiona Apple, no nosaltres: fes servir [reportaproblem.apple.com](https://reportaproblem.apple.com). Per a qualsevol altra cosa, escriu a [{email}](mailto:{email}).",
+  "related": [
+    {
+      "href": "/privacy-policy",
+      "label": "Política de privadesa",
+      "blurb": "Exactament què recull PrivaMesh i què no, en llenguatge planer."
+    },
+    {
+      "href": "/terms",
+      "label": "Condicions d'ús",
+      "blurb": "Ús acceptable, eines de bloqueig i denúncia, i condicions de subscripció."
+    },
+    {
+      "href": "/features/seed-phrase-accounts",
+      "label": "Comptes amb frase",
+      "blurb": "Per què no hi ha restabliment de contrasenya i què controlen de debò les teves 12 paraules."
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "meta": {
+    "title": "Podrška",
+    "description": "Pomoć za PrivaMesh: kontakt, fraza za oporavak i novi uređaj, dodavanje kontakata, pretplate, brisanje računa i prijava zlouporabe."
+  },
+  "eyebrow": "Podrška",
+  "title": "Podrška",
+  "lead": "Pitanja, prijave grešaka i pomoć s računom za PrivaMesh.",
+  "contact": {
+    "heading": "Kontaktirajte nas",
+    "lead": "Pišite na [{email}](mailto:{email}). Odgovaramo u roku od **2 radna dana**, na engleskom ili ruskom.",
+    "tip": "Kako bismo brže odgovorili, navedite model uređaja, verziju iOS-a i što ste radili kad se problem pojavio.",
+    "warning": "Nikad nam ne šaljite svoju frazu za oporavak od 12 riječi. Nikad je nećemo tražiti, a tko je traži, pokušava vam ukrasti račun.",
+    "email": "Pišite podršci",
+    "privacy": "Pravila privatnosti",
+    "terms": "Uvjeti korištenja"
+  },
+  "faq": [
+    {
+      "q": "Ponovno sam instalirao aplikaciju / imam novi telefon. Gdje su moji chatovi?",
+      "a": "Kontakti i dešifrirani chatovi čuvaju se samo na vašem uređaju pa ne prelaze na novi. Unos fraze za oporavak od 12 riječi vraća vaš identitet, nadimak i spremljene poruke, pa vas ljudi opet mogu kontaktirati, ali razgovori s drugima ostaju na starom uređaju."
+    },
+    {
+      "q": "Izgubio sam frazu za oporavak. Možete li vratiti moj račun?",
+      "a": "Ne. Nemamo kopiju vaše fraze ni ključeva; postoje samo na vašem uređaju. Bez fraze račun ne može vratiti nitko, pa ni mi. Zapišite frazu i čuvajte je izvan mreže."
+    },
+    {
+      "q": "Kako se prijaviti na novom uređaju?",
+      "a": "Na zaslonu dobrodošlice dodirnite „Vrati frazom za oporavak”, unesite 12 riječi redom, a zatim postavite šifru. Ne dodirujte „Izradi račun” - time nastaje drugi, prazan račun."
+    },
+    {
+      "q": "Kako dodati kontakt?",
+      "a": "Dodirnite + na glavnom zaslonu i skenirajte QR kod druge osobe, otvorite njezinu poveznicu za pozivnicu ili potražite njezin nadimak. Prva poruka od nekoga koga niste dodali pojavljuje se kao novi chat."
+    },
+    {
+      "q": "Poruka se ne šalje.",
+      "a": "Provjerite jeste li na mreži, je li kontakt uspješno dodan i imate li još poruka u kvoti (prikazana je na vrhu glavnog zaslona). Ako slanje i dalje ne uspijeva, pišite nam s vremenom pokušaja i pogledat ćemo."
+    },
+    {
+      "q": "Kako upravljati pretplatom ili je otkazati?",
+      "a": "Pretplate i pakete poruka naplaćuje Apple. Otvorite Postavke na iOS-u, dodirnite svoje ime pa Pretplate da biste je promijenili ili otkazali. Povrate obrađuje Apple na reportaproblem.apple.com."
+    },
+    {
+      "q": "Kako izbrisati račun i podatke?",
+      "a": "Profil, zatim „Resetiraj račun”, briše ključeve, kontakte i povijest poruka s uređaja. Već poslane poruke ostaju šifrirane na blockchainu: bez ključeva ih nitko ne može pročitati i nitko ih ne može izbrisati."
+    },
+    {
+      "q": "Kako prijaviti zlouporabu ili sigurnosni problem?",
+      "a": "Blokirajte kontakt na zaslonu njegova profila, a zatim pišite na privamesh@proton.me s detaljima. Za sigurnosne ranjivosti pišite na istu adresu s riječju „security” u predmetu."
+    }
+  ],
+  "refunds": "Povrate za pretplate obrađuje Apple, a ne mi - koristite [reportaproblem.apple.com](https://reportaproblem.apple.com). Za sve ostalo pišite na [{email}](mailto:{email}).",
+  "related": [
+    {
+      "href": "/privacy-policy",
+      "label": "Pravila privatnosti",
+      "blurb": "Točno što PrivaMesh prikuplja, a što ne - jednostavnim jezikom."
+    },
+    {
+      "href": "/terms",
+      "label": "Uvjeti korištenja",
+      "blurb": "Prihvatljiva upotreba, blokiranje i prijave te uvjeti pretplate."
+    },
+    {
+      "href": "/features/seed-phrase-accounts",
+      "label": "Računi s frazom",
+      "blurb": "Zašto nema poništavanja lozinke i čime vaših 12 riječi zapravo upravlja."
+    }
+  ]
+}

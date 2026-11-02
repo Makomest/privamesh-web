@@ -1,0 +1,70 @@
+{
+  "meta": {
+    "title": "Tuki",
+    "description": "Apua PrivaMeshin kanssa: ota yhteyttä, palautuslause ja uusi laite, yhteystietojen lisääminen, tilaukset, tilin poistaminen ja väärinkäytösten ilmoittaminen."
+  },
+  "eyebrow": "Tuki",
+  "title": "Tuki",
+  "lead": "Kysymykset, vikailmoitukset ja apu PrivaMesh-tilin kanssa.",
+  "contact": {
+    "heading": "Ota yhteyttä",
+    "lead": "Lähetä sähköpostia osoitteeseen [{email}](mailto:{email}). Vastaamme **2 arkipäivän** kuluessa englanniksi tai venäjäksi.",
+    "tip": "Jotta voimme vastata nopeammin, kerro laitteesi malli, iOS-versio ja mitä olit tekemässä, kun ongelma ilmeni.",
+    "warning": "Älä koskaan lähetä meille 12 sanan palautuslausettasi. Emme koskaan pyydä sitä, ja joka sitä pyytää, yrittää varastaa tilisi.",
+    "email": "Lähetä viesti tukeen",
+    "privacy": "Tietosuojakäytäntö",
+    "terms": "Käyttöehdot"
+  },
+  "faq": [
+    {
+      "q": "Asensin sovelluksen uudelleen / sain uuden puhelimen. Missä keskusteluni ovat?",
+      "a": "Yhteystiedot ja puretut keskustelut säilyvät vain laitteellasi, joten ne eivät siirry uudelle. Kun syötät 12 sanan palautuslauseen, saat takaisin identiteettisi, lempinimesi ja tallennetut viestisi, jotta sinut tavoittaa taas, mutta keskustelut muiden kanssa jäävät vanhalle laitteelle."
+    },
+    {
+      "q": "Kadotin palautuslauseeni. Voitteko palauttaa tilini?",
+      "a": "Emme. Meillä ei ole kopiota lauseestasi eikä avaimistasi; ne ovat olemassa vain laitteellasi. Ilman lausetta kukaan ei voi palauttaa tiliä, emme mekään. Kirjoita lause muistiin ja säilytä se verkon ulkopuolella."
+    },
+    {
+      "q": "Miten kirjaudun uudella laitteella?",
+      "a": "Napauta tervetulonäkymässä ”Palauta palautuslauseella”, syötä 12 sanaa oikeassa järjestyksessä ja aseta pääsykoodi. Älä napauta ”Luo tili” - se luo toisen, tyhjän tilin."
+    },
+    {
+      "q": "Miten lisään yhteystiedon?",
+      "a": "Napauta + päänäkymässä ja skannaa toisen henkilön QR-koodi, avaa hänen kutsulinkkinsä tai hae lempinimellä. Ensimmäinen viesti joltakulta, jota et ole lisännyt, näkyy uutena keskusteluna."
+    },
+    {
+      "q": "Viesti ei lähde.",
+      "a": "Tarkista, että olet verkossa, että yhteystieto on lisätty onnistuneesti ja että kiintiössäsi on vielä viestejä (näkyy päänäkymän yläosassa). Jos lähetys epäonnistuu edelleen, lähetä meille sähköpostia yrityksen ajankohdasta, niin selvitämme asian."
+    },
+    {
+      "q": "Miten hallitsen tai peruutan tilauksen?",
+      "a": "Tilaukset ja viestipaketit laskuttaa Apple. Avaa iOS:n Asetukset, napauta nimeäsi ja sitten Tilaukset muuttaaksesi tai peruuttaaksesi. Hyvitykset hoitaa Apple osoitteessa reportaproblem.apple.com."
+    },
+    {
+      "q": "Miten poistan tilini ja tietoni?",
+      "a": "Profiili ja sitten ”Nollaa tili” poistaa avaimet, yhteystiedot ja viestihistorian laitteelta. Jo lähetetyt viestit jäävät salattuina lohkoketjuun: ilman avaimia kukaan ei voi lukea niitä, eikä kukaan voi poistaa niitä."
+    },
+    {
+      "q": "Miten ilmoitan väärinkäytöstä tai tietoturvaongelmasta?",
+      "a": "Estä yhteystieto sen profiilinäkymästä ja lähetä sitten tiedot osoitteeseen privamesh@proton.me. Tietoturva-aukoista kirjoita samaan osoitteeseen sana ”security” aiherivillä."
+    }
+  ],
+  "refunds": "Tilausten hyvitykset hoitaa Apple, emme me - käytä osoitetta [reportaproblem.apple.com](https://reportaproblem.apple.com). Kaikessa muussa kirjoita osoitteeseen [{email}](mailto:{email}).",
+  "related": [
+    {
+      "href": "/privacy-policy",
+      "label": "Tietosuojakäytäntö",
+      "blurb": "Tarkalleen, mitä PrivaMesh kerää ja mitä ei, selkokielellä."
+    },
+    {
+      "href": "/terms",
+      "label": "Käyttöehdot",
+      "blurb": "Hyväksyttävä käyttö, esto- ja ilmoitustyökalut sekä tilausehdot."
+    },
+    {
+      "href": "/features/seed-phrase-accounts",
+      "label": "Lauseeseen perustuvat tilit",
+      "blurb": "Miksi salasanaa ei voi nollata ja mitä 12 sanaasi todella hallitsevat."
+    }
+  ]
+}

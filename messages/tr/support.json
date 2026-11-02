@@ -1,0 +1,70 @@
+{
+  "meta": {
+    "title": "Destek",
+    "description": "PrivaMesh yardımı: bize ulaşın, kurtarma ifadesi ve yeni cihaz, kişi ekleme, abonelikler, hesabı silme ve kötüye kullanımı bildirme."
+  },
+  "eyebrow": "Destek",
+  "title": "Destek",
+  "lead": "PrivaMesh için sorular, hata bildirimleri ve hesap yardımı.",
+  "contact": {
+    "heading": "Bize ulaşın",
+    "lead": "[{email}](mailto:{email}) adresine yazın. **2 iş günü** içinde, İngilizce veya Rusça yanıt veririz.",
+    "tip": "Daha hızlı yanıt verebilmemiz için cihaz modelinizi, iOS sürümünüzü ve sorun olduğunda ne yaptığınızı yazın.",
+    "warning": "12 kelimelik kurtarma ifadenizi bize asla göndermeyin. Biz onu asla istemeyiz; isteyen kişi hesabınızı çalmaya çalışıyordur.",
+    "email": "Desteğe yazın",
+    "privacy": "Gizlilik politikası",
+    "terms": "Kullanım koşulları"
+  },
+  "faq": [
+    {
+      "q": "Uygulamayı yeniden kurdum / yeni telefon aldım. Sohbetlerim nerede?",
+      "a": "Kişiler ve çözülmüş sohbetler yalnızca cihazınızda tutulur, bu yüzden yeni cihaza taşınmaz. 12 kelimelik kurtarma ifadenizi girmek kimliğinizi, takma adınızı ve Kaydedilen Mesajlarınızı geri getirir; böylece size yeniden ulaşılabilir, ancak başkalarıyla olan konuşmalar eski cihazda kalır."
+    },
+    {
+      "q": "Kurtarma ifademi kaybettim. Hesabımı geri getirebilir misiniz?",
+      "a": "Hayır. İfadenizin ya da anahtarlarınızın bizde bir kopyası yok; yalnızca cihazınızda bulunurlar. İfade olmadan hesabı biz dahil kimse kurtaramaz. İfadeyi yazın ve çevrimdışı saklayın."
+    },
+    {
+      "q": "Yeni bir cihazda nasıl giriş yaparım?",
+      "a": "Karşılama ekranında \"Kurtarma ifadesiyle geri yükle\"ye dokunun, 12 kelimeyi sırasıyla girin ve bir parola belirleyin. \"Hesap oluştur\"a dokunmayın - bu farklı, boş bir hesap oluşturur."
+    },
+    {
+      "q": "Nasıl kişi eklerim?",
+      "a": "Ana ekranda +'ya dokunup karşı tarafın QR kodunu tarayın, davet bağlantısını açın ya da takma adını arayın. Eklemediğiniz birinden gelen ilk mesaj yeni bir sohbet olarak görünür."
+    },
+    {
+      "q": "Mesaj gönderilmiyor.",
+      "a": "Çevrimiçi olduğunuzu, kişinin başarıyla eklendiğini ve kotanızda hâlâ mesaj kaldığını (ana ekranın üstünde gösterilir) kontrol edin. Gönderim yine başarısız olursa, denemenin saatini yazarak bize e-posta gönderin, inceleyelim."
+    },
+    {
+      "q": "Aboneliği nasıl yönetir veya iptal ederim?",
+      "a": "Abonelikler ve mesaj paketleri Apple üzerinden faturalandırılır. iOS Ayarlar uygulamasını açın, adınıza ve ardından Abonelikler'e dokunarak değiştirin ya da iptal edin. İadeleri Apple reportaproblem.apple.com üzerinden yürütür."
+    },
+    {
+      "q": "Hesabımı ve verilerimi nasıl silerim?",
+      "a": "Profil, ardından \"Hesabı sıfırla\" anahtarları, kişileri ve mesaj geçmişini cihazdan siler. Daha önce gönderdiğiniz mesajlar blok zincirinde şifreli olarak kalır: anahtarlar olmadan kimse okuyamaz, kimse silemez."
+    },
+    {
+      "q": "Kötüye kullanımı ya da bir güvenlik sorununu nasıl bildiririm?",
+      "a": "Kişiyi profil ekranından engelleyin, ardından ayrıntılarla privamesh@proton.me adresine yazın. Güvenlik açıkları için aynı adrese konu satırında \"security\" yazarak gönderin."
+    }
+  ],
+  "refunds": "Abonelik iadelerini biz değil Apple yürütür - [reportaproblem.apple.com](https://reportaproblem.apple.com) adresini kullanın. Diğer her şey için [{email}](mailto:{email}) adresine yazın.",
+  "related": [
+    {
+      "href": "/privacy-policy",
+      "label": "Gizlilik politikası",
+      "blurb": "PrivaMesh'in neyi toplayıp neyi toplamadığı, sade bir dille."
+    },
+    {
+      "href": "/terms",
+      "label": "Kullanım koşulları",
+      "blurb": "Kabul edilebilir kullanım, engelleme ve bildirme araçları ve abonelik koşulları."
+    },
+    {
+      "href": "/features/seed-phrase-accounts",
+      "label": "İfadeli hesaplar",
+      "blurb": "Neden parola sıfırlama olmadığı ve 12 kelimenizin gerçekte neyi kontrol ettiği."
+    }
+  ]
+}

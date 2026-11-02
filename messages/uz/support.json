@@ -1,0 +1,70 @@
+{
+  "meta": {
+    "title": "Yordam",
+    "description": "PrivaMesh bo'yicha yordam: biz bilan bog'lanish, tiklash iborasi va yangi qurilma, kontakt qo'shish, obunalar, akkauntni o'chirish va suiiste'mol haqida xabar berish."
+  },
+  "eyebrow": "Yordam",
+  "title": "Yordam",
+  "lead": "PrivaMesh bo'yicha savollar, xatolar haqida xabarlar va akkaunt bo'yicha yordam.",
+  "contact": {
+    "heading": "Biz bilan bog'laning",
+    "lead": "[{email}](mailto:{email}) manziliga yozing. **2 ish kuni** ichida ingliz yoki rus tilida javob beramiz.",
+    "tip": "Tezroq javob berishimiz uchun qurilma modelingiz, iOS versiyasi va muammo yuz berganda nima qilayotganingizni yozing.",
+    "warning": "12 so'zli tiklash iborangizni bizga hech qachon yubormang. Biz uni hech qachon so'ramaymiz, so'ragan odam esa akkauntingizni o'g'irlamoqchi.",
+    "email": "Yordamga yozish",
+    "privacy": "Maxfiylik siyosati",
+    "terms": "Foydalanish shartlari"
+  },
+  "faq": [
+    {
+      "q": "Ilovani qayta o'rnatdim / yangi telefon oldim. Chatlarim qayerda?",
+      "a": "Kontaktlar va shifri ochilgan chatlar faqat qurilmangizda saqlanadi, shuning uchun yangisiga o'tmaydi. 12 so'zli tiklash iborasini kiritish shaxsingiz, taxallusingiz va «Saqlanganlar»ni qaytaradi, shunda sizga yana yozishlari mumkin, ammo boshqalar bilan yozishmalar eski qurilmada qoladi."
+    },
+    {
+      "q": "Tiklash iborasini yo'qotdim. Akkauntimni tiklab bera olasizmi?",
+      "a": "Yo'q. Bizda iborangiz yoki kalitlaringizning nusxasi yo'q; ular faqat qurilmangizda mavjud. Iborasiz akkauntni hech kim, jumladan biz ham, tiklay olmaydi. Iborani yozib oling va oflayn saqlang."
+    },
+    {
+      "q": "Yangi qurilmada qanday kiraman?",
+      "a": "Xush kelibsiz ekranida «Tiklash iborasi orqali tiklash» tugmasini bosing, 12 so'zni tartib bilan kiriting, so'ng parol kodini o'rnating. «Akkaunt yaratish»ni bosmang - u boshqa, bo'sh akkaunt yaratadi."
+    },
+    {
+      "q": "Kontaktni qanday qo'shaman?",
+      "a": "Bosh ekranda + ni bosing va boshqa odamning QR-kodini skanerlang, taklif havolasini oching yoki taxallusi bo'yicha qidiring. Siz qo'shmagan odamdan kelgan birinchi xabar yangi chat sifatida paydo bo'ladi."
+    },
+    {
+      "q": "Xabar yuborilmayapti.",
+      "a": "Onlayn ekaningizni, kontakt muvaffaqiyatli qo'shilganini va limitda hali xabar qolganini (bosh ekranning yuqorisida ko'rsatiladi) tekshiring. Yuborish baribir muvaffaqiyatsiz bo'lsa, urinish vaqtini ko'rsatib bizga yozing, tekshiramiz."
+    },
+    {
+      "q": "Obunani qanday boshqaraman yoki bekor qilaman?",
+      "a": "Obunalar va xabar paketlarini Apple hisoblaydi. iOS «Sozlamalar» ilovasini oching, ismingizni, keyin «Obunalar»ni bosib, o'zgartiring yoki bekor qiling. Qaytarishlarni Apple reportaproblem.apple.com orqali amalga oshiradi."
+    },
+    {
+      "q": "Akkaunt va ma'lumotlarni qanday o'chiraman?",
+      "a": "Profil, keyin «Akkauntni tiklash» qurilmadan kalitlar, kontaktlar va xabarlar tarixini o'chiradi. Allaqachon yuborilgan xabarlar blokcheynda shifrlangan holda qoladi: kalitlarsiz ularni hech kim o'qiy olmaydi va hech kim o'chira olmaydi."
+    },
+    {
+      "q": "Suiiste'mol yoki xavfsizlik muammosi haqida qanday xabar beraman?",
+      "a": "Kontaktni uning profil ekranida bloklang, so'ng tafsilotlar bilan privamesh@proton.me ga yozing. Xavfsizlik zaifliklari haqida xuddi shu manzilga mavzu qatoriga «security» so'zini qo'shib yozing."
+    }
+  ],
+  "refunds": "Obuna uchun qaytarishlarni biz emas, Apple amalga oshiradi - [reportaproblem.apple.com](https://reportaproblem.apple.com) dan foydalaning. Boshqa barcha masalalar bo'yicha [{email}](mailto:{email}) ga yozing.",
+  "related": [
+    {
+      "href": "/privacy-policy",
+      "label": "Maxfiylik siyosati",
+      "blurb": "PrivaMesh nimani yig'adi va nimani yig'maydi - sodda tilda."
+    },
+    {
+      "href": "/terms",
+      "label": "Foydalanish shartlari",
+      "blurb": "Ruxsat etilgan foydalanish, bloklash va shikoyat vositalari, obuna shartlari."
+    },
+    {
+      "href": "/features/seed-phrase-accounts",
+      "label": "Iborali akkauntlar",
+      "blurb": "Nega parolni tiklash yo'q va 12 so'zingiz aslida nimani boshqaradi."
+    }
+  ]
+}

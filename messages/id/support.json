@@ -1,0 +1,70 @@
+{
+  "meta": {
+    "title": "Dukungan",
+    "description": "Bantuan PrivaMesh: hubungi kami, frasa pemulihan dan perangkat baru, menambah kontak, langganan, menghapus akun, dan melaporkan penyalahgunaan."
+  },
+  "eyebrow": "Dukungan",
+  "title": "Dukungan",
+  "lead": "Pertanyaan, laporan bug, dan bantuan akun untuk PrivaMesh.",
+  "contact": {
+    "heading": "Hubungi kami",
+    "lead": "Kirim email ke [{email}](mailto:{email}). Kami membalas dalam **2 hari kerja**, dalam bahasa Inggris atau Rusia.",
+    "tip": "Agar kami bisa menjawab lebih cepat, sertakan model perangkat, versi iOS, dan apa yang sedang Anda lakukan saat masalah terjadi.",
+    "warning": "Jangan pernah mengirimkan frasa pemulihan 12 kata Anda kepada kami. Kami tidak akan pernah memintanya, dan siapa pun yang memintanya sedang mencoba mencuri akun Anda.",
+    "email": "Email dukungan",
+    "privacy": "Kebijakan privasi",
+    "terms": "Ketentuan penggunaan"
+  },
+  "faq": [
+    {
+      "q": "Saya memasang ulang aplikasi / ganti ponsel. Di mana obrolan saya?",
+      "a": "Kontak dan obrolan yang telah didekripsi hanya disimpan di perangkat Anda, jadi tidak pindah ke perangkat baru. Memasukkan frasa pemulihan 12 kata memulihkan identitas, nama panggilan, dan Pesan Tersimpan Anda, sehingga orang bisa menghubungi Anda lagi, tetapi percakapan dengan orang lain tetap di perangkat lama."
+    },
+    {
+      "q": "Frasa pemulihan saya hilang. Bisakah Anda memulihkan akun saya?",
+      "a": "Tidak. Kami tidak punya salinan frasa atau kunci Anda; semuanya hanya ada di perangkat Anda. Tanpa frasa, tidak ada yang bisa memulihkan akun, termasuk kami. Tuliskan frasanya dan simpan secara offline."
+    },
+    {
+      "q": "Bagaimana cara masuk di perangkat baru?",
+      "a": "Di layar sambutan ketuk \"Pulihkan dengan frasa pemulihan\", masukkan 12 kata secara berurutan, lalu atur kode sandi. Jangan ketuk \"Buat akun\" - itu membuat akun lain yang kosong."
+    },
+    {
+      "q": "Bagaimana cara menambah kontak?",
+      "a": "Ketuk + di layar utama lalu pindai kode QR orang tersebut, buka tautan undangannya, atau cari nama panggilannya. Pesan pertama dari orang yang belum Anda tambahkan muncul sebagai obrolan baru."
+    },
+    {
+      "q": "Pesan tidak terkirim.",
+      "a": "Periksa bahwa Anda sedang online, kontak sudah berhasil ditambahkan, dan kuota pesan Anda masih tersisa (ditampilkan di bagian atas layar utama). Jika pengiriman masih gagal, kirim email kepada kami dengan waktu percobaan dan kami akan memeriksanya."
+    },
+    {
+      "q": "Bagaimana cara mengelola atau membatalkan langganan?",
+      "a": "Langganan dan paket pesan ditagih oleh Apple. Buka aplikasi Pengaturan iOS, ketuk nama Anda, lalu Langganan untuk mengubah atau membatalkan. Pengembalian dana ditangani Apple di reportaproblem.apple.com."
+    },
+    {
+      "q": "Bagaimana cara menghapus akun dan data saya?",
+      "a": "Profil, lalu \"Atur ulang akun\", menghapus kunci, kontak, dan riwayat pesan dari perangkat. Pesan yang sudah terkirim tetap tersimpan terenkripsi di blockchain: tidak ada yang bisa membacanya tanpa kunci, dan tidak ada yang bisa menghapusnya."
+    },
+    {
+      "q": "Bagaimana cara melaporkan penyalahgunaan atau masalah keamanan?",
+      "a": "Blokir kontak dari layar profilnya, lalu kirim detailnya ke privamesh@proton.me. Untuk kerentanan keamanan, tulis ke alamat yang sama dengan kata \"security\" di subjek."
+    }
+  ],
+  "refunds": "Pengembalian dana langganan ditangani Apple, bukan kami - gunakan [reportaproblem.apple.com](https://reportaproblem.apple.com). Untuk hal lainnya, kirim email ke [{email}](mailto:{email}).",
+  "related": [
+    {
+      "href": "/privacy-policy",
+      "label": "Kebijakan privasi",
+      "blurb": "Persisnya apa yang dikumpulkan dan tidak dikumpulkan PrivaMesh, dalam bahasa sederhana."
+    },
+    {
+      "href": "/terms",
+      "label": "Ketentuan penggunaan",
+      "blurb": "Penggunaan yang diizinkan, alat blokir dan lapor, serta ketentuan langganan."
+    },
+    {
+      "href": "/features/seed-phrase-accounts",
+      "label": "Akun berbasis frasa",
+      "blurb": "Mengapa tidak ada atur ulang kata sandi dan apa yang sebenarnya dikendalikan 12 kata Anda."
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "meta": {
+    "title": "Support",
+    "description": "Hjälp med PrivaMesh: kontakta oss, återställningsfras och ny enhet, lägga till kontakter, prenumerationer, radera kontot och anmäla missbruk."
+  },
+  "eyebrow": "Support",
+  "title": "Support",
+  "lead": "Frågor, felrapporter och hjälp med ditt PrivaMesh-konto.",
+  "contact": {
+    "heading": "Kontakta oss",
+    "lead": "Mejla [{email}](mailto:{email}). Vi svarar inom **2 arbetsdagar**, på engelska eller ryska.",
+    "tip": "För att vi ska kunna svara snabbare: ange enhetsmodell, iOS-version och vad du gjorde när problemet uppstod.",
+    "warning": "Skicka aldrig din återställningsfras på 12 ord till oss. Vi kommer aldrig att be om den, och den som ber om den försöker stjäla ditt konto.",
+    "email": "Mejla support",
+    "privacy": "Integritetspolicy",
+    "terms": "Användarvillkor"
+  },
+  "faq": [
+    {
+      "q": "Jag installerade om appen / fick en ny telefon. Var är mina chattar?",
+      "a": "Kontakter och dekrypterade chattar sparas bara på din enhet, så de flyttar inte till en ny. Att ange din återställningsfras på 12 ord återställer din identitet, ditt smeknamn och dina sparade meddelanden, så att folk kan nå dig igen, men samtal med andra stannar på den gamla enheten."
+    },
+    {
+      "q": "Jag har tappat bort min återställningsfras. Kan ni återställa mitt konto?",
+      "a": "Nej. Vi har ingen kopia av din fras eller dina nycklar; de finns bara på din enhet. Utan frasen kan ingen återställa kontot, inte heller vi. Skriv ner frasen och förvara den offline."
+    },
+    {
+      "q": "Hur loggar jag in på en ny enhet?",
+      "a": "Tryck på ”Återställ med återställningsfras” på välkomstskärmen, ange dina 12 ord i rätt ordning och ställ sedan in en lösenkod. Tryck inte på ”Skapa konto” - det skapar ett annat, tomt konto."
+    },
+    {
+      "q": "Hur lägger jag till en kontakt?",
+      "a": "Tryck på + på huvudskärmen och skanna den andras QR-kod, öppna personens inbjudningslänk eller sök på smeknamnet. Ett första meddelande från någon du inte har lagt till visas som en ny chatt."
+    },
+    {
+      "q": "Ett meddelande skickas inte.",
+      "a": "Kontrollera att du är online, att kontakten har lagts till och att du har meddelanden kvar i din kvot (visas högst upp på huvudskärmen). Om det fortfarande inte går, mejla oss med tiden för försöket så tittar vi på det."
+    },
+    {
+      "q": "Hur hanterar eller säger jag upp en prenumeration?",
+      "a": "Prenumerationer och meddelandepaket debiteras av Apple. Öppna appen Inställningar i iOS, tryck på ditt namn och sedan Prenumerationer för att ändra eller säga upp. Återbetalningar hanteras av Apple på reportaproblem.apple.com."
+    },
+    {
+      "q": "Hur raderar jag mitt konto och mina data?",
+      "a": "Profil och sedan ”Återställ konto” raderar nycklar, kontakter och meddelandehistorik från enheten. Redan skickade meddelanden ligger kvar krypterade på blockkedjan: ingen kan läsa dem utan nycklarna och ingen kan radera dem."
+    },
+    {
+      "q": "Hur anmäler jag missbruk eller ett säkerhetsproblem?",
+      "a": "Blockera kontakten från dess profilskärm och mejla sedan detaljerna till privamesh@proton.me. För säkerhetsbrister, mejla samma adress med ”security” i ämnesraden."
+    }
+  ],
+  "refunds": "Återbetalningar av prenumerationer hanteras av Apple, inte av oss - använd [reportaproblem.apple.com](https://reportaproblem.apple.com). För allt annat, mejla [{email}](mailto:{email}).",
+  "related": [
+    {
+      "href": "/privacy-policy",
+      "label": "Integritetspolicy",
+      "blurb": "Exakt vad PrivaMesh samlar in och inte samlar in, på vanlig svenska."
+    },
+    {
+      "href": "/terms",
+      "label": "Användarvillkor",
+      "blurb": "Godtagbar användning, verktyg för att blockera och anmäla samt prenumerationsvillkor."
+    },
+    {
+      "href": "/features/seed-phrase-accounts",
+      "label": "Konton med fras",
+      "blurb": "Varför det inte finns någon lösenordsåterställning och vad dina 12 ord faktiskt styr."
+    }
+  ]
+}

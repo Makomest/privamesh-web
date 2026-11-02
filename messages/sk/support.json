@@ -1,0 +1,70 @@
+{
+  "meta": {
+    "title": "Podpora",
+    "description": "Pomoc s PrivaMesh: kontakt, fráza na obnovenie a nové zariadenie, pridávanie kontaktov, predplatné, zmazanie účtu a nahlásenie zneužitia."
+  },
+  "eyebrow": "Podpora",
+  "title": "Podpora",
+  "lead": "Otázky, hlásenia chýb a pomoc s účtom PrivaMesh.",
+  "contact": {
+    "heading": "Kontaktujte nás",
+    "lead": "Píšte na [{email}](mailto:{email}). Odpovedáme do **2 pracovných dní**, po anglicky alebo po rusky.",
+    "tip": "Aby sme mohli odpovedať rýchlejšie, uveďte model zariadenia, verziu iOS a čo ste robili, keď problém nastal.",
+    "warning": "Nikdy nám neposielajte svoju 12-slovnú frázu na obnovenie. Nikdy o ňu nepožiadame a kto o ňu žiada, snaží sa ukradnúť váš účet.",
+    "email": "Napísať podpore",
+    "privacy": "Zásady ochrany súkromia",
+    "terms": "Podmienky používania"
+  },
+  "faq": [
+    {
+      "q": "Preinštaloval som aplikáciu / mám nový telefón. Kde sú moje chaty?",
+      "a": "Kontakty a dešifrované chaty sa ukladajú len vo vašom zariadení, takže sa na nové nepresunú. Zadaním 12-slovnej frázy na obnovenie sa vráti vaša identita, prezývka a uložené správy, takže vás ľudia opäť zastihnú, ale konverzácie s ostatnými zostanú v starom zariadení."
+    },
+    {
+      "q": "Stratil som frázu na obnovenie. Môžete obnoviť môj účet?",
+      "a": "Nie. Nemáme žiadnu kópiu vašej frázy ani kľúčov; existujú len vo vašom zariadení. Bez frázy účet nikto neobnoví, ani my. Frázu si zapíšte a uchovávajte offline."
+    },
+    {
+      "q": "Ako sa prihlásim na novom zariadení?",
+      "a": "Na úvodnej obrazovke ťuknite na „Obnoviť z frázy“, zadajte 12 slov v správnom poradí a nastavte prístupový kód. Neťukajte na „Vytvoriť účet“ - vznikne tak iný, prázdny účet."
+    },
+    {
+      "q": "Ako pridám kontakt?",
+      "a": "Na hlavnej obrazovke ťuknite na + a naskenujte QR kód druhej osoby, otvorte jej odkaz s pozvánkou alebo vyhľadajte jej prezývku. Prvá správa od niekoho, koho ste nepridali, sa zobrazí ako nový chat."
+    },
+    {
+      "q": "Správa sa neodosiela.",
+      "a": "Skontrolujte, že ste online, že bol kontakt úspešne pridaný a že vám v limite ešte zostávajú správy (zobrazuje sa hore na hlavnej obrazovke). Ak odosielanie stále zlyháva, napíšte nám s časom pokusu a pozrieme sa na to."
+    },
+    {
+      "q": "Ako spravovať alebo zrušiť predplatné?",
+      "a": "Predplatné a balíčky správ účtuje Apple. Otvorte Nastavenia v iOS, ťuknite na svoje meno a potom na Predplatné, kde ho zmeníte alebo zrušíte. Vrátenie peňazí vybavuje Apple na reportaproblem.apple.com."
+    },
+    {
+      "q": "Ako zmažem účet a dáta?",
+      "a": "Profil a potom „Resetovať účet“ zmaže zo zariadenia kľúče, kontakty a históriu správ. Už odoslané správy zostávajú zašifrované v blockchaine: bez kľúčov ich nikto neprečíta a nikto ich nemôže zmazať."
+    },
+    {
+      "q": "Ako nahlásim zneužitie alebo bezpečnostný problém?",
+      "a": "Zablokujte kontakt na obrazovke jeho profilu a potom napíšte na privamesh@proton.me s podrobnosťami. Bezpečnostné zraniteľnosti hláste na rovnakú adresu so slovom „security“ v predmete."
+    }
+  ],
+  "refunds": "Vrátenie peňazí za predplatné vybavuje Apple, nie my - použite [reportaproblem.apple.com](https://reportaproblem.apple.com). So všetkým ostatným píšte na [{email}](mailto:{email}).",
+  "related": [
+    {
+      "href": "/privacy-policy",
+      "label": "Zásady ochrany súkromia",
+      "blurb": "Presne čo PrivaMesh zbiera a čo nie - zrozumiteľne."
+    },
+    {
+      "href": "/terms",
+      "label": "Podmienky používania",
+      "blurb": "Prijateľné používanie, blokovanie a nahlasovanie a podmienky predplatného."
+    },
+    {
+      "href": "/features/seed-phrase-accounts",
+      "label": "Účty s frázou",
+      "blurb": "Prečo neexistuje obnovenie hesla a čo vašich 12 slov skutočne riadi."
+    }
+  ]
+}

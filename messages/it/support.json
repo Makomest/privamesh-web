@@ -1,0 +1,70 @@
+{
+  "meta": {
+    "title": "Assistenza",
+    "description": "Aiuto con PrivaMesh: contattaci, frase di recupero e nuovo dispositivo, aggiungere contatti, abbonamenti, eliminare l'account e segnalare abusi."
+  },
+  "eyebrow": "Assistenza",
+  "title": "Assistenza",
+  "lead": "Domande, segnalazioni di bug e aiuto con l'account di PrivaMesh.",
+  "contact": {
+    "heading": "Contattaci",
+    "lead": "Scrivi a [{email}](mailto:{email}). Rispondiamo entro **2 giorni lavorativi**, in inglese o in russo.",
+    "tip": "Per aiutarci a rispondere prima, indica il modello del dispositivo, la versione di iOS e cosa stavi facendo quando si è verificato il problema.",
+    "warning": "Non inviarci mai la tua frase di recupero di 12 parole. Non te la chiederemo mai, e chi te la chiede sta cercando di rubarti l'account.",
+    "email": "Scrivi all'assistenza",
+    "privacy": "Informativa sulla privacy",
+    "terms": "Condizioni d'uso"
+  },
+  "faq": [
+    {
+      "q": "Ho reinstallato l'app / ho un telefono nuovo. Dove sono le mie chat?",
+      "a": "Contatti e chat decifrate sono conservati solo sul tuo dispositivo, quindi non passano a uno nuovo. Inserire la frase di recupero di 12 parole ripristina la tua identità, il soprannome e i messaggi salvati, così le persone possono di nuovo raggiungerti, ma le conversazioni con gli altri restano sul vecchio dispositivo."
+    },
+    {
+      "q": "Ho perso la frase di recupero. Potete ripristinare il mio account?",
+      "a": "No. Non abbiamo alcuna copia della tua frase o delle tue chiavi: esistono solo sul tuo dispositivo. Senza la frase nessuno può recuperare l'account, nemmeno noi. Scrivi la frase e conservala offline."
+    },
+    {
+      "q": "Come accedo su un nuovo dispositivo?",
+      "a": "Nella schermata iniziale tocca «Ripristina con la frase di recupero», inserisci le 12 parole in ordine e poi imposta un codice. Non toccare «Crea account»: genera un account diverso e vuoto."
+    },
+    {
+      "q": "Come aggiungo un contatto?",
+      "a": "Tocca + nella schermata principale e scansiona il codice QR dell'altra persona, apri il suo link di invito o cerca il suo soprannome. Il primo messaggio di qualcuno che non hai aggiunto compare come nuova chat."
+    },
+    {
+      "q": "Un messaggio non parte.",
+      "a": "Verifica di essere online, che il contatto sia stato aggiunto correttamente e che ti restino messaggi nella quota (mostrata in alto nella schermata principale). Se l'invio continua a non riuscire, scrivici con l'orario del tentativo e verificheremo."
+    },
+    {
+      "q": "Come gestisco o annullo un abbonamento?",
+      "a": "Abbonamenti e pacchetti di messaggi sono addebitati da Apple. Apri l'app Impostazioni di iOS, tocca il tuo nome e poi Abbonamenti per modificare o annullare. I rimborsi sono gestiti da Apple su reportaproblem.apple.com."
+    },
+    {
+      "q": "Come elimino il mio account e i dati?",
+      "a": "Profilo, poi «Reimposta account», cancella chiavi, contatti e cronologia dei messaggi dal dispositivo. I messaggi già inviati restano cifrati sulla blockchain: nessuno può leggerli senza le chiavi e nessuno può cancellarli."
+    },
+    {
+      "q": "Come segnalo un abuso o un problema di sicurezza?",
+      "a": "Blocca il contatto dalla schermata del suo profilo, poi scrivi a privamesh@proton.me con i dettagli. Per le vulnerabilità di sicurezza, scrivi allo stesso indirizzo con «security» nell'oggetto."
+    }
+  ],
+  "refunds": "I rimborsi degli abbonamenti sono gestiti da Apple, non da noi: usa [reportaproblem.apple.com](https://reportaproblem.apple.com). Per tutto il resto, scrivi a [{email}](mailto:{email}).",
+  "related": [
+    {
+      "href": "/privacy-policy",
+      "label": "Informativa sulla privacy",
+      "blurb": "Esattamente cosa raccoglie PrivaMesh e cosa no, in parole semplici."
+    },
+    {
+      "href": "/terms",
+      "label": "Condizioni d'uso",
+      "blurb": "Uso consentito, strumenti di blocco e segnalazione, condizioni degli abbonamenti."
+    },
+    {
+      "href": "/features/seed-phrase-accounts",
+      "label": "Account con frase",
+      "blurb": "Perché non c'è il ripristino della password e cosa controllano davvero le tue 12 parole."
+    }
+  ]
+}

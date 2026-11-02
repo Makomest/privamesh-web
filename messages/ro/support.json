@@ -1,0 +1,70 @@
+{
+  "meta": {
+    "title": "Asistență",
+    "description": "Ajutor pentru PrivaMesh: contact, fraza de recuperare și dispozitiv nou, adăugarea contactelor, abonamente, ștergerea contului și raportarea abuzurilor."
+  },
+  "eyebrow": "Asistență",
+  "title": "Asistență",
+  "lead": "Întrebări, raportări de erori și ajutor cu contul PrivaMesh.",
+  "contact": {
+    "heading": "Contactează-ne",
+    "lead": "Scrie la [{email}](mailto:{email}). Răspundem în **2 zile lucrătoare**, în engleză sau rusă.",
+    "tip": "Ca să răspundem mai repede, include modelul dispozitivului, versiunea de iOS și ce făceai când a apărut problema.",
+    "warning": "Nu ne trimite niciodată fraza de recuperare de 12 cuvinte. Nu ți-o vom cere niciodată, iar cine o cere încearcă să-ți fure contul.",
+    "email": "Scrie asistenței",
+    "privacy": "Politica de confidențialitate",
+    "terms": "Termeni de utilizare"
+  },
+  "faq": [
+    {
+      "q": "Am reinstalat aplicația / am un telefon nou. Unde sunt conversațiile mele?",
+      "a": "Contactele și conversațiile decriptate sunt păstrate doar pe dispozitivul tău, așa că nu trec pe unul nou. Introducerea frazei de recuperare de 12 cuvinte îți restaurează identitatea, pseudonimul și mesajele salvate, ca oamenii să te poată contacta din nou, dar conversațiile cu ceilalți rămân pe dispozitivul vechi."
+    },
+    {
+      "q": "Mi-am pierdut fraza de recuperare. Îmi puteți restaura contul?",
+      "a": "Nu. Nu avem nicio copie a frazei sau a cheilor tale; ele există doar pe dispozitivul tău. Fără frază, nimeni nu poate recupera contul, nici măcar noi. Scrie fraza și păstreaz-o offline."
+    },
+    {
+      "q": "Cum mă conectez pe un dispozitiv nou?",
+      "a": "Pe ecranul de bun venit atinge „Restaurează din fraza de recuperare”, introdu cele 12 cuvinte în ordine, apoi setează un cod de acces. Nu atinge „Creează cont” - asta generează un alt cont, gol."
+    },
+    {
+      "q": "Cum adaug un contact?",
+      "a": "Atinge + pe ecranul principal și scanează codul QR al celeilalte persoane, deschide linkul ei de invitație sau caută-i pseudonimul. Primul mesaj de la cineva pe care nu l-ai adăugat apare ca o conversație nouă."
+    },
+    {
+      "q": "Un mesaj nu se trimite.",
+      "a": "Verifică dacă ești online, dacă contactul a fost adăugat cu succes și dacă mai ai mesaje în cotă (afișată în partea de sus a ecranului principal). Dacă trimiterea tot nu reușește, scrie-ne cu ora încercării și vom verifica."
+    },
+    {
+      "q": "Cum gestionez sau anulez un abonament?",
+      "a": "Abonamentele și pachetele de mesaje sunt facturate de Apple. Deschide aplicația Configurări din iOS, atinge-ți numele, apoi Abonamente pentru a modifica sau anula. Rambursările sunt gestionate de Apple pe reportaproblem.apple.com."
+    },
+    {
+      "q": "Cum îmi șterg contul și datele?",
+      "a": "Profil, apoi „Resetează contul” șterge de pe dispozitiv cheile, contactele și istoricul mesajelor. Mesajele deja trimise rămân criptate pe blockchain: nimeni nu le poate citi fără chei și nimeni nu le poate șterge."
+    },
+    {
+      "q": "Cum raportez un abuz sau o problemă de securitate?",
+      "a": "Blochează contactul din ecranul profilului său, apoi scrie la privamesh@proton.me cu detaliile. Pentru vulnerabilități de securitate, scrie la aceeași adresă cu „security” în subiect."
+    }
+  ],
+  "refunds": "Rambursările pentru abonamente le gestionează Apple, nu noi - folosește [reportaproblem.apple.com](https://reportaproblem.apple.com). Pentru orice altceva, scrie la [{email}](mailto:{email}).",
+  "related": [
+    {
+      "href": "/privacy-policy",
+      "label": "Politica de confidențialitate",
+      "blurb": "Exact ce colectează PrivaMesh și ce nu, pe înțelesul tuturor."
+    },
+    {
+      "href": "/terms",
+      "label": "Termeni de utilizare",
+      "blurb": "Utilizare acceptabilă, instrumente de blocare și raportare și condițiile abonamentelor."
+    },
+    {
+      "href": "/features/seed-phrase-accounts",
+      "label": "Conturi pe bază de frază",
+      "blurb": "De ce nu există resetare a parolei și ce controlează de fapt cele 12 cuvinte."
+    }
+  ]
+}

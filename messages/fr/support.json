@@ -1,0 +1,70 @@
+{
+  "meta": {
+    "title": "Assistance",
+    "description": "Aide pour PrivaMesh : nous contacter, phrase de récupération et nouvel appareil, ajout de contacts, abonnements, suppression du compte et signalement d'abus."
+  },
+  "eyebrow": "Assistance",
+  "title": "Assistance",
+  "lead": "Questions, signalements de bugs et aide sur votre compte PrivaMesh.",
+  "contact": {
+    "heading": "Nous contacter",
+    "lead": "Écrivez à [{email}](mailto:{email}). Nous répondons sous **2 jours ouvrés**, en anglais ou en russe.",
+    "tip": "Pour que nous répondions plus vite, indiquez le modèle de votre appareil, votre version d'iOS et ce que vous faisiez quand le problème est survenu.",
+    "warning": "Ne nous envoyez jamais votre phrase de récupération de 12 mots. Nous ne la demanderons jamais, et quiconque la demande essaie de voler votre compte.",
+    "email": "Écrire à l'assistance",
+    "privacy": "Politique de confidentialité",
+    "terms": "Conditions d'utilisation"
+  },
+  "faq": [
+    {
+      "q": "J'ai réinstallé l'app / changé de téléphone. Où sont mes conversations ?",
+      "a": "Les contacts et les conversations déchiffrées ne sont conservés que sur votre appareil, ils ne passent donc pas sur un nouveau. Saisir votre phrase de récupération de 12 mots restaure votre identité, votre pseudo et vos messages enregistrés, pour qu'on puisse de nouveau vous joindre, mais les conversations avec les autres restent sur l'ancien appareil."
+    },
+    {
+      "q": "J'ai perdu ma phrase de récupération. Pouvez-vous restaurer mon compte ?",
+      "a": "Non. Nous n'avons aucune copie de votre phrase ni de vos clés ; elles n'existent que sur votre appareil. Sans la phrase, personne ne peut récupérer le compte, pas même nous. Notez la phrase et conservez-la hors ligne."
+    },
+    {
+      "q": "Comment me connecter sur un nouvel appareil ?",
+      "a": "Sur l'écran d'accueil, touchez « Restaurer avec la phrase de récupération », saisissez vos 12 mots dans l'ordre, puis définissez un code d'accès. Ne touchez pas « Créer un compte » : cela génère un autre compte, vide."
+    },
+    {
+      "q": "Comment ajouter un contact ?",
+      "a": "Touchez + sur l'écran principal et scannez le QR code de l'autre personne, ouvrez son lien d'invitation ou cherchez son pseudo. Un premier message d'une personne que vous n'avez pas ajoutée apparaît comme une nouvelle conversation."
+    },
+    {
+      "q": "Un message ne s'envoie pas.",
+      "a": "Vérifiez que vous êtes en ligne, que le contact a bien été ajouté et qu'il vous reste des messages dans votre quota (affiché en haut de l'écran principal). Si l'envoi échoue toujours, écrivez-nous avec l'heure de la tentative et nous regarderons."
+    },
+    {
+      "q": "Comment gérer ou résilier un abonnement ?",
+      "a": "Les abonnements et les packs de messages sont facturés par Apple. Ouvrez l'app Réglages d'iOS, touchez votre nom, puis Abonnements pour modifier ou résilier. Les remboursements sont gérés par Apple sur reportaproblem.apple.com."
+    },
+    {
+      "q": "Comment supprimer mon compte et mes données ?",
+      "a": "Profil, puis « Réinitialiser le compte », efface les clés, les contacts et l'historique des messages de l'appareil. Les messages déjà envoyés restent chiffrés sur la blockchain : personne ne peut les lire sans les clés, et personne ne peut les supprimer."
+    },
+    {
+      "q": "Comment signaler un abus ou une faille de sécurité ?",
+      "a": "Bloquez le contact depuis l'écran de son profil, puis écrivez à privamesh@proton.me avec les détails. Pour une vulnérabilité de sécurité, écrivez à la même adresse avec « security » dans l'objet."
+    }
+  ],
+  "refunds": "Les remboursements d'abonnement sont gérés par Apple, pas par nous - utilisez [reportaproblem.apple.com](https://reportaproblem.apple.com). Pour tout le reste, écrivez à [{email}](mailto:{email}).",
+  "related": [
+    {
+      "href": "/privacy-policy",
+      "label": "Politique de confidentialité",
+      "blurb": "Exactement ce que PrivaMesh collecte et ne collecte pas, en langage clair."
+    },
+    {
+      "href": "/terms",
+      "label": "Conditions d'utilisation",
+      "blurb": "Usage acceptable, outils de blocage et de signalement, conditions d'abonnement."
+    },
+    {
+      "href": "/features/seed-phrase-accounts",
+      "label": "Comptes à phrase",
+      "blurb": "Pourquoi il n'y a pas de réinitialisation de mot de passe, et ce que vos 12 mots contrôlent vraiment."
+    }
+  ]
+}

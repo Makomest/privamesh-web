@@ -1,0 +1,70 @@
+{
+  "meta": {
+    "title": "Pomoc",
+    "description": "Pomoc z PrivaMesh: kontakt, fraza odzyskiwania i nowe urządzenie, dodawanie kontaktów, subskrypcje, usuwanie konta i zgłaszanie nadużyć."
+  },
+  "eyebrow": "Pomoc",
+  "title": "Pomoc",
+  "lead": "Pytania, zgłoszenia błędów i pomoc z kontem PrivaMesh.",
+  "contact": {
+    "heading": "Kontakt",
+    "lead": "Napisz na [{email}](mailto:{email}). Odpowiadamy w ciągu **2 dni roboczych**, po angielsku lub po rosyjsku.",
+    "tip": "Żebyśmy mogli odpowiedzieć szybciej, podaj model urządzenia, wersję iOS i co robiłeś, gdy pojawił się problem.",
+    "warning": "Nigdy nie wysyłaj nam swojej 12-wyrazowej frazy odzyskiwania. Nigdy o nią nie poprosimy, a każdy, kto prosi, próbuje ukraść twoje konto.",
+    "email": "Napisz do pomocy",
+    "privacy": "Polityka prywatności",
+    "terms": "Warunki korzystania"
+  },
+  "faq": [
+    {
+      "q": "Przeinstalowałem aplikację / mam nowy telefon. Gdzie są moje czaty?",
+      "a": "Kontakty i odszyfrowane czaty są przechowywane tylko na twoim urządzeniu, więc nie przechodzą na nowe. Wpisanie 12-wyrazowej frazy odzyskiwania przywraca twoją tożsamość, pseudonim i zapisane wiadomości, więc znów można się z tobą skontaktować, ale rozmowy z innymi zostają na starym urządzeniu."
+    },
+    {
+      "q": "Zgubiłem frazę odzyskiwania. Możecie przywrócić moje konto?",
+      "a": "Nie. Nie mamy kopii twojej frazy ani kluczy; istnieją tylko na twoim urządzeniu. Bez frazy nikt nie odzyska konta, łącznie z nami. Zapisz frazę i przechowuj ją offline."
+    },
+    {
+      "q": "Jak zalogować się na nowym urządzeniu?",
+      "a": "Na ekranie powitalnym stuknij „Przywróć z frazy odzyskiwania”, wpisz 12 słów w kolejności, a potem ustaw kod dostępu. Nie stukaj „Utwórz konto” - to utworzy inne, puste konto."
+    },
+    {
+      "q": "Jak dodać kontakt?",
+      "a": "Stuknij + na ekranie głównym i zeskanuj kod QR drugiej osoby, otwórz jej link z zaproszeniem albo wyszukaj jej pseudonim. Pierwsza wiadomość od kogoś, kogo nie dodałeś, pojawi się jako nowy czat."
+    },
+    {
+      "q": "Wiadomość się nie wysyła.",
+      "a": "Sprawdź, czy jesteś online, czy kontakt został poprawnie dodany i czy w limicie zostały jeszcze wiadomości (widać go u góry ekranu głównego). Jeśli wysyłanie nadal się nie udaje, napisz do nas z godziną próby, a sprawdzimy."
+    },
+    {
+      "q": "Jak zarządzać subskrypcją lub ją anulować?",
+      "a": "Subskrypcje i pakiety wiadomości rozlicza Apple. Otwórz Ustawienia w iOS, stuknij swoje imię, potem Subskrypcje, żeby zmienić lub anulować. Zwroty obsługuje Apple na reportaproblem.apple.com."
+    },
+    {
+      "q": "Jak usunąć konto i dane?",
+      "a": "Profil, a potem „Zresetuj konto” usuwa z urządzenia klucze, kontakty i historię wiadomości. Wysłane już wiadomości zostają zaszyfrowane w blockchainie: nikt nie przeczyta ich bez kluczy i nikt nie może ich usunąć."
+    },
+    {
+      "q": "Jak zgłosić nadużycie lub problem z bezpieczeństwem?",
+      "a": "Zablokuj kontakt na ekranie jego profilu, a potem napisz na privamesh@proton.me ze szczegółami. W sprawie luk bezpieczeństwa pisz na ten sam adres ze słowem „security” w temacie."
+    }
+  ],
+  "refunds": "Zwroty za subskrypcje obsługuje Apple, nie my - skorzystaj z [reportaproblem.apple.com](https://reportaproblem.apple.com). We wszystkich innych sprawach pisz na [{email}](mailto:{email}).",
+  "related": [
+    {
+      "href": "/privacy-policy",
+      "label": "Polityka prywatności",
+      "blurb": "Dokładnie, co PrivaMesh zbiera, a czego nie - prostym językiem."
+    },
+    {
+      "href": "/terms",
+      "label": "Warunki korzystania",
+      "blurb": "Dozwolone użycie, blokowanie i zgłaszanie oraz warunki subskrypcji."
+    },
+    {
+      "href": "/features/seed-phrase-accounts",
+      "label": "Konta na frazie",
+      "blurb": "Dlaczego nie ma resetu hasła i czym naprawdę sterują twoje 12 słów."
+    }
+  ]
+}

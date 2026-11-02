@@ -1,0 +1,70 @@
+{
+  "meta": {
+    "title": "Suporte",
+    "description": "Ajuda com o PrivaMesh: fale conosco, frase de recuperação e aparelho novo, adicionar contatos, assinaturas, excluir a conta e denunciar abusos."
+  },
+  "eyebrow": "Suporte",
+  "title": "Suporte",
+  "lead": "Dúvidas, relatos de bugs e ajuda com a conta do PrivaMesh.",
+  "contact": {
+    "heading": "Fale conosco",
+    "lead": "Escreva para [{email}](mailto:{email}). Respondemos em até **2 dias úteis**, em inglês ou russo.",
+    "tip": "Para respondermos mais rápido, informe o modelo do aparelho, a versão do iOS e o que você estava fazendo quando o problema aconteceu.",
+    "warning": "Nunca nos envie sua frase de recuperação de 12 palavras. Nunca vamos pedi-la, e quem pede está tentando roubar sua conta.",
+    "email": "Escrever para o suporte",
+    "privacy": "Política de privacidade",
+    "terms": "Termos de uso"
+  },
+  "faq": [
+    {
+      "q": "Reinstalei o app / troquei de celular. Cadê minhas conversas?",
+      "a": "Contatos e conversas descriptografadas ficam só no seu aparelho, então não vão para um novo. Digitar sua frase de recuperação de 12 palavras restaura sua identidade, seu apelido e suas mensagens salvas, para que possam falar com você de novo, mas as conversas com outras pessoas ficam no aparelho antigo."
+    },
+    {
+      "q": "Perdi minha frase de recuperação. Vocês podem restaurar minha conta?",
+      "a": "Não. Não temos cópia da sua frase nem das suas chaves; elas existem só no seu aparelho. Sem a frase ninguém consegue recuperar a conta, nem nós. Anote a frase e guarde-a offline."
+    },
+    {
+      "q": "Como entro em um aparelho novo?",
+      "a": "Na tela inicial toque em \"Restaurar com a frase de recuperação\", digite as 12 palavras na ordem e defina um código de acesso. Não toque em \"Criar conta\" - isso gera outra conta, vazia."
+    },
+    {
+      "q": "Como adiciono um contato?",
+      "a": "Toque em + na tela principal e escaneie o QR code da outra pessoa, abra o link de convite dela ou procure pelo apelido. A primeira mensagem de alguém que você não adicionou aparece como uma nova conversa."
+    },
+    {
+      "q": "Uma mensagem não é enviada.",
+      "a": "Verifique se você está online, se o contato foi adicionado com sucesso e se ainda há mensagens na sua franquia (mostrada no topo da tela principal). Se o envio continuar falhando, escreva para nós com o horário da tentativa e vamos verificar."
+    },
+    {
+      "q": "Como gerencio ou cancelo uma assinatura?",
+      "a": "Assinaturas e pacotes de mensagens são cobrados pela Apple. Abra o app Ajustes do iOS, toque no seu nome e depois em Assinaturas para alterar ou cancelar. Reembolsos são feitos pela Apple em reportaproblem.apple.com."
+    },
+    {
+      "q": "Como excluo minha conta e meus dados?",
+      "a": "Perfil, depois \"Redefinir conta\", apaga as chaves, os contatos e o histórico de mensagens do aparelho. As mensagens já enviadas ficam criptografadas na blockchain: ninguém consegue lê-las sem as chaves e ninguém consegue apagá-las."
+    },
+    {
+      "q": "Como denuncio abuso ou um problema de segurança?",
+      "a": "Bloqueie o contato na tela do perfil dele e escreva para privamesh@proton.me com os detalhes. Para vulnerabilidades de segurança, escreva para o mesmo endereço com \"security\" no assunto."
+    }
+  ],
+  "refunds": "Reembolsos de assinatura são feitos pela Apple, não por nós - use [reportaproblem.apple.com](https://reportaproblem.apple.com). Para qualquer outra coisa, escreva para [{email}](mailto:{email}).",
+  "related": [
+    {
+      "href": "/privacy-policy",
+      "label": "Política de privacidade",
+      "blurb": "Exatamente o que o PrivaMesh coleta e o que não coleta, em linguagem simples."
+    },
+    {
+      "href": "/terms",
+      "label": "Termos de uso",
+      "blurb": "Uso aceitável, ferramentas de bloqueio e denúncia e termos de assinatura."
+    },
+    {
+      "href": "/features/seed-phrase-accounts",
+      "label": "Contas com frase",
+      "blurb": "Por que não existe redefinição de senha e o que suas 12 palavras realmente controlam."
+    }
+  ]
+}

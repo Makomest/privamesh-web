@@ -1,0 +1,70 @@
+{
+  "meta": {
+    "title": "Támogatás",
+    "description": "Segítség a PrivaMesh-hez: kapcsolat, helyreállító kifejezés és új eszköz, ismerősök hozzáadása, előfizetések, fiók törlése és visszaélés bejelentése."
+  },
+  "eyebrow": "Támogatás",
+  "title": "Támogatás",
+  "lead": "Kérdések, hibabejelentések és fiókkal kapcsolatos segítség a PrivaMesh-hez.",
+  "contact": {
+    "heading": "Kapcsolat",
+    "lead": "Írj a [{email}](mailto:{email}) címre. **2 munkanapon** belül válaszolunk, angolul vagy oroszul.",
+    "tip": "Hogy gyorsabban válaszolhassunk, add meg az eszközöd típusát, az iOS-verziót, és hogy mit csináltál, amikor a hiba jelentkezett.",
+    "warning": "Soha ne küldd el nekünk a 12 szavas helyreállító kifejezésedet. Soha nem kérjük, és aki kéri, az a fiókodat próbálja ellopni.",
+    "email": "Írj a támogatásnak",
+    "privacy": "Adatvédelmi szabályzat",
+    "terms": "Felhasználási feltételek"
+  },
+  "faq": [
+    {
+      "q": "Újratelepítettem az appot / új telefonom van. Hol vannak a csevegéseim?",
+      "a": "Az ismerősök és a visszafejtett csevegések csak az eszközödön vannak, ezért nem költöznek át az újra. A 12 szavas helyreállító kifejezés megadása visszaállítja a személyazonosságodat, a beceneved és a mentett üzeneteidet, így újra elérhetnek, de a másokkal folytatott beszélgetések a régi eszközön maradnak."
+    },
+    {
+      "q": "Elvesztettem a helyreállító kifejezésemet. Vissza tudjátok állítani a fiókomat?",
+      "a": "Nem. Nincs másolatunk a kifejezésedről vagy a kulcsaidról; csak az eszközödön léteznek. Kifejezés nélkül senki sem tudja visszaállítani a fiókot, mi sem. Írd le a kifejezést, és tárold offline."
+    },
+    {
+      "q": "Hogyan jelentkezhetek be új eszközön?",
+      "a": "Az üdvözlőképernyőn koppints a „Visszaállítás helyreállító kifejezéssel” lehetőségre, add meg a 12 szót sorrendben, majd állíts be jelkódot. Ne koppints a „Fiók létrehozása” gombra - az egy másik, üres fiókot hoz létre."
+    },
+    {
+      "q": "Hogyan adhatok hozzá ismerőst?",
+      "a": "Koppints a + gombra a főképernyőn, és olvasd be a másik fél QR-kódját, nyisd meg a meghívó linkjét, vagy keress rá a becenevére. Annak az első üzenete, akit nem adtál hozzá, új csevegésként jelenik meg."
+    },
+    {
+      "q": "Nem megy el egy üzenet.",
+      "a": "Ellenőrizd, hogy online vagy-e, sikeresen hozzáadtad-e az ismerőst, és van-e még üzenet a keretedben (a főképernyő tetején látható). Ha a küldés továbbra sem sikerül, írj nekünk a próbálkozás időpontjával, és megnézzük."
+    },
+    {
+      "q": "Hogyan kezelhetem vagy mondhatom le az előfizetést?",
+      "a": "Az előfizetéseket és az üzenetcsomagokat az Apple számlázza. Nyisd meg az iOS Beállítások appot, koppints a nevedre, majd az Előfizetésekre a módosításhoz vagy lemondáshoz. A visszatérítést az Apple intézi a reportaproblem.apple.com oldalon."
+    },
+    {
+      "q": "Hogyan törölhetem a fiókomat és az adataimat?",
+      "a": "Profil, majd „Fiók visszaállítása” - ez törli az eszközről a kulcsokat, az ismerősöket és az üzenetelőzményeket. A már elküldött üzenetek titkosítva a blokkláncon maradnak: kulcsok nélkül senki sem tudja elolvasni és senki sem tudja törölni őket."
+    },
+    {
+      "q": "Hogyan jelenthetek visszaélést vagy biztonsági hibát?",
+      "a": "Tiltsd le az ismerőst a profilképernyőjén, majd írj a részletekkel a privamesh@proton.me címre. Biztonsági sebezhetőség esetén ugyanerre a címre írj, a tárgyban a „security” szóval."
+    }
+  ],
+  "refunds": "Az előfizetések visszatérítését az Apple intézi, nem mi - használd a [reportaproblem.apple.com](https://reportaproblem.apple.com) oldalt. Minden másban írj a [{email}](mailto:{email}) címre.",
+  "related": [
+    {
+      "href": "/privacy-policy",
+      "label": "Adatvédelmi szabályzat",
+      "blurb": "Pontosan mit gyűjt a PrivaMesh és mit nem - közérthetően."
+    },
+    {
+      "href": "/terms",
+      "label": "Felhasználási feltételek",
+      "blurb": "Elfogadható használat, tiltási és bejelentési eszközök, előfizetési feltételek."
+    },
+    {
+      "href": "/features/seed-phrase-accounts",
+      "label": "Kifejezésalapú fiókok",
+      "blurb": "Miért nincs jelszó-visszaállítás, és mit irányít valójában a 12 szavad."
+    }
+  ]
+}

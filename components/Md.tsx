@@ -43,8 +43,12 @@ export function md(text: string, locale: string): ReactNode[] {
           <Link key={key} href={localizeHref(href, locale)}>
             {md(m[1], locale)}
           </Link>
-        ) : (
+        ) : /^https?:/.test(href) ? (
           <a key={key} href={href} target="_blank" rel="noopener noreferrer">
+            {md(m[1], locale)}
+          </a>
+        ) : (
+          <a key={key} href={href}>
             {md(m[1], locale)}
           </a>
         ),

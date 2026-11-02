@@ -1,0 +1,70 @@
+{
+  "meta": {
+    "title": "Ondersteuning",
+    "description": "Hulp bij PrivaMesh: contact, herstelzin en nieuw apparaat, contacten toevoegen, abonnementen, je account verwijderen en misbruik melden."
+  },
+  "eyebrow": "Ondersteuning",
+  "title": "Ondersteuning",
+  "lead": "Vragen, bugmeldingen en hulp bij je PrivaMesh-account.",
+  "contact": {
+    "heading": "Contact",
+    "lead": "Mail naar [{email}](mailto:{email}). We antwoorden binnen **2 werkdagen**, in het Engels of Russisch.",
+    "tip": "Om sneller te kunnen antwoorden: vermeld je apparaatmodel, je iOS-versie en wat je aan het doen was toen het probleem optrad.",
+    "warning": "Stuur ons nooit je herstelzin van 12 woorden. Wij vragen er nooit om, en wie erom vraagt, probeert je account te stelen.",
+    "email": "Mail de ondersteuning",
+    "privacy": "Privacybeleid",
+    "terms": "Gebruiksvoorwaarden"
+  },
+  "faq": [
+    {
+      "q": "Ik heb de app opnieuw geïnstalleerd / een nieuwe telefoon. Waar zijn mijn chats?",
+      "a": "Contacten en ontsleutelde chats staan alleen op je apparaat en verhuizen dus niet mee naar een nieuw. Met je herstelzin van 12 woorden krijg je je identiteit, je bijnaam en je bewaarde berichten terug, zodat mensen je weer kunnen bereiken, maar gesprekken met anderen blijven op het oude apparaat."
+    },
+    {
+      "q": "Ik ben mijn herstelzin kwijt. Kunnen jullie mijn account herstellen?",
+      "a": "Nee. We hebben geen kopie van je zin of je sleutels; die bestaan alleen op je apparaat. Zonder de zin kan niemand het account herstellen, ook wij niet. Schrijf de zin op en bewaar hem offline."
+    },
+    {
+      "q": "Hoe log ik in op een nieuw apparaat?",
+      "a": "Tik op het welkomstscherm op 'Herstellen met herstelzin', voer je 12 woorden in de juiste volgorde in en stel een toegangscode in. Tik niet op 'Account aanmaken' - dat maakt een ander, leeg account aan."
+    },
+    {
+      "q": "Hoe voeg ik een contact toe?",
+      "a": "Tik op + op het hoofdscherm en scan de QR-code van de ander, open diens uitnodigingslink of zoek op bijnaam. Een eerste bericht van iemand die je niet hebt toegevoegd, verschijnt als nieuwe chat."
+    },
+    {
+      "q": "Een bericht wordt niet verstuurd.",
+      "a": "Controleer of je online bent, of het contact goed is toegevoegd en of je nog berichten in je tegoed hebt (bovenaan het hoofdscherm). Als versturen blijft mislukken, mail ons met het tijdstip van de poging en we zoeken het uit."
+    },
+    {
+      "q": "Hoe beheer of zeg ik een abonnement op?",
+      "a": "Abonnementen en berichtenbundels worden via Apple gefactureerd. Open de iOS-app Instellingen, tik op je naam en dan op Abonnementen om te wijzigen of op te zeggen. Terugbetalingen regelt Apple via reportaproblem.apple.com."
+    },
+    {
+      "q": "Hoe verwijder ik mijn account en gegevens?",
+      "a": "Profiel, dan 'Account resetten', wist de sleutels, contacten en berichtgeschiedenis van het apparaat. Al verstuurde berichten blijven versleuteld op de blockchain: niemand kan ze zonder de sleutels lezen en niemand kan ze verwijderen."
+    },
+    {
+      "q": "Hoe meld ik misbruik of een beveiligingsprobleem?",
+      "a": "Blokkeer het contact via diens profielscherm en mail dan de details naar privamesh@proton.me. Voor beveiligingslekken mail je hetzelfde adres met 'security' in het onderwerp."
+    }
+  ],
+  "refunds": "Terugbetalingen van abonnementen regelt Apple, niet wij - gebruik [reportaproblem.apple.com](https://reportaproblem.apple.com). Voor al het andere mail je naar [{email}](mailto:{email}).",
+  "related": [
+    {
+      "href": "/privacy-policy",
+      "label": "Privacybeleid",
+      "blurb": "Precies wat PrivaMesh wel en niet verzamelt, in gewone taal."
+    },
+    {
+      "href": "/terms",
+      "label": "Gebruiksvoorwaarden",
+      "blurb": "Toegestaan gebruik, blokkeren en melden, en abonnementsvoorwaarden."
+    },
+    {
+      "href": "/features/seed-phrase-accounts",
+      "label": "Accounts met zin",
+      "blurb": "Waarom er geen wachtwoordherstel is en wat je 12 woorden echt bepalen."
+    }
+  ]
+}

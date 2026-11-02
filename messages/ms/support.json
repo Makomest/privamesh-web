@@ -1,0 +1,70 @@
+{
+  "meta": {
+    "title": "Sokongan",
+    "description": "Bantuan PrivaMesh: hubungi kami, frasa pemulihan dan peranti baharu, menambah kenalan, langganan, memadam akaun dan melaporkan penyalahgunaan."
+  },
+  "eyebrow": "Sokongan",
+  "title": "Sokongan",
+  "lead": "Soalan, laporan pepijat dan bantuan akaun untuk PrivaMesh.",
+  "contact": {
+    "heading": "Hubungi kami",
+    "lead": "E-mel [{email}](mailto:{email}). Kami membalas dalam **2 hari bekerja**, dalam bahasa Inggeris atau Rusia.",
+    "tip": "Untuk membantu kami menjawab lebih cepat, sertakan model peranti, versi iOS dan apa yang anda lakukan semasa masalah berlaku.",
+    "warning": "Jangan sekali-kali hantar frasa pemulihan 12 perkataan anda kepada kami. Kami tidak akan memintanya, dan sesiapa yang memintanya sedang cuba mencuri akaun anda.",
+    "email": "E-mel sokongan",
+    "privacy": "Dasar privasi",
+    "terms": "Terma penggunaan"
+  },
+  "faq": [
+    {
+      "q": "Saya pasang semula aplikasi / dapat telefon baharu. Di mana sembang saya?",
+      "a": "Kenalan dan sembang yang dinyahsulit hanya disimpan pada peranti anda, jadi ia tidak berpindah ke peranti baharu. Memasukkan frasa pemulihan 12 perkataan memulihkan identiti, nama samaran dan Mesej Tersimpan anda, supaya orang boleh menghubungi anda semula, tetapi perbualan dengan orang lain kekal pada peranti lama."
+    },
+    {
+      "q": "Saya kehilangan frasa pemulihan. Bolehkah anda memulihkan akaun saya?",
+      "a": "Tidak. Kami tiada salinan frasa atau kunci anda; ia hanya wujud pada peranti anda. Tanpa frasa, tiada sesiapa boleh memulihkan akaun, termasuk kami. Tuliskan frasa itu dan simpan di luar talian."
+    },
+    {
+      "q": "Bagaimana saya log masuk pada peranti baharu?",
+      "a": "Pada skrin alu-aluan ketik \"Pulihkan daripada frasa pemulihan\", masukkan 12 perkataan mengikut urutan, kemudian tetapkan kod laluan. Jangan ketik \"Cipta akaun\" - itu mencipta akaun lain yang kosong."
+    },
+    {
+      "q": "Bagaimana saya menambah kenalan?",
+      "a": "Ketik + pada skrin utama dan imbas kod QR orang itu, buka pautan jemputannya atau cari nama samarannya. Mesej pertama daripada seseorang yang belum anda tambah muncul sebagai sembang baharu."
+    },
+    {
+      "q": "Mesej tidak dihantar.",
+      "a": "Pastikan anda dalam talian, kenalan berjaya ditambah dan masih ada baki mesej dalam kuota anda (ditunjukkan di bahagian atas skrin utama). Jika penghantaran masih gagal, e-mel kami dengan masa cubaan dan kami akan menyemaknya."
+    },
+    {
+      "q": "Bagaimana saya mengurus atau membatalkan langganan?",
+      "a": "Langganan dan pek mesej dicaj oleh Apple. Buka aplikasi Tetapan iOS, ketik nama anda, kemudian Langganan untuk menukar atau membatalkan. Bayaran balik dikendalikan oleh Apple di reportaproblem.apple.com."
+    },
+    {
+      "q": "Bagaimana saya memadam akaun dan data saya?",
+      "a": "Profil, kemudian \"Set semula akaun\", memadam kunci, kenalan dan sejarah mesej daripada peranti. Mesej yang telah dihantar kekal tersulit dalam rantaian blok: tiada sesiapa boleh membacanya tanpa kunci dan tiada sesiapa boleh memadamnya."
+    },
+    {
+      "q": "Bagaimana saya melaporkan penyalahgunaan atau isu keselamatan?",
+      "a": "Sekat kenalan dari skrin profilnya, kemudian e-mel butirannya ke privamesh@proton.me. Untuk kelemahan keselamatan, tulis ke alamat yang sama dengan \"security\" dalam subjek."
+    }
+  ],
+  "refunds": "Bayaran balik langganan dikendalikan oleh Apple, bukan kami - gunakan [reportaproblem.apple.com](https://reportaproblem.apple.com). Untuk perkara lain, e-mel [{email}](mailto:{email}).",
+  "related": [
+    {
+      "href": "/privacy-policy",
+      "label": "Dasar privasi",
+      "blurb": "Tepatnya apa yang dikumpul dan tidak dikumpul oleh PrivaMesh, dalam bahasa mudah."
+    },
+    {
+      "href": "/terms",
+      "label": "Terma penggunaan",
+      "blurb": "Penggunaan yang dibenarkan, alat sekat dan lapor, serta terma langganan."
+    },
+    {
+      "href": "/features/seed-phrase-accounts",
+      "label": "Akaun berasaskan frasa",
+      "blurb": "Mengapa tiada tetapan semula kata laluan dan apa yang sebenarnya dikawal oleh 12 perkataan anda."
+    }
+  ]
+}

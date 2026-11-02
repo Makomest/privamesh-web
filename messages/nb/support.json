@@ -1,0 +1,70 @@
+{
+  "meta": {
+    "title": "Brukerstøtte",
+    "description": "Hjelp med PrivaMesh: kontakt oss, gjenopprettingsfrase og ny enhet, legge til kontakter, abonnementer, slette kontoen og melde misbruk."
+  },
+  "eyebrow": "Brukerstøtte",
+  "title": "Brukerstøtte",
+  "lead": "Spørsmål, feilrapporter og hjelp med PrivaMesh-kontoen.",
+  "contact": {
+    "heading": "Kontakt oss",
+    "lead": "Send e-post til [{email}](mailto:{email}). Vi svarer innen **2 virkedager**, på engelsk eller russisk.",
+    "tip": "For at vi skal kunne svare raskere: oppgi enhetsmodell, iOS-versjon og hva du holdt på med da problemet oppsto.",
+    "warning": "Send oss aldri gjenopprettingsfrasen din på 12 ord. Vi vil aldri be om den, og den som ber om den, prøver å stjele kontoen din.",
+    "email": "Send e-post til brukerstøtte",
+    "privacy": "Personvernerklæring",
+    "terms": "Bruksvilkår"
+  },
+  "faq": [
+    {
+      "q": "Jeg installerte appen på nytt / fikk ny telefon. Hvor er samtalene mine?",
+      "a": "Kontakter og dekrypterte samtaler lagres bare på enheten din, så de flytter ikke til en ny. Når du skriver inn gjenopprettingsfrasen på 12 ord, får du tilbake identiteten, kallenavnet og de lagrede meldingene dine, så folk kan nå deg igjen, men samtaler med andre blir værende på den gamle enheten."
+    },
+    {
+      "q": "Jeg har mistet gjenopprettingsfrasen. Kan dere gjenopprette kontoen min?",
+      "a": "Nei. Vi har ingen kopi av frasen eller nøklene dine; de finnes bare på enheten din. Uten frasen kan ingen gjenopprette kontoen, heller ikke vi. Skriv ned frasen og oppbevar den frakoblet."
+    },
+    {
+      "q": "Hvordan logger jeg inn på en ny enhet?",
+      "a": "Trykk «Gjenopprett med gjenopprettingsfrase» på velkomstskjermen, skriv inn de 12 ordene i riktig rekkefølge og velg en tilgangskode. Ikke trykk «Opprett konto» - det lager en annen, tom konto."
+    },
+    {
+      "q": "Hvordan legger jeg til en kontakt?",
+      "a": "Trykk + på hovedskjermen og skann den andres QR-kode, åpne invitasjonslenken eller søk på kallenavnet. En første melding fra noen du ikke har lagt til, vises som en ny samtale."
+    },
+    {
+      "q": "En melding blir ikke sendt.",
+      "a": "Sjekk at du er på nett, at kontakten er lagt til, og at du har meldinger igjen i kvoten (vises øverst på hovedskjermen). Hvis sendingen fortsatt feiler, send oss en e-post med tidspunktet for forsøket, så ser vi på det."
+    },
+    {
+      "q": "Hvordan administrerer eller sier jeg opp et abonnement?",
+      "a": "Abonnementer og meldingspakker faktureres av Apple. Åpne Innstillinger-appen i iOS, trykk på navnet ditt og deretter Abonnementer for å endre eller si opp. Refusjoner håndteres av Apple på reportaproblem.apple.com."
+    },
+    {
+      "q": "Hvordan sletter jeg kontoen og dataene mine?",
+      "a": "Profil, deretter «Tilbakestill konto», sletter nøkler, kontakter og meldingshistorikk fra enheten. Meldinger du allerede har sendt, blir liggende kryptert på blokkjeden: ingen kan lese dem uten nøklene, og ingen kan slette dem."
+    },
+    {
+      "q": "Hvordan melder jeg misbruk eller et sikkerhetsproblem?",
+      "a": "Blokker kontakten fra profilskjermen, og send deretter detaljer til privamesh@proton.me. For sikkerhetssårbarheter skriver du til samme adresse med «security» i emnefeltet."
+    }
+  ],
+  "refunds": "Refusjon av abonnementer håndteres av Apple, ikke av oss - bruk [reportaproblem.apple.com](https://reportaproblem.apple.com). For alt annet, send e-post til [{email}](mailto:{email}).",
+  "related": [
+    {
+      "href": "/privacy-policy",
+      "label": "Personvernerklæring",
+      "blurb": "Nøyaktig hva PrivaMesh samler inn og ikke samler inn, på godt norsk."
+    },
+    {
+      "href": "/terms",
+      "label": "Bruksvilkår",
+      "blurb": "Akseptabel bruk, verktøy for blokkering og rapportering, og abonnementsvilkår."
+    },
+    {
+      "href": "/features/seed-phrase-accounts",
+      "label": "Kontoer med frase",
+      "blurb": "Hvorfor det ikke finnes tilbakestilling av passord, og hva de 12 ordene dine faktisk styrer."
+    }
+  ]
+}

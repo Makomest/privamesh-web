@@ -1,0 +1,70 @@
+{
+  "meta": {
+    "title": "Support",
+    "description": "Hilfe zu PrivaMesh: Kontakt, Wiederherstellungsphrase und neue Geräte, Kontakte hinzufügen, Abos, Konto löschen und Missbrauch melden."
+  },
+  "eyebrow": "Support",
+  "title": "Support",
+  "lead": "Fragen, Fehlerberichte und Hilfe zum Konto bei PrivaMesh.",
+  "contact": {
+    "heading": "Kontakt",
+    "lead": "Schreiben Sie an [{email}](mailto:{email}). Wir antworten innerhalb von **2 Werktagen**, auf Englisch oder Russisch.",
+    "tip": "Damit wir schneller helfen können, nennen Sie Ihr Gerätemodell, Ihre iOS-Version und was Sie gerade getan haben, als das Problem auftrat.",
+    "warning": "Schicken Sie uns niemals Ihre Wiederherstellungsphrase aus 12 Wörtern. Wir werden nie danach fragen, und wer danach fragt, will Ihr Konto stehlen.",
+    "email": "Support anschreiben",
+    "privacy": "Datenschutzerklärung",
+    "terms": "Nutzungsbedingungen"
+  },
+  "faq": [
+    {
+      "q": "Ich habe die App neu installiert / ein neues Telefon. Wo sind meine Chats?",
+      "a": "Kontakte und entschlüsselte Chats liegen nur auf Ihrem Gerät und ziehen daher nicht auf ein neues um. Mit Ihrer Wiederherstellungsphrase aus 12 Wörtern kommen Ihre Identität, Ihr Spitzname und Ihre gespeicherten Nachrichten zurück, sodass man Sie wieder erreichen kann, aber Unterhaltungen mit anderen bleiben auf dem alten Gerät."
+    },
+    {
+      "q": "Ich habe meine Wiederherstellungsphrase verloren. Können Sie mein Konto wiederherstellen?",
+      "a": "Nein. Wir haben keine Kopie Ihrer Phrase oder Ihrer Schlüssel; sie existieren nur auf Ihrem Gerät. Ohne die Phrase kann niemand das Konto wiederherstellen, auch wir nicht. Schreiben Sie die Phrase auf und bewahren Sie sie offline auf."
+    },
+    {
+      "q": "Wie melde ich mich auf einem neuen Gerät an?",
+      "a": "Tippen Sie auf dem Startbildschirm auf „Mit Wiederherstellungsphrase wiederherstellen“, geben Sie Ihre 12 Wörter in der richtigen Reihenfolge ein und legen Sie dann einen Code fest. Tippen Sie nicht auf „Konto erstellen“ - das erzeugt ein anderes, leeres Konto."
+    },
+    {
+      "q": "Wie füge ich einen Kontakt hinzu?",
+      "a": "Tippen Sie auf dem Hauptbildschirm auf + und scannen Sie den QR-Code der anderen Person, öffnen Sie ihren Einladungslink oder suchen Sie nach ihrem Spitznamen. Eine erste Nachricht von jemandem, den Sie nicht hinzugefügt haben, erscheint als neuer Chat."
+    },
+    {
+      "q": "Eine Nachricht wird nicht gesendet.",
+      "a": "Prüfen Sie, ob Sie online sind, ob der Kontakt erfolgreich hinzugefügt wurde und ob Ihr Kontingent noch Nachrichten hat (oben auf dem Hauptbildschirm zu sehen). Wenn das Senden weiterhin scheitert, schreiben Sie uns mit der Uhrzeit des Versuchs, und wir sehen es uns an."
+    },
+    {
+      "q": "Wie verwalte oder kündige ich ein Abo?",
+      "a": "Abos und Nachrichtenpakete werden über Apple abgerechnet. Öffnen Sie die iOS-Einstellungen, tippen Sie auf Ihren Namen und dann auf Abonnements, um zu ändern oder zu kündigen. Erstattungen bearbeitet Apple unter reportaproblem.apple.com."
+    },
+    {
+      "q": "Wie lösche ich mein Konto und meine Daten?",
+      "a": "Profil, dann „Konto zurücksetzen“ löscht Schlüssel, Kontakte und Nachrichtenverlauf vom Gerät. Bereits gesendete Nachrichten bleiben verschlüsselt in der Blockchain: Ohne die Schlüssel kann sie niemand lesen, und niemand kann sie löschen."
+    },
+    {
+      "q": "Wie melde ich Missbrauch oder ein Sicherheitsproblem?",
+      "a": "Blockieren Sie den Kontakt auf seinem Profilbildschirm und schreiben Sie mit Details an privamesh@proton.me. Für Sicherheitslücken schreiben Sie an dieselbe Adresse mit „security“ im Betreff."
+    }
+  ],
+  "refunds": "Erstattungen für Abos bearbeitet Apple, nicht wir - nutzen Sie [reportaproblem.apple.com](https://reportaproblem.apple.com). Für alles andere schreiben Sie an [{email}](mailto:{email}).",
+  "related": [
+    {
+      "href": "/privacy-policy",
+      "label": "Datenschutzerklärung",
+      "blurb": "Genau, was PrivaMesh erhebt und was nicht - in einfacher Sprache."
+    },
+    {
+      "href": "/terms",
+      "label": "Nutzungsbedingungen",
+      "blurb": "Zulässige Nutzung, Blockieren und Melden sowie Abo-Bedingungen."
+    },
+    {
+      "href": "/features/seed-phrase-accounts",
+      "label": "Konten mit Phrase",
+      "blurb": "Warum es kein Passwort-Zurücksetzen gibt und was Ihre 12 Wörter tatsächlich steuern."
+    }
+  ]
+}
