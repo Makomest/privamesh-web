@@ -1,0 +1,112 @@
+{
+  "meta": {
+    "title": "Znane ograniczenia",
+    "description": "Przed czym PrivaMesh cię nie chroni: trwały szyfrogram w łańcuchu, widoczne czasy, niepodpisana wersja na Windows i nieodzyskiwalna historia."
+  },
+  "eyebrow": "Ograniczenia",
+  "title": "Przed czym PrivaMesh cię nie chroni",
+  "lead": "Każde narzędzie do prywatności ma granice. Nasze są wypisane tutaj, a nie zostawione do samodzielnego odkrycia, bo produkt, który publikuje tylko swoje mocne strony, prosi, by wierzyć mu na słowo.",
+  "summary": "W skrócie: szyfrogram w publicznym łańcuchu jest trwały, czas transakcji jest widoczny, dopóki nie włączysz ruchu maskującego, dostawca RPC widzi twoje IP, a historii wiadomości nie da się nigdy odtworzyć.",
+  "items": [
+    {
+      "title": "Szyfrogram zostaje w publicznym łańcuchu na zawsze",
+      "body": "Każda wiadomość trafia do Solany jako dopełniony szyfrogram i nigdy nie wygasa. Bez kluczy zniszczonych po użyciu jest nieczytelna, ale przeciwnik może ją dziś zapisać i przechowywać bez końca. Jeśli kiedyś kryptografia zostanie złamana, to, co zapisano, wciąż tam będzie."
+    },
+    {
+      "title": "Fakt i czas transakcji są publiczne",
+      "body": "Jednorazowe adresy ukrywają, do kogo jest wiadomość, a dopełnienie - jak była długa. Żadne z nich nie ukrywa, że transakcja nastąpiła w określonej chwili. Przy wyłączonym ruchu maskującym twój wzorzec aktywności widzi każdy, kto czyta łańcuch."
+    },
+    {
+      "title": "Dopełnienie ujawnia przedział, a nie nic",
+      "body": "Tekst jawny jest dopełniany do 32, 64, 128, 256 lub 512 bajtów. Obserwator dowiaduje się, do którego przedziału trafiła wiadomość - jednowyrazową odpowiedź i wiadomość 500-bajtową nadal da się odróżnić od siebie, choć nie od innych z tego samego przedziału."
+    },
+    {
+      "title": "Ruch maskujący jest domyślnie wyłączony",
+      "body": "Tryb wabików, który ukrywa czasy, zużywa twój limit wiadomości, dlatego domyślnie jest wyłączony. Dopóki go nie włączysz, korelacja czasowa jest dostępna dla każdego, kto obserwuje łańcuch. To świadomy kompromis, a nie przeoczenie, ale oznacza, że konfiguracja domyślna jest słabsza od najmocniejszej."
+    },
+    {
+      "title": "Punkt końcowy RPC widzi twoje IP",
+      "body": "Wysłanie transakcji oznacza rozmowę z dostawcą RPC, który widzi twój adres i czas zapytań. Można go wymienić i samemu hostować, ale domyślnie powierzasz osobie trzeciej metadane sieciowe. Jeśli to dla ciebie ważne, używaj VPN lub Tor."
+    },
+    {
+      "title": "Dostarczanie zależy od Solany, RPC i naszej usługi opłat",
+      "body": "Jeśli którekolwiek z trzech nie działa lub jest zablokowane w twoim kraju, wysyłanie się zatrzymuje. Tożsamość, kontakty i historia nie ucierpią, bo są na twoim urządzeniu, ale PrivaMesh nie jest odporny na cenzurę w sensie „zawsze się przebije”."
+    },
+    {
+      "title": "Historii wiadomości nie da się odzyskać",
+      "body": "Utajnianie z wyprzedzeniem niszczy klucz każdej wiadomości po użyciu, a stan ratcheta nigdy nie opuszcza urządzenia. Fraza odzyskiwania przywraca na nowym urządzeniu tożsamość i kontakty, nigdy rozmowy. Ponowna instalacja aplikacji na tym samym telefonie działa tak samo."
+    },
+    {
+      "title": "Nie da się sprawdzić, czy dodałeś właściwą osobę",
+      "body": "Pakiety prekluczy są podpisane, więc rejestr nie podmieni klucza konta. Ale wcześniejszego kroku aplikacja nie sprawdza: czy konto to osoba, o którą ci chodziło. Nie ma numeru bezpieczeństwa, porównywania odcisków ani weryfikacji poza aplikacją. Jeśli napastnik przekona cię do dodania swojego konta, kryptografia zadziała bez zarzutu i ochroni niewłaściwą rozmowę."
+    },
+    {
+      "title": "Jeśli publikujesz pseudonim, łańcuch pokazuje, z kim zaczynasz rozmowy",
+      "body": "Rejestr wyszukiwania wiąże twój pseudonim z kluczem publicznym, a pierwsza wiadomość rozmowy niesie ten sam klucz jawnie - musi, bo tak druga strona wyprowadza wspólny sekret. Trafia ona też na zwykły adres odbiorcy, bo wspólnego adresu jeszcze nie ma. Każdy, kto czyta łańcuch, może więc zestawić jedno z drugim i zobaczyć, że zacząłeś rozmowę z konkretną osobą, i kiedy. Ale nie to, co zostało powiedziane: treść pozostaje zaszyfrowana, a kolejne wiadomości trafiają na jednorazowe adresy. Jeśli nigdy nie opublikujesz pseudonimu, ta sama pierwsza wiadomość nikogo nie wskazuje. Zgłoszone z zewnątrz w sierpniu 2026; porządna poprawka wymaga zmiany formatu wiadomości, którego starsze instalacje nie mogłyby odczytać."
+    },
+    {
+      "title": "Skradziona fraza otwiera każdą wiadomość wysłaną przed pierwszą odpowiedzią",
+      "body": "Twój klucz tożsamości, podpisany prekey i postkwantowy prekey pochodzą z frazy odzyskiwania, a jednorazowych prekluczy się nie publikuje. Koperta otwierająca rozmowę zostaje na zawsze w publicznym łańcuchu i niesie efemeryczny klucz publiczny nadawcy, więc każdy, kto ma twoją frazę, przeliczy korzeń X3DH. I nie kończy się na tej jednej wiadomości: dopóki nadawca nie przetworzy twojej odpowiedzi, każda jego kolejna wiadomość przedłuża ten sam łańcuch o krok, a ten sam sekret wskazuje też, gdzie te wiadomości leżą w łańcuchu. Ktoś, kto napisał trzy razy, gdy byłeś offline, odsłonił wszystkie trzy. Gdy tylko odpowiesz i odpowiedź dotrze, do ratcheta wchodzi losowy klucz istniejący tylko na urządzeniu i fraza przestaje wystarczać. ML-KEM-768 tego nie zmienia, bo jego seed też pochodzi z frazy. Zgłoszone z zewnątrz w sierpniu 2026; wcześniej opisywaliśmy to jako dotyczące tylko pierwszej wiadomości."
+    },
+    {
+      "title": "Żadna wydana wersja nie przeprowadziła postkwantowego uzgadniania kluczy",
+      "body": "Wersja 1.0 wyszła z wyłączoną ścieżką postkwantową. 1.1 włączyła ją dla iPhone'ów z iOS 26, ale szyfrogram X-Wing przechodzi przez przesłanie do Irys, a w obu wydanych wersjach to przesłanie się nie udaje: żądanie było błędnie podpisane, a później szło na trasę, która się zmieniła. Nadawca wraca wtedy do klasycznego X3DH, więc każda dotąd otwarta rozmowa jest chroniona tylko przez X25519, bez ML-KEM-768. To wciąż szyfrowanie end-to-end, ale żadna ochrona przed szyfrogramem zapisanym dziś i zaatakowanym później komputerem kwantowym. Poprawka przyjdzie w następnej wersji w App Store."
+    },
+    {
+      "title": "Utrata frazy odzyskiwania to utrata konta",
+      "body": "Nie ma resetu, obejścia przez pomoc ani kopii zapasowej u nas. Dwanaście słów to konto. To bezpośrednia cena tego, że nie istnieje baza kont."
+    },
+    {
+      "title": "Trzy platformy, dwie z nich ledwo przetestowane",
+      "body": "Aplikacja na iPhone'a działa na iOS 18 lub nowszym, ale postkwantowe uzgadnianie wymaga iOS 26, więc iPhone ze starszym systemem używa klasycznego X3DH. To jedyna platforma z prawdziwym użyciem. Instalator na Windows nie ma certyfikatu podpisywania kodu, więc każde pobranie wywołuje ostrzeżenie o wydawcy. APK na Androida to wersja 0.1, sprawdzona na emulatorze, a nie na prawdziwym urządzeniu, i żadna wersja na Androida ani Windows nie wysłała jeszcze wiadomości w mainnecie. Płatne plany działają tylko na iPhonie. Nie ma klienta webowego."
+    },
+    {
+      "title": "Funkcje, które ma popularny komunikator, a ten nie",
+      "body": "Brak czatów grupowych, przesyłania plików i multimediów, rozmów głosowych i wideo, synchronizacji między urządzeniami oraz wyszukiwania wiadomości między urządzeniami. PrivaMesh to skupiony komunikator tekstowy do rozmów jeden na jeden."
+    },
+    {
+      "title": "Anonimowość nie jest gwarantowana",
+      "body": "PrivaMesh usuwa identyfikatory, które kontroluje. Nie może jednak powstrzymać cię przed ujawnieniem, kim jesteś, w wiadomości, użyciem pseudonimu z innego kontekstu ani przed identyfikacją przez dostawcę internetu. Anonimowość to praktyka, którą architektura wspiera, a nie przełącznik, który włącza."
+    }
+  ],
+  "whyHeading": "Po co ta strona",
+  "why": [
+    "Bezwzględne twierdzenia łatwo napisać i nie da się ich sprawdzić, a w produkcie do prywatności kosztują więcej zaufania, niż przynoszą. Każdy na tyle techniczny, by mieć znaczenie, znajdzie luki - a znaleźć je niewymienione jest gorzej niż przeczytać o nich tutaj.",
+    "Jeśli coś na tej stronie jest błędne lub nieaktualne, to błąd - zgłoś go przez [stronę bezpieczeństwa](/security). Co widzi każdy element, opisuje [strona architektury](/architecture)."
+  ],
+  "faq": [
+    {
+      "q": "Czy moje wiadomości mogą zostać odszyfrowane w przyszłości?",
+      "a": "Szyfrogram leży w publicznym łańcuchu na stałe, więc można go zapisać i przechowywać. Utajnianie z wyprzedzeniem niszczy klucz każdej wiadomości po użyciu, a na iOS 26 uzgadnianie jest zaprojektowane tak, by dodawać ML-KEM-768 przeciw przyszłym atakom kwantowym - choć, jak opisano wyżej, żadna wydana wersja nie przeprowadziła jeszcze tego kroku. Ani jedno, ani drugie nie sprawia, że zapisany szyfrogram znika."
+    },
+    {
+      "q": "Dlaczego ruch maskujący jest domyślnie wyłączony?",
+      "a": "Transakcje-wabiki zużywają twój limit wiadomości, więc włączony domyślnie po cichu kosztowałby cię wiadomości. To ustawienie, a nie wartość domyślna, co oznacza, że dostarczona konfiguracja jest pod względem czasu słabsza od najmocniejszej dostępnej."
+    },
+    {
+      "q": "Jeśli ktoś ukradnie moją frazę odzyskiwania, przeczyta moje stare wiadomości?",
+      "a": "Wszystko, co wysłano, zanim twoja pierwsza odpowiedź dotarła do nadawcy - tak. Te koperty są na stałe w publicznym łańcuchu, każdy potrzebny do ich otwarcia klucz pochodzi z frazy, bo nie publikuje się jednorazowych prekluczy, a wiadomości po pierwszej przedłużają ten sam łańcuch. Od pierwszej przetworzonej odpowiedzi rozmowę chronią klucze ratcheta, które były losowe i nigdy nie opuściły urządzenia."
+    },
+    {
+      "q": "Czy PrivaMesh jest anonimowy?",
+      "a": "Usuwa identyfikatory, które inaczej mielibyśmy my - bez numeru telefonu, bez e-maila, bez konta. Nie ukrywa twojego IP przed dostawcą internetu i nie może powstrzymać cię przed przedstawieniem się w rozmowie."
+    }
+  ],
+  "related": [
+    {
+      "href": "/architecture",
+      "label": "Architektura",
+      "blurb": "Każdy element, jego operator i to, co może zobaczyć."
+    },
+    {
+      "href": "/threat-model",
+      "label": "Model zagrożeń",
+      "blurb": "Przeciwnik po przeciwniku: co widać, co zatrzymano, co zostaje."
+    },
+    {
+      "href": "/security",
+      "label": "Bezpieczeństwo i zgłoszenia",
+      "blurb": "Jak zgłosić podatność."
+    }
+  ]
+}

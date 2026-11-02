@@ -1,0 +1,112 @@
+{
+  "meta": {
+    "title": "Bilinen sınırlamalar",
+    "description": "PrivaMesh'in sizi neye karşı korumadığı: zincirde kalıcı şifreli metin, görünür zamanlama, imzasız bir Windows sürümü ve geri getirilemeyen geçmiş."
+  },
+  "eyebrow": "Sınırlamalar",
+  "title": "PrivaMesh'in sizi neye karşı korumadığı",
+  "lead": "Her gizlilik aracının sınırları vardır. Bizimkiler, sizin keşfetmenize bırakılmak yerine burada listelenmiştir; çünkü yalnızca güçlü yanlarını yayımlayan bir ürün, sözüne körü körüne güvenilmesini ister.",
+  "summary": "Kısaca: herkese açık bir zincirdeki şifreli metin kalıcıdır, örtü trafiğini açmadıkça işlemlerin zamanı görünür, RPC sağlayıcısı IP'nizi görür ve mesaj geçmişi asla geri getirilemez.",
+  "items": [
+    {
+      "title": "Şifreli metin herkese açık bir zincirde sonsuza dek kalır",
+      "body": "Her mesaj Solana'ya doldurulmuş şifreli metin olarak yazılır ve süresi hiç dolmaz. Kullanımdan sonra yok edilen anahtarlar olmadan okunamaz, ama bir saldırgan onu bugün kaydedip süresiz saklayabilir. Bir gün kriptografi kırılırsa, kaydedilen her şey hâlâ oradadır."
+    },
+    {
+      "title": "Bir işlemin gerçekleştiği ve zamanı herkese açıktır",
+      "body": "Tek kullanımlık adresler mesajın kime gittiğini, doldurma ise ne kadar uzun olduğunu gizler. Hiçbiri belirli bir anda bir işlemin gerçekleştiğini gizlemez. Örtü trafiği kapalıyken etkinlik düzeniniz zinciri okuyan herkese görünür."
+    },
+    {
+      "title": "Doldurma hiçbir şey değil, bir dilim açığa vurur",
+      "body": "Düz metin 32, 64, 128, 256 veya 512 bayta tamamlanır. Gözlemci bir mesajın hangi dilime düştüğünü öğrenir - yani tek kelimelik bir yanıt ile 500 baytlık bir mesaj birbirinden hâlâ ayırt edilebilir, yalnızca aynı dilimdeki diğerlerinden ayırt edilemez."
+    },
+    {
+      "title": "Örtü trafiği varsayılan olarak kapalıdır",
+      "body": "Zamanlamayı gizleyen sahte mesaj modu mesaj kotanızdan harcar, bu yüzden kapalı gelir. Siz açana kadar zaman korelasyonu zinciri izleyen herkesin elindedir. Bu bir gözden kaçırma değil, bilinçli bir tercihtir, ama varsayılan yapılandırmanın en güçlüsünden zayıf olduğu anlamına gelir."
+    },
+    {
+      "title": "RPC uç noktası IP'nizi görür",
+      "body": "Bir işlem göndermek, adresinizi ve isteklerinizin zamanını gören bir RPC sağlayıcısıyla konuşmak demektir. Değiştirilebilir ve kendiniz barındırabilirsiniz, ama varsayılan olarak ağ düzeyindeki meta verileri üçüncü bir tarafa emanet edersiniz. Sizin için önemliyse VPN ya da Tor ile kullanın."
+    },
+    {
+      "title": "Teslimat Solana'ya, RPC'ye ve ücret hizmetimize bağlıdır",
+      "body": "Üçünden biri çökerse ya da ülkenizde engellenirse gönderim durur. Kimliğiniz, kişileriniz ve geçmişiniz cihazınızda yaşadığı için etkilenmez, ama PrivaMesh her zaman ulaşma anlamında sansüre dayanıklı değildir."
+    },
+    {
+      "title": "Mesaj geçmişi geri getirilemez",
+      "body": "İleri gizlilik her mesaj anahtarını kullanımdan sonra yok eder ve ratchet durumu cihazdan asla çıkmaz. Kurtarma ifadeniz yeni bir cihazda kimliğinizi ve kişilerinizi geri getirir, konuşmalarınızı asla. Uygulamayı aynı telefona yeniden kurmak da aynı etkiyi yapar."
+    },
+    {
+      "title": "Doğru kişiyi eklediğinizi doğrulamanın bir yolu yok",
+      "body": "Ön anahtar paketleri imzalıdır, dolayısıyla bir kayıt bir hesabın anahtarını değiştiremez. Ama uygulama bundan önceki adımı kontrol etmez: hesabın gerçekten kastettiğiniz kişi olup olmadığını. Güvenlik numarası, parmak izi karşılaştırması ya da uygulama dışı doğrulama yoktur. Bir saldırgan sizi kendi hesabını eklemeye ikna ederse, kriptografi kusursuz çalışır ve yanlış konuşmayı korur."
+    },
+    {
+      "title": "Bir takma ad yayımlarsanız, zincir kiminle konuşma başlattığınızı gösterir",
+      "body": "Arama kaydı takma adınızı genel anahtarınıza bağlar ve bir konuşmanın ilk mesajı aynı anahtarı açık olarak taşır - taşımak zorundadır, çünkü karşı taraf ortak sırrı bununla türetir. Ayrıca alıcının normal adresine gönderilir, çünkü henüz ortak bir adres yoktur. Dolayısıyla zinciri okuyan herkes ikisini eşleştirip belirli bir kişiyle konuşma başlattığınızı ve ne zaman başlattığınızı görebilir. Ne konuşulduğunu değil: içerik şifreli kalır ve sonraki mesajlar tek kullanımlık adreslere geçer. Hiç takma ad yayımlamazsanız aynı ilk mesaj kimseyi işaret etmez. Ağustos 2026'da dışarıdan bildirildi; düzgün düzeltmek, eski kurulumların okuyamayacağı yeni bir mesaj biçimi gerektirir."
+    },
+    {
+      "title": "Çalınan bir ifade, ilk yanıttan önce gönderilen her mesajı açar",
+      "body": "Kimlik anahtarınız, imzalı ön anahtarınız ve kuantum sonrası ön anahtarınız kurtarma ifadesinden türetilir ve tek kullanımlık ön anahtarlar yayımlanmaz. Bir konuşmayı açan zarf herkese açık zincirde sonsuza dek kalır ve göndericinin geçici genel anahtarını taşır; böylece ifadenize sahip olan herkes X3DH kökünü yeniden hesaplayabilir. Bu tek mesajla da kalmaz: gönderici sizden gelen bir yanıtı işleyene kadar gönderdiği her mesaj aynı zinciri bir adım ileri taşır ve aynı sır bu mesajların zincirdeki yerini de gösterir. Siz çevrimdışıyken size üç kez yazan biri üçünü de açığa çıkarmıştır. Siz yanıt verip yanıt ona ulaştığı anda, yalnızca cihazda bulunan rastgele bir anahtar ratchet'e girer ve ifade artık yetmez. ML-KEM-768 bunu değiştirmez, çünkü onun tohumu da ifadeden türetilir. Ağustos 2026'da dışarıdan bildirildi; daha önce bunu yalnızca ilk mesaj olarak tanımlamıştık."
+    },
+    {
+      "title": "Yayımlanan hiçbir sürüm kuantum sonrası el sıkışmayı tamamlamadı",
+      "body": "1.0, kuantum sonrası yol kapalı olarak yayımlandı. 1.1 bunu iOS 26'daki iPhone'lar için açtı, ama X-Wing şifreli metni Irys'e bir yükleme üzerinden taşınır ve yayımlanan her iki sürümde de bu yükleme başarısız olur: istek yanlış imzalanmıştı, daha sonra da yeri değişmiş bir yola gidiyordu. Gönderici bu durumda klasik X3DH'ye döner; yani şimdiye kadar açılan her konuşma ML-KEM-768 ile değil, yalnızca X25519 ile korunur. Bu yine uçtan uca şifrelemedir, ama bugün kaydedilip ileride bir kuantum bilgisayarla saldırıya uğrayacak şifreli metne karşı bir savunma değildir. Düzeltme App Store'daki bir sonraki sürümle gelecek."
+    },
+    {
+      "title": "Kurtarma ifadesini kaybetmek hesabı kaybetmektir",
+      "body": "Sıfırlama yok, destek müdahalesi yok, bizde yedek yok. On iki kelime hesabın kendisidir. Bu, bir hesap veritabanının olmamasının doğrudan bedelidir."
+    },
+    {
+      "title": "Üç platform, ikisi neredeyse hiç test edilmedi",
+      "body": "iPhone uygulaması iOS 18 ve sonrasında çalışır, ama kuantum sonrası el sıkışma iOS 26 gerektirir; bu yüzden daha eski sistemdeki bir iPhone klasik X3DH kullanır. Gerçek kullanımı olan tek platform budur. Windows yükleyicisinin kod imzalama sertifikası yoktur, bu yüzden her indirme yayıncı uyarısı verir. Android APK'sı 0.1 sürümüdür, gerçek bir cihazda değil emülatörde denenmiştir ve henüz hiçbir Android ya da Windows sürümü mainnet'te mesaj göndermemiştir. Ücretli planlar yalnızca iPhone'da çalışır. Web istemcisi yoktur."
+    },
+    {
+      "title": "Yaygın bir mesajlaşma uygulamasında olup bunda olmayan özellikler",
+      "body": "Grup sohbeti yok, dosya ya da medya aktarımı yok, sesli veya görüntülü arama yok, çoklu cihaz eşitleme yok, cihazlar arası mesaj arama yok. PrivaMesh bire bir konuşmalara odaklanmış bir metin mesajlaşma uygulamasıdır."
+    },
+    {
+      "title": "Anonimlik garanti değildir",
+      "body": "PrivaMesh kontrol ettiği tanımlayıcıları kaldırır. Bir mesajda kim olduğunuzu açık etmenizi, başka bir bağlamdan bir takma adı yeniden kullanmanızı ya da ağ sağlayıcınız tarafından tanınmanızı engelleyemez. Anonimlik, mimarinin desteklediği bir alışkanlıktır; açıp kapattığı bir anahtar değil."
+    }
+  ],
+  "whyHeading": "Bu sayfa neden var",
+  "why": [
+    "Mutlak iddiaları yazmak kolay, doğrulamak imkânsızdır ve bir gizlilik ürününde getirdiklerinden fazla güven kaybettirirler. Önemli olacak kadar teknik bilgisi olan herkes açıkları bulur; onları listelenmemiş bulmak, burada okumaktan daha kötüdür.",
+    "Bu sayfadaki bir şey yanlış ya da eskimişse bu bir hatadır - [güvenlik sayfası](/security) üzerinden bize bildirin. Hangi bileşenin neyi görebildiği [mimari sayfasında](/architecture) yer alıyor."
+  ],
+  "faq": [
+    {
+      "q": "Mesajlarım gelecekte çözülebilir mi?",
+      "a": "Şifreli metin herkese açık bir zincirde kalıcı olarak durur, dolayısıyla kaydedilip saklanabilir. İleri gizlilik her mesaj anahtarını kullanımdan sonra yok eder ve iOS 26'da el sıkışma, gelecekteki kuantum saldırılarına karşı ML-KEM-768'i katacak şekilde tasarlanmıştır - ancak yukarıda anlatıldığı gibi, yayımlanan hiçbir sürüm bu adımı henüz tamamlamadı. İkisi de kaydedilmiş şifreli metni ortadan kaldırmaz."
+    },
+    {
+      "q": "Örtü trafiği neden varsayılan olarak kapalı?",
+      "a": "Sahte işlemler mesaj kotanızdan harcar, bu yüzden açık bırakmak size fark ettirmeden mesaj kaybettirir. Bu bir varsayılan değil, bir ayardır; yani kutudan çıkan yapılandırma zamanlama açısından mevcut en güçlüsünden daha zayıftır."
+    },
+    {
+      "q": "Biri kurtarma ifademi çalarsa eski mesajlarımı okuyabilir mi?",
+      "a": "İlk yanıtınız göndericiye ulaşmadan önce gönderilen her şeyi, evet. Bu zarflar herkese açık zincirde kalıcı olarak durur, tek kullanımlık ön anahtarlar yayımlanmadığı için onları açmak gereken her anahtar ifadeden türetilir ve ilkinden sonraki mesajlar aynı zinciri sürdürür. İşlenen ilk yanıtınızdan itibaren konuşma, rastgele olan ve cihazdan hiç çıkmamış ratchet anahtarlarıyla korunur."
+    },
+    {
+      "q": "PrivaMesh anonim mi?",
+      "a": "Aksi halde bizde olacak tanımlayıcıları kaldırır - telefon numarası yok, e-posta yok, hesap yok. IP'nizi ağ sağlayıcınızdan gizlemez ve bir konuşmada kendinizi tanıtmanızı engelleyemez."
+    }
+  ],
+  "related": [
+    {
+      "href": "/architecture",
+      "label": "Mimari",
+      "blurb": "Her bileşen, onu kimin işlettiği ve neyi görebildiği."
+    },
+    {
+      "href": "/threat-model",
+      "label": "Tehdit modeli",
+      "blurb": "Saldırgan saldırgan: ne görülüyor, ne durduruluyor, ne kalıyor."
+    },
+    {
+      "href": "/security",
+      "label": "Güvenlik ve bildirim",
+      "blurb": "Bir güvenlik açığı nasıl bildirilir."
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "meta": {
+    "title": "Poznata ograničenja",
+    "description": "Od čega vas PrivaMesh ne štiti: trajni šifrirani tekst na lancu, vidljiva vremena, nepotpisana verzija za Windows i nepovratna povijest."
+  },
+  "eyebrow": "Ograničenja",
+  "title": "Od čega vas PrivaMesh ne štiti",
+  "lead": "Svaki alat za privatnost ima granice. Naše su navedene ovdje umjesto da ih sami otkrivate, jer proizvod koji objavljuje samo svoje prednosti traži da mu se vjeruje na riječ.",
+  "summary": "Ukratko: šifrirani tekst na javnom lancu je trajan, vrijeme transakcija vidljivo je dok ne uključite prikrivajući promet, pružatelj RPC-a vidi vaš IP, a povijest poruka nikad se ne može vratiti.",
+  "items": [
+    {
+      "title": "Šifrirani tekst zauvijek ostaje na javnom lancu",
+      "body": "Svaka poruka upisuje se u Solanu kao nadopunjeni šifrirani tekst i nikad ne istječe. Bez ključeva uništenih nakon upotrebe nečitljiva je, ali napadač je danas može snimiti i čuvati neograničeno. Ako se kriptografija jednom probije, snimljeno je i dalje tamo."
+    },
+    {
+      "title": "Činjenica i vrijeme transakcije su javni",
+      "body": "Jednokratne adrese skrivaju kome je poruka namijenjena, a nadopuna skriva koliko je bila duga. Ništa od toga ne skriva da se u određenom trenutku dogodila transakcija. S isključenim prikrivajućim prometom vaš je obrazac aktivnosti vidljiv svakome tko čita lanac."
+    },
+    {
+      "title": "Nadopuna otkriva razred, a ne ništa",
+      "body": "Otvoreni tekst nadopunjuje se na 32, 64, 128, 256 ili 512 bajtova. Promatrač saznaje u koji je razred poruka pala - odgovor od jedne riječi i poruka od 500 bajtova i dalje se mogu razlikovati jedno od drugoga, samo ne od drugih u istom razredu."
+    },
+    {
+      "title": "Prikrivajući promet zadano je isključen",
+      "body": "Način s mamcima koji skriva vremena troši vašu kvotu poruka pa dolazi isključen. Dok ga ne uključite, vremenska korelacija dostupna je svakome tko prati lanac. To je svjestan kompromis, a ne propust, ali znači da je zadana konfiguracija slabija od najjače."
+    },
+    {
+      "title": "RPC krajnja točka vidi vaš IP",
+      "body": "Slanje transakcije znači razgovor s pružateljem RPC-a, koji vidi vašu adresu i vrijeme vaših zahtjeva. Može se zamijeniti i sami ga možete hostati, ali zadano mrežne metapodatke povjeravate trećoj strani. Ako vam je to važno, koristite VPN ili Tor."
+    },
+    {
+      "title": "Dostava ovisi o Solani, RPC-u i našoj usluzi naknada",
+      "body": "Ako bilo koje od troga ne radi ili je blokirano u vašoj zemlji, slanje staje. Identitet, kontakti i povijest ostaju netaknuti jer žive na vašem uređaju, ali PrivaMesh nije otporan na cenzuru u smislu da uvijek prolazi."
+    },
+    {
+      "title": "Povijest poruka ne može se vratiti",
+      "body": "Unaprijedna tajnost uništava ključ svake poruke nakon upotrebe, a stanje ratcheta nikad ne napušta uređaj. Fraza za oporavak na novom uređaju vraća vaš identitet i kontakte, nikad razgovore. Ponovna instalacija aplikacije na istom telefonu ima isti učinak."
+    },
+    {
+      "title": "Nema načina da provjerite jeste li dodali pravu osobu",
+      "body": "Paketi prekeyeva su potpisani, pa registar ne može podmetnuti ključ za račun. No korak prije toga aplikacija ne provjerava: je li račun osoba koju ste mislili. Nema sigurnosnog broja, usporedbe otisaka ni provjere izvan aplikacije. Ako vas napadač uvjeri da dodate njegov račun, kriptografija radi besprijekorno i štiti pogrešan razgovor."
+    },
+    {
+      "title": "Ako objavite nadimak, lanac pokazuje s kim započinjete razgovore",
+      "body": "Registar pretraživanja povezuje vaš nadimak s vašim javnim ključem, a prva poruka razgovora nosi isti ključ otvoreno - mora, jer druga strana iz njega izvodi zajedničku tajnu. Osim toga šalje se na običnu adresu primatelja, jer zajednička adresa još ne postoji. Svatko tko čita lanac može ih povezati i vidjeti da ste započeli razgovor s određenom osobom, i kada. Ali ne i što je rečeno: sadržaj ostaje šifriran, a kasnije poruke prelaze na jednokratne adrese. Ako nikad ne objavite nadimak, ista prva poruka nikoga ne imenuje. Prijavljeno izvana u kolovozu 2026.; ispravno rješenje zahtijeva novi format poruka, koji starije instalacije ne bi mogle pročitati."
+    },
+    {
+      "title": "Ukradena fraza otvara svaku poruku poslanu prije prvog odgovora",
+      "body": "Vaš ključ identiteta, potpisani prekey i postkvantni prekey izvode se iz fraze za oporavak, a jednokratni prekeyevi ne objavljuju se. Omotnica koja otvara razgovor zauvijek ostaje na javnom lancu i nosi efemerni javni ključ pošiljatelja, pa svatko s vašom frazom može ponovno izračunati X3DH korijen. I ne staje na toj jednoj poruci: dok pošiljatelj ne obradi vaš odgovor, svaka njegova sljedeća poruka nastavlja isti lanac korak dalje, a ista tajna otkriva i gdje te poruke leže na lancu. Tko vam je pisao triput dok ste bili izvan mreže, otkrio je sve tri. Čim odgovorite i odgovor stigne, u ratchet ulazi nasumičan ključ koji postoji samo na uređaju i fraza više nije dovoljna. ML-KEM-768 to ne mijenja jer se i njegov seed izvodi iz fraze. Prijavljeno izvana u kolovozu 2026.; prije smo to opisivali kao samo prvu poruku."
+    },
+    {
+      "title": "Nijedna objavljena verzija nije dovršila postkvantno rukovanje",
+      "body": "Verzija 1.0 izašla je s isključenim postkvantnim putem. 1.1 ga je uključila za iPhone s iOS-om 26, ali X-Wing šifrirani tekst prenosi se prijenosom na Irys, a u obje objavljene verzije taj prijenos ne uspijeva: zahtjev je bio pogrešno potpisan, a kasnije je išao na rutu koja je premještena. Pošiljatelj se tada vraća na klasični X3DH, pa je svaki dosad otvoreni razgovor zaštićen samo X25519, ne ML-KEM-768. To je i dalje end-to-end šifriranje, ali nikakva zaštita od šifriranog teksta snimljenog sada i napadnutog kasnije kvantnim računalom. Ispravak stiže u sljedećoj verziji u App Storeu."
+    },
+    {
+      "title": "Gubitak fraze za oporavak znači gubitak računa",
+      "body": "Nema poništavanja, intervencije podrške ni sigurnosne kopije kod nas. Dvanaest riječi je račun. To je izravna cijena toga što ne postoji baza računa."
+    },
+    {
+      "title": "Tri platforme, dvije jedva testirane",
+      "body": "Aplikacija za iPhone radi na iOS-u 18 ili novijem, ali postkvantno rukovanje zahtijeva iOS 26, pa iPhone sa starijim sustavom koristi klasični X3DH. To je jedina platforma sa stvarnom upotrebom. Instalacijski program za Windows nema certifikat za potpisivanje koda, pa svako preuzimanje izaziva upozorenje o izdavaču. APK za Android je verzija 0.1, provjerena na emulatoru, a ne na pravom uređaju, i nijedna verzija za Android ili Windows još nije poslala poruku na mainnetu. Plaćeni paketi rade samo na iPhoneu. Web-klijenta nema."
+    },
+    {
+      "title": "Značajke koje uobičajeni messenger ima, a ovaj nema",
+      "body": "Nema grupnih chatova, prijenosa datoteka i medija, glasovnih ni video poziva, sinkronizacije među uređajima ni pretraživanja poruka na više uređaja. PrivaMesh je usmjereni tekstualni messenger za razgovore jedan na jedan."
+    },
+    {
+      "title": "Anonimnost nije zajamčena",
+      "body": "PrivaMesh uklanja identifikatore koje kontrolira. Ne može vas spriječiti da u poruci otkrijete tko ste, ponovno upotrijebite nadimak iz drugog konteksta ili da vas identificira pružatelj mreže. Anonimnost je praksa koju arhitektura podržava, a ne prekidač koji ona uključuje."
+    }
+  ],
+  "whyHeading": "Zašto postoji ova stranica",
+  "why": [
+    "Apsolutne tvrdnje lako je napisati i nemoguće provjeriti, a u proizvodu za privatnost koštaju više povjerenja nego što donose. Svatko dovoljno tehnički potkovan da bi bio važan pronaći će praznine, a pronaći ih nenavedene gore je nego pročitati ih ovdje.",
+    "Ako je nešto na ovoj stranici netočno ili zastarjelo, to je greška - javite nam preko [stranice o sigurnosti](/security). Što koja komponenta vidi, piše na [stranici o arhitekturi](/architecture)."
+  ],
+  "faq": [
+    {
+      "q": "Mogu li moje poruke biti dešifrirane u budućnosti?",
+      "a": "Šifrirani tekst trajno je na javnom lancu, pa se može snimiti i čuvati. Unaprijedna tajnost uništava ključ svake poruke nakon upotrebe, a na iOS-u 26 rukovanje je zamišljeno tako da umiješa ML-KEM-768 protiv budućih kvantnih napada - iako, kako je gore opisano, nijedna objavljena verzija još nije dovršila taj korak. Ni jedno ni drugo ne čini da snimljeni šifrirani tekst nestane."
+    },
+    {
+      "q": "Zašto je prikrivajući promet zadano isključen?",
+      "a": "Lažne transakcije troše vašu kvotu poruka, pa bi vas uključen neprimjetno stajao poruka. To je postavka, a ne zadana vrijednost, što znači da je isporučena konfiguracija slabija u pogledu vremena od najjače dostupne."
+    },
+    {
+      "q": "Ako mi netko ukrade frazu za oporavak, može li pročitati moje stare poruke?",
+      "a": "Sve što je poslano prije nego što je vaš prvi odgovor stigao do pošiljatelja - da. Te omotnice trajno su na javnom lancu, svaki ključ potreban za njihovo otvaranje izvodi se iz fraze jer se jednokratni prekeyevi ne objavljuju, a poruke nakon prve nastavljaju isti lanac. Od vašeg prvog obrađenog odgovora razgovor štite ratchet ključevi koji su bili nasumični i nikad nisu napustili uređaj."
+    },
+    {
+      "q": "Je li PrivaMesh anoniman?",
+      "a": "Uklanja identifikatore koje bismo inače imali mi - bez broja telefona, bez e-pošte, bez računa. Ne skriva vaš IP od pružatelja mreže i ne može vas spriječiti da se u razgovoru sami otkrijete."
+    }
+  ],
+  "related": [
+    {
+      "href": "/architecture",
+      "label": "Arhitektura",
+      "blurb": "Svaka komponenta, tko njome upravlja i što može vidjeti."
+    },
+    {
+      "href": "/threat-model",
+      "label": "Model prijetnji",
+      "blurb": "Napadač po napadač: što se vidi, što se zaustavlja, što ostaje."
+    },
+    {
+      "href": "/security",
+      "label": "Sigurnost i prijave",
+      "blurb": "Kako prijaviti ranjivost."
+    }
+  ]
+}

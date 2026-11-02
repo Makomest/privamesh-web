@@ -1,0 +1,112 @@
+{
+  "meta": {
+    "title": "Bekende beperkingen",
+    "description": "Waartegen PrivaMesh je niet beschermt: permanente versleutelde tekst op de blockchain, zichtbare tijdstippen, een niet-ondertekende Windows-versie en onherstelbare geschiedenis."
+  },
+  "eyebrow": "Beperkingen",
+  "title": "Waartegen PrivaMesh je niet beschermt",
+  "lead": "Elk privacyhulpmiddel heeft grenzen. De onze staan hier in plaats van dat je ze zelf moet ontdekken, want een product dat alleen zijn sterke kanten publiceert, vraagt om blind vertrouwen.",
+  "summary": "Kort gezegd: versleutelde tekst op een openbare blockchain is permanent, het tijdstip van transacties is zichtbaar tenzij je dekverkeer aanzet, de RPC-aanbieder ziet je IP en de berichtgeschiedenis is nooit te herstellen.",
+  "items": [
+    {
+      "title": "Versleutelde tekst blijft voor altijd op een openbare blockchain",
+      "body": "Elk bericht wordt als aangevulde versleutelde tekst naar Solana geschreven en verloopt nooit. Het is onleesbaar zonder sleutels die na gebruik zijn vernietigd, maar een tegenstander kan het vandaag opslaan en onbeperkt bewaren. Als de cryptografie ooit wordt gekraakt, staat wat is opgeslagen er nog steeds."
+    },
+    {
+      "title": "Het feit en het tijdstip van een transactie zijn openbaar",
+      "body": "Eenmalige adressen verbergen voor wie een bericht is, en aanvulling verbergt hoe lang het was. Geen van beide verbergt dat er op een bepaald moment een transactie plaatsvond. Met dekverkeer uit is je activiteitspatroon zichtbaar voor iedereen die de blockchain leest."
+    },
+    {
+      "title": "Aanvulling verraadt een categorie, niet niets",
+      "body": "Platte tekst wordt aangevuld tot 32, 64, 128, 256 of 512 bytes. Een waarnemer ziet in welke categorie een bericht viel - een antwoord van één woord en een bericht van 500 bytes zijn dus nog van elkaar te onderscheiden, alleen niet van andere berichten in dezelfde categorie."
+    },
+    {
+      "title": "Dekverkeer staat standaard uit",
+      "body": "De lokmodus die tijdstippen verbergt, gaat van je berichttegoed af en staat daarom standaard uit. Zolang je hem niet aanzet, is tijdscorrelatie beschikbaar voor iedereen die de blockchain volgt. Dat is een bewuste afweging en geen vergissing, maar het betekent dat de standaardinstelling zwakker is dan de sterkste."
+    },
+    {
+      "title": "Het RPC-eindpunt ziet je IP",
+      "body": "Een transactie versturen betekent praten met een RPC-aanbieder, die je adres en het tijdstip van je verzoeken ziet. Hij is vervangbaar en zelf te hosten, maar standaard vertrouw je netwerkmetadata toe aan een derde partij. Gebruik een VPN of Tor als dat voor jou belangrijk is."
+    },
+    {
+      "title": "Bezorging hangt af van Solana, de RPC en onze kostenservice",
+      "body": "Als een van de drie uitvalt of in jouw land is geblokkeerd, stopt het versturen. Je identiteit, contacten en geschiedenis blijven intact omdat ze op je apparaat staan, maar PrivaMesh is niet censuurbestendig in de zin dat het altijd doorkomt."
+    },
+    {
+      "title": "Berichtgeschiedenis is niet te herstellen",
+      "body": "Forward secrecy vernietigt elke berichtsleutel na gebruik, en de ratchet-status verlaat het apparaat nooit. Je herstelzin herstelt op een nieuw apparaat je identiteit en contacten, nooit je gesprekken. De app opnieuw installeren op dezelfde telefoon heeft hetzelfde effect."
+    },
+    {
+      "title": "Geen manier om te controleren of je de juiste persoon hebt toegevoegd",
+      "body": "Prekey-bundels zijn ondertekend, dus een register kan geen sleutel voor een account onderschuiven. Maar de stap daarvoor controleert de app niet: of het account de persoon is die je bedoelde. Er is geen veiligheidsnummer, geen vergelijking van vingerafdrukken en geen verificatie buiten de app. Als een aanvaller je overhaalt zijn account toe te voegen, werkt de cryptografie perfect en beschermt ze het verkeerde gesprek."
+    },
+    {
+      "title": "Als je een bijnaam publiceert, toont de blockchain met wie je gesprekken begint",
+      "body": "Het zoekregister koppelt je bijnaam aan je publieke sleutel, en het eerste bericht van een gesprek draagt diezelfde sleutel onversleuteld - dat moet, want zo leidt de andere kant het gedeelde geheim af. Het gaat bovendien naar het gewone adres van de ontvanger, omdat er nog geen gedeeld adres bestaat. Iedereen die de blockchain leest, kan die twee dus koppelen en zien dat je een gesprek begon met een bepaalde persoon, en wanneer. Niet wat er gezegd is: de inhoud blijft versleuteld en latere berichten gaan naar eenmalige adressen. Publiceer je nooit een bijnaam, dan noemt datzelfde eerste bericht niemand. Extern gemeld in augustus 2026; het goed oplossen vraagt om een nieuw berichtformaat, dat oudere installaties niet zouden kunnen lezen."
+    },
+    {
+      "title": "Een gestolen zin opent elk bericht dat vóór het eerste antwoord is verstuurd",
+      "body": "Je identiteitssleutel, ondertekende prekey en post-kwantum-prekey worden allemaal afgeleid uit de herstelzin, en er worden geen eenmalige prekeys gepubliceerd. De envelop die een gesprek opent, blijft voor altijd op de openbare blockchain en draagt de tijdelijke publieke sleutel van de afzender, dus wie jouw zin heeft, kan de X3DH-wortel narekenen. Het blijft niet bij dat ene bericht: tot de afzender een antwoord van jou verwerkt, zet elk bericht dat hij stuurt dezelfde keten één stap voort, en hetzelfde geheim wijst ook aan waar die berichten op de blockchain staan. Wie je drie keer schreef terwijl je offline was, heeft alle drie blootgegeven. Zodra je antwoordt en het aankomt, komt er een willekeurige, alleen op het apparaat bestaande sleutel in de ratchet en is de zin niet meer genoeg. ML-KEM-768 verandert daar niets aan, omdat de seed ervan ook uit de zin komt. Extern gemeld in augustus 2026; eerder beschreven we dit als alleen het eerste bericht."
+    },
+    {
+      "title": "Geen enkele uitgebrachte versie heeft een post-kwantum-handshake voltooid",
+      "body": "1.0 werd uitgebracht met het post-kwantumpad uitgeschakeld. 1.1 zette het aan voor iPhones met iOS 26, maar de X-Wing-versleutelde tekst gaat via een upload naar Irys, en in beide uitgebrachte versies mislukt die upload: het verzoek was verkeerd ondertekend en ging later naar een route die was verplaatst. De afzender valt dan terug op klassieke X3DH, dus elk tot nu toe geopend gesprek is alleen door X25519 beschermd, niet door ML-KEM-768. Dat blijft end-to-end-versleuteling, maar biedt geen bescherming tegen versleutelde tekst die nu wordt opgeslagen en later met een kwantumcomputer wordt aangevallen. De oplossing komt in de volgende versie in de App Store."
+    },
+    {
+      "title": "Je herstelzin kwijt is je account kwijt",
+      "body": "Er is geen reset, geen ingreep door ondersteuning en geen back-up bij ons. Twaalf woorden zijn het account. Dat is de directe prijs van het ontbreken van een accountdatabase."
+    },
+    {
+      "title": "Drie platforms, waarvan twee nauwelijks getest",
+      "body": "De iPhone-app werkt op iOS 18 of nieuwer, maar de post-kwantum-handshake vereist iOS 26, dus een iPhone met een ouder systeem gebruikt klassieke X3DH. Het is het enige platform met echt gebruik erachter. Het Windows-installatieprogramma heeft geen certificaat voor codeondertekening, dus elke download geeft een waarschuwing over de uitgever. De Android-APK is versie 0.1, gecontroleerd op een emulator en niet op een echt apparaat, en nog geen Android- of Windows-versie heeft een bericht op mainnet verstuurd. Betaalde abonnementen werken alleen op iPhone. Er is geen webclient."
+    },
+    {
+      "title": "Functies die een gangbare messenger heeft en deze niet",
+      "body": "Geen groepschats, geen bestands- of mediaoverdracht, geen spraak- of videogesprekken, geen synchronisatie tussen apparaten, geen zoeken in berichten over apparaten heen. PrivaMesh is een gerichte één-op-één-tekstmessenger."
+    },
+    {
+      "title": "Anonimiteit is niet gegarandeerd",
+      "body": "PrivaMesh verwijdert de kenmerken die het zelf in de hand heeft. Het kan niet voorkomen dat je in een bericht prijsgeeft wie je bent, een bijnaam uit een andere context hergebruikt of door je netwerkaanbieder wordt geïdentificeerd. Anonimiteit is een gewoonte die de architectuur ondersteunt, geen schakelaar die ze omzet."
+    }
+  ],
+  "whyHeading": "Waarom deze pagina bestaat",
+  "why": [
+    "Absolute beweringen zijn makkelijk te schrijven en onmogelijk te controleren, en in een privacyproduct kosten ze meer vertrouwen dan ze opleveren. Wie technisch genoeg is om ertoe te doen, vindt de gaten, en ze onvermeld vinden is erger dan ze hier lezen.",
+    "Als iets op deze pagina onjuist of verouderd is, is dat een bug - meld het via [de beveiligingspagina](/security). Wie per onderdeel wat kan zien, staat op [de architectuurpagina](/architecture)."
+  ],
+  "faq": [
+    {
+      "q": "Kunnen mijn berichten in de toekomst worden ontsleuteld?",
+      "a": "De versleutelde tekst staat permanent op een openbare blockchain, dus hij kan worden opgeslagen en bewaard. Forward secrecy vernietigt elke berichtsleutel na gebruik, en op iOS 26 is de handshake ontworpen om ML-KEM-768 toe te voegen tegen toekomstige kwantumaanvallen - al heeft, zoals hierboven beschreven, nog geen enkele uitgebrachte versie die stap voltooid. Geen van beide laat opgeslagen versleutelde tekst verdwijnen."
+    },
+    {
+      "q": "Waarom staat dekverkeer standaard uit?",
+      "a": "Loktransacties gaan van je berichttegoed af, dus aan laten staan zou je ongemerkt berichten kosten. Het is een instelling en geen standaard, wat betekent dat de geleverde configuratie zwakker is op het gebied van timing dan de sterkste die beschikbaar is."
+    },
+    {
+      "q": "Als iemand mijn herstelzin steelt, kan die dan mijn oude berichten lezen?",
+      "a": "Alles wat is verstuurd voordat je eerste antwoord de afzender bereikte, ja. Die enveloppen staan permanent op de openbare blockchain, elke sleutel om ze te openen wordt uit de zin afgeleid omdat er geen eenmalige prekeys worden gepubliceerd, en de berichten na het eerste zetten dezelfde keten voort. Vanaf je eerste verwerkte antwoord wordt het gesprek beschermd door ratchet-sleutels die willekeurig waren en het apparaat nooit hebben verlaten."
+    },
+    {
+      "q": "Is PrivaMesh anoniem?",
+      "a": "Het verwijdert de kenmerken die wij anders zouden hebben - geen telefoonnummer, geen e-mail, geen account. Het verbergt je IP niet voor je netwerkaanbieder en kan niet voorkomen dat je jezelf in een gesprek bekendmaakt."
+    }
+  ],
+  "related": [
+    {
+      "href": "/architecture",
+      "label": "Architectuur",
+      "blurb": "Elk onderdeel, wie het beheert en wat het kan zien."
+    },
+    {
+      "href": "/threat-model",
+      "label": "Dreigingsmodel",
+      "blurb": "Tegenstander per tegenstander: wat wordt gezien, wat wordt gestopt, wat overblijft."
+    },
+    {
+      "href": "/security",
+      "label": "Beveiliging en meldingen",
+      "blurb": "Hoe je een kwetsbaarheid meldt."
+    }
+  ]
+}

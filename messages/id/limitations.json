@@ -1,0 +1,112 @@
+{
+  "meta": {
+    "title": "Keterbatasan yang diketahui",
+    "description": "Dari apa PrivaMesh tidak melindungi Anda: teks terenkripsi permanen di rantai, waktu yang terlihat, versi Windows tanpa tanda tangan, dan riwayat yang tidak bisa dipulihkan."
+  },
+  "eyebrow": "Keterbatasan",
+  "title": "Dari apa PrivaMesh tidak melindungi Anda",
+  "lead": "Setiap alat privasi punya batas. Batas kami dicantumkan di sini alih-alih dibiarkan untuk Anda temukan sendiri, karena produk yang hanya memamerkan kelebihannya meminta dipercaya begitu saja.",
+  "summary": "Singkatnya: teks terenkripsi di rantai publik bersifat permanen, waktu transaksi terlihat kecuali Anda menyalakan lalu lintas penyamar, penyedia RPC melihat IP Anda, dan riwayat pesan tidak akan pernah bisa dipulihkan.",
+  "items": [
+    {
+      "title": "Teks terenkripsi tetap ada selamanya di rantai publik",
+      "body": "Setiap pesan ditulis ke Solana sebagai teks terenkripsi yang diisi dan tidak pernah kedaluwarsa. Pesan itu tidak terbaca tanpa kunci yang sudah dimusnahkan setelah dipakai, tetapi musuh bisa merekamnya hari ini dan menyimpannya tanpa batas. Jika suatu hari kriptografinya terpecahkan, rekaman itu masih ada."
+    },
+    {
+      "title": "Fakta dan waktu sebuah transaksi bersifat publik",
+      "body": "Alamat sekali pakai menyembunyikan untuk siapa sebuah pesan, dan pengisian menyembunyikan panjangnya. Keduanya tidak menyembunyikan bahwa sebuah transaksi terjadi pada saat tertentu. Jika lalu lintas penyamar mati, pola aktivitas Anda terlihat oleh siapa pun yang membaca rantai."
+    },
+    {
+      "title": "Pengisian mengungkap satu kelas ukuran, bukan tidak ada sama sekali",
+      "body": "Teks asli diisi hingga 32, 64, 128, 256, atau 512 byte. Pengamat mengetahui kelas ukuran mana yang memuat sebuah pesan - jadi balasan satu kata dan pesan 500 byte masih bisa dibedakan satu sama lain, hanya tidak dari pesan lain di kelas yang sama."
+    },
+    {
+      "title": "Lalu lintas penyamar mati secara default",
+      "body": "Mode umpan yang menyembunyikan waktu memakai kuota pesan Anda, jadi dikirim dalam keadaan nonaktif. Sampai Anda menyalakannya, korelasi waktu tersedia bagi siapa pun yang mengamati rantai. Itu pilihan yang disengaja, bukan kelalaian, tetapi berarti konfigurasi default lebih lemah daripada yang terkuat."
+    },
+    {
+      "title": "Titik akhir RPC melihat IP Anda",
+      "body": "Mengirim transaksi berarti berbicara dengan penyedia RPC, yang melihat alamat Anda dan waktu permintaan Anda. Penyedia itu bisa diganti dan di-host sendiri, tetapi secara bawaan Anda memercayakan metadata jaringan kepada pihak ketiga. Gunakan VPN atau Tor jika hal itu penting bagi Anda."
+    },
+    {
+      "title": "Pengiriman bergantung pada Solana, RPC, dan layanan biaya kami",
+      "body": "Jika salah satu dari ketiganya mati atau diblokir di negara Anda, pengiriman berhenti. Identitas, kontak, dan riwayat Anda tidak terdampak karena tersimpan di perangkat Anda, tetapi PrivaMesh tidak tahan sensor dalam arti selalu berhasil tembus."
+    },
+    {
+      "title": "Riwayat pesan tidak bisa dipulihkan",
+      "body": "Kerahasiaan maju memusnahkan setiap kunci pesan setelah dipakai, dan status ratchet tidak pernah meninggalkan perangkat. Frasa pemulihan Anda memulihkan identitas dan kontak di perangkat baru, tidak pernah percakapan Anda. Memasang ulang aplikasi di ponsel yang sama punya efek yang sama."
+    },
+    {
+      "title": "Tidak ada cara memverifikasi bahwa Anda menambahkan orang yang benar",
+      "body": "Paket prekey ditandatangani, sehingga registri tidak bisa menukar kunci sebuah akun. Namun aplikasi tidak memeriksa langkah sebelumnya: apakah akun itu memang orang yang Anda maksud. Tidak ada nomor keamanan, perbandingan sidik jari, atau verifikasi di luar aplikasi. Jika penyerang membujuk Anda menambahkan akunnya, kriptografi bekerja sempurna dan melindungi percakapan yang salah."
+    },
+    {
+      "title": "Jika Anda memublikasikan nama panggilan, rantai menunjukkan dengan siapa Anda memulai percakapan",
+      "body": "Registri pencarian mengaitkan nama panggilan Anda dengan kunci publik Anda, dan pesan pertama sebuah percakapan membawa kunci yang sama secara terbuka - memang harus, karena dari situlah pihak lain menurunkan rahasia bersama. Pesan itu juga dikirim ke alamat biasa penerima, karena alamat bersama belum ada. Jadi siapa pun yang membaca rantai bisa mencocokkan keduanya dan melihat bahwa Anda memulai percakapan dengan orang tertentu, dan kapan. Bukan apa yang dibicarakan: isinya tetap terenkripsi, dan pesan berikutnya pindah ke alamat sekali pakai. Jika Anda tidak pernah memublikasikan nama panggilan, pesan pertama yang sama tidak menyebut siapa pun. Dilaporkan pihak luar pada Agustus 2026; memperbaikinya dengan benar berarti mengubah format pesan, yang tidak bisa dibaca oleh instalasi lama."
+    },
+    {
+      "title": "Frasa yang dicuri membuka setiap pesan yang dikirim sebelum balasan pertama",
+      "body": "Kunci identitas, prekey bertanda tangan, dan prekey pascakuantum Anda semuanya diturunkan dari frasa pemulihan, dan tidak ada prekey sekali pakai yang dipublikasikan. Amplop yang membuka percakapan tetap ada selamanya di rantai publik dan membawa kunci publik sementara pengirim, sehingga siapa pun yang memegang frasa Anda bisa menghitung ulang akar X3DH. Tidak berhenti di satu pesan itu: sampai pengirim memproses balasan dari Anda, setiap pesan yang ia kirim melanjutkan rantai yang sama satu langkah, dan rahasia yang sama juga menunjukkan letak pesan-pesan itu di rantai. Orang yang menulis tiga kali saat Anda offline telah mengekspos ketiganya. Begitu Anda membalas dan balasan itu diterima, kunci acak yang hanya ada di perangkat masuk ke ratchet dan frasa tidak lagi cukup. ML-KEM-768 tidak mengubah hal ini, karena seed-nya juga diturunkan dari frasa. Dilaporkan pihak luar pada Agustus 2026; sebelumnya kami menggambarkannya sebagai hanya pesan pertama."
+    },
+    {
+      "title": "Belum ada versi rilis yang menuntaskan jabat tangan pascakuantum",
+      "body": "Versi 1.0 dirilis dengan jalur pascakuantum dimatikan. Versi 1.1 menyalakannya untuk iPhone dengan iOS 26, tetapi teks terenkripsi X-Wing dikirim lewat unggahan ke Irys, dan di kedua versi yang dirilis unggahan itu gagal: permintaannya ditandatangani dengan salah, lalu belakangan dikirim ke rute yang sudah pindah. Pengirim kemudian kembali ke X3DH klasik, sehingga setiap percakapan yang dibuka sejauh ini hanya dilindungi X25519, bukan ML-KEM-768. Itu tetap enkripsi ujung ke ujung, tetapi bukan pertahanan terhadap teks terenkripsi yang direkam sekarang lalu diserang nanti dengan komputer kuantum. Perbaikannya hadir di rilis App Store berikutnya."
+    },
+    {
+      "title": "Kehilangan frasa pemulihan berarti kehilangan akun",
+      "body": "Tidak ada atur ulang, tidak ada campur tangan dukungan, dan tidak ada cadangan yang kami simpan. Dua belas kata adalah akunnya. Itulah harga langsung dari tidak adanya basis data akun."
+    },
+    {
+      "title": "Tiga platform, dua di antaranya nyaris belum diuji",
+      "body": "Aplikasi iPhone berjalan di iOS 18 atau lebih baru, tetapi jabat tangan pascakuantum memerlukan iOS 26, sehingga iPhone dengan sistem lebih lama memakai X3DH klasik. Itulah satu-satunya platform dengan pemakaian nyata. Penginstal Windows tidak memiliki sertifikat penandatanganan kode, jadi setiap unduhan memunculkan peringatan penerbit. APK Android adalah versi 0.1, diperiksa di emulator dan bukan di perangkat sungguhan, dan belum ada versi Android maupun Windows yang mengirim pesan di mainnet. Paket berbayar hanya berfungsi di iPhone. Tidak ada klien web."
+    },
+    {
+      "title": "Fitur yang dimiliki messenger umum tetapi tidak ada di sini",
+      "body": "Tanpa obrolan grup, tanpa pengiriman file atau media, tanpa panggilan suara atau video, tanpa sinkronisasi antarperangkat, tanpa pencarian pesan antarperangkat. PrivaMesh adalah messenger teks yang berfokus pada percakapan satu lawan satu."
+    },
+    {
+      "title": "Anonimitas tidak dijamin",
+      "body": "PrivaMesh menghapus pengenal yang dikendalikannya. Ia tidak bisa mencegah Anda mengungkapkan siapa diri Anda dalam pesan, memakai ulang nama panggilan dari konteks lain, atau dikenali oleh penyedia jaringan Anda. Anonimitas adalah kebiasaan yang didukung arsitektur, bukan sakelar yang dinyalakannya."
+    }
+  ],
+  "whyHeading": "Mengapa halaman ini ada",
+  "why": [
+    "Klaim mutlak mudah ditulis dan mustahil diverifikasi, dan dalam produk privasi klaim itu menggerus kepercayaan lebih banyak daripada yang didapat. Siapa pun yang cukup teknis untuk berpengaruh akan menemukan celahnya, dan menemukannya tanpa dicantumkan lebih buruk daripada membacanya di sini.",
+    "Jika ada yang salah atau usang di halaman ini, itu bug - beri tahu kami lewat [halaman keamanan](/security). Siapa bisa melihat apa, komponen demi komponen, ada di [halaman arsitektur](/architecture)."
+  ],
+  "faq": [
+    {
+      "q": "Bisakah pesan saya didekripsi di masa depan?",
+      "a": "Teks terenkripsi berada permanen di rantai publik, jadi bisa direkam dan disimpan. Kerahasiaan maju memusnahkan setiap kunci pesan setelah dipakai, dan di iOS 26 jabat tangan dirancang untuk mencampurkan ML-KEM-768 sebagai pertahanan terhadap serangan kuantum di masa depan - meskipun, seperti dijelaskan di atas, belum ada versi rilis yang menuntaskan langkah itu. Keduanya tidak membuat teks terenkripsi yang sudah direkam menghilang."
+    },
+    {
+      "q": "Mengapa lalu lintas penyamar mati secara default?",
+      "a": "Transaksi umpan memakai kuota pesan Anda, jadi menyalakannya akan diam-diam menghabiskan pesan Anda. Itu sebuah pengaturan, bukan bawaan, yang berarti konfigurasi bawaan lebih lemah soal waktu dibanding yang terkuat yang tersedia."
+    },
+    {
+      "q": "Jika seseorang mencuri frasa pemulihan saya, bisakah ia membaca pesan lama saya?",
+      "a": "Semua yang dikirim sebelum balasan pertama Anda sampai ke pengirim, ya. Amplop-amplop itu berada permanen di rantai publik, setiap kunci untuk membukanya diturunkan dari frasa karena tidak ada prekey sekali pakai yang dipublikasikan, dan pesan setelah yang pertama melanjutkan rantai yang sama. Mulai dari balasan pertama Anda yang diproses, percakapan dilindungi kunci ratchet yang acak dan tidak pernah meninggalkan perangkat."
+    },
+    {
+      "q": "Apakah PrivaMesh anonim?",
+      "a": "Ia menghapus pengenal yang seharusnya kami simpan - tanpa nomor telepon, tanpa email, tanpa akun. Ia tidak menyembunyikan IP Anda dari penyedia jaringan dan tidak bisa mencegah Anda memperkenalkan diri dalam sebuah percakapan."
+    }
+  ],
+  "related": [
+    {
+      "href": "/architecture",
+      "label": "Arsitektur",
+      "blurb": "Setiap komponen, pengelolanya, dan apa yang bisa dilihatnya."
+    },
+    {
+      "href": "/threat-model",
+      "label": "Model ancaman",
+      "blurb": "Musuh demi musuh: apa yang terlihat, apa yang dihentikan, apa yang tersisa."
+    },
+    {
+      "href": "/security",
+      "label": "Keamanan dan pengungkapan",
+      "blurb": "Cara melaporkan kerentanan."
+    }
+  ]
+}

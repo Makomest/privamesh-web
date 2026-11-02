@@ -1,0 +1,112 @@
+{
+  "meta": {
+    "title": "Had yang diketahui",
+    "description": "Daripada apa PrivaMesh tidak melindungi anda: teks tersulit kekal di rantaian, masa yang kelihatan, versi Windows tanpa tandatangan dan sejarah yang tidak boleh dipulihkan."
+  },
+  "eyebrow": "Had",
+  "title": "Daripada apa PrivaMesh tidak melindungi anda",
+  "lead": "Setiap alat privasi ada hadnya. Had kami disenaraikan di sini dan bukan dibiarkan untuk anda temui sendiri, kerana produk yang hanya menerbitkan kekuatannya meminta untuk dipercayai bulat-bulat.",
+  "summary": "Ringkasnya: teks tersulit di rantaian awam adalah kekal, masa transaksi kelihatan melainkan anda menghidupkan trafik perlindungan, penyedia RPC melihat IP anda, dan sejarah mesej tidak boleh dipulihkan sama sekali.",
+  "items": [
+    {
+      "title": "Teks tersulit kekal selama-lamanya di rantaian awam",
+      "body": "Setiap mesej ditulis ke Solana sebagai teks tersulit yang diisi dan tidak pernah luput. Ia tidak boleh dibaca tanpa kunci yang dimusnahkan selepas digunakan, tetapi musuh boleh merakamnya hari ini dan menyimpannya tanpa had. Jika suatu hari kriptografi dipecahkan, apa yang dirakam masih ada di situ."
+    },
+    {
+      "title": "Fakta dan masa sesuatu transaksi adalah awam",
+      "body": "Alamat sekali guna menyembunyikan untuk siapa sesuatu mesej, dan pengisian menyembunyikan panjangnya. Kedua-duanya tidak menyembunyikan bahawa sesuatu transaksi berlaku pada saat tertentu. Jika trafik perlindungan dimatikan, corak aktiviti anda kelihatan kepada sesiapa yang membaca rantaian."
+    },
+    {
+      "title": "Pengisian mendedahkan satu kelas saiz, bukan tiada apa-apa",
+      "body": "Teks biasa diisi hingga 32, 64, 128, 256 atau 512 bait. Pemerhati mengetahui kelas saiz mana yang memuatkan sesuatu mesej - jadi balasan satu perkataan dan mesej 500 bait masih boleh dibezakan antara satu sama lain, cuma tidak daripada mesej lain dalam kelas yang sama."
+    },
+    {
+      "title": "Trafik perlindungan dimatikan secara lalai",
+      "body": "Mod umpan yang menyembunyikan masa menggunakan kuota mesej anda, jadi ia dihantar dalam keadaan dimatikan. Sehingga anda menghidupkannya, korelasi masa tersedia kepada sesiapa yang memerhati rantaian. Itu pertukaran yang disengajakan, bukan keterlepasan, tetapi bermakna konfigurasi lalai lebih lemah daripada yang paling kuat."
+    },
+    {
+      "title": "Titik akhir RPC melihat IP anda",
+      "body": "Menghantar transaksi bermakna bercakap dengan penyedia RPC, yang melihat alamat anda dan masa permintaan anda. Ia boleh ditukar dan dihoskan sendiri, tetapi secara asal anda mempercayakan metadata rangkaian kepada pihak ketiga. Gunakan VPN atau Tor jika ia penting bagi anda."
+    },
+    {
+      "title": "Penghantaran bergantung pada Solana, RPC dan perkhidmatan yuran kami",
+      "body": "Jika mana-mana daripada ketiga-tiganya tergendala atau disekat di negara anda, penghantaran berhenti. Identiti, kenalan dan sejarah anda tidak terjejas kerana ia tinggal pada peranti anda, tetapi PrivaMesh tidak kalis penapisan dalam erti kata sentiasa berjaya menembusi."
+    },
+    {
+      "title": "Sejarah mesej tidak boleh dipulihkan",
+      "body": "Kerahsiaan hadapan memusnahkan setiap kunci mesej selepas digunakan, dan keadaan ratchet tidak pernah meninggalkan peranti. Frasa pemulihan anda memulihkan identiti dan kenalan anda pada peranti baharu, tidak pernah perbualan anda. Memasang semula aplikasi pada telefon yang sama memberi kesan yang sama."
+    },
+    {
+      "title": "Tiada cara untuk mengesahkan anda menambah orang yang betul",
+      "body": "Bundel prekey ditandatangani, jadi daftar tidak boleh menggantikan kunci sesuatu akaun. Tetapi aplikasi tidak menyemak langkah sebelumnya: sama ada akaun itu orang yang anda maksudkan. Tiada nombor keselamatan, perbandingan cap jari atau pengesahan di luar aplikasi. Jika penyerang memujuk anda menambah akaunnya, kriptografi berfungsi dengan sempurna dan melindungi perbualan yang salah."
+    },
+    {
+      "title": "Jika anda menerbitkan nama samaran, rantaian menunjukkan dengan siapa anda memulakan perbualan",
+      "body": "Daftar carian mengaitkan nama samaran anda dengan kunci awam anda, dan mesej pertama sesuatu perbualan membawa kunci yang sama secara terbuka - ia mesti begitu, kerana dari situlah pihak lain menerbitkan rahsia bersama. Ia juga dihantar ke alamat biasa penerima, kerana alamat bersama belum wujud. Jadi sesiapa yang membaca rantaian boleh memadankan kedua-duanya dan melihat bahawa anda memulakan perbualan dengan orang tertentu, dan bila. Bukan apa yang dikatakan: kandungan kekal tersulit, dan mesej seterusnya beralih ke alamat sekali guna. Jika anda tidak pernah menerbitkan nama samaran, mesej pertama yang sama tidak menamakan sesiapa. Dilaporkan oleh pihak luar pada Ogos 2026; membetulkannya dengan sewajarnya bermakna menukar format mesej, yang tidak boleh dibaca oleh pemasangan lama."
+    },
+    {
+      "title": "Frasa yang dicuri membuka setiap mesej yang dihantar sebelum balasan pertama",
+      "body": "Kunci identiti, prekey bertandatangan dan prekey pasca-kuantum anda semuanya diterbitkan daripada frasa pemulihan, dan tiada prekey sekali guna diterbitkan. Sampul yang membuka perbualan kekal selama-lamanya di rantaian awam dan membawa kunci awam sementara pengirim, jadi sesiapa yang memegang frasa anda boleh mengira semula akar X3DH. Ia tidak berhenti pada mesej itu sahaja: sehingga pengirim memproses balasan daripada anda, setiap mesej yang dihantarnya meneruskan rantaian yang sama satu langkah, dan rahsia yang sama juga menunjukkan lokasi mesej-mesej itu di rantaian. Seseorang yang menulis tiga kali semasa anda di luar talian telah mendedahkan ketiga-tiganya. Sebaik sahaja anda membalas dan balasan itu sampai, kunci rawak yang hanya wujud pada peranti memasuki ratchet dan frasa tidak lagi mencukupi. ML-KEM-768 tidak mengubah perkara ini, kerana benihnya juga diterbitkan daripada frasa. Dilaporkan oleh pihak luar pada Ogos 2026; sebelum ini kami menggambarkannya sebagai mesej pertama sahaja."
+    },
+    {
+      "title": "Tiada versi keluaran yang melengkapkan jabat tangan pasca-kuantum",
+      "body": "Versi 1.0 dikeluarkan dengan laluan pasca-kuantum dimatikan. Versi 1.1 menghidupkannya untuk iPhone dengan iOS 26, tetapi teks tersulit X-Wing dihantar melalui muat naik ke Irys, dan dalam kedua-dua versi keluaran muat naik itu gagal: permintaannya ditandatangani dengan salah, kemudian dihantar ke laluan yang telah berpindah. Pengirim lalu kembali kepada X3DH klasik, jadi setiap perbualan yang dibuka setakat ini dilindungi oleh X25519 sahaja, bukan ML-KEM-768. Itu masih penyulitan hujung ke hujung, tetapi bukan pertahanan terhadap teks tersulit yang dirakam sekarang dan diserang kemudian dengan komputer kuantum. Pembetulan akan tiba dalam keluaran App Store seterusnya."
+    },
+    {
+      "title": "Kehilangan frasa pemulihan bermakna kehilangan akaun",
+      "body": "Tiada tetapan semula, tiada campur tangan sokongan dan tiada sandaran yang kami simpan. Dua belas perkataan ialah akaun itu. Itulah harga langsung kerana tiada pangkalan data akaun."
+    },
+    {
+      "title": "Tiga platform, dua daripadanya hampir tidak diuji",
+      "body": "Aplikasi iPhone berjalan pada iOS 18 atau lebih baharu, tetapi jabat tangan pasca-kuantum memerlukan iOS 26, jadi iPhone dengan sistem lebih lama menggunakan X3DH klasik. Ia satu-satunya platform yang benar-benar digunakan. Pemasang Windows tiada sijil tandatangan kod, jadi setiap muat turun memaparkan amaran penerbit. APK Android ialah versi 0.1, disemak pada emulator dan bukan peranti sebenar, dan belum ada versi Android atau Windows yang menghantar mesej di mainnet. Pelan berbayar hanya berfungsi pada iPhone. Tiada klien web."
+    },
+    {
+      "title": "Ciri yang ada pada aplikasi pesanan biasa tetapi tiada di sini",
+      "body": "Tiada sembang kumpulan, tiada pemindahan fail atau media, tiada panggilan suara atau video, tiada penyegerakan antara peranti, tiada carian mesej merentas peranti. PrivaMesh ialah aplikasi pesanan teks yang tertumpu pada perbualan seorang dengan seorang."
+    },
+    {
+      "title": "Kerahsiaan identiti tidak dijamin",
+      "body": "PrivaMesh membuang pengecam yang dikawalnya. Ia tidak boleh menghalang anda daripada mendedahkan siapa anda dalam mesej, menggunakan semula nama samaran dari konteks lain atau dikenal pasti oleh penyedia rangkaian anda. Kerahsiaan identiti ialah amalan yang disokong oleh seni bina, bukan suis yang dihidupkannya."
+    }
+  ],
+  "whyHeading": "Mengapa halaman ini wujud",
+  "why": [
+    "Dakwaan mutlak mudah ditulis dan mustahil disahkan, dan dalam produk privasi ia menghakis lebih banyak kepercayaan daripada yang diperoleh. Sesiapa yang cukup teknikal untuk diambil kira akan menemui jurangnya, dan menemuinya tanpa disenaraikan lebih buruk daripada membacanya di sini.",
+    "Jika ada perkara di halaman ini yang salah atau lapuk, itu pepijat - maklumkan kami melalui [halaman keselamatan](/security). Siapa boleh melihat apa, komponen demi komponen, ada di [halaman seni bina](/architecture)."
+  ],
+  "faq": [
+    {
+      "q": "Bolehkah mesej saya dinyahsulit pada masa hadapan?",
+      "a": "Teks tersulit berada kekal di rantaian awam, jadi ia boleh dirakam dan disimpan. Kerahsiaan hadapan memusnahkan setiap kunci mesej selepas digunakan, dan pada iOS 26 jabat tangan direka untuk mencampurkan ML-KEM-768 sebagai pertahanan terhadap serangan kuantum masa depan - walaupun, seperti diterangkan di atas, belum ada versi keluaran yang melengkapkan langkah itu. Kedua-duanya tidak membuatkan teks tersulit yang dirakam hilang."
+    },
+    {
+      "q": "Mengapa trafik perlindungan dimatikan secara lalai?",
+      "a": "Transaksi umpan menggunakan kuota mesej anda, jadi membiarkannya hidup akan menghabiskan mesej anda secara senyap. Ia tetapan dan bukan lalai, yang bermakna konfigurasi yang dihantar lebih lemah dari segi masa berbanding yang paling kuat yang ada."
+    },
+    {
+      "q": "Jika seseorang mencuri frasa pemulihan saya, bolehkah dia membaca mesej lama saya?",
+      "a": "Semua yang dihantar sebelum balasan pertama anda sampai kepada pengirim, ya. Sampul-sampul itu berada kekal di rantaian awam, setiap kunci untuk membukanya diterbitkan daripada frasa kerana tiada prekey sekali guna diterbitkan, dan mesej selepas yang pertama meneruskan rantaian yang sama. Bermula daripada balasan pertama anda yang diproses, perbualan dilindungi oleh kunci ratchet yang rawak dan tidak pernah meninggalkan peranti."
+    },
+    {
+      "q": "Adakah PrivaMesh tanpa nama?",
+      "a": "Ia membuang pengecam yang sepatutnya kami simpan - tiada nombor telefon, tiada e-mel, tiada akaun. Ia tidak menyembunyikan IP anda daripada penyedia rangkaian dan tidak boleh menghalang anda memperkenalkan diri dalam perbualan."
+    }
+  ],
+  "related": [
+    {
+      "href": "/architecture",
+      "label": "Seni bina",
+      "blurb": "Setiap komponen, pengendalinya dan apa yang boleh dilihatnya."
+    },
+    {
+      "href": "/threat-model",
+      "label": "Model ancaman",
+      "blurb": "Musuh demi musuh: apa yang kelihatan, apa yang dihentikan, apa yang tinggal."
+    },
+    {
+      "href": "/security",
+      "label": "Keselamatan dan pendedahan",
+      "blurb": "Cara melaporkan kelemahan."
+    }
+  ]
+}

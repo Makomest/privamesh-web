@@ -1,0 +1,112 @@
+{
+  "meta": {
+    "title": "Limitaciones conocidas",
+    "description": "De qué no te protege PrivaMesh: texto cifrado permanente en la cadena, horarios visibles, una versión de Windows sin firmar e historial irrecuperable."
+  },
+  "eyebrow": "Limitaciones",
+  "title": "De qué no te protege PrivaMesh",
+  "lead": "Toda herramienta de privacidad tiene límites. Los nuestros están aquí en lugar de dejar que los descubras, porque un producto que solo publica sus puntos fuertes pide que lo creas a ciegas.",
+  "summary": "En resumen: el texto cifrado en una cadena pública es permanente, el momento de las transacciones es visible salvo que actives el tráfico de cobertura, el proveedor RPC ve tu IP y el historial de mensajes no se puede restaurar nunca.",
+  "items": [
+    {
+      "title": "El texto cifrado se queda para siempre en una cadena pública",
+      "body": "Cada mensaje se escribe en Solana como texto cifrado rellenado y nunca caduca. Es ilegible sin claves que se destruyeron tras usarse, pero un adversario puede grabarlo hoy y guardarlo indefinidamente. Si algún día se rompe la criptografía, lo grabado seguirá ahí."
+    },
+    {
+      "title": "El hecho y el momento de una transacción son públicos",
+      "body": "Las direcciones de un solo uso ocultan para quién es un mensaje y el relleno oculta su longitud. Ninguno oculta que hubo una transacción en un momento concreto. Con el tráfico de cobertura desactivado, tu patrón de actividad es visible para cualquiera que lea la cadena."
+    },
+    {
+      "title": "El relleno revela un tramo, no nada",
+      "body": "El texto en claro se rellena hasta 32, 64, 128, 256 o 512 bytes. Un observador sabe en qué tramo cayó un mensaje, así que una respuesta de una palabra y un mensaje de 500 bytes siguen distinguiéndose entre sí, aunque no de otros del mismo tramo."
+    },
+    {
+      "title": "El tráfico de cobertura está desactivado por defecto",
+      "body": "El modo señuelo que oculta los tiempos gasta de tu cupo de mensajes, así que viene desactivado. Hasta que lo actives, la correlación temporal está al alcance de quien observe la cadena. Es una concesión deliberada, no un descuido, pero significa que la configuración por defecto es más débil que la máxima."
+    },
+    {
+      "title": "El punto de acceso RPC ve tu IP",
+      "body": "Enviar una transacción implica hablar con un proveedor RPC, que ve tu dirección y el momento de tus peticiones. Es sustituible y puedes alojarlo tú mismo, pero de serie confías a un tercero metadatos de red. Úsalo con una VPN o Tor si te importa."
+    },
+    {
+      "title": "La entrega depende de Solana, del RPC y de nuestro servicio de comisiones",
+      "body": "Si cualquiera de los tres cae o está bloqueado en tu país, el envío se detiene. Tu identidad, tus contactos y tu historial no se ven afectados porque viven en tu dispositivo, pero PrivaMesh no es a prueba de censura en el sentido de que siempre pase."
+    },
+    {
+      "title": "El historial de mensajes no se puede recuperar",
+      "body": "El secreto hacia adelante destruye la clave de cada mensaje tras usarla, y el estado del ratchet nunca sale del dispositivo. Tu frase de recuperación restaura tu identidad y tus contactos en un dispositivo nuevo, nunca tus conversaciones. Reinstalar la app en el mismo teléfono tiene el mismo efecto."
+    },
+    {
+      "title": "No hay forma de verificar que añadiste a la persona correcta",
+      "body": "Los paquetes de preclaves están firmados, así que un registro no puede sustituir la clave de una cuenta. Pero la app no comprueba el paso anterior: si la cuenta es la persona que querías. No hay número de seguridad, ni comparación de huellas, ni verificación fuera de la app. Si un atacante te convence de añadir su cuenta, la criptografía funciona a la perfección y protege la conversación equivocada."
+    },
+    {
+      "title": "Si publicas un apodo, la cadena muestra con quién empiezas conversaciones",
+      "body": "El registro de búsqueda vincula tu apodo con tu clave pública, y el primer mensaje de una conversación lleva esa misma clave en claro; tiene que hacerlo, porque así deriva la otra parte el secreto compartido. Además se envía a la dirección normal del destinatario, porque aún no existe una dirección compartida. Así, cualquiera que lea la cadena puede cruzar ambos datos y ver que empezaste una conversación con una persona concreta, y cuándo. No lo que se dijo: el contenido sigue cifrado y los mensajes siguientes pasan a direcciones de un solo uso. Si nunca publicas un apodo, ese mismo primer mensaje no nombra a nadie. Notificado externamente en agosto de 2026; arreglarlo bien implica cambiar el formato de los mensajes, que las instalaciones antiguas no podrían leer."
+    },
+    {
+      "title": "Una frase robada abre todos los mensajes enviados antes de la primera respuesta",
+      "body": "Tu clave de identidad, tu preclave firmada y tu preclave poscuántica se derivan de la frase de recuperación, y no se publican preclaves de un solo uso. El sobre que abre una conversación se queda para siempre en la cadena pública y lleva la clave pública efímera del remitente, así que quien tenga tu frase puede recalcular la raíz X3DH. No se queda en ese mensaje: hasta que el remitente procese una respuesta tuya, cada mensaje que envía continúa la misma cadena un paso más allá, y ese mismo secreto también permite localizar esos mensajes en la cadena. Alguien que te escribió tres veces mientras estabas desconectado expuso los tres. En cuanto respondes y le llega la respuesta, entra en el ratchet una clave aleatoria local del dispositivo y la frase deja de bastar. ML-KEM-768 no cambia esto, porque su semilla también se deriva de la frase. Notificado externamente en agosto de 2026; antes lo describíamos como algo limitado al primer mensaje."
+    },
+    {
+      "title": "Ninguna versión publicada ha completado un intercambio de claves poscuántico",
+      "body": "La 1.0 salió con la vía poscuántica desactivada. La 1.1 la activó para los iPhone con iOS 26, pero el texto cifrado de X-Wing viaja mediante una subida a Irys, y en ambas versiones publicadas esa subida falla: la petición estaba mal firmada y después iba a una ruta que había cambiado. El remitente vuelve entonces a X3DH clásico, así que cada conversación abierta hasta ahora está protegida solo por X25519, sin ML-KEM-768. Sigue siendo cifrado de extremo a extremo, pero no protege contra texto cifrado grabado hoy y atacado más adelante con un ordenador cuántico. La corrección llega en la próxima versión de la App Store."
+    },
+    {
+      "title": "Perder la frase de recuperación es perder la cuenta",
+      "body": "No hay restablecimiento, ni intervención del soporte, ni copia de seguridad en nuestras manos. Doce palabras son la cuenta. Es el coste directo de que no exista una base de datos de cuentas."
+    },
+    {
+      "title": "Tres plataformas, dos de ellas apenas probadas",
+      "body": "La app de iPhone funciona con iOS 18 o posterior, pero el intercambio poscuántico necesita iOS 26, así que un iPhone con un sistema anterior usa X3DH clásico. Es la única plataforma con uso real detrás. El instalador de Windows no tiene certificado de firma de código, así que cada descarga muestra un aviso sobre el editor. El APK de Android es la versión 0.1, probada en un emulador y no en un dispositivo real, y ninguna versión de Android o Windows ha enviado todavía un mensaje en la mainnet. Los planes de pago solo funcionan en iPhone. No hay cliente web."
+    },
+    {
+      "title": "Funciones que tiene una app de mensajería convencional y esta no",
+      "body": "Sin chats de grupo, sin envío de archivos ni multimedia, sin llamadas de voz o vídeo, sin sincronización entre dispositivos, sin búsqueda de mensajes entre dispositivos. PrivaMesh es una mensajería de texto centrada en conversaciones uno a uno."
+    },
+    {
+      "title": "El anonimato no está garantizado",
+      "body": "PrivaMesh elimina los identificadores que controla. No puede impedir que reveles quién eres en un mensaje, que reutilices un apodo de otro contexto o que te identifique tu proveedor de red. El anonimato es una práctica que la arquitectura facilita, no un interruptor que activa."
+    }
+  ],
+  "whyHeading": "Por qué existe esta página",
+  "why": [
+    "Las afirmaciones absolutas son fáciles de escribir e imposibles de verificar, y en un producto de privacidad cuestan más confianza de la que aportan. Cualquiera con suficiente conocimiento técnico como para importar encontrará los huecos, y encontrarlos sin que estén listados es peor que leerlos aquí.",
+    "Si algo de esta página es incorrecto o está desactualizado, es un error: avísanos en [la página de seguridad](/security). Para ver, componente por componente, quién puede observar qué, consulta [la página de arquitectura](/architecture)."
+  ],
+  "faq": [
+    {
+      "q": "¿Podrán descifrarse mis mensajes en el futuro?",
+      "a": "El texto cifrado está en una cadena pública de forma permanente, así que puede grabarse y guardarse. El secreto hacia adelante destruye la clave de cada mensaje tras usarla, y en iOS 26 el intercambio de claves está diseñado para añadir ML-KEM-768 contra futuros ataques cuánticos, aunque, como se explica arriba, ninguna versión publicada ha completado aún ese paso. Ninguna de las dos cosas hace desaparecer el texto cifrado grabado."
+    },
+    {
+      "q": "¿Por qué el tráfico de cobertura está desactivado por defecto?",
+      "a": "Las transacciones señuelo gastan de tu cupo de mensajes, así que tenerlo activado te costaría mensajes sin que te dieras cuenta. Es un ajuste y no un valor por defecto, lo que significa que la configuración de serie es más débil en cuanto a tiempos que la más fuerte disponible."
+    },
+    {
+      "q": "Si alguien roba mi frase de recuperación, ¿puede leer mis mensajes antiguos?",
+      "a": "Todo lo enviado antes de que tu primera respuesta llegara al remitente, sí. Esos sobres están en la cadena pública de forma permanente, todas las claves para abrirlos se derivan de la frase porque no se publican preclaves de un solo uso, y los mensajes posteriores al primero continúan la misma cadena. A partir de tu primera respuesta procesada, la conversación queda protegida por claves de ratchet aleatorias que nunca salieron del dispositivo."
+    },
+    {
+      "q": "¿PrivaMesh es anónimo?",
+      "a": "Elimina los identificadores que de otro modo tendríamos: sin número de teléfono, sin correo, sin cuenta. No oculta tu IP a tu proveedor de red y no puede impedir que te identifiques en una conversación."
+    }
+  ],
+  "related": [
+    {
+      "href": "/architecture",
+      "label": "Arquitectura",
+      "blurb": "Cada componente, quién lo opera y qué puede observar."
+    },
+    {
+      "href": "/threat-model",
+      "label": "Modelo de amenazas",
+      "blurb": "Adversario por adversario: qué se ve, qué se detiene y qué queda."
+    },
+    {
+      "href": "/security",
+      "label": "Seguridad y divulgación",
+      "blurb": "Cómo notificar una vulnerabilidad."
+    }
+  ]
+}

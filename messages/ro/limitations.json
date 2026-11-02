@@ -1,0 +1,112 @@
+{
+  "meta": {
+    "title": "Limitări cunoscute",
+    "description": "Împotriva a ce nu te protejează PrivaMesh: text criptat permanent pe lanț, momente vizibile, o versiune Windows nesemnată și istoric irecuperabil."
+  },
+  "eyebrow": "Limitări",
+  "title": "Împotriva a ce nu te protejează PrivaMesh",
+  "lead": "Orice instrument de confidențialitate are limite. Ale noastre sunt enumerate aici, în loc să le descoperi singur, pentru că un produs care își publică doar punctele forte cere să fie crezut pe cuvânt.",
+  "summary": "Pe scurt: textul criptat de pe un lanț public e permanent, momentul tranzacțiilor e vizibil până pornești traficul de acoperire, furnizorul RPC îți vede IP-ul, iar istoricul mesajelor nu poate fi niciodată restaurat.",
+  "items": [
+    {
+      "title": "Textul criptat rămâne pentru totdeauna pe un lanț public",
+      "body": "Fiecare mesaj e scris pe Solana ca text criptat completat și nu expiră niciodată. E ilizibil fără cheile distruse după utilizare, dar un adversar îl poate înregistra azi și păstra oricât. Dacă într-o zi criptografia e spartă, ce a fost înregistrat e încă acolo."
+    },
+    {
+      "title": "Faptul și momentul unei tranzacții sunt publice",
+      "body": "Adresele de unică folosință ascund cui îi e destinat un mesaj, iar completarea ascunde cât de lung a fost. Niciuna nu ascunde că a avut loc o tranzacție într-un anumit moment. Cu traficul de acoperire oprit, tiparul activității tale e vizibil oricui citește lanțul."
+    },
+    {
+      "title": "Completarea dezvăluie o treaptă, nu nimic",
+      "body": "Textul clar e completat la 32, 64, 128, 256 sau 512 octeți. Un observator află în ce treaptă a căzut un mesaj - așa că un răspuns de un cuvânt și un mesaj de 500 de octeți se pot încă deosebi între ele, doar nu de altele din aceeași treaptă."
+    },
+    {
+      "title": "Traficul de acoperire e oprit implicit",
+      "body": "Modul cu momeli care ascunde momentele consumă din cota ta de mesaje, de aceea vine dezactivat. Până îl pornești, corelarea temporală e la îndemâna oricui urmărește lanțul. E un compromis deliberat, nu o scăpare, dar înseamnă că setarea implicită e mai slabă decât cea maximă."
+    },
+    {
+      "title": "Punctul RPC îți vede IP-ul",
+      "body": "A trimite o tranzacție înseamnă a vorbi cu un furnizor RPC, care îți vede adresa și momentul cererilor. Poate fi înlocuit și găzduit de tine, dar implicit încredințezi unei terțe părți metadate de rețea. Folosește un VPN sau Tor dacă asta contează pentru tine."
+    },
+    {
+      "title": "Livrarea depinde de Solana, de RPC și de serviciul nostru de taxe",
+      "body": "Dacă oricare dintre cele trei e căzut sau blocat în țara ta, trimiterea se oprește. Identitatea, contactele și istoricul nu sunt afectate pentru că trăiesc pe dispozitivul tău, dar PrivaMesh nu e rezistent la cenzură în sensul că ar trece mereu."
+    },
+    {
+      "title": "Istoricul mesajelor nu poate fi recuperat",
+      "body": "Confidențialitatea persistentă distruge cheia fiecărui mesaj după utilizare, iar starea ratchet-ului nu părăsește niciodată dispozitivul. Fraza de recuperare îți restaurează identitatea și contactele pe un dispozitiv nou, niciodată conversațiile. Reinstalarea aplicației pe același telefon are același efect."
+    },
+    {
+      "title": "Nu poți verifica dacă ai adăugat persoana potrivită",
+      "body": "Pachetele de prechei sunt semnate, deci un registru nu poate înlocui cheia unui cont. Dar pasul dinainte aplicația nu îl verifică: dacă acel cont e persoana pe care o aveai în minte. Nu există număr de siguranță, comparare de amprente sau verificare în afara aplicației. Dacă un atacator te convinge să-i adaugi contul, criptografia funcționează perfect și protejează conversația greșită."
+    },
+    {
+      "title": "Dacă publici un pseudonim, lanțul arată cu cine începi conversații",
+      "body": "Registrul de căutare îți leagă pseudonimul de cheia publică, iar primul mesaj al unei conversații poartă aceeași cheie în clar - trebuie, fiindcă așa derivă cealaltă parte secretul comun. În plus, e trimis la adresa obișnuită a destinatarului, pentru că încă nu există o adresă comună. Așa că oricine citește lanțul le poate asocia și poate vedea că ai început o conversație cu o anumită persoană, și când. Nu și ce s-a spus: conținutul rămâne criptat, iar mesajele următoare trec la adrese de unică folosință. Dacă nu publici niciodată un pseudonim, același prim mesaj nu numește pe nimeni. Raportat din exterior în august 2026; o remediere corectă cere un nou format de mesaj, pe care instalările mai vechi nu l-ar putea citi."
+    },
+    {
+      "title": "O frază furată deschide fiecare mesaj trimis înainte de primul răspuns",
+      "body": "Cheia ta de identitate, precheia semnată și precheia post-cuantică derivă toate din fraza de recuperare, iar prechei de unică folosință nu se publică. Plicul care deschide o conversație rămâne pentru totdeauna pe lanțul public și poartă cheia publică efemeră a expeditorului, așa că oricine are fraza ta poate recalcula rădăcina X3DH. Nu se oprește la acel mesaj: până când expeditorul procesează un răspuns de la tine, fiecare mesaj pe care îl trimite continuă același lanț cu un pas, iar același secret arată și unde se află acele mesaje pe lanț. Cineva care ți-a scris de trei ori cât ai fost offline le-a expus pe toate trei. De îndată ce răspunzi și răspunsul ajunge, în ratchet intră o cheie aleatorie, locală dispozitivului, iar fraza nu mai ajunge. ML-KEM-768 nu schimbă asta, pentru că și sămânța lui derivă din frază. Raportat din exterior în august 2026; anterior descriam asta ca limitat la primul mesaj."
+    },
+    {
+      "title": "Nicio versiune lansată n-a finalizat un handshake post-cuantic",
+      "body": "Versiunea 1.0 a fost lansată cu calea post-cuantică oprită. 1.1 a pornit-o pentru iPhone-urile cu iOS 26, dar textul criptat X-Wing circulă printr-o încărcare pe Irys, iar în ambele versiuni lansate acea încărcare eșuează: cererea era semnată greșit, iar mai târziu mergea pe o rută care se mutase. Expeditorul revine atunci la X3DH clasic, așa că fiecare conversație deschisă până acum e protejată doar de X25519, nu și de ML-KEM-768. E tot criptare end-to-end, dar nu apără împotriva textului criptat înregistrat acum și atacat mai târziu cu un computer cuantic. Remedierea vine în următoarea versiune din App Store."
+    },
+    {
+      "title": "Pierderea frazei de recuperare înseamnă pierderea contului",
+      "body": "Nu există resetare, intervenție a asistenței sau copie de rezervă la noi. Douăsprezece cuvinte sunt contul. E prețul direct al faptului că nu există o bază de date cu conturi."
+    },
+    {
+      "title": "Trei platforme, două abia testate",
+      "body": "Aplicația pentru iPhone rulează pe iOS 18 sau mai nou, dar handshake-ul post-cuantic cere iOS 26, așa că un iPhone cu sistem mai vechi folosește X3DH clasic. E singura platformă cu utilizare reală. Programul de instalare pentru Windows nu are certificat de semnare a codului, așa că fiecare descărcare declanșează un avertisment despre editor. APK-ul pentru Android e versiunea 0.1, verificată pe un emulator, nu pe un dispozitiv real, și nicio versiune pentru Android sau Windows n-a trimis încă un mesaj pe mainnet. Planurile plătite funcționează doar pe iPhone. Nu există client web."
+    },
+    {
+      "title": "Funcții pe care le are o aplicație de mesagerie obișnuită și aceasta nu",
+      "body": "Fără conversații de grup, fără transfer de fișiere sau media, fără apeluri vocale sau video, fără sincronizare între dispozitive, fără căutare de mesaje între dispozitive. PrivaMesh e o aplicație de mesaje text axată pe conversații unu la unu."
+    },
+    {
+      "title": "Anonimatul nu e garantat",
+      "body": "PrivaMesh elimină identificatorii pe care îi controlează. Nu te poate împiedica să-ți dezvălui identitatea într-un mesaj, să refolosești un pseudonim din alt context sau să fii identificat de furnizorul de rețea. Anonimatul e o practică pe care arhitectura o sprijină, nu un comutator pe care îl acționează."
+    }
+  ],
+  "whyHeading": "De ce există această pagină",
+  "why": [
+    "Afirmațiile absolute sunt ușor de scris și imposibil de verificat, iar într-un produs de confidențialitate costă mai multă încredere decât aduc. Oricine e destul de tehnic ca să conteze va găsi golurile, iar să le găsești nemenționate e mai rău decât să le citești aici.",
+    "Dacă ceva de pe această pagină e greșit sau depășit, e o eroare - spune-ne prin [pagina de securitate](/security). Cine poate observa ce, componentă cu componentă, vezi pe [pagina de arhitectură](/architecture)."
+  ],
+  "faq": [
+    {
+      "q": "Pot fi decriptate mesajele mele în viitor?",
+      "a": "Textul criptat stă permanent pe un lanț public, deci poate fi înregistrat și păstrat. Confidențialitatea persistentă distruge cheia fiecărui mesaj după utilizare, iar pe iOS 26 handshake-ul e gândit să amestece ML-KEM-768 împotriva atacurilor cuantice viitoare - deși, cum s-a descris mai sus, nicio versiune lansată n-a finalizat încă acel pas. Niciuna nu face să dispară textul criptat înregistrat."
+    },
+    {
+      "q": "De ce e oprit implicit traficul de acoperire?",
+      "a": "Tranzacțiile-momeală consumă din cota ta de mesaje, deci lăsat pornit te-ar costa mesaje fără să-ți dai seama. E o setare, nu o valoare implicită, ceea ce înseamnă că setarea livrată e mai slabă la capitolul momente decât cea mai puternică disponibilă."
+    },
+    {
+      "q": "Dacă cineva îmi fură fraza de recuperare, îmi poate citi mesajele vechi?",
+      "a": "Tot ce s-a trimis înainte ca primul tău răspuns să ajungă la expeditor, da. Acele plicuri sunt permanent pe lanțul public, fiecare cheie necesară pentru a le deschide derivă din frază pentru că nu se publică prechei de unică folosință, iar mesajele de după primul continuă același lanț. De la primul tău răspuns procesat, conversația e protejată de chei ratchet aleatorii care n-au părăsit niciodată dispozitivul."
+    },
+    {
+      "q": "PrivaMesh e anonim?",
+      "a": "Elimină identificatorii pe care altfel i-am avea noi - fără număr de telefon, fără e-mail, fără cont. Nu-ți ascunde IP-ul de furnizorul de rețea și nu te poate împiedica să te identifici într-o conversație."
+    }
+  ],
+  "related": [
+    {
+      "href": "/architecture",
+      "label": "Arhitectură",
+      "blurb": "Fiecare componentă, cine o operează și ce poate observa."
+    },
+    {
+      "href": "/threat-model",
+      "label": "Model de amenințări",
+      "blurb": "Adversar cu adversar: ce se vede, ce se oprește, ce rămâne."
+    },
+    {
+      "href": "/security",
+      "label": "Securitate și raportare",
+      "blurb": "Cum raportezi o vulnerabilitate."
+    }
+  ]
+}

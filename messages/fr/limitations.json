@@ -1,0 +1,112 @@
+{
+  "meta": {
+    "title": "Limites connues",
+    "description": "Ce contre quoi PrivaMesh ne vous protège pas : chiffré permanent sur la blockchain, horodatage visible, version Windows non signée, historique irrécupérable."
+  },
+  "eyebrow": "Limites",
+  "title": "Ce contre quoi PrivaMesh ne vous protège pas",
+  "lead": "Tout outil de confidentialité a ses limites. Les nôtres sont listées ici plutôt que laissées à votre découverte, car un produit qui ne publie que ses points forts demande qu'on le croie sur parole.",
+  "summary": "En bref : le chiffré sur une blockchain publique est permanent, l'horodatage des transactions est visible tant que le trafic de couverture n'est pas activé, le fournisseur RPC voit votre IP, et l'historique des messages ne peut jamais être restauré.",
+  "items": [
+    {
+      "title": "Le chiffré reste pour toujours sur une blockchain publique",
+      "body": "Chaque message est écrit sur Solana sous forme de chiffré complété et n'expire jamais. Il est illisible sans des clés détruites après usage, mais un adversaire peut l'enregistrer aujourd'hui et le garder indéfiniment. Si la cryptographie est un jour cassée, ce qui a été enregistré sera toujours là."
+    },
+    {
+      "title": "Le fait et le moment d'une transaction sont publics",
+      "body": "Les adresses à usage unique cachent à qui un message est destiné, et le remplissage cache sa longueur. Aucun des deux ne cache qu'une transaction a eu lieu à un moment précis. Sans trafic de couverture, votre rythme d'activité est visible par quiconque lit la blockchain."
+    },
+    {
+      "title": "Le remplissage révèle une tranche, pas rien",
+      "body": "Le texte en clair est complété à 32, 64, 128, 256 ou 512 octets. Un observateur apprend dans quelle tranche un message est tombé : une réponse d'un mot et un message de 500 octets restent donc distinguables l'un de l'autre, mais pas des autres messages de la même tranche."
+    },
+    {
+      "title": "Le trafic de couverture est désactivé par défaut",
+      "body": "Le mode leurre qui masque l'horodatage puise dans votre quota de messages, il est donc livré désactivé. Tant que vous ne l'activez pas, la corrélation temporelle est à la portée de quiconque observe la blockchain. C'est un compromis délibéré, pas un oubli, mais la configuration par défaut est plus faible que la configuration maximale."
+    },
+    {
+      "title": "Le point d'accès RPC voit votre IP",
+      "body": "Soumettre une transaction implique de parler à un fournisseur RPC, qui voit votre adresse et le moment de vos requêtes. Il est remplaçable et auto-hébergeable, mais par défaut vous confiez à un tiers des métadonnées réseau. Utilisez un VPN ou Tor si cela compte pour vous."
+    },
+    {
+      "title": "La livraison dépend de Solana, du RPC et de notre service de frais",
+      "body": "Si l'un des trois est en panne ou bloqué dans votre pays, l'envoi s'arrête. Votre identité, vos contacts et votre historique ne sont pas touchés car ils vivent sur votre appareil, mais PrivaMesh n'est pas à l'épreuve de la censure au sens où il passerait toujours."
+    },
+    {
+      "title": "L'historique des messages ne peut pas être récupéré",
+      "body": "La confidentialité persistante détruit chaque clé de message après usage, et l'état du ratchet ne quitte jamais l'appareil. Votre phrase de récupération restaure votre identité et vos contacts sur un nouvel appareil, jamais vos conversations. Réinstaller l'app sur le même téléphone a le même effet."
+    },
+    {
+      "title": "Aucun moyen de vérifier que vous avez ajouté la bonne personne",
+      "body": "Les bundles de pré-clés sont signés, un registre ne peut donc pas substituer une clé à un compte. Mais l'app ne vérifie pas l'étape précédente : que le compte est bien la personne que vous visiez. Il n'y a ni numéro de sécurité, ni comparaison d'empreintes, ni procédure de vérification hors de l'app. Si un attaquant vous persuade d'ajouter son compte, la cryptographie fonctionne parfaitement et protège la mauvaise conversation."
+    },
+    {
+      "title": "Si vous publiez un pseudo, la blockchain montre avec qui vous ouvrez une conversation",
+      "body": "Le registre de recherche relie votre pseudo à votre clé publique, et le premier message d'une conversation porte cette même clé en clair - il le doit, car c'est ainsi que l'autre partie dérive le secret partagé. Il est aussi envoyé à l'adresse ordinaire du destinataire, puisqu'aucune adresse partagée n'existe encore. Quiconque lit la blockchain peut donc rapprocher les deux et voir que vous avez commencé une conversation avec une personne précise, et quand. Pas ce qui a été dit : le contenu reste chiffré, et les messages suivants passent à des adresses à usage unique. Si vous ne publiez jamais de pseudo, ce même premier message ne nomme personne. Signalé par un tiers en août 2026 ; le corriger proprement suppose de changer le format des messages, que les anciennes installations ne pourraient pas lire."
+    },
+    {
+      "title": "Une phrase volée ouvre chaque message envoyé avant la première réponse",
+      "body": "Votre clé d'identité, votre pré-clé signée et votre pré-clé post-quantique dérivent toutes de la phrase de récupération, et aucune pré-clé à usage unique n'est publiée. L'enveloppe qui ouvre une conversation reste à jamais sur la blockchain publique et porte la clé publique éphémère de l'expéditeur : quiconque détient votre phrase peut recalculer la racine X3DH. Cela ne s'arrête pas à ce seul message : tant que l'expéditeur n'a pas traité une réponse de votre part, chaque message qu'il envoie prolonge la même chaîne d'un cran, et ce même secret permet aussi de localiser ces messages sur la blockchain. Quelqu'un qui vous a écrit trois fois pendant que vous étiez hors ligne a exposé les trois. Dès que vous répondez et qu'il reçoit la réponse, une clé aléatoire locale à l'appareil entre dans le ratchet et la phrase ne suffit plus. ML-KEM-768 n'y change rien, car sa graine dérive aussi de la phrase. Signalé par un tiers en août 2026 ; nous décrivions auparavant cela comme limité au premier message."
+    },
+    {
+      "title": "Aucune version publiée n'a mené à bien une poignée de main post-quantique",
+      "body": "La 1.0 a été livrée avec le chemin post-quantique désactivé. La 1.1 l'a activé pour les iPhone sous iOS 26, mais le chiffré X-Wing passe par un envoi vers Irys, et dans les deux versions publiées cet envoi échoue : la requête était mal signée, puis partait vers une route qui avait changé. L'expéditeur se rabat alors sur X3DH classique, si bien que chaque conversation ouverte jusqu'ici n'est protégée que par X25519, sans ML-KEM-768. C'est toujours du chiffrement de bout en bout, mais aucune défense contre un chiffré enregistré aujourd'hui et attaqué plus tard avec un ordinateur quantique. Le correctif arrive dans la prochaine version sur l'App Store."
+    },
+    {
+      "title": "Perdre la phrase de récupération, c'est perdre le compte",
+      "body": "Il n'y a ni réinitialisation, ni intervention de l'assistance, ni sauvegarde chez nous. Douze mots sont le compte. C'est le prix direct de l'absence de base de comptes."
+    },
+    {
+      "title": "Trois plateformes, dont deux à peine testées",
+      "body": "L'app iPhone fonctionne sous iOS 18 ou ultérieur, mais la poignée de main post-quantique exige iOS 26 : un iPhone sous un système plus ancien utilise X3DH classique. C'est la seule plateforme avec un vrai usage derrière elle. Le programme d'installation Windows n'a pas de certificat de signature de code, donc chaque téléchargement déclenche un avertissement sur l'éditeur. L'APK Android est en version 0.1, vérifié sur un émulateur et non sur un vrai appareil, et aucune version Android ou Windows n'a encore envoyé de message sur le mainnet. Les offres payantes ne fonctionnent que sur iPhone. Il n'y a pas de client web."
+    },
+    {
+      "title": "Des fonctions qu'a une messagerie grand public et pas celle-ci",
+      "body": "Pas de groupes, pas de transfert de fichiers ou de médias, pas d'appels vocaux ou vidéo, pas de synchronisation multi-appareils, pas de recherche de messages entre appareils. PrivaMesh est une messagerie texte centrée sur le tête-à-tête."
+    },
+    {
+      "title": "L'anonymat n'est pas garanti",
+      "body": "PrivaMesh supprime les identifiants qu'il contrôle. Il ne peut pas vous empêcher de révéler qui vous êtes dans un message, de réutiliser un pseudo venu d'ailleurs, ou d'être identifié par votre fournisseur d'accès. L'anonymat est une pratique que l'architecture soutient, pas un interrupteur qu'elle actionne."
+    }
+  ],
+  "whyHeading": "Pourquoi cette page existe",
+  "why": [
+    "Les affirmations absolues sont faciles à écrire et impossibles à vérifier, et dans un produit de confidentialité elles coûtent plus de confiance qu'elles n'en rapportent. Quiconque est assez technique pour compter trouvera les failles, et les trouver non signalées est pire que de les lire ici.",
+    "Si quelque chose sur cette page est faux ou dépassé, c'est un bug - dites-le-nous via [la page sécurité](/security). Pour savoir, composant par composant, qui peut observer quoi, voir [la page d'architecture](/architecture)."
+  ],
+  "faq": [
+    {
+      "q": "Mes messages pourront-ils être déchiffrés à l'avenir ?",
+      "a": "Le chiffré est sur une blockchain publique de façon permanente, il peut donc être enregistré et conservé. La confidentialité persistante détruit chaque clé de message après usage, et sous iOS 26 la poignée de main est conçue pour mêler ML-KEM-768 contre de futures attaques quantiques - même si, comme décrit plus haut, aucune version publiée n'a encore mené cette étape à bien. Ni l'un ni l'autre ne fait disparaître un chiffré enregistré."
+    },
+    {
+      "q": "Pourquoi le trafic de couverture est-il désactivé par défaut ?",
+      "a": "Les transactions leurres puisent dans votre quota de messages ; activé par défaut, il vous coûterait des messages à votre insu. C'est un réglage et non un défaut, ce qui veut dire que la configuration livrée est plus faible sur l'horodatage que la plus forte disponible."
+    },
+    {
+      "q": "Si quelqu'un vole ma phrase de récupération, peut-il lire mes anciens messages ?",
+      "a": "Tout ce qui a été envoyé avant que votre première réponse parvienne à l'expéditeur, oui. Ces enveloppes sont sur la blockchain publique de façon permanente, toutes les clés pour les ouvrir dérivent de la phrase puisqu'aucune pré-clé à usage unique n'est publiée, et les messages qui suivent le premier prolongent la même chaîne. À partir de votre première réponse traitée, la conversation est protégée par des clés de ratchet aléatoires qui n'ont jamais quitté l'appareil."
+    },
+    {
+      "q": "PrivaMesh est-il anonyme ?",
+      "a": "Il supprime les identifiants que nous détiendrions sinon - pas de numéro de téléphone, pas d'e-mail, pas de compte. Il ne cache pas votre IP à votre fournisseur d'accès et ne peut pas vous empêcher de vous identifier dans une conversation."
+    }
+  ],
+  "related": [
+    {
+      "href": "/architecture",
+      "label": "Architecture",
+      "blurb": "Chaque composant, son opérateur, et ce qu'il peut observer."
+    },
+    {
+      "href": "/threat-model",
+      "label": "Modèle de menace",
+      "blurb": "Adversaire par adversaire : ce qui est vu, ce qui est bloqué, ce qui reste."
+    },
+    {
+      "href": "/security",
+      "label": "Sécurité et divulgation",
+      "blurb": "Comment signaler une vulnérabilité."
+    }
+  ]
+}

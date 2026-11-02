@@ -1,0 +1,112 @@
+{
+  "meta": {
+    "title": "Kjente begrensninger",
+    "description": "Hva PrivaMesh ikke beskytter deg mot: permanent kryptert tekst på blokkjeden, synlige tidspunkter, en usignert Windows-versjon og historikk som ikke kan gjenopprettes."
+  },
+  "eyebrow": "Begrensninger",
+  "title": "Hva PrivaMesh ikke beskytter deg mot",
+  "lead": "Alle personvernverktøy har grenser. Våre står her i stedet for å overlates til deg å oppdage, fordi et produkt som bare publiserer styrkene sine, ber om å bli trodd på ordet.",
+  "summary": "Kort fortalt: kryptert tekst på en offentlig blokkjede er permanent, tidspunktet for transaksjoner er synlig til du slår på dekktrafikk, RPC-leverandøren ser IP-adressen din, og meldingshistorikken kan aldri gjenopprettes.",
+  "items": [
+    {
+      "title": "Kryptert tekst blir liggende for alltid på en offentlig blokkjede",
+      "body": "Hver melding skrives til Solana som utfylt kryptert tekst og utløper aldri. Den er uleselig uten nøkler som ble ødelagt etter bruk, men en motstander kan ta den opp i dag og beholde den så lenge hen vil. Hvis kryptografien en dag blir knekt, ligger det som ble tatt opp der fortsatt."
+    },
+    {
+      "title": "At en transaksjon skjer, og når, er offentlig",
+      "body": "Engangsadresser skjuler hvem en melding er til, og utfylling skjuler hvor lang den var. Ingen av dem skjuler at en transaksjon skjedde på et bestemt tidspunkt. Med dekktrafikk av er aktivitetsmønsteret ditt synlig for alle som leser blokkjeden."
+    },
+    {
+      "title": "Utfylling avslører en størrelsesklasse, ikke ingenting",
+      "body": "Klartekst fylles ut til 32, 64, 128, 256 eller 512 byte. En observatør får vite hvilken størrelsesklasse en melding havnet i - et svar på ett ord og en melding på 500 byte kan altså fortsatt skilles fra hverandre, bare ikke fra andre i samme klasse."
+    },
+    {
+      "title": "Dekktrafikk er av som standard",
+      "body": "Lokkemodusen som skjuler tidspunkter, bruker av meldingskvoten din og leveres derfor avslått. Til du slår den på, kan alle som følger med på blokkjeden korrelere tidspunkter. Det er en bevisst avveining og ikke en forglemmelse, men det betyr at standardoppsettet er svakere enn det sterkeste."
+    },
+    {
+      "title": "RPC-endepunktet ser IP-adressen din",
+      "body": "Å sende en transaksjon betyr å snakke med en RPC-leverandør, som ser adressen din og tidspunktet for forespørslene dine. Den kan byttes ut og kjøres selv, men som standard betror du nettverksmetadata til en tredjepart. Bruk VPN eller Tor hvis det betyr noe for deg."
+    },
+    {
+      "title": "Levering avhenger av Solana, RPC-en og gebyrtjenesten vår",
+      "body": "Hvis en av de tre er nede eller blokkert i landet ditt, stopper sendingen. Identiteten, kontaktene og historikken din påvirkes ikke fordi de ligger på enheten din, men PrivaMesh er ikke sensurbestandig i betydningen at den alltid kommer gjennom."
+    },
+    {
+      "title": "Meldingshistorikk kan ikke gjenopprettes",
+      "body": "Fremoverhemmelighold ødelegger hver meldingsnøkkel etter bruk, og ratchet-tilstanden forlater aldri enheten. Gjenopprettingsfrasen gjenoppretter identiteten og kontaktene dine på en ny enhet, aldri samtalene. Å installere appen på nytt på samme telefon har samme effekt."
+    },
+    {
+      "title": "Ingen måte å sjekke at du har lagt til riktig person",
+      "body": "Prekey-pakker er signerte, så et register kan ikke bytte ut nøkkelen til en konto. Men steget før sjekker ikke appen: om kontoen er personen du mente. Det finnes ikke sikkerhetsnummer, sammenligning av fingeravtrykk eller verifisering utenfor appen. Hvis en angriper får deg til å legge til kontoen sin, fungerer kryptografien perfekt og beskytter feil samtale."
+    },
+    {
+      "title": "Hvis du publiserer et kallenavn, viser blokkjeden hvem du starter samtaler med",
+      "body": "Søkeregisteret knytter kallenavnet ditt til den offentlige nøkkelen din, og den første meldingen i en samtale bærer den samme nøkkelen i klartekst - det må den, fordi den andre siden utleder den delte hemmeligheten av den. Den sendes også til mottakerens vanlige adresse, fordi ingen delt adresse finnes ennå. Den som leser blokkjeden, kan altså koble de to og se at du startet en samtale med en bestemt person, og når. Ikke hva som ble sagt: innholdet forblir kryptert, og senere meldinger går til engangsadresser. Publiserer du aldri et kallenavn, peker den samme første meldingen ikke ut noen. Rapportert eksternt i august 2026; å fikse det skikkelig krever et nytt meldingsformat som eldre installasjoner ikke kunne lest."
+    },
+    {
+      "title": "En stjålet frase åpner hver melding sendt før første svar",
+      "body": "Identitetsnøkkelen, den signerte prekey-en og den postkvantiske prekey-en din utledes alle av gjenopprettingsfrasen, og ingen engangs-prekeys publiseres. Konvolutten som åpner en samtale, ligger for alltid på den offentlige blokkjeden og bærer avsenderens midlertidige offentlige nøkkel, så den som har frasen din, kan regne ut X3DH-roten på nytt. Det stopper ikke ved den ene meldingen: til avsenderen har behandlet et svar fra deg, fortsetter hver melding hen sender den samme kjeden ett steg, og den samme hemmeligheten viser også hvor de meldingene ligger på blokkjeden. Den som skrev tre ganger mens du var frakoblet, har eksponert alle tre. Så snart du svarer og svaret kommer fram, går en tilfeldig nøkkel som bare finnes på enheten, inn i ratcheten, og frasen er ikke lenger nok. ML-KEM-768 endrer ikke dette, fordi seeden dens også utledes av frasen. Rapportert eksternt i august 2026; tidligere beskrev vi dette som bare den første meldingen."
+    },
+    {
+      "title": "Ingen utgitt versjon har fullført et postkvantisk håndtrykk",
+      "body": "1.0 ble utgitt med den postkvantiske veien slått av. 1.1 slo den på for iPhoner med iOS 26, men X-Wing-krypteringen sendes via en opplasting til Irys, og i begge utgitte versjoner mislykkes den opplastingen: forespørselen var feil signert og gikk senere til en rute som var flyttet. Avsenderen faller da tilbake på klassisk X3DH, så hver samtale som er åpnet så langt, er beskyttet bare av X25519, ikke av ML-KEM-768. Det er fortsatt ende-til-ende-kryptering, men ingen beskyttelse mot kryptert tekst som tas opp nå og angripes senere med en kvantedatamaskin. Rettelsen kommer i neste versjon i App Store."
+    },
+    {
+      "title": "Mister du gjenopprettingsfrasen, mister du kontoen",
+      "body": "Det finnes ingen tilbakestilling, ingen overstyring fra brukerstøtten og ingen sikkerhetskopi hos oss. Tolv ord er kontoen. Det er den direkte prisen for at det ikke finnes noen kontodatabase."
+    },
+    {
+      "title": "Tre plattformer, to av dem knapt testet",
+      "body": "iPhone-appen kjører på iOS 18 eller nyere, men det postkvantiske håndtrykket krever iOS 26, så en iPhone med eldre system bruker klassisk X3DH. Det er den eneste plattformen med reell bruk bak seg. Windows-installasjonsprogrammet har ikke kodesigneringssertifikat, så hver nedlasting gir en advarsel om utgiveren. Android-APK-en er versjon 0.1, sjekket på en emulator og ikke på en ekte enhet, og ingen Android- eller Windows-versjon har ennå sendt en melding på mainnet. Betalte nivåer fungerer bare på iPhone. Det finnes ingen nettklient."
+    },
+    {
+      "title": "Funksjoner en vanlig meldingsapp har og denne ikke",
+      "body": "Ingen gruppesamtaler, ingen fil- eller medieoverføring, ingen tale- eller videosamtaler, ingen synkronisering mellom enheter, ingen meldingssøk på tvers av enheter. PrivaMesh er en fokusert tekstapp for samtaler én-til-én."
+    },
+    {
+      "title": "Anonymitet er ikke garantert",
+      "body": "PrivaMesh fjerner identifikatorene den selv kontrollerer. Den kan ikke hindre deg i å avsløre hvem du er i en melding, gjenbruke et kallenavn fra en annen sammenheng eller bli identifisert av nettleverandøren din. Anonymitet er en praksis arkitekturen støtter, ikke en bryter den slår på."
+    }
+  ],
+  "whyHeading": "Hvorfor denne siden finnes",
+  "why": [
+    "Absolutte påstander er lette å skrive og umulige å kontrollere, og i et personvernprodukt koster de mer tillit enn de gir. Den som er teknisk nok til å bety noe, vil finne hullene, og å finne dem uomtalt er verre enn å lese om dem her.",
+    "Hvis noe på denne siden er feil eller utdatert, er det en feil - si fra via [sikkerhetssiden](/security). Hvem som kan se hva, komponent for komponent, står på [arkitektursiden](/architecture)."
+  ],
+  "faq": [
+    {
+      "q": "Kan meldingene mine dekrypteres i fremtiden?",
+      "a": "Den krypterte teksten ligger permanent på en offentlig blokkjede, så den kan tas opp og oppbevares. Fremoverhemmelighold ødelegger hver meldingsnøkkel etter bruk, og på iOS 26 er håndtrykket laget for å blande inn ML-KEM-768 mot fremtidige kvanteangrep - selv om, som beskrevet over, ingen utgitt versjon ennå har fullført det steget. Ingen av delene får opptatt kryptert tekst til å forsvinne."
+    },
+    {
+      "q": "Hvorfor er dekktrafikk av som standard?",
+      "a": "Lokketransaksjoner bruker av meldingskvoten din, så å ha den på ville i det stille kostet deg meldinger. Det er en innstilling og ikke en standard, noe som betyr at det leverte oppsettet er svakere på tidspunkter enn det sterkeste som finnes."
+    },
+    {
+      "q": "Hvis noen stjeler gjenopprettingsfrasen min, kan de lese de gamle meldingene mine?",
+      "a": "Alt som ble sendt før ditt første svar nådde avsenderen, ja. De konvoluttene ligger permanent på den offentlige blokkjeden, hver nøkkel som trengs for å åpne dem, utledes av frasen fordi ingen engangs-prekeys publiseres, og meldingene etter den første fortsetter den samme kjeden. Fra ditt første behandlede svar er samtalen beskyttet av ratchet-nøkler som var tilfeldige og aldri forlot enheten."
+    },
+    {
+      "q": "Er PrivaMesh anonym?",
+      "a": "Den fjerner identifikatorene vi ellers ville hatt - ingen telefonnummer, ingen e-post, ingen konto. Den skjuler ikke IP-adressen din for nettleverandøren og kan ikke hindre deg i å identifisere deg selv i en samtale."
+    }
+  ],
+  "related": [
+    {
+      "href": "/architecture",
+      "label": "Arkitektur",
+      "blurb": "Hver komponent, hvem som driver den, og hva den kan se."
+    },
+    {
+      "href": "/threat-model",
+      "label": "Trusselmodell",
+      "blurb": "Motstander for motstander: hva som ses, hva som stoppes, hva som gjenstår."
+    },
+    {
+      "href": "/security",
+      "label": "Sikkerhet og rapportering",
+      "blurb": "Hvordan du rapporterer en sårbarhet."
+    }
+  ]
+}

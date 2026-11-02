@@ -1,0 +1,112 @@
+{
+  "meta": {
+    "title": "Kända begränsningar",
+    "description": "Vad PrivaMesh inte skyddar dig mot: permanent krypterad text på blockkedjan, synliga tidpunkter, en osignerad Windows-version och historik som inte går att återställa."
+  },
+  "eyebrow": "Begränsningar",
+  "title": "Vad PrivaMesh inte skyddar dig mot",
+  "lead": "Varje integritetsverktyg har gränser. Våra står här i stället för att lämnas åt dig att upptäcka, eftersom en produkt som bara publicerar sina styrkor ber om att bli trodd på sitt ord.",
+  "summary": "Kort sagt: krypterad text på en öppen blockkedja är permanent, tidpunkten för transaktioner syns tills du slår på täcktrafik, RPC-leverantören ser din IP och meddelandehistoriken kan aldrig återställas.",
+  "items": [
+    {
+      "title": "Krypterad text ligger kvar för alltid på en öppen blockkedja",
+      "body": "Varje meddelande skrivs till Solana som utfylld krypterad text och upphör aldrig att gälla. Det är oläsligt utan nycklar som förstördes efter användning, men en motståndare kan spela in det i dag och spara det hur länge som helst. Om kryptografin någon gång knäcks finns det inspelade kvar."
+    },
+    {
+      "title": "Att en transaktion sker, och när, är offentligt",
+      "body": "Engångsadresser döljer vem ett meddelande är till och utfyllnad döljer hur långt det var. Inget av dem döljer att en transaktion skedde vid en viss tidpunkt. Med täcktrafik avstängd syns ditt aktivitetsmönster för alla som läser blockkedjan."
+    },
+    {
+      "title": "Utfyllnad avslöjar en storleksklass, inte ingenting",
+      "body": "Klartext fylls ut till 32, 64, 128, 256 eller 512 byte. En observatör får veta vilken storleksklass ett meddelande hamnade i - ett svar på ett ord och ett meddelande på 500 byte går alltså fortfarande att skilja från varandra, bara inte från andra i samma klass."
+    },
+    {
+      "title": "Täcktrafik är avstängd som standard",
+      "body": "Lockläget som döljer tidpunkter drar från din meddelandekvot och levereras därför avstängt. Tills du slår på det kan vem som helst som bevakar blockkedjan göra tidskorrelation. Det är en avvägning och inget förbiseende, men det betyder att standardinställningen är svagare än den starkaste."
+    },
+    {
+      "title": "RPC-slutpunkten ser din IP",
+      "body": "Att skicka en transaktion innebär att prata med en RPC-leverantör, som ser din adress och tidpunkten för dina förfrågningar. Den går att byta ut och köra själv, men som standard anförtror du nätverksmetadata åt en tredje part. Använd VPN eller Tor om det spelar roll för dig."
+    },
+    {
+      "title": "Leveransen beror på Solana, RPC:n och vår avgiftstjänst",
+      "body": "Om någon av de tre ligger nere eller är blockerad i ditt land stoppas sändningen. Din identitet, dina kontakter och din historik påverkas inte eftersom de finns på din enhet, men PrivaMesh är inte censurresistent i betydelsen att den alltid tar sig fram."
+    },
+    {
+      "title": "Meddelandehistoriken går inte att återställa",
+      "body": "Framåtsekretess förstör varje meddelandenyckel efter användning, och ratchet-tillståndet lämnar aldrig enheten. Din återställningsfras återställer din identitet och dina kontakter på en ny enhet, aldrig dina samtal. Att installera om appen på samma telefon har samma effekt."
+    },
+    {
+      "title": "Inget sätt att kontrollera att du lagt till rätt person",
+      "body": "Prekey-paket är signerade, så ett register kan inte byta ut nyckeln för ett konto. Men steget innan kontrollerar appen inte: om kontot är den person du menade. Det finns inget säkerhetsnummer, ingen jämförelse av fingeravtryck och ingen verifiering utanför appen. Om en angripare får dig att lägga till hens konto fungerar kryptografin felfritt och skyddar fel samtal."
+    },
+    {
+      "title": "Om du publicerar ett smeknamn visar blockkedjan vem du inleder samtal med",
+      "body": "Sökregistret kopplar ditt smeknamn till din publika nyckel, och det första meddelandet i ett samtal bär samma nyckel i klartext - det måste det, eftersom den andra sidan härleder den delade hemligheten ur den. Det skickas dessutom till mottagarens vanliga adress, eftersom ingen delad adress finns ännu. Den som läser blockkedjan kan alltså koppla ihop de två och se att du inledde ett samtal med en viss person, och när. Inte vad som sades: innehållet förblir krypterat och senare meddelanden går till engångsadresser. Publicerar du aldrig ett smeknamn pekar samma första meddelande inte ut någon. Rapporterat externt i augusti 2026; att åtgärda det ordentligt kräver ett nytt meddelandeformat som äldre installationer inte skulle kunna läsa."
+    },
+    {
+      "title": "En stulen fras öppnar varje meddelande som skickats före första svaret",
+      "body": "Din identitetsnyckel, signerade prekey och postkvantiska prekey härleds alla ur återställningsfrasen, och inga engångs-prekeys publiceras. Kuvertet som inleder ett samtal ligger kvar för alltid på den öppna blockkedjan och bär avsändarens tillfälliga publika nyckel, så den som har din fras kan räkna fram X3DH-roten igen. Det stannar inte vid det meddelandet: tills avsändaren har behandlat ett svar från dig fortsätter varje meddelande hen skickar samma kedja ett steg, och samma hemlighet visar också var de meddelandena ligger på blockkedjan. Den som skrev tre gånger medan du var offline har exponerat alla tre. Så snart du svarar och svaret kommer fram går en slumpmässig nyckel som bara finns på enheten in i ratcheten, och frasen räcker inte längre. ML-KEM-768 ändrar inte detta, eftersom dess seed också härleds ur frasen. Rapporterat externt i augusti 2026; tidigare beskrev vi detta som enbart det första meddelandet."
+    },
+    {
+      "title": "Ingen släppt version har genomfört ett postkvantiskt handslag",
+      "body": "1.0 släpptes med den postkvantiska vägen avstängd. 1.1 slog på den för iPhone med iOS 26, men X-Wing-krypteringen går via en uppladdning till Irys, och i båda släppta versionerna misslyckas den uppladdningen: begäran var felaktigt signerad och gick senare till en rutt som hade flyttats. Avsändaren faller då tillbaka på klassisk X3DH, så varje samtal som hittills inletts skyddas bara av X25519, inte av ML-KEM-768. Det är fortfarande end-to-end-kryptering, men inget skydd mot krypterad text som spelas in nu och angrips senare med en kvantdator. Rättningen kommer i nästa version i App Store."
+    },
+    {
+      "title": "Förlorad återställningsfras är ett förlorat konto",
+      "body": "Det finns ingen återställning, inget ingrepp från supporten och ingen säkerhetskopia hos oss. Tolv ord är kontot. Det är det direkta priset för att det inte finns någon kontodatabas."
+    },
+    {
+      "title": "Tre plattformar, två av dem knappt testade",
+      "body": "iPhone-appen körs på iOS 18 eller senare, men det postkvantiska handslaget kräver iOS 26, så en iPhone med äldre system använder klassisk X3DH. Det är den enda plattformen med verklig användning bakom sig. Windows-installationsprogrammet saknar kodsigneringscertifikat, så varje nedladdning ger en varning om utgivaren. Android-APK:n är version 0.1, kontrollerad i en emulator och inte på en riktig enhet, och ingen Android- eller Windows-version har ännu skickat ett meddelande på mainnet. Betalda nivåer fungerar bara på iPhone. Det finns ingen webbklient."
+    },
+    {
+      "title": "Funktioner som en vanlig meddelandeapp har och den här inte",
+      "body": "Inga gruppchattar, ingen fil- eller mediaöverföring, inga röst- eller videosamtal, ingen synk mellan enheter, ingen meddelandesökning över enheter. PrivaMesh är en fokuserad textapp för samtal en-till-en."
+    },
+    {
+      "title": "Anonymitet är inte garanterad",
+      "body": "PrivaMesh tar bort de identifierare den själv styr över. Den kan inte hindra dig från att avslöja vem du är i ett meddelande, återanvända ett smeknamn från ett annat sammanhang eller identifieras av din nätleverantör. Anonymitet är ett arbetssätt som arkitekturen stöder, inte en strömbrytare den slår på."
+    }
+  ],
+  "whyHeading": "Varför den här sidan finns",
+  "why": [
+    "Absoluta påståenden är lätta att skriva och omöjliga att kontrollera, och i en integritetsprodukt kostar de mer förtroende än de ger. Den som är tillräckligt teknisk för att spela roll hittar luckorna, och att hitta dem omnämnda är bättre än att hitta dem på egen hand.",
+    "Om något på den här sidan är fel eller inaktuellt är det en bugg - säg till via [säkerhetssidan](/security). Vem som kan se vad, komponent för komponent, står på [arkitektursidan](/architecture)."
+  ],
+  "faq": [
+    {
+      "q": "Kan mina meddelanden dekrypteras i framtiden?",
+      "a": "Den krypterade texten ligger permanent på en öppen blockkedja, så den kan spelas in och sparas. Framåtsekretess förstör varje meddelandenyckel efter användning, och på iOS 26 är handslaget utformat för att blanda in ML-KEM-768 mot framtida kvantangrepp - även om, som beskrivs ovan, ingen släppt version ännu har genomfört det steget. Inget av det får inspelad krypterad text att försvinna."
+    },
+    {
+      "q": "Varför är täcktrafik avstängd som standard?",
+      "a": "Locktransaktioner drar från din meddelandekvot, så att ha den påslagen skulle i tysthet kosta dig meddelanden. Det är en inställning och ingen standard, vilket betyder att den levererade konfigurationen är svagare när det gäller tidpunkter än den starkaste som finns."
+    },
+    {
+      "q": "Om någon stjäl min återställningsfras, kan hen läsa mina gamla meddelanden?",
+      "a": "Allt som skickades innan ditt första svar nådde avsändaren, ja. De kuverten ligger permanent på den öppna blockkedjan, varje nyckel som behövs för att öppna dem härleds ur frasen eftersom inga engångs-prekeys publiceras, och meddelandena efter det första fortsätter samma kedja. Från ditt första behandlade svar skyddas samtalet av ratchet-nycklar som var slumpmässiga och aldrig lämnade enheten."
+    },
+    {
+      "q": "Är PrivaMesh anonym?",
+      "a": "Den tar bort de identifierare vi annars skulle ha - inget telefonnummer, ingen e-post, inget konto. Den döljer inte din IP för din nätleverantör och kan inte hindra dig från att identifiera dig själv i ett samtal."
+    }
+  ],
+  "related": [
+    {
+      "href": "/architecture",
+      "label": "Arkitektur",
+      "blurb": "Varje komponent, vem som driver den och vad den kan se."
+    },
+    {
+      "href": "/threat-model",
+      "label": "Hotmodell",
+      "blurb": "Motståndare för motståndare: vad som syns, vad som stoppas, vad som återstår."
+    },
+    {
+      "href": "/security",
+      "label": "Säkerhet och rapportering",
+      "blurb": "Hur du rapporterar en sårbarhet."
+    }
+  ]
+}

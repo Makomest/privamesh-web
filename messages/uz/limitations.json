@@ -1,0 +1,112 @@
+{
+  "meta": {
+    "title": "PrivaMesh ma'lum cheklovlari",
+    "description": "PrivaMesh sizni nimadan himoya qilmaydi: zanjirdagi abadiy shifrmatn, ko'rinadigan vaqt, imzosiz Windows versiyasi va tiklanmaydigan tarix."
+  },
+  "eyebrow": "Cheklovlar",
+  "title": "PrivaMesh sizni nimadan himoya qilmaydi",
+  "lead": "Har qanday maxfiylik vositasining chegarasi bor. Biznikilar o'zingiz kashf etishingiz uchun qoldirilmasdan, shu yerda sanab o'tilgan: faqat kuchli tomonlarini e'lon qiladigan mahsulot o'ziga ko'r-ko'rona ishonishni so'raydi.",
+  "summary": "Qisqasi: ochiq zanjirdagi shifrmatn abadiy, niqob trafigini yoqmaguningizcha tranzaksiyalar vaqti ko'rinadi, RPC provayderi IP manzilingizni ko'radi, xabarlar tarixini esa hech qachon tiklab bo'lmaydi.",
+  "items": [
+    {
+      "title": "Shifrmatn ochiq zanjirda abadiy qoladi",
+      "body": "Har bir xabar Solana'ga to'ldirilgan shifrmatn sifatida yoziladi va muddati hech qachon tugamaydi. Ishlatilgandan keyin yo'q qilingan kalitlarsiz uni o'qib bo'lmaydi, ammo raqib uni bugun yozib olib, cheksiz saqlashi mumkin. Agar bir kun kriptografiya buzilsa, yozib olingan narsa baribir o'sha yerda bo'ladi."
+    },
+    {
+      "title": "Tranzaksiya fakti va vaqti hammaga ochiq",
+      "body": "Bir martalik manzillar xabar kimga ekanini, to'ldirish esa uning uzunligini yashiradi. Ularning hech biri ma'lum bir paytda tranzaksiya bo'lganini yashirmaydi. Niqob trafigi o'chiq bo'lsa, faollik naqshingiz zanjirni o'qiydigan har kimga ko'rinadi."
+    },
+    {
+      "title": "To'ldirish hech narsani emas, bir oraliqni ochadi",
+      "body": "Ochiq matn 32, 64, 128, 256 yoki 512 baytgacha to'ldiriladi. Kuzatuvchi xabar qaysi oraliqqa tushganini biladi - shuning uchun bir so'zli javob bilan 500 baytli xabarni hali ham bir-biridan farqlash mumkin, faqat o'sha oraliqdagi boshqalardan emas."
+    },
+    {
+      "title": "Niqob trafigi sukut bo'yicha o'chiq",
+      "body": "Vaqtni yashiradigan soxta xabarlar rejimi xabar limitingizdan sarflaydi, shuning uchun o'chirilgan holda keladi. Uni yoqmaguningizcha, vaqt bo'yicha bog'lash zanjirni kuzatayotgan har kimga ochiq. Bu e'tiborsizlik emas, ongli tanlov, lekin sukut bo'yicha sozlama eng kuchlisidan zaifroq ekanini anglatadi."
+    },
+    {
+      "title": "RPC nuqtasi IP manzilingizni ko'radi",
+      "body": "Tranzaksiya yuborish - manzilingizni va so'rovlaringiz vaqtini ko'radigan RPC provayderi bilan bog'lanish demak. Uni almashtirish va o'zingiz o'rnatish mumkin, lekin sukut bo'yicha tarmoq metama'lumotlarini uchinchi tomonga ishonib topshirasiz. Bu siz uchun muhim bo'lsa, VPN yoki Tor ishlating."
+    },
+    {
+      "title": "Yetkazish Solana, RPC va bizning to'lov xizmatimizga bog'liq",
+      "body": "Uchtasidan biri ishlamasa yoki mamlakatingizda bloklangan bo'lsa, yuborish to'xtaydi. Shaxsingiz, kontaktlaringiz va tarixingiz zarar ko'rmaydi, chunki ular qurilmangizda, ammo PrivaMesh «har doim o'tib ketadi» ma'nosida senzuraga chidamli emas."
+    },
+    {
+      "title": "Xabarlar tarixini tiklab bo'lmaydi",
+      "body": "Oldinga yo'naltirilgan maxfiylik har bir xabar kalitini ishlatilgandan keyin yo'q qiladi, ratchet holati esa qurilmani hech qachon tark etmaydi. Tiklash iborasi yangi qurilmada shaxsingiz va kontaktlaringizni qaytaradi, lekin suhbatlaringizni emas. Ilovani o'sha telefonga qayta o'rnatish ham xuddi shunday ta'sir qiladi."
+    },
+    {
+      "title": "To'g'ri odamni qo'shganingizni tekshirishning iloji yo'q",
+      "body": "Prekey to'plamlari imzolangan, shuning uchun reestr akkaunt kalitini almashtira olmaydi. Ammo bundan oldingi qadamni ilova tekshirmaydi: akkaunt siz nazarda tutgan odammi. Xavfsizlik raqami ham, barmoq izlarini solishtirish ham, ilovadan tashqari tekshiruv ham yo'q. Hujumchi sizni o'z akkauntini qo'shishga ko'ndirsa, kriptografiya benuqson ishlaydi va noto'g'ri suhbatni himoya qiladi."
+    },
+    {
+      "title": "Taxallus e'lon qilsangiz, zanjir kim bilan suhbat boshlaganingizni ko'rsatadi",
+      "body": "Qidiruv reestri taxallusingizni ochiq kalitingiz bilan bog'laydi, suhbatning birinchi xabari esa o'sha kalitni ochiq holda olib boradi - shunday bo'lishi shart, chunki qarshi tomon umumiy sirni shu orqali chiqaradi. Bundan tashqari, u qabul qiluvchining oddiy manziliga yuboriladi, chunki umumiy manzil hali yo'q. Shuning uchun zanjirni o'qiydigan har kim ikkalasini moslab, siz aniq bir odam bilan suhbat boshlaganingizni va qachon boshlaganingizni ko'ra oladi. Nima deyilganini emas: mazmun shifrlangan qoladi, keyingi xabarlar esa bir martalik manzillarga o'tadi. Agar taxallusni hech qachon e'lon qilmasangiz, o'sha birinchi xabar hech kimni ko'rsatmaydi. 2026-yil avgustida tashqaridan xabar qilingan; uni to'g'ri tuzatish eski o'rnatmalar o'qiy olmaydigan yangi xabar formatini talab qiladi."
+    },
+    {
+      "title": "O'g'irlangan ibora birinchi javobdan oldin yuborilgan har bir xabarni ochadi",
+      "body": "Shaxs kalitingiz, imzolangan prekey va postkvant prekey tiklash iborasidan chiqariladi, bir martalik prekey'lar esa e'lon qilinmaydi. Suhbatni ochadigan konvert ochiq zanjirda abadiy qoladi va yuboruvchining vaqtinchalik ochiq kalitini olib boradi, shuning uchun iborangizga ega har kim X3DH ildizini qayta hisoblay oladi. Bu bitta xabar bilan cheklanmaydi: yuboruvchi sizdan kelgan javobni qayta ishlamaguncha, uning har bir keyingi xabari o'sha zanjirni bir qadam oldinga davom ettiradi, o'sha sir esa bu xabarlar zanjirning qayerida yotganini ham ko'rsatadi. Siz oflayn bo'lganingizda sizga uch marta yozgan kishi uchalasini ham oshkor qilgan. Siz javob berib, javob yetib borishi bilan ratchet'ga faqat qurilmada mavjud tasodifiy kalit kiradi va ibora endi yetarli bo'lmaydi. ML-KEM-768 buni o'zgartirmaydi, chunki uning seed'i ham iboradan chiqariladi. 2026-yil avgustida tashqaridan xabar qilingan; ilgari biz buni faqat birinchi xabar deb ta'riflagan edik."
+    },
+    {
+      "title": "Chiqarilgan birorta versiya postkvant handshake'ni yakunlamagan",
+      "body": "1.0 postkvant yo'li o'chirilgan holda chiqdi. 1.1 uni iOS 26 dagi iPhone'lar uchun yoqdi, ammo X-Wing shifrmatni Irys'ga yuklash orqali uzatiladi va chiqarilgan ikkala versiyada ham bu yuklash muvaffaqiyatsiz: so'rov noto'g'ri imzolangan edi, keyin esa ko'chib ketgan yo'nalishga yuborilardi. Shunda yuboruvchi klassik X3DH'ga qaytadi, shuning uchun hozirgacha ochilgan har bir suhbat ML-KEM-768'siz faqat X25519 bilan himoyalangan. Bu baribir uchdan-uchgacha shifrlash, ammo hozir yozib olinib, keyinroq kvant kompyuter bilan hujum qilinadigan shifrmatndan himoya emas. Tuzatish App Store'dagi keyingi versiyada chiqadi."
+    },
+    {
+      "title": "Tiklash iborasini yo'qotish - akkauntni yo'qotish",
+      "body": "Tiklash ham, yordam xizmati aralashuvi ham, bizda zaxira nusxa ham yo'q. O'n ikki so'z - akkauntning o'zi. Bu akkauntlar bazasi yo'qligining bevosita narxi."
+    },
+    {
+      "title": "Uch platforma, ikkitasi deyarli sinovdan o'tmagan",
+      "body": "iPhone ilovasi iOS 18 yoki yangirog'ida ishlaydi, ammo postkvant handshake'ga iOS 26 kerak, shuning uchun eski tizimdagi iPhone klassik X3DH ishlatadi. Bu haqiqiy foydalanishga ega yagona platforma. Windows o'rnatuvchisida kodni imzolash sertifikati yo'q, shuning uchun har bir yuklab olish nashriyotchi haqida ogohlantirish chiqaradi. Android APK - haqiqiy qurilmada emas, emulyatorda tekshirilgan 0.1 versiya, va hozircha Android yoki Windows'ning birorta versiyasi mainnet'da xabar yubormagan. Pullik tariflar faqat iPhone'da ishlaydi. Veb-mijoz yo'q."
+    },
+    {
+      "title": "Oddiy messenjerda bor, bunda yo'q imkoniyatlar",
+      "body": "Guruh chatlari, fayl yoki media yuborish, ovozli yoki video qo'ng'iroqlar, qurilmalar o'rtasida sinxronlash va qurilmalar bo'ylab xabar qidirish yo'q. PrivaMesh - yakkama-yakka suhbatlarga qaratilgan matnli messenjer."
+    },
+    {
+      "title": "Anonimlik kafolatlanmagan",
+      "body": "PrivaMesh o'zi nazorat qiladigan identifikatorlarni olib tashlaydi. U sizning xabarda kim ekaningizni oshkor qilishingizga, boshqa kontekstdagi taxallusni qayta ishlatishingizga yoki internet provayderingiz sizni aniqlashiga to'sqinlik qila olmaydi. Anonimlik - arxitektura qo'llab-quvvatlaydigan amaliyot, u yoqadigan tugma emas."
+    }
+  ],
+  "whyHeading": "Bu sahifa nega bor",
+  "why": [
+    "Mutlaq da'volarni yozish oson, tekshirish esa imkonsiz, maxfiylik mahsulotida esa ular olib keladiganidan ko'proq ishonchni yo'qotadi. Ahamiyatli bo'lish uchun yetarlicha texnik bilimga ega har kim kamchiliklarni topadi - ularni sanab o'tilmagan holda topish bu yerda o'qishdan yomonroq.",
+    "Agar bu sahifadagi biror narsa noto'g'ri yoki eskirgan bo'lsa, bu xato - [xavfsizlik sahifasi](/security) orqali bizga yozing. Qaysi komponent nimani ko'rishi [arxitektura sahifasida](/architecture)."
+  ],
+  "faq": [
+    {
+      "q": "Xabarlarim kelajakda shifrdan chiqarilishi mumkinmi?",
+      "a": "Shifrmatn ochiq zanjirda doimiy turadi, shuning uchun uni yozib olib saqlash mumkin. Oldinga yo'naltirilgan maxfiylik har bir xabar kalitini ishlatilgandan keyin yo'q qiladi, iOS 26 da esa handshake kelajakdagi kvant hujumlariga qarshi ML-KEM-768 ni aralashtirishga mo'ljallangan - garchi yuqorida aytilganidek, chiqarilgan birorta versiya bu qadamni hali yakunlamagan bo'lsa ham. Ikkalasi ham yozib olingan shifrmatnni yo'qotmaydi."
+    },
+    {
+      "q": "Niqob trafigi nega sukut bo'yicha o'chiq?",
+      "a": "Soxta tranzaksiyalar xabar limitingizdan sarflaydi, shuning uchun uni yoqiq qoldirish sizdan bildirmasdan xabarlarni olib qo'yardi. Bu sukut emas, sozlama; demak, yetkazib beriladigan konfiguratsiya vaqt jihatidan mavjud eng kuchlisidan zaifroq."
+    },
+    {
+      "q": "Kimdir tiklash iboramni o'g'irlasa, eski xabarlarimni o'qiy oladimi?",
+      "a": "Birinchi javobingiz yuboruvchiga yetib borguncha yuborilgan hamma narsani - ha. O'sha konvertlar ochiq zanjirda doimiy turadi, bir martalik prekey'lar e'lon qilinmagani uchun ularni ochish uchun kerak har bir kalit iboradan chiqariladi, birinchidan keyingi xabarlar esa o'sha zanjirni davom ettiradi. Qayta ishlangan birinchi javobingizdan boshlab suhbatni tasodifiy bo'lgan va qurilmani hech qachon tark etmagan ratchet kalitlari himoya qiladi."
+    },
+    {
+      "q": "PrivaMesh anonimmi?",
+      "a": "U aks holda bizda bo'ladigan identifikatorlarni olib tashlaydi - telefon raqami yo'q, pochta yo'q, akkaunt yo'q. U IP manzilingizni internet provayderidan yashirmaydi va suhbatda o'zingizni tanitishingizga to'sqinlik qila olmaydi."
+    }
+  ],
+  "related": [
+    {
+      "href": "/architecture",
+      "label": "Arxitektura",
+      "blurb": "Har bir komponent, uni kim boshqaradi va u nimani ko'ra oladi."
+    },
+    {
+      "href": "/threat-model",
+      "label": "Tahdid modeli",
+      "blurb": "Raqib bo'yicha: nima ko'rinadi, nima to'xtatiladi, nima qoladi."
+    },
+    {
+      "href": "/security",
+      "label": "Xavfsizlik va xabar berish",
+      "blurb": "Zaiflik haqida qanday xabar berish."
+    }
+  ]
+}

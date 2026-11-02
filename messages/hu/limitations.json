@@ -1,0 +1,112 @@
+{
+  "meta": {
+    "title": "Ismert korlátok",
+    "description": "Mi ellen nem véd a PrivaMesh: tartós titkosított szöveg a láncon, látható időpontok, aláíratlan Windows-változat és visszaállíthatatlan előzmények."
+  },
+  "eyebrow": "Korlátok",
+  "title": "Mi ellen nem véd a PrivaMesh",
+  "lead": "Minden adatvédelmi eszköznek vannak határai. A mieinket itt soroljuk fel, ahelyett hogy neked kellene felfedezned őket, mert az a termék, amely csak az erősségeit teszi közzé, vakon kéri a bizalmat.",
+  "summary": "Röviden: a nyilvános láncon lévő titkosított szöveg tartós, a tranzakciók időpontja látható, amíg be nem kapcsolod a takaróforgalmat, az RPC-szolgáltató látja az IP-címedet, az üzenetelőzmények pedig soha nem állíthatók vissza.",
+  "items": [
+    {
+      "title": "A titkosított szöveg örökre a nyilvános láncon marad",
+      "body": "Minden üzenet kiegészített titkosított szövegként kerül a Solanára, és soha nem jár le. A használat után megsemmisített kulcsok nélkül olvashatatlan, de egy támadó ma rögzítheti és korlátlan ideig megőrizheti. Ha egyszer feltörik a kriptográfiát, a rögzített adat még mindig ott lesz."
+    },
+    {
+      "title": "A tranzakció ténye és időpontja nyilvános",
+      "body": "Az egyszer használatos címek elrejtik, kinek szól az üzenet, a kiegészítés pedig azt, milyen hosszú volt. Egyik sem rejti el, hogy egy adott pillanatban tranzakció történt. Kikapcsolt takaróforgalom mellett a tevékenységi mintád bárki számára látható, aki olvassa a láncot."
+    },
+    {
+      "title": "A kiegészítés egy méretosztályt árul el, nem semmit",
+      "body": "A nyílt szöveget 32, 64, 128, 256 vagy 512 bájtra egészítjük ki. A megfigyelő megtudja, melyik méretosztályba esett egy üzenet - egy egyszavas válasz és egy 500 bájtos üzenet tehát továbbra is megkülönböztethető egymástól, csak az azonos osztályba tartozó többitől nem."
+    },
+    {
+      "title": "A takaróforgalom alapból ki van kapcsolva",
+      "body": "Az időpontokat elrejtő csalimód az üzenetkeretedből fogyaszt, ezért kikapcsolva érkezik. Amíg be nem kapcsolod, az időbeli összefüggések bárki számára elérhetők, aki figyeli a láncot. Ez tudatos kompromisszum, nem mulasztás, de azt jelenti, hogy az alapbeállítás gyengébb a legerősebbnél."
+    },
+    {
+      "title": "Az RPC-végpont látja az IP-címedet",
+      "body": "Egy tranzakció beküldése azt jelenti, hogy egy RPC-szolgáltatóval kommunikálsz, aki látja a címedet és a kéréseid időpontját. Lecserélhető és saját magad is futtathatod, de alapból egy harmadik félre bízod a hálózati szintű metaadatokat. Ha ez fontos neked, használj VPN-t vagy Tort."
+    },
+    {
+      "title": "A kézbesítés a Solanától, az RPC-től és a díjszolgáltatásunktól függ",
+      "body": "Ha a három közül bármelyik leáll vagy le van tiltva az országodban, a küldés leáll. A személyazonosságod, az ismerőseid és az előzményeid nem sérülnek, mert az eszközödön vannak, de a PrivaMesh nem cenzúrabiztos abban az értelemben, hogy mindig átjut."
+    },
+    {
+      "title": "Az üzenetelőzmények nem állíthatók vissza",
+      "body": "Az előremenő titkosság használat után minden üzenetkulcsot megsemmisít, a ratchet állapota pedig soha nem hagyja el az eszközt. A helyreállító kifejezés új eszközön visszaállítja a személyazonosságodat és az ismerőseidet, a beszélgetéseidet soha. Az app újratelepítése ugyanazon a telefonon ugyanígy hat."
+    },
+    {
+      "title": "Nincs mód ellenőrizni, hogy a megfelelő személyt adtad-e hozzá",
+      "body": "A prekey-csomagok alá vannak írva, így egy nyilvántartás nem cserélheti ki egy fiók kulcsát. Az ezt megelőző lépést viszont az app nem ellenőrzi: hogy a fiók valóban az a személy-e, akire gondoltál. Nincs biztonsági szám, ujjlenyomat-összevetés vagy alkalmazáson kívüli ellenőrzés. Ha egy támadó rávesz, hogy az ő fiókját add hozzá, a kriptográfia tökéletesen működik, és a rossz beszélgetést védi."
+    },
+    {
+      "title": "Ha közzéteszel egy becenevet, a lánc megmutatja, kivel kezdesz beszélgetést",
+      "body": "A keresőnyilvántartás a becenevedet a nyilvános kulcsodhoz köti, és egy beszélgetés első üzenete ugyanezt a kulcsot nyíltan hordozza - muszáj, mert a másik fél ebből vezeti le a közös titkot. Ráadásul a címzett szokásos címére megy, mert közös cím még nincs. Így bárki, aki olvassa a láncot, összepárosíthatja a kettőt, és láthatja, hogy egy adott személlyel kezdtél beszélgetést, és mikor. Azt nem, hogy mi hangzott el: a tartalom titkosítva marad, a későbbi üzenetek pedig egyszer használatos címekre kerülnek. Ha soha nem teszel közzé becenevet, ugyanez az első üzenet senkit sem nevez meg. Külső bejelentés 2026 augusztusában; a rendes javításhoz új üzenetformátum kell, amelyet a régebbi telepítések nem tudnának olvasni."
+    },
+    {
+      "title": "Egy ellopott kifejezés minden, az első válasz előtt küldött üzenetet megnyit",
+      "body": "A személyazonossági kulcsod, az aláírt prekey és a posztkvantum prekey mind a helyreállító kifejezésből származik, egyszer használatos prekey-ket pedig nem teszünk közzé. A beszélgetést nyitó boríték örökre a nyilvános láncon marad, és a küldő ideiglenes nyilvános kulcsát hordozza, így bárki, akinél a kifejezésed van, újraszámolhatja az X3DH gyökeret. És nem áll meg ennél az egy üzenetnél: amíg a küldő fel nem dolgoz egy választ tőled, minden további üzenete egy lépéssel folytatja ugyanazt a láncot, és ugyanez a titok azt is megmutatja, hol vannak ezek az üzenetek a láncon. Aki háromszor írt neked, amíg offline voltál, mindhármat felfedte. Amint válaszolsz és a válasz megérkezik, egy véletlenszerű, csak az eszközön létező kulcs kerül a ratchetbe, és a kifejezés már nem elég. Az ML-KEM-768 ezen nem változtat, mert a magja szintén a kifejezésből származik. Külső bejelentés 2026 augusztusában; korábban ezt csak az első üzenetre vonatkozónak írtuk le."
+    },
+    {
+      "title": "Egyetlen kiadott változat sem hajtott végre posztkvantum kézfogást",
+      "body": "Az 1.0 kikapcsolt posztkvantum útvonallal jelent meg. Az 1.1 bekapcsolta az iOS 26-os iPhone-okon, de az X-Wing titkosított szövege egy Irys-feltöltésen keresztül megy, és mindkét kiadott változatban ez a feltöltés meghiúsul: a kérés hibásan volt aláírva, később pedig egy áthelyezett útvonalra ment. A küldő ilyenkor visszatér a klasszikus X3DH-ra, így minden eddig megnyitott beszélgetést csak az X25519 véd, az ML-KEM-768 nem. Ez továbbra is végponttól végpontig titkosítás, de nem véd a most rögzített és később kvantumszámítógéppel támadott titkosított szöveg ellen. A javítás a következő App Store-kiadással érkezik."
+    },
+    {
+      "title": "Aki elveszíti a helyreállító kifejezést, elveszíti a fiókot",
+      "body": "Nincs visszaállítás, nincs ügyfélszolgálati felülbírálás, és nálunk sincs biztonsági mentés. A tizenkét szó maga a fiók. Ez a közvetlen ára annak, hogy nincs fiókadatbázis."
+    },
+    {
+      "title": "Három platform, kettő alig tesztelve",
+      "body": "Az iPhone-app iOS 18-on vagy újabbon fut, de a posztkvantum kézfogáshoz iOS 26 kell, így egy régebbi rendszerű iPhone klasszikus X3DH-t használ. Ez az egyetlen platform, amelyet valóban használnak. A Windows-telepítőnek nincs kódaláíró tanúsítványa, ezért minden letöltés kiadói figyelmeztetést vált ki. Az androidos APK 0.1-es verzió, amelyet emulátoron és nem valódi eszközön ellenőriztünk, és még egyetlen androidos vagy windowsos változat sem küldött üzenetet a mainneten. A fizetős csomagok csak iPhone-on működnek. Webes kliens nincs."
+    },
+    {
+      "title": "Funkciók, amelyek egy elterjedt üzenetküldőben megvannak, ebben nem",
+      "body": "Nincs csoportos csevegés, nincs fájl- vagy médiaküldés, nincs hang- vagy videóhívás, nincs eszközök közötti szinkronizálás, nincs eszközökön átívelő üzenetkeresés. A PrivaMesh egy kétszemélyes beszélgetésekre összpontosító szöveges üzenetküldő."
+    },
+    {
+      "title": "Az anonimitás nem garantált",
+      "body": "A PrivaMesh eltávolítja az általa kezelt azonosítókat. Nem tudja megakadályozni, hogy egy üzenetben elárulod, ki vagy, más környezetből ismert becenevet használsz, vagy hogy az internetszolgáltatód azonosítson. Az anonimitás olyan gyakorlat, amelyet az architektúra támogat, nem kapcsoló, amelyet átbillent."
+    }
+  ],
+  "whyHeading": "Miért létezik ez az oldal",
+  "why": [
+    "Az abszolút állításokat könnyű leírni és lehetetlen ellenőrizni, egy adatvédelmi termékben pedig több bizalmat visznek el, mint amennyit hoznak. Aki elég jártas ahhoz, hogy számítson, megtalálja a hiányosságokat, és felsorolatlanul rájuk bukkanni rosszabb, mint itt olvasni róluk.",
+    "Ha valami ezen az oldalon hibás vagy elavult, az hiba - szólj nekünk [a biztonsági oldalon](/security). Hogy melyik összetevő mit lát, azt [az architektúra oldal](/architecture) írja le."
+  ],
+  "faq": [
+    {
+      "q": "Visszafejthetik a jövőben az üzeneteimet?",
+      "a": "A titkosított szöveg tartósan a nyilvános láncon van, így rögzíthető és megőrizhető. Az előremenő titkosság használat után minden üzenetkulcsot megsemmisít, iOS 26-on pedig a kézfogás úgy készült, hogy ML-KEM-768-at keverjen bele a jövőbeli kvantumtámadások ellen - bár ahogy fent leírtuk, egyetlen kiadott változat sem hajtotta még végre ezt a lépést. Egyik sem tünteti el a rögzített titkosított szöveget."
+    },
+    {
+      "q": "Miért van alapból kikapcsolva a takaróforgalom?",
+      "a": "A csalitranzakciók az üzenetkeretedből fogynak, így ha bekapcsolva hagynánk, észrevétlenül üzeneteket vinne el. Ez egy beállítás és nem alapértelmezés, vagyis a szállított konfiguráció az időzítés tekintetében gyengébb a legerősebb elérhetőnél."
+    },
+    {
+      "q": "Ha valaki ellopja a helyreállító kifejezésemet, elolvashatja a régi üzeneteimet?",
+      "a": "Mindent, amit azelőtt küldtek, hogy az első válaszod megérkezett a küldőhöz - igen. Ezek a borítékok tartósan a nyilvános láncon vannak, megnyitásukhoz minden kulcs a kifejezésből származik, mert egyszer használatos prekey-ket nem teszünk közzé, és az első utáni üzenetek ugyanazt a láncot folytatják. Az első feldolgozott válaszodtól kezdve a beszélgetést olyan ratchet-kulcsok védik, amelyek véletlenszerűek voltak és soha nem hagyták el az eszközt."
+    },
+    {
+      "q": "Anonim a PrivaMesh?",
+      "a": "Eltávolítja azokat az azonosítókat, amelyek egyébként nálunk lennének - nincs telefonszám, nincs e-mail, nincs fiók. Nem rejti el az IP-címedet az internetszolgáltatód elől, és nem tudja megakadályozni, hogy egy beszélgetésben felfedd magad."
+    }
+  ],
+  "related": [
+    {
+      "href": "/architecture",
+      "label": "Architektúra",
+      "blurb": "Minden összetevő, ki üzemelteti, és mit láthat."
+    },
+    {
+      "href": "/threat-model",
+      "label": "Fenyegetésmodell",
+      "blurb": "Támadóról támadóra: mi látszik, mi áll meg, mi marad."
+    },
+    {
+      "href": "/security",
+      "label": "Biztonság és bejelentés",
+      "blurb": "Hogyan jelents be egy sebezhetőséget."
+    }
+  ]
+}

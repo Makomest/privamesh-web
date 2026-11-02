@@ -1,0 +1,112 @@
+{
+  "meta": {
+    "title": "Tunnetut rajoitukset",
+    "description": "Mitä vastaan PrivaMesh ei suojaa: pysyvä salattu teksti lohkoketjussa, näkyvät ajankohdat, allekirjoittamaton Windows-versio ja historia, jota ei voi palauttaa."
+  },
+  "eyebrow": "Rajoitukset",
+  "title": "Mitä vastaan PrivaMesh ei suojaa sinua",
+  "lead": "Jokaisella yksityisyystyökalulla on rajansa. Omamme on lueteltu tässä sen sijaan, että jäisivät sinun löydettäviksesi, sillä tuote, joka julkaisee vain vahvuutensa, pyytää uskomaan sanaansa.",
+  "summary": "Lyhyesti: salattu teksti julkisessa lohkoketjussa on pysyvää, tapahtumien ajankohta näkyy, kunnes otat peiteliikenteen käyttöön, RPC-palveluntarjoaja näkee IP-osoitteesi, eikä viestihistoriaa voi koskaan palauttaa.",
+  "items": [
+    {
+      "title": "Salattu teksti jää julkiseen lohkoketjuun ikuisesti",
+      "body": "Jokainen viesti kirjoitetaan Solanaan täydennettynä salattuna tekstinä, eikä se koskaan vanhene. Sitä ei voi lukea ilman käytön jälkeen tuhottuja avaimia, mutta vastustaja voi tallentaa sen tänään ja säilyttää sen loputtomiin. Jos kryptografia joskus murretaan, tallennettu on yhä tallessa."
+    },
+    {
+      "title": "Tapahtuman olemassaolo ja ajankohta ovat julkisia",
+      "body": "Kertakäyttöiset osoitteet piilottavat, kenelle viesti on, ja täydennys piilottaa sen pituuden. Kumpikaan ei piilota sitä, että tiettynä hetkenä tapahtui jotain. Kun peiteliikenne on pois päältä, toimintasi rytmi näkyy kaikille lohkoketjun lukijoille."
+    },
+    {
+      "title": "Täydennys paljastaa kokoluokan, ei mitään",
+      "body": "Selväkielinen teksti täydennetään 32, 64, 128, 256 tai 512 tavuun. Tarkkailija saa tietää, mihin kokoluokkaan viesti osui - yhden sanan vastauksen ja 500 tavun viestin voi siis yhä erottaa toisistaan, vain ei muista saman luokan viesteistä."
+    },
+    {
+      "title": "Peiteliikenne on oletuksena pois päältä",
+      "body": "Ajankohtia piilottava houkutustila kuluttaa viestikiintiötäsi, joten se toimitetaan pois päältä. Kunnes otat sen käyttöön, ajallinen korrelaatio on kenen tahansa lohkoketjua seuraavan ulottuvilla. Se on harkittu valinta eikä unohdus, mutta tarkoittaa, että oletusasetus on heikompi kuin vahvin."
+    },
+    {
+      "title": "RPC-päätepiste näkee IP-osoitteesi",
+      "body": "Tapahtuman lähettäminen tarkoittaa yhteyttä RPC-palveluntarjoajaan, joka näkee osoitteesi ja pyyntöjesi ajankohdat. Sen voi vaihtaa ja ajaa itse, mutta oletuksena luovutat verkkotason metatiedot kolmannelle osapuolelle. Käytä VPN:ää tai Toria, jos sillä on sinulle merkitystä."
+    },
+    {
+      "title": "Toimitus riippuu Solanasta, RPC:stä ja maksupalvelustamme",
+      "body": "Jos jokin kolmesta on alhaalla tai estetty maassasi, lähettäminen pysähtyy. Identiteettisi, yhteystietosi ja historiasi eivät kärsi, koska ne ovat laitteellasi, mutta PrivaMesh ei ole sensuurinkestävä siinä mielessä, että se pääsisi aina läpi."
+    },
+    {
+      "title": "Viestihistoriaa ei voi palauttaa",
+      "body": "Eteenpäin suuntautuva salaisuus tuhoaa jokaisen viestiavaimen käytön jälkeen, eikä ratchetin tila koskaan poistu laitteelta. Palautuslause palauttaa uudelle laitteelle identiteettisi ja yhteystietosi, ei koskaan keskustelujasi. Sovelluksen uudelleenasennus samaan puhelimeen toimii samoin."
+    },
+    {
+      "title": "Ei keinoa varmistaa, että lisäsit oikean henkilön",
+      "body": "Prekey-paketit on allekirjoitettu, joten rekisteri ei voi vaihtaa tilin avainta. Mutta sitä edeltävää vaihetta sovellus ei tarkista: onko tili se henkilö, jota tarkoitit. Ei ole turvanumeroa, sormenjälkien vertailua eikä sovelluksen ulkopuolista varmistusta. Jos hyökkääjä saa sinut lisäämään tilinsä, kryptografia toimii moitteetta ja suojaa väärää keskustelua."
+    },
+    {
+      "title": "Jos julkaiset lempinimen, lohkoketju näyttää, kenen kanssa aloitat keskusteluja",
+      "body": "Hakurekisteri liittää lempinimesi julkiseen avaimeesi, ja keskustelun ensimmäinen viesti kantaa samaa avainta selväkielisenä - sen on pakko, koska toinen osapuoli johtaa jaetun salaisuuden siitä. Lisäksi se lähetetään vastaanottajan tavalliseen osoitteeseen, koska jaettua osoitetta ei vielä ole. Kuka tahansa lohkoketjun lukija voi siis yhdistää nämä ja nähdä, että aloitit keskustelun tietyn henkilön kanssa, ja milloin. Ei sitä, mitä sanottiin: sisältö pysyy salattuna, ja myöhemmät viestit siirtyvät kertakäyttöisiin osoitteisiin. Jos et koskaan julkaise lempinimeä, sama ensimmäinen viesti ei nimeä ketään. Ilmoitettu ulkopuolelta elokuussa 2026; kunnollinen korjaus vaatii uuden viestimuodon, jota vanhemmat asennukset eivät osaisi lukea."
+    },
+    {
+      "title": "Varastettu lause avaa jokaisen ennen ensimmäistä vastausta lähetetyn viestin",
+      "body": "Identiteettiavaimesi, allekirjoitettu prekey ja kvanttikestävä prekey johdetaan kaikki palautuslauseesta, eikä kertakäyttöisiä prekey-avaimia julkaista. Keskustelun avaava kuori jää ikuisesti julkiseen lohkoketjuun ja kantaa lähettäjän tilapäistä julkista avainta, joten lauseesi haltija voi laskea X3DH-juuren uudelleen. Se ei jää tuohon yhteen viestiin: kunnes lähettäjä on käsitellyt sinulta vastauksen, jokainen hänen lähettämänsä viesti jatkaa samaa ketjua askeleen eteenpäin, ja sama salaisuus myös paljastaa, missä nuo viestit lohkoketjussa ovat. Joku, joka kirjoitti kolmesti, kun olit poissa linjoilta, paljasti kaikki kolme. Heti kun vastaat ja vastaus on perillä, ratchetiin tulee satunnainen, vain laitteella oleva avain, eikä lause enää riitä. ML-KEM-768 ei muuta tätä, koska senkin siemen johdetaan lauseesta. Ilmoitettu ulkopuolelta elokuussa 2026; aiemmin kuvasimme tämän koskevan vain ensimmäistä viestiä."
+    },
+    {
+      "title": "Mikään julkaistu versio ei ole saanut kvanttikestävää kättelyä valmiiksi",
+      "body": "1.0 julkaistiin kvanttikestävä polku pois päältä. 1.1 otti sen käyttöön iOS 26 -iPhoneille, mutta X-Wingin salattu teksti kulkee Irysiin tehtävän latauksen kautta, ja molemmissa julkaistuissa versioissa lataus epäonnistuu: pyyntö oli allekirjoitettu väärin ja meni myöhemmin reitille, joka oli siirtynyt. Lähettäjä palaa silloin klassiseen X3DH:hon, joten jokainen tähän mennessä avattu keskustelu on suojattu vain X25519:llä, ei ML-KEM-768:lla. Se on yhä päästä päähän -salausta, mutta ei suojaa nyt tallennettua ja myöhemmin kvanttitietokoneella hyökättävää salattua tekstiä vastaan. Korjaus tulee App Storen seuraavassa versiossa."
+    },
+    {
+      "title": "Palautuslauseen menetys on tilin menetys",
+      "body": "Ei ole nollausta, tuen ohitusta eikä meillä olevaa varmuuskopiota. Kaksitoista sanaa on tili. Se on suora hinta siitä, ettei tilitietokantaa ole."
+    },
+    {
+      "title": "Kolme alustaa, joista kaksi tuskin testattu",
+      "body": "iPhone-sovellus toimii iOS 18:ssa ja uudemmissa, mutta kvanttikestävä kättely vaatii iOS 26:n, joten vanhemmalla järjestelmällä oleva iPhone käyttää klassista X3DH:ta. Se on ainoa alusta, jolla on todellista käyttöä. Windows-asennusohjelmalla ei ole koodin allekirjoitusvarmennetta, joten jokainen lataus antaa julkaisijavaroituksen. Androidin APK on versio 0.1, tarkistettu emulaattorissa eikä oikealla laitteella, eikä mikään Android- tai Windows-versio ole vielä lähettänyt viestiä mainnetissä. Maksulliset tasot toimivat vain iPhonella. Selainsovellusta ei ole."
+    },
+    {
+      "title": "Ominaisuudet, jotka tavallisessa pikaviestimessä on mutta tässä ei",
+      "body": "Ei ryhmäkeskusteluja, ei tiedostojen tai median siirtoa, ei ääni- tai videopuheluita, ei laitteiden välistä synkronointia, ei viestihakua eri laitteilta. PrivaMesh on kahdenkeskisiin keskusteluihin keskittyvä tekstipikaviestin."
+    },
+    {
+      "title": "Nimettömyyttä ei taata",
+      "body": "PrivaMesh poistaa hallitsemansa tunnisteet. Se ei voi estää sinua paljastamasta itseäsi viestissä, käyttämästä toisesta yhteydestä tuttua lempinimeä tai joutumasta verkkopalveluntarjoajasi tunnistamaksi. Nimettömyys on käytäntö, jota arkkitehtuuri tukee, ei kytkin, jonka se kääntää."
+    }
+  ],
+  "whyHeading": "Miksi tämä sivu on olemassa",
+  "why": [
+    "Ehdottomia väitteitä on helppo kirjoittaa ja mahdoton tarkistaa, ja yksityisyystuotteessa ne maksavat enemmän luottamusta kuin tuovat. Jokainen tarpeeksi tekninen löytää aukot, ja niiden löytäminen mainitsemattomina on pahempaa kuin lukea niistä täältä.",
+    "Jos jokin tällä sivulla on väärin tai vanhentunut, se on vika - kerro siitä [tietoturvasivun](/security) kautta. Mitä kukin osa näkee, kerrotaan [arkkitehtuurisivulla](/architecture)."
+  ],
+  "faq": [
+    {
+      "q": "Voidaanko viestini purkaa tulevaisuudessa?",
+      "a": "Salattu teksti on pysyvästi julkisessa lohkoketjussa, joten sen voi tallentaa ja säilyttää. Eteenpäin suuntautuva salaisuus tuhoaa jokaisen viestiavaimen käytön jälkeen, ja iOS 26:ssa kättely on suunniteltu sekoittamaan mukaan ML-KEM-768 tulevia kvanttihyökkäyksiä vastaan - vaikka, kuten yllä kerrotaan, mikään julkaistu versio ei ole vielä saanut tätä vaihetta valmiiksi. Kumpikaan ei saa tallennettua salattua tekstiä katoamaan."
+    },
+    {
+      "q": "Miksi peiteliikenne on oletuksena pois päältä?",
+      "a": "Houkutustapahtumat kuluttavat viestikiintiötäsi, joten päällä pitäminen maksaisi sinulle huomaamatta viestejä. Se on asetus eikä oletus, mikä tarkoittaa, että toimitettu kokoonpano on ajoituksen osalta heikompi kuin vahvin saatavilla oleva."
+    },
+    {
+      "q": "Jos joku varastaa palautuslauseeni, voiko hän lukea vanhat viestini?",
+      "a": "Kaiken, mitä lähetettiin ennen kuin ensimmäinen vastauksesi saavutti lähettäjän, kyllä. Nuo kuoret ovat pysyvästi julkisessa lohkoketjussa, jokainen niiden avaamiseen tarvittava avain johdetaan lauseesta, koska kertakäyttöisiä prekey-avaimia ei julkaista, ja ensimmäisen jälkeiset viestit jatkavat samaa ketjua. Ensimmäisestä käsitellystä vastauksestasi alkaen keskustelua suojaavat ratchet-avaimet, jotka olivat satunnaisia eivätkä koskaan poistuneet laitteelta."
+    },
+    {
+      "q": "Onko PrivaMesh nimetön?",
+      "a": "Se poistaa tunnisteet, jotka muuten olisivat meillä - ei puhelinnumeroa, ei sähköpostia, ei tiliä. Se ei piilota IP-osoitettasi verkkopalveluntarjoajaltasi eikä voi estää sinua tunnistamasta itseäsi keskustelussa."
+    }
+  ],
+  "related": [
+    {
+      "href": "/architecture",
+      "label": "Arkkitehtuuri",
+      "blurb": "Jokainen osa, sen ylläpitäjä ja mitä se näkee."
+    },
+    {
+      "href": "/threat-model",
+      "label": "Uhkamalli",
+      "blurb": "Vastustaja kerrallaan: mitä nähdään, mitä estetään, mitä jää."
+    },
+    {
+      "href": "/security",
+      "label": "Tietoturva ja ilmoitukset",
+      "blurb": "Miten haavoittuvuudesta ilmoitetaan."
+    }
+  ]
+}

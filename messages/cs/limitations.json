@@ -1,0 +1,112 @@
+{
+  "meta": {
+    "title": "Známá omezení",
+    "description": "Před čím vás PrivaMesh nechrání: trvalý šifrovaný text na řetězci, viditelné časy, nepodepsaná verze pro Windows a neobnovitelná historie."
+  },
+  "eyebrow": "Omezení",
+  "title": "Před čím vás PrivaMesh nechrání",
+  "lead": "Každý nástroj pro soukromí má hranice. Ty naše jsou sepsané tady, místo aby zůstaly na vás k odhalení, protože produkt, který zveřejňuje jen své silné stránky, žádá, abyste mu věřili naslepo.",
+  "summary": "Ve zkratce: šifrovaný text na veřejném řetězci je trvalý, čas transakcí je vidět, dokud nezapnete krycí provoz, poskytovatel RPC vidí vaši IP a historii zpráv nelze nikdy obnovit.",
+  "items": [
+    {
+      "title": "Šifrovaný text zůstává na veřejném řetězci navždy",
+      "body": "Každá zpráva se zapíše do Solany jako doplněný šifrovaný text a nikdy nevyprší. Bez klíčů zničených po použití je nečitelná, ale útočník si ji může dnes zaznamenat a uchovávat neomezeně. Pokud někdy dojde k prolomení kryptografie, zaznamenané tam pořád bude."
+    },
+    {
+      "title": "Skutečnost a čas transakce jsou veřejné",
+      "body": "Jednorázové adresy skrývají, komu je zpráva určena, a doplnění skrývá, jak byla dlouhá. Ani jedno neskryje, že v určitou chvíli proběhla transakce. Při vypnutém krycím provozu vidí vzorec vaší aktivity každý, kdo čte řetězec."
+    },
+    {
+      "title": "Doplnění prozradí pásmo, ne nic",
+      "body": "Prostý text se doplní na 32, 64, 128, 256 nebo 512 bajtů. Pozorovatel se dozví, do kterého pásma zpráva spadla - jednoslovnou odpověď a 500bajtovou zprávu tedy lze stále rozlišit od sebe, jen ne od ostatních ve stejném pásmu."
+    },
+    {
+      "title": "Krycí provoz je ve výchozím stavu vypnutý",
+      "body": "Režim návnad, který skrývá časy, čerpá z vašeho limitu zpráv, proto je ve výchozím stavu vypnutý. Dokud ho nezapnete, je časová korelace dostupná komukoli, kdo sleduje řetězec. Je to vědomý kompromis, ne přehlédnutí, ale znamená to, že výchozí nastavení je slabší než to nejsilnější."
+    },
+    {
+      "title": "Koncový bod RPC vidí vaši IP",
+      "body": "Odeslat transakci znamená mluvit s poskytovatelem RPC, který vidí vaši adresu a čas vašich požadavků. Dá se vyměnit i hostovat vlastní, ale ve výchozím stavu svěřujete síťová metadata třetí straně. Pokud vám na tom záleží, použijte VPN nebo Tor."
+    },
+    {
+      "title": "Doručení závisí na Solaně, RPC a naší službě poplatků",
+      "body": "Pokud kterákoli ze tří nefunguje nebo je ve vaší zemi blokovaná, odesílání se zastaví. Vaše identita, kontakty a historie zůstanou nedotčené, protože žijí ve vašem zařízení, ale PrivaMesh není odolný vůči cenzuře v tom smyslu, že by se vždy prosadil."
+    },
+    {
+      "title": "Historii zpráv nelze obnovit",
+      "body": "Dopředné utajení po použití zničí klíč každé zprávy a stav ratchetu nikdy neopustí zařízení. Fráze pro obnovení vrátí na novém zařízení vaši identitu a kontakty, nikdy konverzace. Přeinstalace aplikace na stejném telefonu má stejný účinek."
+    },
+    {
+      "title": "Nelze ověřit, že jste přidali správnou osobu",
+      "body": "Balíčky prekeyů jsou podepsané, takže registr nemůže podstrčit klíč k účtu. Krok předtím ale aplikace nekontroluje: zda je účet tou osobou, kterou jste mysleli. Neexistuje bezpečnostní číslo, porovnání otisků ani ověření mimo aplikaci. Pokud vás útočník přesvědčí, abyste přidali jeho účet, kryptografie funguje dokonale a chrání špatnou konverzaci."
+    },
+    {
+      "title": "Pokud zveřejníte přezdívku, řetězec ukazuje, s kým zahajujete konverzace",
+      "body": "Vyhledávací registr spojuje vaši přezdívku s veřejným klíčem a první zpráva konverzace nese tentýž klíč v otevřené podobě - musí, protože z něj druhá strana odvozuje sdílené tajemství. Navíc jde na běžnou adresu příjemce, protože sdílená adresa ještě neexistuje. Kdokoli, kdo čte řetězec, tak může obojí spárovat a zjistit, že jste zahájili konverzaci s konkrétní osobou, a kdy. Ne však, co bylo řečeno: obsah zůstává šifrovaný a další zprávy přecházejí na jednorázové adresy. Pokud přezdívku nikdy nezveřejníte, tatáž první zpráva nikoho nejmenuje. Nahlášeno zvenčí v srpnu 2026; správná oprava vyžaduje změnu formátu zpráv, který by starší instalace nedokázaly přečíst."
+    },
+    {
+      "title": "Ukradená fráze otevře každou zprávu odeslanou před první odpovědí",
+      "body": "Váš klíč identity, podepsaný prekey i postkvantový prekey se odvozují z fráze pro obnovení a jednorázové prekeye se nezveřejňují. Obálka, která konverzaci otevírá, zůstává navždy na veřejném řetězci a nese efemérní veřejný klíč odesílatele, takže kdokoli s vaší frází dokáže přepočítat kořen X3DH. A nezůstane u jedné zprávy: dokud odesílatel nezpracuje vaši odpověď, každá jeho další zpráva pokračuje stejným řetězcem o krok dál a totéž tajemství také prozrazuje, kde ty zprávy na řetězci leží. Kdo vám napsal třikrát, když jste byli offline, odhalil všechny tři. Jakmile odpovíte a odpověď dorazí, vstoupí do ratchetu náhodný klíč existující jen v zařízení a fráze přestane stačit. ML-KEM-768 na tom nic nemění, protože i jeho seed se odvozuje z fráze. Nahlášeno zvenčí v srpnu 2026; dříve jsme to popisovali jako omezené na první zprávu."
+    },
+    {
+      "title": "Žádná vydaná verze nedokončila postkvantový handshake",
+      "body": "Verze 1.0 vyšla s vypnutou postkvantovou cestou. Verze 1.1 ji zapnula pro iPhony s iOS 26, ale šifrovaný text X-Wing se přenáší nahráním na Irys a v obou vydaných verzích toto nahrání selhává: požadavek byl chybně podepsaný a později šel na trasu, která se přesunula. Odesílatel se pak vrátí ke klasickému X3DH, takže každá dosud otevřená konverzace je chráněna jen X25519, ne ML-KEM-768. Pořád je to koncové šifrování, ale žádná obrana proti šifrovanému textu zaznamenanému dnes a napadenému později kvantovým počítačem. Oprava přijde v příští verzi v App Store."
+    },
+    {
+      "title": "Ztráta fráze pro obnovení znamená ztrátu účtu",
+      "body": "Neexistuje reset, zásah podpory ani záloha u nás. Dvanáct slov je ten účet. To je přímá cena za to, že neexistuje databáze účtů."
+    },
+    {
+      "title": "Tři platformy, dvě z nich sotva otestované",
+      "body": "Aplikace pro iPhone běží na iOS 18 nebo novějším, ale postkvantový handshake potřebuje iOS 26, takže iPhone se starším systémem používá klasický X3DH. Je to jediná platforma se skutečným používáním. Instalátor pro Windows nemá certifikát pro podepisování kódu, takže každé stažení vyvolá varování o vydavateli. APK pro Android je verze 0.1 ověřená na emulátoru, ne na skutečném zařízení, a žádná verze pro Android ani Windows zatím neodeslala zprávu na mainnetu. Placené tarify fungují jen na iPhonu. Webový klient neexistuje."
+    },
+    {
+      "title": "Funkce, které běžný komunikátor má a tento ne",
+      "body": "Žádné skupinové chaty, žádný přenos souborů ani médií, žádné hlasové či video hovory, žádná synchronizace mezi zařízeními, žádné vyhledávání zpráv napříč zařízeními. PrivaMesh je zaměřený textový komunikátor pro konverzace jeden na jednoho."
+    },
+    {
+      "title": "Anonymita není zaručena",
+      "body": "PrivaMesh odstraňuje identifikátory, které má pod kontrolou. Nemůže vám zabránit prozradit, kdo jste, ve zprávě, použít přezdívku z jiného kontextu ani být identifikováni poskytovatelem připojení. Anonymita je praxe, kterou architektura podporuje, ne vypínač, který přepne."
+    }
+  ],
+  "whyHeading": "Proč tato stránka existuje",
+  "why": [
+    "Absolutní tvrzení se snadno píšou a nedají se ověřit, a v produktu pro soukromí stojí víc důvěry, než přinesou. Každý, kdo je dost technicky zdatný, aby na tom záleželo, mezery najde - a najít je nezmíněné je horší než si je přečíst tady.",
+    "Pokud je na této stránce něco špatně nebo zastaralé, je to chyba - napište nám přes [stránku o zabezpečení](/security). Co která součást vidí, popisuje [stránka o architektuře](/architecture)."
+  ],
+  "faq": [
+    {
+      "q": "Mohou být moje zprávy v budoucnu dešifrovány?",
+      "a": "Šifrovaný text leží na veřejném řetězci trvale, takže ho lze zaznamenat a uchovat. Dopředné utajení po použití zničí klíč každé zprávy a na iOS 26 je handshake navržen tak, aby přimíchal ML-KEM-768 proti budoucím kvantovým útokům - i když, jak je popsáno výše, žádná vydaná verze tento krok zatím nedokončila. Ani jedno nezpůsobí, že by zaznamenaný šifrovaný text zmizel."
+    },
+    {
+      "q": "Proč je krycí provoz ve výchozím stavu vypnutý?",
+      "a": "Návnadové transakce čerpají z vašeho limitu zpráv, takže zapnutý by vás nenápadně stál zprávy. Je to nastavení, ne výchozí hodnota, což znamená, že dodaná konfigurace je z hlediska časování slabší než ta nejsilnější dostupná."
+    },
+    {
+      "q": "Když mi někdo ukradne frázi pro obnovení, přečte moje staré zprávy?",
+      "a": "Všechno, co bylo odesláno, než vaše první odpověď dorazila k odesílateli - ano. Ty obálky leží trvale na veřejném řetězci, každý klíč potřebný k jejich otevření se odvozuje z fráze, protože se nezveřejňují jednorázové prekeye, a zprávy po první pokračují stejným řetězcem. Od vaší první zpracované odpovědi konverzaci chrání klíče ratchetu, které byly náhodné a nikdy neopustily zařízení."
+    },
+    {
+      "q": "Je PrivaMesh anonymní?",
+      "a": "Odstraňuje identifikátory, které bychom jinak měli my - žádné telefonní číslo, žádný e-mail, žádný účet. Neskrývá vaši IP před poskytovatelem připojení a nemůže vám zabránit, abyste se v konverzaci sami prozradili."
+    }
+  ],
+  "related": [
+    {
+      "href": "/architecture",
+      "label": "Architektura",
+      "blurb": "Každá součást, kdo ji provozuje a co může vidět."
+    },
+    {
+      "href": "/threat-model",
+      "label": "Model hrozeb",
+      "blurb": "Útočník po útočníkovi: co je vidět, co je zastaveno, co zbývá."
+    },
+    {
+      "href": "/security",
+      "label": "Zabezpečení a hlášení",
+      "blurb": "Jak nahlásit zranitelnost."
+    }
+  ]
+}

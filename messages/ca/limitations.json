@@ -1,0 +1,112 @@
+{
+  "meta": {
+    "title": "Limitacions conegudes",
+    "description": "De què no et protegeix PrivaMesh: text xifrat permanent a la cadena, horaris visibles, una versió de Windows sense signar i un historial irrecuperable."
+  },
+  "eyebrow": "Limitacions",
+  "title": "De què no et protegeix PrivaMesh",
+  "lead": "Tota eina de privadesa té límits. Els nostres són aquí en lloc de deixar que els descobreixis, perquè un producte que només publica els seus punts forts demana que el creguis a ulls clucs.",
+  "summary": "En resum: el text xifrat en una cadena pública és permanent, el moment de les transaccions és visible fins que activis el trànsit de cobertura, el proveïdor RPC veu la teva IP i l'historial de missatges no es pot restaurar mai.",
+  "items": [
+    {
+      "title": "El text xifrat es queda per sempre en una cadena pública",
+      "body": "Cada missatge s'escriu a Solana com a text xifrat farcit i no caduca mai. És il·legible sense claus que es van destruir després de fer-les servir, però un adversari el pot enregistrar avui i guardar-lo indefinidament. Si algun dia es trenca la criptografia, el que es va enregistrar continuarà allà."
+    },
+    {
+      "title": "El fet i el moment d'una transacció són públics",
+      "body": "Les adreces d'un sol ús amaguen per a qui és un missatge i el farciment n'amaga la longitud. Cap dels dos amaga que hi va haver una transacció en un moment concret. Amb el trànsit de cobertura desactivat, el teu patró d'activitat és visible per a qualsevol que llegeixi la cadena."
+    },
+    {
+      "title": "El farciment revela un tram, no res",
+      "body": "El text en clar es farceix fins a 32, 64, 128, 256 o 512 bytes. Un observador sap en quin tram ha caigut un missatge, de manera que una resposta d'una paraula i un missatge de 500 bytes encara es poden distingir entre ells, tot i que no d'altres del mateix tram."
+    },
+    {
+      "title": "El trànsit de cobertura està desactivat per defecte",
+      "body": "El mode esquer que amaga els moments gasta de la teva quota de missatges, així que ve desactivat. Fins que l'activis, la correlació temporal és a l'abast de qualsevol que observi la cadena. És una concessió deliberada, no un descuit, però vol dir que la configuració per defecte és més feble que la màxima."
+    },
+    {
+      "title": "El punt d'accés RPC veu la teva IP",
+      "body": "Enviar una transacció vol dir parlar amb un proveïdor RPC, que veu la teva adreça i el moment de les teves peticions. Es pot substituir i allotjar tu mateix, però de sèrie confies metadades de xarxa a un tercer. Fes-lo servir amb una VPN o Tor si t'importa."
+    },
+    {
+      "title": "L'entrega depèn de Solana, de l'RPC i del nostre servei de comissions",
+      "body": "Si qualsevol dels tres cau o està bloquejat al teu país, l'enviament s'atura. La teva identitat, els contactes i l'historial no es veuen afectats perquè viuen al teu dispositiu, però PrivaMesh no és a prova de censura en el sentit que sempre passi."
+    },
+    {
+      "title": "L'historial de missatges no es pot recuperar",
+      "body": "El secret cap endavant destrueix la clau de cada missatge després de fer-la servir, i l'estat del ratchet no surt mai del dispositiu. La frase de recuperació restaura la teva identitat i els contactes en un dispositiu nou, mai les converses. Reinstal·lar l'app al mateix telèfon té el mateix efecte."
+    },
+    {
+      "title": "No hi ha manera de verificar que has afegit la persona correcta",
+      "body": "Els paquets de preclaus estan signats, així que un registre no pot substituir la clau d'un compte. Però l'app no comprova el pas anterior: si el compte és la persona que volies. No hi ha número de seguretat, ni comparació d'empremtes, ni verificació fora de l'app. Si un atacant et convenç d'afegir el seu compte, la criptografia funciona perfectament i protegeix la conversa equivocada."
+    },
+    {
+      "title": "Si publiques un sobrenom, la cadena mostra amb qui comences converses",
+      "body": "El registre de cerca vincula el teu sobrenom amb la teva clau pública, i el primer missatge d'una conversa porta aquesta mateixa clau en clar; ho ha de fer, perquè així és com l'altra part deriva el secret compartit. A més, s'envia a l'adreça normal del destinatari, perquè encara no hi ha cap adreça compartida. Per tant, qualsevol que llegeixi la cadena pot relacionar les dues coses i veure que vas començar una conversa amb una persona concreta, i quan. No el que es va dir: el contingut continua xifrat i els missatges següents passen a adreces d'un sol ús. Si no publiques mai cap sobrenom, aquest mateix primer missatge no anomena ningú. Notificat externament l'agost de 2026; arreglar-ho bé implica canviar el format dels missatges, que les instal·lacions antigues no podrien llegir."
+    },
+    {
+      "title": "Una frase robada obre tots els missatges enviats abans de la primera resposta",
+      "body": "La teva clau d'identitat, la preclau signada i la preclau postquàntica es deriven totes de la frase de recuperació, i no es publiquen preclaus d'un sol ús. El sobre que obre una conversa es queda per sempre a la cadena pública i porta la clau pública efímera del remitent, així que qui tingui la teva frase pot recalcular l'arrel X3DH. No s'atura en aquell missatge: fins que el remitent processi una resposta teva, cada missatge que envia continua la mateixa cadena un pas més enllà, i aquest mateix secret també permet localitzar aquests missatges a la cadena. Algú que t'ha escrit tres vegades mentre estaves desconnectat les ha exposat totes tres. Tan bon punt respons i li arriba la resposta, entra al ratchet una clau aleatòria local del dispositiu i la frase deixa de ser suficient. ML-KEM-768 no ho canvia, perquè la seva llavor també es deriva de la frase. Notificat externament l'agost de 2026; abans ho descrivíem com una cosa limitada al primer missatge."
+    },
+    {
+      "title": "Cap versió publicada ha completat un intercanvi de claus postquàntic",
+      "body": "La 1.0 va sortir amb la via postquàntica desactivada. La 1.1 la va activar per als iPhone amb iOS 26, però el text xifrat d'X-Wing viatja mitjançant una pujada a Irys, i en totes dues versions publicades aquesta pujada falla: la petició estava mal signada i després anava a una ruta que havia canviat. Aleshores el remitent torna a X3DH clàssic, de manera que cada conversa oberta fins ara està protegida només per X25519, no per ML-KEM-768. Continua sent xifratge d'extrem a extrem, però no protegeix contra text xifrat enregistrat ara i atacat més endavant amb un ordinador quàntic. La correcció arriba amb la propera versió a l'App Store."
+    },
+    {
+      "title": "Perdre la frase de recuperació és perdre el compte",
+      "body": "No hi ha restabliment, ni intervenció de l'assistència, ni còpia de seguretat en mans nostres. Dotze paraules són el compte. És el cost directe que no existeixi cap base de dades de comptes."
+    },
+    {
+      "title": "Tres plataformes, dues gairebé sense provar",
+      "body": "L'app d'iPhone funciona amb iOS 18 o posterior, però l'intercanvi postquàntic necessita iOS 26, així que un iPhone amb un sistema anterior fa servir X3DH clàssic. És l'única plataforma amb ús real al darrere. L'instal·lador de Windows no té certificat de signatura de codi, així que cada baixada mostra un avís sobre l'editor. L'APK d'Android és la versió 0.1, comprovada en un emulador i no en un dispositiu real, i cap versió d'Android ni de Windows ha enviat encara cap missatge a la mainnet. Els plans de pagament només funcionen a l'iPhone. No hi ha client web."
+    },
+    {
+      "title": "Funcions que té una missatgeria convencional i aquesta no",
+      "body": "Sense xats de grup, sense enviament de fitxers ni multimèdia, sense trucades de veu o vídeo, sense sincronització entre dispositius, sense cerca de missatges entre dispositius. PrivaMesh és una missatgeria de text centrada en converses d'un a un."
+    },
+    {
+      "title": "L'anonimat no està garantit",
+      "body": "PrivaMesh elimina els identificadors que controla. No pot impedir que revelis qui ets en un missatge, que reutilitzis un sobrenom d'un altre context o que el teu proveïdor de xarxa t'identifiqui. L'anonimat és una pràctica que l'arquitectura afavoreix, no un interruptor que activa."
+    }
+  ],
+  "whyHeading": "Per què existeix aquesta pàgina",
+  "why": [
+    "Les afirmacions absolutes són fàcils d'escriure i impossibles de verificar, i en un producte de privadesa costen més confiança de la que aporten. Qualsevol amb prou coneixement tècnic com per comptar trobarà els forats, i trobar-los sense que estiguin llistats és pitjor que llegir-los aquí.",
+    "Si alguna cosa d'aquesta pàgina és incorrecta o està desactualitzada, és un error: avisa'ns a [la pàgina de seguretat](/security). Per veure, component per component, qui pot observar què, consulta [la pàgina d'arquitectura](/architecture)."
+  ],
+  "faq": [
+    {
+      "q": "Es podran desxifrar els meus missatges en el futur?",
+      "a": "El text xifrat és en una cadena pública de manera permanent, així que es pot enregistrar i guardar. El secret cap endavant destrueix la clau de cada missatge després de fer-la servir, i a iOS 26 l'intercanvi de claus està dissenyat per afegir ML-KEM-768 contra futurs atacs quàntics, tot i que, com s'explica més amunt, cap versió publicada no ha completat encara aquest pas. Cap de les dues coses fa desaparèixer el text xifrat enregistrat."
+    },
+    {
+      "q": "Per què el trànsit de cobertura està desactivat per defecte?",
+      "a": "Les transaccions esquer gasten de la teva quota de missatges, així que tenir-lo activat et costaria missatges sense adonar-te'n. És un ajust i no un valor per defecte, cosa que vol dir que la configuració de sèrie és més feble pel que fa als moments que la més forta disponible."
+    },
+    {
+      "q": "Si algú em roba la frase de recuperació, pot llegir els meus missatges antics?",
+      "a": "Tot el que es va enviar abans que la teva primera resposta arribés al remitent, sí. Aquests sobres són a la cadena pública de manera permanent, totes les claus per obrir-los es deriven de la frase perquè no es publiquen preclaus d'un sol ús, i els missatges posteriors al primer continuen la mateixa cadena. A partir de la teva primera resposta processada, la conversa queda protegida per claus de ratchet aleatòries que no han sortit mai del dispositiu."
+    },
+    {
+      "q": "PrivaMesh és anònim?",
+      "a": "Elimina els identificadors que, si no, tindríem nosaltres: sense número de telèfon, sense correu, sense compte. No amaga la teva IP al teu proveïdor de xarxa i no pot impedir que t'identifiquis en una conversa."
+    }
+  ],
+  "related": [
+    {
+      "href": "/architecture",
+      "label": "Arquitectura",
+      "blurb": "Cada component, qui l'opera i què pot observar."
+    },
+    {
+      "href": "/threat-model",
+      "label": "Model d'amenaces",
+      "blurb": "Adversari per adversari: què es veu, què s'atura i què queda."
+    },
+    {
+      "href": "/security",
+      "label": "Seguretat i divulgació",
+      "blurb": "Com notificar una vulnerabilitat."
+    }
+  ]
+}
