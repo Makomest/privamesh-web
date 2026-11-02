@@ -1,0 +1,105 @@
+{
+  "meta": {
+    "title": "Árak és üzenetkeretek",
+    "description": "Mennyibe kerül a PrivaMesh: ingyenes letöltés, Plus {plus} áron havi {plusN} üzenettel, Pro {pro} áron {proN} üzenettel, és egyszeri csomagok. És hogy miért fizetős egyáltalán az üzenetküldés."
+  },
+  "eyebrow": "Árak",
+  "title": "Árak és üzenetkeretek",
+  "lead": "Az app ingyenesen letölthető. A küldés díjköteles, mert minden üzenet fizetős tranzakció egy nyilvános láncon - itt pontosan leírjuk, mennyibe kerül és miért.",
+  "cta": "PrivaMesh letöltése",
+  "summary": "A PrivaMesh ingyenesen telepíthető. A Plus havi {plus} {plusN} üzenetért, a Pro {pro} {proN} üzenetért, az egyszeri csomagok pedig {packFrom}-tól indulnak. Ingyenes támogatott keret nincs, mert minden üzenet valódi hálózati díjba kerül, amit valakinek ki kell fizetnie.",
+  "tiers": {
+    "free": {
+      "name": "Ingyenes",
+      "price": "Ingyenes",
+      "per": "letöltés",
+      "allowance": "{n} támogatott üzenet",
+      "perks": [
+        "Egy fiók",
+        "Teljes titkosítás, nincs lezárt funkció",
+        "Bármikor vehetsz üzenetcsomagot"
+      ],
+      "note": "Maga az app ingyenes. A küldés díjköteles, így egy ingyenes fióknak nincs támogatott kerete - töltsd fel csomaggal vagy fizess elő."
+    },
+    "plus": {
+      "per": "hónap",
+      "allowance": "Havi {n} üzenet",
+      "perks": [
+        "Legfeljebb 3 fiók",
+        "Hitelesítési jelvény",
+        "A keret havonta megújul"
+      ],
+      "note": "A csomag, amelyet a legtöbben választanak. A takaróforgalom ebből a keretből fogy, ezért alapértelmezetten ki van kapcsolva."
+    },
+    "pro": {
+      "per": "hónap",
+      "allowance": "Havi {n} üzenet",
+      "perks": [
+        "Legfeljebb 3 fiók",
+        "Hitelesítési jelvény",
+        "A legnagyobb havi keret"
+      ],
+      "note": "Intenzív használatra, vagy hogy a takaróforgalom folyamatosan fusson a számláló figyelése nélkül."
+    }
+  },
+  "packs": {
+    "heading": "Egyszeri üzenetcsomagok",
+    "lead": "A csomagok soha nem járnak le, és bármely előfizetési keret mellé hozzáadódnak. Így használhatod a PrivaMesh-t ismétlődő terhelés nélkül.",
+    "caption": "A PrivaMesh egyszeri üzenetcsomagjai és áraik",
+    "colPack": "Csomag",
+    "colPrice": "Ár",
+    "colPer": "Üzenetenként",
+    "row": "{n} üzenet",
+    "per100": "{price} / 100"
+  },
+  "prose": {
+    "meterHeading": "Miért van egyáltalán számláló",
+    "meter": [
+      "A legtöbb üzenetküldő azért ingyenes, mert valami finanszírozza - reklám, adat vagy kockázati tőke, amely e kettő egyikére vár. A PrivaMesh-ben nincs reklám és nincs mit eladni, mert semmit sem gyűjt, amit el lehetne adni. Van viszont valódi határköltsége: minden üzenet egy hálózati díjjal járó Solana-tranzakció.",
+      "Ezt a díjat egy szolgáltatás fizeti, hogy neked soha ne kelljen SOL-t tartanod vagy tárcaegyenlegen gondolkodnod. A keret finanszírozza ezt a szolgáltatást. Ez egy valódi költség őszinte számlálója, nem fizetőfal egy funkció előtt - a titkosítás, a metaadat-védelem és minden biztonsági tulajdonság minden csomagban azonos."
+    ],
+    "trackedHeading": "Fizetni úgy, hogy ne követhessenek",
+    "tracked": [
+      "A díjazásnak saját adatvédelmi problémája van: a fizetés igazolása általában azt jelenti, hogy minden kéréshez nyugtát csatolsz, és ekkor az üzemeltető összekapcsolhatja a vásárlást a tevékenységgel. A PrivaMesh egyszer igazolja az előfizetést, és kap egy készletnyi RSA vak aláírást; minden küldés elhasznál egy tokent, amelyet nem lehet visszakövetni. [Az architektúra oldal](/architecture) pontosan megmutatja, mit lát és mit nem lát a díjszolgáltatás."
+    ]
+  },
+  "faq": [
+    {
+      "q": "Miért fizetős egyáltalán az üzenetküldés?",
+      "a": "Minden üzenet Solana-tranzakció, és minden tranzakció hálózati díjba kerül. A díjszolgáltatásunk fizeti, hogy neked soha ne kelljen SOL-t tartanod. A keret ezt finanszírozza - a számláló üzenetenkénti valódi költséget mutat, nem mesterséges korlátot."
+    },
+    {
+      "q": "Mi történik, ha elfogynak az üzeneteim?",
+      "a": "A küldés leáll, amíg a keret meg nem újul, vagy nem veszel csomagot. A fogadás, az olvasás és a meglévő beszélgetések érintetlenek maradnak. Semmi sem törlődik, és egyetlen fiók sem zárolódik."
+    },
+    {
+      "q": "Összekapcsolja a fizetés a vásárlásomat az üzeneteimmel?",
+      "a": "Nem, és ennek elkerülése komoly munka volt. Az app egyszer igazolja az előfizetést, és kap egy készletnyi RSA vak aláírást; minden küldés elhasznál egy tokent. A díjszolgáltatás ellenőrizni tudja, hogy egy token érvényes és fel nem használt, de nem tudja összekapcsolni sem a vásárlással, sem más tokennel."
+    },
+    {
+      "q": "Valóban ezeket az árakat fogom fizetni?",
+      "a": "Ezek az amerikai csomagárak. Az Apple régiónként igazítja az árakat, így a helyi pénznemben az az összeg érvényes, amelyet az App Store a fiókodban mutat - nem ez az oldal."
+    },
+    {
+      "q": "Hogyan mondhatom le?",
+      "a": "Az előfizetéseket az Apple számlázza, ezért az iOS Beállítások appban, a neved alatt, majd az Előfizetéseknél mondd le. A visszatérítés a reportaproblem.apple.com oldalon intézhető. Egyiket sem tudjuk helyetted elintézni."
+    }
+  ],
+  "related": [
+    {
+      "href": "/architecture",
+      "label": "Architektúra",
+      "blurb": "Mit lát a díjszolgáltatás, és miért része a tervnek a vak token."
+    },
+    {
+      "href": "/limitations",
+      "label": "Ismert korlátok",
+      "blurb": "Többek között az is, mi történik, ha elfogy a keret."
+    },
+    {
+      "href": "/support",
+      "label": "Támogatás",
+      "blurb": "Előfizetés kezelése vagy lemondása, visszatérítés az Apple-ön keresztül."
+    }
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "meta": {
+    "title": "Ceník a limity zpráv",
+    "description": "Kolik stojí PrivaMesh: stažení zdarma, Plus za {plus} s {plusN} zprávami měsíčně, Pro za {pro} s {proN} a jednorázové balíčky. A proč jsou zprávy vůbec zpoplatněné."
+  },
+  "eyebrow": "Ceník",
+  "title": "Ceník a limity zpráv",
+  "lead": "Aplikace se stahuje zdarma. Odesílání je zpoplatněné, protože každá zpráva je placená transakce na veřejném řetězci - tady je přesně, kolik to stojí a proč.",
+  "cta": "Získat PrivaMesh",
+  "summary": "PrivaMesh se instaluje zdarma. Plus stojí {plus} měsíčně za {plusN} zpráv, Pro {pro} za {proN} a jednorázové balíčky začínají na {packFrom}. Bezplatný sponzorovaný limit neexistuje, protože každá zpráva stojí skutečný síťový poplatek, který musí někdo zaplatit.",
+  "tiers": {
+    "free": {
+      "name": "Zdarma",
+      "price": "Zdarma",
+      "per": "stažení",
+      "allowance": "{n} sponzorovaných zpráv",
+      "perks": [
+        "Jeden účet",
+        "Plné šifrování, žádné omezené funkce",
+        "Balíček zpráv koupíte kdykoli"
+      ],
+      "note": "Samotná aplikace je zdarma. Odesílání je zpoplatněné, takže bezplatný účet nemá sponzorovaný limit - dobijte ho balíčkem nebo si předplaťte tarif."
+    },
+    "plus": {
+      "per": "měsíc",
+      "allowance": "{n} zpráv měsíčně",
+      "perks": [
+        "Až 3 účty",
+        "Ověřovací odznak",
+        "Limit se obnovuje každý měsíc"
+      ],
+      "note": "Tarif, který chce většina lidí. Krycí provoz čerpá z tohoto limitu, proto je ve výchozím stavu vypnutý."
+    },
+    "pro": {
+      "per": "měsíc",
+      "allowance": "{n} zpráv měsíčně",
+      "perks": [
+        "Až 3 účty",
+        "Ověřovací odznak",
+        "Nejvyšší měsíční limit"
+      ],
+      "note": "Pro intenzivní používání nebo pro trvale zapnutý krycí provoz bez hlídání počítadla."
+    }
+  },
+  "packs": {
+    "heading": "Jednorázové balíčky zpráv",
+    "lead": "Balíčky nikdy nevyprší a sčítají se s jakýmkoli limitem předplatného. Jsou způsobem, jak používat PrivaMesh bez opakovaných plateb.",
+    "caption": "Jednorázové balíčky zpráv PrivaMesh a jejich ceny",
+    "colPack": "Balíček",
+    "colPrice": "Cena",
+    "colPer": "Za zprávu",
+    "row": "{n} zpráv",
+    "per100": "{price} za 100"
+  },
+  "prose": {
+    "meterHeading": "Proč vůbec počítadlo",
+    "meter": [
+      "Většina komunikátorů je zdarma, protože je něco dotuje - reklama, data nebo rizikový kapitál čekající na jedno z toho. PrivaMesh nemá reklamu ani nic na prodej, protože nesbírá nic, co by se dalo prodat. Má ale skutečné mezní náklady: každá zpráva je transakce na Solaně se síťovým poplatkem.",
+      "Tento poplatek platí služba, abyste nikdy nemuseli držet SOL ani řešit zůstatek peněženky. Limit tuto službu financuje. Je to poctivé počítadlo skutečných nákladů, ne platební brána před funkcí - šifrování, ochrana metadat a všechny bezpečnostní vlastnosti jsou v každém tarifu stejné."
+    ],
+    "trackedHeading": "Platit a nebýt sledován",
+    "tracked": [
+      "Zpoplatnění přináší vlastní problém soukromí: prokázat, že jste zaplatili, obvykle znamená přiložit účtenku ke každému požadavku, a provozovatel pak může propojit nákup s aktivitou. PrivaMesh předplatné prokáže jednou a dostane sadu slepých podpisů RSA; každé odeslání utratí jeden token, který nelze zpětně propojit. [Stránka o architektuře](/architecture) přesně ukazuje, co služba poplatků vidí a co ne."
+    ]
+  },
+  "faq": [
+    {
+      "q": "Proč je odesílání vůbec zpoplatněné?",
+      "a": "Každá zpráva je transakce na Solaně a každá transakce stojí síťový poplatek. Naše služba poplatků ho platí, abyste nikdy nemuseli držet SOL. Limit to financuje - počítadlo odráží skutečné náklady na zprávu, ne umělé omezení."
+    },
+    {
+      "q": "Co se stane, když mi dojdou zprávy?",
+      "a": "Odesílání se zastaví, dokud se limit neobnoví nebo si nekoupíte balíček. Přijímání, čtení a stávající konverzace to neovlivní. Nic se nemaže a žádný účet se neblokuje."
+    },
+    {
+      "q": "Propojí platba můj nákup s mými zprávami?",
+      "a": "Ne, a vyhnout se tomu dalo skutečnou práci. Aplikace prokáže předplatné jednou a dostane sadu slepých podpisů RSA; každé odeslání utratí jeden token. Služba poplatků může ověřit, že je token platný a neutracený, ale nemůže ho propojit s nákupem ani s jiným tokenem."
+    },
+    {
+      "q": "Jsou to ceny, které skutečně zaplatím?",
+      "a": "Jsou to ceny tarifů v USA. Apple ceny přizpůsobuje regionům, takže částka ve vaší měně je ta, kterou ukazuje App Store ve vašem účtu - rozhodující je ona, ne tato stránka."
+    },
+    {
+      "q": "Jak zruším předplatné?",
+      "a": "Předplatné účtuje Apple, takže ho zrušte v aplikaci Nastavení v iOS pod svým jménem a pak v Předplatném. Vrácení peněz řeší reportaproblem.apple.com. Ani jedno za vás udělat nemůžeme."
+    }
+  ],
+  "related": [
+    {
+      "href": "/architecture",
+      "label": "Architektura",
+      "blurb": "Co vidí služba poplatků a proč jsou slepé tokeny součástí návrhu."
+    },
+    {
+      "href": "/limitations",
+      "label": "Známá omezení",
+      "blurb": "Včetně toho, co se stane, když limit dojde."
+    },
+    {
+      "href": "/support",
+      "label": "Podpora",
+      "blurb": "Správa nebo zrušení předplatného a vrácení peněz přes Apple."
+    }
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "meta": {
+    "title": "Narxlar va xabar limitlari",
+    "description": "PrivaMesh narxi: bepul yuklab olish, oyiga {plusN} xabar uchun {plus} Plus, {proN} xabar uchun {pro} Pro va bir martalik paketlar. Va xabarlar nega umuman pullik ekani."
+  },
+  "eyebrow": "Narxlar",
+  "title": "Narxlar va xabar limitlari",
+  "lead": "Ilova bepul yuklab olinadi. Yuborish pullik, chunki har bir xabar ochiq zanjirdagi pullik tranzaksiya - bu yerda uning aniq narxi va sababi yozilgan.",
+  "cta": "PrivaMesh'ni yuklab olish",
+  "summary": "PrivaMesh bepul o'rnatiladi. Plus oyiga {plusN} xabar uchun {plus}, Pro {proN} uchun {pro}, bir martalik paketlar esa {packFrom} dan boshlanadi. Bepul homiylik limiti yo'q, chunki har bir xabar kimdir to'lashi kerak bo'lgan haqiqiy tarmoq to'loviga tushadi.",
+  "tiers": {
+    "free": {
+      "name": "Bepul",
+      "price": "Bepul",
+      "per": "yuklab olish",
+      "allowance": "{n} ta homiylik xabari",
+      "perks": [
+        "Bitta akkaunt",
+        "To'liq shifrlash, cheklangan funksiya yo'q",
+        "Xabar paketini istalgan vaqtda sotib oling"
+      ],
+      "note": "Ilovaning o'zi bepul. Yuborish pullik, shuning uchun bepul akkauntda homiylik limiti yo'q - paket bilan to'ldiring yoki obuna bo'ling."
+    },
+    "plus": {
+      "per": "oy",
+      "allowance": "Oyiga {n} ta xabar",
+      "perks": [
+        "3 tagacha akkaunt",
+        "Tasdiq belgisi",
+        "Limit har oy yangilanadi"
+      ],
+      "note": "Ko'pchilikka kerak bo'lgan tarif. Niqob trafigi shu limitdan sarflaydi, shuning uchun sukut bo'yicha o'chirilgan."
+    },
+    "pro": {
+      "per": "oy",
+      "allowance": "Oyiga {n} ta xabar",
+      "perks": [
+        "3 tagacha akkaunt",
+        "Tasdiq belgisi",
+        "Eng katta oylik limit"
+      ],
+      "note": "Faol foydalanish uchun yoki hisoblagichga qaramay niqob trafigini doim yoqiq tutish uchun."
+    }
+  },
+  "packs": {
+    "heading": "Bir martalik xabar paketlari",
+    "lead": "Paketlarning muddati hech qachon tugamaydi va har qanday obuna limitiga qo'shiladi. Bu PrivaMesh'dan muntazam to'lovsiz foydalanish usuli.",
+    "caption": "PrivaMesh bir martalik xabar paketlari va narxlari",
+    "colPack": "Paket",
+    "colPrice": "Narx",
+    "colPer": "Har bir xabar uchun",
+    "row": "{n} ta xabar",
+    "per100": "100 ta uchun {price}"
+  },
+  "prose": {
+    "meterHeading": "Hisoblagich nega kerak",
+    "meter": [
+      "Ko'pchilik messenjerlar bepul, chunki ularni nimadir subsidiya qiladi - reklama, ma'lumotlar yoki shulardan birini kutayotgan venchur kapital. PrivaMesh'da reklama ham, sotadigan narsa ham yo'q, chunki u sotsa bo'ladigan hech narsa yig'maydi. Buning o'rniga haqiqiy cheklangan xarajat bor: har bir xabar - tarmoq to'lovi bor Solana tranzaksiyasi.",
+      "Bu to'lovni xizmat to'laydi, shuning uchun sizga hech qachon SOL saqlash yoki hamyon balansini o'ylash kerak emas. Limit shu xizmatni moliyalashtiradi. Bu funksiya oldidagi pullik to'siq emas, haqiqiy xarajatning halol hisoblagichi - shifrlash, metama'lumotlarni himoyalash va barcha xavfsizlik xususiyatlari har bir tarifda bir xil."
+    ],
+    "trackedHeading": "Kuzatuvga tushmasdan to'lash",
+    "tracked": [
+      "Haq olishning o'z maxfiylik muammosi bor: to'laganingizni isbotlash odatda har bir so'rovga chek ilova qilishni anglatadi, shunda operator xaridni faollik bilan bog'lay oladi. PrivaMesh obunani bir marta isbotlab, RSA ko'r imzolari to'plamini oladi; har bir yuborish orqaga bog'lab bo'lmaydigan bitta tokenni sarflaydi. [Arxitektura sahifasi](/architecture) to'lov xizmati nimani ko'ra olishini va nimani ko'ra olmasligini aniq ko'rsatadi."
+    ]
+  },
+  "faq": [
+    {
+      "q": "Xabar yuborish nega umuman pullik?",
+      "a": "Har bir xabar - Solana tranzaksiyasi, har bir tranzaksiya esa tarmoq to'loviga tushadi. To'lov xizmatimiz uni to'laydi, shuning uchun sizga hech qachon SOL saqlash kerak emas. Limit buni moliyalashtiradi - hisoblagich sun'iy cheklovni emas, xabarning haqiqiy narxini aks ettiradi."
+    },
+    {
+      "q": "Xabarlarim tugasa nima bo'ladi?",
+      "a": "Limit yangilanguncha yoki paket sotib olguncha yuborish to'xtaydi. Qabul qilish, o'qish va mavjud suhbatlar ta'sirlanmaydi. Hech narsa o'chirilmaydi, hech bir akkaunt bloklanmaydi."
+    },
+    {
+      "q": "To'lov xaridimni xabarlarim bilan bog'laydimi?",
+      "a": "Yo'q, buning oldini olish haqiqiy mehnat talab qildi. Ilova obunani bir marta isbotlab, RSA ko'r imzolari to'plamini oladi; har bir yuborish bitta tokenni sarflaydi. To'lov xizmati token yaroqli va sarflanmaganini tekshira oladi, lekin uni xarid bilan ham, boshqa token bilan ham bog'lay olmaydi."
+    },
+    {
+      "q": "Men haqiqatan shu narxlarni to'laymanmi?",
+      "a": "Bular AQSh tariflari narxlari. Apple narxlarni hududga qarab moslaydi, shuning uchun valyutangizdagi summa - App Store akkauntingizda ko'rsatadigan summa. Hal qiluvchisi shu summa, bu sahifa emas."
+    },
+    {
+      "q": "Qanday bekor qilaman?",
+      "a": "Obunalarni Apple hisoblaydi, shuning uchun iOS «Sozlamalar» ilovasida ismingiz, keyin «Obunalar» bo'limida bekor qiling. Qaytarishlar reportaproblem.apple.com orqali amalga oshiriladi. Ikkalasini ham siz uchun bajara olmaymiz."
+    }
+  ],
+  "related": [
+    {
+      "href": "/architecture",
+      "label": "Arxitektura",
+      "blurb": "To'lov xizmati nimani ko'radi va ko'r tokenlar dizaynda nega bor."
+    },
+    {
+      "href": "/limitations",
+      "label": "Ma'lum cheklovlar",
+      "blurb": "Limit tugaganda nima bo'lishi ham."
+    },
+    {
+      "href": "/support",
+      "label": "Yordam",
+      "blurb": "Obunani boshqarish yoki bekor qilish va Apple orqali qaytarishlar."
+    }
+  ]
+}

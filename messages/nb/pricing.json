@@ -1,0 +1,105 @@
+{
+  "meta": {
+    "title": "Priser og meldingskvoter",
+    "description": "Hva PrivaMesh koster: gratis nedlasting, Plus for {plus} med {plusN} meldinger i måneden, Pro for {pro} med {proN}, og engangspakker. Og hvorfor meldinger koster i det hele tatt."
+  },
+  "eyebrow": "Priser",
+  "title": "Priser og meldingskvoter",
+  "lead": "Appen er gratis å laste ned. Sending koster fordi hver melding er en betalt transaksjon på en offentlig blokkjede - her står nøyaktig hva det koster og hvorfor.",
+  "cta": "Last ned PrivaMesh",
+  "summary": "PrivaMesh er gratis å installere. Plus koster {plus} i måneden for {plusN} meldinger, Pro {pro} for {proN}, og engangspakker starter på {packFrom}. Det finnes ingen gratis sponset kvote, fordi hver melding koster et ekte nettverksgebyr som noen må betale.",
+  "tiers": {
+    "free": {
+      "name": "Gratis",
+      "price": "Gratis",
+      "per": "nedlasting",
+      "allowance": "{n} sponsede meldinger",
+      "perks": [
+        "Én konto",
+        "Full kryptering, ingen låste funksjoner",
+        "Kjøp en meldingspakke når som helst"
+      ],
+      "note": "Selve appen er gratis. Sending koster, så en gratiskonto har ingen sponset kvote - fyll på med en pakke eller abonner."
+    },
+    "plus": {
+      "per": "måned",
+      "allowance": "{n} meldinger i måneden",
+      "perks": [
+        "Opptil 3 kontoer",
+        "Verifiseringsmerke",
+        "Kvoten fornyes hver måned"
+      ],
+      "note": "Nivået de fleste vil ha. Dekktrafikk bruker av denne kvoten, derfor er den av som standard."
+    },
+    "pro": {
+      "per": "måned",
+      "allowance": "{n} meldinger i måneden",
+      "perks": [
+        "Opptil 3 kontoer",
+        "Verifiseringsmerke",
+        "Høyeste månedskvote"
+      ],
+      "note": "For tung bruk, eller for å kjøre dekktrafikk kontinuerlig uten å følge med på telleren."
+    }
+  },
+  "packs": {
+    "heading": "Engangspakker med meldinger",
+    "lead": "Pakker utløper aldri og kommer i tillegg til enhver abonnementskvote. De er måten å bruke PrivaMesh på uten gjentakende trekk.",
+    "caption": "Engangspakker med meldinger for PrivaMesh og priser",
+    "colPack": "Pakke",
+    "colPrice": "Pris",
+    "colPer": "Per melding",
+    "row": "{n} meldinger",
+    "per100": "{price} per 100"
+  },
+  "prose": {
+    "meterHeading": "Hvorfor det finnes en teller",
+    "meter": [
+      "De fleste meldingsapper er gratis fordi noe subsidierer dem - reklame, data eller risikokapital som venter på en av delene. PrivaMesh har ingen reklame og ingenting å selge, fordi den ikke samler inn noe å selge. Det den har, er en ekte marginalkostnad: hver melding er en Solana-transaksjon med et nettverksgebyr.",
+      "En tjeneste betaler gebyret slik at du aldri trenger å eie SOL eller tenke på en lommeboksaldo. Kvoten finansierer tjenesten. Det er en ærlig teller for en ekte kostnad, ikke en betalingsmur foran en funksjon - kryptering, beskyttelse av metadata og alle sikkerhetsegenskaper er like på alle nivåer."
+    ],
+    "trackedHeading": "Betale uten å bli sporet",
+    "tracked": [
+      "Betaling skaper sitt eget personvernproblem: å bevise at du har betalt betyr som regel å legge ved en kvittering på hver forespørsel, og da kan operatøren koble kjøp til aktivitet. PrivaMesh beviser abonnementet én gang og får et sett blinde RSA-signaturer; hver sending bruker én token som ikke kan kobles tilbake. [Arkitektursiden](/architecture) viser nøyaktig hva gebyrtjenesten kan og ikke kan se."
+    ]
+  },
+  "faq": [
+    {
+      "q": "Hvorfor koster det å sende meldinger?",
+      "a": "Hver melding er en Solana-transaksjon, og hver transaksjon koster et nettverksgebyr. Gebyrtjenesten vår betaler det slik at du aldri trenger å eie SOL. Kvoten finansierer det - telleren gjenspeiler en ekte kostnad per melding, ikke en kunstig grense."
+    },
+    {
+      "q": "Hva skjer når meldingene mine tar slutt?",
+      "a": "Sending stopper til kvoten fornyes eller du kjøper en pakke. Mottak, lesing og eksisterende samtaler påvirkes ikke. Ingenting slettes og ingen konto låses."
+    },
+    {
+      "q": "Kobler betalingen kjøpet mitt til meldingene mine?",
+      "a": "Nei, og det krevde ekte arbeid å unngå. Appen beviser abonnementet én gang og får et sett blinde RSA-signaturer; hver sending bruker én token. Gebyrtjenesten kan sjekke at en token er gyldig og ubrukt, men kan ikke koble den til kjøpet eller til noen annen token."
+    },
+    {
+      "q": "Er dette prisene jeg faktisk betaler?",
+      "a": "Dette er de amerikanske nivåprisene. Apple tilpasser priser per region, så beløpet i din valuta er det App Store viser på kontoen din - det beløpet, ikke denne siden, gjelder."
+    },
+    {
+      "q": "Hvordan sier jeg opp?",
+      "a": "Abonnementer faktureres av Apple, så si opp i Innstillinger-appen i iOS, under navnet ditt og deretter Abonnementer. Refusjoner går via reportaproblem.apple.com. Ingen av delene kan vi gjøre for deg."
+    }
+  ],
+  "related": [
+    {
+      "href": "/architecture",
+      "label": "Arkitektur",
+      "blurb": "Hva gebyrtjenesten ser, og hvorfor blinde tokener er en del av designet."
+    },
+    {
+      "href": "/limitations",
+      "label": "Kjente begrensninger",
+      "blurb": "Blant annet hva som skjer når kvoten tar slutt."
+    },
+    {
+      "href": "/support",
+      "label": "Brukerstøtte",
+      "blurb": "Administrere eller si opp et abonnement, og refusjoner via Apple."
+    }
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "meta": {
+    "title": "Harga dan kuota pesan",
+    "description": "Biaya PrivaMesh: unduhan gratis, Plus seharga {plus} untuk {plusN} pesan per bulan, Pro seharga {pro} untuk {proN}, dan paket sekali beli. Dan mengapa pesan dikenakan biaya."
+  },
+  "eyebrow": "Harga",
+  "title": "Harga dan kuota pesan",
+  "lead": "Aplikasinya gratis diunduh. Pengiriman berbayar karena setiap pesan adalah transaksi berbayar di rantai publik - inilah tepatnya biayanya dan alasannya.",
+  "cta": "Dapatkan PrivaMesh",
+  "summary": "PrivaMesh gratis dipasang. Plus seharga {plus} per bulan untuk {plusN} pesan, Pro {pro} untuk {proN}, dan paket sekali beli mulai dari {packFrom}. Tidak ada kuota gratis yang disponsori, karena setiap pesan memakan biaya jaringan nyata yang harus dibayar seseorang.",
+  "tiers": {
+    "free": {
+      "name": "Gratis",
+      "price": "Gratis",
+      "per": "unduhan",
+      "allowance": "{n} pesan bersponsor",
+      "perks": [
+        "Satu akun",
+        "Enkripsi penuh, tanpa fitur yang dikunci",
+        "Beli paket pesan kapan saja"
+      ],
+      "note": "Aplikasinya sendiri gratis. Pengiriman berbayar, jadi akun gratis tidak punya kuota bersponsor - isi ulang dengan paket atau berlangganan."
+    },
+    "plus": {
+      "per": "bulan",
+      "allowance": "{n} pesan per bulan",
+      "perks": [
+        "Hingga 3 akun",
+        "Tanda centang terverifikasi",
+        "Kuota diperbarui tiap bulan"
+      ],
+      "note": "Paket yang diinginkan kebanyakan orang. Lalu lintas penyamar memakai kuota ini, itulah sebabnya nonaktif secara default."
+    },
+    "pro": {
+      "per": "bulan",
+      "allowance": "{n} pesan per bulan",
+      "perks": [
+        "Hingga 3 akun",
+        "Tanda centang terverifikasi",
+        "Kuota bulanan tertinggi"
+      ],
+      "note": "Untuk pemakaian berat, atau untuk menjalankan lalu lintas penyamar terus-menerus tanpa memperhatikan penghitung."
+    }
+  },
+  "packs": {
+    "heading": "Paket pesan sekali beli",
+    "lead": "Paket tidak pernah kedaluwarsa dan ditambahkan di atas kuota langganan apa pun. Inilah cara memakai PrivaMesh tanpa tagihan berulang.",
+    "caption": "Paket pesan sekali beli PrivaMesh dan harganya",
+    "colPack": "Paket",
+    "colPrice": "Harga",
+    "colPer": "Per pesan",
+    "row": "{n} pesan",
+    "per100": "{price} per 100"
+  },
+  "prose": {
+    "meterHeading": "Mengapa ada penghitung",
+    "meter": [
+      "Kebanyakan messenger gratis karena ada yang menyubsidi - iklan, data, atau modal ventura yang menunggu salah satunya. PrivaMesh tidak punya iklan dan tidak punya apa pun untuk dijual, karena tidak mengumpulkan apa pun yang bisa dijual. Yang dimilikinya adalah biaya marginal nyata: setiap pesan adalah transaksi Solana dengan biaya jaringan.",
+      "Sebuah layanan membayar biaya itu agar Anda tidak pernah perlu memegang SOL atau memikirkan saldo dompet. Kuota membiayai layanan itu. Ini penghitung jujur atas biaya nyata, bukan tembok berbayar di depan sebuah fitur - enkripsi, perlindungan metadata, dan semua sifat keamanan sama di setiap paket."
+    ],
+    "trackedHeading": "Membayar tanpa dilacak",
+    "tracked": [
+      "Penagihan menciptakan masalah privasinya sendiri: membuktikan Anda sudah membayar biasanya berarti melampirkan tanda terima ke setiap permintaan, dan saat itu operator bisa mengaitkan pembelian dengan aktivitas. PrivaMesh membuktikan langganan sekali dan menerima sekumpulan tanda tangan buta RSA; setiap pengiriman memakai satu token yang tidak bisa dikaitkan balik. [Halaman arsitektur](/architecture) menunjukkan dengan tepat apa yang bisa dan tidak bisa dilihat layanan biaya."
+    ]
+  },
+  "faq": [
+    {
+      "q": "Mengapa mengirim pesan dikenakan biaya?",
+      "a": "Setiap pesan adalah transaksi Solana dan setiap transaksi memakan biaya jaringan. Layanan biaya kami membayarnya agar Anda tidak pernah perlu memegang SOL. Kuota membiayainya - penghitung mencerminkan biaya nyata per pesan, bukan batas buatan."
+    },
+    {
+      "q": "Apa yang terjadi jika pesan saya habis?",
+      "a": "Pengiriman berhenti sampai kuota diperbarui atau Anda membeli paket. Menerima, membaca, dan percakapan yang ada tidak terpengaruh. Tidak ada yang dihapus dan tidak ada akun yang dikunci."
+    },
+    {
+      "q": "Apakah pembayaran mengaitkan pembelian saya dengan pesan saya?",
+      "a": "Tidak, dan menghindarinya butuh kerja sungguhan. Aplikasi membuktikan langganan sekali dan menerima sekumpulan tanda tangan buta RSA; setiap pengiriman memakai satu token. Layanan biaya bisa memeriksa bahwa token sah dan belum dipakai, tetapi tidak bisa mengaitkannya dengan pembelian atau token lain."
+    },
+    {
+      "q": "Apakah ini harga yang benar-benar akan saya bayar?",
+      "a": "Ini harga paket di AS. Apple menyesuaikan harga per wilayah, jadi jumlah dalam mata uang Anda adalah yang ditampilkan App Store di akun Anda - angka itulah yang berlaku, bukan halaman ini."
+    },
+    {
+      "q": "Bagaimana cara membatalkan?",
+      "a": "Langganan ditagih oleh Apple, jadi batalkan di aplikasi Pengaturan iOS, di nama Anda lalu Langganan. Pengembalian dana melalui reportaproblem.apple.com. Kami tidak bisa melakukan keduanya atas nama Anda."
+    }
+  ],
+  "related": [
+    {
+      "href": "/architecture",
+      "label": "Arsitektur",
+      "blurb": "Apa yang dilihat layanan biaya, dan mengapa token buta ada dalam desainnya."
+    },
+    {
+      "href": "/limitations",
+      "label": "Keterbatasan yang diketahui",
+      "blurb": "Termasuk apa yang terjadi saat kuota habis."
+    },
+    {
+      "href": "/support",
+      "label": "Dukungan",
+      "blurb": "Mengelola atau membatalkan langganan, dan pengembalian dana melalui Apple."
+    }
+  ]
+}

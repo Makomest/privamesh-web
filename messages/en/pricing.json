@@ -1,0 +1,66 @@
+{
+  "meta": {
+    "title": "Pricing and message allowances",
+    "description": "What PrivaMesh costs: a free download, Plus at {plus} for {plusN} messages a month, Pro at {pro} for {proN}, and one-off packs. Why messages are metered at all."
+  },
+  "eyebrow": "Pricing",
+  "title": "Pricing and message allowances",
+  "lead": "The app is a free download. Sending is metered because every message is a paid transaction on a public chain - here is exactly what that costs and why.",
+  "cta": "Get PrivaMesh",
+  "summary": "PrivaMesh is free to install. Plus is {plus} a month for {plusN} messages, Pro is {pro} for {proN}, and one-off packs start at {packFrom}. There is no free sponsored allowance, because every message costs a real network fee that somebody has to pay.",
+  "tiers": {
+    "free": {
+      "name": "Free",
+      "price": "Free",
+      "per": "download",
+      "allowance": "{n} sponsored messages",
+      "perks": ["One account", "Full encryption, no feature gating", "Buy a message pack any time"],
+      "note": "The app itself is free. Sending is metered, so a free account has no sponsored allowance - top up with a pack or subscribe."
+    },
+    "plus": {
+      "per": "month",
+      "allowance": "{n} messages a month",
+      "perks": ["Up to 3 accounts", "Verified checkmark", "Allowance resets monthly"],
+      "note": "The tier most people want. Cover traffic spends from this allowance, which is why it is off by default."
+    },
+    "pro": {
+      "per": "month",
+      "allowance": "{n} messages a month",
+      "perks": ["Up to 3 accounts", "Verified checkmark", "Highest monthly allowance"],
+      "note": "For heavy use, or for running cover traffic continuously without watching the counter."
+    }
+  },
+  "packs": {
+    "heading": "One-off message packs",
+    "lead": "Packs never expire and stack on top of any subscription allowance. They are the way to use PrivaMesh without a recurring charge.",
+    "caption": "PrivaMesh one-off message packs and prices",
+    "colPack": "Pack",
+    "colPrice": "Price",
+    "colPer": "Per message",
+    "row": "{n} messages",
+    "per100": "{price} per 100"
+  },
+  "prose": {
+    "meterHeading": "Why there is a meter at all",
+    "meter": [
+      "Most messengers are free because they are subsidised by something - ads, data, or venture funding waiting for one of those. PrivaMesh has no ads and nothing to sell, because it collects nothing to sell. What it does have is a real marginal cost: every message is a Solana transaction with a network fee attached.",
+      "A worker pays that fee so you never have to hold SOL or think about a wallet balance. The allowance is what funds the worker. It is an honest meter on a real cost rather than a paywall in front of a feature - encryption, metadata protection and every security property are identical on every tier."
+    ],
+    "trackedHeading": "Paying without being tracked",
+    "tracked": [
+      "Metering creates its own privacy problem: proving you paid usually means attaching a receipt to every request, at which point the operator can link purchase to activity. PrivaMesh proves the subscription once and receives a pool of RSA blind signatures, and each send spends one token that cannot be linked back. [The architecture page](/architecture) shows exactly what the fee worker can and cannot see."
+    ]
+  },
+  "faq": [
+    { "q": "Why is messaging metered at all?", "a": "Every message is a Solana transaction and every transaction costs a network fee. Our fee worker pays that fee so you never have to hold SOL. The allowance is what funds it - the meter reflects a real per-message cost rather than an artificial limit." },
+    { "q": "What happens when I run out of messages?", "a": "Sending stops until the allowance resets or you buy a pack. Receiving, reading and your existing conversations are unaffected. Nothing is deleted and no account is locked." },
+    { "q": "Does paying link my purchase to my messages?", "a": "No, and that took real work to avoid. The app proves the subscription once and receives a pool of RSA blind signatures; each send spends one token. The fee worker can check a token is valid and unspent and cannot link it to the purchase or to any other token." },
+    { "q": "Are these the prices I will actually pay?", "a": "These are the US tier prices. Apple regionalises pricing, so the amount in your local currency is whatever the App Store shows on your account - that figure, not this page, is authoritative." },
+    { "q": "How do I cancel?", "a": "Subscriptions are billed by Apple, so cancel in the iOS Settings app under your name, then Subscriptions. Refunds go through reportaproblem.apple.com. We cannot process either on your behalf." }
+  ],
+  "related": [
+    { "href": "/architecture", "label": "Architecture", "blurb": "What the fee worker sees, and why blind tokens are in the design." },
+    { "href": "/limitations", "label": "Known limitations", "blurb": "Including what happens when the allowance runs out." },
+    { "href": "/support", "label": "Support", "blurb": "Managing or cancelling a subscription, and refunds through Apple." }
+  ]
+}

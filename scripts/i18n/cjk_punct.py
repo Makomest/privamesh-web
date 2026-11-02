@@ -21,9 +21,9 @@ def fix(s, table):
     # Protect markdown links: [text](/path)
     links = []
     def keep(m):
-        links.append(m.group(2))
-        return f'[{m.group(1)}](\x00{len(links) - 1}\x00)'
-    s = re.sub(r'\[([^\]]+)\]\(([^)]+)\)', keep, s)
+        links.append(m.group(0))
+        return f'\x00{len(links) - 1}\x00'
+    s = re.sub(r'\[[^\]]+\]\([^)]+\)', keep, s)
     for a, b in table.items():
         s = re.sub(rf'(?<={CJK})\s*{re.escape(a)}\s*', b, s)
         s = re.sub(rf'\s*{re.escape(a)}(?={CJK})', b, s)

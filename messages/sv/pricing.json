@@ -1,0 +1,105 @@
+{
+  "meta": {
+    "title": "Priser och meddelandekvoter",
+    "description": "Vad PrivaMesh kostar: gratis nedladdning, Plus för {plus} med {plusN} meddelanden i månaden, Pro för {pro} med {proN}, och engångspaket. Och varför meddelanden kostar alls."
+  },
+  "eyebrow": "Priser",
+  "title": "Priser och meddelandekvoter",
+  "lead": "Appen är en gratis nedladdning. Sändning kostar eftersom varje meddelande är en betald transaktion på en öppen blockkedja - här står exakt vad det kostar och varför.",
+  "cta": "Hämta PrivaMesh",
+  "summary": "PrivaMesh är gratis att installera. Plus kostar {plus} i månaden för {plusN} meddelanden, Pro {pro} för {proN}, och engångspaket börjar på {packFrom}. Det finns ingen gratis sponsrad kvot, eftersom varje meddelande kostar en verklig nätverksavgift som någon måste betala.",
+  "tiers": {
+    "free": {
+      "name": "Gratis",
+      "price": "Gratis",
+      "per": "nedladdning",
+      "allowance": "{n} sponsrade meddelanden",
+      "perks": [
+        "Ett konto",
+        "Full kryptering, inga låsta funktioner",
+        "Köp ett meddelandepaket när som helst"
+      ],
+      "note": "Själva appen är gratis. Sändning kostar, så ett gratiskonto har ingen sponsrad kvot - fyll på med ett paket eller prenumerera."
+    },
+    "plus": {
+      "per": "månad",
+      "allowance": "{n} meddelanden i månaden",
+      "perks": [
+        "Upp till 3 konton",
+        "Verifieringsbock",
+        "Kvoten förnyas varje månad"
+      ],
+      "note": "Nivån de flesta vill ha. Täcktrafik drar från den här kvoten, därför är den avstängd som standard."
+    },
+    "pro": {
+      "per": "månad",
+      "allowance": "{n} meddelanden i månaden",
+      "perks": [
+        "Upp till 3 konton",
+        "Verifieringsbock",
+        "Högsta månadskvoten"
+      ],
+      "note": "För intensiv användning, eller för att köra täcktrafik hela tiden utan att hålla koll på räknaren."
+    }
+  },
+  "packs": {
+    "heading": "Engångspaket med meddelanden",
+    "lead": "Paket går aldrig ut och läggs ovanpå varje prenumerationskvot. De är sättet att använda PrivaMesh utan återkommande debitering.",
+    "caption": "Engångspaket med meddelanden för PrivaMesh och priser",
+    "colPack": "Paket",
+    "colPrice": "Pris",
+    "colPer": "Per meddelande",
+    "row": "{n} meddelanden",
+    "per100": "{price} per 100"
+  },
+  "prose": {
+    "meterHeading": "Varför det alls finns en räknare",
+    "meter": [
+      "De flesta meddelandeappar är gratis för att något subventionerar dem - annonser, data eller riskkapital som väntar på något av dem. PrivaMesh har inga annonser och inget att sälja, eftersom den inte samlar in något att sälja. Det den har är en verklig marginalkostnad: varje meddelande är en Solana-transaktion med en nätverksavgift.",
+      "En tjänst betalar den avgiften så att du aldrig behöver äga SOL eller tänka på ett plånbokssaldo. Kvoten är det som finansierar tjänsten. Det är en ärlig räknare för en verklig kostnad, inte en betalvägg framför en funktion - kryptering, skydd av metadata och varje säkerhetsegenskap är desamma på alla nivåer."
+    ],
+    "trackedHeading": "Betala utan att spåras",
+    "tracked": [
+      "Debitering skapar ett eget integritetsproblem: att bevisa att man betalat innebär oftast att bifoga ett kvitto till varje förfrågan, och då kan operatören koppla köp till aktivitet. PrivaMesh bevisar prenumerationen en gång och får en uppsättning blinda RSA-signaturer; varje sändning förbrukar en token som inte kan kopplas tillbaka. [Arkitektursidan](/architecture) visar exakt vad avgiftstjänsten kan och inte kan se."
+    ]
+  },
+  "faq": [
+    {
+      "q": "Varför kostar det alls att skicka meddelanden?",
+      "a": "Varje meddelande är en Solana-transaktion och varje transaktion kostar en nätverksavgift. Vår avgiftstjänst betalar den så att du aldrig behöver äga SOL. Kvoten finansierar det - räknaren speglar en verklig kostnad per meddelande, inte en konstgjord gräns."
+    },
+    {
+      "q": "Vad händer när mina meddelanden tar slut?",
+      "a": "Sändning stoppas tills kvoten förnyas eller du köper ett paket. Mottagning, läsning och befintliga samtal påverkas inte. Inget raderas och inget konto låses."
+    },
+    {
+      "q": "Kopplar betalningen mitt köp till mina meddelanden?",
+      "a": "Nej, och att undvika det krävde verkligt arbete. Appen bevisar prenumerationen en gång och får en uppsättning blinda RSA-signaturer; varje sändning förbrukar en token. Avgiftstjänsten kan kontrollera att en token är giltig och oanvänd men kan inte koppla den till köpet eller till någon annan token."
+    },
+    {
+      "q": "Är det här priserna jag faktiskt betalar?",
+      "a": "Det här är de amerikanska nivåpriserna. Apple anpassar priser per region, så beloppet i din valuta är det App Store visar på ditt konto - det beloppet, inte den här sidan, gäller."
+    },
+    {
+      "q": "Hur säger jag upp?",
+      "a": "Prenumerationer debiteras av Apple, så säg upp i appen Inställningar i iOS, under ditt namn och sedan Prenumerationer. Återbetalningar går via reportaproblem.apple.com. Inget av det kan vi göra åt dig."
+    }
+  ],
+  "related": [
+    {
+      "href": "/architecture",
+      "label": "Arkitektur",
+      "blurb": "Vad avgiftstjänsten ser, och varför blinda token finns i designen."
+    },
+    {
+      "href": "/limitations",
+      "label": "Kända begränsningar",
+      "blurb": "Inklusive vad som händer när kvoten tar slut."
+    },
+    {
+      "href": "/support",
+      "label": "Support",
+      "blurb": "Hantera eller säga upp en prenumeration, och återbetalningar via Apple."
+    }
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "meta": {
+    "title": "Harga dan kuota mesej",
+    "description": "Kos PrivaMesh: muat turun percuma, Plus pada {plus} untuk {plusN} mesej sebulan, Pro pada {pro} untuk {proN}, dan pek sekali beli. Dan mengapa mesej dikenakan bayaran."
+  },
+  "eyebrow": "Harga",
+  "title": "Harga dan kuota mesej",
+  "lead": "Aplikasi ini percuma dimuat turun. Penghantaran dikenakan bayaran kerana setiap mesej ialah transaksi berbayar pada rantaian awam - inilah tepatnya kosnya dan sebabnya.",
+  "cta": "Dapatkan PrivaMesh",
+  "summary": "PrivaMesh percuma untuk dipasang. Plus berharga {plus} sebulan untuk {plusN} mesej, Pro {pro} untuk {proN}, dan pek sekali beli bermula dari {packFrom}. Tiada kuota percuma tajaan, kerana setiap mesej menelan yuran rangkaian sebenar yang mesti dibayar oleh seseorang.",
+  "tiers": {
+    "free": {
+      "name": "Percuma",
+      "price": "Percuma",
+      "per": "muat turun",
+      "allowance": "{n} mesej tajaan",
+      "perks": [
+        "Satu akaun",
+        "Penyulitan penuh, tiada ciri dikunci",
+        "Beli pek mesej pada bila-bila masa"
+      ],
+      "note": "Aplikasi itu sendiri percuma. Penghantaran dikenakan bayaran, jadi akaun percuma tiada kuota tajaan - tambah nilai dengan pek atau langgan."
+    },
+    "plus": {
+      "per": "bulan",
+      "allowance": "{n} mesej sebulan",
+      "perks": [
+        "Sehingga 3 akaun",
+        "Tanda pengesahan",
+        "Kuota diperbaharui setiap bulan"
+      ],
+      "note": "Pelan yang dikehendaki kebanyakan orang. Trafik perlindungan menggunakan kuota ini, sebab itu ia dimatikan secara lalai."
+    },
+    "pro": {
+      "per": "bulan",
+      "allowance": "{n} mesej sebulan",
+      "perks": [
+        "Sehingga 3 akaun",
+        "Tanda pengesahan",
+        "Kuota bulanan tertinggi"
+      ],
+      "note": "Untuk penggunaan berat, atau untuk menjalankan trafik perlindungan secara berterusan tanpa memerhati pembilang."
+    }
+  },
+  "packs": {
+    "heading": "Pek mesej sekali beli",
+    "lead": "Pek tidak pernah tamat tempoh dan ditambah di atas mana-mana kuota langganan. Inilah cara menggunakan PrivaMesh tanpa caj berulang.",
+    "caption": "Pek mesej sekali beli PrivaMesh dan harganya",
+    "colPack": "Pek",
+    "colPrice": "Harga",
+    "colPer": "Setiap mesej",
+    "row": "{n} mesej",
+    "per100": "{price} setiap 100"
+  },
+  "prose": {
+    "meterHeading": "Mengapa ada pembilang",
+    "meter": [
+      "Kebanyakan aplikasi pesanan percuma kerana sesuatu menyubsidinya - iklan, data atau modal teroka yang menunggu salah satunya. PrivaMesh tiada iklan dan tiada apa-apa untuk dijual, kerana ia tidak mengumpul apa-apa yang boleh dijual. Apa yang ada ialah kos marginal sebenar: setiap mesej ialah transaksi Solana dengan yuran rangkaian.",
+      "Satu perkhidmatan membayar yuran itu supaya anda tidak perlu memegang SOL atau memikirkan baki dompet. Kuota membiayai perkhidmatan itu. Ia pembilang jujur bagi kos sebenar, bukan dinding berbayar di hadapan sesuatu ciri - penyulitan, perlindungan metadata dan semua sifat keselamatan adalah sama dalam setiap pelan."
+    ],
+    "trackedHeading": "Membayar tanpa dijejak",
+    "tracked": [
+      "Mengenakan bayaran mewujudkan masalah privasinya sendiri: membuktikan anda telah membayar biasanya bermakna melampirkan resit pada setiap permintaan, dan ketika itu pengendali boleh mengaitkan pembelian dengan aktiviti. PrivaMesh membuktikan langganan sekali dan menerima sekumpulan tandatangan buta RSA; setiap penghantaran menggunakan satu token yang tidak boleh dikaitkan semula. [Halaman seni bina](/architecture) menunjukkan dengan tepat apa yang boleh dan tidak boleh dilihat oleh perkhidmatan yuran."
+    ]
+  },
+  "faq": [
+    {
+      "q": "Mengapa menghantar mesej dikenakan bayaran?",
+      "a": "Setiap mesej ialah transaksi Solana dan setiap transaksi menelan yuran rangkaian. Perkhidmatan yuran kami membayarnya supaya anda tidak perlu memegang SOL. Kuota membiayainya - pembilang mencerminkan kos sebenar setiap mesej, bukan had buatan."
+    },
+    {
+      "q": "Apa berlaku jika mesej saya habis?",
+      "a": "Penghantaran berhenti sehingga kuota diperbaharui atau anda membeli pek. Penerimaan, pembacaan dan perbualan sedia ada tidak terjejas. Tiada apa-apa dipadam dan tiada akaun dikunci."
+    },
+    {
+      "q": "Adakah pembayaran mengaitkan pembelian saya dengan mesej saya?",
+      "a": "Tidak, dan mengelakkannya memerlukan usaha sebenar. Aplikasi membuktikan langganan sekali dan menerima sekumpulan tandatangan buta RSA; setiap penghantaran menggunakan satu token. Perkhidmatan yuran boleh menyemak bahawa token sah dan belum digunakan, tetapi tidak boleh mengaitkannya dengan pembelian atau token lain."
+    },
+    {
+      "q": "Adakah ini harga yang sebenarnya saya bayar?",
+      "a": "Ini harga pelan di AS. Apple melaraskan harga mengikut rantau, jadi jumlah dalam mata wang anda ialah yang ditunjukkan App Store pada akaun anda - angka itu, bukan halaman ini, yang terpakai."
+    },
+    {
+      "q": "Bagaimana saya membatalkan?",
+      "a": "Langganan dicaj oleh Apple, jadi batalkan dalam aplikasi Tetapan iOS, di bawah nama anda kemudian Langganan. Bayaran balik melalui reportaproblem.apple.com. Kami tidak boleh melakukan kedua-duanya bagi pihak anda."
+    }
+  ],
+  "related": [
+    {
+      "href": "/architecture",
+      "label": "Seni bina",
+      "blurb": "Apa yang dilihat perkhidmatan yuran, dan mengapa token buta ada dalam reka bentuk."
+    },
+    {
+      "href": "/limitations",
+      "label": "Had yang diketahui",
+      "blurb": "Termasuk apa berlaku apabila kuota habis."
+    },
+    {
+      "href": "/support",
+      "label": "Sokongan",
+      "blurb": "Mengurus atau membatalkan langganan, dan bayaran balik melalui Apple."
+    }
+  ]
+}

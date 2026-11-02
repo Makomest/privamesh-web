@@ -1,0 +1,105 @@
+{
+  "meta": {
+    "title": "Prețuri și cote de mesaje",
+    "description": "Cât costă PrivaMesh: descărcare gratuită, Plus la {plus} pentru {plusN} mesaje pe lună, Pro la {pro} pentru {proN} și pachete unice. Și de ce mesajele costă."
+  },
+  "eyebrow": "Prețuri",
+  "title": "Prețuri și cote de mesaje",
+  "lead": "Aplicația se descarcă gratuit. Trimiterea costă pentru că fiecare mesaj e o tranzacție plătită pe un lanț public - iată exact cât costă și de ce.",
+  "cta": "Descarcă PrivaMesh",
+  "summary": "PrivaMesh se instalează gratuit. Plus costă {plus} pe lună pentru {plusN} mesaje, Pro {pro} pentru {proN}, iar pachetele unice încep de la {packFrom}. Nu există cotă gratuită sponsorizată, pentru că fiecare mesaj costă o taxă de rețea reală pe care cineva trebuie s-o plătească.",
+  "tiers": {
+    "free": {
+      "name": "Gratuit",
+      "price": "Gratuit",
+      "per": "descărcare",
+      "allowance": "{n} mesaje sponsorizate",
+      "perks": [
+        "Un singur cont",
+        "Criptare completă, fără funcții blocate",
+        "Cumpără oricând un pachet de mesaje"
+      ],
+      "note": "Aplicația în sine e gratuită. Trimiterea costă, deci un cont gratuit nu are cotă sponsorizată - reîncarcă cu un pachet sau abonează-te."
+    },
+    "plus": {
+      "per": "lună",
+      "allowance": "{n} mesaje pe lună",
+      "perks": [
+        "Până la 3 conturi",
+        "Bifă de verificare",
+        "Cota se reînnoiește lunar"
+      ],
+      "note": "Planul pe care îl vrea cei mai mulți. Traficul de acoperire consumă din această cotă, de aceea e oprit implicit."
+    },
+    "pro": {
+      "per": "lună",
+      "allowance": "{n} mesaje pe lună",
+      "perks": [
+        "Până la 3 conturi",
+        "Bifă de verificare",
+        "Cea mai mare cotă lunară"
+      ],
+      "note": "Pentru utilizare intensă sau pentru a ține traficul de acoperire pornit fără să urmărești contorul."
+    }
+  },
+  "packs": {
+    "heading": "Pachete unice de mesaje",
+    "lead": "Pachetele nu expiră niciodată și se adaugă peste orice cotă de abonament. Sunt modul de a folosi PrivaMesh fără o plată recurentă.",
+    "caption": "Pachete unice de mesaje PrivaMesh și prețuri",
+    "colPack": "Pachet",
+    "colPrice": "Preț",
+    "colPer": "Per mesaj",
+    "row": "{n} mesaje",
+    "per100": "{price} la 100"
+  },
+  "prose": {
+    "meterHeading": "De ce există un contor",
+    "meter": [
+      "Majoritatea aplicațiilor de mesagerie sunt gratuite pentru că le subvenționează ceva - reclamele, datele sau capitalul de risc care așteaptă una dintre ele. PrivaMesh nu are reclame și nimic de vândut, pentru că nu colectează nimic de vândut. Ce are e un cost marginal real: fiecare mesaj e o tranzacție Solana cu o taxă de rețea.",
+      "Un serviciu plătește acea taxă ca să nu trebuiască niciodată să deții SOL sau să te gândești la soldul unui portofel. Cota finanțează serviciul. E un contor onest al unui cost real, nu un zid de plată în fața unei funcții - criptarea, protecția metadatelor și toate proprietățile de securitate sunt identice în fiecare plan."
+    ],
+    "trackedHeading": "Să plătești fără să fii urmărit",
+    "tracked": [
+      "Taxarea creează propria problemă de confidențialitate: a dovedi că ai plătit înseamnă de obicei să atașezi o chitanță la fiecare cerere, iar atunci operatorul poate lega cumpărarea de activitate. PrivaMesh dovedește abonamentul o singură dată și primește un set de semnături oarbe RSA; fiecare trimitere consumă un jeton care nu poate fi legat înapoi. [Pagina de arhitectură](/architecture) arată exact ce poate și ce nu poate vedea serviciul de taxe."
+    ]
+  },
+  "faq": [
+    {
+      "q": "De ce costă trimiterea mesajelor?",
+      "a": "Fiecare mesaj e o tranzacție Solana și fiecare tranzacție costă o taxă de rețea. Serviciul nostru de taxe o plătește ca să nu trebuiască niciodată să deții SOL. Cota finanțează asta - contorul reflectă un cost real per mesaj, nu o limită artificială."
+    },
+    {
+      "q": "Ce se întâmplă când rămân fără mesaje?",
+      "a": "Trimiterea se oprește până se reînnoiește cota sau cumperi un pachet. Primirea, citirea și conversațiile existente nu sunt afectate. Nu se șterge nimic și niciun cont nu e blocat."
+    },
+    {
+      "q": "Plata îmi leagă cumpărarea de mesaje?",
+      "a": "Nu, iar evitarea asta a cerut muncă reală. Aplicația dovedește abonamentul o dată și primește un set de semnături oarbe RSA; fiecare trimitere consumă un jeton. Serviciul de taxe poate verifica dacă un jeton e valid și necheltuit, dar nu îl poate lega nici de cumpărare, nici de alt jeton."
+    },
+    {
+      "q": "Acestea sunt prețurile pe care le voi plăti?",
+      "a": "Acestea sunt prețurile planurilor din SUA. Apple ajustează prețurile pe regiuni, așa că suma în moneda ta e cea pe care o arată App Store în contul tău - acea sumă, nu această pagină, contează."
+    },
+    {
+      "q": "Cum anulez?",
+      "a": "Abonamentele sunt facturate de Apple, deci anulează în aplicația Configurări din iOS, la numele tău, apoi Abonamente. Rambursările se fac prin reportaproblem.apple.com. Nu putem face niciuna în locul tău."
+    }
+  ],
+  "related": [
+    {
+      "href": "/architecture",
+      "label": "Arhitectură",
+      "blurb": "Ce vede serviciul de taxe și de ce jetoanele oarbe fac parte din design."
+    },
+    {
+      "href": "/limitations",
+      "label": "Limitări cunoscute",
+      "blurb": "Inclusiv ce se întâmplă când se termină cota."
+    },
+    {
+      "href": "/support",
+      "label": "Asistență",
+      "blurb": "Gestionarea sau anularea unui abonament și rambursări prin Apple."
+    }
+  ]
+}

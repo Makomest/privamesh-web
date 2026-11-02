@@ -1,0 +1,105 @@
+{
+  "meta": {
+    "title": "Preus i quotes de missatges",
+    "description": "El que costa PrivaMesh: baixada gratuïta, Plus a {plus} amb {plusN} missatges al mes, Pro a {pro} amb {proN} i paquets solts. I per què els missatges tenen un cost."
+  },
+  "eyebrow": "Preus",
+  "title": "Preus i quotes de missatges",
+  "lead": "L'app es baixa gratis. L'enviament té un cost perquè cada missatge és una transacció de pagament en una cadena pública: aquí tens exactament quant costa i per què.",
+  "cta": "Obtén PrivaMesh",
+  "summary": "PrivaMesh s'instal·la gratis. Plus costa {plus} al mes per {plusN} missatges, Pro {pro} per {proN}, i els paquets solts comencen a {packFrom}. No hi ha quota gratuïta patrocinada, perquè cada missatge costa una comissió de xarxa real que algú ha de pagar.",
+  "tiers": {
+    "free": {
+      "name": "Gratis",
+      "price": "Gratis",
+      "per": "baixada",
+      "allowance": "{n} missatges patrocinats",
+      "perks": [
+        "Un compte",
+        "Xifratge complet, sense funcions retallades",
+        "Compra un paquet de missatges quan vulguis"
+      ],
+      "note": "L'app en si és gratuïta. L'enviament té un cost, així que un compte gratuït no té quota patrocinada: recarrega amb un paquet o subscriu-te."
+    },
+    "plus": {
+      "per": "mes",
+      "allowance": "{n} missatges al mes",
+      "perks": [
+        "Fins a 3 comptes",
+        "Insígnia de verificació",
+        "La quota es renova cada mes"
+      ],
+      "note": "El pla que vol la majoria. El trànsit de cobertura gasta d'aquesta quota, per això està desactivat per defecte."
+    },
+    "pro": {
+      "per": "mes",
+      "allowance": "{n} missatges al mes",
+      "perks": [
+        "Fins a 3 comptes",
+        "Insígnia de verificació",
+        "La quota mensual més alta"
+      ],
+      "note": "Per a un ús intensiu, o per mantenir el trànsit de cobertura actiu sense estar pendent del comptador."
+    }
+  },
+  "packs": {
+    "heading": "Paquets de missatges solts",
+    "lead": "Els paquets no caduquen mai i se sumen a qualsevol quota de subscripció. Són la manera d'utilitzar PrivaMesh sense un càrrec recurrent.",
+    "caption": "Paquets de missatges solts de PrivaMesh i preus",
+    "colPack": "Paquet",
+    "colPrice": "Preu",
+    "colPer": "Per missatge",
+    "row": "{n} missatges",
+    "per100": "{price} cada 100"
+  },
+  "prose": {
+    "meterHeading": "Per què hi ha un comptador",
+    "meter": [
+      "La majoria d'apps de missatgeria són gratuïtes perquè alguna cosa les subvenciona: anuncis, dades o capital de risc esperant una de les dues. PrivaMesh no té anuncis ni res per vendre, perquè no recull res que es pugui vendre. El que sí té és un cost marginal real: cada missatge és una transacció de Solana amb una comissió de xarxa.",
+      "Un servei paga aquesta comissió perquè mai no hagis de tenir SOL ni pensar en el saldo d'un moneder. La quota és el que finança aquest servei. És un comptador honest d'un cost real, no un mur de pagament davant d'una funció: el xifratge, la protecció de metadades i totes les propietats de seguretat són iguals en tots els plans."
+    ],
+    "trackedHeading": "Pagar sense ser rastrejat",
+    "tracked": [
+      "Cobrar crea el seu propi problema de privadesa: demostrar que has pagat sol voler dir adjuntar un rebut a cada petició, i aleshores l'operador pot vincular la compra amb l'activitat. PrivaMesh demostra la subscripció una sola vegada i rep un lot de signatures cegues RSA; cada enviament gasta un testimoni que no es pot vincular. [La pàgina d'arquitectura](/architecture) mostra exactament què pot i què no pot veure el servei de comissions."
+    ]
+  },
+  "faq": [
+    {
+      "q": "Per què té cost enviar missatges?",
+      "a": "Cada missatge és una transacció de Solana i cada transacció costa una comissió de xarxa. El nostre servei de comissions la paga perquè mai no hagis de tenir SOL. La quota ho finança: el comptador reflecteix un cost real per missatge, no un límit artificial."
+    },
+    {
+      "q": "Què passa si em quedo sense missatges?",
+      "a": "L'enviament s'atura fins que la quota es renovi o compris un paquet. Rebre, llegir i les converses existents no es veuen afectats. No s'esborra res ni es bloqueja cap compte."
+    },
+    {
+      "q": "Pagar vincula la meva compra amb els meus missatges?",
+      "a": "No, i evitar-ho va costar feina de debò. L'app demostra la subscripció una vegada i rep un lot de signatures cegues RSA; cada enviament gasta un testimoni. El servei de comissions pot comprovar que un testimoni és vàlid i no s'ha gastat, però no el pot vincular amb la compra ni amb cap altre testimoni."
+    },
+    {
+      "q": "Són aquests els preus que pagaré?",
+      "a": "Són els preus dels plans als EUA. Apple adapta els preus per regió, així que l'import en la teva moneda és el que mostra l'App Store al teu compte: aquesta xifra, no aquesta pàgina, és la que val."
+    },
+    {
+      "q": "Com cancel·lo?",
+      "a": "Les subscripcions les cobra Apple, així que cancel·la a l'app Configuració d'iOS, al teu nom i després Subscripcions. Els reemborsaments van per reportaproblem.apple.com. No podem fer cap de les dues coses per tu."
+    }
+  ],
+  "related": [
+    {
+      "href": "/architecture",
+      "label": "Arquitectura",
+      "blurb": "Què veu el servei de comissions i per què els testimonis cecs formen part del disseny."
+    },
+    {
+      "href": "/limitations",
+      "label": "Limitacions conegudes",
+      "blurb": "Inclòs què passa quan s'acaba la quota."
+    },
+    {
+      "href": "/support",
+      "label": "Assistència",
+      "blurb": "Gestionar o cancel·lar una subscripció i reemborsaments a través d'Apple."
+    }
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "meta": {
+    "title": "Prijzen en berichttegoeden",
+    "description": "Wat PrivaMesh kost: een gratis download, Plus voor {plus} met {plusN} berichten per maand, Pro voor {pro} met {proN}, en losse bundels. En waarom berichten überhaupt geld kosten."
+  },
+  "eyebrow": "Prijzen",
+  "title": "Prijzen en berichttegoeden",
+  "lead": "De app is een gratis download. Versturen kost geld omdat elk bericht een betaalde transactie op een openbare blockchain is - hier staat precies wat dat kost en waarom.",
+  "cta": "PrivaMesh downloaden",
+  "summary": "PrivaMesh is gratis te installeren. Plus kost {plus} per maand voor {plusN} berichten, Pro {pro} voor {proN}, en losse bundels beginnen bij {packFrom}. Er is geen gratis gesponsord tegoed, omdat elk bericht echte netwerkkosten heeft die iemand moet betalen.",
+  "tiers": {
+    "free": {
+      "name": "Gratis",
+      "price": "Gratis",
+      "per": "download",
+      "allowance": "{n} gesponsorde berichten",
+      "perks": [
+        "Eén account",
+        "Volledige versleuteling, geen afgeschermde functies",
+        "Koop op elk moment een berichtenbundel"
+      ],
+      "note": "De app zelf is gratis. Versturen kost geld, dus een gratis account heeft geen gesponsord tegoed - vul aan met een bundel of neem een abonnement."
+    },
+    "plus": {
+      "per": "maand",
+      "allowance": "{n} berichten per maand",
+      "perks": [
+        "Tot 3 accounts",
+        "Verificatievinkje",
+        "Tegoed wordt maandelijks vernieuwd"
+      ],
+      "note": "Het abonnement dat de meeste mensen willen. Dekverkeer gaat van dit tegoed af, daarom staat het standaard uit."
+    },
+    "pro": {
+      "per": "maand",
+      "allowance": "{n} berichten per maand",
+      "perks": [
+        "Tot 3 accounts",
+        "Verificatievinkje",
+        "Hoogste maandtegoed"
+      ],
+      "note": "Voor intensief gebruik, of om dekverkeer continu te laten draaien zonder op de teller te letten."
+    }
+  },
+  "packs": {
+    "heading": "Losse berichtenbundels",
+    "lead": "Bundels verlopen nooit en komen bovenop elk abonnementstegoed. Zo gebruik je PrivaMesh zonder terugkerende betaling.",
+    "caption": "Losse berichtenbundels van PrivaMesh en prijzen",
+    "colPack": "Bundel",
+    "colPrice": "Prijs",
+    "colPer": "Per bericht",
+    "row": "{n} berichten",
+    "per100": "{price} per 100"
+  },
+  "prose": {
+    "meterHeading": "Waarom er überhaupt een teller is",
+    "meter": [
+      "De meeste messengers zijn gratis omdat iets ze subsidieert - advertenties, gegevens, of durfkapitaal dat op een van beide wacht. PrivaMesh heeft geen advertenties en niets te verkopen, omdat het niets verzamelt om te verkopen. Wat het wel heeft, is een echte marginale kostprijs: elk bericht is een Solana-transactie met netwerkkosten.",
+      "Een service betaalt die kosten, zodat je nooit SOL hoeft te bezitten of aan een walletsaldo hoeft te denken. Het tegoed financiert die service. Het is een eerlijke teller van echte kosten, geen betaalmuur voor een functie - versleuteling, bescherming van metadata en elke beveiligingseigenschap zijn in elk abonnement gelijk."
+    ],
+    "trackedHeading": "Betalen zonder gevolgd te worden",
+    "tracked": [
+      "Afrekenen brengt een eigen privacyprobleem mee: bewijzen dat je betaald hebt, betekent meestal een bon aan elk verzoek hangen, waarna de beheerder aankoop en activiteit kan koppelen. PrivaMesh bewijst het abonnement één keer en krijgt een voorraad blinde RSA-handtekeningen; elke verzending besteedt één token dat niet terug te koppelen is. [De architectuurpagina](/architecture) laat precies zien wat de kostenservice wel en niet kan zien."
+    ]
+  },
+  "faq": [
+    {
+      "q": "Waarom kost versturen überhaupt geld?",
+      "a": "Elk bericht is een Solana-transactie en elke transactie kost netwerkkosten. Onze kostenservice betaalt die, zodat je nooit SOL hoeft te bezitten. Het tegoed financiert dat - de teller weerspiegelt echte kosten per bericht, geen kunstmatige limiet."
+    },
+    {
+      "q": "Wat gebeurt er als mijn berichten op zijn?",
+      "a": "Versturen stopt tot het tegoed wordt vernieuwd of je een bundel koopt. Ontvangen, lezen en bestaande gesprekken blijven werken. Er wordt niets gewist en geen account geblokkeerd."
+    },
+    {
+      "q": "Koppelt betalen mijn aankoop aan mijn berichten?",
+      "a": "Nee, en dat vermijden kostte echt werk. De app bewijst het abonnement één keer en krijgt een voorraad blinde RSA-handtekeningen; elke verzending besteedt één token. De kostenservice kan controleren of een token geldig en onbesteed is, maar kan het niet koppelen aan de aankoop of aan een ander token."
+    },
+    {
+      "q": "Zijn dit de prijzen die ik echt betaal?",
+      "a": "Dit zijn de Amerikaanse abonnementsprijzen. Apple past prijzen per regio aan, dus het bedrag in jouw valuta is wat de App Store in je account toont - dat bedrag, niet deze pagina, is bepalend."
+    },
+    {
+      "q": "Hoe zeg ik op?",
+      "a": "Abonnementen worden via Apple gefactureerd, dus zeg op in de iOS-app Instellingen, onder je naam en dan Abonnementen. Terugbetalingen gaan via reportaproblem.apple.com. Geen van beide kunnen wij voor je regelen."
+    }
+  ],
+  "related": [
+    {
+      "href": "/architecture",
+      "label": "Architectuur",
+      "blurb": "Wat de kostenservice ziet en waarom blinde tokens in het ontwerp zitten."
+    },
+    {
+      "href": "/limitations",
+      "label": "Bekende beperkingen",
+      "blurb": "Inclusief wat er gebeurt als het tegoed op is."
+    },
+    {
+      "href": "/support",
+      "label": "Ondersteuning",
+      "blurb": "Een abonnement beheren of opzeggen, en terugbetalingen via Apple."
+    }
+  ]
+}

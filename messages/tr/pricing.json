@@ -1,0 +1,105 @@
+{
+  "meta": {
+    "title": "Fiyatlandırma ve mesaj kotaları",
+    "description": "PrivaMesh'in maliyeti: ücretsiz indirme, ayda {plusN} mesajla {plus} karşılığında Plus, {proN} mesajla {pro} karşılığında Pro ve tek seferlik paketler. Ve mesajların neden ücretli olduğu."
+  },
+  "eyebrow": "Fiyatlandırma",
+  "title": "Fiyatlandırma ve mesaj kotaları",
+  "lead": "Uygulama ücretsiz indirilir. Gönderim ücretlidir, çünkü her mesaj herkese açık bir zincirde ücretli bir işlemdir - neye ne kadar ödediğiniz ve nedeni burada.",
+  "cta": "PrivaMesh'i edinin",
+  "summary": "PrivaMesh'i kurmak ücretsizdir. Plus ayda {plusN} mesaj için {plus}, Pro {proN} mesaj için {pro} ve tek seferlik paketler {packFrom} ile başlar. Ücretsiz sponsorlu kota yoktur, çünkü her mesajın birinin ödemesi gereken gerçek bir ağ ücreti vardır.",
+  "tiers": {
+    "free": {
+      "name": "Ücretsiz",
+      "price": "Ücretsiz",
+      "per": "indirme",
+      "allowance": "{n} sponsorlu mesaj",
+      "perks": [
+        "Tek hesap",
+        "Tam şifreleme, kısıtlanmış özellik yok",
+        "İstediğiniz zaman mesaj paketi alın"
+      ],
+      "note": "Uygulamanın kendisi ücretsizdir. Gönderim ücretlidir, bu yüzden ücretsiz bir hesabın sponsorlu kotası yoktur - bir paketle yükleyin ya da abone olun."
+    },
+    "plus": {
+      "per": "ay",
+      "allowance": "Ayda {n} mesaj",
+      "perks": [
+        "En fazla 3 hesap",
+        "Doğrulama işareti",
+        "Kota her ay yenilenir"
+      ],
+      "note": "Çoğu kişinin istediği plan. Örtü trafiği bu kotadan harcar, bu yüzden varsayılan olarak kapalıdır."
+    },
+    "pro": {
+      "per": "ay",
+      "allowance": "Ayda {n} mesaj",
+      "perks": [
+        "En fazla 3 hesap",
+        "Doğrulama işareti",
+        "En yüksek aylık kota"
+      ],
+      "note": "Yoğun kullanım için ya da sayaca bakmadan örtü trafiğini sürekli açık tutmak için."
+    }
+  },
+  "packs": {
+    "heading": "Tek seferlik mesaj paketleri",
+    "lead": "Paketlerin süresi hiç dolmaz ve her abonelik kotasının üzerine eklenir. PrivaMesh'i düzenli ödeme olmadan kullanmanın yolu budur.",
+    "caption": "PrivaMesh tek seferlik mesaj paketleri ve fiyatları",
+    "colPack": "Paket",
+    "colPrice": "Fiyat",
+    "colPer": "Mesaj başına",
+    "row": "{n} mesaj",
+    "per100": "100 mesaj için {price}"
+  },
+  "prose": {
+    "meterHeading": "Neden bir sayaç var",
+    "meter": [
+      "Çoğu mesajlaşma uygulaması bir şey tarafından sübvanse edildiği için ücretsizdir - reklamlar, veriler ya da bunlardan birini bekleyen girişim sermayesi. PrivaMesh'in reklamı ve satacak bir şeyi yoktur, çünkü satılacak hiçbir şey toplamaz. Olan şey gerçek bir marjinal maliyettir: her mesaj, ağ ücreti olan bir Solana işlemidir.",
+      "Bir hizmet bu ücreti öder, böylece hiç SOL tutmanız ya da cüzdan bakiyesi düşünmeniz gerekmez. Kota bu hizmeti finanse eder. Bu, bir özelliğin önüne konmuş bir ödeme duvarı değil, gerçek bir maliyetin dürüst sayacıdır - şifreleme, meta veri koruması ve tüm güvenlik özellikleri her planda aynıdır."
+    ],
+    "trackedHeading": "İzlenmeden ödemek",
+    "tracked": [
+      "Ücretlendirme kendi gizlilik sorununu yaratır: ödediğinizi kanıtlamak genellikle her isteğe bir makbuz eklemek anlamına gelir ve o noktada işletmeci satın almayı etkinliğe bağlayabilir. PrivaMesh aboneliği bir kez kanıtlar ve bir grup RSA kör imzası alır; her gönderim, geriye bağlanamayan bir jeton harcar. [Mimari sayfası](/architecture), ücret hizmetinin neyi görüp neyi göremediğini tam olarak gösterir."
+    ]
+  },
+  "faq": [
+    {
+      "q": "Mesaj göndermek neden ücretli?",
+      "a": "Her mesaj bir Solana işlemidir ve her işlem bir ağ ücretine mal olur. Ücret hizmetimiz bunu öder, böylece hiç SOL tutmanız gerekmez. Kota bunu finanse eder - sayaç yapay bir sınırı değil, mesaj başına gerçek maliyeti yansıtır."
+    },
+    {
+      "q": "Mesajlarım biterse ne olur?",
+      "a": "Kota yenilenene ya da bir paket alana kadar gönderim durur. Alma, okuma ve mevcut konuşmalarınız etkilenmez. Hiçbir şey silinmez, hiçbir hesap kilitlenmez."
+    },
+    {
+      "q": "Ödeme yapmak satın alımımı mesajlarıma bağlar mı?",
+      "a": "Hayır, ve bunu önlemek gerçek bir emek istedi. Uygulama aboneliği bir kez kanıtlar ve bir grup RSA kör imzası alır; her gönderim bir jeton harcar. Ücret hizmeti bir jetonun geçerli ve harcanmamış olduğunu doğrulayabilir ama onu ne satın almaya ne de başka bir jetona bağlayabilir."
+    },
+    {
+      "q": "Ödeyeceğim fiyatlar bunlar mı?",
+      "a": "Bunlar ABD plan fiyatlarıdır. Apple fiyatları bölgeye göre ayarlar, bu yüzden yerel para biriminizdeki tutar App Store'un hesabınızda gösterdiğidir - geçerli olan bu sayfa değil, o tutardır."
+    },
+    {
+      "q": "Nasıl iptal ederim?",
+      "a": "Abonelikler Apple üzerinden faturalandırılır, bu yüzden iOS Ayarlar uygulamasında adınıza, sonra Abonelikler'e giderek iptal edin. İadeler reportaproblem.apple.com üzerinden yapılır. İkisini de sizin yerinize yapamayız."
+    }
+  ],
+  "related": [
+    {
+      "href": "/architecture",
+      "label": "Mimari",
+      "blurb": "Ücret hizmetinin ne gördüğü ve kör jetonların tasarımda neden yer aldığı."
+    },
+    {
+      "href": "/limitations",
+      "label": "Bilinen sınırlamalar",
+      "blurb": "Kota bittiğinde ne olduğu dahil."
+    },
+    {
+      "href": "/support",
+      "label": "Destek",
+      "blurb": "Aboneliği yönetme ya da iptal etme ve Apple üzerinden iadeler."
+    }
+  ]
+}

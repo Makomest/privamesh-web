@@ -1,0 +1,105 @@
+{
+  "meta": {
+    "title": "Preços e franquias de mensagens",
+    "description": "Quanto custa o PrivaMesh: download gratuito, Plus por {plus} com {plusN} mensagens por mês, Pro por {pro} com {proN} e pacotes avulsos. E por que as mensagens são cobradas."
+  },
+  "eyebrow": "Preços",
+  "title": "Preços e franquias de mensagens",
+  "lead": "O app é gratuito para baixar. O envio é cobrado porque cada mensagem é uma transação paga em uma blockchain pública - veja exatamente quanto custa e por quê.",
+  "cta": "Baixar o PrivaMesh",
+  "summary": "O PrivaMesh é gratuito para instalar. O Plus custa {plus} por mês por {plusN} mensagens, o Pro {pro} por {proN}, e os pacotes avulsos começam em {packFrom}. Não há franquia gratuita patrocinada, porque cada mensagem custa uma taxa de rede real que alguém precisa pagar.",
+  "tiers": {
+    "free": {
+      "name": "Grátis",
+      "price": "Grátis",
+      "per": "download",
+      "allowance": "{n} mensagens patrocinadas",
+      "perks": [
+        "Uma conta",
+        "Criptografia completa, sem recursos bloqueados",
+        "Compre um pacote de mensagens quando quiser"
+      ],
+      "note": "O app em si é gratuito. O envio é cobrado, então uma conta gratuita não tem franquia patrocinada - recarregue com um pacote ou assine."
+    },
+    "plus": {
+      "per": "mês",
+      "allowance": "{n} mensagens por mês",
+      "perks": [
+        "Até 3 contas",
+        "Selo de verificação",
+        "A franquia renova todo mês"
+      ],
+      "note": "O plano que a maioria quer. O tráfego de cobertura consome desta franquia, por isso vem desligado por padrão."
+    },
+    "pro": {
+      "per": "mês",
+      "allowance": "{n} mensagens por mês",
+      "perks": [
+        "Até 3 contas",
+        "Selo de verificação",
+        "A maior franquia mensal"
+      ],
+      "note": "Para uso intenso, ou para manter o tráfego de cobertura ligado sem ficar de olho no contador."
+    }
+  },
+  "packs": {
+    "heading": "Pacotes de mensagens avulsos",
+    "lead": "Os pacotes nunca expiram e se somam a qualquer franquia de assinatura. São o jeito de usar o PrivaMesh sem cobrança recorrente.",
+    "caption": "Pacotes de mensagens avulsos do PrivaMesh e preços",
+    "colPack": "Pacote",
+    "colPrice": "Preço",
+    "colPer": "Por mensagem",
+    "row": "{n} mensagens",
+    "per100": "{price} a cada 100"
+  },
+  "prose": {
+    "meterHeading": "Por que existe um contador",
+    "meter": [
+      "A maioria dos mensageiros é gratuita porque algo os subsidia - anúncios, dados ou capital de risco esperando um dos dois. O PrivaMesh não tem anúncios nem nada para vender, porque não coleta nada vendável. O que ele tem é um custo marginal real: cada mensagem é uma transação Solana com uma taxa de rede.",
+      "Um serviço paga essa taxa para que você nunca precise ter SOL nem pensar em saldo de carteira. A franquia é o que financia esse serviço. É um contador honesto de um custo real, não um paywall na frente de um recurso - criptografia, proteção de metadados e todas as propriedades de segurança são iguais em todos os planos."
+    ],
+    "trackedHeading": "Pagar sem ser rastreado",
+    "tracked": [
+      "Cobrar cria seu próprio problema de privacidade: provar que você pagou normalmente significa anexar um recibo a cada solicitação, e aí o operador consegue ligar a compra à atividade. O PrivaMesh comprova a assinatura uma vez e recebe um lote de assinaturas cegas RSA; cada envio gasta um token que não pode ser ligado de volta. [A página de arquitetura](/architecture) mostra exatamente o que o serviço de taxas consegue e não consegue ver."
+    ]
+  },
+  "faq": [
+    {
+      "q": "Por que o envio de mensagens é cobrado?",
+      "a": "Cada mensagem é uma transação Solana e cada transação custa uma taxa de rede. Nosso serviço de taxas paga essa taxa para que você nunca precise ter SOL. A franquia financia isso - o contador reflete um custo real por mensagem, não um limite artificial."
+    },
+    {
+      "q": "O que acontece quando minhas mensagens acabam?",
+      "a": "O envio para até a franquia renovar ou você comprar um pacote. Receber, ler e suas conversas existentes não são afetados. Nada é apagado e nenhuma conta é bloqueada."
+    },
+    {
+      "q": "Pagar liga minha compra às minhas mensagens?",
+      "a": "Não, e evitar isso deu trabalho de verdade. O app comprova a assinatura uma vez e recebe um lote de assinaturas cegas RSA; cada envio gasta um token. O serviço de taxas consegue verificar que um token é válido e não foi gasto, mas não consegue ligá-lo à compra nem a outro token."
+    },
+    {
+      "q": "Esses são os preços que vou pagar?",
+      "a": "Esses são os preços dos planos nos EUA. A Apple regionaliza os preços, então o valor na sua moeda é o que a App Store mostra na sua conta - esse valor, e não esta página, é o que vale."
+    },
+    {
+      "q": "Como cancelo?",
+      "a": "As assinaturas são cobradas pela Apple, então cancele no app Ajustes do iOS, no seu nome e depois em Assinaturas. Reembolsos são feitos em reportaproblem.apple.com. Não podemos fazer nenhum dos dois por você."
+    }
+  ],
+  "related": [
+    {
+      "href": "/architecture",
+      "label": "Arquitetura",
+      "blurb": "O que o serviço de taxas vê e por que os tokens cegos fazem parte do design."
+    },
+    {
+      "href": "/limitations",
+      "label": "Limitações conhecidas",
+      "blurb": "Inclusive o que acontece quando a franquia acaba."
+    },
+    {
+      "href": "/support",
+      "label": "Suporte",
+      "blurb": "Gerenciar ou cancelar uma assinatura e reembolsos pela Apple."
+    }
+  ]
+}

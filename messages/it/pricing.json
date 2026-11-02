@@ -1,0 +1,105 @@
+{
+  "meta": {
+    "title": "Prezzi e quote di messaggi",
+    "description": "Quanto costa PrivaMesh: download gratuito, Plus a {plus} con {plusN} messaggi al mese, Pro a {pro} con {proN} e pacchetti singoli. E perché i messaggi hanno un costo."
+  },
+  "eyebrow": "Prezzi",
+  "title": "Prezzi e quote di messaggi",
+  "lead": "L'app si scarica gratis. L'invio ha un costo perché ogni messaggio è una transazione a pagamento su una blockchain pubblica: ecco esattamente quanto costa e perché.",
+  "cta": "Scarica PrivaMesh",
+  "summary": "PrivaMesh si installa gratis. Plus costa {plus} al mese per {plusN} messaggi, Pro {pro} per {proN}, e i pacchetti singoli partono da {packFrom}. Non c'è una quota gratuita sponsorizzata, perché ogni messaggio costa una vera commissione di rete che qualcuno deve pagare.",
+  "tiers": {
+    "free": {
+      "name": "Gratis",
+      "price": "Gratis",
+      "per": "download",
+      "allowance": "{n} messaggi sponsorizzati",
+      "perks": [
+        "Un account",
+        "Crittografia completa, nessuna funzione limitata",
+        "Acquista un pacchetto di messaggi quando vuoi"
+      ],
+      "note": "L'app in sé è gratuita. L'invio ha un costo, quindi un account gratuito non ha una quota sponsorizzata: ricarica con un pacchetto o abbonati."
+    },
+    "plus": {
+      "per": "mese",
+      "allowance": "{n} messaggi al mese",
+      "perks": [
+        "Fino a 3 account",
+        "Spunta di verifica",
+        "La quota si rinnova ogni mese"
+      ],
+      "note": "Il piano che vuole la maggior parte delle persone. Il traffico di copertura consuma questa quota, per questo è disattivato per impostazione predefinita."
+    },
+    "pro": {
+      "per": "mese",
+      "allowance": "{n} messaggi al mese",
+      "perks": [
+        "Fino a 3 account",
+        "Spunta di verifica",
+        "La quota mensile più alta"
+      ],
+      "note": "Per un uso intenso, o per tenere attivo il traffico di copertura senza guardare il contatore."
+    }
+  },
+  "packs": {
+    "heading": "Pacchetti di messaggi singoli",
+    "lead": "I pacchetti non scadono mai e si sommano a qualsiasi quota di abbonamento. Sono il modo per usare PrivaMesh senza un addebito ricorrente.",
+    "caption": "Pacchetti di messaggi singoli di PrivaMesh e prezzi",
+    "colPack": "Pacchetto",
+    "colPrice": "Prezzo",
+    "colPer": "Per messaggio",
+    "row": "{n} messaggi",
+    "per100": "{price} ogni 100"
+  },
+  "prose": {
+    "meterHeading": "Perché esiste un contatore",
+    "meter": [
+      "La maggior parte delle app di messaggistica è gratuita perché qualcosa la sovvenziona: pubblicità, dati o capitale di rischio in attesa di uno dei due. PrivaMesh non ha pubblicità e niente da vendere, perché non raccoglie niente da vendere. Quello che ha è un vero costo marginale: ogni messaggio è una transazione Solana con una commissione di rete.",
+      "Un servizio paga quella commissione così non devi mai possedere SOL né pensare al saldo di un portafoglio. La quota è ciò che finanzia il servizio. È un contatore onesto di un costo reale, non un muro a pagamento davanti a una funzione: crittografia, protezione dei metadati e ogni proprietà di sicurezza sono identiche in ogni piano."
+    ],
+    "trackedHeading": "Pagare senza essere tracciati",
+    "tracked": [
+      "Far pagare crea un proprio problema di privacy: dimostrare di aver pagato di solito significa allegare una ricevuta a ogni richiesta, e a quel punto l'operatore può collegare l'acquisto all'attività. PrivaMesh dimostra l'abbonamento una sola volta e riceve una serie di firme cieche RSA; ogni invio spende un token che non può essere ricollegato. [La pagina dell'architettura](/architecture) mostra esattamente cosa il servizio delle commissioni può e non può vedere."
+    ]
+  },
+  "faq": [
+    {
+      "q": "Perché l'invio dei messaggi ha un costo?",
+      "a": "Ogni messaggio è una transazione Solana e ogni transazione costa una commissione di rete. Il nostro servizio delle commissioni la paga perché tu non debba mai possedere SOL. La quota la finanzia: il contatore riflette un costo reale per messaggio, non un limite artificiale."
+    },
+    {
+      "q": "Cosa succede quando finisco i messaggi?",
+      "a": "L'invio si ferma finché la quota non si rinnova o non acquisti un pacchetto. Ricezione, lettura e conversazioni esistenti non sono toccate. Non viene cancellato nulla e nessun account viene bloccato."
+    },
+    {
+      "q": "Pagare collega il mio acquisto ai miei messaggi?",
+      "a": "No, ed evitarlo ha richiesto un vero lavoro. L'app dimostra l'abbonamento una volta e riceve una serie di firme cieche RSA; ogni invio spende un token. Il servizio delle commissioni può verificare che un token sia valido e non speso, ma non può collegarlo all'acquisto né a nessun altro token."
+    },
+    {
+      "q": "Sono questi i prezzi che pagherò?",
+      "a": "Sono i prezzi dei piani negli Stati Uniti. Apple adatta i prezzi per regione, quindi l'importo nella tua valuta è quello che l'App Store mostra nel tuo account: vale quella cifra, non questa pagina."
+    },
+    {
+      "q": "Come annullo?",
+      "a": "Gli abbonamenti sono addebitati da Apple, quindi annulla nell'app Impostazioni di iOS, sotto il tuo nome e poi Abbonamenti. I rimborsi passano da reportaproblem.apple.com. Non possiamo fare né l'una né l'altra cosa al posto tuo."
+    }
+  ],
+  "related": [
+    {
+      "href": "/architecture",
+      "label": "Architettura",
+      "blurb": "Cosa vede il servizio delle commissioni e perché i token ciechi fanno parte del progetto."
+    },
+    {
+      "href": "/limitations",
+      "label": "Limiti noti",
+      "blurb": "Compreso cosa succede quando la quota finisce."
+    },
+    {
+      "href": "/support",
+      "label": "Assistenza",
+      "blurb": "Gestire o annullare un abbonamento e rimborsi tramite Apple."
+    }
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "meta": {
+    "title": "Tarifs et quotas de messages",
+    "description": "Ce que coûte PrivaMesh : un téléchargement gratuit, Plus à {plus} pour {plusN} messages par mois, Pro à {pro} pour {proN}, et des packs ponctuels. Et pourquoi les messages sont facturés."
+  },
+  "eyebrow": "Tarifs",
+  "title": "Tarifs et quotas de messages",
+  "lead": "L'app se télécharge gratuitement. L'envoi est facturé parce que chaque message est une transaction payante sur une blockchain publique - voici exactement ce que cela coûte et pourquoi.",
+  "cta": "Obtenir PrivaMesh",
+  "summary": "PrivaMesh s'installe gratuitement. Plus coûte {plus} par mois pour {plusN} messages, Pro {pro} pour {proN}, et les packs ponctuels commencent à {packFrom}. Il n'y a pas de quota gratuit financé, parce que chaque message coûte de vrais frais de réseau que quelqu'un doit payer.",
+  "tiers": {
+    "free": {
+      "name": "Gratuit",
+      "price": "Gratuit",
+      "per": "téléchargement",
+      "allowance": "{n} messages financés",
+      "perks": [
+        "Un compte",
+        "Chiffrement complet, aucune fonction bridée",
+        "Achetez un pack de messages à tout moment"
+      ],
+      "note": "L'app elle-même est gratuite. L'envoi est facturé, donc un compte gratuit n'a pas de quota financé - rechargez avec un pack ou abonnez-vous."
+    },
+    "plus": {
+      "per": "mois",
+      "allowance": "{n} messages par mois",
+      "perks": [
+        "Jusqu'à 3 comptes",
+        "Badge vérifié",
+        "Quota renouvelé chaque mois"
+      ],
+      "note": "L'offre que veulent la plupart des gens. Le trafic de couverture puise dans ce quota, c'est pourquoi il est désactivé par défaut."
+    },
+    "pro": {
+      "per": "mois",
+      "allowance": "{n} messages par mois",
+      "perks": [
+        "Jusqu'à 3 comptes",
+        "Badge vérifié",
+        "Le plus grand quota mensuel"
+      ],
+      "note": "Pour un usage intensif, ou pour laisser tourner le trafic de couverture en continu sans surveiller le compteur."
+    }
+  },
+  "packs": {
+    "heading": "Packs de messages ponctuels",
+    "lead": "Les packs n'expirent jamais et s'ajoutent à n'importe quel quota d'abonnement. C'est la façon d'utiliser PrivaMesh sans paiement récurrent.",
+    "caption": "Packs de messages ponctuels PrivaMesh et leurs prix",
+    "colPack": "Pack",
+    "colPrice": "Prix",
+    "colPer": "Par message",
+    "row": "{n} messages",
+    "per100": "{price} les 100"
+  },
+  "prose": {
+    "meterHeading": "Pourquoi un compteur",
+    "meter": [
+      "La plupart des messageries sont gratuites parce que quelque chose les finance - la publicité, les données, ou du capital-risque qui attend l'un des deux. PrivaMesh n'a pas de publicité et rien à vendre, parce qu'il ne collecte rien à vendre. Ce qu'il a, c'est un vrai coût marginal : chaque message est une transaction Solana assortie de frais de réseau.",
+      "Un service paie ces frais pour que vous n'ayez jamais à détenir de SOL ni à surveiller un solde de portefeuille. Le quota finance ce service. C'est un compteur honnête sur un coût réel, pas un mur payant devant une fonction - le chiffrement, la protection des métadonnées et toutes les propriétés de sécurité sont identiques dans chaque offre."
+    ],
+    "trackedHeading": "Payer sans être pisté",
+    "tracked": [
+      "La facturation crée son propre problème de confidentialité : prouver qu'on a payé implique en général de joindre un reçu à chaque requête, et l'opérateur peut alors relier l'achat à l'activité. PrivaMesh prouve l'abonnement une seule fois et reçoit un lot de signatures aveugles RSA ; chaque envoi dépense un jeton impossible à relier. [La page d'architecture](/architecture) montre exactement ce que le service de frais peut et ne peut pas voir."
+    ]
+  },
+  "faq": [
+    {
+      "q": "Pourquoi l'envoi est-il facturé ?",
+      "a": "Chaque message est une transaction Solana et chaque transaction coûte des frais de réseau. Notre service de frais les paie pour que vous n'ayez jamais à détenir de SOL. Le quota finance cela - le compteur reflète un coût réel par message, pas une limite artificielle."
+    },
+    {
+      "q": "Que se passe-t-il quand je n'ai plus de messages ?",
+      "a": "L'envoi s'arrête jusqu'au renouvellement du quota ou à l'achat d'un pack. La réception, la lecture et vos conversations existantes ne sont pas touchées. Rien n'est supprimé et aucun compte n'est bloqué."
+    },
+    {
+      "q": "Payer relie-t-il mon achat à mes messages ?",
+      "a": "Non, et l'éviter a demandé un vrai travail. L'app prouve l'abonnement une fois et reçoit un lot de signatures aveugles RSA ; chaque envoi dépense un jeton. Le service de frais peut vérifier qu'un jeton est valide et non dépensé, mais ne peut le relier ni à l'achat ni à un autre jeton."
+    },
+    {
+      "q": "Ces prix sont-ils ceux que je paierai ?",
+      "a": "Ce sont les prix des offres aux États-Unis. Apple adapte les prix par région : le montant dans votre devise est celui qu'affiche l'App Store sur votre compte - c'est lui qui fait foi, pas cette page."
+    },
+    {
+      "q": "Comment résilier ?",
+      "a": "Les abonnements sont facturés par Apple : résiliez dans l'app Réglages d'iOS, sous votre nom, puis Abonnements. Les remboursements passent par reportaproblem.apple.com. Nous ne pouvons faire ni l'un ni l'autre à votre place."
+    }
+  ],
+  "related": [
+    {
+      "href": "/architecture",
+      "label": "Architecture",
+      "blurb": "Ce que voit le service de frais, et pourquoi les jetons aveugles sont dans la conception."
+    },
+    {
+      "href": "/limitations",
+      "label": "Limites connues",
+      "blurb": "Y compris ce qui se passe quand le quota est épuisé."
+    },
+    {
+      "href": "/support",
+      "label": "Assistance",
+      "blurb": "Gérer ou résilier un abonnement, et les remboursements via Apple."
+    }
+  ]
+}

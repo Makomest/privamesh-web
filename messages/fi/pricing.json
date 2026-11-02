@@ -1,0 +1,105 @@
+{
+  "meta": {
+    "title": "Hinnat ja viestikiintiöt",
+    "description": "Mitä PrivaMesh maksaa: ilmainen lataus, Plus {plus} ja {plusN} viestiä kuukaudessa, Pro {pro} ja {proN}, sekä kertapaketit. Ja miksi viestit ylipäätään maksavat."
+  },
+  "eyebrow": "Hinnat",
+  "title": "Hinnat ja viestikiintiöt",
+  "lead": "Sovelluksen lataus on ilmainen. Lähettäminen maksaa, koska jokainen viesti on maksullinen tapahtuma julkisessa lohkoketjussa - tässä tarkalleen, mitä se maksaa ja miksi.",
+  "cta": "Hanki PrivaMesh",
+  "summary": "PrivaMeshin asennus on ilmainen. Plus maksaa {plus} kuukaudessa {plusN} viestistä, Pro {pro} {proN} viestistä, ja kertapaketit alkavat hinnasta {packFrom}. Ilmaista sponsoroitua kiintiötä ei ole, koska jokainen viesti maksaa todellisen verkkomaksun, jonka jonkun on maksettava.",
+  "tiers": {
+    "free": {
+      "name": "Ilmainen",
+      "price": "Ilmainen",
+      "per": "lataus",
+      "allowance": "{n} sponsoroitua viestiä",
+      "perks": [
+        "Yksi tili",
+        "Täysi salaus, ei lukittuja ominaisuuksia",
+        "Osta viestipaketti milloin tahansa"
+      ],
+      "note": "Itse sovellus on ilmainen. Lähettäminen maksaa, joten ilmaistilillä ei ole sponsoroitua kiintiötä - täydennä paketilla tai tilaa."
+    },
+    "plus": {
+      "per": "kk",
+      "allowance": "{n} viestiä kuukaudessa",
+      "perks": [
+        "Enintään 3 tiliä",
+        "Vahvistusmerkki",
+        "Kiintiö uusiutuu kuukausittain"
+      ],
+      "note": "Taso, jonka useimmat haluavat. Peiteliikenne kuluttaa tätä kiintiötä, siksi se on oletuksena pois päältä."
+    },
+    "pro": {
+      "per": "kk",
+      "allowance": "{n} viestiä kuukaudessa",
+      "perks": [
+        "Enintään 3 tiliä",
+        "Vahvistusmerkki",
+        "Suurin kuukausikiintiö"
+      ],
+      "note": "Runsaaseen käyttöön tai peiteliikenteen jatkuvaan käyttöön ilman laskurin vahtimista."
+    }
+  },
+  "packs": {
+    "heading": "Kertaluonteiset viestipaketit",
+    "lead": "Paketit eivät koskaan vanhene ja tulevat minkä tahansa tilauksen kiintiön päälle. Niillä PrivaMeshiä voi käyttää ilman toistuvaa veloitusta.",
+    "caption": "PrivaMeshin kertaluonteiset viestipaketit ja hinnat",
+    "colPack": "Paketti",
+    "colPrice": "Hinta",
+    "colPer": "Per viesti",
+    "row": "{n} viestiä",
+    "per100": "{price} / 100"
+  },
+  "prose": {
+    "meterHeading": "Miksi laskuri ylipäätään on olemassa",
+    "meter": [
+      "Useimmat pikaviestimet ovat ilmaisia, koska jokin rahoittaa niitä - mainokset, data tai riskipääoma, joka odottaa jompaakumpaa. PrivaMeshillä ei ole mainoksia eikä mitään myytävää, koska se ei kerää mitään myytävää. Sillä on kuitenkin todellinen rajakustannus: jokainen viesti on Solana-tapahtuma, johon liittyy verkkomaksu.",
+      "Palvelu maksaa sen, jotta sinun ei koskaan tarvitse omistaa SOLia tai miettiä lompakon saldoa. Kiintiö rahoittaa palvelun. Se on rehellinen laskuri todelliselle kustannukselle, ei maksumuuri ominaisuuden edessä - salaus, metatietojen suojaus ja kaikki tietoturvaominaisuudet ovat samat jokaisella tasolla."
+    ],
+    "trackedHeading": "Maksaminen ilman seurantaa",
+    "tracked": [
+      "Veloittaminen luo oman yksityisyysongelmansa: maksun todistaminen tarkoittaa yleensä kuitin liittämistä jokaiseen pyyntöön, jolloin ylläpitäjä voi yhdistää oston toimintaan. PrivaMesh todistaa tilauksen kerran ja saa joukon sokeita RSA-allekirjoituksia; jokainen lähetys kuluttaa yhden tunnisteen, jota ei voi yhdistää takaisin. [Arkkitehtuurisivu](/architecture) näyttää tarkalleen, mitä maksupalvelu näkee ja mitä ei."
+    ]
+  },
+  "faq": [
+    {
+      "q": "Miksi viestien lähettäminen maksaa?",
+      "a": "Jokainen viesti on Solana-tapahtuma, ja jokainen tapahtuma maksaa verkkomaksun. Maksupalvelumme maksaa sen, jotta sinun ei koskaan tarvitse omistaa SOLia. Kiintiö rahoittaa sen - laskuri kuvaa todellista viestikohtaista kustannusta, ei keinotekoista rajaa."
+    },
+    {
+      "q": "Mitä tapahtuu, kun viestit loppuvat?",
+      "a": "Lähettäminen pysähtyy, kunnes kiintiö uusiutuu tai ostat paketin. Vastaanottaminen, lukeminen ja olemassa olevat keskustelut eivät muutu. Mitään ei poisteta eikä tiliä lukita."
+    },
+    {
+      "q": "Yhdistääkö maksaminen ostoni viesteihini?",
+      "a": "Ei, ja sen välttäminen vaati todellista työtä. Sovellus todistaa tilauksen kerran ja saa joukon sokeita RSA-allekirjoituksia; jokainen lähetys kuluttaa yhden tunnisteen. Maksupalvelu voi tarkistaa, että tunniste on voimassa ja käyttämätön, mutta ei voi yhdistää sitä ostoon tai mihinkään muuhun tunnisteeseen."
+    },
+    {
+      "q": "Ovatko nämä hinnat, jotka todella maksan?",
+      "a": "Nämä ovat Yhdysvaltain tasohinnat. Apple sovittaa hinnat alueittain, joten summa omassa valuutassasi on se, minkä App Store näyttää tililläsi - se summa, ei tämä sivu, ratkaisee."
+    },
+    {
+      "q": "Miten peruutan?",
+      "a": "Tilaukset laskuttaa Apple, joten peruuta iOS:n Asetukset-sovelluksessa nimesi kohdalta ja sitten Tilaukset. Hyvitykset hoidetaan osoitteessa reportaproblem.apple.com. Kumpaakaan emme voi tehdä puolestasi."
+    }
+  ],
+  "related": [
+    {
+      "href": "/architecture",
+      "label": "Arkkitehtuuri",
+      "blurb": "Mitä maksupalvelu näkee ja miksi sokeat tunnisteet ovat osa suunnittelua."
+    },
+    {
+      "href": "/limitations",
+      "label": "Tunnetut rajoitukset",
+      "blurb": "Myös se, mitä tapahtuu, kun kiintiö loppuu."
+    },
+    {
+      "href": "/support",
+      "label": "Tuki",
+      "blurb": "Tilauksen hallinta tai peruutus sekä hyvitykset Applen kautta."
+    }
+  ]
+}

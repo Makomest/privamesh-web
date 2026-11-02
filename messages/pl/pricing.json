@@ -1,0 +1,105 @@
+{
+  "meta": {
+    "title": "Cennik i limity wiadomości",
+    "description": "Ile kosztuje PrivaMesh: darmowe pobranie, Plus za {plus} z {plusN} wiadomościami miesięcznie, Pro za {pro} z {proN} i jednorazowe pakiety. I dlaczego wiadomości w ogóle są płatne."
+  },
+  "eyebrow": "Cennik",
+  "title": "Cennik i limity wiadomości",
+  "lead": "Aplikację pobierasz za darmo. Wysyłanie jest płatne, bo każda wiadomość to płatna transakcja w publicznym łańcuchu - oto dokładnie, ile to kosztuje i dlaczego.",
+  "cta": "Pobierz PrivaMesh",
+  "summary": "PrivaMesh instalujesz za darmo. Plus kosztuje {plus} miesięcznie za {plusN} wiadomości, Pro {pro} za {proN}, a jednorazowe pakiety zaczynają się od {packFrom}. Nie ma darmowego sponsorowanego limitu, bo każda wiadomość kosztuje prawdziwą opłatę sieciową, którą ktoś musi zapłacić.",
+  "tiers": {
+    "free": {
+      "name": "Za darmo",
+      "price": "Za darmo",
+      "per": "pobranie",
+      "allowance": "{n} sponsorowanych wiadomości",
+      "perks": [
+        "Jedno konto",
+        "Pełne szyfrowanie, bez blokowanych funkcji",
+        "Pakiet wiadomości kupisz w każdej chwili"
+      ],
+      "note": "Sama aplikacja jest darmowa. Wysyłanie jest płatne, więc darmowe konto nie ma sponsorowanego limitu - doładuj je pakietem albo wykup subskrypcję."
+    },
+    "plus": {
+      "per": "miesiąc",
+      "allowance": "{n} wiadomości miesięcznie",
+      "perks": [
+        "Do 3 kont",
+        "Znaczek weryfikacji",
+        "Limit odnawia się co miesiąc"
+      ],
+      "note": "Plan, którego chce większość. Ruch maskujący zużywa ten limit, dlatego domyślnie jest wyłączony."
+    },
+    "pro": {
+      "per": "miesiąc",
+      "allowance": "{n} wiadomości miesięcznie",
+      "perks": [
+        "Do 3 kont",
+        "Znaczek weryfikacji",
+        "Najwyższy limit miesięczny"
+      ],
+      "note": "Do intensywnego użycia albo do stałego ruchu maskującego bez pilnowania licznika."
+    }
+  },
+  "packs": {
+    "heading": "Jednorazowe pakiety wiadomości",
+    "lead": "Pakiety nigdy nie wygasają i dodają się do każdego limitu subskrypcji. To sposób na korzystanie z PrivaMesh bez cyklicznych opłat.",
+    "caption": "Jednorazowe pakiety wiadomości PrivaMesh i ich ceny",
+    "colPack": "Pakiet",
+    "colPrice": "Cena",
+    "colPer": "Za wiadomość",
+    "row": "{n} wiadomości",
+    "per100": "{price} za 100"
+  },
+  "prose": {
+    "meterHeading": "Po co w ogóle licznik",
+    "meter": [
+      "Większość komunikatorów jest darmowa, bo coś je dotuje - reklamy, dane albo kapitał ryzyka czekający na jedno z dwojga. PrivaMesh nie ma reklam i nie ma nic do sprzedania, bo nie zbiera niczego, co dałoby się sprzedać. Ma za to realny koszt krańcowy: każda wiadomość to transakcja Solana z opłatą sieciową.",
+      "Usługa płaci tę opłatę, żebyś nigdy nie musiał trzymać SOL ani myśleć o saldzie portfela. Limit finansuje tę usługę. To uczciwy licznik realnego kosztu, a nie płatna bramka przed funkcją - szyfrowanie, ochrona metadanych i wszystkie właściwości bezpieczeństwa są takie same w każdym planie."
+    ],
+    "trackedHeading": "Płacić i nie być śledzonym",
+    "tracked": [
+      "Pobieranie opłat rodzi własny problem prywatności: udowodnienie zapłaty zwykle oznacza dołączanie paragonu do każdego żądania, a wtedy operator może powiązać zakup z aktywnością. PrivaMesh potwierdza subskrypcję raz i otrzymuje pulę ślepych podpisów RSA; każde wysłanie zużywa jeden token, którego nie da się powiązać wstecz. [Strona architektury](/architecture) pokazuje dokładnie, co usługa opłat widzi, a czego nie."
+    ]
+  },
+  "faq": [
+    {
+      "q": "Dlaczego wysyłanie w ogóle jest płatne?",
+      "a": "Każda wiadomość to transakcja Solana, a każda transakcja kosztuje opłatę sieciową. Nasza usługa opłat ją płaci, żebyś nigdy nie musiał trzymać SOL. Limit to finansuje - licznik odzwierciedla realny koszt wiadomości, a nie sztuczne ograniczenie."
+    },
+    {
+      "q": "Co się stanie, gdy skończą mi się wiadomości?",
+      "a": "Wysyłanie zatrzyma się, dopóki limit się nie odnowi albo nie kupisz pakietu. Odbieranie, czytanie i istniejące rozmowy działają dalej. Nic nie jest usuwane, a konto nie jest blokowane."
+    },
+    {
+      "q": "Czy płatność łączy mój zakup z moimi wiadomościami?",
+      "a": "Nie, i uniknięcie tego wymagało prawdziwej pracy. Aplikacja potwierdza subskrypcję raz i otrzymuje pulę ślepych podpisów RSA; każde wysłanie zużywa jeden token. Usługa opłat może sprawdzić, że token jest ważny i niewykorzystany, ale nie może powiązać go ani z zakupem, ani z żadnym innym tokenem."
+    },
+    {
+      "q": "Czy to są ceny, które naprawdę zapłacę?",
+      "a": "To ceny planów w USA. Apple dostosowuje ceny do regionów, więc kwota w twojej walucie to ta, którą App Store pokazuje na twoim koncie - liczy się ona, a nie ta strona."
+    },
+    {
+      "q": "Jak zrezygnować?",
+      "a": "Subskrypcje rozlicza Apple, więc anuluj w aplikacji Ustawienia na iOS, pod swoim imieniem, a potem Subskrypcje. Zwroty idą przez reportaproblem.apple.com. Nie możemy zrobić żadnej z tych rzeczy za ciebie."
+    }
+  ],
+  "related": [
+    {
+      "href": "/architecture",
+      "label": "Architektura",
+      "blurb": "Co widzi usługa opłat i dlaczego ślepe tokeny są częścią projektu."
+    },
+    {
+      "href": "/limitations",
+      "label": "Znane ograniczenia",
+      "blurb": "W tym co się dzieje, gdy limit się skończy."
+    },
+    {
+      "href": "/support",
+      "label": "Pomoc",
+      "blurb": "Zarządzanie subskrypcją, jej anulowanie i zwroty przez Apple."
+    }
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "meta": {
+    "title": "Cijene i kvote poruka",
+    "description": "Koliko košta PrivaMesh: besplatno preuzimanje, Plus za {plus} s {plusN} poruka mjesečno, Pro za {pro} s {proN} i jednokratni paketi. I zašto se poruke uopće naplaćuju."
+  },
+  "eyebrow": "Cijene",
+  "title": "Cijene i kvote poruka",
+  "lead": "Aplikacija se preuzima besplatno. Slanje se naplaćuje jer je svaka poruka plaćena transakcija na javnom lancu - evo točno koliko to košta i zašto.",
+  "cta": "Preuzmi PrivaMesh",
+  "summary": "PrivaMesh se instalira besplatno. Plus stoji {plus} mjesečno za {plusN} poruka, Pro {pro} za {proN}, a jednokratni paketi počinju od {packFrom}. Besplatne sponzorirane kvote nema jer svaka poruka košta stvarnu mrežnu naknadu koju netko mora platiti.",
+  "tiers": {
+    "free": {
+      "name": "Besplatno",
+      "price": "Besplatno",
+      "per": "preuzimanje",
+      "allowance": "{n} sponzoriranih poruka",
+      "perks": [
+        "Jedan račun",
+        "Potpuno šifriranje, bez zaključanih značajki",
+        "Paket poruka možete kupiti bilo kada"
+      ],
+      "note": "Sama aplikacija je besplatna. Slanje se naplaćuje, pa besplatni račun nema sponzoriranu kvotu - nadoplatite paketom ili se pretplatite."
+    },
+    "plus": {
+      "per": "mjesec",
+      "allowance": "{n} poruka mjesečno",
+      "perks": [
+        "Do 3 računa",
+        "Oznaka provjere",
+        "Kvota se obnavlja svaki mjesec"
+      ],
+      "note": "Paket koji većina želi. Prikrivajući promet troši ovu kvotu, zato je zadano isključen."
+    },
+    "pro": {
+      "per": "mjesec",
+      "allowance": "{n} poruka mjesečno",
+      "perks": [
+        "Do 3 računa",
+        "Oznaka provjere",
+        "Najveća mjesečna kvota"
+      ],
+      "note": "Za intenzivnu upotrebu ili za stalno uključen prikrivajući promet bez praćenja brojača."
+    }
+  },
+  "packs": {
+    "heading": "Jednokratni paketi poruka",
+    "lead": "Paketi nikad ne istječu i zbrajaju se sa svakom kvotom pretplate. To je način da koristite PrivaMesh bez ponavljajućeg plaćanja.",
+    "caption": "Jednokratni paketi poruka PrivaMesh i cijene",
+    "colPack": "Paket",
+    "colPrice": "Cijena",
+    "colPer": "Po poruci",
+    "row": "{n} poruka",
+    "per100": "{price} za 100"
+  },
+  "prose": {
+    "meterHeading": "Zašto uopće postoji brojač",
+    "meter": [
+      "Većina messengera besplatna je jer ih nešto subvencionira - oglasi, podaci ili rizični kapital koji čeka jedno od toga. PrivaMesh nema oglase ni ništa za prodaju jer ne prikuplja ništa što bi se moglo prodati. Ono što ima jest stvaran granični trošak: svaka poruka je Solana transakcija s mrežnom naknadom.",
+      "Usluga plaća tu naknadu kako nikad ne biste morali držati SOL ili misliti na stanje novčanika. Kvota financira tu uslugu. To je pošten brojač stvarnog troška, a ne naplatna rampa ispred značajke - šifriranje, zaštita metapodataka i sva sigurnosna svojstva ista su u svakom paketu."
+    ],
+    "trackedHeading": "Plaćati bez praćenja",
+    "tracked": [
+      "Naplata stvara vlastiti problem privatnosti: dokazivanje da ste platili obično znači prilaganje računa uz svaki zahtjev, nakon čega operater može povezati kupnju s aktivnošću. PrivaMesh pretplatu dokaže jednom i dobije skup slijepih RSA potpisa; svako slanje troši jedan token koji se ne može povezati unatrag. [Stranica o arhitekturi](/architecture) točno pokazuje što usluga naknada može, a što ne može vidjeti."
+    ]
+  },
+  "faq": [
+    {
+      "q": "Zašto se slanje uopće naplaćuje?",
+      "a": "Svaka poruka je Solana transakcija, a svaka transakcija košta mrežnu naknadu. Naša usluga naknada je plaća kako nikad ne biste morali držati SOL. Kvota to financira - brojač odražava stvaran trošak po poruci, a ne umjetno ograničenje."
+    },
+    {
+      "q": "Što se događa kad mi ponestane poruka?",
+      "a": "Slanje staje dok se kvota ne obnovi ili dok ne kupite paket. Primanje, čitanje i postojeći razgovori nisu pogođeni. Ništa se ne briše i nijedan račun se ne zaključava."
+    },
+    {
+      "q": "Povezuje li plaćanje moju kupnju s mojim porukama?",
+      "a": "Ne, a izbjegavanje toga bio je pravi posao. Aplikacija pretplatu dokaže jednom i dobije skup slijepih RSA potpisa; svako slanje troši jedan token. Usluga naknada može provjeriti je li token valjan i nepotrošen, ali ga ne može povezati s kupnjom ni s bilo kojim drugim tokenom."
+    },
+    {
+      "q": "Jesu li to cijene koje ću stvarno platiti?",
+      "a": "To su cijene paketa u SAD-u. Apple prilagođava cijene regijama, pa je iznos u vašoj valuti onaj koji App Store prikazuje na vašem računu - mjerodavan je on, a ne ova stranica."
+    },
+    {
+      "q": "Kako otkazati?",
+      "a": "Pretplate naplaćuje Apple, pa otkažite u aplikaciji Postavke na iOS-u, pod svojim imenom pa Pretplate. Povrati idu preko reportaproblem.apple.com. Ni jedno ni drugo ne možemo učiniti umjesto vas."
+    }
+  ],
+  "related": [
+    {
+      "href": "/architecture",
+      "label": "Arhitektura",
+      "blurb": "Što vidi usluga naknada i zašto su slijepi tokeni dio dizajna."
+    },
+    {
+      "href": "/limitations",
+      "label": "Poznata ograničenja",
+      "blurb": "Uključujući što se događa kad kvota istekne."
+    },
+    {
+      "href": "/support",
+      "label": "Podrška",
+      "blurb": "Upravljanje pretplatom, otkazivanje i povrati preko Applea."
+    }
+  ]
+}

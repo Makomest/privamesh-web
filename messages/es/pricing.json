@@ -1,0 +1,105 @@
+{
+  "meta": {
+    "title": "Precios y cupos de mensajes",
+    "description": "Lo que cuesta PrivaMesh: descarga gratuita, Plus a {plus} con {plusN} mensajes al mes, Pro a {pro} con {proN} y paquetes sueltos. Y por qué los mensajes tienen un coste."
+  },
+  "eyebrow": "Precios",
+  "title": "Precios y cupos de mensajes",
+  "lead": "La app se descarga gratis. El envío tiene un coste porque cada mensaje es una transacción de pago en una cadena pública: aquí está exactamente cuánto cuesta y por qué.",
+  "cta": "Obtener PrivaMesh",
+  "summary": "PrivaMesh se instala gratis. Plus cuesta {plus} al mes por {plusN} mensajes, Pro {pro} por {proN}, y los paquetes sueltos empiezan en {packFrom}. No hay cupo gratuito patrocinado, porque cada mensaje cuesta una comisión de red real que alguien tiene que pagar.",
+  "tiers": {
+    "free": {
+      "name": "Gratis",
+      "price": "Gratis",
+      "per": "descarga",
+      "allowance": "{n} mensajes patrocinados",
+      "perks": [
+        "Una cuenta",
+        "Cifrado completo, sin funciones recortadas",
+        "Compra un paquete de mensajes cuando quieras"
+      ],
+      "note": "La app en sí es gratuita. El envío tiene un coste, así que una cuenta gratuita no tiene cupo patrocinado: recarga con un paquete o suscríbete."
+    },
+    "plus": {
+      "per": "mes",
+      "allowance": "{n} mensajes al mes",
+      "perks": [
+        "Hasta 3 cuentas",
+        "Insignia de verificación",
+        "El cupo se renueva cada mes"
+      ],
+      "note": "El plan que quiere la mayoría. El tráfico de cobertura gasta de este cupo, por eso está desactivado por defecto."
+    },
+    "pro": {
+      "per": "mes",
+      "allowance": "{n} mensajes al mes",
+      "perks": [
+        "Hasta 3 cuentas",
+        "Insignia de verificación",
+        "El mayor cupo mensual"
+      ],
+      "note": "Para un uso intensivo, o para mantener el tráfico de cobertura activo sin estar pendiente del contador."
+    }
+  },
+  "packs": {
+    "heading": "Paquetes de mensajes sueltos",
+    "lead": "Los paquetes nunca caducan y se suman a cualquier cupo de suscripción. Son la forma de usar PrivaMesh sin un cargo recurrente.",
+    "caption": "Paquetes de mensajes sueltos de PrivaMesh y sus precios",
+    "colPack": "Paquete",
+    "colPrice": "Precio",
+    "colPer": "Por mensaje",
+    "row": "{n} mensajes",
+    "per100": "{price} cada 100"
+  },
+  "prose": {
+    "meterHeading": "Por qué hay un contador",
+    "meter": [
+      "La mayoría de las apps de mensajería son gratuitas porque algo las subvenciona: anuncios, datos o capital riesgo esperando uno de los dos. PrivaMesh no tiene anuncios ni nada que vender, porque no recoge nada que se pueda vender. Lo que sí tiene es un coste marginal real: cada mensaje es una transacción de Solana con una comisión de red.",
+      "Un servicio paga esa comisión para que nunca tengas que tener SOL ni pensar en el saldo de un monedero. El cupo es lo que financia ese servicio. Es un contador honesto de un coste real, no un muro de pago delante de una función: el cifrado, la protección de metadatos y todas las propiedades de seguridad son iguales en todos los planes."
+    ],
+    "trackedHeading": "Pagar sin ser rastreado",
+    "tracked": [
+      "Cobrar crea su propio problema de privacidad: demostrar que has pagado suele implicar adjuntar un recibo a cada petición, y entonces el operador puede vincular la compra con la actividad. PrivaMesh demuestra la suscripción una sola vez y recibe un lote de firmas ciegas RSA; cada envío gasta un token que no se puede vincular. [La página de arquitectura](/architecture) muestra exactamente lo que el servicio de comisiones puede y no puede ver."
+    ]
+  },
+  "faq": [
+    {
+      "q": "¿Por qué tiene coste enviar mensajes?",
+      "a": "Cada mensaje es una transacción de Solana y cada transacción cuesta una comisión de red. Nuestro servicio de comisiones la paga para que nunca tengas que tener SOL. El cupo lo financia: el contador refleja un coste real por mensaje, no un límite artificial."
+    },
+    {
+      "q": "¿Qué pasa si me quedo sin mensajes?",
+      "a": "El envío se detiene hasta que el cupo se renueve o compres un paquete. Recibir, leer y tus conversaciones existentes no se ven afectados. No se borra nada ni se bloquea ninguna cuenta."
+    },
+    {
+      "q": "¿Pagar vincula mi compra con mis mensajes?",
+      "a": "No, y evitarlo costó trabajo de verdad. La app demuestra la suscripción una vez y recibe un lote de firmas ciegas RSA; cada envío gasta un token. El servicio de comisiones puede comprobar que un token es válido y no se ha gastado, pero no puede vincularlo con la compra ni con ningún otro token."
+    },
+    {
+      "q": "¿Son estos los precios que pagaré?",
+      "a": "Son los precios de los planes en EE. UU. Apple adapta los precios por región, así que el importe en tu moneda es el que muestra la App Store en tu cuenta: esa cifra, no esta página, es la que vale."
+    },
+    {
+      "q": "¿Cómo cancelo?",
+      "a": "Las suscripciones las cobra Apple, así que cancela en la app Ajustes de iOS, en tu nombre y luego Suscripciones. Los reembolsos van por reportaproblem.apple.com. No podemos hacer ninguna de las dos cosas por ti."
+    }
+  ],
+  "related": [
+    {
+      "href": "/architecture",
+      "label": "Arquitectura",
+      "blurb": "Lo que ve el servicio de comisiones y por qué los tokens ciegos forman parte del diseño."
+    },
+    {
+      "href": "/limitations",
+      "label": "Limitaciones conocidas",
+      "blurb": "Incluido qué pasa cuando se acaba el cupo."
+    },
+    {
+      "href": "/support",
+      "label": "Soporte",
+      "blurb": "Gestionar o cancelar una suscripción y reembolsos a través de Apple."
+    }
+  ]
+}

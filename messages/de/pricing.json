@@ -1,0 +1,105 @@
+{
+  "meta": {
+    "title": "Preise und Nachrichtenkontingente",
+    "description": "Was PrivaMesh kostet: ein kostenloser Download, Plus für {plus} mit {plusN} Nachrichten im Monat, Pro für {pro} mit {proN} und einmalige Pakete. Und warum Nachrichten überhaupt abgerechnet werden."
+  },
+  "eyebrow": "Preise",
+  "title": "Preise und Nachrichtenkontingente",
+  "lead": "Die App ist ein kostenloser Download. Das Senden wird abgerechnet, weil jede Nachricht eine bezahlte Transaktion in einer öffentlichen Blockchain ist - hier steht genau, was das kostet und warum.",
+  "cta": "PrivaMesh holen",
+  "summary": "PrivaMesh ist kostenlos zu installieren. Plus kostet {plus} im Monat für {plusN} Nachrichten, Pro {pro} für {proN}, und einmalige Pakete gibt es ab {packFrom}. Ein kostenloses gesponsertes Kontingent gibt es nicht, weil jede Nachricht eine echte Netzwerkgebühr kostet, die jemand bezahlen muss.",
+  "tiers": {
+    "free": {
+      "name": "Kostenlos",
+      "price": "Kostenlos",
+      "per": "Download",
+      "allowance": "{n} gesponserte Nachrichten",
+      "perks": [
+        "Ein Konto",
+        "Volle Verschlüsselung, keine gesperrten Funktionen",
+        "Jederzeit ein Nachrichtenpaket kaufen"
+      ],
+      "note": "Die App selbst ist kostenlos. Das Senden wird abgerechnet, daher hat ein kostenloses Konto kein gesponsertes Kontingent - laden Sie mit einem Paket auf oder schließen Sie ein Abo ab."
+    },
+    "plus": {
+      "per": "Monat",
+      "allowance": "{n} Nachrichten im Monat",
+      "perks": [
+        "Bis zu 3 Konten",
+        "Verifizierungshaken",
+        "Kontingent erneuert sich monatlich"
+      ],
+      "note": "Der Tarif, den die meisten wollen. Cover Traffic verbraucht dieses Kontingent, deshalb ist er standardmäßig aus."
+    },
+    "pro": {
+      "per": "Monat",
+      "allowance": "{n} Nachrichten im Monat",
+      "perks": [
+        "Bis zu 3 Konten",
+        "Verifizierungshaken",
+        "Höchstes Monatskontingent"
+      ],
+      "note": "Für intensive Nutzung oder um Cover Traffic dauerhaft laufen zu lassen, ohne auf den Zähler zu achten."
+    }
+  },
+  "packs": {
+    "heading": "Einmalige Nachrichtenpakete",
+    "lead": "Pakete verfallen nie und kommen zu jedem Abo-Kontingent hinzu. Damit lässt sich PrivaMesh ohne wiederkehrende Zahlung nutzen.",
+    "caption": "Einmalige Nachrichtenpakete von PrivaMesh und ihre Preise",
+    "colPack": "Paket",
+    "colPrice": "Preis",
+    "colPer": "Pro Nachricht",
+    "row": "{n} Nachrichten",
+    "per100": "{price} pro 100"
+  },
+  "prose": {
+    "meterHeading": "Warum es überhaupt einen Zähler gibt",
+    "meter": [
+      "Die meisten Messenger sind kostenlos, weil etwas sie subventioniert - Werbung, Daten oder Risikokapital, das auf eins von beiden wartet. PrivaMesh hat keine Werbung und nichts zu verkaufen, weil es nichts sammelt, was sich verkaufen ließe. Was es hat, sind echte Grenzkosten: Jede Nachricht ist eine Solana-Transaktion mit einer Netzwerkgebühr.",
+      "Ein Worker zahlt diese Gebühr, damit Sie nie SOL halten oder über ein Wallet-Guthaben nachdenken müssen. Das Kontingent finanziert den Worker. Es ist ein ehrlicher Zähler für echte Kosten, keine Bezahlschranke vor einer Funktion - Verschlüsselung, Metadatenschutz und jede Sicherheitseigenschaft sind in jedem Tarif gleich."
+    ],
+    "trackedHeading": "Bezahlen, ohne verfolgt zu werden",
+    "tracked": [
+      "Abrechnung bringt ein eigenes Datenschutzproblem mit sich: Wer beweisen will, dass er bezahlt hat, hängt meist an jede Anfrage einen Beleg, und dann kann der Betreiber Kauf und Aktivität verknüpfen. PrivaMesh weist das Abo einmal nach und erhält einen Vorrat an blinden RSA-Signaturen; jedes Senden verbraucht einen Token, der sich nicht zurückverfolgen lässt. [Die Architekturseite](/architecture) zeigt genau, was der Gebühren-Worker sehen kann und was nicht."
+    ]
+  },
+  "faq": [
+    {
+      "q": "Warum wird das Senden überhaupt abgerechnet?",
+      "a": "Jede Nachricht ist eine Solana-Transaktion, und jede Transaktion kostet eine Netzwerkgebühr. Unser Gebühren-Worker bezahlt sie, damit Sie nie SOL halten müssen. Das Kontingent finanziert das - der Zähler bildet echte Kosten pro Nachricht ab, kein künstliches Limit."
+    },
+    {
+      "q": "Was passiert, wenn meine Nachrichten aufgebraucht sind?",
+      "a": "Das Senden stoppt, bis sich das Kontingent erneuert oder Sie ein Paket kaufen. Empfangen, Lesen und bestehende Unterhaltungen sind nicht betroffen. Nichts wird gelöscht, kein Konto gesperrt."
+    },
+    {
+      "q": "Verknüpft die Bezahlung meinen Kauf mit meinen Nachrichten?",
+      "a": "Nein, und das zu vermeiden war echte Arbeit. Die App weist das Abo einmal nach und erhält einen Vorrat an blinden RSA-Signaturen; jedes Senden verbraucht einen Token. Der Gebühren-Worker kann prüfen, ob ein Token gültig und unverbraucht ist, ihn aber weder mit dem Kauf noch mit einem anderen Token verknüpfen."
+    },
+    {
+      "q": "Sind das die Preise, die ich wirklich zahle?",
+      "a": "Das sind die US-Tarifpreise. Apple passt Preise regional an, maßgeblich ist also der Betrag in Ihrer Währung, den der App Store in Ihrem Konto anzeigt - nicht diese Seite."
+    },
+    {
+      "q": "Wie kündige ich?",
+      "a": "Abos werden über Apple abgerechnet, kündigen Sie also in den iOS-Einstellungen unter Ihrem Namen und dann Abonnements. Erstattungen laufen über reportaproblem.apple.com. Beides können wir nicht für Sie erledigen."
+    }
+  ],
+  "related": [
+    {
+      "href": "/architecture",
+      "label": "Architektur",
+      "blurb": "Was der Gebühren-Worker sieht und warum blinde Token zum Design gehören."
+    },
+    {
+      "href": "/limitations",
+      "label": "Bekannte Einschränkungen",
+      "blurb": "Auch, was passiert, wenn das Kontingent aufgebraucht ist."
+    },
+    {
+      "href": "/support",
+      "label": "Support",
+      "blurb": "Abo verwalten oder kündigen, Erstattungen über Apple."
+    }
+  ]
+}
