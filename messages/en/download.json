@@ -1,0 +1,87 @@
+{
+  "meta": {
+    "title": "Download PrivaMesh",
+    "description": "PrivaMesh for iPhone on the App Store, an APK for Android 8.0 or later, and an installer for Windows 10. No phone number, no email, no account."
+  },
+  "eyebrow": "Download",
+  "title": "Download PrivaMesh",
+  "lead": "All three platforms have a build you can install today. What differs is how you pay and how much has been tested, and both are written on the card rather than left for you to find out.",
+  "appStoreCta": "Download on the App Store",
+  "notAvailable": "Not available",
+  "platforms": {
+    "ios": {
+      "name": "iPhone",
+      "requirement": "iOS {os} or later · version {version}",
+      "cta": "Download on the App Store",
+      "blurb": "Free to install. No phone number, no email, no account - the app generates your identity on the device when you first open it. Paid tiers work here and only here.",
+      "noteHeading": "The one with real use behind it",
+      "noteBody": "This is the client that ships on the App Store and the one people actually run. It is also the reference the others are measured against: the Android and Windows clients derive their protocol layers from this source and are vector-checked against it, so where they disagree, this is what is correct."
+    },
+    "windows": {
+      "name": "Windows",
+      "requirement": "Windows 10 64-bit · version {version}",
+      "cta": "Download the installer",
+      "blurb": "Java is bundled, so there is nothing else to install, and the installer never asks for administrator. There is no subscription on the desktop and no relay in the path: the client makes its own Solana fee wallet, you fund it, and each message pays its own network fee - about $0.0008, so roughly 6,000 messages for $5.",
+      "secondary": "Portable .zip, no installer",
+      "warningHeading": "Windows will warn you",
+      "warningBody": "You will see \"Windows protected your PC\". This build carries no code-signing certificate, so Windows does not recognise the publisher - it is not a report of anything found in the file. Click \"More info\", then \"Run anyway\". The certificate is also the thing that would let you check this really came from us, so until it exists there is nothing here worth checking it against - that is a gap, and it is ours to close."
+    },
+    "android": {
+      "name": "Android",
+      "requirement": "Android 8.0 or later · version {version}",
+      "cta": "Download the APK",
+      "blurb": "A release build signed with the real key, so later versions install over it as an update and your account survives. Paid tiers do not work here yet - the relay verifies Apple receipts and has no Google Play path - so Android is free tier only for now.",
+      "warningHeading": "Sideloading, and what was tested",
+      "warningBody": "Android will ask you to allow installs from wherever you downloaded this. The build was driven through account creation, phrase generation and a relaunch on an Android 15 emulator, which is the check that matters after R8 rewrites the crypto and database code. It has not been run on a real device, and no Android build has yet sent a message on mainnet."
+    }
+  },
+  "first": {
+    "heading": "What happens first",
+    "steps": [
+      "The app generates a 12-word recovery phrase on your device",
+      "Write it down on paper - there is no reset and no backup we hold",
+      "Set a passcode, and biometric unlock if the device offers it",
+      "Pick a nickname so people can find you without a phone number",
+      "Add a contact by QR code, invite link or nickname; both sides must add each other"
+    ],
+    "footnote": "The iPhone version, minimum iOS and price come straight from the App Store listing rather than being maintained by hand, so they cannot drift from what Apple shows. The Windows figures come from the release that hosts the file you download."
+  },
+  "before": {
+    "heading": "Before you install",
+    "paras": [
+      "Two things are worth knowing up front, because both surprise people later. Your message history cannot be moved to another device or restored after a reinstall - forward secrecy destroys each message key after use, and that is the guarantee working rather than a missing feature. And sending is metered: the app is free to install, but every message is a real transaction with a real network fee. See [pricing](/pricing) for what that costs.",
+      "Those two apply to every platform. What differs is who pays: on iPhone a subscription buys blind tokens that our one fee worker redeems, while the Windows client skips that worker entirely and spends from a Solana wallet you fund yourself. Exactly what each component can observe is on [the architecture page](/architecture), and what none of it protects you from is on [limitations](/limitations)."
+    ]
+  },
+  "faq": [
+    {
+      "q": "Which iPhones can run it?",
+      "a": "Any iPhone on iOS 18 or later. Version 1.0 required iOS 26.5, and this page used to say that was for the post-quantum handshake. It was not: the floor came from a few interface APIs, and 1.0 had the post-quantum path switched off anyway. 1.1 dropped the floor. Post-quantum itself (X-Wing, ML-KEM-768 with X25519) does need iOS 26, so it is a per-device capability: an iPhone on iOS 26 publishes a post-quantum prekey, an older one uses classical X3DH, and the two talk to each other. In 1.1 the post-quantum step does not yet complete in practice - the limitations page says why."
+    },
+    {
+      "q": "What do I need to sign up?",
+      "a": "Nothing. No phone number, no email, no username to reserve. The app generates a 12-word recovery phrase on your device on first launch - write it down, because it is the only way back into the account."
+    },
+    {
+      "q": "Is it free?",
+      "a": "The download is free. Sending is metered because every message is a paid transaction on a public chain - the pricing page lists allowances and tier prices."
+    },
+    {
+      "q": "Why does the Windows installer trigger a security warning?",
+      "a": "The build is not code-signed, so Windows does not recognise the publisher and shows \"Windows protected your PC\". It is not a report of anything found in the file - click \"More info\", then \"Run anyway\". The same missing certificate is why there is no real way to confirm the file came from us, and a published checksum would not fix that: anyone able to replace the download could replace the checksum beside it. A signing certificate is the fix, and this build does not have one yet."
+    },
+    {
+      "q": "What is different about the Android build?",
+      "a": "It is version 0.1 rather than 1.0, and that is not modesty. It has been driven through account creation, phrase generation and a relaunch on an emulator - the checks that catch R8 breaking the crypto and database code - but it has not run on a real device, and no Android build has yet sent a message on mainnet. It is signed with the real key, so later versions install over it as an update."
+    },
+    {
+      "q": "Do paid tiers work on Windows and Android?",
+      "a": "Not the way they do on iPhone. The relay verifies Apple receipts and has no Google Play path, so Android would start free-tier only. Windows does not use the relay at all: the desktop client makes its own Solana fee wallet that you fund directly, so there is no subscription to carry over."
+    }
+  ],
+  "related": [
+    { "href": "/pricing", "label": "Pricing", "blurb": "Tiers, message allowances and why sending is metered." },
+    { "href": "/limitations", "label": "Known limitations", "blurb": "What PrivaMesh does not protect you from." },
+    { "href": "/support", "label": "Support", "blurb": "Recovery phrase, new devices and subscriptions." }
+  ]
+}

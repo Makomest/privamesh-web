@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 import { SITE } from './site'
+import { getLocale } from './i18n/locales'
+import { hreflangFor } from './i18n/pages'
 
 /**
  * Trim to a length without cutting a word in half.
@@ -49,10 +51,16 @@ type PageSeo = {
   ogImage?: string
   type?: 'website' | 'article'
   publishedTime?: string
-  /** Locale of this page (drives og:locale). Default 'en'. */
-  locale?: 'en' | 'ru'
+  /** Locale code of this page (drives og:locale). Default 'en'. */
+  locale?: string
   /** hreflang alternates: language code → path. Include this page + siblings. */
   languages?: Record<string, string>
+  /**
+   * Catalog id from lib/i18n/pages.ts plus the page's English path. When given,
+   * hreflang lists every locale the page is published in, and `languages` is
+   * ignored.
+   */
+  i18n?: { page: string; enPath: string }
 }
 
 /**
@@ -67,8 +75,10 @@ export function pageMetadata({
   type = 'website',
   publishedTime,
   locale = 'en',
-  languages,
+  languages: explicitLanguages,
+  i18n,
 }: PageSeo): Metadata {
+  const languages = i18n ? hreflangFor(i18n.page, i18n.enPath) : explicitLanguages
   const url = `${SITE.domain}${path === '/' ? '' : path}`
   const abs = (p: string) => `${SITE.domain}${p === '/' ? '' : p}`
   void ogImage // reserved for future per-page override; images now via file convention
@@ -90,7 +100,7 @@ export function pageMetadata({
         ? {
             languages: Object.fromEntries([
               ...Object.entries(languages).map(([lang, p]) => [lang, abs(p)]),
-              ['x-default', abs(languages.en ?? path)],
+              ['x-default', abs(languages.en ?? i18n?.enPath ?? path)],
             ]),
           }
         : {}),
@@ -104,7 +114,7 @@ export function pageMetadata({
       title,
       description,
       siteName: SITE.name,
-      locale: locale === 'ru' ? 'ru_RU' : 'en_US',
+      locale: getLocale(locale)?.og ?? 'en_US',
       ...(publishedTime ? { publishedTime } : {}),
     },
     twitter: {

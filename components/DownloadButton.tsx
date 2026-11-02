@@ -1,7 +1,7 @@
 'use client'
 
-import { usePathname } from 'next/navigation'
 import { Button } from './Button'
+import { useI18n } from './I18nProvider'
 
 /**
  * Primary CTA. Points at /download rather than straight to the App Store, so a
@@ -19,12 +19,11 @@ export default function DownloadButton({
   className?: string
   label?: string
 }) {
-  const pathname = usePathname()
-  const isRu = pathname === '/ru' || pathname.startsWith('/ru/')
-  const text = label ?? (isRu ? 'Скачать PrivaMesh' : 'Get PrivaMesh')
+  const { ui, href } = useI18n()
+  const text = label ?? ui.getApp
 
   return (
-    <Button href={isRu ? '/ru/download' : '/download'} variant={variant} className={className}>
+    <Button href={href('/download')} variant={variant} className={className}>
       {text}
     </Button>
   )

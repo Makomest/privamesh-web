@@ -3,9 +3,15 @@ import { ChevronRight } from 'lucide-react'
 import JsonLd from './JsonLd'
 import { breadcrumbLd } from '@/lib/jsonld'
 
-export default function Breadcrumbs({ trail }: { trail: { name: string; path: string }[] }) {
+export default function Breadcrumbs({
+  trail,
+  label = 'Breadcrumb',
+}: {
+  trail: { name: string; path: string }[]
+  label?: string
+}) {
   return (
-    <nav aria-label="Breadcrumb" className="mb-6">
+    <nav aria-label={label} className="mb-6">
       <JsonLd data={breadcrumbLd(trail)} />
       <ol className="flex flex-wrap items-center gap-1.5 font-mono text-xs text-text-muted">
         {trail.map((t, i) => {
@@ -21,7 +27,7 @@ export default function Breadcrumbs({ trail }: { trail: { name: string; path: st
                   {t.name}
                 </Link>
               )}
-              {!last && <ChevronRight size={13} className="text-text-faint" aria-hidden="true" />}
+              {!last && <ChevronRight size={13} className="text-text-faint rtl:rotate-180" aria-hidden="true" />}
             </li>
           )
         })}

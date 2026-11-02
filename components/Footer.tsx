@@ -2,6 +2,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Github } from 'lucide-react'
 import { NAV_PRODUCT, NAV_COMPARE, SITE } from '@/lib/site'
+import { localizeHref } from '@/components/Md'
+import type { Common } from '@/lib/i18n/common'
 
 const RESOURCES = [
   { href: '/privacy', label: 'Why Private' },
@@ -44,13 +46,23 @@ function XIcon({ size = 18 }: { size?: number }) {
   )
 }
 
-export default function Footer() {
+export default function Footer({ locale = 'en', ui }: { locale?: string; ui: Common }) {
+  const label = (l: { href: string; label: string; external?: boolean }) =>
+    l.href === SITE.whitepaper
+      ? ui.footer.whitepaper
+      : (ui.footer.links as Record<string, string>)[l.href] ??
+        (ui.product as Record<string, string>)[l.href] ??
+        (ui.comparePages as Record<string, string>)[l.href] ??
+        l.label
+  const loc = (links: { href: string; label: string; external?: boolean }[]) =>
+    links.map((l) => ({ ...l, label: label(l), href: l.external ? l.href : localizeHref(l.href, locale) }))
+
   return (
     <footer className="mt-24 border-t border-border bg-bg-base">
       <div className="mx-auto max-w-content px-5 py-14 sm:px-8">
         <div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr_1fr_1fr]">
           <div>
-            <Link href="/" className="flex items-center gap-2.5" aria-label="PrivaMesh home">
+            <Link href={localizeHref('/', locale)} className="flex items-center gap-2.5" aria-label={ui.brandHome}>
               <Image
                 src="/icon.png"
                 alt="PrivaMesh logo"
@@ -63,7 +75,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-text-muted">
-              A private, serverless, end-to-end encrypted messenger. Trust math, not companies.
+              {ui.footer.tagline}
             </p>
             <div className="mt-5 flex items-center gap-4">
               <a
@@ -71,7 +83,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-text-muted transition-colors hover:text-accent"
-                aria-label="PrivaMesh on GitHub"
+                aria-label={ui.github}
               >
                 <Github size={18} />
               </a>
@@ -80,22 +92,22 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-text-muted transition-colors hover:text-accent"
-                aria-label="PrivaMesh on X"
+                aria-label={ui.x}
               >
                 <XIcon />
               </a>
             </div>
           </div>
 
-          <FooterCol title="Product" links={NAV_PRODUCT} />
-          <FooterCol title="Compare" links={COMPARE_COL} />
-          <FooterCol title="Resources" links={RESOURCES} />
-          <FooterCol title="Legal" links={LEGAL} />
+          <FooterCol title={ui.footer.product} links={loc(NAV_PRODUCT)} />
+          <FooterCol title={ui.footer.compare} links={loc(COMPARE_COL)} />
+          <FooterCol title={ui.footer.resources} links={loc(RESOURCES)} />
+          <FooterCol title={ui.footer.legal} links={loc(LEGAL)} />
         </div>
 
         <div className="mt-12 flex flex-col gap-3 border-t border-border pt-6 text-xs text-text-faint sm:flex-row sm:items-center sm:justify-between">
-          <p>© {new Date().getFullYear()} PrivaMesh. All rights reserved.</p>
-          <p className="font-mono">Private. Encrypted. Yours.</p>
+          <p>© {new Date().getFullYear()} PrivaMesh. {ui.footer.rights}</p>
+          <p className="font-mono">{ui.footer.motto}</p>
         </div>
       </div>
     </footer>

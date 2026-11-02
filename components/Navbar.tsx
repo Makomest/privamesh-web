@@ -2,16 +2,26 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { usePathname } from 'next/navigation'
-import { Menu, X, Github } from 'lucide-react'
+import { Menu, X, Github, Globe } from 'lucide-react'
 import { NAV_PRODUCT, NAV_COMPARE, SITE } from '@/lib/site'
 import DownloadButton from '@/components/DownloadButton'
+import { useI18n } from '@/components/I18nProvider'
+import { existsIn } from '@/lib/i18n/links'
+import { localePath, splitLocale } from '@/lib/i18n/locales'
 
-export default function Navbar() {
+type Lang = { code: string; name: string; english: string; hreflang: string }
+
+export default function Navbar({ languages }: { languages: Lang[] }) {
   const [open, setOpen] = useState(false)
-  const pathname = usePathname()
-  const isRu = pathname?.startsWith('/ru')
+  const { ui, href } = useI18n()
+
+  const product = NAV_PRODUCT.map((l) => ({ href: href(l.href), label: ui.product[l.href as keyof typeof ui.product] ?? l.label }))
+  const compare = NAV_COMPARE.map((l) => ({
+    href: href(l.href),
+    label: ui.comparePages[l.href as keyof typeof ui.comparePages] ?? l.label,
+  }))
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/70 bg-bg-base/70 backdrop-blur-[12px]">
@@ -19,7 +29,7 @@ export default function Navbar() {
         className="mx-auto flex h-16 max-w-content items-center justify-between px-5 sm:px-8"
         aria-label="Primary"
       >
-        <Link href="/" className="flex items-center gap-2.5" aria-label="PrivaMesh home">
+        <Link href={href('/')} className="flex items-center gap-2.5" aria-label={ui.brandHome}>
           <Image
             src="/icon.png"
             alt="PrivaMesh logo"
@@ -31,40 +41,33 @@ export default function Navbar() {
         </Link>
 
         <div className="hidden items-center gap-7 md:flex">
-          <NavDropdown label="Features" links={NAV_PRODUCT} />
-          <NavDropdown label="Compare" links={NAV_COMPARE} />
-          <Link href="/alternatives" className="nav-link">
-            Alternatives
+          <NavDropdown label={ui.nav.features} links={product} />
+          <NavDropdown label={ui.nav.compare} links={compare} />
+          <Link href={href('/alternatives')} className="nav-link">
+            {ui.nav.alternatives}
           </Link>
-          <Link href="/guides" className="nav-link">
-            Guides
+          <Link href={href('/guides')} className="nav-link">
+            {ui.nav.guides}
           </Link>
-          <Link href="/privacy" className="nav-link">
-            Privacy
+          <Link href={href('/privacy')} className="nav-link">
+            {ui.nav.privacy}
           </Link>
-          <Link href="/blog" className="nav-link">
-            Blog
+          <Link href={href('/blog')} className="nav-link">
+            {ui.nav.blog}
           </Link>
-          <Link href="/news" className="nav-link">
-            News
+          <Link href={href('/news')} className="nav-link">
+            {ui.nav.news}
           </Link>
         </div>
 
         <div className="hidden items-center gap-3 md:flex">
-          <Link
-            href={isRu ? '/' : '/ru'}
-            hrefLang={isRu ? 'en' : 'ru'}
-            className="rounded-md border border-border px-2 py-1 font-mono text-[11px] text-text-muted transition-colors hover:border-border-hover hover:text-accent"
-            aria-label={isRu ? 'Switch to English' : 'Переключить на русский'}
-          >
-            {isRu ? 'EN' : 'RU'}
-          </Link>
+          <LanguageSwitcher languages={languages} />
           <a
             href={SITE.github}
             target="_blank"
             rel="noopener noreferrer"
             className="text-text-muted transition-colors hover:text-accent"
-            aria-label="PrivaMesh on GitHub"
+            aria-label={ui.github}
           >
             <Github size={19} />
           </a>
@@ -75,7 +78,7 @@ export default function Navbar() {
           type="button"
           className="text-text-primary md:hidden"
           onClick={() => setOpen((v) => !v)}
-          aria-label={open ? 'Close menu' : 'Open menu'}
+          aria-label={open ? ui.closeMenu : ui.openMenu}
           aria-expanded={open}
         >
           {open ? <X size={22} /> : <Menu size={22} />}
@@ -84,27 +87,30 @@ export default function Navbar() {
 
       {open && (
         <div className="border-t border-border bg-white/20 backdrop-blur-sm px-5 py-4 md:hidden">
-          <MobileGroup label="Features" links={NAV_PRODUCT} onNavigate={() => setOpen(false)} />
-          <MobileGroup label="Compare" links={NAV_COMPARE} onNavigate={() => setOpen(false)} />
+          <MobileGroup label={ui.nav.features} links={product} onNavigate={() => setOpen(false)} />
+          <MobileGroup label={ui.nav.compare} links={compare} onNavigate={() => setOpen(false)} />
           <div className="mt-2 flex flex-col gap-1">
             {[
-              { href: '/best-private-messaging-apps', label: 'Best apps 2026' },
-              { href: '/alternatives', label: 'Alternatives' },
-              { href: '/guides', label: 'Guides' },
-              { href: '/privacy', label: 'Privacy' },
-              { href: '/blog', label: 'Blog' },
-              { href: '/news', label: 'News' },
-              { href: '/glossary', label: 'Glossary' },
+              { href: '/best-private-messaging-apps', label: ui.nav.bestApps },
+              { href: '/alternatives', label: ui.nav.alternatives },
+              { href: '/guides', label: ui.nav.guides },
+              { href: '/privacy', label: ui.nav.privacy },
+              { href: '/blog', label: ui.nav.blog },
+              { href: '/news', label: ui.nav.news },
+              { href: '/glossary', label: ui.nav.glossary },
             ].map((l) => (
               <Link
                 key={l.href}
-                href={l.href}
+                href={href(l.href)}
                 className="py-2 text-sm text-text-secondary"
                 onClick={() => setOpen(false)}
               >
                 {l.label}
               </Link>
             ))}
+          </div>
+          <div className="mt-4">
+            <LanguageSwitcher languages={languages} />
           </div>
           <DownloadButton className="mt-4 w-full" />
         </div>
@@ -121,6 +127,78 @@ export default function Navbar() {
         }
       `}</style>
     </header>
+  )
+}
+
+/**
+ * Every language, each linking to this same page in that language when it is
+ * published there and to that language's home page when it is not.
+ */
+function LanguageSwitcher({ languages }: { languages: Lang[] }) {
+  const { locale, ui, avail } = useI18n()
+  const pathname = usePathname() ?? '/'
+  const [, enPath] = splitLocale(pathname)
+  const [open, setOpen] = useState(false)
+  const ref = useRef<HTMLDivElement>(null)
+  const current = languages.find((l) => l.code === locale)
+
+  useEffect(() => {
+    if (!open) return
+    const close = (e: MouseEvent) => {
+      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false)
+    }
+    const esc = (e: KeyboardEvent) => e.key === 'Escape' && setOpen(false)
+    document.addEventListener('mousedown', close)
+    document.addEventListener('keydown', esc)
+    return () => {
+      document.removeEventListener('mousedown', close)
+      document.removeEventListener('keydown', esc)
+    }
+  }, [open])
+
+  return (
+    <div ref={ref} className="relative">
+      <button
+        type="button"
+        onClick={() => setOpen((v) => !v)}
+        aria-expanded={open}
+        aria-haspopup="true"
+        aria-label={ui.language}
+        className="flex items-center gap-1.5 rounded-md border border-border px-2 py-1 font-mono text-[11px] uppercase text-text-muted transition-colors hover:border-border-hover hover:text-accent"
+      >
+        <Globe size={13} aria-hidden="true" />
+        {current?.code ?? locale}
+      </button>
+      {open && (
+        <ul className="absolute end-0 top-full z-50 mt-2 max-h-[70vh] w-56 overflow-y-auto rounded-card border border-border bg-bg-elevated p-1.5 shadow-2xl">
+          {languages.map((l) => {
+            const here = existsIn(l.code, enPath, avail)
+            // A language with neither this page nor a home page has nowhere to
+            // land, so it is left out rather than offered as a 404.
+            if (!here && !existsIn(l.code, '/', avail)) return null
+            const target = localePath(l.code, here ? enPath : '/')
+            const active = l.code === locale
+            return (
+              <li key={l.code}>
+                <Link
+                  href={target}
+                  hrefLang={l.hreflang}
+                  lang={l.hreflang}
+                  aria-current={active ? 'true' : undefined}
+                  onClick={() => setOpen(false)}
+                  className={`flex items-center justify-between rounded-lg px-3 py-1.5 text-sm transition-colors hover:bg-white/10 ${
+                    active ? 'text-text-primary' : 'text-text-secondary'
+                  }`}
+                >
+                  <span>{l.name}</span>
+                  <span className="font-mono text-[10px] uppercase text-text-faint">{l.code}</span>
+                </Link>
+              </li>
+            )
+          })}
+        </ul>
+      )}
+    </div>
   )
 }
 
@@ -167,7 +245,7 @@ function MobileGroup({
       <summary className="cursor-pointer py-2 text-sm font-medium text-text-primary">
         {label}
       </summary>
-      <div className="flex flex-col pb-2 pl-3">
+      <div className="flex flex-col pb-2 ps-3">
         {links.map((l) => (
           <Link
             key={l.href}

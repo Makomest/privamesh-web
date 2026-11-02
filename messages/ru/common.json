@@ -1,0 +1,75 @@
+{
+  "meta": {
+    "title": "PrivaMesh - приватный мессенджер с шифрованием",
+    "description": "Приватный мессенджер со сквозным шифрованием. Без номера телефона, без почты, без серверов. Ключи и переписка остаются на вашем устройстве."
+  },
+  "skip": "Перейти к содержимому",
+  "brandHome": "PrivaMesh — главная",
+  "github": "PrivaMesh на GitHub",
+  "x": "PrivaMesh в X",
+  "language": "Язык",
+  "openMenu": "Открыть меню",
+  "closeMenu": "Закрыть меню",
+  "getApp": "Скачать PrivaMesh",
+  "onAppStore": "{label} в App Store",
+  "keepReading": "Читать дальше",
+  "faq": "Частые вопросы",
+  "breadcrumb": "Навигационная цепочка",
+  "home": "Главная",
+  "nav": {
+    "features": "Возможности",
+    "compare": "Сравнение",
+    "alternatives": "Альтернативы",
+    "guides": "Гайды",
+    "privacy": "Приватность",
+    "blog": "Блог",
+    "news": "Новости",
+    "bestApps": "Лучшие приложения 2026",
+    "glossary": "Глоссарий"
+  },
+  "product": {
+    "/features/no-servers": "Без серверов",
+    "/features/e2e-encryption": "Сквозное шифрование",
+    "/features/metadata-protection": "Защита метаданных",
+    "/features/seed-phrase-accounts": "Фраза аккаунта",
+    "/features/duress-code": "Код принуждения"
+  },
+  "comparePages": {
+    "/compare/privamesh-vs-signal": "против Signal",
+    "/compare/privamesh-vs-telegram": "против Telegram",
+    "/compare/privamesh-vs-session": "против Session",
+    "/alternatives": "Все альтернативы",
+    "/best-private-messaging-apps": "Лучшие приложения 2026"
+  },
+  "footer": {
+    "tagline": "Приватный мессенджер без серверов со сквозным шифрованием. Доверяйте математике, а не компаниям.",
+    "product": "Продукт",
+    "compare": "Сравнение",
+    "resources": "Материалы",
+    "legal": "Правовое",
+    "rights": "Все права защищены.",
+    "motto": "Приватно. Зашифровано. Ваше.",
+    "whitepaper": "White Paper",
+    "links": {
+      "/privacy": "Зачем приватность",
+      "/pricing": "Цены",
+      "/download": "Скачать",
+      "/changelog": "Журнал изменений",
+      "/architecture": "Архитектура",
+      "/protocol": "Протокол",
+      "/threat-model": "Модель угроз",
+      "/limitations": "Ограничения",
+      "/guides": "Гайды",
+      "/blog": "Блог",
+      "/news": "Новости",
+      "/glossary": "Глоссарий",
+      "/about": "О проекте",
+      "/security": "Безопасность",
+      "/bug-bounty": "Bug bounty",
+      "/transparency": "Прозрачность",
+      "/privacy-policy": "Политика конфиденциальности",
+      "/terms": "Условия использования",
+      "/support": "Поддержка"
+    }
+  }
+}

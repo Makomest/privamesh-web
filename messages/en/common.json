@@ -1,0 +1,75 @@
+{
+  "meta": {
+    "title": "PrivaMesh - Private Encrypted Messenger",
+    "description": "Private, end-to-end encrypted messenger for iPhone, Android and Windows. No phone number, no email, no account - your keys and chats never leave your device."
+  },
+  "skip": "Skip to content",
+  "brandHome": "PrivaMesh home",
+  "github": "PrivaMesh on GitHub",
+  "x": "PrivaMesh on X",
+  "language": "Language",
+  "openMenu": "Open menu",
+  "closeMenu": "Close menu",
+  "getApp": "Get PrivaMesh",
+  "onAppStore": "{label} on the App Store",
+  "keepReading": "Keep reading",
+  "faq": "Frequently asked questions",
+  "breadcrumb": "Breadcrumb",
+  "home": "Home",
+  "nav": {
+    "features": "Features",
+    "compare": "Compare",
+    "alternatives": "Alternatives",
+    "guides": "Guides",
+    "privacy": "Privacy",
+    "blog": "Blog",
+    "news": "News",
+    "bestApps": "Best apps 2026",
+    "glossary": "Glossary"
+  },
+  "product": {
+    "/features/no-servers": "No Servers",
+    "/features/e2e-encryption": "E2E Encryption",
+    "/features/metadata-protection": "Metadata Protection",
+    "/features/seed-phrase-accounts": "Account Phrase",
+    "/features/duress-code": "Duress Code"
+  },
+  "comparePages": {
+    "/compare/privamesh-vs-signal": "vs Signal",
+    "/compare/privamesh-vs-telegram": "vs Telegram",
+    "/compare/privamesh-vs-session": "vs Session",
+    "/alternatives": "All alternatives",
+    "/best-private-messaging-apps": "Best apps 2026"
+  },
+  "footer": {
+    "tagline": "A private, serverless, end-to-end encrypted messenger. Trust math, not companies.",
+    "product": "Product",
+    "compare": "Compare",
+    "resources": "Resources",
+    "legal": "Legal",
+    "rights": "All rights reserved.",
+    "motto": "Private. Encrypted. Yours.",
+    "whitepaper": "White Paper",
+    "links": {
+      "/privacy": "Why Private",
+      "/pricing": "Pricing",
+      "/download": "Download",
+      "/changelog": "Changelog",
+      "/architecture": "Architecture",
+      "/protocol": "Protocol",
+      "/threat-model": "Threat model",
+      "/limitations": "Limitations",
+      "/guides": "Guides",
+      "/blog": "Blog",
+      "/news": "News",
+      "/glossary": "Glossary",
+      "/about": "About",
+      "/security": "Security",
+      "/bug-bounty": "Bug bounty",
+      "/transparency": "Transparency",
+      "/privacy-policy": "Privacy Policy",
+      "/terms": "Terms of Use",
+      "/support": "Support"
+    }
+  }
+}

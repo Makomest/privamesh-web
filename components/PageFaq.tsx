@@ -7,7 +7,13 @@ import type { FaqItem } from '@/lib/faq'
  * FAQ section plus its FAQPage markup. Both come from the same array so the
  * schema can never claim a question the page doesn't actually show.
  */
-export default function PageFaq({ items }: { items: FaqItem[] }) {
+export default function PageFaq({
+  items,
+  title = 'Frequently asked questions',
+}: {
+  items: FaqItem[]
+  title?: string
+}) {
   if (!items || items.length === 0) return null
 
   return (
@@ -17,7 +23,7 @@ export default function PageFaq({ items }: { items: FaqItem[] }) {
         id="page-faq-heading"
         className="text-center text-3xl font-bold tracking-tight text-text-primary sm:text-4xl"
       >
-        Frequently asked questions
+        {title}
       </h2>
       <div className="mt-8">
         <FAQ items={items} />

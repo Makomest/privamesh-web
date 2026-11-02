@@ -7,12 +7,14 @@ export default function PageHeader({
   title,
   lead,
   trail,
+  crumbLabel,
   children,
 }: {
   eyebrow?: string
   title: ReactNode
   lead: string
   trail: { name: string; path: string }[]
+  crumbLabel?: string
   children?: ReactNode
 }) {
   return (
@@ -21,7 +23,7 @@ export default function PageHeader({
         className="mesh-grid pointer-events-none absolute inset-0 -z-10 opacity-60"
         aria-hidden="true"
       />
-      <Breadcrumbs trail={trail} />
+      <Breadcrumbs trail={trail} label={crumbLabel} />
       {eyebrow && (
         <p className="mb-3 font-mono text-xs uppercase tracking-wider text-accent">{eyebrow}</p>
       )}

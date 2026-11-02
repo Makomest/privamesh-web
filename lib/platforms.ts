@@ -112,3 +112,55 @@ export const PLATFORMS_RU: Platform[] = [
     },
   },
 ]
+
+type PlatformText = {
+  name: string
+  requirement: string
+  cta: string
+  blurb: string
+  secondary?: string
+  noteHeading?: string
+  noteBody?: string
+  warningHeading?: string
+  warningBody?: string
+}
+
+/**
+ * The three platforms with their copy taken from a download catalog. Links and
+ * version numbers stay here and in the App Store sync, so a translation can
+ * never carry a stale version or a wrong URL.
+ */
+export function platformsFrom(t: Record<'ios' | 'windows' | 'android', PlatformText>): Platform[] {
+  const fill = (s: string, v: Record<string, string>) => s.replace(/\{(\w+)\}/g, (_, k) => v[k] ?? '')
+  const box = (heading?: string, body?: string) => (heading && body ? { heading, body } : undefined)
+  return [
+    {
+      id: 'ios',
+      name: t.ios.name,
+      requirement: fill(t.ios.requirement, { os: APP_STORE.minimumOsVersion, version: APP_STORE.version }),
+      href: SITE.downloads.ios,
+      cta: t.ios.cta,
+      blurb: t.ios.blurb,
+      note: box(t.ios.noteHeading, t.ios.noteBody),
+    },
+    {
+      id: 'windows',
+      name: t.windows.name,
+      requirement: fill(t.windows.requirement, { version: SITE.windowsBuild.version }),
+      href: SITE.downloads.windows,
+      cta: t.windows.cta,
+      blurb: t.windows.blurb,
+      secondary: t.windows.secondary ? { href: SITE.windowsBuild.portable, label: t.windows.secondary } : undefined,
+      warning: box(t.windows.warningHeading, t.windows.warningBody),
+    },
+    {
+      id: 'android',
+      name: t.android.name,
+      requirement: fill(t.android.requirement, { version: SITE.androidBuild.version }),
+      href: SITE.downloads.android,
+      cta: t.android.cta,
+      blurb: t.android.blurb,
+      warning: box(t.android.warningHeading, t.android.warningBody),
+    },
+  ]
+}

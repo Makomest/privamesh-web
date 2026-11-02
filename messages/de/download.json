@@ -1,0 +1,87 @@
+{
+  "meta": {
+    "title": "PrivaMesh herunterladen",
+    "description": "PrivaMesh für iPhone im App Store, eine APK für Android 8.0 oder neuer und ein Installer für Windows 10. Keine Telefonnummer, keine E-Mail, kein Konto."
+  },
+  "eyebrow": "Download",
+  "title": "PrivaMesh herunterladen",
+  "lead": "Für alle drei Plattformen gibt es eine Version, die Sie heute installieren können. Unterschiedlich sind die Bezahlung und wie gründlich getestet wurde - beides steht auf der Karte, statt dass Sie es später selbst herausfinden müssen.",
+  "appStoreCta": "Im App Store laden",
+  "notAvailable": "Nicht verfügbar",
+  "platforms": {
+    "ios": {
+      "name": "iPhone",
+      "requirement": "iOS {os} oder neuer · Version {version}",
+      "cta": "Im App Store laden",
+      "blurb": "Kostenlos zu installieren. Keine Telefonnummer, keine E-Mail, kein Konto - die App erzeugt Ihre Identität beim ersten Öffnen auf dem Gerät. Bezahlte Tarife funktionieren hier und nur hier.",
+      "noteHeading": "Die Version mit echter Nutzung",
+      "noteBody": "Das ist der Client, der im App Store erscheint und den Menschen tatsächlich verwenden. Er ist auch die Referenz für die anderen: Die Clients für Android und Windows leiten ihre Protokollschichten aus diesem Quellcode ab und werden mit Testvektoren gegen ihn geprüft. Wo sie abweichen, ist dieser hier korrekt."
+    },
+    "windows": {
+      "name": "Windows",
+      "requirement": "Windows 10 64-Bit · Version {version}",
+      "cta": "Installer herunterladen",
+      "blurb": "Java ist enthalten, Sie müssen also nichts weiter installieren, und der Installer fragt nie nach Administratorrechten. Auf dem Desktop gibt es kein Abo und keinen Relay-Server: Der Client legt eine eigene Solana-Wallet für Gebühren an, Sie laden sie auf, und jede Nachricht zahlt ihre eigene Netzwerkgebühr - etwa 0,0008 $, also rund 6.000 Nachrichten für 5 $.",
+      "secondary": "Portable .zip, ohne Installer",
+      "warningHeading": "Windows wird Sie warnen",
+      "warningBody": "Sie sehen „Der Computer wurde durch Windows geschützt“. Diese Version hat kein Codesignatur-Zertifikat, deshalb erkennt Windows den Herausgeber nicht - das ist keine Meldung über etwas, das in der Datei gefunden wurde. Klicken Sie auf „Weitere Informationen“ und dann auf „Trotzdem ausführen“. Erst das Zertifikat würde Ihnen auch erlauben zu prüfen, dass die Datei wirklich von uns stammt. Solange es fehlt, gibt es nichts, womit sich das sinnvoll prüfen ließe - das ist eine Lücke, und sie zu schließen ist unsere Aufgabe."
+    },
+    "android": {
+      "name": "Android",
+      "requirement": "Android 8.0 oder neuer · Version {version}",
+      "cta": "APK herunterladen",
+      "blurb": "Eine Release-Version, signiert mit dem echten Schlüssel, sodass spätere Versionen sich als Update darüber installieren und Ihr Konto erhalten bleibt. Bezahlte Tarife funktionieren hier noch nicht - der Relay-Server prüft Apple-Belege und hat keinen Weg für Google Play -, Android ist also vorerst nur im kostenlosen Tarif nutzbar.",
+      "warningHeading": "Sideloading, und was getestet wurde",
+      "warningBody": "Android fragt, ob Sie Installationen aus der Quelle erlauben, von der Sie die Datei geladen haben. Die Version wurde auf einem Android-15-Emulator durch Kontoerstellung, Phrasenerzeugung und einen Neustart geführt - genau die Prüfung, die zählt, nachdem R8 den Krypto- und Datenbankcode umgeschrieben hat. Auf einem echten Gerät lief sie noch nicht, und noch keine Android-Version hat eine Nachricht im Mainnet gesendet."
+    }
+  },
+  "first": {
+    "heading": "Was als Erstes passiert",
+    "steps": [
+      "Die App erzeugt auf Ihrem Gerät eine Wiederherstellungsphrase aus 12 Wörtern",
+      "Schreiben Sie sie auf Papier - es gibt kein Zurücksetzen und keine Sicherung bei uns",
+      "Legen Sie einen Code fest und, falls das Gerät es anbietet, biometrisches Entsperren",
+      "Wählen Sie einen Spitznamen, damit man Sie ohne Telefonnummer findet",
+      "Fügen Sie Kontakte per QR-Code, Einladungslink oder Spitzname hinzu; beide Seiten müssen sich gegenseitig hinzufügen"
+    ],
+    "footnote": "Die iPhone-Version, die Mindestversion von iOS und der Preis kommen direkt aus dem App-Store-Eintrag statt von Hand gepflegt zu werden, sodass sie nicht von dem abweichen können, was Apple anzeigt. Die Angaben zu Windows stammen aus dem Release, das die Datei bereitstellt."
+  },
+  "before": {
+    "heading": "Bevor Sie installieren",
+    "paras": [
+      "Zwei Dinge sollten Sie vorab wissen, weil beide später überraschen. Ihr Nachrichtenverlauf lässt sich weder auf ein anderes Gerät übertragen noch nach einer Neuinstallation wiederherstellen - Forward Secrecy vernichtet jeden Nachrichtenschlüssel nach Gebrauch, und das ist die Garantie bei der Arbeit, keine fehlende Funktion. Und das Senden wird abgerechnet: Die App ist kostenlos, aber jede Nachricht ist eine echte Transaktion mit einer echten Netzwerkgebühr. Was das kostet, steht unter [Preise](/pricing).",
+      "Beides gilt auf jeder Plattform. Unterschiedlich ist, wer zahlt: Auf dem iPhone kauft ein Abo blinde Token, die unser einziger Gebühren-Worker einlöst, während der Windows-Client diesen Worker ganz umgeht und aus einer Solana-Wallet zahlt, die Sie selbst aufladen. Was genau jede Komponente sehen kann, steht auf [der Architekturseite](/architecture), und wovor nichts davon schützt, unter [Einschränkungen](/limitations)."
+    ]
+  },
+  "faq": [
+    {
+      "q": "Auf welchen iPhones läuft die App?",
+      "a": "Auf jedem iPhone mit iOS 18 oder neuer. Version 1.0 setzte iOS 26.5 voraus, und hier stand früher, das liege am Post-Quanten-Handshake. Das stimmte nicht: Die Untergrenze kam von einigen Oberflächen-APIs, und in 1.0 war der Post-Quanten-Pfad ohnehin abgeschaltet. 1.1 hat die Untergrenze aufgehoben. Der Post-Quanten-Teil selbst (X-Wing, ML-KEM-768 mit X25519) braucht tatsächlich iOS 26 und hängt deshalb vom Gerät ab: Ein iPhone mit iOS 26 veröffentlicht einen Post-Quanten-Prekey, ein älteres nutzt klassisches X3DH, und beide verstehen sich. In 1.1 kommt der Post-Quanten-Schritt in der Praxis noch nicht zustande - warum, steht auf der Seite mit den Einschränkungen."
+    },
+    {
+      "q": "Was brauche ich für die Anmeldung?",
+      "a": "Nichts. Keine Telefonnummer, keine E-Mail, keinen Benutzernamen. Die App erzeugt beim ersten Start auf Ihrem Gerät eine Wiederherstellungsphrase aus 12 Wörtern - schreiben Sie sie auf, denn sie ist der einzige Weg zurück ins Konto."
+    },
+    {
+      "q": "Ist es kostenlos?",
+      "a": "Der Download ist kostenlos. Das Senden wird abgerechnet, weil jede Nachricht eine bezahlte Transaktion in einer öffentlichen Blockchain ist - die Preisseite nennt Kontingente und Tarifpreise."
+    },
+    {
+      "q": "Warum löst der Windows-Installer eine Sicherheitswarnung aus?",
+      "a": "Die Version ist nicht codesigniert, deshalb erkennt Windows den Herausgeber nicht und zeigt „Der Computer wurde durch Windows geschützt“. Das ist keine Meldung über etwas, das in der Datei gefunden wurde - klicken Sie auf „Weitere Informationen“ und dann auf „Trotzdem ausführen“. Dasselbe fehlende Zertifikat ist der Grund, warum es keinen echten Weg gibt zu bestätigen, dass die Datei von uns stammt, und eine veröffentlichte Prüfsumme würde daran nichts ändern: Wer den Download austauschen kann, kann auch die Prüfsumme daneben austauschen. Die Lösung ist ein Signaturzertifikat, und diese Version hat noch keines."
+    },
+    {
+      "q": "Was ist an der Android-Version anders?",
+      "a": "Sie trägt die Version 0.1 statt 1.0, und das ist keine Bescheidenheit. Sie wurde auf einem Emulator durch Kontoerstellung, Phrasenerzeugung und einen Neustart geführt - die Prüfungen, die erkennen, ob R8 den Krypto- und Datenbankcode beschädigt -, lief aber noch nicht auf einem echten Gerät, und noch keine Android-Version hat eine Nachricht im Mainnet gesendet. Sie ist mit dem echten Schlüssel signiert, sodass spätere Versionen sich als Update darüber installieren."
+    },
+    {
+      "q": "Funktionieren bezahlte Tarife unter Windows und Android?",
+      "a": "Nicht so wie auf dem iPhone. Der Relay-Server prüft Apple-Belege und hat keinen Weg für Google Play, Android würde also nur mit dem kostenlosen Tarif starten. Windows nutzt den Relay-Server überhaupt nicht: Der Desktop-Client legt eine eigene Solana-Wallet für Gebühren an, die Sie direkt aufladen, es gibt also kein Abo, das übertragen werden könnte."
+    }
+  ],
+  "related": [
+    { "href": "/pricing", "label": "Preise", "blurb": "Tarife, Nachrichtenkontingente und warum das Senden abgerechnet wird." },
+    { "href": "/limitations", "label": "Bekannte Einschränkungen", "blurb": "Wovor PrivaMesh Sie nicht schützt." },
+    { "href": "/support", "label": "Support", "blurb": "Wiederherstellungsphrase, neue Geräte und Abos." }
+  ]
+}
