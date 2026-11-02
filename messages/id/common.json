@@ -1,0 +1,75 @@
+{
+  "meta": {
+    "title": "PrivaMesh - messenger pribadi terenkripsi",
+    "description": "Messenger pribadi dengan enkripsi ujung ke ujung untuk iPhone, Android, dan Windows. Tanpa nomor telepon, tanpa email, tanpa akun - kunci dan obrolan Anda tidak pernah meninggalkan perangkat."
+  },
+  "skip": "Langsung ke konten",
+  "brandHome": "Beranda PrivaMesh",
+  "github": "PrivaMesh di GitHub",
+  "x": "PrivaMesh di X",
+  "language": "Bahasa",
+  "openMenu": "Buka menu",
+  "closeMenu": "Tutup menu",
+  "getApp": "Dapatkan PrivaMesh",
+  "onAppStore": "{label} di App Store",
+  "keepReading": "Baca selanjutnya",
+  "faq": "Pertanyaan umum",
+  "breadcrumb": "Jejak navigasi",
+  "home": "Beranda",
+  "nav": {
+    "features": "Fitur",
+    "compare": "Bandingkan",
+    "alternatives": "Alternatif",
+    "guides": "Panduan",
+    "privacy": "Privasi",
+    "blog": "Blog",
+    "news": "Berita",
+    "bestApps": "Aplikasi terbaik 2026",
+    "glossary": "Glosarium"
+  },
+  "product": {
+    "/features/no-servers": "Tanpa server",
+    "/features/e2e-encryption": "Enkripsi ujung ke ujung",
+    "/features/metadata-protection": "Perlindungan metadata",
+    "/features/seed-phrase-accounts": "Frasa akun",
+    "/features/duress-code": "Kode paksaan"
+  },
+  "comparePages": {
+    "/compare/privamesh-vs-signal": "vs Signal",
+    "/compare/privamesh-vs-telegram": "vs Telegram",
+    "/compare/privamesh-vs-session": "vs Session",
+    "/alternatives": "Semua alternatif",
+    "/best-private-messaging-apps": "Aplikasi terbaik 2026"
+  },
+  "footer": {
+    "tagline": "Messenger pribadi tanpa server dengan enkripsi ujung ke ujung. Percayai matematika, bukan perusahaan.",
+    "product": "Produk",
+    "compare": "Bandingkan",
+    "resources": "Sumber daya",
+    "legal": "Legal",
+    "rights": "Hak cipta dilindungi.",
+    "motto": "Pribadi. Terenkripsi. Milik Anda.",
+    "whitepaper": "White paper",
+    "links": {
+      "/privacy": "Mengapa privat",
+      "/pricing": "Harga",
+      "/download": "Unduh",
+      "/changelog": "Catatan perubahan",
+      "/architecture": "Arsitektur",
+      "/protocol": "Protokol",
+      "/threat-model": "Model ancaman",
+      "/limitations": "Keterbatasan",
+      "/guides": "Panduan",
+      "/blog": "Blog",
+      "/news": "Berita",
+      "/glossary": "Glosarium",
+      "/about": "Tentang",
+      "/security": "Keamanan",
+      "/bug-bounty": "Bug bounty",
+      "/transparency": "Transparansi",
+      "/privacy-policy": "Kebijakan privasi",
+      "/terms": "Ketentuan penggunaan",
+      "/support": "Dukungan"
+    }
+  }
+}

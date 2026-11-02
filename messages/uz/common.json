@@ -1,0 +1,75 @@
+{
+  "meta": {
+    "title": "PrivaMesh - shifrlangan shaxsiy messenjer",
+    "description": "iPhone, Android va Windows uchun uchdan-uchgacha shifrlangan shaxsiy messenjer. Telefon raqami yo'q, pochta yo'q, akkaunt yo'q - kalitlaringiz va yozishmalaringiz qurilmangizni hech qachon tark etmaydi."
+  },
+  "skip": "Tarkibga o'tish",
+  "brandHome": "PrivaMesh bosh sahifasi",
+  "github": "GitHub'dagi PrivaMesh",
+  "x": "X'dagi PrivaMesh",
+  "language": "Til",
+  "openMenu": "Menyuni ochish",
+  "closeMenu": "Menyuni yopish",
+  "getApp": "PrivaMesh'ni yuklab olish",
+  "onAppStore": "{label} App Store'da",
+  "keepReading": "O'qishni davom ettiring",
+  "faq": "Ko'p beriladigan savollar",
+  "breadcrumb": "Navigatsiya yo'li",
+  "home": "Bosh sahifa",
+  "nav": {
+    "features": "Imkoniyatlar",
+    "compare": "Taqqoslash",
+    "alternatives": "Muqobillar",
+    "guides": "Qo'llanmalar",
+    "privacy": "Maxfiylik",
+    "blog": "Blog",
+    "news": "Yangiliklar",
+    "bestApps": "Eng yaxshi ilovalar 2026",
+    "glossary": "Lug'at"
+  },
+  "product": {
+    "/features/no-servers": "Serverlarsiz",
+    "/features/e2e-encryption": "Uchdan-uchgacha shifrlash",
+    "/features/metadata-protection": "Metama'lumotlarni himoyalash",
+    "/features/seed-phrase-accounts": "Akkaunt iborasi",
+    "/features/duress-code": "Majburlash kodi"
+  },
+  "comparePages": {
+    "/compare/privamesh-vs-signal": "Signal bilan taqqoslash",
+    "/compare/privamesh-vs-telegram": "Telegram bilan taqqoslash",
+    "/compare/privamesh-vs-session": "Session bilan taqqoslash",
+    "/alternatives": "Barcha muqobillar",
+    "/best-private-messaging-apps": "Eng yaxshi ilovalar 2026"
+  },
+  "footer": {
+    "tagline": "Serverlarsiz, uchdan-uchgacha shifrlangan shaxsiy messenjer. Kompaniyalarga emas, matematikaga ishoning.",
+    "product": "Mahsulot",
+    "compare": "Taqqoslash",
+    "resources": "Manbalar",
+    "legal": "Huquqiy ma'lumot",
+    "rights": "Barcha huquqlar himoyalangan.",
+    "motto": "Shaxsiy. Shifrlangan. Sizniki.",
+    "whitepaper": "White Paper",
+    "links": {
+      "/privacy": "Nega maxfiylik",
+      "/pricing": "Narxlar",
+      "/download": "Yuklab olish",
+      "/changelog": "O'zgarishlar jurnali",
+      "/architecture": "Arxitektura",
+      "/protocol": "Protokol",
+      "/threat-model": "Tahdid modeli",
+      "/limitations": "Cheklovlar",
+      "/guides": "Qo'llanmalar",
+      "/blog": "Blog",
+      "/news": "Yangiliklar",
+      "/glossary": "Lug'at",
+      "/about": "Loyiha haqida",
+      "/security": "Xavfsizlik",
+      "/bug-bounty": "Bug bounty",
+      "/transparency": "Shaffoflik",
+      "/privacy-policy": "Maxfiylik siyosati",
+      "/terms": "Foydalanish shartlari",
+      "/support": "Yordam"
+    }
+  }
+}

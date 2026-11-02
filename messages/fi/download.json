@@ -1,0 +1,99 @@
+{
+  "meta": {
+    "title": "Lataa PrivaMesh",
+    "description": "PrivaMesh iPhonelle App Storesta, APK Android 8.0:lle tai uudemmalle ja asennusohjelma Windows 10:lle. Ei puhelinnumeroa, ei sähköpostia, ei tiliä."
+  },
+  "eyebrow": "Lataa",
+  "title": "Lataa PrivaMesh",
+  "lead": "Kaikille kolmelle alustalle on versio, jonka voit asentaa jo tänään. Eroa on siinä, miten maksat ja kuinka paljon on testattu, ja molemmat on kirjoitettu kortille sen sijaan, että ne jäisivät sinun selvitettäviksesi myöhemmin.",
+  "appStoreCta": "Lataa App Storesta",
+  "notAvailable": "Ei saatavilla",
+  "platforms": {
+    "ios": {
+      "name": "iPhone",
+      "requirement": "iOS {os} tai uudempi · versio {version}",
+      "cta": "Lataa App Storesta",
+      "blurb": "Asennus on ilmainen. Ei puhelinnumeroa, ei sähköpostia, ei tiliä - sovellus luo identiteettisi laitteella, kun avaat sen ensimmäisen kerran. Maksulliset tasot toimivat täällä ja vain täällä.",
+      "noteHeading": "Se, jolla on oikeaa käyttöä takanaan",
+      "noteBody": "Tämä on App Storeen julkaistava asiakasohjelma ja se, jota ihmiset oikeasti käyttävät. Se on myös vertailukohta muille: Androidin ja Windowsin asiakasohjelmat johtavat protokollakerroksensa tästä lähdekoodista ja ne tarkistetaan sitä vasten testivektoreilla, joten kun ne eroavat, tämä on oikeassa."
+    },
+    "windows": {
+      "name": "Windows",
+      "requirement": "Windows 10 64-bittinen · versio {version}",
+      "cta": "Lataa asennusohjelma",
+      "blurb": "Java on mukana, joten muuta ei tarvitse asentaa, eikä asennusohjelma koskaan pyydä järjestelmänvalvojan oikeuksia. Työpöydällä ei ole tilausta eikä välityspalvelinta: asiakasohjelma luo oman Solana-lompakon maksuja varten, sinä täytät sen, ja jokainen viesti maksaa oman verkkomaksunsa - noin 0,0008 $, eli noin 6 000 viestiä 5 dollarilla.",
+      "secondary": "Siirrettävä .zip, ilman asennusta",
+      "warningHeading": "Windows varoittaa sinua",
+      "warningBody": "Näet ilmoituksen ”Windows suojasi tietokonettasi”. Tällä versiolla ei ole koodin allekirjoitusvarmennetta, joten Windows ei tunnista julkaisijaa - kyse ei ole ilmoituksesta, että tiedostosta olisi löytynyt jotain. Valitse ”Lisätietoja” ja sitten ”Suorita silti”. Sama varmenne antaisi sinun myös tarkistaa, että tiedosto todella on meiltä, joten niin kauan kuin sitä ei ole, ei ole mitään järkevää, mihin verrata. Se on puute, ja sen korjaaminen on meidän tehtävämme."
+    },
+    "android": {
+      "name": "Android",
+      "requirement": "Android 8.0 tai uudempi · versio {version}",
+      "cta": "Lataa APK",
+      "blurb": "Julkaisuversio, joka on allekirjoitettu oikealla avaimella, joten myöhemmät versiot asentuvat sen päälle päivityksenä ja tilisi säilyy. Maksulliset tasot eivät vielä toimi täällä - välityspalvelin tarkistaa Applen kuitit eikä sillä ole reittiä Google Playlle - joten Android on toistaiseksi vain ilmaistasolla.",
+      "warningHeading": "Sivulataus ja mitä testattiin",
+      "warningBody": "Android pyytää sallimaan asennukset lähteestä, josta latasit tiedoston. Versio ajettiin Android 15 -emulaattorissa tilin luomisen, lauseen luomisen ja uudelleenkäynnistyksen läpi, mikä on se tarkistus, jolla on merkitystä sen jälkeen, kun R8 on kirjoittanut salaus- ja tietokantakoodin uudelleen. Sitä ei ole ajettu oikealla laitteella, eikä mikään Android-versio ole vielä lähettänyt viestiä mainnetissä."
+    }
+  },
+  "first": {
+    "heading": "Mitä tapahtuu ensin",
+    "steps": [
+      "Sovellus luo laitteellesi 12 sanan palautuslauseen",
+      "Kirjoita se paperille - nollausta ei ole, emmekä säilytä varmuuskopiota",
+      "Aseta pääsykoodi ja biometrinen avaus, jos laite tarjoaa sen",
+      "Valitse lempinimi, jotta sinut löydetään ilman puhelinnumeroa",
+      "Lisää yhteystieto QR-koodilla, kutsulinkillä tai lempinimellä; molempien osapuolten on lisättävä toisensa"
+    ],
+    "footnote": "iPhone-versio, iOS:n vähimmäisversio ja hinta tulevat suoraan App Storen sivulta sen sijaan, että niitä ylläpidettäisiin käsin, joten ne eivät voi poiketa siitä, mitä Apple näyttää. Windowsin tiedot tulevat julkaisusta, jossa ladattava tiedosto on."
+  },
+  "before": {
+    "heading": "Ennen asennusta",
+    "paras": [
+      "Kaksi asiaa kannattaa tietää etukäteen, koska molemmat yllättävät myöhemmin. Viestihistoriaa ei voi siirtää toiselle laitteelle eikä palauttaa uudelleenasennuksen jälkeen - eteenpäin suuntautuva salaisuus tuhoaa jokaisen viestiavaimen käytön jälkeen, ja se on toimiva takuu, ei puuttuva ominaisuus. Ja lähettäminen maksaa: sovellus on ilmainen, mutta jokainen viesti on oikea tapahtuma oikealla verkkomaksulla. Katso [hinnat](/pricing) nähdäksesi, mitä se maksaa.",
+      "Nämä kaksi pätevät kaikilla alustoilla. Eroa on siinä, kuka maksaa: iPhonella tilaus ostaa sokeita tunnisteita, jotka ainoa maksupalvelumme lunastaa, kun taas Windows-asiakasohjelma ohittaa tuon palvelun kokonaan ja maksaa Solana-lompakosta, jonka täytät itse. Mitä kukin osa tarkalleen näkee, kerrotaan [arkkitehtuurisivulla](/architecture), ja mitä vastaan mikään tästä ei suojaa, kohdassa [rajoitukset](/limitations)."
+    ]
+  },
+  "faq": [
+    {
+      "q": "Millä iPhoneilla se toimii?",
+      "a": "Millä tahansa iPhonella, jossa on iOS 18 tai uudempi. Versio 1.0 vaati iOS 26.5:n, ja tällä sivulla väitettiin sen johtuvan kvanttikestävästä kättelystä. Niin ei ollut: alaraja tuli muutamasta käyttöliittymän rajapinnasta, ja 1.0:ssa kvanttikestävä polku oli joka tapauksessa pois päältä. 1.1 poisti alarajan. Kvanttikestävä osa itse (X-Wing, ML-KEM-768 yhdessä X25519:n kanssa) tarvitsee todella iOS 26:n, joten se riippuu laitteesta: iOS 26 -iPhone julkaisee kvanttikestävän esiavaimen, vanhempi käyttää klassista X3DH:ta, ja ne ymmärtävät toisiaan. 1.1:ssä kvanttikestävä vaihe ei vielä käytännössä onnistu - rajoitussivu kertoo miksi."
+    },
+    {
+      "q": "Mitä tarvitsen rekisteröitymiseen?",
+      "a": "Ei mitään. Ei puhelinnumeroa, ei sähköpostia, ei varattavaa käyttäjätunnusta. Sovellus luo laitteellesi 12 sanan palautuslauseen ensimmäisellä käynnistyskerralla - kirjoita se ylös, sillä se on ainoa tie takaisin tilille."
+    },
+    {
+      "q": "Onko se ilmainen?",
+      "a": "Lataus on ilmainen. Lähettäminen maksaa, koska jokainen viesti on maksullinen tapahtuma julkisessa lohkoketjussa - hinnastosivulla on kiintiöt ja tasojen hinnat."
+    },
+    {
+      "q": "Miksi Windowsin asennusohjelma antaa tietoturvavaroituksen?",
+      "a": "Versiota ei ole allekirjoitettu, joten Windows ei tunnista julkaisijaa ja näyttää ”Windows suojasi tietokonettasi”. Kyse ei ole ilmoituksesta, että tiedostosta olisi löytynyt jotain - valitse ”Lisätietoja” ja sitten ”Suorita silti”. Sama puuttuva varmenne on syy siihen, ettei ole todellista tapaa varmistaa tiedoston tulevan meiltä, eikä julkaistu tarkistussumma muuttaisi sitä: joka pystyy vaihtamaan latauksen, pystyy vaihtamaan myös vieressä olevan tarkistussumman. Ratkaisu on allekirjoitusvarmenne, eikä tällä versiolla ole sitä vielä."
+    },
+    {
+      "q": "Mikä Android-versiossa on erilaista?",
+      "a": "Se on versio 0.1 eikä 1.0, eikä se ole vaatimattomuutta. Se ajettiin emulaattorissa tilin luomisen, lauseen luomisen ja uudelleenkäynnistyksen läpi - tarkistukset, jotka huomaavat, rikkooko R8 salaus- ja tietokantakoodin - mutta sitä ei ole ajettu oikealla laitteella, eikä mikään Android-versio ole vielä lähettänyt viestiä mainnetissä. Se on allekirjoitettu oikealla avaimella, joten myöhemmät versiot asentuvat sen päälle päivityksenä."
+    },
+    {
+      "q": "Toimivatko maksulliset tasot Windowsissa ja Androidissa?",
+      "a": "Eivät samalla tavalla kuin iPhonella. Välityspalvelin tarkistaa Applen kuitit eikä sillä ole reittiä Google Playlle, joten Android aloittaisi vain ilmaistasolla. Windows ei käytä välityspalvelinta lainkaan: työpöytäsovellus luo oman Solana-maksulompakon, jonka täytät suoraan, joten siirrettävää tilausta ei ole."
+    }
+  ],
+  "related": [
+    {
+      "href": "/pricing",
+      "label": "Hinnat",
+      "blurb": "Tasot, viestikiintiöt ja miksi lähettäminen maksaa."
+    },
+    {
+      "href": "/limitations",
+      "label": "Tunnetut rajoitukset",
+      "blurb": "Mitä vastaan PrivaMesh ei suojaa sinua."
+    },
+    {
+      "href": "/support",
+      "label": "Tuki",
+      "blurb": "Palautuslause, uudet laitteet ja tilaukset."
+    }
+  ]
+}

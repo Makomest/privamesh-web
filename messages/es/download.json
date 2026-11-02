@@ -1,0 +1,99 @@
+{
+  "meta": {
+    "title": "Descargar PrivaMesh",
+    "description": "PrivaMesh para iPhone en la App Store, un APK para Android 8.0 o posterior y un instalador para Windows 10. Sin número de teléfono, sin correo, sin cuenta."
+  },
+  "eyebrow": "Descargar",
+  "title": "Descargar PrivaMesh",
+  "lead": "Las tres plataformas tienen una versión que puedes instalar hoy. Lo que cambia es cómo se paga y cuánto se ha probado, y ambas cosas están escritas en la tarjeta en lugar de dejar que las descubras después.",
+  "appStoreCta": "Descargar en la App Store",
+  "notAvailable": "No disponible",
+  "platforms": {
+    "ios": {
+      "name": "iPhone",
+      "requirement": "iOS {os} o posterior · versión {version}",
+      "cta": "Descargar en la App Store",
+      "blurb": "Instalación gratuita. Sin número de teléfono, sin correo, sin cuenta: la app genera tu identidad en el dispositivo la primera vez que la abres. Los planes de pago funcionan aquí y solo aquí.",
+      "noteHeading": "La que tiene uso real detrás",
+      "noteBody": "Este es el cliente que se publica en la App Store y el que la gente usa de verdad. También es la referencia con la que se miden los demás: los clientes de Android y Windows derivan sus capas de protocolo de este código fuente y se comprueban contra él con vectores de prueba, así que cuando no coinciden, el correcto es este."
+    },
+    "windows": {
+      "name": "Windows",
+      "requirement": "Windows 10 de 64 bits · versión {version}",
+      "cta": "Descargar el instalador",
+      "blurb": "Java viene incluido, así que no hay nada más que instalar, y el instalador nunca pide permisos de administrador. En el escritorio no hay suscripción ni relé de por medio: el cliente crea su propio monedero de Solana para las comisiones, tú lo recargas y cada mensaje paga su propia comisión de red - unos 0,0008 $, o sea, unos 6.000 mensajes por 5 $.",
+      "secondary": ".zip portátil, sin instalador",
+      "warningHeading": "Windows te avisará",
+      "warningBody": "Verás «Windows protegió su PC». Esta versión no tiene certificado de firma de código, así que Windows no reconoce al editor; no es un aviso de algo encontrado en el archivo. Haz clic en «Más información» y luego en «Ejecutar de todas formas». Ese certificado también es lo que te permitiría comprobar que el archivo viene realmente de nosotros, así que mientras no exista no hay nada fiable con qué comprobarlo. Es una carencia, y nos toca a nosotros resolverla."
+    },
+    "android": {
+      "name": "Android",
+      "requirement": "Android 8.0 o posterior · versión {version}",
+      "cta": "Descargar el APK",
+      "blurb": "Una versión de producción firmada con la clave real, así que las versiones posteriores se instalarán encima como actualización y tu cuenta se conservará. Los planes de pago todavía no funcionan aquí - el relé verifica recibos de Apple y no tiene vía para Google Play -, así que por ahora Android solo funciona con el plan gratuito.",
+      "warningHeading": "Instalación manual y qué se ha probado",
+      "warningBody": "Android te pedirá permitir instalaciones desde el sitio de donde descargaste el archivo. La versión se llevó por la creación de cuenta, la generación de la frase y un reinicio en un emulador de Android 15, que es la prueba que importa después de que R8 reescribe el código criptográfico y de la base de datos. No se ha ejecutado en un dispositivo real y ninguna versión de Android ha enviado todavía un mensaje en la mainnet."
+    }
+  },
+  "first": {
+    "heading": "Qué pasa primero",
+    "steps": [
+      "La app genera una frase de recuperación de 12 palabras en tu dispositivo",
+      "Escríbela en papel: no hay restablecimiento ni copia de seguridad en nuestras manos",
+      "Configura un código de acceso y el desbloqueo biométrico si el dispositivo lo ofrece",
+      "Elige un apodo para que te encuentren sin número de teléfono",
+      "Añade un contacto por código QR, enlace de invitación o apodo; ambas partes deben añadirse mutuamente"
+    ],
+    "footnote": "La versión de iPhone, la versión mínima de iOS y el precio salen directamente de la ficha de la App Store en lugar de mantenerse a mano, así que no pueden desviarse de lo que muestra Apple. Los datos de Windows salen de la publicación que aloja el archivo que descargas."
+  },
+  "before": {
+    "heading": "Antes de instalar",
+    "paras": [
+      "Conviene saber dos cosas de antemano, porque ambas sorprenden más tarde. Tu historial de mensajes no se puede pasar a otro dispositivo ni restaurar tras reinstalar: el secreto hacia adelante destruye la clave de cada mensaje después de usarla, y eso es la garantía funcionando, no una función que falta. Y el envío tiene un coste: la app es gratuita, pero cada mensaje es una transacción real con una comisión de red real. Consulta los [precios](/pricing) para ver cuánto cuesta.",
+      "Ambas cosas valen para todas las plataformas. Lo que cambia es quién paga: en iPhone una suscripción compra tokens ciegos que canjea nuestro único servicio de comisiones, mientras que el cliente de Windows se salta ese servicio por completo y gasta de un monedero de Solana que recargas tú. Lo que puede observar cada componente está en [la página de arquitectura](/architecture), y de lo que nada de esto te protege, en [limitaciones](/limitations)."
+    ]
+  },
+  "faq": [
+    {
+      "q": "¿En qué iPhone funciona?",
+      "a": "En cualquier iPhone con iOS 18 o posterior. La versión 1.0 exigía iOS 26.5, y esta página decía que era por el intercambio de claves poscuántico. No era así: el mínimo lo marcaban unas pocas API de interfaz, y la 1.0 tenía la vía poscuántica desactivada de todos modos. La 1.1 eliminó ese mínimo. Lo poscuántico en sí (X-Wing, ML-KEM-768 con X25519) sí necesita iOS 26, así que depende de cada dispositivo: un iPhone con iOS 26 publica una preclave poscuántica, uno más antiguo usa X3DH clásico, y ambos se entienden. En la 1.1 el paso poscuántico todavía no llega a completarse en la práctica; la página de limitaciones explica por qué."
+    },
+    {
+      "q": "¿Qué necesito para registrarme?",
+      "a": "Nada. Ni número de teléfono, ni correo, ni nombre de usuario que reservar. La app genera una frase de recuperación de 12 palabras en tu dispositivo la primera vez que se abre; escríbela, porque es la única forma de volver a la cuenta."
+    },
+    {
+      "q": "¿Es gratis?",
+      "a": "La descarga es gratuita. El envío tiene un coste porque cada mensaje es una transacción de pago en una cadena pública; la página de precios detalla los cupos y los precios de los planes."
+    },
+    {
+      "q": "¿Por qué el instalador de Windows muestra una advertencia de seguridad?",
+      "a": "La versión no está firmada, así que Windows no reconoce al editor y muestra «Windows protegió su PC». No es un aviso de algo encontrado en el archivo: haz clic en «Más información» y luego en «Ejecutar de todas formas». El mismo certificado que falta es la razón de que no haya una forma real de confirmar que el archivo viene de nosotros, y una suma de verificación publicada no lo arreglaría: quien pueda sustituir la descarga también puede sustituir la suma de al lado. La solución es un certificado de firma, y esta versión aún no lo tiene."
+    },
+    {
+      "q": "¿Qué tiene de distinto la versión de Android?",
+      "a": "Es la versión 0.1 y no la 1.0, y no es por modestia. Se llevó por la creación de cuenta, la generación de la frase y un reinicio en un emulador - las pruebas que detectan si R8 rompe el código criptográfico y de la base de datos -, pero no se ha ejecutado en un dispositivo real y ninguna versión de Android ha enviado todavía un mensaje en la mainnet. Está firmada con la clave real, así que las versiones posteriores se instalarán encima como actualización."
+    },
+    {
+      "q": "¿Funcionan los planes de pago en Windows y Android?",
+      "a": "No como en iPhone. El relé verifica recibos de Apple y no tiene vía para Google Play, así que Android empezaría solo con el plan gratuito. Windows no usa el relé en absoluto: el cliente de escritorio crea su propio monedero de Solana para las comisiones, que recargas directamente, así que no hay suscripción que trasladar."
+    }
+  ],
+  "related": [
+    {
+      "href": "/pricing",
+      "label": "Precios",
+      "blurb": "Planes, cupos de mensajes y por qué el envío tiene un coste."
+    },
+    {
+      "href": "/limitations",
+      "label": "Limitaciones conocidas",
+      "blurb": "De qué no te protege PrivaMesh."
+    },
+    {
+      "href": "/support",
+      "label": "Soporte",
+      "blurb": "Frase de recuperación, dispositivos nuevos y suscripciones."
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "meta": {
+    "title": "Pobierz PrivaMesh",
+    "description": "PrivaMesh na iPhone'a w App Store, APK na Androida 8.0 lub nowszego i instalator na Windows 10. Bez numeru telefonu, bez e-maila, bez konta."
+  },
+  "eyebrow": "Pobierz",
+  "title": "Pobierz PrivaMesh",
+  "lead": "Na wszystkie trzy platformy jest wersja, którą możesz zainstalować już dziś. Różnią się sposobem płatności i tym, jak dokładnie je przetestowano, a jedno i drugie jest napisane na karcie, zamiast zostawiać to do odkrycia później.",
+  "appStoreCta": "Pobierz z App Store",
+  "notAvailable": "Niedostępne",
+  "platforms": {
+    "ios": {
+      "name": "iPhone",
+      "requirement": "iOS {os} lub nowszy · wersja {version}",
+      "cta": "Pobierz z App Store",
+      "blurb": "Instalacja jest bezpłatna. Bez numeru telefonu, bez e-maila, bez konta - aplikacja tworzy twoją tożsamość na urządzeniu przy pierwszym uruchomieniu. Płatne plany działają tutaj i tylko tutaj.",
+      "noteHeading": "Ta z prawdziwym użyciem",
+      "noteBody": "To klient publikowany w App Store i ten, którego ludzie naprawdę używają. Jest też punktem odniesienia dla pozostałych: klienty na Androida i Windows wywodzą swoje warstwy protokołu z tego kodu źródłowego i są z nim sprawdzane wektorami testowymi, więc gdy się różnią, rację ma ten."
+    },
+    "windows": {
+      "name": "Windows",
+      "requirement": "Windows 10 64-bit · wersja {version}",
+      "cta": "Pobierz instalator",
+      "blurb": "Java jest w zestawie, więc nie trzeba niczego doinstalowywać, a instalator nigdy nie prosi o uprawnienia administratora. Na komputerze nie ma subskrypcji ani przekaźnika: klient tworzy własny portfel Solana na opłaty, ty go zasilasz, a każda wiadomość płaci własną opłatę sieciową - około 0,0008 USD, czyli mniej więcej 6000 wiadomości za 5 USD.",
+      "secondary": "Przenośny .zip, bez instalacji",
+      "warningHeading": "Windows cię ostrzeże",
+      "warningBody": "Zobaczysz komunikat „System Windows ochronił ten komputer”. Ta wersja nie ma certyfikatu podpisywania kodu, więc Windows nie rozpoznaje wydawcy - to nie jest zgłoszenie czegoś znalezionego w pliku. Kliknij „Więcej informacji”, a potem „Uruchom mimo to”. Ten sam certyfikat pozwoliłby ci też sprawdzić, że plik naprawdę pochodzi od nas, więc dopóki go nie ma, nie ma tu z czym tego sensownie porównać. To luka i to my musimy ją zamknąć."
+    },
+    "android": {
+      "name": "Android",
+      "requirement": "Android 8.0 lub nowszy · wersja {version}",
+      "cta": "Pobierz APK",
+      "blurb": "Wersja produkcyjna podpisana prawdziwym kluczem, więc kolejne wersje zainstalują się na niej jako aktualizacja, a twoje konto zostanie zachowane. Płatne plany tu jeszcze nie działają - przekaźnik weryfikuje paragony Apple i nie ma ścieżki dla Google Play - więc na razie Android to tylko plan darmowy.",
+      "warningHeading": "Instalacja spoza sklepu i co przetestowano",
+      "warningBody": "Android poprosi o zgodę na instalacje ze źródła, z którego pobrano plik. Wersję przeprowadzono przez utworzenie konta, wygenerowanie frazy i ponowne uruchomienie na emulatorze Androida 15 - to test, który ma znaczenie po tym, jak R8 przepisze kod kryptograficzny i bazy danych. Nie uruchamiano jej na prawdziwym urządzeniu i żadna wersja na Androida nie wysłała jeszcze wiadomości w mainnecie."
+    }
+  },
+  "first": {
+    "heading": "Co dzieje się najpierw",
+    "steps": [
+      "Aplikacja generuje na twoim urządzeniu 12-wyrazową frazę odzyskiwania",
+      "Zapisz ją na papierze - nie ma resetu i nie przechowujemy kopii zapasowej",
+      "Ustaw kod dostępu i odblokowanie biometryczne, jeśli urządzenie je oferuje",
+      "Wybierz pseudonim, żeby można cię było znaleźć bez numeru telefonu",
+      "Dodaj kontakt kodem QR, linkiem z zaproszeniem lub pseudonimem; obie strony muszą się wzajemnie dodać"
+    ],
+    "footnote": "Wersja na iPhone'a, minimalna wersja iOS i cena pochodzą wprost z karty App Store zamiast być aktualizowane ręcznie, więc nie mogą się rozjechać z tym, co pokazuje Apple. Dane dla Windows pochodzą z wydania, w którym jest pobierany plik."
+  },
+  "before": {
+    "heading": "Zanim zainstalujesz",
+    "paras": [
+      "Dwie rzeczy warto wiedzieć z góry, bo obie zaskakują później. Historii wiadomości nie da się przenieść na inne urządzenie ani przywrócić po ponownej instalacji - utajnianie z wyprzedzeniem niszczy klucz każdej wiadomości po użyciu, i to jest działająca gwarancja, a nie brakująca funkcja. A wysyłanie jest płatne: aplikacja jest darmowa, ale każda wiadomość to prawdziwa transakcja z prawdziwą opłatą sieciową. Ile to kosztuje, znajdziesz w [cenniku](/pricing).",
+      "Obie dotyczą każdej platformy. Różni się to, kto płaci: na iPhonie subskrypcja kupuje ślepe tokeny, które realizuje nasza jedyna usługa opłat, a klient na Windows całkowicie ją pomija i płaci z portfela Solana, który zasilasz sam. Co dokładnie widzi każdy element, opisuje [strona architektury](/architecture), a przed czym nic z tego nie chroni - [ograniczenia](/limitations)."
+    ]
+  },
+  "faq": [
+    {
+      "q": "Na jakich iPhone'ach działa?",
+      "a": "Na każdym iPhonie z iOS 18 lub nowszym. Wersja 1.0 wymagała iOS 26.5, a ta strona twierdziła, że to z powodu postkwantowego uzgadniania kluczy. Nie było tak: próg wynikał z kilku API interfejsu, a w 1.0 ścieżka postkwantowa i tak była wyłączona. Wersja 1.1 usunęła ten próg. Sama część postkwantowa (X-Wing, ML-KEM-768 z X25519) rzeczywiście potrzebuje iOS 26, więc zależy od urządzenia: iPhone z iOS 26 publikuje postkwantowy prekey, starszy używa klasycznego X3DH, a oba się rozumieją. W 1.1 krok postkwantowy w praktyce jeszcze się nie udaje - dlaczego, wyjaśnia strona ograniczeń."
+    },
+    {
+      "q": "Czego potrzebuję, żeby się zarejestrować?",
+      "a": "Niczego. Bez numeru telefonu, bez e-maila, bez nazwy użytkownika do zarezerwowania. Przy pierwszym uruchomieniu aplikacja generuje na urządzeniu 12-wyrazową frazę odzyskiwania - zapisz ją, bo to jedyna droga powrotu do konta."
+    },
+    {
+      "q": "Czy to jest darmowe?",
+      "a": "Pobranie jest darmowe. Wysyłanie jest płatne, bo każda wiadomość to płatna transakcja w publicznym łańcuchu - strona cennika podaje limity i ceny planów."
+    },
+    {
+      "q": "Dlaczego instalator Windows wyświetla ostrzeżenie bezpieczeństwa?",
+      "a": "Wersja nie jest podpisana, więc Windows nie rozpoznaje wydawcy i pokazuje „System Windows ochronił ten komputer”. To nie jest zgłoszenie czegoś znalezionego w pliku - kliknij „Więcej informacji”, a potem „Uruchom mimo to”. Ten sam brakujący certyfikat sprawia, że nie ma prawdziwego sposobu, by potwierdzić, że plik pochodzi od nas, a opublikowana suma kontrolna by tego nie zmieniła: kto może podmienić plik, może też podmienić sumę obok. Rozwiązaniem jest certyfikat podpisu, a ta wersja jeszcze go nie ma."
+    },
+    {
+      "q": "Czym różni się wersja na Androida?",
+      "a": "To wersja 0.1, a nie 1.0, i nie chodzi o skromność. Przeprowadzono ją przez utworzenie konta, wygenerowanie frazy i ponowne uruchomienie na emulatorze - testy, które wyłapują, czy R8 psuje kod kryptograficzny i bazy danych - ale nie uruchamiano jej na prawdziwym urządzeniu i żadna wersja na Androida nie wysłała jeszcze wiadomości w mainnecie. Jest podpisana prawdziwym kluczem, więc kolejne wersje zainstalują się na niej jako aktualizacja."
+    },
+    {
+      "q": "Czy płatne plany działają na Windows i Androidzie?",
+      "a": "Nie tak jak na iPhonie. Przekaźnik weryfikuje paragony Apple i nie ma ścieżki dla Google Play, więc Android ruszyłby tylko z planem darmowym. Windows w ogóle nie korzysta z przekaźnika: klient desktopowy tworzy własny portfel Solana na opłaty, który zasilasz bezpośrednio, więc nie ma subskrypcji do przeniesienia."
+    }
+  ],
+  "related": [
+    {
+      "href": "/pricing",
+      "label": "Cennik",
+      "blurb": "Plany, limity wiadomości i dlaczego wysyłanie jest płatne."
+    },
+    {
+      "href": "/limitations",
+      "label": "Znane ograniczenia",
+      "blurb": "Przed czym PrivaMesh cię nie chroni."
+    },
+    {
+      "href": "/support",
+      "label": "Pomoc",
+      "blurb": "Fraza odzyskiwania, nowe urządzenia i subskrypcje."
+    }
+  ]
+}

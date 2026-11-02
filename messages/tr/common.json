@@ -1,0 +1,75 @@
+{
+  "meta": {
+    "title": "PrivaMesh - şifreli özel mesajlaşma",
+    "description": "iPhone, Android ve Windows için uçtan uca şifreli özel mesajlaşma. Telefon numarası yok, e-posta yok, hesap yok - anahtarlarınız ve sohbetleriniz cihazınızdan asla çıkmaz."
+  },
+  "skip": "İçeriğe geç",
+  "brandHome": "PrivaMesh ana sayfa",
+  "github": "GitHub'da PrivaMesh",
+  "x": "X'te PrivaMesh",
+  "language": "Dil",
+  "openMenu": "Menüyü aç",
+  "closeMenu": "Menüyü kapat",
+  "getApp": "PrivaMesh'i edinin",
+  "onAppStore": "{label} App Store'da",
+  "keepReading": "Okumaya devam edin",
+  "faq": "Sık sorulan sorular",
+  "breadcrumb": "Gezinti yolu",
+  "home": "Ana sayfa",
+  "nav": {
+    "features": "Özellikler",
+    "compare": "Karşılaştır",
+    "alternatives": "Alternatifler",
+    "guides": "Rehberler",
+    "privacy": "Gizlilik",
+    "blog": "Blog",
+    "news": "Haberler",
+    "bestApps": "En iyi uygulamalar 2026",
+    "glossary": "Sözlük"
+  },
+  "product": {
+    "/features/no-servers": "Sunucu yok",
+    "/features/e2e-encryption": "Uçtan uca şifreleme",
+    "/features/metadata-protection": "Meta veri koruması",
+    "/features/seed-phrase-accounts": "Hesap ifadesi",
+    "/features/duress-code": "Zorlama kodu"
+  },
+  "comparePages": {
+    "/compare/privamesh-vs-signal": "Signal ile",
+    "/compare/privamesh-vs-telegram": "Telegram ile",
+    "/compare/privamesh-vs-session": "Session ile",
+    "/alternatives": "Tüm alternatifler",
+    "/best-private-messaging-apps": "En iyi uygulamalar 2026"
+  },
+  "footer": {
+    "tagline": "Özel, sunucusuz, uçtan uca şifreli bir mesajlaşma uygulaması. Şirketlere değil, matematiğe güvenin.",
+    "product": "Ürün",
+    "compare": "Karşılaştır",
+    "resources": "Kaynaklar",
+    "legal": "Yasal",
+    "rights": "Tüm hakları saklıdır.",
+    "motto": "Özel. Şifreli. Sizin.",
+    "whitepaper": "Teknik inceleme",
+    "links": {
+      "/privacy": "Neden özel",
+      "/pricing": "Fiyatlandırma",
+      "/download": "İndir",
+      "/changelog": "Sürüm notları",
+      "/architecture": "Mimari",
+      "/protocol": "Protokol",
+      "/threat-model": "Tehdit modeli",
+      "/limitations": "Sınırlamalar",
+      "/guides": "Rehberler",
+      "/blog": "Blog",
+      "/news": "Haberler",
+      "/glossary": "Sözlük",
+      "/about": "Hakkında",
+      "/security": "Güvenlik",
+      "/bug-bounty": "Hata ödülü",
+      "/transparency": "Şeffaflık",
+      "/privacy-policy": "Gizlilik politikası",
+      "/terms": "Kullanım koşulları",
+      "/support": "Destek"
+    }
+  }
+}

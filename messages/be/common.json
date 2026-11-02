@@ -1,0 +1,75 @@
+{
+  "meta": {
+    "title": "PrivaMesh - прыватны месенджар з шыфраваннем",
+    "description": "Прыватны месенджар са скразным шыфраваннем для iPhone, Android і Windows. Без нумара тэлефона, без пошты, без акаўнта - вашы ключы і перапіска ніколі не пакідаюць прыладу."
+  },
+  "skip": "Перайсці да змесціва",
+  "brandHome": "PrivaMesh - галоўная",
+  "github": "PrivaMesh на GitHub",
+  "x": "PrivaMesh у X",
+  "language": "Мова",
+  "openMenu": "Адкрыць меню",
+  "closeMenu": "Закрыць меню",
+  "getApp": "Спампаваць PrivaMesh",
+  "onAppStore": "{label} у App Store",
+  "keepReading": "Чытаць далей",
+  "faq": "Частыя пытанні",
+  "breadcrumb": "Навігацыйны ланцужок",
+  "home": "Галоўная",
+  "nav": {
+    "features": "Магчымасці",
+    "compare": "Параўнанне",
+    "alternatives": "Альтэрнатывы",
+    "guides": "Дапаможнікі",
+    "privacy": "Прыватнасць",
+    "blog": "Блог",
+    "news": "Навіны",
+    "bestApps": "Лепшыя праграмы 2026",
+    "glossary": "Слоўнік"
+  },
+  "product": {
+    "/features/no-servers": "Без сервераў",
+    "/features/e2e-encryption": "Скразное шыфраванне",
+    "/features/metadata-protection": "Абарона метаданых",
+    "/features/seed-phrase-accounts": "Фраза акаўнта",
+    "/features/duress-code": "Код прымусу"
+  },
+  "comparePages": {
+    "/compare/privamesh-vs-signal": "супраць Signal",
+    "/compare/privamesh-vs-telegram": "супраць Telegram",
+    "/compare/privamesh-vs-session": "супраць Session",
+    "/alternatives": "Усе альтэрнатывы",
+    "/best-private-messaging-apps": "Лепшыя праграмы 2026"
+  },
+  "footer": {
+    "tagline": "Прыватны месенджар без сервераў са скразным шыфраваннем. Давярайце матэматыцы, а не кампаніям.",
+    "product": "Прадукт",
+    "compare": "Параўнанне",
+    "resources": "Матэрыялы",
+    "legal": "Прававое",
+    "rights": "Усе правы абаронены.",
+    "motto": "Прыватна. Зашыфравана. Ваша.",
+    "whitepaper": "White Paper",
+    "links": {
+      "/privacy": "Навошта прыватнасць",
+      "/pricing": "Цэны",
+      "/download": "Спампаваць",
+      "/changelog": "Журнал змен",
+      "/architecture": "Архітэктура",
+      "/protocol": "Пратакол",
+      "/threat-model": "Мадэль пагроз",
+      "/limitations": "Абмежаванні",
+      "/guides": "Дапаможнікі",
+      "/blog": "Блог",
+      "/news": "Навіны",
+      "/glossary": "Слоўнік",
+      "/about": "Пра праект",
+      "/security": "Бяспека",
+      "/bug-bounty": "Bug bounty",
+      "/transparency": "Празрыстасць",
+      "/privacy-policy": "Палітыка канфідэнцыйнасці",
+      "/terms": "Умовы выкарыстання",
+      "/support": "Падтрымка"
+    }
+  }
+}

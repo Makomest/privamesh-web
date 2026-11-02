@@ -1,0 +1,99 @@
+{
+  "meta": {
+    "title": "PrivaMesh letöltése",
+    "description": "PrivaMesh iPhone-ra az App Store-ban, APK Android 8.0-hoz vagy újabbhoz és telepítő Windows 10-hez. Nincs telefonszám, nincs e-mail, nincs fiók."
+  },
+  "eyebrow": "Letöltés",
+  "title": "PrivaMesh letöltése",
+  "lead": "Mindhárom platformra van már ma telepíthető változat. A különbség a fizetés módjában és a tesztelés alaposságában van, és mindkettő ott áll a kártyán, ahelyett hogy később kellene rájönnöd.",
+  "appStoreCta": "Letöltés az App Store-ból",
+  "notAvailable": "Nem érhető el",
+  "platforms": {
+    "ios": {
+      "name": "iPhone",
+      "requirement": "iOS {os} vagy újabb · {version} verzió",
+      "cta": "Letöltés az App Store-ból",
+      "blurb": "Ingyenesen telepíthető. Nincs telefonszám, nincs e-mail, nincs fiók - az app az első megnyitáskor az eszközön hozza létre az identitásodat. A fizetős csomagok itt működnek, és csak itt.",
+      "noteHeading": "Amelyiket valóban használják",
+      "noteBody": "Ez az App Store-ban megjelenő kliens, és ezt használják ténylegesen az emberek. Ez a mérce a többi számára is: az Androidos és a Windowsos kliens ebből a forráskódból származtatja a protokollrétegeit, és tesztvektorokkal vetik össze vele, így ahol eltérnek, ez a helyes."
+    },
+    "windows": {
+      "name": "Windows",
+      "requirement": "Windows 10 64 bites · {version} verzió",
+      "cta": "Telepítő letöltése",
+      "blurb": "A Java benne van, így semmi mást nem kell telepíteni, és a telepítő soha nem kér rendszergazdai jogot. Asztali gépen nincs előfizetés és nincs relay: a kliens saját Solana-tárcát hoz létre a díjakhoz, te feltöltöd, és minden üzenet a saját hálózati díját fizeti - kb. 0,0008 dollár, vagyis nagyjából 6000 üzenet 5 dollárért.",
+      "secondary": "Hordozható .zip, telepítő nélkül",
+      "warningHeading": "A Windows figyelmeztetni fog",
+      "warningBody": "Ezt fogod látni: „A Windows megvédte a számítógépet”. Ennek a változatnak nincs kódaláíró tanúsítványa, ezért a Windows nem ismeri fel a kiadót - ez nem jelzés arról, hogy bármit találtak volna a fájlban. Kattints a „További információ”, majd a „Futtatás mindenképp” lehetőségre. Ugyanez a tanúsítvány tenné lehetővé azt is, hogy ellenőrizd, valóban tőlünk származik-e a fájl, így amíg nincs, nincs mihez érdemben viszonyítani. Ez hiányosság, és a mi dolgunk pótolni."
+    },
+    "android": {
+      "name": "Android",
+      "requirement": "Android 8.0 vagy újabb · {version} verzió",
+      "cta": "APK letöltése",
+      "blurb": "A valódi kulccsal aláírt kiadási változat, így a későbbi verziók frissítésként települnek rá, és a fiókod megmarad. A fizetős csomagok itt még nem működnek - a relay Apple-nyugtákat ellenőriz, és nincs útja a Google Playhez -, így Androidon egyelőre csak az ingyenes csomag érhető el.",
+      "warningHeading": "Telepítés áruházon kívülről, és amit teszteltünk",
+      "warningBody": "Az Android engedélyt kér a telepítéshez arról a helyről, ahonnan a fájlt letöltötted. A változatot Android 15 emulátoron végigvittük a fióklétrehozáson, a kifejezés előállításán és egy újraindításon - ez az az ellenőrzés, ami számít, miután az R8 átírja a titkosítási és adatbázis-kódot. Valódi eszközön nem futott, és még egyetlen androidos változat sem küldött üzenetet a mainneten."
+    }
+  },
+  "first": {
+    "heading": "Mi történik először",
+    "steps": [
+      "Az app egy 12 szavas helyreállító kifejezést hoz létre az eszközödön",
+      "Írd le papírra - nincs visszaállítás, és nálunk sincs biztonsági mentés",
+      "Állíts be jelkódot, és biometrikus feloldást, ha az eszköz kínál ilyet",
+      "Válassz becenevet, hogy telefonszám nélkül is megtaláljanak",
+      "Adj hozzá ismerőst QR-kóddal, meghívó linkkel vagy becenévvel; mindkét félnek hozzá kell adnia a másikat"
+    ],
+    "footnote": "Az iPhone-verzió, a minimális iOS-verzió és az ár közvetlenül az App Store-adatlapról származik, nem kézzel tartjuk karban, így nem térhet el attól, amit az Apple mutat. A Windows adatai abból a kiadásból származnak, amely a letöltött fájlt tárolja."
+  },
+  "before": {
+    "heading": "Telepítés előtt",
+    "paras": [
+      "Két dolgot érdemes előre tudni, mert mindkettő később meglep. Az üzenetelőzmények nem vihetők át másik eszközre, és újratelepítés után sem állíthatók vissza - az előremenő titkosság minden üzenetkulcsot megsemmisít használat után, és ez a működő garancia, nem hiányzó funkció. És a küldés díjköteles: az app ingyenes, de minden üzenet valódi tranzakció valódi hálózati díjjal. Az [árak](/pricing) oldalon láthatod, mennyibe kerül.",
+      "Ez a kettő minden platformra igaz. A különbség az, hogy ki fizet: iPhone-on az előfizetés vak tokeneket vásárol, amelyeket egyetlen díjszolgáltatásunk vált be, a Windowsos kliens viszont teljesen kihagyja ezt a szolgáltatást, és egy általad feltöltött Solana-tárcából fizet. Hogy pontosan mit lát az egyes összetevők, azt [az architektúra oldal](/architecture) írja le, hogy mi ellen nem véd ezek közül semmi, azt a [korlátok](/limitations)."
+    ]
+  },
+  "faq": [
+    {
+      "q": "Mely iPhone-okon fut?",
+      "a": "Minden iOS 18-as vagy újabb iPhone-on. Az 1.0-s verzió iOS 26.5-öt igényelt, és ez az oldal azt állította, hogy ez a posztkvantum-kézfogás miatt van. Nem így volt: az alsó határt néhány felületi API szabta meg, és az 1.0-ban a posztkvantum-útvonal amúgy is ki volt kapcsolva. Az 1.1 eltörölte ezt a határt. Maga a posztkvantum-rész (X-Wing, ML-KEM-768 X25519-cel) valóban iOS 26-ot igényel, így eszközfüggő: az iOS 26-os iPhone posztkvantum előkulcsot tesz közzé, a régebbi klasszikus X3DH-t használ, és a kettő megérti egymást. Az 1.1-ben a posztkvantum lépés a gyakorlatban még nem valósul meg - hogy miért, azt a korlátok oldala magyarázza el."
+    },
+    {
+      "q": "Mire van szükségem a regisztrációhoz?",
+      "a": "Semmire. Nincs telefonszám, nincs e-mail, nincs lefoglalandó felhasználónév. Az app az első indításkor 12 szavas helyreállító kifejezést hoz létre az eszközödön - írd le, mert ez az egyetlen út vissza a fiókba."
+    },
+    {
+      "q": "Ingyenes?",
+      "a": "A letöltés ingyenes. A küldés díjköteles, mert minden üzenet fizetős tranzakció egy nyilvános láncon - az árak oldal sorolja fel a kereteket és a csomagárakat."
+    },
+    {
+      "q": "Miért ad biztonsági figyelmeztetést a Windows-telepítő?",
+      "a": "A változat nincs aláírva, ezért a Windows nem ismeri fel a kiadót, és ezt mutatja: „A Windows megvédte a számítógépet”. Ez nem jelzés arról, hogy bármit találtak volna a fájlban - kattints a „További információ”, majd a „Futtatás mindenképp” lehetőségre. Ugyanez a hiányzó tanúsítvány az oka annak, hogy nincs valódi módja megerősíteni, hogy a fájl tőlünk származik, és egy közzétett ellenőrzőösszeg sem segítene: aki ki tudja cserélni a letöltést, ki tudja cserélni a mellette lévő összeget is. A megoldás egy aláíró tanúsítvány, és ennek a változatnak még nincs."
+    },
+    {
+      "q": "Miben más az androidos változat?",
+      "a": "Ez a 0.1-es és nem az 1.0-s verzió, és ez nem szerénység. Emulátoron végigvittük a fióklétrehozáson, a kifejezés előállításán és egy újraindításon - ezek az ellenőrzések szúrják ki, ha az R8 elrontja a titkosítási és adatbázis-kódot -, de valódi eszközön nem futott, és még egyetlen androidos változat sem küldött üzenetet a mainneten. A valódi kulccsal van aláírva, így a későbbi verziók frissítésként települnek rá."
+    },
+    {
+      "q": "Működnek a fizetős csomagok Windowson és Androidon?",
+      "a": "Nem úgy, mint iPhone-on. A relay Apple-nyugtákat ellenőriz, és nincs útja a Google Playhez, így Android csak az ingyenes csomaggal indulna. A Windows egyáltalán nem használja a relay-t: az asztali kliens saját Solana-díjtárcát hoz létre, amelyet közvetlenül te töltesz fel, így nincs átvihető előfizetés."
+    }
+  ],
+  "related": [
+    {
+      "href": "/pricing",
+      "label": "Árak",
+      "blurb": "Csomagok, üzenetkeretek és hogy miért díjköteles a küldés."
+    },
+    {
+      "href": "/limitations",
+      "label": "Ismert korlátok",
+      "blurb": "Mi ellen nem véd a PrivaMesh."
+    },
+    {
+      "href": "/support",
+      "label": "Támogatás",
+      "blurb": "Helyreállító kifejezés, új eszközök és előfizetések."
+    }
+  ]
+}

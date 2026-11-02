@@ -1,0 +1,75 @@
+{
+  "meta": {
+    "title": "PrivaMesh - приватний месенджер із шифруванням",
+    "description": "Приватний месенджер із наскрізним шифруванням для iPhone, Android і Windows. Без номера телефону, без пошти, без акаунта - ваші ключі й листування ніколи не залишають пристрій."
+  },
+  "skip": "Перейти до вмісту",
+  "brandHome": "PrivaMesh - головна",
+  "github": "PrivaMesh на GitHub",
+  "x": "PrivaMesh в X",
+  "language": "Мова",
+  "openMenu": "Відкрити меню",
+  "closeMenu": "Закрити меню",
+  "getApp": "Завантажити PrivaMesh",
+  "onAppStore": "{label} в App Store",
+  "keepReading": "Читати далі",
+  "faq": "Поширені запитання",
+  "breadcrumb": "Навігаційний ланцюжок",
+  "home": "Головна",
+  "nav": {
+    "features": "Можливості",
+    "compare": "Порівняння",
+    "alternatives": "Альтернативи",
+    "guides": "Посібники",
+    "privacy": "Приватність",
+    "blog": "Блог",
+    "news": "Новини",
+    "bestApps": "Найкращі застосунки 2026",
+    "glossary": "Глосарій"
+  },
+  "product": {
+    "/features/no-servers": "Без серверів",
+    "/features/e2e-encryption": "Наскрізне шифрування",
+    "/features/metadata-protection": "Захист метаданих",
+    "/features/seed-phrase-accounts": "Фраза акаунта",
+    "/features/duress-code": "Код примусу"
+  },
+  "comparePages": {
+    "/compare/privamesh-vs-signal": "проти Signal",
+    "/compare/privamesh-vs-telegram": "проти Telegram",
+    "/compare/privamesh-vs-session": "проти Session",
+    "/alternatives": "Усі альтернативи",
+    "/best-private-messaging-apps": "Найкращі застосунки 2026"
+  },
+  "footer": {
+    "tagline": "Приватний месенджер без серверів із наскрізним шифруванням. Довіряйте математиці, а не компаніям.",
+    "product": "Продукт",
+    "compare": "Порівняння",
+    "resources": "Матеріали",
+    "legal": "Правове",
+    "rights": "Усі права захищено.",
+    "motto": "Приватно. Зашифровано. Ваше.",
+    "whitepaper": "White Paper",
+    "links": {
+      "/privacy": "Навіщо приватність",
+      "/pricing": "Ціни",
+      "/download": "Завантажити",
+      "/changelog": "Журнал змін",
+      "/architecture": "Архітектура",
+      "/protocol": "Протокол",
+      "/threat-model": "Модель загроз",
+      "/limitations": "Обмеження",
+      "/guides": "Посібники",
+      "/blog": "Блог",
+      "/news": "Новини",
+      "/glossary": "Глосарій",
+      "/about": "Про проєкт",
+      "/security": "Безпека",
+      "/bug-bounty": "Bug bounty",
+      "/transparency": "Прозорість",
+      "/privacy-policy": "Політика конфіденційності",
+      "/terms": "Умови використання",
+      "/support": "Підтримка"
+    }
+  }
+}

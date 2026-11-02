@@ -1,0 +1,99 @@
+{
+  "meta": {
+    "title": "Muat turun PrivaMesh",
+    "description": "PrivaMesh untuk iPhone di App Store, APK untuk Android 8.0 atau lebih baharu dan pemasang untuk Windows 10. Tiada nombor telefon, tiada e-mel, tiada akaun."
+  },
+  "eyebrow": "Muat turun",
+  "title": "Muat turun PrivaMesh",
+  "lead": "Ketiga-tiga platform mempunyai versi yang boleh anda pasang hari ini. Bezanya ialah cara membayar dan sejauh mana ia telah diuji, dan kedua-duanya tertulis pada kad dan bukan dibiarkan untuk anda ketahui kemudian.",
+  "appStoreCta": "Muat turun di App Store",
+  "notAvailable": "Tidak tersedia",
+  "platforms": {
+    "ios": {
+      "name": "iPhone",
+      "requirement": "iOS {os} atau lebih baharu · versi {version}",
+      "cta": "Muat turun di App Store",
+      "blurb": "Percuma untuk dipasang. Tiada nombor telefon, tiada e-mel, tiada akaun - aplikasi mencipta identiti anda pada peranti apabila anda membukanya buat kali pertama. Pelan berbayar berfungsi di sini dan hanya di sini.",
+      "noteHeading": "Yang benar-benar digunakan orang",
+      "noteBody": "Inilah klien yang diterbitkan di App Store dan yang benar-benar digunakan orang. Ia juga rujukan bagi yang lain: klien Android dan Windows menerbitkan lapisan protokol mereka daripada kod sumber ini dan disemak terhadapnya dengan vektor ujian, jadi apabila berbeza, yang betul ialah yang ini."
+    },
+    "windows": {
+      "name": "Windows",
+      "requirement": "Windows 10 64-bit · versi {version}",
+      "cta": "Muat turun pemasang",
+      "blurb": "Java disertakan, jadi tiada apa-apa lagi yang perlu dipasang, dan pemasang tidak pernah meminta hak pentadbir. Pada desktop tiada langganan dan tiada geganti: klien mencipta dompet Solana sendiri untuk yuran, anda mengisinya, dan setiap mesej membayar yuran rangkaiannya sendiri - kira-kira $0.0008, iaitu lebih kurang 6,000 mesej untuk $5.",
+      "secondary": ".zip mudah alih, tanpa pemasang",
+      "warningHeading": "Windows akan memberi amaran",
+      "warningBody": "Anda akan melihat \"Windows melindungi PC anda\". Versi ini tiada sijil tandatangan kod, jadi Windows tidak mengenali penerbitnya - ini bukan laporan tentang sesuatu yang ditemui dalam fail. Klik \"Maklumat lanjut\", kemudian \"Jalankan juga\". Sijil itu juga yang akan membolehkan anda menyemak bahawa fail ini benar-benar daripada kami, jadi selagi ia tiada, tiada apa-apa yang bermakna untuk dibandingkan. Itu satu kekurangan, dan tugas kamilah untuk menutupnya."
+    },
+    "android": {
+      "name": "Android",
+      "requirement": "Android 8.0 atau lebih baharu · versi {version}",
+      "cta": "Muat turun APK",
+      "blurb": "Versi keluaran yang ditandatangani dengan kunci sebenar, jadi versi seterusnya akan dipasang di atasnya sebagai kemas kini dan akaun anda kekal. Pelan berbayar belum berfungsi di sini - geganti mengesahkan resit Apple dan tiada laluan untuk Google Play - jadi buat masa ini Android hanya pelan percuma.",
+      "warningHeading": "Pemasangan sisi, dan apa yang telah diuji",
+      "warningBody": "Android akan meminta anda membenarkan pemasangan dari tempat anda memuat turun fail. Versi ini telah dijalankan melalui penciptaan akaun, penjanaan frasa dan mula semula pada emulator Android 15 - semakan yang penting selepas R8 menulis semula kod kriptografi dan pangkalan data. Ia belum dijalankan pada peranti sebenar, dan belum ada versi Android yang menghantar mesej di mainnet."
+    }
+  },
+  "first": {
+    "heading": "Apa yang berlaku dahulu",
+    "steps": [
+      "Aplikasi menjana frasa pemulihan 12 perkataan pada peranti anda",
+      "Tulis di atas kertas - tiada tetapan semula dan tiada sandaran yang kami simpan",
+      "Tetapkan kod laluan, dan buka kunci biometrik jika peranti menyediakannya",
+      "Pilih nama samaran supaya orang boleh mencari anda tanpa nombor telefon",
+      "Tambah kenalan melalui kod QR, pautan jemputan atau nama samaran; kedua-dua pihak perlu menambah satu sama lain"
+    ],
+    "footnote": "Versi iPhone, versi iOS minimum dan harga diambil terus dari halaman App Store dan bukan dikemas kini secara manual, jadi ia tidak boleh menyimpang daripada apa yang ditunjukkan Apple. Angka untuk Windows diambil daripada keluaran yang menempatkan fail yang anda muat turun."
+  },
+  "before": {
+    "heading": "Sebelum memasang",
+    "paras": [
+      "Dua perkara wajar diketahui lebih awal, kerana kedua-duanya mengejutkan kemudian. Sejarah mesej anda tidak boleh dipindahkan ke peranti lain atau dipulihkan selepas pemasangan semula - kerahsiaan hadapan memusnahkan setiap kunci mesej selepas digunakan, dan itu jaminan yang berfungsi, bukan ciri yang hilang. Dan penghantaran dikenakan bayaran: aplikasi percuma, tetapi setiap mesej ialah transaksi sebenar dengan yuran rangkaian sebenar. Lihat [harga](/pricing) untuk kosnya.",
+      "Kedua-duanya terpakai pada setiap platform. Bezanya ialah siapa yang membayar: pada iPhone, langganan membeli token buta yang ditebus oleh satu-satunya perkhidmatan yuran kami, manakala klien Windows memintas perkhidmatan itu sepenuhnya dan membayar dari dompet Solana yang anda isi sendiri. Apa sebenarnya yang boleh dilihat oleh setiap komponen ada di [halaman seni bina](/architecture), dan daripada apa semua ini tidak melindungi anda ada di [had](/limitations)."
+    ]
+  },
+  "faq": [
+    {
+      "q": "iPhone mana yang boleh menjalankannya?",
+      "a": "Mana-mana iPhone dengan iOS 18 atau lebih baharu. Versi 1.0 memerlukan iOS 26.5, dan halaman ini dahulu menyatakan sebabnya ialah jabat tangan pasca-kuantum. Itu tidak benar: had bawah itu datang daripada beberapa API antara muka, dan 1.0 pun memang telah mematikan laluan pasca-kuantum. 1.1 membuang had itu. Bahagian pasca-kuantum itu sendiri (X-Wing, ML-KEM-768 dengan X25519) memang memerlukan iOS 26, jadi ia bergantung pada peranti: iPhone dengan iOS 26 menerbitkan prekey pasca-kuantum, yang lebih lama menggunakan X3DH klasik, dan kedua-duanya saling memahami. Dalam 1.1 langkah pasca-kuantum belum berjaya dalam amalan - halaman had menerangkan sebabnya."
+    },
+    {
+      "q": "Apa yang saya perlukan untuk mendaftar?",
+      "a": "Tiada apa-apa. Tiada nombor telefon, tiada e-mel, tiada nama pengguna untuk ditempah. Aplikasi menjana frasa pemulihan 12 perkataan pada peranti anda semasa pertama kali dibuka - tuliskannya, kerana itulah satu-satunya jalan kembali ke akaun."
+    },
+    {
+      "q": "Adakah ia percuma?",
+      "a": "Muat turun adalah percuma. Penghantaran dikenakan bayaran kerana setiap mesej ialah transaksi berbayar pada rantaian awam - halaman harga menyenaraikan kuota dan harga pelan."
+    },
+    {
+      "q": "Mengapa pemasang Windows mencetuskan amaran keselamatan?",
+      "a": "Versi ini tidak ditandatangani, jadi Windows tidak mengenali penerbitnya dan menunjukkan \"Windows melindungi PC anda\". Ini bukan laporan tentang sesuatu dalam fail - klik \"Maklumat lanjut\", kemudian \"Jalankan juga\". Sijil yang sama tiada itulah sebabnya tiada cara sebenar untuk mengesahkan fail ini daripada kami, dan checksum yang diterbitkan tidak akan mengubahnya: sesiapa yang boleh menggantikan muat turun juga boleh menggantikan checksum di sebelahnya. Penyelesaiannya ialah sijil tandatangan, dan versi ini belum memilikinya."
+    },
+    {
+      "q": "Apakah yang berbeza tentang versi Android?",
+      "a": "Ia versi 0.1, bukan 1.0, dan itu bukan sifat merendah diri. Ia telah dijalankan melalui penciptaan akaun, penjanaan frasa dan mula semula pada emulator - semakan yang mengesan jika R8 merosakkan kod kriptografi dan pangkalan data - tetapi belum dijalankan pada peranti sebenar, dan belum ada versi Android yang menghantar mesej di mainnet. Ia ditandatangani dengan kunci sebenar, jadi versi seterusnya akan dipasang di atasnya sebagai kemas kini."
+    },
+    {
+      "q": "Adakah pelan berbayar berfungsi pada Windows dan Android?",
+      "a": "Tidak seperti pada iPhone. Geganti mengesahkan resit Apple dan tiada laluan untuk Google Play, jadi Android hanya akan bermula dengan pelan percuma. Windows langsung tidak menggunakan geganti: klien desktop mencipta dompet yuran Solana sendiri yang anda isi terus, jadi tiada langganan untuk dipindahkan."
+    }
+  ],
+  "related": [
+    {
+      "href": "/pricing",
+      "label": "Harga",
+      "blurb": "Pelan, kuota mesej dan mengapa penghantaran dikenakan bayaran."
+    },
+    {
+      "href": "/limitations",
+      "label": "Had yang diketahui",
+      "blurb": "Daripada apa PrivaMesh tidak melindungi anda."
+    },
+    {
+      "href": "/support",
+      "label": "Sokongan",
+      "blurb": "Frasa pemulihan, peranti baharu dan langganan."
+    }
+  ]
+}

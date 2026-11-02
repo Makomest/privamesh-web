@@ -1,0 +1,75 @@
+{
+  "meta": {
+    "title": "PrivaMesh - mesagerie privată criptată",
+    "description": "Mesagerie privată cu criptare end-to-end pentru iPhone, Android și Windows. Fără număr de telefon, fără e-mail, fără cont - cheile și conversațiile tale nu părăsesc niciodată dispozitivul."
+  },
+  "skip": "Salt la conținut",
+  "brandHome": "Pagina principală PrivaMesh",
+  "github": "PrivaMesh pe GitHub",
+  "x": "PrivaMesh pe X",
+  "language": "Limbă",
+  "openMenu": "Deschide meniul",
+  "closeMenu": "Închide meniul",
+  "getApp": "Descarcă PrivaMesh",
+  "onAppStore": "{label} în App Store",
+  "keepReading": "Citește mai departe",
+  "faq": "Întrebări frecvente",
+  "breadcrumb": "Fir de navigare",
+  "home": "Acasă",
+  "nav": {
+    "features": "Funcții",
+    "compare": "Comparație",
+    "alternatives": "Alternative",
+    "guides": "Ghiduri",
+    "privacy": "Confidențialitate",
+    "blog": "Blog",
+    "news": "Noutăți",
+    "bestApps": "Cele mai bune aplicații 2026",
+    "glossary": "Glosar"
+  },
+  "product": {
+    "/features/no-servers": "Fără servere",
+    "/features/e2e-encryption": "Criptare end-to-end",
+    "/features/metadata-protection": "Protecția metadatelor",
+    "/features/seed-phrase-accounts": "Fraza contului",
+    "/features/duress-code": "Cod de constrângere"
+  },
+  "comparePages": {
+    "/compare/privamesh-vs-signal": "vs Signal",
+    "/compare/privamesh-vs-telegram": "vs Telegram",
+    "/compare/privamesh-vs-session": "vs Session",
+    "/alternatives": "Toate alternativele",
+    "/best-private-messaging-apps": "Cele mai bune aplicații 2026"
+  },
+  "footer": {
+    "tagline": "O mesagerie privată, fără servere, cu criptare end-to-end. Ai încredere în matematică, nu în companii.",
+    "product": "Produs",
+    "compare": "Comparație",
+    "resources": "Resurse",
+    "legal": "Informații legale",
+    "rights": "Toate drepturile rezervate.",
+    "motto": "Privat. Criptat. Al tău.",
+    "whitepaper": "White paper",
+    "links": {
+      "/privacy": "De ce privat",
+      "/pricing": "Prețuri",
+      "/download": "Descarcă",
+      "/changelog": "Jurnal de modificări",
+      "/architecture": "Arhitectură",
+      "/protocol": "Protocol",
+      "/threat-model": "Model de amenințări",
+      "/limitations": "Limitări",
+      "/guides": "Ghiduri",
+      "/blog": "Blog",
+      "/news": "Noutăți",
+      "/glossary": "Glosar",
+      "/about": "Despre",
+      "/security": "Securitate",
+      "/bug-bounty": "Bug bounty",
+      "/transparency": "Transparență",
+      "/privacy-policy": "Politica de confidențialitate",
+      "/terms": "Termeni de utilizare",
+      "/support": "Asistență"
+    }
+  }
+}

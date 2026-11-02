@@ -1,0 +1,75 @@
+{
+  "meta": {
+    "title": "PrivaMesh - privatni šifrirani messenger",
+    "description": "Privatni messenger s end-to-end šifriranjem za iPhone, Android i Windows. Bez broja telefona, bez e-pošte, bez računa - vaši ključevi i razgovori nikad ne napuštaju uređaj."
+  },
+  "skip": "Prijeđi na sadržaj",
+  "brandHome": "Početna PrivaMesh",
+  "github": "PrivaMesh na GitHubu",
+  "x": "PrivaMesh na X-u",
+  "language": "Jezik",
+  "openMenu": "Otvori izbornik",
+  "closeMenu": "Zatvori izbornik",
+  "getApp": "Preuzmi PrivaMesh",
+  "onAppStore": "{label} u App Storeu",
+  "keepReading": "Nastavite čitati",
+  "faq": "Česta pitanja",
+  "breadcrumb": "Navigacijski put",
+  "home": "Početna",
+  "nav": {
+    "features": "Značajke",
+    "compare": "Usporedba",
+    "alternatives": "Alternative",
+    "guides": "Vodiči",
+    "privacy": "Privatnost",
+    "blog": "Blog",
+    "news": "Novosti",
+    "bestApps": "Najbolje aplikacije 2026",
+    "glossary": "Pojmovnik"
+  },
+  "product": {
+    "/features/no-servers": "Bez poslužitelja",
+    "/features/e2e-encryption": "End-to-end šifriranje",
+    "/features/metadata-protection": "Zaštita metapodataka",
+    "/features/seed-phrase-accounts": "Fraza računa",
+    "/features/duress-code": "Kod pod prisilom"
+  },
+  "comparePages": {
+    "/compare/privamesh-vs-signal": "vs Signal",
+    "/compare/privamesh-vs-telegram": "vs Telegram",
+    "/compare/privamesh-vs-session": "vs Session",
+    "/alternatives": "Sve alternative",
+    "/best-private-messaging-apps": "Najbolje aplikacije 2026"
+  },
+  "footer": {
+    "tagline": "Privatni messenger bez poslužitelja s end-to-end šifriranjem. Vjerujte matematici, a ne tvrtkama.",
+    "product": "Proizvod",
+    "compare": "Usporedba",
+    "resources": "Resursi",
+    "legal": "Pravne informacije",
+    "rights": "Sva prava pridržana.",
+    "motto": "Privatno. Šifrirano. Vaše.",
+    "whitepaper": "White paper",
+    "links": {
+      "/privacy": "Zašto privatnost",
+      "/pricing": "Cijene",
+      "/download": "Preuzimanje",
+      "/changelog": "Popis promjena",
+      "/architecture": "Arhitektura",
+      "/protocol": "Protokol",
+      "/threat-model": "Model prijetnji",
+      "/limitations": "Ograničenja",
+      "/guides": "Vodiči",
+      "/blog": "Blog",
+      "/news": "Novosti",
+      "/glossary": "Pojmovnik",
+      "/about": "O projektu",
+      "/security": "Sigurnost",
+      "/bug-bounty": "Bug bounty",
+      "/transparency": "Transparentnost",
+      "/privacy-policy": "Pravila privatnosti",
+      "/terms": "Uvjeti korištenja",
+      "/support": "Podrška"
+    }
+  }
+}

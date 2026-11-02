@@ -1,0 +1,75 @@
+{
+  "meta": {
+    "title": "PrivaMesh - soukromý šifrovaný komunikátor",
+    "description": "Soukromý komunikátor s koncovým šifrováním pro iPhone, Android a Windows. Žádné telefonní číslo, žádný e-mail, žádný účet - vaše klíče a konverzace nikdy neopustí zařízení."
+  },
+  "skip": "Přejít na obsah",
+  "brandHome": "Domů na PrivaMesh",
+  "github": "PrivaMesh na GitHubu",
+  "x": "PrivaMesh na X",
+  "language": "Jazyk",
+  "openMenu": "Otevřít nabídku",
+  "closeMenu": "Zavřít nabídku",
+  "getApp": "Získat PrivaMesh",
+  "onAppStore": "{label} v App Store",
+  "keepReading": "Čtěte dále",
+  "faq": "Časté dotazy",
+  "breadcrumb": "Drobečková navigace",
+  "home": "Domů",
+  "nav": {
+    "features": "Funkce",
+    "compare": "Srovnání",
+    "alternatives": "Alternativy",
+    "guides": "Návody",
+    "privacy": "Soukromí",
+    "blog": "Blog",
+    "news": "Novinky",
+    "bestApps": "Nejlepší aplikace 2026",
+    "glossary": "Slovníček"
+  },
+  "product": {
+    "/features/no-servers": "Bez serverů",
+    "/features/e2e-encryption": "Koncové šifrování",
+    "/features/metadata-protection": "Ochrana metadat",
+    "/features/seed-phrase-accounts": "Fráze účtu",
+    "/features/duress-code": "Nouzový kód"
+  },
+  "comparePages": {
+    "/compare/privamesh-vs-signal": "vs Signal",
+    "/compare/privamesh-vs-telegram": "vs Telegram",
+    "/compare/privamesh-vs-session": "vs Session",
+    "/alternatives": "Všechny alternativy",
+    "/best-private-messaging-apps": "Nejlepší aplikace 2026"
+  },
+  "footer": {
+    "tagline": "Soukromý komunikátor bez serverů s koncovým šifrováním. Věřte matematice, ne firmám.",
+    "product": "Produkt",
+    "compare": "Srovnání",
+    "resources": "Zdroje",
+    "legal": "Právní informace",
+    "rights": "Všechna práva vyhrazena.",
+    "motto": "Soukromé. Šifrované. Vaše.",
+    "whitepaper": "White paper",
+    "links": {
+      "/privacy": "Proč soukromí",
+      "/pricing": "Ceník",
+      "/download": "Stáhnout",
+      "/changelog": "Seznam změn",
+      "/architecture": "Architektura",
+      "/protocol": "Protokol",
+      "/threat-model": "Model hrozeb",
+      "/limitations": "Omezení",
+      "/guides": "Návody",
+      "/blog": "Blog",
+      "/news": "Novinky",
+      "/glossary": "Slovníček",
+      "/about": "O projektu",
+      "/security": "Zabezpečení",
+      "/bug-bounty": "Bug bounty",
+      "/transparency": "Transparentnost",
+      "/privacy-policy": "Zásady ochrany soukromí",
+      "/terms": "Podmínky použití",
+      "/support": "Podpora"
+    }
+  }
+}

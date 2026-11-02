@@ -1,0 +1,99 @@
+{
+  "meta": {
+    "title": "Preuzmi PrivaMesh",
+    "description": "PrivaMesh za iPhone u App Storeu, APK za Android 8.0 ili noviji i instalacijski program za Windows 10. Bez broja telefona, bez e-pošte, bez računa."
+  },
+  "eyebrow": "Preuzimanje",
+  "title": "Preuzmi PrivaMesh",
+  "lead": "Za sve tri platforme postoji verzija koju možete instalirati već danas. Razlikuju se način plaćanja i koliko je testirana, a oboje piše na kartici umjesto da to sami otkrivate kasnije.",
+  "appStoreCta": "Preuzmi u App Storeu",
+  "notAvailable": "Nije dostupno",
+  "platforms": {
+    "ios": {
+      "name": "iPhone",
+      "requirement": "iOS {os} ili noviji · verzija {version}",
+      "cta": "Preuzmi u App Storeu",
+      "blurb": "Instalacija je besplatna. Bez broja telefona, bez e-pošte, bez računa - aplikacija stvara vaš identitet na uređaju kad je prvi put otvorite. Plaćeni paketi rade ovdje i samo ovdje.",
+      "noteHeading": "Ona koju ljudi stvarno koriste",
+      "noteBody": "Ovo je klijent koji izlazi u App Storeu i koji ljudi zaista koriste. Ujedno je i mjerilo za ostale: klijenti za Android i Windows izvode svoje protokolne slojeve iz ovog izvornog koda i provjeravaju se prema njemu testnim vektorima, pa kad se razlikuju, točan je ovaj."
+    },
+    "windows": {
+      "name": "Windows",
+      "requirement": "Windows 10 64-bitni · verzija {version}",
+      "cta": "Preuzmi instalacijski program",
+      "blurb": "Java je uključena pa ne treba ništa drugo instalirati, a instalacijski program nikad ne traži administratorska prava. Na računalu nema pretplate ni relaya: klijent stvara vlastiti Solana novčanik za naknade, vi ga punite, a svaka poruka plaća vlastitu mrežnu naknadu - oko 0,0008 USD, dakle otprilike 6.000 poruka za 5 USD.",
+      "secondary": "Prijenosni .zip, bez instalacije",
+      "warningHeading": "Windows će vas upozoriti",
+      "warningBody": "Vidjet ćete poruku „Windows je zaštitio vaše računalo”. Ova verzija nema certifikat za potpisivanje koda pa Windows ne prepoznaje izdavača - to nije dojava o nečemu pronađenom u datoteci. Kliknite „Dodatne informacije”, a zatim „Svejedno pokreni”. Isti bi vam certifikat omogućio i da provjerite je li datoteka stvarno od nas, pa dok ga nema, ovdje se nema s čim smisleno usporediti. To je praznina i na nama je da je zatvorimo."
+    },
+    "android": {
+      "name": "Android",
+      "requirement": "Android 8.0 ili noviji · verzija {version}",
+      "cta": "Preuzmi APK",
+      "blurb": "Izdanje potpisano pravim ključem, pa će se kasnije verzije instalirati preko njega kao ažuriranje i vaš će račun ostati. Plaćeni paketi ovdje još ne rade - relay provjerava Appleove račune i nema put za Google Play - pa je Android zasad samo s besplatnim paketom.",
+      "warningHeading": "Instalacija izvan trgovine i što je testirano",
+      "warningBody": "Android će tražiti da dopustite instalacije iz izvora s kojeg ste preuzeli datoteku. Verzija je na emulatoru Androida 15 prošla izradu računa, generiranje fraze i ponovno pokretanje, što je provjera koja je važna nakon što R8 prepiše kriptografski kod i kod baze podataka. Nije pokrenuta na pravom uređaju i nijedna verzija za Android još nije poslala poruku na mainnetu."
+    }
+  },
+  "first": {
+    "heading": "Što se događa prvo",
+    "steps": [
+      "Aplikacija na vašem uređaju generira frazu za oporavak od 12 riječi",
+      "Zapišite je na papir - nema poništavanja ni sigurnosne kopije kod nas",
+      "Postavite šifru i biometrijsko otključavanje ako ga uređaj nudi",
+      "Odaberite nadimak kako bi vas ljudi pronašli bez broja telefona",
+      "Dodajte kontakt QR kodom, poveznicom za pozivnicu ili nadimkom; obje strane moraju dodati jedna drugu"
+    ],
+    "footnote": "Verzija za iPhone, minimalna verzija iOS-a i cijena dolaze izravno iz stranice u App Storeu umjesto da se održavaju ručno, pa se ne mogu razići s onim što prikazuje Apple. Podaci za Windows dolaze iz izdanja na kojem se nalazi datoteka koju preuzimate."
+  },
+  "before": {
+    "heading": "Prije instalacije",
+    "paras": [
+      "Dvije stvari vrijedi znati unaprijed jer obje kasnije iznenade. Povijest poruka ne može se prenijeti na drugi uređaj niti vratiti nakon ponovne instalacije - unaprijedna tajnost uništava ključ svake poruke nakon upotrebe, i to je jamstvo koje radi, a ne funkcija koja nedostaje. I slanje se naplaćuje: aplikacija je besplatna, ali svaka je poruka stvarna transakcija sa stvarnom mrežnom naknadom. Koliko to stoji, pogledajte na stranici s [cijenama](/pricing).",
+      "To vrijedi za svaku platformu. Razlikuje se tko plaća: na iPhoneu pretplata kupuje slijepe tokene koje unovčava naša jedina usluga naknada, dok Windows klijent tu uslugu potpuno zaobilazi i troši iz Solana novčanika koji sami punite. Što točno svaka komponenta može vidjeti, piše na [stranici o arhitekturi](/architecture), a od čega vas ništa od toga ne štiti, u [ograničenjima](/limitations)."
+    ]
+  },
+  "faq": [
+    {
+      "q": "Na kojim iPhoneima radi?",
+      "a": "Na svakom iPhoneu s iOS-om 18 ili novijim. Verzija 1.0 zahtijevala je iOS 26.5, a ova je stranica tvrdila da je to zbog postkvantnog rukovanja. Nije bilo tako: donju granicu postavljalo je nekoliko API-ja sučelja, a u 1.0 postkvantni put ionako je bio isključen. Verzija 1.1 uklonila je tu granicu. Sam postkvantni dio (X-Wing, ML-KEM-768 s X25519) zaista treba iOS 26 pa ovisi o uređaju: iPhone s iOS-om 26 objavljuje postkvantni prekey, stariji koristi klasični X3DH i oba se razumiju. U 1.1 postkvantni korak u praksi još ne uspijeva - zašto, objašnjava stranica s ograničenjima."
+    },
+    {
+      "q": "Što mi treba za registraciju?",
+      "a": "Ništa. Bez broja telefona, bez e-pošte, bez korisničkog imena za rezervaciju. Aplikacija pri prvom pokretanju na uređaju generira frazu za oporavak od 12 riječi - zapišite je jer je to jedini put natrag u račun."
+    },
+    {
+      "q": "Je li besplatno?",
+      "a": "Preuzimanje je besplatno. Slanje se naplaćuje jer je svaka poruka plaćena transakcija na javnom lancu - stranica s cijenama navodi kvote i cijene paketa."
+    },
+    {
+      "q": "Zašto Windows instalacijski program izaziva sigurnosno upozorenje?",
+      "a": "Verzija nije potpisana pa Windows ne prepoznaje izdavača i prikazuje „Windows je zaštitio vaše računalo”. To nije dojava o nečemu pronađenom u datoteci - kliknite „Dodatne informacije”, a zatim „Svejedno pokreni”. Zbog istog nedostajućeg certifikata ne postoji stvaran način da se potvrdi da je datoteka od nas, a objavljeni kontrolni zbroj to ne bi riješio: tko može zamijeniti preuzimanje, može zamijeniti i zbroj pokraj njega. Rješenje je certifikat za potpisivanje, a ova ga verzija još nema."
+    },
+    {
+      "q": "Po čemu se razlikuje verzija za Android?",
+      "a": "To je verzija 0.1, a ne 1.0, i nije riječ o skromnosti. Na emulatoru je prošla izradu računa, generiranje fraze i ponovno pokretanje - provjere koje otkrivaju je li R8 pokvario kriptografski kod i kod baze -, ali nije pokrenuta na pravom uređaju i nijedna verzija za Android još nije poslala poruku na mainnetu. Potpisana je pravim ključem pa će se kasnije verzije instalirati preko nje kao ažuriranje."
+    },
+    {
+      "q": "Rade li plaćeni paketi na Windowsima i Androidu?",
+      "a": "Ne kao na iPhoneu. Relay provjerava Appleove račune i nema put za Google Play pa bi Android krenuo samo s besplatnim paketom. Windows uopće ne koristi relay: klijent za računalo stvara vlastiti Solana novčanik za naknade koji punite izravno, pa nema pretplate koju bi trebalo prenijeti."
+    }
+  ],
+  "related": [
+    {
+      "href": "/pricing",
+      "label": "Cijene",
+      "blurb": "Paketi, kvote poruka i zašto se slanje naplaćuje."
+    },
+    {
+      "href": "/limitations",
+      "label": "Poznata ograničenja",
+      "blurb": "Od čega vas PrivaMesh ne štiti."
+    },
+    {
+      "href": "/support",
+      "label": "Podrška",
+      "blurb": "Fraza za oporavak, novi uređaji i pretplate."
+    }
+  ]
+}

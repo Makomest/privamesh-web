@@ -1,0 +1,75 @@
+{
+  "meta": {
+    "title": "PrivaMesh - تطبيق مراسلة خاص ومشفّر",
+    "description": "تطبيق مراسلة خاص بتشفير تام بين الطرفين لأجهزة iPhone وAndroid وWindows. لا رقم هاتف، لا بريد إلكتروني، لا حساب - مفاتيحك ومحادثاتك لا تغادر جهازك أبدًا."
+  },
+  "skip": "انتقل إلى المحتوى",
+  "brandHome": "الصفحة الرئيسية لـ PrivaMesh",
+  "github": "PrivaMesh على GitHub",
+  "x": "PrivaMesh على X",
+  "language": "اللغة",
+  "openMenu": "فتح القائمة",
+  "closeMenu": "إغلاق القائمة",
+  "getApp": "احصل على PrivaMesh",
+  "onAppStore": "{label} على App Store",
+  "keepReading": "تابع القراءة",
+  "faq": "الأسئلة الشائعة",
+  "breadcrumb": "مسار التنقل",
+  "home": "الرئيسية",
+  "nav": {
+    "features": "الميزات",
+    "compare": "مقارنة",
+    "alternatives": "البدائل",
+    "guides": "الأدلة",
+    "privacy": "الخصوصية",
+    "blog": "المدونة",
+    "news": "الأخبار",
+    "bestApps": "أفضل التطبيقات 2026",
+    "glossary": "المسرد"
+  },
+  "product": {
+    "/features/no-servers": "بلا خوادم",
+    "/features/e2e-encryption": "التشفير التام بين الطرفين",
+    "/features/metadata-protection": "حماية البيانات الوصفية",
+    "/features/seed-phrase-accounts": "عبارة الحساب",
+    "/features/duress-code": "رمز الإكراه"
+  },
+  "comparePages": {
+    "/compare/privamesh-vs-signal": "مقابل Signal",
+    "/compare/privamesh-vs-telegram": "مقابل Telegram",
+    "/compare/privamesh-vs-session": "مقابل Session",
+    "/alternatives": "كل البدائل",
+    "/best-private-messaging-apps": "أفضل التطبيقات 2026"
+  },
+  "footer": {
+    "tagline": "تطبيق مراسلة خاص بلا خوادم وبتشفير تام بين الطرفين. ثق بالرياضيات لا بالشركات.",
+    "product": "المنتج",
+    "compare": "مقارنة",
+    "resources": "موارد",
+    "legal": "قانوني",
+    "rights": "جميع الحقوق محفوظة.",
+    "motto": "خاص. مشفّر. لك.",
+    "whitepaper": "الورقة البيضاء",
+    "links": {
+      "/privacy": "لماذا الخصوصية",
+      "/pricing": "الأسعار",
+      "/download": "تنزيل",
+      "/changelog": "سجل التغييرات",
+      "/architecture": "البنية",
+      "/protocol": "البروتوكول",
+      "/threat-model": "نموذج التهديدات",
+      "/limitations": "القيود",
+      "/guides": "الأدلة",
+      "/blog": "المدونة",
+      "/news": "الأخبار",
+      "/glossary": "المسرد",
+      "/about": "من نحن",
+      "/security": "الأمان",
+      "/bug-bounty": "مكافآت الثغرات",
+      "/transparency": "الشفافية",
+      "/privacy-policy": "سياسة الخصوصية",
+      "/terms": "شروط الاستخدام",
+      "/support": "الدعم"
+    }
+  }
+}

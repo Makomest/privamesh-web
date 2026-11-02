@@ -1,0 +1,75 @@
+{
+  "meta": {
+    "title": "PrivaMesh - privat krypterad meddelandeapp",
+    "description": "Privat meddelandeapp med end-to-end-kryptering för iPhone, Android och Windows. Inget telefonnummer, ingen e-post, inget konto - dina nycklar och chattar lämnar aldrig din enhet."
+  },
+  "skip": "Hoppa till innehållet",
+  "brandHome": "PrivaMesh startsida",
+  "github": "PrivaMesh på GitHub",
+  "x": "PrivaMesh på X",
+  "language": "Språk",
+  "openMenu": "Öppna menyn",
+  "closeMenu": "Stäng menyn",
+  "getApp": "Hämta PrivaMesh",
+  "onAppStore": "{label} i App Store",
+  "keepReading": "Läs vidare",
+  "faq": "Vanliga frågor",
+  "breadcrumb": "Brödsmulor",
+  "home": "Start",
+  "nav": {
+    "features": "Funktioner",
+    "compare": "Jämför",
+    "alternatives": "Alternativ",
+    "guides": "Guider",
+    "privacy": "Integritet",
+    "blog": "Blogg",
+    "news": "Nyheter",
+    "bestApps": "Bästa apparna 2026",
+    "glossary": "Ordlista"
+  },
+  "product": {
+    "/features/no-servers": "Inga servrar",
+    "/features/e2e-encryption": "End-to-end-kryptering",
+    "/features/metadata-protection": "Skydd av metadata",
+    "/features/seed-phrase-accounts": "Kontofras",
+    "/features/duress-code": "Tvångskod"
+  },
+  "comparePages": {
+    "/compare/privamesh-vs-signal": "vs Signal",
+    "/compare/privamesh-vs-telegram": "vs Telegram",
+    "/compare/privamesh-vs-session": "vs Session",
+    "/alternatives": "Alla alternativ",
+    "/best-private-messaging-apps": "Bästa apparna 2026"
+  },
+  "footer": {
+    "tagline": "En privat, serverlös meddelandeapp med end-to-end-kryptering. Lita på matematik, inte på företag.",
+    "product": "Produkt",
+    "compare": "Jämför",
+    "resources": "Resurser",
+    "legal": "Juridiskt",
+    "rights": "Alla rättigheter förbehållna.",
+    "motto": "Privat. Krypterat. Ditt.",
+    "whitepaper": "Vitbok",
+    "links": {
+      "/privacy": "Varför privat",
+      "/pricing": "Priser",
+      "/download": "Ladda ner",
+      "/changelog": "Ändringslogg",
+      "/architecture": "Arkitektur",
+      "/protocol": "Protokoll",
+      "/threat-model": "Hotmodell",
+      "/limitations": "Begränsningar",
+      "/guides": "Guider",
+      "/blog": "Blogg",
+      "/news": "Nyheter",
+      "/glossary": "Ordlista",
+      "/about": "Om oss",
+      "/security": "Säkerhet",
+      "/bug-bounty": "Bug bounty",
+      "/transparency": "Öppenhet",
+      "/privacy-policy": "Integritetspolicy",
+      "/terms": "Användarvillkor",
+      "/support": "Support"
+    }
+  }
+}

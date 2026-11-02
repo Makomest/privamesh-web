@@ -1,0 +1,75 @@
+{
+  "meta": {
+    "title": "PrivaMesh - 암호화된 프라이빗 메신저",
+    "description": "iPhone, Android, Windows용 종단간 암호화 프라이빗 메신저. 전화번호, 이메일, 계정이 필요 없습니다. 키와 대화는 절대 기기를 떠나지 않습니다."
+  },
+  "skip": "본문으로 건너뛰기",
+  "brandHome": "PrivaMesh 홈",
+  "github": "GitHub의 PrivaMesh",
+  "x": "X의 PrivaMesh",
+  "language": "언어",
+  "openMenu": "메뉴 열기",
+  "closeMenu": "메뉴 닫기",
+  "getApp": "PrivaMesh 받기",
+  "onAppStore": "App Store에서 {label}",
+  "keepReading": "더 읽어보기",
+  "faq": "자주 묻는 질문",
+  "breadcrumb": "이동 경로",
+  "home": "홈",
+  "nav": {
+    "features": "기능",
+    "compare": "비교",
+    "alternatives": "대안",
+    "guides": "가이드",
+    "privacy": "프라이버시",
+    "blog": "블로그",
+    "news": "소식",
+    "bestApps": "2026 최고의 앱",
+    "glossary": "용어집"
+  },
+  "product": {
+    "/features/no-servers": "서버 없음",
+    "/features/e2e-encryption": "종단간 암호화",
+    "/features/metadata-protection": "메타데이터 보호",
+    "/features/seed-phrase-accounts": "계정 문구",
+    "/features/duress-code": "강요 코드"
+  },
+  "comparePages": {
+    "/compare/privamesh-vs-signal": "Signal과 비교",
+    "/compare/privamesh-vs-telegram": "Telegram과 비교",
+    "/compare/privamesh-vs-session": "Session과 비교",
+    "/alternatives": "모든 대안",
+    "/best-private-messaging-apps": "2026 최고의 앱"
+  },
+  "footer": {
+    "tagline": "서버 없이 종단간 암호화되는 프라이빗 메신저. 기업이 아닌 수학을 믿으세요.",
+    "product": "제품",
+    "compare": "비교",
+    "resources": "자료",
+    "legal": "법적 고지",
+    "rights": "All rights reserved.",
+    "motto": "프라이빗. 암호화. 당신의 것.",
+    "whitepaper": "백서",
+    "links": {
+      "/privacy": "왜 프라이빗인가",
+      "/pricing": "요금",
+      "/download": "다운로드",
+      "/changelog": "변경 내역",
+      "/architecture": "아키텍처",
+      "/protocol": "프로토콜",
+      "/threat-model": "위협 모델",
+      "/limitations": "한계",
+      "/guides": "가이드",
+      "/blog": "블로그",
+      "/news": "소식",
+      "/glossary": "용어집",
+      "/about": "소개",
+      "/security": "보안",
+      "/bug-bounty": "버그 바운티",
+      "/transparency": "투명성",
+      "/privacy-policy": "개인정보 처리방침",
+      "/terms": "이용약관",
+      "/support": "지원"
+    }
+  }
+}

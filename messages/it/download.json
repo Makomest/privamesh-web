@@ -1,0 +1,99 @@
+{
+  "meta": {
+    "title": "Scarica PrivaMesh",
+    "description": "PrivaMesh per iPhone sull'App Store, un APK per Android 8.0 o successivo e un programma di installazione per Windows 10. Nessun numero di telefono, nessuna email, nessun account."
+  },
+  "eyebrow": "Download",
+  "title": "Scarica PrivaMesh",
+  "lead": "Tutte e tre le piattaforme hanno una versione che puoi installare oggi. Cambiano il modo di pagare e quanto è stata testata, ed entrambe le cose sono scritte sulla scheda invece di lasciarti scoprirle dopo.",
+  "appStoreCta": "Scarica dall'App Store",
+  "notAvailable": "Non disponibile",
+  "platforms": {
+    "ios": {
+      "name": "iPhone",
+      "requirement": "iOS {os} o successivo · versione {version}",
+      "cta": "Scarica dall'App Store",
+      "blurb": "Installazione gratuita. Nessun numero di telefono, nessuna email, nessun account: l'app genera la tua identità sul dispositivo alla prima apertura. I piani a pagamento funzionano qui e solo qui.",
+      "noteHeading": "Quella con un uso reale alle spalle",
+      "noteBody": "Questo è il client pubblicato sull'App Store e quello che le persone usano davvero. È anche il riferimento con cui si misurano gli altri: i client Android e Windows derivano i loro livelli di protocollo da questo codice sorgente e vengono verificati con vettori di test rispetto a esso, quindi quando non concordano è questo a essere corretto."
+    },
+    "windows": {
+      "name": "Windows",
+      "requirement": "Windows 10 a 64 bit · versione {version}",
+      "cta": "Scarica il programma di installazione",
+      "blurb": "Java è incluso, quindi non c'è nient'altro da installare, e il programma di installazione non chiede mai i permessi di amministratore. Sul desktop non c'è abbonamento né relay: il client crea il proprio portafoglio Solana per le commissioni, tu lo ricarichi e ogni messaggio paga la propria commissione di rete - circa 0,0008 $, cioè circa 6.000 messaggi per 5 $.",
+      "secondary": ".zip portatile, senza installazione",
+      "warningHeading": "Windows ti avviserà",
+      "warningBody": "Vedrai «PC protetto da Windows». Questa versione non ha un certificato di firma del codice, quindi Windows non riconosce l'editore: non è la segnalazione di qualcosa trovato nel file. Fai clic su «Ulteriori informazioni», poi su «Esegui comunque». Quel certificato è anche ciò che ti permetterebbe di verificare che il file viene davvero da noi, quindi finché non esiste non c'è nulla di valido con cui verificarlo. È una lacuna, e tocca a noi colmarla."
+    },
+    "android": {
+      "name": "Android",
+      "requirement": "Android 8.0 o successivo · versione {version}",
+      "cta": "Scarica l'APK",
+      "blurb": "Una versione di produzione firmata con la chiave reale, così le versioni successive si installeranno sopra come aggiornamento e il tuo account resterà. I piani a pagamento qui non funzionano ancora - il relay verifica le ricevute Apple e non ha un percorso per Google Play -, quindi per ora Android è solo con il piano gratuito.",
+      "warningHeading": "Installazione manuale, e cosa è stato testato",
+      "warningBody": "Android ti chiederà di consentire le installazioni dalla fonte da cui hai scaricato il file. La versione è stata portata attraverso creazione dell'account, generazione della frase e riavvio su un emulatore Android 15, il controllo che conta dopo che R8 riscrive il codice crittografico e del database. Non è stata eseguita su un dispositivo reale e nessuna versione Android ha ancora inviato un messaggio sulla mainnet."
+    }
+  },
+  "first": {
+    "heading": "Cosa succede per primo",
+    "steps": [
+      "L'app genera una frase di recupero di 12 parole sul tuo dispositivo",
+      "Scrivila su carta: non c'è reset e non conserviamo alcun backup",
+      "Imposta un codice di accesso e lo sblocco biometrico se il dispositivo lo offre",
+      "Scegli un soprannome perché ti trovino senza numero di telefono",
+      "Aggiungi un contatto con codice QR, link di invito o soprannome; entrambe le parti devono aggiungersi a vicenda"
+    ],
+    "footnote": "La versione per iPhone, la versione minima di iOS e il prezzo arrivano direttamente dalla scheda dell'App Store invece di essere aggiornati a mano, quindi non possono discostarsi da ciò che mostra Apple. I dati di Windows provengono dalla release che ospita il file che scarichi."
+  },
+  "before": {
+    "heading": "Prima di installare",
+    "paras": [
+      "Due cose conviene saperle in anticipo, perché entrambe sorprendono dopo. La cronologia dei messaggi non si può spostare su un altro dispositivo né ripristinare dopo una reinstallazione: la forward secrecy distrugge la chiave di ogni messaggio dopo l'uso, ed è la garanzia che funziona, non una funzione mancante. E l'invio ha un costo: l'app è gratuita, ma ogni messaggio è una vera transazione con una vera commissione di rete. Vedi i [prezzi](/pricing) per quanto costa.",
+      "Entrambe valgono per ogni piattaforma. Cambia chi paga: su iPhone un abbonamento acquista token ciechi che il nostro unico servizio delle commissioni riscatta, mentre il client Windows salta del tutto quel servizio e spende da un portafoglio Solana che ricarichi tu. Cosa può osservare ogni componente è sulla [pagina dell'architettura](/architecture), e da cosa nulla di tutto questo ti protegge è nei [limiti](/limitations)."
+    ]
+  },
+  "faq": [
+    {
+      "q": "Su quali iPhone funziona?",
+      "a": "Su qualsiasi iPhone con iOS 18 o successivo. La versione 1.0 richiedeva iOS 26.5, e questa pagina diceva che dipendeva dall'handshake post-quantistico. Non era così: la soglia veniva da alcune API dell'interfaccia, e la 1.0 aveva comunque il percorso post-quantistico disattivato. La 1.1 ha eliminato la soglia. Il post-quantistico in sé (X-Wing, ML-KEM-768 con X25519) richiede davvero iOS 26, quindi dipende dal singolo dispositivo: un iPhone con iOS 26 pubblica una prekey post-quantistica, uno più vecchio usa X3DH classico, e i due si capiscono. Nella 1.1 il passaggio post-quantistico in pratica non va ancora a buon fine: la pagina dei limiti spiega perché."
+    },
+    {
+      "q": "Cosa mi serve per registrarmi?",
+      "a": "Niente. Nessun numero di telefono, nessuna email, nessun nome utente da riservare. Al primo avvio l'app genera una frase di recupero di 12 parole sul tuo dispositivo: scrivila, perché è l'unico modo per rientrare nell'account."
+    },
+    {
+      "q": "È gratis?",
+      "a": "Il download è gratuito. L'invio ha un costo perché ogni messaggio è una transazione a pagamento su una blockchain pubblica; la pagina dei prezzi elenca quote e prezzi dei piani."
+    },
+    {
+      "q": "Perché il programma di installazione di Windows mostra un avviso di sicurezza?",
+      "a": "La versione non è firmata, quindi Windows non riconosce l'editore e mostra «PC protetto da Windows». Non è la segnalazione di qualcosa trovato nel file: fai clic su «Ulteriori informazioni», poi su «Esegui comunque». Lo stesso certificato mancante è il motivo per cui non c'è un modo reale di confermare che il file venga da noi, e un checksum pubblicato non cambierebbe nulla: chi può sostituire il download può sostituire anche il checksum accanto. La soluzione è un certificato di firma, e questa versione non ce l'ha ancora."
+    },
+    {
+      "q": "Cosa ha di diverso la versione Android?",
+      "a": "È la versione 0.1 e non la 1.0, e non per modestia. È stata portata attraverso creazione dell'account, generazione della frase e riavvio su un emulatore - i controlli che rilevano se R8 rompe il codice crittografico e del database -, ma non è stata eseguita su un dispositivo reale e nessuna versione Android ha ancora inviato un messaggio sulla mainnet. È firmata con la chiave reale, quindi le versioni successive si installeranno sopra come aggiornamento."
+    },
+    {
+      "q": "I piani a pagamento funzionano su Windows e Android?",
+      "a": "Non come su iPhone. Il relay verifica le ricevute Apple e non ha un percorso per Google Play, quindi Android partirebbe solo con il piano gratuito. Windows non usa affatto il relay: il client desktop crea il proprio portafoglio Solana per le commissioni, che ricarichi direttamente, quindi non c'è nessun abbonamento da trasferire."
+    }
+  ],
+  "related": [
+    {
+      "href": "/pricing",
+      "label": "Prezzi",
+      "blurb": "Piani, quote di messaggi e perché l'invio ha un costo."
+    },
+    {
+      "href": "/limitations",
+      "label": "Limiti noti",
+      "blurb": "Da cosa PrivaMesh non ti protegge."
+    },
+    {
+      "href": "/support",
+      "label": "Assistenza",
+      "blurb": "Frase di recupero, nuovi dispositivi e abbonamenti."
+    }
+  ]
+}

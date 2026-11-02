@@ -1,0 +1,75 @@
+{
+  "meta": {
+    "title": "PrivaMesh - yksityinen salattu pikaviestin",
+    "description": "Yksityinen päästä päähän salattu pikaviestin iPhonelle, Androidille ja Windowsille. Ei puhelinnumeroa, ei sähköpostia, ei tiliä - avaimesi ja keskustelusi eivät koskaan poistu laitteeltasi."
+  },
+  "skip": "Siirry sisältöön",
+  "brandHome": "PrivaMeshin etusivu",
+  "github": "PrivaMesh GitHubissa",
+  "x": "PrivaMesh X:ssä",
+  "language": "Kieli",
+  "openMenu": "Avaa valikko",
+  "closeMenu": "Sulje valikko",
+  "getApp": "Hanki PrivaMesh",
+  "onAppStore": "{label} App Storessa",
+  "keepReading": "Lue lisää",
+  "faq": "Usein kysyttyä",
+  "breadcrumb": "Murupolku",
+  "home": "Etusivu",
+  "nav": {
+    "features": "Ominaisuudet",
+    "compare": "Vertailu",
+    "alternatives": "Vaihtoehdot",
+    "guides": "Oppaat",
+    "privacy": "Yksityisyys",
+    "blog": "Blogi",
+    "news": "Uutiset",
+    "bestApps": "Parhaat sovellukset 2026",
+    "glossary": "Sanasto"
+  },
+  "product": {
+    "/features/no-servers": "Ei palvelimia",
+    "/features/e2e-encryption": "Päästä päähän -salaus",
+    "/features/metadata-protection": "Metatietojen suojaus",
+    "/features/seed-phrase-accounts": "Tilin lause",
+    "/features/duress-code": "Pakkokoodi"
+  },
+  "comparePages": {
+    "/compare/privamesh-vs-signal": "vs Signal",
+    "/compare/privamesh-vs-telegram": "vs Telegram",
+    "/compare/privamesh-vs-session": "vs Session",
+    "/alternatives": "Kaikki vaihtoehdot",
+    "/best-private-messaging-apps": "Parhaat sovellukset 2026"
+  },
+  "footer": {
+    "tagline": "Yksityinen, palvelimeton pikaviestin päästä päähän -salauksella. Luota matematiikkaan, älä yrityksiin.",
+    "product": "Tuote",
+    "compare": "Vertailu",
+    "resources": "Resurssit",
+    "legal": "Oikeudelliset tiedot",
+    "rights": "Kaikki oikeudet pidätetään.",
+    "motto": "Yksityinen. Salattu. Sinun.",
+    "whitepaper": "Valkoinen kirja",
+    "links": {
+      "/privacy": "Miksi yksityisyys",
+      "/pricing": "Hinnat",
+      "/download": "Lataa",
+      "/changelog": "Muutosloki",
+      "/architecture": "Arkkitehtuuri",
+      "/protocol": "Protokolla",
+      "/threat-model": "Uhkamalli",
+      "/limitations": "Rajoitukset",
+      "/guides": "Oppaat",
+      "/blog": "Blogi",
+      "/news": "Uutiset",
+      "/glossary": "Sanasto",
+      "/about": "Tietoa meistä",
+      "/security": "Tietoturva",
+      "/bug-bounty": "Bug bounty",
+      "/transparency": "Läpinäkyvyys",
+      "/privacy-policy": "Tietosuojakäytäntö",
+      "/terms": "Käyttöehdot",
+      "/support": "Tuki"
+    }
+  }
+}

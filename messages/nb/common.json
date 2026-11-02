@@ -1,0 +1,75 @@
+{
+  "meta": {
+    "title": "PrivaMesh - privat kryptert meldingsapp",
+    "description": "Privat meldingsapp med ende-til-ende-kryptering for iPhone, Android og Windows. Ingen telefonnummer, ingen e-post, ingen konto - nøklene og samtalene dine forlater aldri enheten."
+  },
+  "skip": "Hopp til innholdet",
+  "brandHome": "PrivaMesh forside",
+  "github": "PrivaMesh på GitHub",
+  "x": "PrivaMesh på X",
+  "language": "Språk",
+  "openMenu": "Åpne menyen",
+  "closeMenu": "Lukk menyen",
+  "getApp": "Last ned PrivaMesh",
+  "onAppStore": "{label} i App Store",
+  "keepReading": "Les videre",
+  "faq": "Vanlige spørsmål",
+  "breadcrumb": "Brødsmulesti",
+  "home": "Forside",
+  "nav": {
+    "features": "Funksjoner",
+    "compare": "Sammenlign",
+    "alternatives": "Alternativer",
+    "guides": "Veiledninger",
+    "privacy": "Personvern",
+    "blog": "Blogg",
+    "news": "Nyheter",
+    "bestApps": "Beste apper 2026",
+    "glossary": "Ordliste"
+  },
+  "product": {
+    "/features/no-servers": "Ingen servere",
+    "/features/e2e-encryption": "Ende-til-ende-kryptering",
+    "/features/metadata-protection": "Beskyttelse av metadata",
+    "/features/seed-phrase-accounts": "Kontofrase",
+    "/features/duress-code": "Tvangskode"
+  },
+  "comparePages": {
+    "/compare/privamesh-vs-signal": "vs Signal",
+    "/compare/privamesh-vs-telegram": "vs Telegram",
+    "/compare/privamesh-vs-session": "vs Session",
+    "/alternatives": "Alle alternativer",
+    "/best-private-messaging-apps": "Beste apper 2026"
+  },
+  "footer": {
+    "tagline": "En privat, serverløs meldingsapp med ende-til-ende-kryptering. Stol på matematikk, ikke på selskaper.",
+    "product": "Produkt",
+    "compare": "Sammenlign",
+    "resources": "Ressurser",
+    "legal": "Juridisk",
+    "rights": "Alle rettigheter forbeholdt.",
+    "motto": "Privat. Kryptert. Ditt.",
+    "whitepaper": "Hvitbok",
+    "links": {
+      "/privacy": "Hvorfor privat",
+      "/pricing": "Priser",
+      "/download": "Last ned",
+      "/changelog": "Endringslogg",
+      "/architecture": "Arkitektur",
+      "/protocol": "Protokoll",
+      "/threat-model": "Trusselmodell",
+      "/limitations": "Begrensninger",
+      "/guides": "Veiledninger",
+      "/blog": "Blogg",
+      "/news": "Nyheter",
+      "/glossary": "Ordliste",
+      "/about": "Om oss",
+      "/security": "Sikkerhet",
+      "/bug-bounty": "Bug bounty",
+      "/transparency": "Åpenhet",
+      "/privacy-policy": "Personvernerklæring",
+      "/terms": "Bruksvilkår",
+      "/support": "Brukerstøtte"
+    }
+  }
+}

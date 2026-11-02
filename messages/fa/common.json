@@ -1,0 +1,75 @@
+{
+  "meta": {
+    "title": "PrivaMesh - پیام‌رسان خصوصی رمزگذاری‌شده",
+    "description": "پیام‌رسان خصوصی با رمزگذاری سرتاسری برای iPhone، Android و Windows. بدون شماره تلفن، بدون ایمیل، بدون حساب کاربری - کلیدها و گفتگوهای شما هرگز از دستگاهتان خارج نمی‌شوند."
+  },
+  "skip": "رفتن به محتوا",
+  "brandHome": "صفحهٔ اصلی PrivaMesh",
+  "github": "PrivaMesh در GitHub",
+  "x": "PrivaMesh در X",
+  "language": "زبان",
+  "openMenu": "باز کردن منو",
+  "closeMenu": "بستن منو",
+  "getApp": "دریافت PrivaMesh",
+  "onAppStore": "{label} در App Store",
+  "keepReading": "ادامهٔ مطلب",
+  "faq": "پرسش‌های متداول",
+  "breadcrumb": "مسیر صفحه",
+  "home": "خانه",
+  "nav": {
+    "features": "ویژگی‌ها",
+    "compare": "مقایسه",
+    "alternatives": "جایگزین‌ها",
+    "guides": "راهنماها",
+    "privacy": "حریم خصوصی",
+    "blog": "وبلاگ",
+    "news": "اخبار",
+    "bestApps": "بهترین برنامه‌های ۲۰۲۶",
+    "glossary": "واژه‌نامه"
+  },
+  "product": {
+    "/features/no-servers": "بدون سرور",
+    "/features/e2e-encryption": "رمزگذاری سرتاسری",
+    "/features/metadata-protection": "محافظت از فراداده",
+    "/features/seed-phrase-accounts": "عبارت حساب",
+    "/features/duress-code": "کد اجبار"
+  },
+  "comparePages": {
+    "/compare/privamesh-vs-signal": "در برابر Signal",
+    "/compare/privamesh-vs-telegram": "در برابر Telegram",
+    "/compare/privamesh-vs-session": "در برابر Session",
+    "/alternatives": "همهٔ جایگزین‌ها",
+    "/best-private-messaging-apps": "بهترین برنامه‌های ۲۰۲۶"
+  },
+  "footer": {
+    "tagline": "پیام‌رسانی خصوصی، بدون سرور و با رمزگذاری سرتاسری. به ریاضیات اعتماد کنید، نه به شرکت‌ها.",
+    "product": "محصول",
+    "compare": "مقایسه",
+    "resources": "منابع",
+    "legal": "حقوقی",
+    "rights": "تمامی حقوق محفوظ است.",
+    "motto": "خصوصی. رمزگذاری‌شده. مال شما.",
+    "whitepaper": "وایت‌پیپر",
+    "links": {
+      "/privacy": "چرا حریم خصوصی",
+      "/pricing": "قیمت‌ها",
+      "/download": "دانلود",
+      "/changelog": "تغییرات نسخه‌ها",
+      "/architecture": "معماری",
+      "/protocol": "پروتکل",
+      "/threat-model": "مدل تهدید",
+      "/limitations": "محدودیت‌ها",
+      "/guides": "راهنماها",
+      "/blog": "وبلاگ",
+      "/news": "اخبار",
+      "/glossary": "واژه‌نامه",
+      "/about": "دربارهٔ ما",
+      "/security": "امنیت",
+      "/bug-bounty": "جایزهٔ باگ",
+      "/transparency": "شفافیت",
+      "/privacy-policy": "سیاست حریم خصوصی",
+      "/terms": "شرایط استفاده",
+      "/support": "پشتیبانی"
+    }
+  }
+}

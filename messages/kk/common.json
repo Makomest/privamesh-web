@@ -1,0 +1,75 @@
+{
+  "meta": {
+    "title": "PrivaMesh - шифрланған жеке мессенджер",
+    "description": "iPhone, Android және Windows үшін ұштан-ұшқа шифрланған жеке мессенджер. Телефон нөмірі жоқ, пошта жоқ, аккаунт жоқ - кілттеріңіз бен хаттарыңыз құрылғыдан ешқашан шықпайды."
+  },
+  "skip": "Мазмұнға өту",
+  "brandHome": "PrivaMesh басты беті",
+  "github": "GitHub-тағы PrivaMesh",
+  "x": "X-тегі PrivaMesh",
+  "language": "Тіл",
+  "openMenu": "Мәзірді ашу",
+  "closeMenu": "Мәзірді жабу",
+  "getApp": "PrivaMesh жүктеу",
+  "onAppStore": "{label} App Store-да",
+  "keepReading": "Әрі қарай оқу",
+  "faq": "Жиі қойылатын сұрақтар",
+  "breadcrumb": "Навигация жолы",
+  "home": "Басты бет",
+  "nav": {
+    "features": "Мүмкіндіктер",
+    "compare": "Салыстыру",
+    "alternatives": "Баламалар",
+    "guides": "Нұсқаулықтар",
+    "privacy": "Құпиялылық",
+    "blog": "Блог",
+    "news": "Жаңалықтар",
+    "bestApps": "Үздік қолданбалар 2026",
+    "glossary": "Глоссарий"
+  },
+  "product": {
+    "/features/no-servers": "Серверсіз",
+    "/features/e2e-encryption": "Ұштан-ұшқа шифрлау",
+    "/features/metadata-protection": "Метадеректерді қорғау",
+    "/features/seed-phrase-accounts": "Аккаунт фразасы",
+    "/features/duress-code": "Мәжбүрлеу коды"
+  },
+  "comparePages": {
+    "/compare/privamesh-vs-signal": "Signal-мен салыстыру",
+    "/compare/privamesh-vs-telegram": "Telegram-мен салыстыру",
+    "/compare/privamesh-vs-session": "Session-мен салыстыру",
+    "/alternatives": "Барлық баламалар",
+    "/best-private-messaging-apps": "Үздік қолданбалар 2026"
+  },
+  "footer": {
+    "tagline": "Серверсіз, ұштан-ұшқа шифрланған жеке мессенджер. Компанияларға емес, математикаға сеніңіз.",
+    "product": "Өнім",
+    "compare": "Салыстыру",
+    "resources": "Материалдар",
+    "legal": "Құқықтық ақпарат",
+    "rights": "Барлық құқықтар қорғалған.",
+    "motto": "Жеке. Шифрланған. Сіздікі.",
+    "whitepaper": "White Paper",
+    "links": {
+      "/privacy": "Неге құпиялылық",
+      "/pricing": "Бағалар",
+      "/download": "Жүктеу",
+      "/changelog": "Өзгерістер журналы",
+      "/architecture": "Архитектура",
+      "/protocol": "Хаттама",
+      "/threat-model": "Қауіп моделі",
+      "/limitations": "Шектеулер",
+      "/guides": "Нұсқаулықтар",
+      "/blog": "Блог",
+      "/news": "Жаңалықтар",
+      "/glossary": "Глоссарий",
+      "/about": "Жоба туралы",
+      "/security": "Қауіпсіздік",
+      "/bug-bounty": "Bug bounty",
+      "/transparency": "Ашықтық",
+      "/privacy-policy": "Құпиялылық саясаты",
+      "/terms": "Пайдалану шарттары",
+      "/support": "Қолдау"
+    }
+  }
+}

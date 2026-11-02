@@ -1,0 +1,75 @@
+{
+  "meta": {
+    "title": "PrivaMesh - missatgeria privada xifrada",
+    "description": "Missatgeria privada amb xifratge d'extrem a extrem per a iPhone, Android i Windows. Sense número de telèfon, sense correu, sense compte: les teves claus i converses no surten mai del dispositiu."
+  },
+  "skip": "Salta al contingut",
+  "brandHome": "Inici de PrivaMesh",
+  "github": "PrivaMesh a GitHub",
+  "x": "PrivaMesh a X",
+  "language": "Idioma",
+  "openMenu": "Obre el menú",
+  "closeMenu": "Tanca el menú",
+  "getApp": "Obtén PrivaMesh",
+  "onAppStore": "{label} a l'App Store",
+  "keepReading": "Continua llegint",
+  "faq": "Preguntes freqüents",
+  "breadcrumb": "Ruta de navegació",
+  "home": "Inici",
+  "nav": {
+    "features": "Funcions",
+    "compare": "Compara",
+    "alternatives": "Alternatives",
+    "guides": "Guies",
+    "privacy": "Privadesa",
+    "blog": "Blog",
+    "news": "Novetats",
+    "bestApps": "Millors apps 2026",
+    "glossary": "Glossari"
+  },
+  "product": {
+    "/features/no-servers": "Sense servidors",
+    "/features/e2e-encryption": "Xifratge d'extrem a extrem",
+    "/features/metadata-protection": "Protecció de metadades",
+    "/features/seed-phrase-accounts": "Frase del compte",
+    "/features/duress-code": "Codi de coacció"
+  },
+  "comparePages": {
+    "/compare/privamesh-vs-signal": "vs Signal",
+    "/compare/privamesh-vs-telegram": "vs Telegram",
+    "/compare/privamesh-vs-session": "vs Session",
+    "/alternatives": "Totes les alternatives",
+    "/best-private-messaging-apps": "Millors apps 2026"
+  },
+  "footer": {
+    "tagline": "Una missatgeria privada, sense servidors i amb xifratge d'extrem a extrem. Confia en les matemàtiques, no en les empreses.",
+    "product": "Producte",
+    "compare": "Compara",
+    "resources": "Recursos",
+    "legal": "Legal",
+    "rights": "Tots els drets reservats.",
+    "motto": "Privat. Xifrat. Teu.",
+    "whitepaper": "Llibre blanc",
+    "links": {
+      "/privacy": "Per què privat",
+      "/pricing": "Preus",
+      "/download": "Baixa",
+      "/changelog": "Registre de canvis",
+      "/architecture": "Arquitectura",
+      "/protocol": "Protocol",
+      "/threat-model": "Model d'amenaces",
+      "/limitations": "Limitacions",
+      "/guides": "Guies",
+      "/blog": "Blog",
+      "/news": "Novetats",
+      "/glossary": "Glossari",
+      "/about": "Quant a",
+      "/security": "Seguretat",
+      "/bug-bounty": "Recompenses per errors",
+      "/transparency": "Transparència",
+      "/privacy-policy": "Política de privadesa",
+      "/terms": "Condicions d'ús",
+      "/support": "Assistència"
+    }
+  }
+}

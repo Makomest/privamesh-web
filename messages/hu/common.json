@@ -1,0 +1,75 @@
+{
+  "meta": {
+    "title": "PrivaMesh - privát titkosított üzenetküldő",
+    "description": "Privát, végponttól végpontig titkosított üzenetküldő iPhone-ra, Androidra és Windowsra. Nincs telefonszám, nincs e-mail, nincs fiók - a kulcsaid és a beszélgetéseid sosem hagyják el az eszközödet."
+  },
+  "skip": "Ugrás a tartalomra",
+  "brandHome": "PrivaMesh kezdőlap",
+  "github": "PrivaMesh a GitHubon",
+  "x": "PrivaMesh az X-en",
+  "language": "Nyelv",
+  "openMenu": "Menü megnyitása",
+  "closeMenu": "Menü bezárása",
+  "getApp": "PrivaMesh letöltése",
+  "onAppStore": "{label} az App Store-ban",
+  "keepReading": "Olvass tovább",
+  "faq": "Gyakori kérdések",
+  "breadcrumb": "Morzsamenü",
+  "home": "Kezdőlap",
+  "nav": {
+    "features": "Funkciók",
+    "compare": "Összehasonlítás",
+    "alternatives": "Alternatívák",
+    "guides": "Útmutatók",
+    "privacy": "Adatvédelem",
+    "blog": "Blog",
+    "news": "Hírek",
+    "bestApps": "Legjobb appok 2026",
+    "glossary": "Szójegyzék"
+  },
+  "product": {
+    "/features/no-servers": "Szerverek nélkül",
+    "/features/e2e-encryption": "Végponttól végpontig titkosítás",
+    "/features/metadata-protection": "Metaadatok védelme",
+    "/features/seed-phrase-accounts": "Fiókkifejezés",
+    "/features/duress-code": "Kényszerkód"
+  },
+  "comparePages": {
+    "/compare/privamesh-vs-signal": "vs Signal",
+    "/compare/privamesh-vs-telegram": "vs Telegram",
+    "/compare/privamesh-vs-session": "vs Session",
+    "/alternatives": "Összes alternatíva",
+    "/best-private-messaging-apps": "Legjobb appok 2026"
+  },
+  "footer": {
+    "tagline": "Privát, szerver nélküli, végponttól végpontig titkosított üzenetküldő. Bízz a matematikában, ne a cégekben.",
+    "product": "Termék",
+    "compare": "Összehasonlítás",
+    "resources": "Források",
+    "legal": "Jogi tudnivalók",
+    "rights": "Minden jog fenntartva.",
+    "motto": "Privát. Titkosított. A tiéd.",
+    "whitepaper": "Whitepaper",
+    "links": {
+      "/privacy": "Miért privát",
+      "/pricing": "Árak",
+      "/download": "Letöltés",
+      "/changelog": "Változásnapló",
+      "/architecture": "Architektúra",
+      "/protocol": "Protokoll",
+      "/threat-model": "Fenyegetésmodell",
+      "/limitations": "Korlátok",
+      "/guides": "Útmutatók",
+      "/blog": "Blog",
+      "/news": "Hírek",
+      "/glossary": "Szójegyzék",
+      "/about": "Rólunk",
+      "/security": "Biztonság",
+      "/bug-bounty": "Bug bounty",
+      "/transparency": "Átláthatóság",
+      "/privacy-policy": "Adatvédelmi szabályzat",
+      "/terms": "Felhasználási feltételek",
+      "/support": "Támogatás"
+    }
+  }
+}

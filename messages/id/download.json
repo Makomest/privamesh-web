@@ -1,0 +1,99 @@
+{
+  "meta": {
+    "title": "Unduh PrivaMesh",
+    "description": "PrivaMesh untuk iPhone di App Store, APK untuk Android 8.0 atau lebih baru, dan penginstal untuk Windows 10. Tanpa nomor telepon, tanpa email, tanpa akun."
+  },
+  "eyebrow": "Unduh",
+  "title": "Unduh PrivaMesh",
+  "lead": "Ketiga platform punya versi yang bisa Anda pasang hari ini. Bedanya ada pada cara membayar dan seberapa banyak yang sudah diuji, dan keduanya tertulis di kartu alih-alih dibiarkan untuk Anda temukan belakangan.",
+  "appStoreCta": "Unduh di App Store",
+  "notAvailable": "Tidak tersedia",
+  "platforms": {
+    "ios": {
+      "name": "iPhone",
+      "requirement": "iOS {os} atau lebih baru · versi {version}",
+      "cta": "Unduh di App Store",
+      "blurb": "Gratis dipasang. Tanpa nomor telepon, tanpa email, tanpa akun - aplikasi membuat identitas Anda di perangkat saat pertama kali dibuka. Paket berbayar berfungsi di sini dan hanya di sini.",
+      "noteHeading": "Yang benar-benar dipakai orang",
+      "noteBody": "Ini adalah klien yang dirilis di App Store dan yang benar-benar dipakai orang. Ini juga acuan bagi yang lain: klien Android dan Windows menurunkan lapisan protokolnya dari kode sumber ini dan diperiksa terhadapnya dengan vektor uji, jadi bila berbeda, yang benar adalah yang ini."
+    },
+    "windows": {
+      "name": "Windows",
+      "requirement": "Windows 10 64-bit · versi {version}",
+      "cta": "Unduh penginstal",
+      "blurb": "Java sudah disertakan, jadi tidak ada lagi yang perlu dipasang, dan penginstal tidak pernah meminta hak administrator. Di desktop tidak ada langganan dan tidak ada relay: klien membuat dompet Solana sendiri untuk biaya, Anda mengisinya, dan setiap pesan membayar biaya jaringannya sendiri - sekitar $0,0008, jadi kira-kira 6.000 pesan untuk $5.",
+      "secondary": ".zip portabel, tanpa penginstal",
+      "warningHeading": "Windows akan memperingatkan Anda",
+      "warningBody": "Anda akan melihat \"Windows melindungi PC Anda\". Versi ini tidak punya sertifikat penandatanganan kode, jadi Windows tidak mengenali penerbitnya - ini bukan laporan bahwa ada sesuatu yang ditemukan di dalam file. Klik \"Info selengkapnya\", lalu \"Tetap jalankan\". Sertifikat itu juga yang memungkinkan Anda memeriksa bahwa file ini benar-benar dari kami, jadi selama belum ada, tidak ada pembanding yang berarti. Itu kekurangan, dan tugas kamilah untuk menutupnya."
+    },
+    "android": {
+      "name": "Android",
+      "requirement": "Android 8.0 atau lebih baru · versi {version}",
+      "cta": "Unduh APK",
+      "blurb": "Versi rilis yang ditandatangani dengan kunci asli, sehingga versi berikutnya terpasang di atasnya sebagai pembaruan dan akun Anda tetap ada. Paket berbayar belum berfungsi di sini - relay memverifikasi tanda terima Apple dan tidak punya jalur untuk Google Play - jadi untuk sementara Android hanya paket gratis.",
+      "warningHeading": "Pemasangan manual, dan apa yang sudah diuji",
+      "warningBody": "Android akan meminta Anda mengizinkan pemasangan dari tempat Anda mengunduh file. Versi ini telah dijalankan melalui pembuatan akun, pembuatan frasa, dan mulai ulang di emulator Android 15 - pemeriksaan yang penting setelah R8 menulis ulang kode kriptografi dan basis data. Versi ini belum dijalankan di perangkat sungguhan, dan belum ada versi Android yang mengirim pesan di mainnet."
+    }
+  },
+  "first": {
+    "heading": "Yang terjadi pertama kali",
+    "steps": [
+      "Aplikasi membuat frasa pemulihan 12 kata di perangkat Anda",
+      "Tulis di kertas - tidak ada atur ulang dan tidak ada cadangan yang kami simpan",
+      "Atur kode sandi, dan buka kunci biometrik jika perangkat menyediakannya",
+      "Pilih nama panggilan agar orang bisa menemukan Anda tanpa nomor telepon",
+      "Tambahkan kontak lewat kode QR, tautan undangan, atau nama panggilan; kedua pihak harus saling menambahkan"
+    ],
+    "footnote": "Versi iPhone, versi iOS minimum, dan harga diambil langsung dari halaman App Store alih-alih diperbarui manual, jadi tidak bisa menyimpang dari yang ditampilkan Apple. Angka untuk Windows diambil dari rilis tempat file yang Anda unduh berada."
+  },
+  "before": {
+    "heading": "Sebelum memasang",
+    "paras": [
+      "Dua hal perlu diketahui sejak awal, karena keduanya sering mengejutkan belakangan. Riwayat pesan Anda tidak bisa dipindahkan ke perangkat lain atau dipulihkan setelah pemasangan ulang - kerahasiaan maju menghancurkan setiap kunci pesan setelah dipakai, dan itu jaminan yang bekerja, bukan fitur yang hilang. Dan pengiriman berbayar: aplikasinya gratis, tetapi setiap pesan adalah transaksi nyata dengan biaya jaringan nyata. Lihat [harga](/pricing) untuk biayanya.",
+      "Keduanya berlaku di semua platform. Bedanya ada pada siapa yang membayar: di iPhone langganan membeli token buta yang ditukarkan oleh satu-satunya layanan biaya kami, sedangkan klien Windows melewati layanan itu sepenuhnya dan membayar dari dompet Solana yang Anda isi sendiri. Apa tepatnya yang bisa dilihat setiap komponen ada di [halaman arsitektur](/architecture), dan dari apa semua ini tidak melindungi Anda ada di [keterbatasan](/limitations)."
+    ]
+  },
+  "faq": [
+    {
+      "q": "iPhone mana yang bisa menjalankannya?",
+      "a": "Semua iPhone dengan iOS 18 atau lebih baru. Versi 1.0 mensyaratkan iOS 26.5, dan halaman ini dulu menyebut alasannya adalah jabat tangan pascakuantum. Itu tidak benar: batas bawahnya berasal dari beberapa API antarmuka, dan 1.0 memang sudah menonaktifkan jalur pascakuantum. 1.1 menghapus batas itu. Bagian pascakuantum itu sendiri (X-Wing, ML-KEM-768 dengan X25519) memang perlu iOS 26, jadi bergantung pada perangkat: iPhone dengan iOS 26 menerbitkan prekey pascakuantum, yang lebih lama memakai X3DH klasik, dan keduanya saling memahami. Di 1.1 langkah pascakuantum belum benar-benar berhasil dalam praktik - halaman keterbatasan menjelaskan alasannya."
+    },
+    {
+      "q": "Apa yang saya perlukan untuk mendaftar?",
+      "a": "Tidak ada. Tanpa nomor telepon, tanpa email, tanpa nama pengguna yang harus dipesan. Aplikasi membuat frasa pemulihan 12 kata di perangkat Anda saat pertama kali dibuka - catat, karena itu satu-satunya jalan kembali ke akun."
+    },
+    {
+      "q": "Apakah gratis?",
+      "a": "Unduhannya gratis. Pengiriman berbayar karena setiap pesan adalah transaksi berbayar di rantai publik - halaman harga mencantumkan kuota dan harga paket."
+    },
+    {
+      "q": "Mengapa penginstal Windows memunculkan peringatan keamanan?",
+      "a": "Versi ini tidak ditandatangani, jadi Windows tidak mengenali penerbitnya dan menampilkan \"Windows melindungi PC Anda\". Ini bukan laporan bahwa ada sesuatu di dalam file - klik \"Info selengkapnya\", lalu \"Tetap jalankan\". Sertifikat yang sama-sama tidak ada itulah alasan tidak ada cara nyata untuk memastikan file ini dari kami, dan checksum yang dipublikasikan tidak akan mengubahnya: siapa pun yang bisa mengganti unduhan juga bisa mengganti checksum di sebelahnya. Solusinya adalah sertifikat penandatanganan, dan versi ini belum memilikinya."
+    },
+    {
+      "q": "Apa yang berbeda dari versi Android?",
+      "a": "Ini versi 0.1, bukan 1.0, dan itu bukan kerendahan hati. Versi ini dijalankan melalui pembuatan akun, pembuatan frasa, dan mulai ulang di emulator - pemeriksaan yang mendeteksi apakah R8 merusak kode kriptografi dan basis data - tetapi belum dijalankan di perangkat sungguhan, dan belum ada versi Android yang mengirim pesan di mainnet. Versi ini ditandatangani dengan kunci asli, jadi versi berikutnya akan terpasang di atasnya sebagai pembaruan."
+    },
+    {
+      "q": "Apakah paket berbayar berfungsi di Windows dan Android?",
+      "a": "Tidak seperti di iPhone. Relay memverifikasi tanda terima Apple dan tidak punya jalur untuk Google Play, jadi Android hanya akan dimulai dengan paket gratis. Windows sama sekali tidak memakai relay: klien desktop membuat dompet biaya Solana sendiri yang Anda isi langsung, jadi tidak ada langganan yang perlu dipindahkan."
+    }
+  ],
+  "related": [
+    {
+      "href": "/pricing",
+      "label": "Harga",
+      "blurb": "Paket, kuota pesan, dan mengapa pengiriman berbayar."
+    },
+    {
+      "href": "/limitations",
+      "label": "Keterbatasan yang diketahui",
+      "blurb": "Dari apa PrivaMesh tidak melindungi Anda."
+    },
+    {
+      "href": "/support",
+      "label": "Dukungan",
+      "blurb": "Frasa pemulihan, perangkat baru, dan langganan."
+    }
+  ]
+}

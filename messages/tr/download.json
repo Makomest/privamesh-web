@@ -1,0 +1,99 @@
+{
+  "meta": {
+    "title": "PrivaMesh'i indirin",
+    "description": "App Store'da iPhone için PrivaMesh, Android 8.0 ve üzeri için bir APK ve Windows 10 için bir yükleyici. Telefon numarası yok, e-posta yok, hesap yok."
+  },
+  "eyebrow": "İndir",
+  "title": "PrivaMesh'i indirin",
+  "lead": "Üç platformun da bugün kurabileceğiniz bir sürümü var. Farklı olan, nasıl ödediğiniz ve ne kadar test edildiği; ikisi de sonradan keşfetmeniz için bırakılmak yerine kartta yazıyor.",
+  "appStoreCta": "App Store'dan indirin",
+  "notAvailable": "Mevcut değil",
+  "platforms": {
+    "ios": {
+      "name": "iPhone",
+      "requirement": "iOS {os} veya üzeri · sürüm {version}",
+      "cta": "App Store'dan indirin",
+      "blurb": "Kurulum ücretsiz. Telefon numarası yok, e-posta yok, hesap yok - uygulama, ilk açtığınızda kimliğinizi cihazda oluşturur. Ücretli planlar burada ve yalnızca burada çalışır.",
+      "noteHeading": "Gerçek kullanımı olan sürüm",
+      "noteBody": "Bu, App Store'da yayımlanan ve insanların gerçekten kullandığı istemcidir. Diğerlerinin ölçüldüğü referans da odur: Android ve Windows istemcileri protokol katmanlarını bu kaynak koddan türetir ve test vektörleriyle ona karşı doğrulanır; uyuşmadıkları yerde doğru olan budur."
+    },
+    "windows": {
+      "name": "Windows",
+      "requirement": "Windows 10 64 bit · sürüm {version}",
+      "cta": "Yükleyiciyi indirin",
+      "blurb": "Java dahildir, dolayısıyla kurmanız gereken başka bir şey yok ve yükleyici hiçbir zaman yönetici yetkisi istemez. Masaüstünde abonelik ve aktarıcı yoktur: istemci ücretler için kendi Solana cüzdanını oluşturur, siz bakiye yüklersiniz ve her mesaj kendi ağ ücretini öder - yaklaşık 0,0008 $, yani 5 $'a yaklaşık 6.000 mesaj.",
+      "secondary": "Taşınabilir .zip, yükleyicisiz",
+      "warningHeading": "Windows sizi uyaracak",
+      "warningBody": "\"Windows bilgisayarınızı korudu\" uyarısını göreceksiniz. Bu sürümde kod imzalama sertifikası yok, bu yüzden Windows yayıncıyı tanımıyor - bu, dosyada bulunan bir şeyin bildirimi değildir. \"Ek bilgi\"ye, ardından \"Yine de çalıştır\"a tıklayın. Dosyanın gerçekten bizden geldiğini doğrulamanızı sağlayacak olan da bu sertifikadır; o olmadıkça burada anlamlı biçimde karşılaştırılacak bir şey yok. Bu bir eksiklik ve onu kapatmak bizim işimiz."
+    },
+    "android": {
+      "name": "Android",
+      "requirement": "Android 8.0 veya üzeri · sürüm {version}",
+      "cta": "APK'yı indirin",
+      "blurb": "Gerçek anahtarla imzalanmış bir sürüm; sonraki sürümler güncelleme olarak üzerine kurulur ve hesabınız korunur. Ücretli planlar burada henüz çalışmıyor - aktarıcı Apple makbuzlarını doğrular ve Google Play için bir yolu yoktur - bu yüzden Android şimdilik yalnızca ücretsiz planla kullanılabilir.",
+      "warningHeading": "Harici kurulum ve neyin test edildiği",
+      "warningBody": "Android, dosyayı indirdiğiniz kaynaktan kuruluma izin vermenizi isteyecek. Sürüm, Android 15 emülatöründe hesap oluşturma, ifade üretme ve yeniden başlatma adımlarından geçirildi; bu, R8 şifreleme ve veritabanı kodunu yeniden yazdıktan sonra önemli olan kontroldür. Gerçek bir cihazda çalıştırılmadı ve hiçbir Android sürümü henüz mainnet'te mesaj göndermedi."
+    }
+  },
+  "first": {
+    "heading": "Önce ne olur",
+    "steps": [
+      "Uygulama cihazınızda 12 kelimelik bir kurtarma ifadesi oluşturur",
+      "Kâğıda yazın - sıfırlama yok ve bizde yedek de yok",
+      "Bir parola belirleyin ve cihaz sunuyorsa biyometrik kilit açmayı etkinleştirin",
+      "Sizi telefon numarası olmadan bulabilmeleri için bir takma ad seçin",
+      "Bir kişiyi QR kodu, davet bağlantısı veya takma adla ekleyin; iki tarafın da birbirini eklemesi gerekir"
+    ],
+    "footnote": "iPhone sürümü, en düşük iOS sürümü ve fiyat elle tutulmak yerine doğrudan App Store sayfasından gelir, dolayısıyla Apple'ın gösterdiğinden sapamaz. Windows bilgileri, indirdiğiniz dosyayı barındıran sürüm yayınından gelir."
+  },
+  "before": {
+    "heading": "Kurmadan önce",
+    "paras": [
+      "İki şeyi önceden bilmek iyi olur, çünkü ikisi de sonradan şaşırtır. Mesaj geçmişiniz başka bir cihaza taşınamaz ve yeniden kurulumdan sonra geri yüklenemez - ileri gizlilik, her mesaj anahtarını kullanımdan sonra yok eder; bu eksik bir özellik değil, çalışan bir güvencedir. Ve gönderim ücretlidir: uygulama ücretsizdir ama her mesaj gerçek bir ağ ücretli gerçek bir işlemdir. Maliyeti [fiyatlandırma](/pricing) sayfasında görebilirsiniz.",
+      "Bu ikisi her platform için geçerlidir. Farklı olan, kimin ödediğidir: iPhone'da abonelik, tek ücret hizmetimizin kullandığı kör jetonları satın alır; Windows istemcisi ise bu hizmeti tamamen atlar ve sizin doldurduğunuz bir Solana cüzdanından harcar. Her bileşenin tam olarak neyi görebildiği [mimari sayfasında](/architecture), bunların hiçbirinin sizi neye karşı korumadığı ise [sınırlamalar](/limitations) sayfasında."
+    ]
+  },
+  "faq": [
+    {
+      "q": "Hangi iPhone'larda çalışır?",
+      "a": "iOS 18 veya üzerini çalıştıran her iPhone'da. Sürüm 1.0 iOS 26.5 gerektiriyordu ve bu sayfa bunun kuantum sonrası anahtar değişimi yüzünden olduğunu söylüyordu. Öyle değildi: alt sınır birkaç arayüz API'sinden geliyordu ve 1.0'da kuantum sonrası yol zaten kapalıydı. 1.1 bu sınırı kaldırdı. Kuantum sonrası kısmın kendisi (X-Wing, ML-KEM-768 ile X25519) gerçekten iOS 26 gerektirir, bu yüzden cihaza bağlıdır: iOS 26'daki bir iPhone kuantum sonrası bir ön anahtar yayımlar, daha eskisi klasik X3DH kullanır ve ikisi anlaşır. 1.1'de kuantum sonrası adım pratikte henüz tamamlanmıyor - nedeni sınırlamalar sayfasında."
+    },
+    {
+      "q": "Kaydolmak için neye ihtiyacım var?",
+      "a": "Hiçbir şeye. Telefon numarası yok, e-posta yok, ayırtılacak kullanıcı adı yok. Uygulama ilk açılışta cihazınızda 12 kelimelik bir kurtarma ifadesi oluşturur - yazın, çünkü hesaba geri dönmenin tek yolu odur."
+    },
+    {
+      "q": "Ücretsiz mi?",
+      "a": "İndirmek ücretsizdir. Gönderim ücretlidir, çünkü her mesaj herkese açık bir zincirde ücretli bir işlemdir - fiyatlandırma sayfası kotaları ve plan fiyatlarını listeler."
+    },
+    {
+      "q": "Windows yükleyicisi neden güvenlik uyarısı veriyor?",
+      "a": "Sürüm imzalı değil, bu yüzden Windows yayıncıyı tanımıyor ve \"Windows bilgisayarınızı korudu\" uyarısını gösteriyor. Bu, dosyada bulunan bir şeyin bildirimi değildir - \"Ek bilgi\"ye, ardından \"Yine de çalıştır\"a tıklayın. Aynı eksik sertifika, dosyanın bizden geldiğini doğrulamanın gerçek bir yolunun olmamasının da nedenidir ve yayımlanmış bir sağlama toplamı bunu çözmez: indirmeyi değiştirebilen, yanındaki sağlama toplamını da değiştirebilir. Çözüm bir imzalama sertifikasıdır ve bu sürümde henüz yok."
+    },
+    {
+      "q": "Android sürümünün farkı ne?",
+      "a": "Sürüm 1.0 değil 0.1 ve bu alçakgönüllülük değil. Bir emülatörde hesap oluşturma, ifade üretme ve yeniden başlatmadan geçirildi - R8'in şifreleme ve veritabanı kodunu bozup bozmadığını yakalayan kontroller - ama gerçek bir cihazda çalıştırılmadı ve hiçbir Android sürümü henüz mainnet'te mesaj göndermedi. Gerçek anahtarla imzalandığı için sonraki sürümler güncelleme olarak üzerine kurulur."
+    },
+    {
+      "q": "Ücretli planlar Windows ve Android'de çalışır mı?",
+      "a": "iPhone'daki gibi değil. Aktarıcı Apple makbuzlarını doğrular ve Google Play için bir yolu yoktur, bu yüzden Android yalnızca ücretsiz planla başlar. Windows aktarıcıyı hiç kullanmaz: masaüstü istemcisi, doğrudan sizin doldurduğunuz kendi Solana ücret cüzdanını oluşturur, dolayısıyla taşınacak bir abonelik yoktur."
+    }
+  ],
+  "related": [
+    {
+      "href": "/pricing",
+      "label": "Fiyatlandırma",
+      "blurb": "Planlar, mesaj kotaları ve gönderimin neden ücretli olduğu."
+    },
+    {
+      "href": "/limitations",
+      "label": "Bilinen sınırlamalar",
+      "blurb": "PrivaMesh'in sizi neye karşı korumadığı."
+    },
+    {
+      "href": "/support",
+      "label": "Destek",
+      "blurb": "Kurtarma ifadesi, yeni cihazlar ve abonelikler."
+    }
+  ]
+}

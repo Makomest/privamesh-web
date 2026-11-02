@@ -1,0 +1,75 @@
+{
+  "meta": {
+    "title": "PrivaMesh - מסנג'ר פרטי ומוצפן",
+    "description": "מסנג'ר פרטי עם הצפנה מקצה לקצה ל-iPhone, ל-Android ול-Windows. בלי מספר טלפון, בלי אימייל, בלי חשבון - המפתחות והשיחות שלך לעולם לא עוזבים את המכשיר."
+  },
+  "skip": "דילוג לתוכן",
+  "brandHome": "דף הבית של PrivaMesh",
+  "github": "PrivaMesh ב-GitHub",
+  "x": "PrivaMesh ב-X",
+  "language": "שפה",
+  "openMenu": "פתיחת התפריט",
+  "closeMenu": "סגירת התפריט",
+  "getApp": "להורדת PrivaMesh",
+  "onAppStore": "{label} ב-App Store",
+  "keepReading": "להמשך קריאה",
+  "faq": "שאלות נפוצות",
+  "breadcrumb": "נתיב ניווט",
+  "home": "דף הבית",
+  "nav": {
+    "features": "תכונות",
+    "compare": "השוואה",
+    "alternatives": "חלופות",
+    "guides": "מדריכים",
+    "privacy": "פרטיות",
+    "blog": "בלוג",
+    "news": "חדשות",
+    "bestApps": "האפליקציות הטובות של 2026",
+    "glossary": "מילון מונחים"
+  },
+  "product": {
+    "/features/no-servers": "בלי שרתים",
+    "/features/e2e-encryption": "הצפנה מקצה לקצה",
+    "/features/metadata-protection": "הגנה על מטא-נתונים",
+    "/features/seed-phrase-accounts": "ביטוי החשבון",
+    "/features/duress-code": "קוד כפייה"
+  },
+  "comparePages": {
+    "/compare/privamesh-vs-signal": "מול Signal",
+    "/compare/privamesh-vs-telegram": "מול Telegram",
+    "/compare/privamesh-vs-session": "מול Session",
+    "/alternatives": "כל החלופות",
+    "/best-private-messaging-apps": "האפליקציות הטובות של 2026"
+  },
+  "footer": {
+    "tagline": "מסנג'ר פרטי, ללא שרתים, עם הצפנה מקצה לקצה. סמכו על המתמטיקה, לא על חברות.",
+    "product": "מוצר",
+    "compare": "השוואה",
+    "resources": "משאבים",
+    "legal": "מידע משפטי",
+    "rights": "כל הזכויות שמורות.",
+    "motto": "פרטי. מוצפן. שלך.",
+    "whitepaper": "מסמך לבן",
+    "links": {
+      "/privacy": "למה פרטיות",
+      "/pricing": "מחירים",
+      "/download": "הורדה",
+      "/changelog": "יומן שינויים",
+      "/architecture": "ארכיטקטורה",
+      "/protocol": "פרוטוקול",
+      "/threat-model": "מודל איומים",
+      "/limitations": "מגבלות",
+      "/guides": "מדריכים",
+      "/blog": "בלוג",
+      "/news": "חדשות",
+      "/glossary": "מילון מונחים",
+      "/about": "אודות",
+      "/security": "אבטחה",
+      "/bug-bounty": "באג באונטי",
+      "/transparency": "שקיפות",
+      "/privacy-policy": "מדיניות פרטיות",
+      "/terms": "תנאי שימוש",
+      "/support": "תמיכה"
+    }
+  }
+}

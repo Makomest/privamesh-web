@@ -1,0 +1,75 @@
+{
+  "meta": {
+    "title": "PrivaMesh - privé versleutelde messenger",
+    "description": "Privé messenger met end-to-end-versleuteling voor iPhone, Android en Windows. Geen telefoonnummer, geen e-mail, geen account - je sleutels en chats verlaten nooit je apparaat."
+  },
+  "skip": "Naar de inhoud",
+  "brandHome": "PrivaMesh startpagina",
+  "github": "PrivaMesh op GitHub",
+  "x": "PrivaMesh op X",
+  "language": "Taal",
+  "openMenu": "Menu openen",
+  "closeMenu": "Menu sluiten",
+  "getApp": "PrivaMesh downloaden",
+  "onAppStore": "{label} in de App Store",
+  "keepReading": "Verder lezen",
+  "faq": "Veelgestelde vragen",
+  "breadcrumb": "Kruimelpad",
+  "home": "Start",
+  "nav": {
+    "features": "Functies",
+    "compare": "Vergelijken",
+    "alternatives": "Alternatieven",
+    "guides": "Handleidingen",
+    "privacy": "Privacy",
+    "blog": "Blog",
+    "news": "Nieuws",
+    "bestApps": "Beste apps 2026",
+    "glossary": "Woordenlijst"
+  },
+  "product": {
+    "/features/no-servers": "Geen servers",
+    "/features/e2e-encryption": "End-to-end-versleuteling",
+    "/features/metadata-protection": "Bescherming van metadata",
+    "/features/seed-phrase-accounts": "Accountzin",
+    "/features/duress-code": "Dwangcode"
+  },
+  "comparePages": {
+    "/compare/privamesh-vs-signal": "vs Signal",
+    "/compare/privamesh-vs-telegram": "vs Telegram",
+    "/compare/privamesh-vs-session": "vs Session",
+    "/alternatives": "Alle alternatieven",
+    "/best-private-messaging-apps": "Beste apps 2026"
+  },
+  "footer": {
+    "tagline": "Een privé, serverloze messenger met end-to-end-versleuteling. Vertrouw op wiskunde, niet op bedrijven.",
+    "product": "Product",
+    "compare": "Vergelijken",
+    "resources": "Bronnen",
+    "legal": "Juridisch",
+    "rights": "Alle rechten voorbehouden.",
+    "motto": "Privé. Versleuteld. Van jou.",
+    "whitepaper": "Whitepaper",
+    "links": {
+      "/privacy": "Waarom privé",
+      "/pricing": "Prijzen",
+      "/download": "Downloaden",
+      "/changelog": "Wijzigingslog",
+      "/architecture": "Architectuur",
+      "/protocol": "Protocol",
+      "/threat-model": "Dreigingsmodel",
+      "/limitations": "Beperkingen",
+      "/guides": "Handleidingen",
+      "/blog": "Blog",
+      "/news": "Nieuws",
+      "/glossary": "Woordenlijst",
+      "/about": "Over ons",
+      "/security": "Beveiliging",
+      "/bug-bounty": "Bug bounty",
+      "/transparency": "Transparantie",
+      "/privacy-policy": "Privacybeleid",
+      "/terms": "Gebruiksvoorwaarden",
+      "/support": "Ondersteuning"
+    }
+  }
+}

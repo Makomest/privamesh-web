@@ -1,0 +1,99 @@
+{
+  "meta": {
+    "title": "Baixa PrivaMesh",
+    "description": "PrivaMesh per a iPhone a l'App Store, un APK per a Android 8.0 o posterior i un instal·lador per a Windows 10. Sense número de telèfon, sense correu, sense compte."
+  },
+  "eyebrow": "Baixada",
+  "title": "Baixa PrivaMesh",
+  "lead": "Les tres plataformes tenen una versió que pots instal·lar avui mateix. El que canvia és com es paga i quant s'ha provat, i totes dues coses estan escrites a la targeta en lloc de deixar que les descobreixis més tard.",
+  "appStoreCta": "Baixa-la de l'App Store",
+  "notAvailable": "No disponible",
+  "platforms": {
+    "ios": {
+      "name": "iPhone",
+      "requirement": "iOS {os} o posterior · versió {version}",
+      "cta": "Baixa-la de l'App Store",
+      "blurb": "Instal·lació gratuïta. Sense número de telèfon, sense correu, sense compte: l'app genera la teva identitat al dispositiu la primera vegada que l'obres. Els plans de pagament funcionen aquí i només aquí.",
+      "noteHeading": "La que té ús real al darrere",
+      "noteBody": "Aquest és el client que es publica a l'App Store i el que la gent fa servir de veritat. També és la referència amb què es mesuren els altres: els clients d'Android i Windows deriven les seves capes de protocol d'aquest codi font i s'hi comproven amb vectors de prova, de manera que quan no coincideixen, el correcte és aquest."
+    },
+    "windows": {
+      "name": "Windows",
+      "requirement": "Windows 10 de 64 bits · versió {version}",
+      "cta": "Baixa l'instal·lador",
+      "blurb": "Java hi és inclòs, així que no cal instal·lar res més, i l'instal·lador no demana mai permisos d'administrador. A l'escriptori no hi ha subscripció ni relé: el client crea el seu propi moneder de Solana per a les comissions, tu el recarregues i cada missatge paga la seva comissió de xarxa - uns 0,0008 $, és a dir, uns 6.000 missatges per 5 $.",
+      "secondary": ".zip portàtil, sense instal·lador",
+      "warningHeading": "Windows t'avisarà",
+      "warningBody": "Veuràs «Windows ha protegit el vostre ordinador». Aquesta versió no té certificat de signatura de codi, així que Windows no reconeix l'editor; no és un avís d'alguna cosa trobada al fitxer. Fes clic a «Més informació» i després a «Executa igualment». Aquest certificat també és el que et permetria comprovar que el fitxer ve realment de nosaltres, de manera que mentre no existeixi no hi ha res fiable amb què comprovar-ho. És una mancança, i ens toca a nosaltres resoldre-la."
+    },
+    "android": {
+      "name": "Android",
+      "requirement": "Android 8.0 o posterior · versió {version}",
+      "cta": "Baixa l'APK",
+      "blurb": "Una versió de producció signada amb la clau real, de manera que les versions posteriors s'instal·laran a sobre com a actualització i el teu compte es conservarà. Els plans de pagament encara no funcionen aquí - el relé verifica rebuts d'Apple i no té via per a Google Play -, així que de moment Android només funciona amb el pla gratuït.",
+      "warningHeading": "Instal·lació manual i què s'ha provat",
+      "warningBody": "Android et demanarà que permetis les instal·lacions des del lloc on has baixat el fitxer. La versió s'ha portat per la creació del compte, la generació de la frase i un reinici en un emulador d'Android 15, que és la prova que importa després que R8 reescrigui el codi criptogràfic i de la base de dades. No s'ha executat en un dispositiu real i cap versió d'Android ha enviat encara cap missatge a la mainnet."
+    }
+  },
+  "first": {
+    "heading": "Què passa primer",
+    "steps": [
+      "L'app genera una frase de recuperació de 12 paraules al teu dispositiu",
+      "Escriu-la en paper: no hi ha restabliment ni cap còpia de seguretat a les nostres mans",
+      "Configura un codi d'accés i el desbloqueig biomètric si el dispositiu l'ofereix",
+      "Tria un sobrenom perquè et trobin sense número de telèfon",
+      "Afegeix un contacte amb codi QR, enllaç d'invitació o sobrenom; totes dues parts s'han d'afegir mútuament"
+    ],
+    "footnote": "La versió d'iPhone, la versió mínima d'iOS i el preu surten directament de la fitxa de l'App Store en lloc de mantenir-se a mà, de manera que no es poden desviar del que mostra Apple. Les dades de Windows surten de la publicació que allotja el fitxer que baixes."
+  },
+  "before": {
+    "heading": "Abans d'instal·lar",
+    "paras": [
+      "Convé saber dues coses per endavant, perquè totes dues sorprenen més tard. L'historial de missatges no es pot passar a un altre dispositiu ni restaurar després de reinstal·lar: el secret cap endavant destrueix la clau de cada missatge després de fer-la servir, i això és la garantia funcionant, no una funció que falta. I l'enviament té un cost: l'app és gratuïta, però cada missatge és una transacció real amb una comissió de xarxa real. Consulta els [preus](/pricing) per veure quant costa.",
+      "Totes dues valen per a qualsevol plataforma. El que canvia és qui paga: a l'iPhone una subscripció compra tokens cecs que bescanvia el nostre únic servei de comissions, mentre que el client de Windows se salta del tot aquest servei i gasta d'un moneder de Solana que recarregues tu. El que pot observar cada component és a [la pàgina d'arquitectura](/architecture), i allò de què res de tot això no et protegeix, a [limitacions](/limitations)."
+    ]
+  },
+  "faq": [
+    {
+      "q": "En quins iPhone funciona?",
+      "a": "En qualsevol iPhone amb iOS 18 o posterior. La versió 1.0 exigia iOS 26.5, i aquesta pàgina deia que era per l'intercanvi de claus postquàntic. No era així: el mínim el marcaven unes quantes API d'interfície, i la 1.0 tenia la via postquàntica desactivada de totes maneres. La 1.1 va eliminar aquest mínim. La part postquàntica en si (X-Wing, ML-KEM-768 amb X25519) sí que necessita iOS 26, així que depèn de cada dispositiu: un iPhone amb iOS 26 publica una preclau postquàntica, un de més antic fa servir X3DH clàssic, i tots dos s'entenen. A la 1.1 el pas postquàntic encara no arriba a completar-se a la pràctica; la pàgina de limitacions explica per què."
+    },
+    {
+      "q": "Què necessito per registrar-me?",
+      "a": "Res. Ni número de telèfon, ni correu, ni nom d'usuari per reservar. L'app genera una frase de recuperació de 12 paraules al teu dispositiu el primer cop que s'obre; escriu-la, perquè és l'única manera de tornar al compte."
+    },
+    {
+      "q": "És gratuït?",
+      "a": "La baixada és gratuïta. L'enviament té un cost perquè cada missatge és una transacció de pagament en una cadena pública; la pàgina de preus detalla les quotes i els preus dels plans."
+    },
+    {
+      "q": "Per què l'instal·lador de Windows mostra un avís de seguretat?",
+      "a": "La versió no està signada, així que Windows no reconeix l'editor i mostra «Windows ha protegit el vostre ordinador». No és un avís d'alguna cosa trobada al fitxer: fes clic a «Més informació» i després a «Executa igualment». El mateix certificat que falta és la raó que no hi hagi cap manera real de confirmar que el fitxer ve de nosaltres, i una suma de verificació publicada no ho arreglaria: qui pugui substituir la baixada també pot substituir la suma del costat. La solució és un certificat de signatura, i aquesta versió encara no en té."
+    },
+    {
+      "q": "Què té de diferent la versió d'Android?",
+      "a": "És la versió 0.1 i no la 1.0, i no és per modèstia. S'ha portat per la creació del compte, la generació de la frase i un reinici en un emulador - les proves que detecten si R8 trenca el codi criptogràfic i de la base de dades -, però no s'ha executat en un dispositiu real i cap versió d'Android ha enviat encara cap missatge a la mainnet. Està signada amb la clau real, així que les versions posteriors s'hi instal·laran a sobre com a actualització."
+    },
+    {
+      "q": "Funcionen els plans de pagament a Windows i Android?",
+      "a": "No com a l'iPhone. El relé verifica rebuts d'Apple i no té via per a Google Play, així que Android començaria només amb el pla gratuït. Windows no fa servir el relé gens: el client d'escriptori crea el seu propi moneder de Solana per a les comissions, que recarregues directament, així que no hi ha cap subscripció per traslladar."
+    }
+  ],
+  "related": [
+    {
+      "href": "/pricing",
+      "label": "Preus",
+      "blurb": "Plans, quotes de missatges i per què l'enviament té un cost."
+    },
+    {
+      "href": "/limitations",
+      "label": "Limitacions conegudes",
+      "blurb": "De què no et protegeix PrivaMesh."
+    },
+    {
+      "href": "/support",
+      "label": "Assistència",
+      "blurb": "Frase de recuperació, dispositius nous i subscripcions."
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "meta": {
+    "title": "Baixar o PrivaMesh",
+    "description": "PrivaMesh para iPhone na App Store, um APK para Android 8.0 ou mais recente e um instalador para Windows 10. Sem número de telefone, sem e-mail, sem conta."
+  },
+  "eyebrow": "Download",
+  "title": "Baixar o PrivaMesh",
+  "lead": "As três plataformas têm uma versão que você pode instalar hoje. O que muda é a forma de pagar e o quanto foi testado, e as duas coisas estão escritas no cartão em vez de ficarem para você descobrir depois.",
+  "appStoreCta": "Baixar na App Store",
+  "notAvailable": "Indisponível",
+  "platforms": {
+    "ios": {
+      "name": "iPhone",
+      "requirement": "iOS {os} ou mais recente · versão {version}",
+      "cta": "Baixar na App Store",
+      "blurb": "Instalação gratuita. Sem número de telefone, sem e-mail, sem conta - o app gera sua identidade no aparelho na primeira vez que você o abre. Os planos pagos funcionam aqui e só aqui.",
+      "noteHeading": "A que tem uso real por trás",
+      "noteBody": "Este é o cliente publicado na App Store e o que as pessoas de fato usam. Também é a referência com a qual os outros são comparados: os clientes de Android e Windows derivam suas camadas de protocolo deste código-fonte e são verificados contra ele com vetores de teste, então, quando discordam, o correto é este."
+    },
+    "windows": {
+      "name": "Windows",
+      "requirement": "Windows 10 64 bits · versão {version}",
+      "cta": "Baixar o instalador",
+      "blurb": "O Java vem incluído, então não há mais nada para instalar, e o instalador nunca pede permissão de administrador. No desktop não há assinatura nem relay no caminho: o cliente cria a própria carteira Solana para as taxas, você a abastece e cada mensagem paga a própria taxa de rede - cerca de US$ 0,0008, ou seja, umas 6.000 mensagens por US$ 5.",
+      "secondary": ".zip portátil, sem instalador",
+      "warningHeading": "O Windows vai avisar você",
+      "warningBody": "Você verá \"O Windows protegeu o computador\". Esta versão não tem certificado de assinatura de código, então o Windows não reconhece o editor - não é um aviso sobre algo encontrado no arquivo. Clique em \"Mais informações\" e depois em \"Executar assim mesmo\". Esse certificado também é o que permitiria verificar que o arquivo veio mesmo de nós, então, enquanto ele não existir, não há nada confiável contra o que verificar. É uma lacuna, e cabe a nós fechá-la."
+    },
+    "android": {
+      "name": "Android",
+      "requirement": "Android 8.0 ou mais recente · versão {version}",
+      "cta": "Baixar o APK",
+      "blurb": "Uma versão de produção assinada com a chave real, então as próximas versões serão instaladas por cima como atualização e sua conta será mantida. Os planos pagos ainda não funcionam aqui - o relay verifica recibos da Apple e não tem caminho para o Google Play -, então por enquanto o Android fica só no plano gratuito.",
+      "warningHeading": "Instalação manual, e o que foi testado",
+      "warningBody": "O Android vai pedir que você permita instalações da origem de onde baixou o arquivo. A versão passou por criação de conta, geração da frase e reinicialização em um emulador de Android 15, que é o teste que importa depois que o R8 reescreve o código de criptografia e do banco de dados. Ela não rodou em um aparelho real, e nenhuma versão de Android enviou ainda uma mensagem na mainnet."
+    }
+  },
+  "first": {
+    "heading": "O que acontece primeiro",
+    "steps": [
+      "O app gera uma frase de recuperação de 12 palavras no seu aparelho",
+      "Anote no papel - não há redefinição nem backup guardado por nós",
+      "Defina um código de acesso e o desbloqueio biométrico, se o aparelho oferecer",
+      "Escolha um apelido para que encontrem você sem número de telefone",
+      "Adicione um contato por QR code, link de convite ou apelido; os dois lados precisam se adicionar"
+    ],
+    "footnote": "A versão do iPhone, o iOS mínimo e o preço vêm direto da página da App Store em vez de serem mantidos à mão, então não podem divergir do que a Apple mostra. Os dados do Windows vêm da publicação que hospeda o arquivo que você baixa."
+  },
+  "before": {
+    "heading": "Antes de instalar",
+    "paras": [
+      "Vale saber duas coisas de antemão, porque as duas surpreendem depois. Seu histórico de mensagens não pode ser levado para outro aparelho nem restaurado após reinstalar - o sigilo futuro destrói a chave de cada mensagem depois do uso, e isso é a garantia funcionando, não um recurso faltando. E o envio é cobrado: o app é gratuito, mas cada mensagem é uma transação real com uma taxa de rede real. Veja os [preços](/pricing) para saber quanto custa.",
+      "As duas valem para todas as plataformas. O que muda é quem paga: no iPhone uma assinatura compra tokens cegos que nosso único serviço de taxas resgata, enquanto o cliente de Windows ignora esse serviço por completo e gasta de uma carteira Solana que você mesmo abastece. O que cada componente consegue observar está na [página de arquitetura](/architecture), e contra o que nada disso protege está em [limitações](/limitations)."
+    ]
+  },
+  "faq": [
+    {
+      "q": "Em quais iPhones ele funciona?",
+      "a": "Em qualquer iPhone com iOS 18 ou mais recente. A versão 1.0 exigia iOS 26.5, e esta página dizia que era por causa do handshake pós-quântico. Não era: o mínimo vinha de algumas APIs de interface, e a 1.0 estava com o caminho pós-quântico desativado de qualquer forma. A 1.1 removeu esse mínimo. O pós-quântico em si (X-Wing, ML-KEM-768 com X25519) precisa mesmo do iOS 26, então depende de cada aparelho: um iPhone com iOS 26 publica uma pré-chave pós-quântica, um mais antigo usa X3DH clássico, e os dois se entendem. Na 1.1 a etapa pós-quântica ainda não se completa na prática - a página de limitações explica por quê."
+    },
+    {
+      "q": "Do que eu preciso para me cadastrar?",
+      "a": "De nada. Sem número de telefone, sem e-mail, sem nome de usuário para reservar. O app gera uma frase de recuperação de 12 palavras no seu aparelho na primeira abertura - anote, porque é o único jeito de voltar para a conta."
+    },
+    {
+      "q": "É grátis?",
+      "a": "O download é gratuito. O envio é cobrado porque cada mensagem é uma transação paga em uma blockchain pública - a página de preços mostra as franquias e os preços dos planos."
+    },
+    {
+      "q": "Por que o instalador do Windows mostra um aviso de segurança?",
+      "a": "A versão não é assinada, então o Windows não reconhece o editor e mostra \"O Windows protegeu o computador\". Não é um aviso sobre algo encontrado no arquivo - clique em \"Mais informações\" e depois em \"Executar assim mesmo\". O mesmo certificado ausente é o motivo de não haver um jeito real de confirmar que o arquivo veio de nós, e um checksum publicado não resolveria: quem consegue trocar o download consegue trocar o checksum ao lado. A solução é um certificado de assinatura, e esta versão ainda não tem um."
+    },
+    {
+      "q": "O que a versão de Android tem de diferente?",
+      "a": "É a versão 0.1, não a 1.0, e não é modéstia. Ela passou por criação de conta, geração da frase e reinicialização em um emulador - os testes que pegam o R8 quebrando o código de criptografia e do banco de dados -, mas não rodou em um aparelho real, e nenhuma versão de Android enviou ainda uma mensagem na mainnet. Ela é assinada com a chave real, então as próximas versões serão instaladas por cima como atualização."
+    },
+    {
+      "q": "Os planos pagos funcionam no Windows e no Android?",
+      "a": "Não como no iPhone. O relay verifica recibos da Apple e não tem caminho para o Google Play, então o Android começaria só com o plano gratuito. O Windows não usa o relay: o cliente de desktop cria a própria carteira Solana para as taxas, que você abastece diretamente, então não há assinatura para transferir."
+    }
+  ],
+  "related": [
+    {
+      "href": "/pricing",
+      "label": "Preços",
+      "blurb": "Planos, franquias de mensagens e por que o envio é cobrado."
+    },
+    {
+      "href": "/limitations",
+      "label": "Limitações conhecidas",
+      "blurb": "Contra o que o PrivaMesh não protege você."
+    },
+    {
+      "href": "/support",
+      "label": "Suporte",
+      "blurb": "Frase de recuperação, novos aparelhos e assinaturas."
+    }
+  ]
+}

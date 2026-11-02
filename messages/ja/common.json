@@ -1,0 +1,75 @@
+{
+  "meta": {
+    "title": "PrivaMesh - 暗号化されたプライベートメッセンジャー",
+    "description": "iPhone、Android、Windows 向けのエンドツーエンド暗号化プライベートメッセンジャー。電話番号もメールもアカウントも不要。鍵とチャットが端末から出ることはありません。"
+  },
+  "skip": "本文へスキップ",
+  "brandHome": "PrivaMesh ホーム",
+  "github": "GitHub の PrivaMesh",
+  "x": "X の PrivaMesh",
+  "language": "言語",
+  "openMenu": "メニューを開く",
+  "closeMenu": "メニューを閉じる",
+  "getApp": "PrivaMesh を入手",
+  "onAppStore": "App Store で{label}",
+  "keepReading": "続けて読む",
+  "faq": "よくある質問",
+  "breadcrumb": "パンくずリスト",
+  "home": "ホーム",
+  "nav": {
+    "features": "機能",
+    "compare": "比較",
+    "alternatives": "代替アプリ",
+    "guides": "ガイド",
+    "privacy": "プライバシー",
+    "blog": "ブログ",
+    "news": "ニュース",
+    "bestApps": "ベストアプリ 2026",
+    "glossary": "用語集"
+  },
+  "product": {
+    "/features/no-servers": "サーバーなし",
+    "/features/e2e-encryption": "エンドツーエンド暗号化",
+    "/features/metadata-protection": "メタデータ保護",
+    "/features/seed-phrase-accounts": "アカウントフレーズ",
+    "/features/duress-code": "強要コード"
+  },
+  "comparePages": {
+    "/compare/privamesh-vs-signal": "Signal との比較",
+    "/compare/privamesh-vs-telegram": "Telegram との比較",
+    "/compare/privamesh-vs-session": "Session との比較",
+    "/alternatives": "すべての代替アプリ",
+    "/best-private-messaging-apps": "ベストアプリ 2026"
+  },
+  "footer": {
+    "tagline": "サーバーを持たない、エンドツーエンド暗号化のプライベートメッセンジャー。企業ではなく数学を信頼してください。",
+    "product": "製品",
+    "compare": "比較",
+    "resources": "リソース",
+    "legal": "法的情報",
+    "rights": "All rights reserved.",
+    "motto": "プライベート。暗号化。あなたのもの。",
+    "whitepaper": "ホワイトペーパー",
+    "links": {
+      "/privacy": "なぜプライベートか",
+      "/pricing": "料金",
+      "/download": "ダウンロード",
+      "/changelog": "変更履歴",
+      "/architecture": "アーキテクチャ",
+      "/protocol": "プロトコル",
+      "/threat-model": "脅威モデル",
+      "/limitations": "制限事項",
+      "/guides": "ガイド",
+      "/blog": "ブログ",
+      "/news": "ニュース",
+      "/glossary": "用語集",
+      "/about": "概要",
+      "/security": "セキュリティ",
+      "/bug-bounty": "バグバウンティ",
+      "/transparency": "透明性",
+      "/privacy-policy": "プライバシーポリシー",
+      "/terms": "利用規約",
+      "/support": "サポート"
+    }
+  }
+}

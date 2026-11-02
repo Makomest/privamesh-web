@@ -1,0 +1,99 @@
+{
+  "meta": {
+    "title": "Télécharger PrivaMesh",
+    "description": "PrivaMesh pour iPhone sur l'App Store, un APK pour Android 8.0 ou ultérieur et un programme d'installation pour Windows 10. Pas de numéro de téléphone, pas d'e-mail, pas de compte."
+  },
+  "eyebrow": "Télécharger",
+  "title": "Télécharger PrivaMesh",
+  "lead": "Les trois plateformes ont une version que vous pouvez installer dès aujourd'hui. Ce qui change, c'est la façon de payer et le niveau de test, et les deux sont écrits sur la carte plutôt que laissés à découvrir plus tard.",
+  "appStoreCta": "Télécharger sur l'App Store",
+  "notAvailable": "Non disponible",
+  "platforms": {
+    "ios": {
+      "name": "iPhone",
+      "requirement": "iOS {os} ou ultérieur · version {version}",
+      "cta": "Télécharger sur l'App Store",
+      "blurb": "Installation gratuite. Pas de numéro de téléphone, pas d'e-mail, pas de compte : l'app crée votre identité sur l'appareil à la première ouverture. Les offres payantes fonctionnent ici et uniquement ici.",
+      "noteHeading": "Celle qui a un vrai usage derrière elle",
+      "noteBody": "C'est le client publié sur l'App Store et celui que les gens utilisent réellement. C'est aussi la référence à laquelle les autres sont comparés : les clients Android et Windows dérivent leurs couches protocolaires de ce code source et sont vérifiés par vecteurs de test contre lui. En cas de désaccord, c'est lui qui a raison."
+    },
+    "windows": {
+      "name": "Windows",
+      "requirement": "Windows 10 64 bits · version {version}",
+      "cta": "Télécharger le programme d'installation",
+      "blurb": "Java est inclus, il n'y a donc rien d'autre à installer, et le programme d'installation ne demande jamais de droits administrateur. Sur ordinateur, pas d'abonnement et pas de relais : le client crée son propre portefeuille Solana pour les frais, vous l'alimentez, et chaque message paie ses propres frais de réseau - environ 0,0008 $, soit à peu près 6 000 messages pour 5 $.",
+      "secondary": ".zip portable, sans installation",
+      "warningHeading": "Windows va vous avertir",
+      "warningBody": "Vous verrez « Windows a protégé votre ordinateur ». Cette version n'a pas de certificat de signature de code, donc Windows ne reconnaît pas l'éditeur - ce n'est pas le signalement d'un problème trouvé dans le fichier. Cliquez sur « Informations complémentaires », puis sur « Exécuter quand même ». C'est aussi ce certificat qui vous permettrait de vérifier que le fichier vient bien de nous ; tant qu'il n'existe pas, il n'y a rien de valable contre quoi le vérifier. C'est une lacune, et c'est à nous de la combler."
+    },
+    "android": {
+      "name": "Android",
+      "requirement": "Android 8.0 ou ultérieur · version {version}",
+      "cta": "Télécharger l'APK",
+      "blurb": "Une version de production signée avec la vraie clé : les versions suivantes s'installeront par-dessus comme une mise à jour et votre compte sera conservé. Les offres payantes ne fonctionnent pas encore ici - le relais vérifie les reçus Apple et n'a pas de chemin pour Google Play -, Android est donc limité à l'offre gratuite pour l'instant.",
+      "warningHeading": "Installation manuelle, et ce qui a été testé",
+      "warningBody": "Android vous demandera d'autoriser les installations depuis la source où vous avez téléchargé le fichier. La version a été menée jusqu'à la création de compte, la génération de la phrase et un redémarrage sur un émulateur Android 15, le contrôle qui compte après que R8 a réécrit le code cryptographique et la base de données. Elle n'a pas tourné sur un vrai appareil, et aucune version Android n'a encore envoyé de message sur le mainnet."
+    }
+  },
+  "first": {
+    "heading": "Ce qui se passe en premier",
+    "steps": [
+      "L'app génère une phrase de récupération de 12 mots sur votre appareil",
+      "Notez-la sur papier - il n'y a pas de réinitialisation et nous ne gardons aucune sauvegarde",
+      "Définissez un code d'accès, et le déverrouillage biométrique si l'appareil le propose",
+      "Choisissez un pseudo pour qu'on vous trouve sans numéro de téléphone",
+      "Ajoutez un contact par QR code, lien d'invitation ou pseudo ; les deux côtés doivent s'ajouter mutuellement"
+    ],
+    "footnote": "La version iPhone, la version minimale d'iOS et le prix viennent directement de la fiche App Store au lieu d'être tenus à la main, ils ne peuvent donc pas s'écarter de ce qu'affiche Apple. Les chiffres pour Windows viennent de la publication qui héberge le fichier que vous téléchargez."
+  },
+  "before": {
+    "heading": "Avant d'installer",
+    "paras": [
+      "Deux choses valent d'être sues d'avance, parce que les deux surprennent plus tard. Votre historique de messages ne peut pas être transféré sur un autre appareil ni restauré après une réinstallation - la confidentialité persistante détruit chaque clé de message après usage, et c'est la garantie qui fonctionne, pas une fonction manquante. Et l'envoi est facturé : l'app est gratuite, mais chaque message est une vraie transaction avec de vrais frais de réseau. Voir les [tarifs](/pricing) pour ce que cela coûte.",
+      "Ces deux points valent pour toutes les plateformes. Ce qui change, c'est qui paie : sur iPhone, un abonnement achète des jetons aveugles que notre unique service de frais encaisse, alors que le client Windows contourne entièrement ce service et dépense depuis un portefeuille Solana que vous alimentez vous-même. Ce que chaque composant peut observer est détaillé sur [la page d'architecture](/architecture), et ce contre quoi rien de tout cela ne vous protège sur [les limites](/limitations)."
+    ]
+  },
+  "faq": [
+    {
+      "q": "Quels iPhone peuvent la faire tourner ?",
+      "a": "Tout iPhone sous iOS 18 ou ultérieur. La version 1.0 exigeait iOS 26.5, et cette page affirmait que c'était pour la poignée de main post-quantique. Ce n'était pas le cas : le seuil venait de quelques API d'interface, et la 1.0 avait de toute façon le chemin post-quantique désactivé. La 1.1 a supprimé ce seuil. Le post-quantique lui-même (X-Wing, ML-KEM-768 avec X25519) a bien besoin d'iOS 26, c'est donc une capacité propre à chaque appareil : un iPhone sous iOS 26 publie une pré-clé post-quantique, un plus ancien utilise X3DH classique, et les deux se comprennent. Dans la 1.1, l'étape post-quantique n'aboutit pas encore en pratique - la page des limites explique pourquoi."
+    },
+    {
+      "q": "De quoi ai-je besoin pour m'inscrire ?",
+      "a": "De rien. Pas de numéro de téléphone, pas d'e-mail, pas de nom d'utilisateur à réserver. L'app génère une phrase de récupération de 12 mots sur votre appareil au premier lancement - notez-la, car c'est le seul moyen de revenir dans le compte."
+    },
+    {
+      "q": "Est-ce gratuit ?",
+      "a": "Le téléchargement est gratuit. L'envoi est facturé parce que chaque message est une transaction payante sur une blockchain publique - la page des tarifs indique les quotas et les prix des offres."
+    },
+    {
+      "q": "Pourquoi le programme d'installation Windows déclenche-t-il un avertissement de sécurité ?",
+      "a": "La version n'est pas signée, donc Windows ne reconnaît pas l'éditeur et affiche « Windows a protégé votre ordinateur ». Ce n'est pas le signalement d'un problème dans le fichier - cliquez sur « Informations complémentaires », puis sur « Exécuter quand même ». C'est ce même certificat manquant qui fait qu'il n'existe pas de vrai moyen de confirmer que le fichier vient de nous, et une somme de contrôle publiée n'y changerait rien : qui peut remplacer le téléchargement peut remplacer la somme à côté. La solution est un certificat de signature, et cette version n'en a pas encore."
+    },
+    {
+      "q": "Qu'est-ce qui distingue la version Android ?",
+      "a": "C'est la version 0.1 et non 1.0, et ce n'est pas de la modestie. Elle a été menée jusqu'à la création de compte, la génération de la phrase et un redémarrage sur un émulateur - les contrôles qui détectent si R8 casse le code cryptographique et la base de données -, mais elle n'a pas tourné sur un vrai appareil, et aucune version Android n'a encore envoyé de message sur le mainnet. Elle est signée avec la vraie clé, donc les versions suivantes s'installeront par-dessus comme une mise à jour."
+    },
+    {
+      "q": "Les offres payantes fonctionnent-elles sur Windows et Android ?",
+      "a": "Pas comme sur iPhone. Le relais vérifie les reçus Apple et n'a pas de chemin pour Google Play, Android démarrerait donc uniquement avec l'offre gratuite. Windows n'utilise pas du tout le relais : le client de bureau crée son propre portefeuille Solana pour les frais, que vous alimentez directement, il n'y a donc aucun abonnement à transférer."
+    }
+  ],
+  "related": [
+    {
+      "href": "/pricing",
+      "label": "Tarifs",
+      "blurb": "Offres, quotas de messages et pourquoi l'envoi est facturé."
+    },
+    {
+      "href": "/limitations",
+      "label": "Limites connues",
+      "blurb": "Ce contre quoi PrivaMesh ne vous protège pas."
+    },
+    {
+      "href": "/support",
+      "label": "Assistance",
+      "blurb": "Phrase de récupération, nouveaux appareils et abonnements."
+    }
+  ]
+}

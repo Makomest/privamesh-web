@@ -1,0 +1,99 @@
+{
+  "meta": {
+    "title": "Descarcă PrivaMesh",
+    "description": "PrivaMesh pentru iPhone în App Store, un APK pentru Android 8.0 sau mai nou și un program de instalare pentru Windows 10. Fără număr de telefon, fără e-mail, fără cont."
+  },
+  "eyebrow": "Descărcare",
+  "title": "Descarcă PrivaMesh",
+  "lead": "Toate cele trei platforme au o versiune pe care o poți instala chiar azi. Diferă modul de plată și cât de mult a fost testată, iar ambele sunt scrise pe card, în loc să le descoperi mai târziu.",
+  "appStoreCta": "Descarcă din App Store",
+  "notAvailable": "Indisponibil",
+  "platforms": {
+    "ios": {
+      "name": "iPhone",
+      "requirement": "iOS {os} sau mai nou · versiunea {version}",
+      "cta": "Descarcă din App Store",
+      "blurb": "Instalarea este gratuită. Fără număr de telefon, fără e-mail, fără cont - aplicația îți creează identitatea pe dispozitiv la prima deschidere. Planurile plătite funcționează aici și numai aici.",
+      "noteHeading": "Cea folosită cu adevărat",
+      "noteBody": "Acesta este clientul publicat în App Store și cel pe care oamenii îl folosesc efectiv. Este și referința față de care sunt măsurați ceilalți: clienții pentru Android și Windows își derivă straturile de protocol din acest cod sursă și sunt verificați față de el cu vectori de test, așa că, acolo unde diferă, acesta are dreptate."
+    },
+    "windows": {
+      "name": "Windows",
+      "requirement": "Windows 10 pe 64 de biți · versiunea {version}",
+      "cta": "Descarcă programul de instalare",
+      "blurb": "Java este inclus, deci nu mai trebuie instalat nimic, iar programul de instalare nu cere niciodată drepturi de administrator. Pe desktop nu există abonament și nici releu: clientul își creează propriul portofel Solana pentru taxe, tu îl alimentezi, iar fiecare mesaj își plătește propria taxă de rețea - aproximativ 0,0008 $, adică în jur de 6.000 de mesaje pentru 5 $.",
+      "secondary": ".zip portabil, fără instalare",
+      "warningHeading": "Windows te va avertiza",
+      "warningBody": "Vei vedea „Windows a protejat PC-ul”. Această versiune nu are certificat de semnare a codului, așa că Windows nu recunoaște editorul - nu este o semnalare a ceva găsit în fișier. Apasă „Mai multe informații”, apoi „Rulează oricum”. Același certificat ți-ar permite să verifici că fișierul vine cu adevărat de la noi, așa că, până nu există, nu ai cu ce să compari în mod util. Este o lipsă, iar remedierea ei e treaba noastră."
+    },
+    "android": {
+      "name": "Android",
+      "requirement": "Android 8.0 sau mai nou · versiunea {version}",
+      "cta": "Descarcă APK-ul",
+      "blurb": "O versiune de producție semnată cu cheia reală, așa că versiunile ulterioare se vor instala peste ea ca actualizare, iar contul tău va rămâne. Planurile plătite nu funcționează încă aici - releul verifică chitanțe Apple și nu are cale pentru Google Play -, deci deocamdată Android are doar planul gratuit.",
+      "warningHeading": "Instalare din afara magazinului și ce s-a testat",
+      "warningBody": "Android îți va cere să permiți instalările din sursa de unde ai descărcat fișierul. Versiunea a fost trecută prin crearea contului, generarea frazei și o repornire pe un emulator Android 15 - verificarea care contează după ce R8 rescrie codul criptografic și al bazei de date. Nu a rulat pe un dispozitiv real și nicio versiune Android nu a trimis încă un mesaj pe mainnet."
+    }
+  },
+  "first": {
+    "heading": "Ce se întâmplă mai întâi",
+    "steps": [
+      "Aplicația generează pe dispozitivul tău o frază de recuperare de 12 cuvinte",
+      "Scrie-o pe hârtie - nu există resetare și nicio copie de rezervă la noi",
+      "Setează un cod de acces și deblocarea biometrică, dacă dispozitivul o oferă",
+      "Alege un pseudonim ca să te găsească oamenii fără număr de telefon",
+      "Adaugă un contact prin cod QR, link de invitație sau pseudonim; ambele părți trebuie să se adauge reciproc"
+    ],
+    "footnote": "Versiunea pentru iPhone, versiunea minimă de iOS și prețul vin direct din pagina App Store, în loc să fie întreținute manual, deci nu se pot îndepărta de ce arată Apple. Datele pentru Windows vin din versiunea publicată care găzduiește fișierul descărcat."
+  },
+  "before": {
+    "heading": "Înainte de instalare",
+    "paras": [
+      "Două lucruri merită știute dinainte, pentru că ambele surprind mai târziu. Istoricul mesajelor nu poate fi mutat pe alt dispozitiv și nici restaurat după reinstalare - confidențialitatea persistentă distruge cheia fiecărui mesaj după utilizare, iar asta e garanția funcționând, nu o funcție lipsă. Și trimiterea costă: aplicația e gratuită, dar fiecare mesaj e o tranzacție reală cu o taxă de rețea reală. Vezi [prețurile](/pricing) pentru cât costă.",
+      "Cele două se aplică pe toate platformele. Diferă cine plătește: pe iPhone un abonament cumpără jetoane oarbe pe care le răscumpără singurul nostru serviciu de taxe, în timp ce clientul Windows ocolește complet acel serviciu și cheltuie dintr-un portofel Solana pe care îl alimentezi tu. Ce poate observa exact fiecare componentă e descris pe [pagina de arhitectură](/architecture), iar împotriva a ce nu te protejează nimic din toate acestea, la [limitări](/limitations)."
+    ]
+  },
+  "faq": [
+    {
+      "q": "Pe ce iPhone-uri rulează?",
+      "a": "Pe orice iPhone cu iOS 18 sau mai nou. Versiunea 1.0 cerea iOS 26.5, iar această pagină susținea că motivul e handshake-ul post-cuantic. Nu era așa: pragul venea de la câteva API-uri de interfață, iar în 1.0 calea post-cuantică era oricum dezactivată. Versiunea 1.1 a eliminat pragul. Partea post-cuantică în sine (X-Wing, ML-KEM-768 cu X25519) chiar are nevoie de iOS 26, deci depinde de dispozitiv: un iPhone cu iOS 26 publică o precheie post-cuantică, unul mai vechi folosește X3DH clasic, iar cele două se înțeleg. În 1.1 pasul post-cuantic nu reușește încă în practică - pagina de limitări explică de ce."
+    },
+    {
+      "q": "De ce am nevoie ca să mă înregistrez?",
+      "a": "De nimic. Fără număr de telefon, fără e-mail, fără nume de utilizator de rezervat. La prima pornire aplicația generează pe dispozitivul tău o frază de recuperare de 12 cuvinte - scrie-o, pentru că e singura cale înapoi în cont."
+    },
+    {
+      "q": "Este gratuit?",
+      "a": "Descărcarea e gratuită. Trimiterea costă pentru că fiecare mesaj e o tranzacție plătită pe un lanț public - pagina de prețuri listează cotele și prețurile planurilor."
+    },
+    {
+      "q": "De ce programul de instalare Windows afișează un avertisment de securitate?",
+      "a": "Versiunea nu e semnată, așa că Windows nu recunoaște editorul și afișează „Windows a protejat PC-ul”. Nu e o semnalare a ceva găsit în fișier - apasă „Mai multe informații”, apoi „Rulează oricum”. Același certificat lipsă e motivul pentru care nu există o cale reală de a confirma că fișierul vine de la noi, iar o sumă de control publicată n-ar schimba nimic: cine poate înlocui descărcarea poate înlocui și suma de lângă ea. Soluția e un certificat de semnare, iar această versiune nu are încă unul."
+    },
+    {
+      "q": "Ce are diferit versiunea pentru Android?",
+      "a": "E versiunea 0.1, nu 1.0, și nu din modestie. A fost trecută pe un emulator prin crearea contului, generarea frazei și o repornire - verificările care prind dacă R8 strică codul criptografic și al bazei de date -, dar nu a rulat pe un dispozitiv real și nicio versiune Android nu a trimis încă un mesaj pe mainnet. E semnată cu cheia reală, așa că versiunile ulterioare se vor instala peste ea ca actualizare."
+    },
+    {
+      "q": "Funcționează planurile plătite pe Windows și Android?",
+      "a": "Nu ca pe iPhone. Releul verifică chitanțe Apple și nu are cale pentru Google Play, așa că Android ar porni doar cu planul gratuit. Windows nu folosește deloc releul: clientul desktop își creează propriul portofel Solana pentru taxe, pe care îl alimentezi direct, deci nu există niciun abonament de transferat."
+    }
+  ],
+  "related": [
+    {
+      "href": "/pricing",
+      "label": "Prețuri",
+      "blurb": "Planuri, cote de mesaje și de ce trimiterea costă."
+    },
+    {
+      "href": "/limitations",
+      "label": "Limitări cunoscute",
+      "blurb": "Împotriva a ce nu te protejează PrivaMesh."
+    },
+    {
+      "href": "/support",
+      "label": "Asistență",
+      "blurb": "Fraza de recuperare, dispozitive noi și abonamente."
+    }
+  ]
+}

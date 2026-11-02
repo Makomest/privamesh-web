@@ -1,0 +1,75 @@
+{
+  "meta": {
+    "title": "PrivaMesh - mensajería privada cifrada",
+    "description": "Mensajería privada con cifrado de extremo a extremo para iPhone, Android y Windows. Sin número de teléfono, sin correo, sin cuenta: tus claves y tus chats nunca salen de tu dispositivo."
+  },
+  "skip": "Saltar al contenido",
+  "brandHome": "Inicio de PrivaMesh",
+  "github": "PrivaMesh en GitHub",
+  "x": "PrivaMesh en X",
+  "language": "Idioma",
+  "openMenu": "Abrir menú",
+  "closeMenu": "Cerrar menú",
+  "getApp": "Obtener PrivaMesh",
+  "onAppStore": "{label} en la App Store",
+  "keepReading": "Sigue leyendo",
+  "faq": "Preguntas frecuentes",
+  "breadcrumb": "Ruta de navegación",
+  "home": "Inicio",
+  "nav": {
+    "features": "Funciones",
+    "compare": "Comparar",
+    "alternatives": "Alternativas",
+    "guides": "Guías",
+    "privacy": "Privacidad",
+    "blog": "Blog",
+    "news": "Novedades",
+    "bestApps": "Mejores apps 2026",
+    "glossary": "Glosario"
+  },
+  "product": {
+    "/features/no-servers": "Sin servidores",
+    "/features/e2e-encryption": "Cifrado de extremo a extremo",
+    "/features/metadata-protection": "Protección de metadatos",
+    "/features/seed-phrase-accounts": "Frase de cuenta",
+    "/features/duress-code": "Código de coacción"
+  },
+  "comparePages": {
+    "/compare/privamesh-vs-signal": "vs Signal",
+    "/compare/privamesh-vs-telegram": "vs Telegram",
+    "/compare/privamesh-vs-session": "vs Session",
+    "/alternatives": "Todas las alternativas",
+    "/best-private-messaging-apps": "Mejores apps 2026"
+  },
+  "footer": {
+    "tagline": "Una mensajería privada, sin servidores y con cifrado de extremo a extremo. Confía en las matemáticas, no en las empresas.",
+    "product": "Producto",
+    "compare": "Comparar",
+    "resources": "Recursos",
+    "legal": "Legal",
+    "rights": "Todos los derechos reservados.",
+    "motto": "Privado. Cifrado. Tuyo.",
+    "whitepaper": "Libro blanco",
+    "links": {
+      "/privacy": "Por qué privado",
+      "/pricing": "Precios",
+      "/download": "Descargar",
+      "/changelog": "Registro de cambios",
+      "/architecture": "Arquitectura",
+      "/protocol": "Protocolo",
+      "/threat-model": "Modelo de amenazas",
+      "/limitations": "Limitaciones",
+      "/guides": "Guías",
+      "/blog": "Blog",
+      "/news": "Novedades",
+      "/glossary": "Glosario",
+      "/about": "Acerca de",
+      "/security": "Seguridad",
+      "/bug-bounty": "Recompensas por errores",
+      "/transparency": "Transparencia",
+      "/privacy-policy": "Política de privacidad",
+      "/terms": "Condiciones de uso",
+      "/support": "Soporte"
+    }
+  }
+}

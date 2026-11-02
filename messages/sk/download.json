@@ -1,0 +1,99 @@
+{
+  "meta": {
+    "title": "Stiahnuť PrivaMesh",
+    "description": "PrivaMesh pre iPhone v App Store, APK pre Android 8.0 alebo novší a inštalátor pre Windows 10. Žiadne telefónne číslo, žiadny e-mail, žiadny účet."
+  },
+  "eyebrow": "Stiahnuť",
+  "title": "Stiahnuť PrivaMesh",
+  "lead": "Pre všetky tri platformy existuje verzia, ktorú si môžete nainštalovať ešte dnes. Líši sa spôsob platenia a to, ako dôkladne bola otestovaná - oboje je napísané na karte, namiesto toho, aby ste to zisťovali neskôr.",
+  "appStoreCta": "Stiahnuť v App Store",
+  "notAvailable": "Nedostupné",
+  "platforms": {
+    "ios": {
+      "name": "iPhone",
+      "requirement": "iOS {os} alebo novší · verzia {version}",
+      "cta": "Stiahnuť v App Store",
+      "blurb": "Inštalácia je zadarmo. Žiadne telefónne číslo, žiadny e-mail, žiadny účet - aplikácia vytvorí vašu identitu v zariadení pri prvom otvorení. Platené tarify fungujú tu a len tu.",
+      "noteHeading": "Tá, ktorú ľudia naozaj používajú",
+      "noteBody": "Toto je klient vydávaný v App Store a ten, ktorý ľudia skutočne používajú. Je aj meradlom pre ostatných: klienty pre Android a Windows odvodzujú svoje protokolové vrstvy z tohto zdrojového kódu a overujú sa proti nemu testovacími vektormi, takže kde sa líšia, má pravdu tento."
+    },
+    "windows": {
+      "name": "Windows",
+      "requirement": "Windows 10 64-bit · verzia {version}",
+      "cta": "Stiahnuť inštalátor",
+      "blurb": "Java je pribalená, takže netreba nič ďalšie inštalovať, a inštalátor nikdy nežiada práva správcu. Na počítači nie je predplatné ani relay: klient si vytvorí vlastnú peňaženku Solana na poplatky, vy ju dobijete a každá správa si zaplatí vlastný sieťový poplatok - približne 0,0008 USD, teda zhruba 6 000 správ za 5 USD.",
+      "secondary": "Prenosný .zip, bez inštalácie",
+      "warningHeading": "Windows vás upozorní",
+      "warningBody": "Uvidíte hlásenie „Systém Windows ochránil váš počítač“. Táto verzia nemá certifikát na podpisovanie kódu, takže Windows nerozpozná vydavateľa - nejde o hlásenie niečoho nájdeného v súbore. Kliknite na „Ďalšie informácie“ a potom na „Spustiť aj tak“. Ten istý certifikát by vám umožnil overiť, že súbor naozaj pochádza od nás, takže kým neexistuje, nie je tu nič zmysluplné, s čím to porovnať. Je to medzera a zaplátať ju je naša úloha."
+    },
+    "android": {
+      "name": "Android",
+      "requirement": "Android 8.0 alebo novší · verzia {version}",
+      "cta": "Stiahnuť APK",
+      "blurb": "Vydanie podpísané skutočným kľúčom, takže neskoršie verzie sa nainštalujú cez neho ako aktualizácia a váš účet zostane. Platené tarify tu zatiaľ nefungujú - relay overuje potvrdenky Apple a nemá cestu pre Google Play - takže Android je zatiaľ len v bezplatnom tarife.",
+      "warningHeading": "Inštalácia mimo obchodu a čo sa testovalo",
+      "warningBody": "Android vás požiada o povolenie inštalácií zo zdroja, odkiaľ ste súbor stiahli. Verzia prešla na emulátore Androidu 15 vytvorením účtu, vygenerovaním frázy a opätovným spustením, čo je kontrola, na ktorej záleží potom, ako R8 prepíše kryptografický a databázový kód. Na skutočnom zariadení nebežala a žiadna verzia pre Android zatiaľ neodoslala správu na mainnete."
+    }
+  },
+  "first": {
+    "heading": "Čo sa stane najprv",
+    "steps": [
+      "Aplikácia vo vašom zariadení vygeneruje 12-slovnú frázu na obnovenie",
+      "Zapíšte si ju na papier - neexistuje reset ani záloha u nás",
+      "Nastavte prístupový kód a biometrické odomykanie, ak ho zariadenie ponúka",
+      "Vyberte si prezývku, aby vás ľudia našli bez telefónneho čísla",
+      "Pridajte kontakt QR kódom, odkazom s pozvánkou alebo prezývkou; obe strany sa musia pridať navzájom"
+    ],
+    "footnote": "Verzia pre iPhone, minimálna verzia iOS a cena pochádzajú priamo zo záznamu v App Store namiesto ručnej údržby, takže sa nemôžu rozísť s tým, čo ukazuje Apple. Údaje pre Windows pochádzajú z vydania, ktoré hostí sťahovaný súbor."
+  },
+  "before": {
+    "heading": "Pred inštaláciou",
+    "paras": [
+      "Dve veci je dobré vedieť vopred, pretože obe neskôr prekvapia. Históriu správ nemožno preniesť do iného zariadenia ani obnoviť po preinštalovaní - dopredné utajenie po použití zničí kľúč každej správy, a to je fungujúca záruka, nie chýbajúca funkcia. A odosielanie je spoplatnené: aplikácia je zadarmo, ale každá správa je skutočná transakcia so skutočným sieťovým poplatkom. Koľko to stojí, nájdete v [cenníku](/pricing).",
+      "Oboje platí na všetkých platformách. Líši sa, kto platí: na iPhone predplatné kupuje slepé tokeny, ktoré uplatní naša jediná služba poplatkov, zatiaľ čo klient pre Windows túto službu úplne vynecháva a platí z peňaženky Solana, ktorú si dobíjate sami. Čo presne môže ktorá súčasť vidieť, opisuje [stránka o architektúre](/architecture), a pred čím nič z toho nechráni, nájdete v [obmedzeniach](/limitations)."
+    ]
+  },
+  "faq": [
+    {
+      "q": "Na ktorých iPhonoch beží?",
+      "a": "Na každom iPhone s iOS 18 alebo novším. Verzia 1.0 vyžadovala iOS 26.5 a táto stránka tvrdila, že kvôli postkvantovému handshaku. Nebolo to tak: spodnú hranicu určovalo niekoľko API rozhrania a v 1.0 bola postkvantová cesta aj tak vypnutá. Verzia 1.1 túto hranicu odstránila. Samotná postkvantová časť (X-Wing, ML-KEM-768 s X25519) iOS 26 naozaj potrebuje, takže závisí od zariadenia: iPhone s iOS 26 zverejní postkvantový prekey, starší použije klasický X3DH a oba sa dohovoria. Vo verzii 1.1 sa postkvantový krok v praxi zatiaľ nedokončí - prečo, vysvetľuje stránka s obmedzeniami."
+    },
+    {
+      "q": "Čo potrebujem na registráciu?",
+      "a": "Nič. Žiadne telefónne číslo, žiadny e-mail, žiadne používateľské meno na rezerváciu. Aplikácia pri prvom spustení vygeneruje vo vašom zariadení 12-slovnú frázu na obnovenie - zapíšte si ju, pretože je to jediná cesta späť do účtu."
+    },
+    {
+      "q": "Je to zadarmo?",
+      "a": "Stiahnutie je zadarmo. Odosielanie je spoplatnené, pretože každá správa je platená transakcia na verejnom reťazci - cenník uvádza limity a ceny tarifov."
+    },
+    {
+      "q": "Prečo inštalátor pre Windows vyvolá bezpečnostné upozornenie?",
+      "a": "Verzia nie je podpísaná, takže Windows nerozpozná vydavateľa a ukáže „Systém Windows ochránil váš počítač“. Nejde o hlásenie niečoho nájdeného v súbore - kliknite na „Ďalšie informácie“ a potom na „Spustiť aj tak“. Pre ten istý chýbajúci certifikát neexistuje skutočný spôsob, ako potvrdiť, že súbor pochádza od nás, a zverejnený kontrolný súčet by to nevyriešil: kto dokáže vymeniť súbor na stiahnutie, vymení aj súčet vedľa neho. Riešením je podpisový certifikát a táto verzia ho zatiaľ nemá."
+    },
+    {
+      "q": "Čím sa líši verzia pre Android?",
+      "a": "Je to verzia 0.1, nie 1.0, a nejde o skromnosť. Na emulátore prešla vytvorením účtu, vygenerovaním frázy a opätovným spustením - kontrolami, ktoré odhalia, či R8 nerozbil kryptografický a databázový kód -, no na skutočnom zariadení nebežala a žiadna verzia pre Android zatiaľ neodoslala správu na mainnete. Je podpísaná skutočným kľúčom, takže neskoršie verzie sa cez ňu nainštalujú ako aktualizácia."
+    },
+    {
+      "q": "Fungujú platené tarify vo Windows a Androide?",
+      "a": "Nie tak ako na iPhone. Relay overuje potvrdenky Apple a nemá cestu pre Google Play, takže Android by začínal len s bezplatným tarifom. Windows relay vôbec nepoužíva: desktopový klient si vytvorí vlastnú peňaženku Solana na poplatky, ktorú dobíjate priamo, takže nie je žiadne predplatné na prenesenie."
+    }
+  ],
+  "related": [
+    {
+      "href": "/pricing",
+      "label": "Cenník",
+      "blurb": "Tarify, limity správ a prečo je odosielanie spoplatnené."
+    },
+    {
+      "href": "/limitations",
+      "label": "Známe obmedzenia",
+      "blurb": "Pred čím vás PrivaMesh nechráni."
+    },
+    {
+      "href": "/support",
+      "label": "Podpora",
+      "blurb": "Fráza na obnovenie, nové zariadenia a predplatné."
+    }
+  ]
+}

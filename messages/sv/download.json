@@ -1,0 +1,99 @@
+{
+  "meta": {
+    "title": "Ladda ner PrivaMesh",
+    "description": "PrivaMesh för iPhone i App Store, en APK för Android 8.0 eller senare och ett installationsprogram för Windows 10. Inget telefonnummer, ingen e-post, inget konto."
+  },
+  "eyebrow": "Ladda ner",
+  "title": "Ladda ner PrivaMesh",
+  "lead": "Alla tre plattformar har en version du kan installera i dag. Det som skiljer är hur du betalar och hur mycket som har testats, och båda står på kortet i stället för att lämnas åt dig att upptäcka senare.",
+  "appStoreCta": "Hämta i App Store",
+  "notAvailable": "Inte tillgänglig",
+  "platforms": {
+    "ios": {
+      "name": "iPhone",
+      "requirement": "iOS {os} eller senare · version {version}",
+      "cta": "Hämta i App Store",
+      "blurb": "Gratis att installera. Inget telefonnummer, ingen e-post, inget konto - appen skapar din identitet på enheten första gången du öppnar den. Betalda nivåer fungerar här och bara här.",
+      "noteHeading": "Den med verklig användning bakom sig",
+      "noteBody": "Det här är klienten som släpps i App Store och den som folk faktiskt använder. Den är också referensen de andra mäts mot: klienterna för Android och Windows härleder sina protokollager från den här källkoden och kontrolleras mot den med testvektorer, så där de skiljer sig är det den här som är rätt."
+    },
+    "windows": {
+      "name": "Windows",
+      "requirement": "Windows 10 64-bitars · version {version}",
+      "cta": "Ladda ner installationsprogrammet",
+      "blurb": "Java ingår, så det finns inget annat att installera, och installationsprogrammet ber aldrig om administratörsbehörighet. På datorn finns ingen prenumeration och inget relä: klienten skapar en egen Solana-plånbok för avgifter, du fyller på den och varje meddelande betalar sin egen nätverksavgift - ungefär 0,0008 USD, alltså runt 6 000 meddelanden för 5 USD.",
+      "secondary": "Portabel .zip, utan installation",
+      "warningHeading": "Windows kommer att varna dig",
+      "warningBody": "Du får se ”Windows skyddade datorn”. Den här versionen saknar kodsigneringscertifikat, så Windows känner inte igen utgivaren - det är ingen rapport om något som hittats i filen. Klicka på ”Mer information” och sedan ”Kör ändå”. Certifikatet är också det som skulle låta dig kontrollera att filen verkligen kommer från oss, så tills det finns finns det inget meningsfullt att jämföra mot. Det är en brist, och det är vår uppgift att täppa till den."
+    },
+    "android": {
+      "name": "Android",
+      "requirement": "Android 8.0 eller senare · version {version}",
+      "cta": "Ladda ner APK",
+      "blurb": "En releaseversion signerad med den riktiga nyckeln, så senare versioner installeras ovanpå som en uppdatering och ditt konto finns kvar. Betalda nivåer fungerar inte här ännu - reläet verifierar Apple-kvitton och har ingen väg för Google Play - så Android är tills vidare bara gratisnivån.",
+      "warningHeading": "Sidladdning, och vad som har testats",
+      "warningBody": "Android ber dig tillåta installationer från platsen där du laddade ner filen. Versionen har körts genom kontoskapande, frasgenerering och en omstart i en Android 15-emulator, kontrollen som spelar roll efter att R8 skrivit om krypto- och databaskoden. Den har inte körts på en riktig enhet, och ingen Android-version har ännu skickat ett meddelande på mainnet."
+    }
+  },
+  "first": {
+    "heading": "Det här händer först",
+    "steps": [
+      "Appen skapar en återställningsfras på 12 ord på din enhet",
+      "Skriv ner den på papper - det finns ingen återställning och ingen säkerhetskopia hos oss",
+      "Ställ in en lösenkod, och biometrisk upplåsning om enheten erbjuder det",
+      "Välj ett smeknamn så att folk kan hitta dig utan telefonnummer",
+      "Lägg till en kontakt med QR-kod, inbjudningslänk eller smeknamn; båda sidor måste lägga till varandra"
+    ],
+    "footnote": "iPhone-versionen, lägsta iOS-version och priset hämtas direkt från App Store-sidan i stället för att skötas för hand, så de kan inte avvika från vad Apple visar. Uppgifterna för Windows kommer från den release som filen du laddar ner ligger i."
+  },
+  "before": {
+    "heading": "Innan du installerar",
+    "paras": [
+      "Två saker är bra att veta i förväg, eftersom båda överraskar senare. Din meddelandehistorik kan inte flyttas till en annan enhet eller återställas efter en ominstallation - framåtsekretess förstör varje meddelandenyckel efter användning, och det är garantin som fungerar, inte en saknad funktion. Och sändning kostar: appen är gratis, men varje meddelande är en riktig transaktion med en riktig nätverksavgift. Se [priser](/pricing) för vad det kostar.",
+      "De två gäller på alla plattformar. Det som skiljer är vem som betalar: på iPhone köper en prenumeration blinda token som vår enda avgiftstjänst löser in, medan Windows-klienten hoppar över den tjänsten helt och betalar från en Solana-plånbok som du själv fyller på. Exakt vad varje komponent kan se står på [arkitektursidan](/architecture), och vad inget av det skyddar dig mot står under [begränsningar](/limitations)."
+    ]
+  },
+  "faq": [
+    {
+      "q": "Vilka iPhone kan köra den?",
+      "a": "Alla iPhone med iOS 18 eller senare. Version 1.0 krävde iOS 26.5, och den här sidan påstod att det berodde på det postkvantiska handslaget. Så var det inte: gränsen kom från några gränssnitts-API:er, och 1.0 hade ändå den postkvantiska vägen avstängd. 1.1 tog bort gränsen. Det postkvantiska i sig (X-Wing, ML-KEM-768 med X25519) kräver faktiskt iOS 26, så det beror på enheten: en iPhone med iOS 26 publicerar en postkvantisk prekey, en äldre använder klassisk X3DH, och de två förstår varandra. I 1.1 genomförs det postkvantiska steget ännu inte i praktiken - begränsningssidan förklarar varför."
+    },
+    {
+      "q": "Vad behöver jag för att registrera mig?",
+      "a": "Ingenting. Inget telefonnummer, ingen e-post, inget användarnamn att reservera. Appen skapar en återställningsfras på 12 ord på din enhet vid första starten - skriv ner den, för den är den enda vägen tillbaka in i kontot."
+    },
+    {
+      "q": "Är det gratis?",
+      "a": "Nedladdningen är gratis. Sändning kostar eftersom varje meddelande är en betald transaktion på en öppen blockkedja - prissidan listar kvoter och nivåpriser."
+    },
+    {
+      "q": "Varför visar installationsprogrammet för Windows en säkerhetsvarning?",
+      "a": "Versionen är inte signerad, så Windows känner inte igen utgivaren och visar ”Windows skyddade datorn”. Det är ingen rapport om något som hittats i filen - klicka på ”Mer information” och sedan ”Kör ändå”. Samma saknade certifikat är skälet till att det inte finns något riktigt sätt att bekräfta att filen kommer från oss, och en publicerad kontrollsumma skulle inte ändra det: den som kan byta ut nedladdningen kan också byta ut kontrollsumman bredvid. Lösningen är ett signeringscertifikat, och den här versionen har inget ännu."
+    },
+    {
+      "q": "Vad är annorlunda med Android-versionen?",
+      "a": "Det är version 0.1 och inte 1.0, och det är inte blygsamhet. Den har körts genom kontoskapande, frasgenerering och en omstart i en emulator - kontrollerna som fångar om R8 förstör krypto- och databaskoden - men den har inte körts på en riktig enhet, och ingen Android-version har ännu skickat ett meddelande på mainnet. Den är signerad med den riktiga nyckeln, så senare versioner installeras ovanpå som en uppdatering."
+    },
+    {
+      "q": "Fungerar betalda nivåer på Windows och Android?",
+      "a": "Inte som på iPhone. Reläet verifierar Apple-kvitton och har ingen väg för Google Play, så Android skulle bara börja med gratisnivån. Windows använder inte reläet alls: skrivbordsklienten skapar en egen Solana-plånbok för avgifter som du fyller på direkt, så det finns ingen prenumeration att flytta över."
+    }
+  ],
+  "related": [
+    {
+      "href": "/pricing",
+      "label": "Priser",
+      "blurb": "Nivåer, meddelandekvoter och varför sändning kostar."
+    },
+    {
+      "href": "/limitations",
+      "label": "Kända begränsningar",
+      "blurb": "Vad PrivaMesh inte skyddar dig mot."
+    },
+    {
+      "href": "/support",
+      "label": "Support",
+      "blurb": "Återställningsfras, nya enheter och prenumerationer."
+    }
+  ]
+}

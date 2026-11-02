@@ -1,0 +1,99 @@
+{
+  "meta": {
+    "title": "PrivaMesh'ni yuklab olish",
+    "description": "App Store'dagi iPhone uchun PrivaMesh, Android 8.0 yoki yangiroq uchun APK va Windows 10 uchun o'rnatuvchi. Telefon raqami, pochta va akkaunt kerak emas."
+  },
+  "eyebrow": "Yuklab olish",
+  "title": "PrivaMesh'ni yuklab olish",
+  "lead": "Uchala platformada ham bugun o'rnatish mumkin bo'lgan versiya bor. Farqi to'lov usulida va qanchalik sinovdan o'tganida - ikkalasi ham keyin o'zingiz bilib olishingiz uchun qoldirilmasdan, kartada yozilgan.",
+  "appStoreCta": "App Store'dan yuklab olish",
+  "notAvailable": "Mavjud emas",
+  "platforms": {
+    "ios": {
+      "name": "iPhone",
+      "requirement": "iOS {os} yoki yangiroq · versiya {version}",
+      "cta": "App Store'dan yuklab olish",
+      "blurb": "O'rnatish bepul. Telefon raqami yo'q, pochta yo'q, akkaunt yo'q - ilova birinchi ochilganda shaxsingizni qurilmada yaratadi. Pullik tariflar shu yerda va faqat shu yerda ishlaydi.",
+      "noteHeading": "Haqiqiy foydalanishdagi versiya",
+      "noteBody": "Bu App Store'da chiqadigan va odamlar haqiqatan foydalanadigan mijoz. U boshqalar uchun ham o'lchov: Android va Windows mijozlari protokol qatlamlarini shu manba koddan oladi va u bilan test vektorlari orqali solishtiriladi, shuning uchun farq bo'lsa, to'g'risi - shu."
+    },
+    "windows": {
+      "name": "Windows",
+      "requirement": "Windows 10 64-bit · versiya {version}",
+      "cta": "O'rnatuvchini yuklab olish",
+      "blurb": "Java ichida bor, shuning uchun boshqa hech narsa o'rnatish shart emas, o'rnatuvchi esa hech qachon administrator huquqini so'ramaydi. Kompyuterda obuna ham, releyning o'zi ham yo'q: mijoz to'lovlar uchun o'z Solana hamyonini yaratadi, siz uni to'ldirasiz va har bir xabar o'z tarmoq to'lovini to'laydi - taxminan $0,0008, ya'ni $5 ga 6000 ga yaqin xabar.",
+      "secondary": "Ko'chma .zip, o'rnatishsiz",
+      "warningHeading": "Windows sizni ogohlantiradi",
+      "warningBody": "Siz «Windows kompyuteringizni himoya qildi» xabarini ko'rasiz. Bu versiyada kodni imzolash sertifikati yo'q, shuning uchun Windows nashriyotchini tanimaydi - bu faylda nimadir topilgani haqidagi xabar emas. «Batafsil», keyin «Baribir ishga tushirish» tugmasini bosing. Aynan shu sertifikat faylning haqiqatan bizdan ekanini tekshirishga ham imkon berardi, shuning uchun u yo'q ekan, solishtirishga mazmunli hech narsa yo'q. Bu bo'shliq va uni yopish bizning vazifamiz."
+    },
+    "android": {
+      "name": "Android",
+      "requirement": "Android 8.0 yoki yangiroq · versiya {version}",
+      "cta": "APK'ni yuklab olish",
+      "blurb": "Haqiqiy kalit bilan imzolangan release versiya - keyingi versiyalar uning ustiga yangilanish sifatida o'rnatiladi va akkauntingiz saqlanadi. Pullik tariflar bu yerda hozircha ishlamaydi: relay Apple cheklarini tekshiradi va Google Play uchun yo'li yo'q, shuning uchun Android'da hozircha faqat bepul tarif mavjud.",
+      "warningHeading": "Tashqaridan o'rnatish va nima sinovdan o'tgan",
+      "warningBody": "Android faylni yuklab olgan manbadan o'rnatishga ruxsat berishni so'raydi. Versiya Android 15 emulyatorida akkaunt yaratish, ibora generatsiyasi va qayta ishga tushirishdan o'tkazilgan - bu R8 kriptografiya va ma'lumotlar bazasi kodini qayta yozgandan keyin muhim bo'lgan tekshiruv. U haqiqiy qurilmada ishga tushirilmagan va hozircha Android'ning birorta versiyasi mainnet'da xabar yubormagan."
+    }
+  },
+  "first": {
+    "heading": "Avval nima bo'ladi",
+    "steps": [
+      "Ilova qurilmangizda 12 so'zdan iborat tiklash iborasini yaratadi",
+      "Uni qog'ozga yozib qo'ying - tiklash yo'q va bizda zaxira nusxa ham yo'q",
+      "Parol kodi va qurilma taklif qilsa, biometrik qulfni ochishni o'rnating",
+      "Sizni telefon raqamisiz topishlari uchun taxallus tanlang",
+      "Kontaktni QR-kod, taklif havolasi yoki taxallus orqali qo'shing; ikkala tomon ham bir-birini qo'shishi kerak"
+    ],
+    "footnote": "iPhone versiyasi, minimal iOS va narx qo'lda yuritilmasdan, to'g'ridan-to'g'ri App Store sahifasidan olinadi, shuning uchun Apple ko'rsatayotgandan farq qila olmaydi. Windows ma'lumotlari siz yuklab olayotgan fayl joylashgan relizdan olinadi."
+  },
+  "before": {
+    "heading": "O'rnatishdan oldin",
+    "paras": [
+      "Ikki narsani oldindan bilgan ma'qul, chunki ikkalasi ham keyin hayratga soladi. Xabarlar tarixini boshqa qurilmaga ko'chirib ham, qayta o'rnatgandan keyin tiklab ham bo'lmaydi - oldinga yo'naltirilgan maxfiylik har bir xabar kalitini ishlatilgandan keyin yo'q qiladi, bu yetishmayotgan funksiya emas, ishlayotgan kafolat. Va yuborish pullik: ilova bepul, ammo har bir xabar haqiqiy tarmoq to'lovi bilan haqiqiy tranzaksiya. Qancha turishini [narxlar sahifasida](/pricing) ko'ring.",
+      "Bu ikkalasi har bir platformaga tegishli. Farqi kim to'lashida: iPhone'da obuna yagona to'lov xizmatimiz qaytaradigan ko'r tokenlarni sotib oladi, Windows mijozi esa bu xizmatni butunlay chetlab o'tib, o'zingiz to'ldiradigan Solana hamyonidan sarflaydi. Har bir komponent aynan nimani ko'ra olishi [arxitektura sahifasida](/architecture), bularning hech biri sizni nimadan himoya qilmasligi esa [cheklovlarda](/limitations)."
+    ]
+  },
+  "faq": [
+    {
+      "q": "Qaysi iPhone'larda ishlaydi?",
+      "a": "iOS 18 yoki yangirog'i o'rnatilgan har qanday iPhone'da. 1.0 versiyasi iOS 26.5 talab qilardi va bu sahifada avval buning sababi postkvant handshake deb yozilgandi. Unday emas edi: chegarani bir nechta interfeys API'lari belgilagan, 1.0 da esa postkvant yo'li baribir o'chirilgan edi. 1.1 bu chegarani olib tashladi. Postkvant qismining o'ziga (X-Wing, X25519 bilan ML-KEM-768) haqiqatan iOS 26 kerak, shuning uchun u qurilmaga bog'liq: iOS 26 dagi iPhone postkvant prekey e'lon qiladi, eskirog'i klassik X3DH ishlatadi va ikkalasi bir-birini tushunadi. 1.1 da postkvant qadam amalda hali bajarilmaydi - sababi cheklovlar sahifasida."
+    },
+    {
+      "q": "Ro'yxatdan o'tish uchun nima kerak?",
+      "a": "Hech narsa. Telefon raqami ham, pochta ham, band qilinadigan foydalanuvchi nomi ham yo'q. Ilova birinchi ishga tushganda qurilmangizda 12 so'zdan iborat tiklash iborasini yaratadi - uni yozib qo'ying, chunki bu akkauntga qaytishning yagona yo'li."
+    },
+    {
+      "q": "Bu bepulmi?",
+      "a": "Yuklab olish bepul. Yuborish pullik, chunki har bir xabar ochiq zanjirdagi pullik tranzaksiya - narxlar sahifasida limitlar va tarif narxlari keltirilgan."
+    },
+    {
+      "q": "Nega Windows o'rnatuvchisi xavfsizlik ogohlantirishini chiqaradi?",
+      "a": "Versiya imzolanmagan, shuning uchun Windows nashriyotchini tanimay, «Windows kompyuteringizni himoya qildi» deb ko'rsatadi. Bu faylda nimadir topilgani haqidagi xabar emas - «Batafsil», keyin «Baribir ishga tushirish» tugmasini bosing. Aynan shu yetishmayotgan sertifikat tufayli faylning bizdan kelganini tasdiqlashning haqiqiy yo'li yo'q, e'lon qilingan nazorat yig'indisi ham buni hal qilmaydi: yuklamani almashtira oladigan kishi yonidagi yig'indini ham almashtira oladi. Yechim - imzolash sertifikati, bu versiyada esa u hali yo'q."
+    },
+    {
+      "q": "Android versiyasining farqi nimada?",
+      "a": "Bu 1.0 emas, 0.1 versiya va bu kamtarlikdan emas. U emulyatorda akkaunt yaratish, ibora generatsiyasi va qayta ishga tushirishdan o'tkazilgan - R8 kriptografiya va ma'lumotlar bazasi kodini buzganini aniqlaydigan tekshiruvlar -, ammo haqiqiy qurilmada ishga tushirilmagan va hozircha Android'ning birorta versiyasi mainnet'da xabar yubormagan. U haqiqiy kalit bilan imzolangan, shuning uchun keyingi versiyalar uning ustiga yangilanish sifatida o'rnatiladi."
+    },
+    {
+      "q": "Pullik tariflar Windows va Android'da ishlaydimi?",
+      "a": "iPhone'dagidek emas. Relay Apple cheklarini tekshiradi va Google Play uchun yo'li yo'q, shuning uchun Android faqat bepul tarif bilan boshlanardi. Windows relay'dan umuman foydalanmaydi: desktop mijoz o'zingiz to'g'ridan-to'g'ri to'ldiradigan shaxsiy Solana to'lov hamyonini yaratadi, shuning uchun ko'chiriladigan obuna yo'q."
+    }
+  ],
+  "related": [
+    {
+      "href": "/pricing",
+      "label": "Narxlar",
+      "blurb": "Tariflar, xabar limitlari va yuborish nega pullik ekani."
+    },
+    {
+      "href": "/limitations",
+      "label": "Ma'lum cheklovlar",
+      "blurb": "PrivaMesh sizni nimadan himoya qilmaydi."
+    },
+    {
+      "href": "/support",
+      "label": "Yordam",
+      "blurb": "Tiklash iborasi, yangi qurilmalar va obunalar."
+    }
+  ]
+}

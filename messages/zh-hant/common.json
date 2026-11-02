@@ -1,0 +1,75 @@
+{
+  "meta": {
+    "title": "PrivaMesh - 加密私密通訊應用",
+    "description": "適用於 iPhone、Android 和 Windows 的端對端加密私密通訊應用。無需手機號碼、無需電子郵件、無需帳號——你的金鑰與聊天紀錄永遠不會離開你的裝置。"
+  },
+  "skip": "跳至內容",
+  "brandHome": "PrivaMesh 首頁",
+  "github": "PrivaMesh 的 GitHub",
+  "x": "PrivaMesh 的 X",
+  "language": "語言",
+  "openMenu": "開啟選單",
+  "closeMenu": "關閉選單",
+  "getApp": "取得 PrivaMesh",
+  "onAppStore": "在 App Store {label}",
+  "keepReading": "繼續閱讀",
+  "faq": "常見問題",
+  "breadcrumb": "導覽路徑",
+  "home": "首頁",
+  "nav": {
+    "features": "功能",
+    "compare": "比較",
+    "alternatives": "替代方案",
+    "guides": "指南",
+    "privacy": "隱私",
+    "blog": "部落格",
+    "news": "最新消息",
+    "bestApps": "2026 最佳應用",
+    "glossary": "名詞解釋"
+  },
+  "product": {
+    "/features/no-servers": "無伺服器",
+    "/features/e2e-encryption": "端對端加密",
+    "/features/metadata-protection": "中繼資料保護",
+    "/features/seed-phrase-accounts": "帳號短語",
+    "/features/duress-code": "脅迫密碼"
+  },
+  "comparePages": {
+    "/compare/privamesh-vs-signal": "對比 Signal",
+    "/compare/privamesh-vs-telegram": "對比 Telegram",
+    "/compare/privamesh-vs-session": "對比 Session",
+    "/alternatives": "所有替代方案",
+    "/best-private-messaging-apps": "2026 最佳應用"
+  },
+  "footer": {
+    "tagline": "一款無伺服器、端對端加密的私密通訊應用。相信數學，而不是公司。",
+    "product": "產品",
+    "compare": "比較",
+    "resources": "資源",
+    "legal": "法律資訊",
+    "rights": "保留所有權利。",
+    "motto": "私密。加密。屬於你。",
+    "whitepaper": "白皮書",
+    "links": {
+      "/privacy": "為什麼要私密",
+      "/pricing": "價格",
+      "/download": "下載",
+      "/changelog": "更新紀錄",
+      "/architecture": "架構",
+      "/protocol": "協定",
+      "/threat-model": "威脅模型",
+      "/limitations": "限制",
+      "/guides": "指南",
+      "/blog": "部落格",
+      "/news": "最新消息",
+      "/glossary": "名詞解釋",
+      "/about": "關於",
+      "/security": "安全性",
+      "/bug-bounty": "漏洞獎勵",
+      "/transparency": "透明度",
+      "/privacy-policy": "隱私權政策",
+      "/terms": "使用條款",
+      "/support": "支援"
+    }
+  }
+}

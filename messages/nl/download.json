@@ -1,0 +1,99 @@
+{
+  "meta": {
+    "title": "PrivaMesh downloaden",
+    "description": "PrivaMesh voor iPhone in de App Store, een APK voor Android 8.0 of nieuwer en een installatieprogramma voor Windows 10. Geen telefoonnummer, geen e-mail, geen account."
+  },
+  "eyebrow": "Downloaden",
+  "title": "PrivaMesh downloaden",
+  "lead": "Voor alle drie de platforms is er een versie die je vandaag kunt installeren. Verschillend zijn de manier van betalen en hoe grondig er getest is, en beide staan op de kaart in plaats van dat je ze later zelf moet ontdekken.",
+  "appStoreCta": "Downloaden in de App Store",
+  "notAvailable": "Niet beschikbaar",
+  "platforms": {
+    "ios": {
+      "name": "iPhone",
+      "requirement": "iOS {os} of nieuwer · versie {version}",
+      "cta": "Downloaden in de App Store",
+      "blurb": "Gratis te installeren. Geen telefoonnummer, geen e-mail, geen account - de app maakt je identiteit op het apparaat aan wanneer je hem voor het eerst opent. Betaalde abonnementen werken hier en alleen hier.",
+      "noteHeading": "De versie met echt gebruik erachter",
+      "noteBody": "Dit is de client die in de App Store verschijnt en die mensen echt gebruiken. Het is ook de referentie waaraan de andere worden gemeten: de clients voor Android en Windows leiden hun protocollagen af van deze broncode en worden er met testvectoren tegen gecontroleerd. Waar ze verschillen, is deze correct."
+    },
+    "windows": {
+      "name": "Windows",
+      "requirement": "Windows 10 64-bit · versie {version}",
+      "cta": "Installatieprogramma downloaden",
+      "blurb": "Java zit erbij, dus je hoeft niets anders te installeren, en het installatieprogramma vraagt nooit om beheerdersrechten. Op de desktop is er geen abonnement en geen relay: de client maakt een eigen Solana-wallet voor kosten aan, jij vult die aan, en elk bericht betaalt zijn eigen netwerkkosten - ongeveer $0,0008, dus zo'n 6.000 berichten voor $5.",
+      "secondary": "Draagbare .zip, zonder installatie",
+      "warningHeading": "Windows gaat je waarschuwen",
+      "warningBody": "Je ziet 'Uw pc is beveiligd door Windows'. Deze versie heeft geen certificaat voor codeondertekening, dus Windows herkent de uitgever niet - het is geen melding van iets dat in het bestand is gevonden. Klik op 'Meer informatie' en daarna op 'Toch uitvoeren'. Datzelfde certificaat zou je ook laten controleren dat het bestand echt van ons komt; zolang het er niet is, valt er niets zinnigs tegen te controleren. Dat is een gat, en het is aan ons om het te dichten."
+    },
+    "android": {
+      "name": "Android",
+      "requirement": "Android 8.0 of nieuwer · versie {version}",
+      "cta": "APK downloaden",
+      "blurb": "Een releaseversie die met de echte sleutel is ondertekend, zodat latere versies er als update overheen installeren en je account blijft bestaan. Betaalde abonnementen werken hier nog niet - de relay controleert Apple-bonnen en heeft geen route voor Google Play - dus Android is voorlopig alleen het gratis abonnement.",
+      "warningHeading": "Sideloaden, en wat er getest is",
+      "warningBody": "Android vraagt je installaties toe te staan vanaf de plek waar je het bestand hebt gedownload. De versie is op een Android 15-emulator door accountaanmaak, het genereren van de zin en een herstart geleid, de controle die telt nadat R8 de crypto- en databasecode heeft herschreven. Hij heeft nog niet op een echt apparaat gedraaid, en nog geen enkele Android-versie heeft een bericht op mainnet verstuurd."
+    }
+  },
+  "first": {
+    "heading": "Wat er eerst gebeurt",
+    "steps": [
+      "De app maakt op je apparaat een herstelzin van 12 woorden aan",
+      "Schrijf hem op papier - er is geen reset en wij bewaren geen back-up",
+      "Stel een toegangscode in, en biometrisch ontgrendelen als het apparaat dat biedt",
+      "Kies een bijnaam zodat mensen je vinden zonder telefoonnummer",
+      "Voeg een contact toe via QR-code, uitnodigingslink of bijnaam; beide kanten moeten elkaar toevoegen"
+    ],
+    "footnote": "De iPhone-versie, de minimale iOS-versie en de prijs komen rechtstreeks uit de App Store-vermelding in plaats van met de hand te worden bijgehouden, dus ze kunnen niet afwijken van wat Apple toont. De gegevens voor Windows komen uit de release die het bestand host dat je downloadt."
+  },
+  "before": {
+    "heading": "Voordat je installeert",
+    "paras": [
+      "Twee dingen kun je beter vooraf weten, omdat ze allebei later verrassen. Je berichtgeschiedenis kan niet naar een ander apparaat worden verplaatst of na een herinstallatie worden hersteld - forward secrecy vernietigt elke berichtsleutel na gebruik, en dat is de garantie die werkt, geen ontbrekende functie. En versturen kost geld: de app is gratis, maar elk bericht is een echte transactie met echte netwerkkosten. Zie [prijzen](/pricing) voor wat dat kost.",
+      "Die twee gelden voor elk platform. Wat verschilt is wie betaalt: op iPhone koopt een abonnement blinde tokens die onze enige kostenservice inwisselt, terwijl de Windows-client die service helemaal overslaat en betaalt uit een Solana-wallet die je zelf aanvult. Wat elk onderdeel precies kan zien staat op [de architectuurpagina](/architecture), en waartegen niets hiervan je beschermt onder [beperkingen](/limitations)."
+    ]
+  },
+  "faq": [
+    {
+      "q": "Op welke iPhones werkt het?",
+      "a": "Op elke iPhone met iOS 18 of nieuwer. Versie 1.0 vereiste iOS 26.5, en op deze pagina stond dat dat voor de post-kwantum-handshake was. Dat klopte niet: de ondergrens kwam van een paar interface-API's, en in 1.0 stond het post-kwantumpad hoe dan ook uit. 1.1 heeft de ondergrens geschrapt. Post-kwantum zelf (X-Wing, ML-KEM-768 met X25519) heeft wel iOS 26 nodig, dus het hangt af van het apparaat: een iPhone met iOS 26 publiceert een post-kwantum-prekey, een oudere gebruikt klassieke X3DH, en de twee begrijpen elkaar. In 1.1 komt de post-kwantumstap in de praktijk nog niet tot stand - de pagina met beperkingen legt uit waarom."
+    },
+    {
+      "q": "Wat heb ik nodig om me aan te melden?",
+      "a": "Niets. Geen telefoonnummer, geen e-mail, geen gebruikersnaam om te reserveren. De app maakt bij de eerste start een herstelzin van 12 woorden op je apparaat aan - schrijf hem op, want het is de enige weg terug naar het account."
+    },
+    {
+      "q": "Is het gratis?",
+      "a": "Downloaden is gratis. Versturen kost geld omdat elk bericht een betaalde transactie op een openbare blockchain is - de prijzenpagina noemt de tegoeden en abonnementsprijzen."
+    },
+    {
+      "q": "Waarom geeft het Windows-installatieprogramma een beveiligingswaarschuwing?",
+      "a": "De versie is niet ondertekend, dus Windows herkent de uitgever niet en toont 'Uw pc is beveiligd door Windows'. Het is geen melding van iets dat in het bestand is gevonden - klik op 'Meer informatie' en daarna op 'Toch uitvoeren'. Datzelfde ontbrekende certificaat is de reden dat er geen echte manier is om te bevestigen dat het bestand van ons komt, en een gepubliceerde checksum zou dat niet oplossen: wie de download kan vervangen, kan ook de checksum ernaast vervangen. Een ondertekeningscertificaat is de oplossing, en deze versie heeft er nog geen."
+    },
+    {
+      "q": "Wat is er anders aan de Android-versie?",
+      "a": "Het is versie 0.1 en niet 1.0, en dat is geen bescheidenheid. Hij is op een emulator door accountaanmaak, het genereren van de zin en een herstart geleid - de controles die ontdekken of R8 de crypto- en databasecode breekt -, maar hij heeft niet op een echt apparaat gedraaid en nog geen enkele Android-versie heeft een bericht op mainnet verstuurd. Hij is ondertekend met de echte sleutel, dus latere versies installeren er als update overheen."
+    },
+    {
+      "q": "Werken betaalde abonnementen op Windows en Android?",
+      "a": "Niet zoals op iPhone. De relay controleert Apple-bonnen en heeft geen route voor Google Play, dus Android zou alleen met het gratis abonnement beginnen. Windows gebruikt de relay helemaal niet: de desktopclient maakt een eigen Solana-wallet voor kosten aan die je rechtstreeks aanvult, dus er is geen abonnement om over te zetten."
+    }
+  ],
+  "related": [
+    {
+      "href": "/pricing",
+      "label": "Prijzen",
+      "blurb": "Abonnementen, berichttegoeden en waarom versturen geld kost."
+    },
+    {
+      "href": "/limitations",
+      "label": "Bekende beperkingen",
+      "blurb": "Waartegen PrivaMesh je niet beschermt."
+    },
+    {
+      "href": "/support",
+      "label": "Ondersteuning",
+      "blurb": "Herstelzin, nieuwe apparaten en abonnementen."
+    }
+  ]
+}
