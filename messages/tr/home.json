@@ -1,0 +1,186 @@
+{
+  "meta": {
+    "title": "PrivaMesh - şifreli özel mesajlaşma",
+    "description": "iPhone, Android ve Windows için uçtan uca şifreli özel mesajlaşma. Telefon numarası yok, e-posta yok, hesap yok - anahtarlarınız ve sohbetleriniz cihazınızdan asla çıkmaz."
+  },
+  "hero": {
+    "badge": "Uçtan uca şifreli · Telefon numarası yok",
+    "title": "Hakkınızda hiçbir şey bilmeyen {scramble} mesajlaşma uygulaması",
+    "scramble": "özel",
+    "lead": "Telefon numarası ve hesap veritabanı olmadan özel mesajlaşma. Mesajlar cihazınızda uçtan uca şifrelenir ve herkese açık, merkeziyetsiz bir aktarım üzerinden tek kullanımlık adreslere teslim edilir. PrivaMesh meta verileri en aza indirmek için yapıldı, yokmuş gibi davranmak için değil.",
+    "cta": "PrivaMesh'i edinin",
+    "threatModel": "Tehdit modelini okuyun",
+    "architecture": "Mimari",
+    "limitations": "Bilinen sınırlamalar",
+    "security": "Güvenlik",
+    "source": "Kaynak kod",
+    "trust": [
+      "Telefon numarası yok",
+      "Sunucu yok",
+      "Uçtan uca şifreli"
+    ],
+    "phoneAlt": "iPhone'da PrivaMesh özel mesajlaşma uygulamasının tanıtım ekranı - varsayılan olarak gizlilik, uçtan uca şifreleme"
+  },
+  "noServers": {
+    "eyebrow": "Farkı yaratan",
+    "title": "Sunucu yok - somut olarak",
+    "lead": "\"Özel\" mesajlaşma uygulamalarının çoğu, kiminle konuştuğunuzu gören sunucular çalıştırmaya devam ediyor. PrivaMesh'in hiç yok. Verinizin her parçasının tam olarak nerede durduğu burada.",
+    "colWhat": "Ne",
+    "colWhere": "Nerede durur",
+    "colHow": "Nasıl",
+    "rows": [
+      {
+        "what": "Mesajlarınız",
+        "where": "Herkese açık, merkeziyetsiz bir aktarım",
+        "how": "Tek kullanımlık adreslere gönderilen şifreli bloklar"
+      },
+      {
+        "what": "Gelen kutunuz",
+        "where": "Herkese açık aktarımın kendisi",
+        "how": "Yalnızca cihazınızda alınır ve çözülür"
+      },
+      {
+        "what": "Anahtarlarınız",
+        "where": "Yalnızca cihazınızın anahtar deposu",
+        "how": "Biyometrik kilitli, cihazdan asla çıkmaz"
+      },
+      {
+        "what": "Kişileriniz ve geçmişiniz",
+        "where": "Onları alan cihaz",
+        "how": "Asla eşitlenmez, hiçbir yere yüklenmez"
+      },
+      {
+        "what": "Kimliğiniz",
+        "where": "Sizde duran bir hesap ifadesi",
+        "how": "Cihazınızdaki şifreleme anahtarları - telefon yok, e-posta yok"
+      },
+      {
+        "what": "\"PrivaMesh sunucusu\"",
+        "where": "Yok",
+        "how": "Hesap sunucusu yok; aktarım herkese açık ve değiştirilebilir"
+      }
+    ],
+    "more": "Sunucusuz mimari nasıl çalışır →"
+  },
+  "lifecycle": {
+    "title": "Bir mesaj, üç adım",
+    "lead": "Gönder → Aktar → Al. Arada bir kutu yok, başkasının bilgisayarında gelen kutusu yok.",
+    "steps": [
+      {
+        "label": "Gönder",
+        "body": "Mesajınız sabit bir boyuta tamamlanır ve yeni bir Double Ratchet anahtarıyla AES-256-GCM ile mühürlenir - cihazınızda, daha cihazdan çıkmadan."
+      },
+      {
+        "label": "Aktar",
+        "body": "Şifreli blok, herkese açık ve merkeziyetsiz bir aktarım üzerinden tek kullanımlık bir adrese gider. Hiçbir hesap sunucusu onu tutmaz."
+      },
+      {
+        "label": "Al",
+        "body": "Cihazınız onu alır, yalnızca sizde olan anahtarlarla yerel olarak çözer ve ratchet'i ilerletir. Onu yalnızca sizin cihazınız okuyabilir."
+      }
+    ]
+  },
+  "metadata": {
+    "title": "Kimi gizle. Ne zamanı gizle. Nasılı gizle.",
+    "lead": "Şifreleme mesajı gizler. PrivaMesh ayrıca meta verileri de gizler - bir sunucunun aksi halde göreceği kim, ne zaman ve nasıl bilgilerini.",
+    "more": "Daha fazla bilgi",
+    "cards": [
+      {
+        "title": "Tek kullanımlık adresler",
+        "body": "Her mesaj yeni bir tek kullanımlık adrese teslim edilir, böylece bir gözlemci kimin kiminle konuştuğunu yeniden kuramaz. Sosyal grafik gizli kalır."
+      },
+      {
+        "title": "Örtü trafiği",
+        "body": "Sahte mesajlar gerçeklerine karışır, böylece bir gözlemci gerçekten ne zaman gönderdiğinizi anlayamaz. Zamanlama analizinin elinde bir şey kalmaz."
+      },
+      {
+        "title": "Sabit boyuta tamamlama",
+        "body": "Her mesaj mühürlenmeden önce sabit bir boyuta tamamlanır, böylece uzunluğu içerik hakkında hiçbir şey sızdırmaz."
+      }
+    ]
+  },
+  "crypto": {
+    "eyebrow": "Kriptografi",
+    "title": "Uçtan uca şifreleme, doğru yapılmış hali",
+    "lead": "PrivaMesh, en iyi şifreli mesajlaşma uygulamalarını koruyan, zamanla sınanmış aynı yapı taşlarını sunucusuz bir dünyaya uyarlayarak kullanır. Her mesaj yeni bir anahtar alır, böylece ele geçirilmiş bir anahtar geçmiş ya da gelecek konuşmalarınızı açamaz.",
+    "more": "Şifrelemenin sade dille açıklaması →",
+    "rows": [
+      "Curve25519 üzerinde bir el sıkışma, güvenilir bir anahtar sunucusu olmadan ortak bir sır oluşturur.",
+      "HKDF + HMAC-SHA256 her mesajda anahtarı değiştirir - ileri gizlilik ve ele geçirme sonrası güvenlik.",
+      "Kimlik doğrulamalı şifreleme, uzunluğu gizlemek için sabit boyuta tamamlanan her mesajı mühürler."
+    ]
+  },
+  "gallery": {
+    "title": "iPhone'unuzda görün",
+    "lead": "Premium bir sohbet uygulaması gibi görünen ve hissettiren, ama altında hiçbir gözetim olmayan özel bir mesajlaşma uygulaması.",
+    "shots": [
+      {
+        "title": "Varsayılan olarak gizlilik",
+        "alt": "PrivaMesh tanıtım ekranı - varsayılan olarak gizlilik, mesaj başına bir Double Ratchet anahtarı ve tek kullanımlık adresler, iPhone'da"
+      },
+      {
+        "title": "Uçtan uca şifreli sohbet",
+        "alt": "Özel bir konuşmayı gösteren PrivaMesh şifreli sohbet ekranı, uçtan uca şifreli, iPhone'da"
+      },
+      {
+        "title": "Sohbetleriniz",
+        "alt": "İsimler ve takma adlarla PrivaMesh sohbet listesi, telefon numarası yok, iPhone'da"
+      },
+      {
+        "title": "Sunucu yok, gerçekten",
+        "alt": "Merkezi bir sunucu olmadığını anlatan PrivaMesh tanıtım ekranı - hacklenecek ya da baskı yapılacak bir şey yok, iPhone'da"
+      },
+      {
+        "title": "Cihazda güvenlik",
+        "alt": "PrivaMesh tanıtım ekranı - Face ID arkasında anahtarlar, kaybolan mesajlar ve imzalı kişiler, iPhone'da"
+      },
+      {
+        "title": "Özel bir sosyal grafik",
+        "alt": "Bağlantılarınızı gizlice gösteren anonim PrivaMesh kişi grafiği, telefon numarası yok, iPhone'da"
+      }
+    ]
+  },
+  "compare": {
+    "title": "PrivaMesh ve bildiğiniz mesajlaşma uygulamaları",
+    "lead": "Signal mükemmel. Telegram popüler. İkisi de sunucusuz değil. İşte kısa hali.",
+    "feature": "Özellik",
+    "rows": [
+      "Sunucu yok",
+      "Telefon numarası yok",
+      "Meta veri koruması",
+      "Uçtan uca şifreli",
+      "Açık kaynak"
+    ],
+    "vsSignal": "PrivaMesh ve Signal →",
+    "vsTelegram": "PrivaMesh ve Telegram →",
+    "vsSession": "PrivaMesh ve Session →",
+    "best": "2026'nın en iyi özel mesajlaşma uygulamaları →"
+  },
+  "faq": [
+    {
+      "q": "PrivaMesh gerçekten sunucusuz mu?",
+      "a": "Evet. PrivaMesh'in hesap sunucusu, aktarıcısı ya da mesaj veritabanı yok. Şifreli mesajlar herkese açık, merkeziyetsiz bir aktarım üzerinden gider; dolayısıyla hacklenecek, mahkeme kararıyla istenecek, kaydedilecek ya da kapatılacak merkezi bir şey yoktur."
+    },
+    {
+      "q": "PrivaMesh nasıl şifreleniyor?",
+      "a": "PrivaMesh anahtarları Curve25519 üzerinde bir X3DH el sıkışmasıyla kurar, ardından bir Double Ratchet (HKDF ve HMAC-SHA256) her mesaja yeni bir anahtar verir. İçerik AES-256-GCM ile mühürlenir ve sabit bir boyuta tamamlanır. İleri gizlilik ve ele geçirme sonrası güvenlik varsayılandır."
+    },
+    {
+      "q": "PrivaMesh'i telefon numarası veya e-posta olmadan kullanabilir miyim?",
+      "a": "Evet. Telefon numarası yok, e-posta yok. Hesabınız, iOS Anahtar Zinciri'nde saklanan anahtarların türetildiği bir hesap ifadesidir - yalnızca cihazda ve Face ID ya da Touch ID ile korunur."
+    },
+    {
+      "q": "PrivaMesh hangi meta verileri topluyor?",
+      "a": "Hiçbir sunucuda hiçbirini, çünkü sunucu yok. Tek kullanımlık adreslere teslimat sosyal grafiği, örtü trafiği ne zaman gönderdiğinizi, sabit boyuta tamamlama ise mesaj uzunluğunu gizler."
+    },
+    {
+      "q": "Telefonumu kaybedersem ne olur?",
+      "a": "Kimliğinizi geri almak için hesap ifadenizi yeni bir cihazda geri yükleyin. Sohbet geçmişiniz bilerek geri gelmez: ileri gizlilik, eski mesaj anahtarlarının silindiği anlamına gelir; dolayısıyla siz dahil hiç kimse geçmiş mesajları yalnızca ifadeyle çözemez."
+    }
+  ],
+  "cta": {
+    "title": "Konuşmalarınızı şirketlere emanet etmeyi bırakın",
+    "lead": "PrivaMesh şirketin yerine matematiği, sunucunun yerine herkese açık ve merkeziyetsiz bir aktarımı koyar. Anahtarlarınız, cihazınız, sözleriniz.",
+    "policy": "Gizlilik Politikasını okuyun"
+  }
+}

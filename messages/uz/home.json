@@ -1,0 +1,186 @@
+{
+  "meta": {
+    "title": "PrivaMesh - shifrlangan shaxsiy messenjer",
+    "description": "iPhone, Android va Windows uchun uchdan-uchgacha shifrlangan shaxsiy messenjer. Telefon raqami yo'q, pochta yo'q, akkaunt yo'q - kalitlaringiz va yozishmalaringiz qurilmangizni hech qachon tark etmaydi."
+  },
+  "hero": {
+    "badge": "Uchdan-uchgacha shifrlash · Telefon raqami yo'q",
+    "title": "Siz haqingizda hech narsa bilmaydigan {scramble} messenjer",
+    "scramble": "shaxsiy",
+    "lead": "Telefon raqamisiz va akkauntlar bazasisiz shaxsiy yozishmalar. Xabarlar qurilmangizda uchdan-uchgacha shifrlanadi va ochiq markazlashmagan transport orqali bir martalik manzillarga yetkaziladi. PrivaMesh metama'lumotlarni minimallashtirish uchun yaratilgan - ular yo'qdek ko'rsatish uchun emas.",
+    "cta": "PrivaMesh'ni yuklab olish",
+    "threatModel": "Tahdid modelini o'qish",
+    "architecture": "Arxitektura",
+    "limitations": "Ma'lum cheklovlar",
+    "security": "Xavfsizlik",
+    "source": "Manba kod",
+    "trust": [
+      "Telefon raqami yo'q",
+      "Serverlarsiz",
+      "Uchdan-uchgacha shifrlash"
+    ],
+    "phoneAlt": "iPhone'da PrivaMesh shaxsiy messenjerining tanishtiruv ekrani - sukut bo'yicha maxfiylik, uchdan-uchgacha shifrlash"
+  },
+  "noServers": {
+    "eyebrow": "Asosiy farq",
+    "title": "Serverlarsiz - aniq qilib",
+    "lead": "Ko'pchilik «shaxsiy» messenjerlar hamon kim bilan gaplashayotganingizni ko'radigan serverlar yuritadi. PrivaMesh'da ular yo'q. Ma'lumotlaringizning har bir qismi aynan qayerda turishi mana.",
+    "colWhat": "Nima",
+    "colWhere": "Qayerda turadi",
+    "colHow": "Qanday",
+    "rows": [
+      {
+        "what": "Xabarlaringiz",
+        "where": "Ochiq markazlashmagan transport",
+        "how": "Bir martalik manzillarga yo'naltirilgan shifrlangan bloklar"
+      },
+      {
+        "what": "Kiruvchi qutingiz",
+        "where": "Ochiq transportning o'zi",
+        "how": "Faqat qurilmangizda olinadi va shifri ochiladi"
+      },
+      {
+        "what": "Kalitlaringiz",
+        "where": "Faqat qurilmaning kalit ombori",
+        "how": "Biometriya bilan qulflangan, qurilmani hech qachon tark etmaydi"
+      },
+      {
+        "what": "Kontaktlar va tarix",
+        "where": "Ularni qabul qilgan qurilma",
+        "how": "Hech qachon sinxronlanmaydi va hech qayerga yuklanmaydi"
+      },
+      {
+        "what": "Shaxsingiz",
+        "where": "Sizda turgan akkaunt iborasi",
+        "how": "Qurilmadagi shifrlash kalitlari - telefon yo'q, pochta yo'q"
+      },
+      {
+        "what": "«PrivaMesh serveri»",
+        "where": "Mavjud emas",
+        "how": "Akkaunt serveri yo'q; transport ochiq va almashtiriladigan"
+      }
+    ],
+    "more": "Serverlarsiz arxitektura qanday ishlaydi →"
+  },
+  "lifecycle": {
+    "title": "Bitta xabar, uch qadam",
+    "lead": "Yuborish → Transport → Qabul qilish. Hech qanday vositachi yo'q, birovning kompyuterida kiruvchi quti yo'q.",
+    "steps": [
+      {
+        "label": "Yuborish",
+        "body": "Xabaringiz qat'iy o'lchamgacha to'ldiriladi va yangi Double Ratchet kaliti bilan AES-256-GCM orqali muhrlanadi - qurilmangizda, u hali chiqib ketmasdan."
+      },
+      {
+        "label": "Transport",
+        "body": "Shifrlangan blok ochiq markazlashmagan transport orqali bir martalik manzilga boradi. Uni hech bir akkaunt serveri saqlamaydi."
+      },
+      {
+        "label": "Qabul qilish",
+        "body": "Qurilmangiz uni oladi, faqat sizdagi kalitlar bilan mahalliy shifrini ochadi va ratchetni siljitadi. Uni faqat sizning qurilmangiz o'qiy oladi."
+      }
+    ]
+  },
+  "metadata": {
+    "title": "Kimni yashir. Qachonni yashir. Qandayni yashir.",
+    "lead": "Shifrlash xabarni yashiradi. PrivaMesh metama'lumotlarni ham yashiradi - aks holda server ko'radigan kim, qachon va qanday degan ma'lumotlarni.",
+    "more": "Batafsil",
+    "cards": [
+      {
+        "title": "Bir martalik manzillar",
+        "body": "Har bir xabar yangi bir martalik manzilga yetkaziladi, shuning uchun kuzatuvchi kim kim bilan gaplashayotganini tiklay olmaydi. Ijtimoiy graf yashirin qoladi."
+      },
+      {
+        "title": "Niqob trafigi",
+        "body": "Soxta xabarlar haqiqiylari bilan aralashadi, shuning uchun kuzatuvchi siz qachon haqiqatan yuborganingizni bila olmaydi. Vaqt tahlili tayanadigan narsa qolmaydi."
+      },
+      {
+        "title": "Qat'iy o'lchamgacha to'ldirish",
+        "body": "Har bir xabar muhrlanishidan oldin qat'iy o'lchamgacha to'ldiriladi, shuning uchun uning uzunligi mazmun haqida hech narsa aytmaydi."
+      }
+    ]
+  },
+  "crypto": {
+    "eyebrow": "Kriptografiya",
+    "title": "Uchdan-uchgacha shifrlash, to'g'ri qilingan",
+    "lead": "PrivaMesh eng yaxshi shifrlangan messenjerlarni himoya qiladigan, vaqt sinovidan o'tgan primitivlarni serverlarsiz dunyoga moslab ishlatadi. Har bir xabar yangi kalit oladi, shuning uchun qo'lga tushgan kalit o'tgan ham, kelgusi ham suhbatlaringizni ocholmaydi.",
+    "more": "Shifrlashning sodda tilda izohi →",
+    "rows": [
+      "Curve25519 dagi handshake ishonchli kalit serverisiz umumiy sir o'rnatadi.",
+      "HKDF + HMAC-SHA256 har bir xabarda kalitni almashtiradi - oldinga yo'naltirilgan maxfiylik va qo'lga tushgandan keyingi himoya.",
+      "Autentifikatsiyalangan shifrlash uzunlikni yashirish uchun qat'iy o'lchamgacha to'ldirilgan har bir xabarni muhrlaydi."
+    ]
+  },
+  "gallery": {
+    "title": "iPhone'da ko'ring",
+    "lead": "Premium chatdek ko'rinadigan va seziladigan, ammo ostida hech qanday kuzatuv yo'q shaxsiy messenjer.",
+    "shots": [
+      {
+        "title": "Sukut bo'yicha maxfiylik",
+        "alt": "PrivaMesh tanishtiruv ekrani - sukut bo'yicha maxfiylik, har bir xabar uchun Double Ratchet kaliti va bir martalik manzillar, iPhone'da"
+      },
+      {
+        "title": "Uchdan-uchgacha shifrlangan chat",
+        "alt": "Shaxsiy suhbatni ko'rsatuvchi PrivaMesh shifrlangan chat ekrani, uchdan-uchgacha shifrlangan, iPhone'da"
+      },
+      {
+        "title": "Chatlaringiz",
+        "alt": "Ismlar va taxalluslar bilan PrivaMesh chat ro'yxati, telefon raqamlarisiz, iPhone'da"
+      },
+      {
+        "title": "Serverlarsiz, jiddiy",
+        "alt": "Markaziy server yo'qligini tushuntiruvchi PrivaMesh tanishtiruv ekrani - buzadigan ham, bosim o'tkazadigan ham narsa yo'q, iPhone'da"
+      },
+      {
+        "title": "Qurilmadagi xavfsizlik",
+        "alt": "PrivaMesh tanishtiruv ekrani - Face ID ortidagi kalitlar, yo'qoladigan xabarlar va imzolangan kontaktlar, iPhone'da"
+      },
+      {
+        "title": "Shaxsiy ijtimoiy graf",
+        "alt": "Aloqalaringizni maxfiy ko'rsatuvchi PrivaMesh anonim kontakt grafi, telefon raqamlarisiz, iPhone'da"
+      }
+    ]
+  },
+  "compare": {
+    "title": "PrivaMesh va siz bilgan messenjerlar",
+    "lead": "Signal ajoyib. Telegram mashhur. Ikkalasi ham serverlarsiz emas. Mana qisqa varianti.",
+    "feature": "Imkoniyat",
+    "rows": [
+      "Serverlarsiz",
+      "Telefon raqami yo'q",
+      "Metama'lumotlarni himoyalash",
+      "Uchdan-uchgacha shifrlash",
+      "Ochiq kod"
+    ],
+    "vsSignal": "PrivaMesh va Signal →",
+    "vsTelegram": "PrivaMesh va Telegram →",
+    "vsSession": "PrivaMesh va Session →",
+    "best": "2026-yilning eng yaxshi shaxsiy messenjerlari →"
+  },
+  "faq": [
+    {
+      "q": "PrivaMesh haqiqatan serverlarsizmi?",
+      "a": "Ha. PrivaMesh'da akkaunt serveri, relay yoki xabarlar bazasi yo'q. Shifrlangan xabarlar ochiq markazlashmagan transport orqali o'tadi, shuning uchun buzish, sud orqali talab qilish, jurnalga yozish yoki o'chirish mumkin bo'lgan markaziy hech narsa yo'q."
+    },
+    {
+      "q": "PrivaMesh qanday shifrlanadi?",
+      "a": "PrivaMesh kalitlarni Curve25519 dagi X3DH handshake orqali o'rnatadi, so'ng Double Ratchet (HKDF va HMAC-SHA256) har bir xabarga yangi kalit beradi. Mazmun AES-256-GCM bilan muhrlanadi va qat'iy o'lchamgacha to'ldiriladi. Oldinga yo'naltirilgan maxfiylik va qo'lga tushgandan keyingi himoya sukut bo'yicha mavjud."
+    },
+    {
+      "q": "PrivaMesh'dan telefon raqami va pochtasiz foydalansa bo'ladimi?",
+      "a": "Ha. Telefon raqami ham, pochta ham yo'q. Akkauntingiz - iOS kalitlar to'plamida faqat qurilmada saqlanadigan va Face ID yoki Touch ID bilan himoyalangan kalitlar chiqariladigan akkaunt iborasi."
+    },
+    {
+      "q": "PrivaMesh qanday metama'lumotlar yig'adi?",
+      "a": "Hech bir serverda hech qanday, chunki server yo'q. Bir martalik manzillarga yetkazish ijtimoiy grafni, niqob trafigi qachon yuborganingizni, qat'iy o'lchamgacha to'ldirish esa xabar uzunligini yashiradi."
+    },
+    {
+      "q": "Telefonimni yo'qotsam nima bo'ladi?",
+      "a": "Akkaunt iborasini yangi qurilmada tiklasangiz, shaxsingiz qaytadi. Chat tarixi ataylab tiklanmaydi: oldinga yo'naltirilgan maxfiylik eski xabar kalitlari o'chirilganini anglatadi, shuning uchun hech kim, jumladan siz ham, o'tgan xabarlarni faqat ibora bilan ocholmaydi."
+    }
+  ],
+  "cta": {
+    "title": "Suhbatlaringizni kompaniyalarga ishonib topshirishni bas qiling",
+    "lead": "PrivaMesh kompaniyani matematika bilan, serverni esa ochiq markazlashmagan transport bilan almashtiradi. Sizning kalitlaringiz, qurilmangiz, so'zlaringiz.",
+    "policy": "Maxfiylik siyosatini o'qish"
+  }
+}

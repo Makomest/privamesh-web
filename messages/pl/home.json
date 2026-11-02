@@ -1,0 +1,186 @@
+{
+  "meta": {
+    "title": "PrivaMesh - prywatny szyfrowany komunikator",
+    "description": "Prywatny komunikator z szyfrowaniem end-to-end na iPhone'a, Androida i Windows. Bez numeru telefonu, bez e-maila, bez konta - twoje klucze i rozmowy nigdy nie opuszczają urządzenia."
+  },
+  "hero": {
+    "badge": "Szyfrowanie end-to-end · Bez numeru telefonu",
+    "title": "{scramble} komunikator, który nic o tobie nie wie",
+    "scramble": "Prywatny",
+    "lead": "Prywatne wiadomości bez numeru telefonu i bez bazy kont. Wiadomości są szyfrowane end-to-end na twoim urządzeniu i dostarczane na jednorazowe adresy przez publiczny, zdecentralizowany transport. PrivaMesh powstał, by ograniczać metadane do minimum - a nie udawać, że ich nie ma.",
+    "cta": "Pobierz PrivaMesh",
+    "threatModel": "Przeczytaj model zagrożeń",
+    "architecture": "Architektura",
+    "limitations": "Znane ograniczenia",
+    "security": "Bezpieczeństwo",
+    "source": "Kod źródłowy",
+    "trust": [
+      "Bez numeru telefonu",
+      "Bez serwerów",
+      "Szyfrowanie end-to-end"
+    ],
+    "phoneAlt": "Ekran powitalny prywatnego komunikatora PrivaMesh na iPhonie - prywatność domyślnie, szyfrowanie end-to-end"
+  },
+  "noServers": {
+    "eyebrow": "Co nas wyróżnia",
+    "title": "Bez serwerów - konkretnie",
+    "lead": "Większość „prywatnych” komunikatorów wciąż utrzymuje serwery, które widzą, z kim rozmawiasz. PrivaMesh nie ma żadnego. Oto dokładnie, gdzie znajduje się każdy fragment twoich danych.",
+    "colWhat": "Co",
+    "colWhere": "Gdzie się znajduje",
+    "colHow": "Jak",
+    "rows": [
+      {
+        "what": "Twoje wiadomości",
+        "where": "Publiczny, zdecentralizowany transport",
+        "how": "Zaszyfrowane bloki adresowane na jednorazowe adresy"
+      },
+      {
+        "what": "Twoja skrzynka",
+        "where": "Sam publiczny transport",
+        "how": "Pobierana i odszyfrowywana tylko na twoim urządzeniu"
+      },
+      {
+        "what": "Twoje klucze",
+        "where": "Tylko magazyn kluczy urządzenia",
+        "how": "Chronione biometrią, nigdy nie opuszczają urządzenia"
+      },
+      {
+        "what": "Kontakty i historia",
+        "where": "Urządzenie, które je odebrało",
+        "how": "Nigdy nie synchronizowane, nigdzie nie wysyłane"
+      },
+      {
+        "what": "Twoja tożsamość",
+        "where": "Fraza konta, którą masz ty",
+        "how": "Klucze szyfrowania na urządzeniu - bez telefonu, bez e-maila"
+      },
+      {
+        "what": "„Serwer PrivaMesh”",
+        "where": "Nie istnieje",
+        "how": "Brak serwera kont; transport jest publiczny i wymienny"
+      }
+    ],
+    "more": "Jak działa architektura bez serwerów →"
+  },
+  "lifecycle": {
+    "title": "Jedna wiadomość, trzy kroki",
+    "lead": "Wysłanie → Transport → Odbiór. Bez pośrednika, bez skrzynki na cudzym komputerze.",
+    "steps": [
+      {
+        "label": "Wysłanie",
+        "body": "Wiadomość jest dopełniana do stałego rozmiaru i pieczętowana AES-256-GCM nowym kluczem Double Ratchet - na twoim urządzeniu, zanim w ogóle je opuści."
+      },
+      {
+        "label": "Transport",
+        "body": "Zaszyfrowany blok wędruje publicznym, zdecentralizowanym transportem na jednorazowy adres. Żaden serwer kont go nie przechowuje."
+      },
+      {
+        "label": "Odbiór",
+        "body": "Twoje urządzenie pobiera go i odszyfrowuje lokalnie kluczami, które masz tylko ty, a potem przesuwa ratchet. Przeczytać go może tylko twoje urządzenie."
+      }
+    ]
+  },
+  "metadata": {
+    "title": "Ukryj kto. Ukryj kiedy. Ukryj jak.",
+    "lead": "Szyfrowanie ukrywa wiadomość. PrivaMesh ukrywa też metadane - kto, kiedy i jak, co inaczej widziałby serwer.",
+    "more": "Dowiedz się więcej",
+    "cards": [
+      {
+        "title": "Jednorazowe adresy",
+        "body": "Każda wiadomość trafia na nowy jednorazowy adres, więc obserwator nie odtworzy, kto z kim rozmawia. Graf społeczny pozostaje ukryty."
+      },
+      {
+        "title": "Ruch maskujący",
+        "body": "Wiadomości-wabiki mieszają się z prawdziwymi, więc obserwator nie wie, kiedy naprawdę coś wysyłasz. Analiza czasu nie ma się czego uchwycić."
+      },
+      {
+        "title": "Dopełnianie do stałego rozmiaru",
+        "body": "Każda wiadomość przed zapieczętowaniem jest dopełniana do stałego rozmiaru, więc jej długość nic nie mówi o treści."
+      }
+    ]
+  },
+  "crypto": {
+    "eyebrow": "Kryptografia",
+    "title": "Szyfrowanie end-to-end zrobione porządnie",
+    "lead": "PrivaMesh korzysta z tych samych sprawdzonych prymitywów, które chronią najlepsze szyfrowane komunikatory, dostosowanych do świata bez serwerów. Każda wiadomość dostaje nowy klucz, więc przejęty klucz nie otworzy ani przeszłych, ani przyszłych rozmów.",
+    "more": "Szyfrowanie wyjaśnione prostym językiem →",
+    "rows": [
+      "Uzgadnianie na Curve25519 tworzy wspólny sekret bez zaufanego serwera kluczy.",
+      "HKDF + HMAC-SHA256 zmieniają klucz przy każdej wiadomości - utajnianie z wyprzedzeniem i ochrona po kompromitacji.",
+      "Uwierzytelnione szyfrowanie pieczętuje każdą wiadomość dopełnioną do stałego rozmiaru, by ukryć jej długość."
+    ]
+  },
+  "gallery": {
+    "title": "Zobacz na iPhonie",
+    "lead": "Prywatny komunikator, który wygląda i działa jak czat premium - bez żadnej inwigilacji pod spodem.",
+    "shots": [
+      {
+        "title": "Prywatność domyślnie",
+        "alt": "Ekran powitalny PrivaMesh - prywatność domyślnie, klucz Double Ratchet dla każdej wiadomości i jednorazowe adresy, na iPhonie"
+      },
+      {
+        "title": "Czat z szyfrowaniem end-to-end",
+        "alt": "Ekran zaszyfrowanego czatu PrivaMesh z prywatną rozmową, szyfrowanie end-to-end, na iPhonie"
+      },
+      {
+        "title": "Twoje czaty",
+        "alt": "Lista czatów PrivaMesh z imionami i pseudonimami, bez numerów telefonów, na iPhonie"
+      },
+      {
+        "title": "Bez serwerów, naprawdę",
+        "alt": "Ekran powitalny PrivaMesh wyjaśniający, że nie ma serwera centralnego - nie ma czego włamać ani na kogo naciskać, na iPhonie"
+      },
+      {
+        "title": "Bezpieczeństwo na urządzeniu",
+        "alt": "Ekran powitalny PrivaMesh - klucze za Face ID, znikające wiadomości i podpisane kontakty, na iPhonie"
+      },
+      {
+        "title": "Prywatny graf społeczny",
+        "alt": "Anonimowy graf kontaktów PrivaMesh pokazujący twoje powiązania prywatnie, bez numerów telefonów, na iPhonie"
+      }
+    ]
+  },
+  "compare": {
+    "title": "PrivaMesh a znane ci komunikatory",
+    "lead": "Signal jest świetny. Telegram jest popularny. Żaden nie działa bez serwerów. Oto krótka wersja.",
+    "feature": "Funkcja",
+    "rows": [
+      "Bez serwerów",
+      "Bez numeru telefonu",
+      "Ochrona metadanych",
+      "Szyfrowanie end-to-end",
+      "Otwarty kod"
+    ],
+    "vsSignal": "PrivaMesh vs Signal →",
+    "vsTelegram": "PrivaMesh vs Telegram →",
+    "vsSession": "PrivaMesh vs Session →",
+    "best": "Najlepsze prywatne komunikatory 2026 →"
+  },
+  "faq": [
+    {
+      "q": "Czy PrivaMesh naprawdę działa bez serwerów?",
+      "a": "Tak. PrivaMesh nie ma serwera kont, przekaźnika ani bazy wiadomości. Zaszyfrowane wiadomości wędrują publicznym, zdecentralizowanym transportem, więc nie ma nic centralnego, co dałoby się włamać, zażądać nakazem, rejestrować lub wyłączyć."
+    },
+    {
+      "q": "Jak PrivaMesh szyfruje?",
+      "a": "PrivaMesh ustala klucze uzgadnianiem X3DH na Curve25519, a potem Double Ratchet (HKDF i HMAC-SHA256) daje każdej wiadomości nowy klucz. Treść jest pieczętowana AES-256-GCM i dopełniana do stałego rozmiaru. Utajnianie z wyprzedzeniem i ochrona po kompromitacji są domyślne."
+    },
+    {
+      "q": "Czy mogę używać PrivaMesh bez numeru telefonu i e-maila?",
+      "a": "Tak. Bez numeru telefonu, bez e-maila. Twoje konto to fraza konta, z której wyprowadzane są klucze przechowywane w pęku kluczy iOS - tylko na urządzeniu i chronione Face ID lub Touch ID."
+    },
+    {
+      "q": "Jakie metadane zbiera PrivaMesh?",
+      "a": "Żadnych na żadnym serwerze, bo serwera nie ma. Dostarczanie na jednorazowe adresy ukrywa graf społeczny, ruch maskujący ukrywa, kiedy wysyłasz, a dopełnianie do stałego rozmiaru ukrywa długość wiadomości."
+    },
+    {
+      "q": "Co się stanie, gdy zgubię telefon?",
+      "a": "Przywróć frazę konta na nowym urządzeniu, a twoja tożsamość wróci. Historia czatów celowo nie wraca: utajnianie z wyprzedzeniem oznacza, że stare klucze wiadomości zostały usunięte, więc nikt, nawet ty, nie odszyfruje dawnych wiadomości samą frazą."
+    }
+  ],
+  "cta": {
+    "title": "Przestań powierzać swoje rozmowy firmom",
+    "lead": "PrivaMesh zastępuje firmę matematyką, a serwer publicznym, zdecentralizowanym transportem. Twoje klucze, twoje urządzenie, twoje słowa.",
+    "policy": "Przeczytaj politykę prywatności"
+  }
+}

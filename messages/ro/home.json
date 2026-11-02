@@ -1,0 +1,186 @@
+{
+  "meta": {
+    "title": "PrivaMesh - mesagerie privată criptată",
+    "description": "Mesagerie privată cu criptare end-to-end pentru iPhone, Android și Windows. Fără număr de telefon, fără e-mail, fără cont - cheile și conversațiile tale nu părăsesc niciodată dispozitivul."
+  },
+  "hero": {
+    "badge": "Criptare end-to-end · Fără număr de telefon",
+    "title": "Mesageria {scramble} care nu știe nimic despre tine",
+    "scramble": "privată",
+    "lead": "Mesagerie privată fără număr de telefon și fără bază de date cu conturi. Mesajele sunt criptate end-to-end pe dispozitivul tău și livrate la adrese de unică folosință printr-un transport public și descentralizat. PrivaMesh este construit să reducă metadatele la minimum - nu să pretindă că nu există.",
+    "cta": "Descarcă PrivaMesh",
+    "threatModel": "Citește modelul de amenințări",
+    "architecture": "Arhitectură",
+    "limitations": "Limitări cunoscute",
+    "security": "Securitate",
+    "source": "Cod sursă",
+    "trust": [
+      "Fără număr de telefon",
+      "Fără servere",
+      "Criptare end-to-end"
+    ],
+    "phoneAlt": "Ecranul de început al mesageriei private PrivaMesh pe iPhone - confidențialitate implicită, criptare end-to-end"
+  },
+  "noServers": {
+    "eyebrow": "Diferența",
+    "title": "Fără servere - concret",
+    "lead": "Majoritatea mesageriilor „private” încă rulează servere care văd cu cine vorbești. PrivaMesh nu are niciunul. Iată exact unde se află fiecare parte din datele tale.",
+    "colWhat": "Ce",
+    "colWhere": "Unde se află",
+    "colHow": "Cum",
+    "rows": [
+      {
+        "what": "Mesajele tale",
+        "where": "Un transport public și descentralizat",
+        "how": "Blocuri criptate, adresate unor adrese de unică folosință"
+      },
+      {
+        "what": "Căsuța ta de mesaje",
+        "where": "Transportul public însuși",
+        "how": "Preluată și decriptată doar pe dispozitivul tău"
+      },
+      {
+        "what": "Cheile tale",
+        "where": "Doar depozitul de chei al dispozitivului",
+        "how": "Blocate biometric, nu părăsesc niciodată dispozitivul"
+      },
+      {
+        "what": "Contactele și istoricul",
+        "where": "Dispozitivul care le-a primit",
+        "how": "Niciodată sincronizate, niciodată încărcate nicăieri"
+      },
+      {
+        "what": "Identitatea ta",
+        "where": "O frază a contului pe care o păstrezi tu",
+        "how": "Chei de criptare pe dispozitiv - fără telefon, fără e-mail"
+      },
+      {
+        "what": "„Serverul PrivaMesh”",
+        "where": "Nu există",
+        "how": "Niciun server de conturi; transportul e public și înlocuibil"
+      }
+    ],
+    "more": "Cum funcționează arhitectura fără servere →"
+  },
+  "lifecycle": {
+    "title": "Un mesaj, trei pași",
+    "lead": "Trimitere → Transport → Primire. Fără intermediar, fără căsuță de mesaje pe calculatorul altcuiva.",
+    "steps": [
+      {
+        "label": "Trimitere",
+        "body": "Mesajul este completat până la o dimensiune fixă și sigilat cu AES-256-GCM sub o cheie Double Ratchet nouă - pe dispozitivul tău, înainte să plece."
+      },
+      {
+        "label": "Transport",
+        "body": "Blocul criptat circulă printr-un transport public și descentralizat către o adresă de unică folosință. Niciun server de conturi nu îl păstrează vreodată."
+      },
+      {
+        "label": "Primire",
+        "body": "Dispozitivul tău îl preia și îl decriptează local cu chei pe care le ai doar tu, apoi avansează ratchet-ul. Doar dispozitivul tău îl poate citi."
+      }
+    ]
+  },
+  "metadata": {
+    "title": "Ascunde cine. Ascunde când. Ascunde cum.",
+    "lead": "Criptarea ascunde mesajul. PrivaMesh ascunde și metadatele - cine, când și cum, pe care altfel le-ar vedea un server.",
+    "more": "Află mai multe",
+    "cards": [
+      {
+        "title": "Adrese de unică folosință",
+        "body": "Fiecare mesaj e livrat la o adresă nouă de unică folosință, așa că un observator nu poate reconstitui cine vorbește cu cine. Graful social rămâne ascuns."
+      },
+      {
+        "title": "Trafic de acoperire",
+        "body": "Mesaje-momeală se amestecă cu cele reale, așa că un observator nu poate ști când trimiți cu adevărat. Analiza temporală nu are de ce să se agațe."
+      },
+      {
+        "title": "Completare la dimensiune fixă",
+        "body": "Fiecare mesaj e completat până la o dimensiune fixă înainte de sigilare, așa că lungimea lui nu dezvăluie nimic din conținut."
+      }
+    ]
+  },
+  "crypto": {
+    "eyebrow": "Criptografia",
+    "title": "Criptare end-to-end, făcută cum trebuie",
+    "lead": "PrivaMesh folosește aceleași primitive verificate în timp care protejează cele mai bune mesagerii criptate, adaptate unei lumi fără servere. Fiecare mesaj primește o cheie nouă, așa că o cheie compromisă nu-ți poate deschide nici conversațiile trecute, nici pe cele viitoare.",
+    "more": "Criptarea explicată pe înțelesul tuturor →",
+    "rows": [
+      "Un handshake pe Curve25519 stabilește un secret comun fără un server de chei de încredere.",
+      "HKDF + HMAC-SHA256 schimbă cheia la fiecare mesaj - confidențialitate persistentă și securitate după compromitere.",
+      "Criptarea autentificată sigilează fiecare mesaj, completat la o dimensiune fixă ca să-i ascundă lungimea."
+    ]
+  },
+  "gallery": {
+    "title": "Vezi-o pe iPhone-ul tău",
+    "lead": "O aplicație de mesagerie privată care arată și se simte ca un chat premium - fără nicio supraveghere dedesubt.",
+    "shots": [
+      {
+        "title": "Confidențialitate implicită",
+        "alt": "Ecran de început PrivaMesh - confidențialitate implicită, o cheie Double Ratchet per mesaj și adrese de unică folosință, pe iPhone"
+      },
+      {
+        "title": "Chat criptat end-to-end",
+        "alt": "Ecranul de chat criptat PrivaMesh cu o conversație privată, criptată end-to-end, pe iPhone"
+      },
+      {
+        "title": "Conversațiile tale",
+        "alt": "Lista de conversații PrivaMesh cu nume și pseudonime, fără numere de telefon, pe iPhone"
+      },
+      {
+        "title": "Fără servere, serios",
+        "alt": "Ecran de început PrivaMesh care explică faptul că nu există server central - nimic de spart sau de constrâns, pe iPhone"
+      },
+      {
+        "title": "Securitate pe dispozitiv",
+        "alt": "Ecran de început PrivaMesh - chei în spatele Face ID, mesaje care dispar și contacte semnate, pe iPhone"
+      },
+      {
+        "title": "Un graf social privat",
+        "alt": "Graful anonim de contacte PrivaMesh care îți arată conexiunile în mod privat, fără numere de telefon, pe iPhone"
+      }
+    ]
+  },
+  "compare": {
+    "title": "PrivaMesh vs mesageriile pe care le știi",
+    "lead": "Signal e excelent. Telegram e popular. Niciunul nu funcționează fără servere. Iată varianta scurtă.",
+    "feature": "Funcție",
+    "rows": [
+      "Fără servere",
+      "Fără număr de telefon",
+      "Protecția metadatelor",
+      "Criptare end-to-end",
+      "Open source"
+    ],
+    "vsSignal": "PrivaMesh vs Signal →",
+    "vsTelegram": "PrivaMesh vs Telegram →",
+    "vsSession": "PrivaMesh vs Session →",
+    "best": "Cele mai bune mesagerii private 2026 →"
+  },
+  "faq": [
+    {
+      "q": "PrivaMesh chiar funcționează fără servere?",
+      "a": "Da. PrivaMesh nu are server de conturi, releu sau bază de date cu mesaje. Mesajele criptate circulă printr-un transport public și descentralizat, așa că nu există nimic central de spart, de cerut prin mandat, de înregistrat sau de oprit."
+    },
+    {
+      "q": "Cum criptează PrivaMesh?",
+      "a": "PrivaMesh stabilește cheile printr-un handshake X3DH pe Curve25519, apoi un Double Ratchet (HKDF și HMAC-SHA256) dă fiecărui mesaj o cheie nouă. Conținutul e sigilat cu AES-256-GCM și completat la o dimensiune fixă. Confidențialitatea persistentă și securitatea după compromitere sunt implicite."
+    },
+    {
+      "q": "Pot folosi PrivaMesh fără număr de telefon sau e-mail?",
+      "a": "Da. Fără număr de telefon, fără e-mail. Contul tău e o frază a contului din care derivă chei păstrate în Keychain-ul iOS - doar pe dispozitiv și protejate de Face ID sau Touch ID."
+    },
+    {
+      "q": "Ce metadate colectează PrivaMesh?",
+      "a": "Niciuna pe vreun server, pentru că nu există server. Livrarea la adrese de unică folosință ascunde graful social, traficul de acoperire ascunde când trimiți, iar completarea la dimensiune fixă ascunde lungimea mesajului."
+    },
+    {
+      "q": "Ce se întâmplă dacă îmi pierd telefonul?",
+      "a": "Restaurează fraza contului pe un dispozitiv nou ca să-ți recuperezi identitatea. Prin design, istoricul nu se recuperează: confidențialitatea persistentă înseamnă că vechile chei ale mesajelor au fost șterse, așa că nimeni, nici măcar tu, nu poate decripta mesajele trecute doar cu fraza."
+    }
+  ],
+  "cta": {
+    "title": "Nu mai încredința conversațiile tale companiilor",
+    "lead": "PrivaMesh înlocuiește compania cu matematica și serverul cu un transport public și descentralizat. Cheile tale, dispozitivul tău, cuvintele tale.",
+    "policy": "Citește Politica de confidențialitate"
+  }
+}

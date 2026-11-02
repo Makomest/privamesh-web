@@ -1,0 +1,186 @@
+{
+  "meta": {
+    "title": "PrivaMesh - privat krypterad meddelandeapp",
+    "description": "Privat meddelandeapp med end-to-end-kryptering för iPhone, Android och Windows. Inget telefonnummer, ingen e-post, inget konto - dina nycklar och chattar lämnar aldrig din enhet."
+  },
+  "hero": {
+    "badge": "End-to-end-krypterad · Inget telefonnummer",
+    "title": "Den {scramble} meddelandeappen som inte vet något om dig",
+    "scramble": "privata",
+    "lead": "Privata meddelanden utan telefonnummer och utan kontodatabas. Meddelanden krypteras end-to-end på din enhet och levereras till engångsadresser via en öppen, decentraliserad transport. PrivaMesh är byggd för att minimera metadata - inte för att låtsas att de inte finns.",
+    "cta": "Hämta PrivaMesh",
+    "threatModel": "Läs hotmodellen",
+    "architecture": "Arkitektur",
+    "limitations": "Kända begränsningar",
+    "security": "Säkerhet",
+    "source": "Källkod",
+    "trust": [
+      "Inget telefonnummer",
+      "Inga servrar",
+      "End-to-end-krypterad"
+    ],
+    "phoneAlt": "Introduktion till den privata meddelandeappen PrivaMesh på iPhone - integritet som standard, end-to-end-krypterad"
+  },
+  "noServers": {
+    "eyebrow": "Det som skiljer",
+    "title": "Inga servrar - konkret",
+    "lead": "De flesta ”privata” meddelandeappar kör fortfarande servrar som ser vem du pratar med. PrivaMesh har inga. Så här ser det exakt ut var varje del av dina data finns.",
+    "colWhat": "Vad",
+    "colWhere": "Var det finns",
+    "colHow": "Hur",
+    "rows": [
+      {
+        "what": "Dina meddelanden",
+        "where": "En öppen, decentraliserad transport",
+        "how": "Krypterade block, adresserade till engångsadresser"
+      },
+      {
+        "what": "Din inkorg",
+        "where": "Själva den öppna transporten",
+        "how": "Hämtas och dekrypteras bara på din enhet"
+      },
+      {
+        "what": "Dina nycklar",
+        "where": "Bara enhetens nyckellager",
+        "how": "Låsta med biometri, lämnar aldrig enheten"
+      },
+      {
+        "what": "Dina kontakter och din historik",
+        "where": "Enheten som tog emot dem",
+        "how": "Synkas aldrig, laddas aldrig upp någonstans"
+      },
+      {
+        "what": "Din identitet",
+        "where": "En kontofras som du har",
+        "how": "Krypteringsnycklar på din enhet - inget telefonnummer, ingen e-post"
+      },
+      {
+        "what": "”PrivaMesh-servern”",
+        "where": "Finns inte",
+        "how": "Ingen kontoserver; transporten är öppen och utbytbar"
+      }
+    ],
+    "more": "Så fungerar den serverlösa arkitekturen →"
+  },
+  "lifecycle": {
+    "title": "Ett meddelande, tre steg",
+    "lead": "Skicka → Transport → Ta emot. Ingen mellanhand, ingen inkorg på någon annans dator.",
+    "steps": [
+      {
+        "label": "Skicka",
+        "body": "Meddelandet fylls ut till en fast storlek och förseglas med AES-256-GCM under en ny Double Ratchet-nyckel - på din enhet, innan det lämnar den."
+      },
+      {
+        "label": "Transport",
+        "body": "Det krypterade blocket färdas via en öppen, decentraliserad transport till en engångsadress. Ingen kontoserver håller det någonsin."
+      },
+      {
+        "label": "Ta emot",
+        "body": "Din enhet hämtar och dekrypterar det lokalt med nycklar som bara du har och flyttar fram ratcheten. Bara din enhet kan läsa det."
+      }
+    ]
+  },
+  "metadata": {
+    "title": "Dölj vem. Dölj när. Dölj hur.",
+    "lead": "Kryptering döljer meddelandet. PrivaMesh döljer också metadata - vem, när och hur som en server annars skulle se.",
+    "more": "Läs mer",
+    "cards": [
+      {
+        "title": "Engångsadresser",
+        "body": "Varje meddelande levereras till en ny engångsadress, så en observatör kan inte rekonstruera vem som pratar med vem. Den sociala grafen förblir dold."
+      },
+      {
+        "title": "Täcktrafik",
+        "body": "Lockmeddelanden blandas med riktiga så att en observatör inte kan avgöra när du faktiskt skickar. Tidsanalysen har inget att arbeta med."
+      },
+      {
+        "title": "Utfyllnad till fast storlek",
+        "body": "Varje meddelande fylls ut till en fast storlek innan det förseglas, så längden avslöjar inget om innehållet."
+      }
+    ]
+  },
+  "crypto": {
+    "eyebrow": "Kryptografin",
+    "title": "End-to-end-kryptering, rätt gjord",
+    "lead": "PrivaMesh använder samma beprövade byggstenar som skyddar de bästa krypterade meddelandeapparna, anpassade till en värld utan servrar. Varje meddelande får en ny nyckel, så en komprometterad nyckel kan inte låsa upp dina tidigare eller framtida samtal.",
+    "more": "Krypteringen förklarad på vanlig svenska →",
+    "rows": [
+      "Ett handslag på Curve25519 skapar en delad hemlighet utan en betrodd nyckelserver.",
+      "HKDF + HMAC-SHA256 byter nyckel vid varje meddelande - framåtsekretess och skydd efter intrång.",
+      "Autentiserad kryptering förseglar varje meddelande, utfyllt till en fast storlek för att dölja längden."
+    ]
+  },
+  "gallery": {
+    "title": "Se den på din iPhone",
+    "lead": "En privat meddelandeapp som ser ut och känns som en premiumchatt - utan någon övervakning under ytan.",
+    "shots": [
+      {
+        "title": "Integritet som standard",
+        "alt": "PrivaMesh-introduktion - integritet som standard, en Double Ratchet-nyckel per meddelande och engångsadresser, på iPhone"
+      },
+      {
+        "title": "End-to-end-krypterad chatt",
+        "alt": "Krypterad chatt i PrivaMesh med ett privat samtal, end-to-end-krypterat, på iPhone"
+      },
+      {
+        "title": "Dina chattar",
+        "alt": "Chattlista i PrivaMesh med namn och smeknamn, utan telefonnummer, på iPhone"
+      },
+      {
+        "title": "Inga servrar, på riktigt",
+        "alt": "PrivaMesh-introduktion som förklarar att det inte finns någon central server - inget att hacka eller tvinga, på iPhone"
+      },
+      {
+        "title": "Säkerhet på enheten",
+        "alt": "PrivaMesh-introduktion - nycklar bakom Face ID, försvinnande meddelanden och signerade kontakter, på iPhone"
+      },
+      {
+        "title": "En privat social graf",
+        "alt": "Anonym kontaktgraf i PrivaMesh som visar dina kontakter privat, utan telefonnummer, på iPhone"
+      }
+    ]
+  },
+  "compare": {
+    "title": "PrivaMesh jämfört med apparna du känner",
+    "lead": "Signal är utmärkt. Telegram är populärt. Ingen av dem är serverlös. Här är den korta versionen.",
+    "feature": "Funktion",
+    "rows": [
+      "Inga servrar",
+      "Inget telefonnummer",
+      "Skydd av metadata",
+      "End-to-end-krypterad",
+      "Öppen källkod"
+    ],
+    "vsSignal": "PrivaMesh vs Signal →",
+    "vsTelegram": "PrivaMesh vs Telegram →",
+    "vsSession": "PrivaMesh vs Session →",
+    "best": "Bästa privata meddelandeapparna 2026 →"
+  },
+  "faq": [
+    {
+      "q": "Är PrivaMesh verkligen serverlös?",
+      "a": "Ja. PrivaMesh har ingen kontoserver, inget relä och ingen meddelandedatabas. Krypterade meddelanden färdas via en öppen, decentraliserad transport, så det finns inget centralt att hacka, begära ut, logga eller stänga av."
+    },
+    {
+      "q": "Hur krypteras PrivaMesh?",
+      "a": "PrivaMesh skapar nycklar med ett X3DH-handslag på Curve25519, och sedan ger en Double Ratchet (HKDF och HMAC-SHA256) varje meddelande en ny nyckel. Innehållet förseglas med AES-256-GCM och fylls ut till en fast storlek. Framåtsekretess och skydd efter intrång är standard."
+    },
+    {
+      "q": "Kan jag använda PrivaMesh utan telefonnummer eller e-post?",
+      "a": "Ja. Inget telefonnummer, ingen e-post. Ditt konto är en kontofras som nycklar härleds från och lagras i iOS-nyckelringen - bara på enheten och skyddade av Face ID eller Touch ID."
+    },
+    {
+      "q": "Vilka metadata samlar PrivaMesh in?",
+      "a": "Inga på någon server, eftersom det inte finns någon server. Leverans till engångsadresser döljer den sociala grafen, täcktrafik döljer när du skickar och utfyllnad till fast storlek döljer meddelandets längd."
+    },
+    {
+      "q": "Vad händer om jag tappar bort telefonen?",
+      "a": "Återställ din kontofras på en ny enhet för att få tillbaka din identitet. Chatthistoriken återställs avsiktligt inte: framåtsekretess innebär att gamla meddelandenycklar är raderade, så ingen, inte ens du, kan dekryptera tidigare meddelanden med bara frasen."
+    }
+  ],
+  "cta": {
+    "title": "Sluta anförtro dina samtal åt företag",
+    "lead": "PrivaMesh ersätter företaget med matematik och servern med en öppen, decentraliserad transport. Dina nycklar, din enhet, dina ord.",
+    "policy": "Läs integritetspolicyn"
+  }
+}

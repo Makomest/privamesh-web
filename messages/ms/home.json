@@ -1,0 +1,186 @@
+{
+  "meta": {
+    "title": "PrivaMesh - aplikasi pesanan peribadi tersulit",
+    "description": "Aplikasi pesanan peribadi dengan penyulitan hujung ke hujung untuk iPhone, Android dan Windows. Tiada nombor telefon, tiada e-mel, tiada akaun - kunci dan perbualan anda tidak pernah meninggalkan peranti."
+  },
+  "hero": {
+    "badge": "Tersulit hujung ke hujung · Tiada nombor telefon",
+    "title": "Aplikasi pesanan {scramble} yang tidak tahu apa-apa tentang anda",
+    "scramble": "peribadi",
+    "lead": "Pesanan peribadi tanpa nombor telefon dan tanpa pangkalan data akaun. Mesej disulitkan hujung ke hujung pada peranti anda dan dihantar ke alamat sekali guna melalui pengangkutan awam yang terdesentralisasi. PrivaMesh dibina untuk meminimumkan metadata - bukan berpura-pura ia tidak wujud.",
+    "cta": "Dapatkan PrivaMesh",
+    "threatModel": "Baca model ancaman",
+    "architecture": "Seni bina",
+    "limitations": "Had yang diketahui",
+    "security": "Keselamatan",
+    "source": "Kod sumber",
+    "trust": [
+      "Tiada nombor telefon",
+      "Tiada pelayan",
+      "Tersulit hujung ke hujung"
+    ],
+    "phoneAlt": "Skrin pengenalan aplikasi pesanan peribadi PrivaMesh di iPhone - privasi secara lalai, penyulitan hujung ke hujung"
+  },
+  "noServers": {
+    "eyebrow": "Yang membezakan",
+    "title": "Tiada pelayan - secara konkrit",
+    "lead": "Kebanyakan aplikasi pesanan \"peribadi\" masih menjalankan pelayan yang nampak dengan siapa anda bercakap. PrivaMesh tiada satu pun. Inilah tepatnya tempat setiap bahagian data anda berada.",
+    "colWhat": "Apa",
+    "colWhere": "Di mana",
+    "colHow": "Bagaimana",
+    "rows": [
+      {
+        "what": "Mesej anda",
+        "where": "Pengangkutan awam yang terdesentralisasi",
+        "how": "Blok tersulit yang ditujukan ke alamat sekali guna"
+      },
+      {
+        "what": "Peti masuk anda",
+        "where": "Pengangkutan awam itu sendiri",
+        "how": "Diambil dan dinyahsulit hanya pada peranti anda"
+      },
+      {
+        "what": "Kunci anda",
+        "where": "Hanya stor kunci peranti",
+        "how": "Dikunci biometrik, tidak pernah meninggalkan peranti"
+      },
+      {
+        "what": "Kenalan dan sejarah",
+        "where": "Peranti yang menerimanya",
+        "how": "Tidak pernah disegerakkan, tidak pernah dimuat naik ke mana-mana"
+      },
+      {
+        "what": "Identiti anda",
+        "where": "Frasa akaun yang anda pegang",
+        "how": "Kunci penyulitan pada peranti - tiada telefon, tiada e-mel"
+      },
+      {
+        "what": "\"Pelayan PrivaMesh\"",
+        "where": "Tidak wujud",
+        "how": "Tiada pelayan akaun; pengangkutannya awam dan boleh ditukar"
+      }
+    ],
+    "more": "Bagaimana seni bina tanpa pelayan berfungsi →"
+  },
+  "lifecycle": {
+    "title": "Satu mesej, tiga langkah",
+    "lead": "Hantar → Pengangkutan → Terima. Tiada orang tengah, tiada peti masuk di komputer orang lain.",
+    "steps": [
+      {
+        "label": "Hantar",
+        "body": "Mesej anda diisi hingga saiz tetap dan dimeterai dengan AES-256-GCM di bawah kunci Double Ratchet baharu - pada peranti anda, sebelum ia keluar."
+      },
+      {
+        "label": "Pengangkutan",
+        "body": "Blok tersulit bergerak melalui pengangkutan awam yang terdesentralisasi ke alamat sekali guna. Tiada pelayan akaun yang pernah menyimpannya."
+      },
+      {
+        "label": "Terima",
+        "body": "Peranti anda mengambil dan menyahsulitnya secara setempat dengan kunci yang hanya anda miliki, kemudian memajukan ratchet. Hanya peranti anda yang boleh membacanya."
+      }
+    ]
+  },
+  "metadata": {
+    "title": "Sembunyikan siapa. Sembunyikan bila. Sembunyikan bagaimana.",
+    "lead": "Penyulitan menyembunyikan mesej. PrivaMesh juga menyembunyikan metadata - siapa, bila dan bagaimana yang sebaliknya akan dilihat oleh pelayan.",
+    "more": "Ketahui lebih lanjut",
+    "cards": [
+      {
+        "title": "Alamat sekali guna",
+        "body": "Setiap mesej dihantar ke alamat sekali guna yang baharu, jadi pemerhati tidak boleh membina semula siapa bercakap dengan siapa. Graf sosial kekal tersembunyi."
+      },
+      {
+        "title": "Trafik perlindungan",
+        "body": "Mesej umpan bercampur dengan mesej sebenar supaya pemerhati tidak tahu bila anda benar-benar menghantar. Analisis masa tiada apa-apa untuk dipegang."
+      },
+      {
+        "title": "Pengisian saiz tetap",
+        "body": "Setiap mesej diisi hingga saiz tetap sebelum dimeterai, jadi panjangnya tidak mendedahkan apa-apa tentang kandungan."
+      }
+    ]
+  },
+  "crypto": {
+    "eyebrow": "Kriptografinya",
+    "title": "Penyulitan hujung ke hujung, dibuat dengan betul",
+    "lead": "PrivaMesh menggunakan primitif teruji yang sama yang melindungi aplikasi pesanan tersulit terbaik, disesuaikan untuk dunia tanpa pelayan. Setiap mesej mendapat kunci baharu, jadi kunci yang terjejas tidak boleh membuka perbualan lalu atau akan datang.",
+    "more": "Penjelasan penyulitan dalam bahasa mudah →",
+    "rows": [
+      "Jabat tangan pada Curve25519 mewujudkan rahsia bersama tanpa pelayan kunci yang dipercayai.",
+      "HKDF + HMAC-SHA256 menukar kunci bagi setiap mesej - kerahsiaan hadapan dan keselamatan selepas kompromi.",
+      "Penyulitan disahkan memeterai setiap mesej, diisi hingga saiz tetap untuk menyembunyikan panjangnya."
+    ]
+  },
+  "gallery": {
+    "title": "Lihat di iPhone anda",
+    "lead": "Aplikasi pesanan peribadi yang kelihatan dan terasa seperti aplikasi sembang premium - tanpa sebarang pengawasan di bawahnya.",
+    "shots": [
+      {
+        "title": "Privasi secara lalai",
+        "alt": "Skrin pengenalan PrivaMesh - privasi secara lalai, kunci Double Ratchet bagi setiap mesej dan alamat sekali guna, di iPhone"
+      },
+      {
+        "title": "Sembang tersulit hujung ke hujung",
+        "alt": "Skrin sembang tersulit PrivaMesh dengan perbualan peribadi, tersulit hujung ke hujung, di iPhone"
+      },
+      {
+        "title": "Sembang anda",
+        "alt": "Senarai sembang PrivaMesh dengan nama dan nama samaran, tanpa nombor telefon, di iPhone"
+      },
+      {
+        "title": "Tiada pelayan, sungguh",
+        "alt": "Skrin pengenalan PrivaMesh yang menerangkan tiada pelayan pusat - tiada apa-apa untuk digodam atau dipaksa, di iPhone"
+      },
+      {
+        "title": "Keselamatan pada peranti",
+        "alt": "Skrin pengenalan PrivaMesh - kunci di sebalik Face ID, mesej hilang dan kenalan bertandatangan, di iPhone"
+      },
+      {
+        "title": "Graf sosial peribadi",
+        "alt": "Graf kenalan tanpa nama PrivaMesh yang menunjukkan hubungan anda secara peribadi, tanpa nombor telefon, di iPhone"
+      }
+    ]
+  },
+  "compare": {
+    "title": "PrivaMesh berbanding aplikasi pesanan yang anda kenali",
+    "lead": "Signal sangat baik. Telegram popular. Kedua-duanya tidak tanpa pelayan. Ini versi ringkasnya.",
+    "feature": "Ciri",
+    "rows": [
+      "Tiada pelayan",
+      "Tiada nombor telefon",
+      "Perlindungan metadata",
+      "Tersulit hujung ke hujung",
+      "Sumber terbuka"
+    ],
+    "vsSignal": "PrivaMesh vs Signal →",
+    "vsTelegram": "PrivaMesh vs Telegram →",
+    "vsSession": "PrivaMesh vs Session →",
+    "best": "Aplikasi pesanan peribadi terbaik 2026 →"
+  },
+  "faq": [
+    {
+      "q": "Adakah PrivaMesh benar-benar tanpa pelayan?",
+      "a": "Ya. PrivaMesh tiada pelayan akaun, geganti atau pangkalan data mesej. Mesej tersulit bergerak melalui pengangkutan awam yang terdesentralisasi, jadi tiada apa-apa yang berpusat untuk digodam, disapina, dilog atau dimatikan."
+    },
+    {
+      "q": "Bagaimana PrivaMesh disulitkan?",
+      "a": "PrivaMesh mewujudkan kunci dengan jabat tangan X3DH pada Curve25519, kemudian Double Ratchet (HKDF dan HMAC-SHA256) memberi setiap mesej kunci baharu. Kandungan dimeterai dengan AES-256-GCM dan diisi hingga saiz tetap. Kerahsiaan hadapan dan keselamatan selepas kompromi adalah lalai."
+    },
+    {
+      "q": "Bolehkah saya guna PrivaMesh tanpa nombor telefon atau e-mel?",
+      "a": "Boleh. Tiada nombor telefon, tiada e-mel. Akaun anda ialah frasa akaun yang menerbitkan kunci yang disimpan dalam Keychain iOS - hanya pada peranti dan dilindungi Face ID atau Touch ID."
+    },
+    {
+      "q": "Metadata apa yang dikumpul PrivaMesh?",
+      "a": "Tiada pada mana-mana pelayan, kerana tiada pelayan. Penghantaran ke alamat sekali guna menyembunyikan graf sosial, trafik perlindungan menyembunyikan bila anda menghantar dan pengisian saiz tetap menyembunyikan panjang mesej."
+    },
+    {
+      "q": "Apa berlaku jika saya kehilangan telefon?",
+      "a": "Pulihkan frasa akaun anda pada peranti baharu untuk mendapatkan semula identiti anda. Sejarah sembang sengaja tidak dipulihkan: kerahsiaan hadapan bermakna kunci mesej lama telah dipadam, jadi tiada sesiapa, termasuk anda, boleh menyahsulit mesej lama dengan frasa sahaja."
+    }
+  ],
+  "cta": {
+    "title": "Berhenti mempercayakan perbualan anda kepada syarikat",
+    "lead": "PrivaMesh menggantikan syarikat dengan matematik dan pelayan dengan pengangkutan awam yang terdesentralisasi. Kunci anda, peranti anda, kata-kata anda.",
+    "policy": "Baca Dasar Privasi"
+  }
+}

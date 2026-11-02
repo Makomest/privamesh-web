@@ -1,0 +1,186 @@
+{
+  "meta": {
+    "title": "PrivaMesh - messagerie privée chiffrée",
+    "description": "Messagerie privée chiffrée de bout en bout pour iPhone, Android et Windows. Pas de numéro de téléphone, pas d'e-mail, pas de compte - vos clés et vos conversations ne quittent jamais votre appareil."
+  },
+  "hero": {
+    "badge": "Chiffré de bout en bout · Sans numéro de téléphone",
+    "title": "La messagerie {scramble} qui ne sait rien de vous",
+    "scramble": "privée",
+    "lead": "Une messagerie privée sans numéro de téléphone ni base de comptes. Les messages sont chiffrés de bout en bout sur votre appareil et livrés à des adresses à usage unique via un transport public décentralisé. PrivaMesh est conçu pour réduire les métadonnées au minimum, pas pour prétendre qu'elles n'existent pas.",
+    "cta": "Obtenir PrivaMesh",
+    "threatModel": "Lire le modèle de menace",
+    "architecture": "Architecture",
+    "limitations": "Limites connues",
+    "security": "Sécurité",
+    "source": "Code source",
+    "trust": [
+      "Sans numéro de téléphone",
+      "Sans serveurs",
+      "Chiffré de bout en bout"
+    ],
+    "phoneAlt": "Écran d'accueil de la messagerie privée PrivaMesh sur iPhone - confidentialité par défaut, chiffrement de bout en bout"
+  },
+  "noServers": {
+    "eyebrow": "Ce qui change tout",
+    "title": "Pas de serveurs - concrètement",
+    "lead": "La plupart des messageries « privées » font encore tourner des serveurs qui voient avec qui vous parlez. PrivaMesh n'en a aucun. Voici exactement où se trouve chaque élément de vos données.",
+    "colWhat": "Quoi",
+    "colWhere": "Où cela se trouve",
+    "colHow": "Comment",
+    "rows": [
+      {
+        "what": "Vos messages",
+        "where": "Un transport public et décentralisé",
+        "how": "Des blocs chiffrés, adressés à des adresses à usage unique"
+      },
+      {
+        "what": "Votre boîte de réception",
+        "where": "Le transport public lui-même",
+        "how": "Récupérée et déchiffrée uniquement sur votre appareil"
+      },
+      {
+        "what": "Vos clés",
+        "where": "Uniquement le trousseau de votre appareil",
+        "how": "Verrouillées par biométrie, ne quittent jamais l'appareil"
+      },
+      {
+        "what": "Vos contacts et votre historique",
+        "where": "L'appareil qui les a reçus",
+        "how": "Jamais synchronisés, jamais envoyés nulle part"
+      },
+      {
+        "what": "Votre identité",
+        "where": "Une phrase de compte que vous détenez",
+        "how": "Des clés sur votre appareil - ni téléphone, ni e-mail"
+      },
+      {
+        "what": "Le « serveur PrivaMesh »",
+        "where": "N'existe pas",
+        "how": "Pas de serveur de comptes ; le transport est public et remplaçable"
+      }
+    ],
+    "more": "Comment fonctionne l'architecture sans serveurs →"
+  },
+  "lifecycle": {
+    "title": "Un message, trois étapes",
+    "lead": "Envoi → Transport → Réception. Pas d'intermédiaire, pas de boîte de réception sur l'ordinateur de quelqu'un d'autre.",
+    "steps": [
+      {
+        "label": "Envoi",
+        "body": "Votre message est complété jusqu'à une taille fixe et scellé avec AES-256-GCM sous une nouvelle clé Double Ratchet - sur votre appareil, avant même de le quitter."
+      },
+      {
+        "label": "Transport",
+        "body": "Le bloc chiffré circule sur un transport public et décentralisé, adressé à une adresse à usage unique. Aucun serveur de comptes ne le détient jamais."
+      },
+      {
+        "label": "Réception",
+        "body": "Votre appareil le récupère et le déchiffre localement avec des clés que vous seul détenez, puis fait avancer le ratchet. Seul votre appareil peut le lire."
+      }
+    ]
+  },
+  "metadata": {
+    "title": "Cacher qui. Cacher quand. Cacher comment.",
+    "lead": "Le chiffrement cache le message. PrivaMesh cache aussi les métadonnées - le qui, le quand et le comment qu'un serveur verrait autrement.",
+    "more": "En savoir plus",
+    "cards": [
+      {
+        "title": "Adresses à usage unique",
+        "body": "Chaque message est livré à une nouvelle adresse à usage unique, si bien qu'un observateur ne peut pas reconstituer qui parle à qui. Le graphe social reste caché."
+      },
+      {
+        "title": "Trafic de couverture",
+        "body": "Des messages leurres se mêlent aux vrais, si bien qu'un observateur ne peut pas savoir quand vous envoyez réellement. L'analyse temporelle n'a rien sur quoi s'appuyer."
+      },
+      {
+        "title": "Remplissage à taille fixe",
+        "body": "Chaque message est complété jusqu'à une taille fixe avant d'être scellé, si bien que sa longueur ne révèle rien de son contenu."
+      }
+    ]
+  },
+  "crypto": {
+    "eyebrow": "La cryptographie",
+    "title": "Le chiffrement de bout en bout, fait correctement",
+    "lead": "PrivaMesh utilise les mêmes primitives éprouvées qui protègent les meilleures messageries chiffrées, adaptées à un monde sans serveurs. Chaque message reçoit une nouvelle clé, donc une clé compromise ne peut ouvrir ni vos conversations passées ni les futures.",
+    "more": "Le chiffrement expliqué simplement →",
+    "rows": [
+      "Une poignée de main sur Curve25519 établit un secret partagé sans serveur de clés de confiance.",
+      "HKDF + HMAC-SHA256 changent la clé à chaque message, pour la confidentialité persistante et la sécurité après compromission.",
+      "Un chiffrement authentifié scelle chaque message, complété jusqu'à une taille fixe pour en cacher la longueur."
+    ]
+  },
+  "gallery": {
+    "title": "Voyez-la sur votre iPhone",
+    "lead": "Une messagerie privée qui a l'allure et la sensation d'une app de chat haut de gamme - sans aucune surveillance en dessous.",
+    "shots": [
+      {
+        "title": "Confidentialité par défaut",
+        "alt": "Écran d'accueil de PrivaMesh - confidentialité par défaut, une clé Double Ratchet par message et des adresses à usage unique, sur iPhone"
+      },
+      {
+        "title": "Discussion chiffrée de bout en bout",
+        "alt": "Écran de discussion chiffrée de PrivaMesh montrant une conversation privée, chiffrée de bout en bout, sur iPhone"
+      },
+      {
+        "title": "Vos discussions",
+        "alt": "Liste des discussions de PrivaMesh avec noms et pseudos, sans numéros de téléphone, sur iPhone"
+      },
+      {
+        "title": "Pas de serveurs, vraiment",
+        "alt": "Écran d'accueil de PrivaMesh expliquant qu'il n'y a pas de serveur central - rien à pirater ni à contraindre, sur iPhone"
+      },
+      {
+        "title": "Sécurité sur l'appareil",
+        "alt": "Écran d'accueil de PrivaMesh - clés derrière Face ID, messages éphémères et contacts signés, sur iPhone"
+      },
+      {
+        "title": "Un graphe social privé",
+        "alt": "Graphe de contacts anonyme de PrivaMesh montrant vos relations en privé, sans numéros de téléphone, sur iPhone"
+      }
+    ]
+  },
+  "compare": {
+    "title": "PrivaMesh face aux messageries que vous connaissez",
+    "lead": "Signal est excellent. Telegram est populaire. Aucun des deux n'est sans serveurs. Voici la version courte.",
+    "feature": "Fonctionnalité",
+    "rows": [
+      "Sans serveurs",
+      "Sans numéro de téléphone",
+      "Protection des métadonnées",
+      "Chiffré de bout en bout",
+      "Open source"
+    ],
+    "vsSignal": "PrivaMesh vs Signal →",
+    "vsTelegram": "PrivaMesh vs Telegram →",
+    "vsSession": "PrivaMesh vs Session →",
+    "best": "Meilleures messageries privées 2026 →"
+  },
+  "faq": [
+    {
+      "q": "PrivaMesh fonctionne-t-il vraiment sans serveurs ?",
+      "a": "Oui. PrivaMesh n'a ni serveur de comptes, ni relais, ni base de messages. Les messages chiffrés transitent par un transport public et décentralisé : il n'y a donc rien de central à pirater, à réquisitionner, à journaliser ou à couper."
+    },
+    {
+      "q": "Comment PrivaMesh est-il chiffré ?",
+      "a": "PrivaMesh établit les clés par une poignée de main X3DH sur Curve25519, puis un Double Ratchet (HKDF et HMAC-SHA256) donne une nouvelle clé à chaque message. Le contenu est scellé avec AES-256-GCM et complété jusqu'à une taille fixe. Vous bénéficiez par défaut de la confidentialité persistante et de la sécurité après compromission."
+    },
+    {
+      "q": "Puis-je utiliser PrivaMesh sans numéro de téléphone ni e-mail ?",
+      "a": "Oui. Ni numéro de téléphone, ni e-mail. Votre compte est une phrase de compte dont dérivent des clés stockées dans le trousseau iOS - uniquement sur l'appareil et protégées par Face ID ou Touch ID."
+    },
+    {
+      "q": "Quelles métadonnées PrivaMesh collecte-t-il ?",
+      "a": "Aucune sur un serveur, puisqu'il n'y a pas de serveur. La livraison à des adresses à usage unique cache le graphe social, le trafic de couverture cache le moment où vous envoyez, et le remplissage à taille fixe cache la longueur des messages."
+    },
+    {
+      "q": "Que se passe-t-il si je perds mon téléphone ?",
+      "a": "Restaurez votre phrase de compte sur un nouvel appareil pour retrouver votre identité. Par conception, votre historique n'est pas restauré : la confidentialité persistante signifie que les anciennes clés de messages sont supprimées, si bien que personne, pas même vous, ne peut déchiffrer les anciens messages avec la seule phrase."
+    }
+  ],
+  "cta": {
+    "title": "Arrêtez de confier vos conversations à des entreprises",
+    "lead": "PrivaMesh remplace l'entreprise par les mathématiques et le serveur par un transport public et décentralisé. Vos clés, votre appareil, vos mots.",
+    "policy": "Lire la politique de confidentialité"
+  }
+}

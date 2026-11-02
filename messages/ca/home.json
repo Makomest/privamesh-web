@@ -1,0 +1,186 @@
+{
+  "meta": {
+    "title": "PrivaMesh - missatgeria privada xifrada",
+    "description": "Missatgeria privada amb xifratge d'extrem a extrem per a iPhone, Android i Windows. Sense número de telèfon, sense correu, sense compte: les teves claus i converses no surten mai del dispositiu."
+  },
+  "hero": {
+    "badge": "Xifrat d'extrem a extrem · Sense número de telèfon",
+    "title": "La missatgeria {scramble} que no sap res de tu",
+    "scramble": "privada",
+    "lead": "Missatgeria privada sense número de telèfon i sense base de dades de comptes. Els missatges es xifren d'extrem a extrem al teu dispositiu i s'entreguen a adreces d'un sol ús a través d'un transport públic i descentralitzat. PrivaMesh està fet per reduir al mínim les metadades, no per fer veure que no existeixen.",
+    "cta": "Obtén PrivaMesh",
+    "threatModel": "Llegeix el model d'amenaces",
+    "architecture": "Arquitectura",
+    "limitations": "Limitacions conegudes",
+    "security": "Seguretat",
+    "source": "Codi font",
+    "trust": [
+      "Sense número de telèfon",
+      "Sense servidors",
+      "Xifrat d'extrem a extrem"
+    ],
+    "phoneAlt": "Pantalla de benvinguda de la missatgeria privada PrivaMesh a l'iPhone: privadesa per defecte, xifratge d'extrem a extrem"
+  },
+  "noServers": {
+    "eyebrow": "El que la distingeix",
+    "title": "Sense servidors, en concret",
+    "lead": "La majoria de missatgeries «privades» encara tenen servidors que veuen amb qui parles. PrivaMesh no en té cap. Aquí tens exactament on viu cada part de les teves dades.",
+    "colWhat": "Què",
+    "colWhere": "On és",
+    "colHow": "Com",
+    "rows": [
+      {
+        "what": "Els teus missatges",
+        "where": "Un transport públic i descentralitzat",
+        "how": "Blocs xifrats, adreçats a adreces d'un sol ús"
+      },
+      {
+        "what": "La teva safata d'entrada",
+        "where": "El mateix transport públic",
+        "how": "Es recupera i desxifra només al teu dispositiu"
+      },
+      {
+        "what": "Les teves claus",
+        "where": "Només el magatzem de claus del dispositiu",
+        "how": "Bloquejades amb biometria, no surten mai del dispositiu"
+      },
+      {
+        "what": "Contactes i historial",
+        "where": "El dispositiu que els va rebre",
+        "how": "Mai sincronitzats, mai pujats enlloc"
+      },
+      {
+        "what": "La teva identitat",
+        "where": "Una frase del compte que guardes tu",
+        "how": "Claus de xifratge al dispositiu: ni telèfon ni correu"
+      },
+      {
+        "what": "El «servidor de PrivaMesh»",
+        "where": "No existeix",
+        "how": "No hi ha servidor de comptes; el transport és públic i substituïble"
+      }
+    ],
+    "more": "Com funciona l'arquitectura sense servidors →"
+  },
+  "lifecycle": {
+    "title": "Un missatge, tres passos",
+    "lead": "Enviar → Transport → Rebre. Sense intermediaris, sense safata d'entrada a l'ordinador d'un altre.",
+    "steps": [
+      {
+        "label": "Enviar",
+        "body": "El missatge s'omple fins a una mida fixa i se segella amb AES-256-GCM amb una clau nova de Double Ratchet, al teu dispositiu, abans de sortir-ne."
+      },
+      {
+        "label": "Transport",
+        "body": "El bloc xifrat viatja per un transport públic i descentralitzat cap a una adreça d'un sol ús. Cap servidor de comptes no el guarda mai."
+      },
+      {
+        "label": "Rebre",
+        "body": "El teu dispositiu el recupera i el desxifra localment amb claus que només tens tu, i fa avançar el ratchet. Només el teu dispositiu el pot llegir."
+      }
+    ]
+  },
+  "metadata": {
+    "title": "Amaga qui. Amaga quan. Amaga com.",
+    "lead": "El xifratge amaga el missatge. PrivaMesh també amaga les metadades: el qui, el quan i el com que, si no, veuria un servidor.",
+    "more": "Més informació",
+    "cards": [
+      {
+        "title": "Adreces d'un sol ús",
+        "body": "Cada missatge s'entrega a una adreça nova d'un sol ús, de manera que un observador no pot reconstruir qui parla amb qui. El graf social queda amagat."
+      },
+      {
+        "title": "Trànsit de cobertura",
+        "body": "Missatges esquer es barregen amb els reals perquè un observador no sàpiga quan envies de debò. L'anàlisi temporal es queda sense res amb què treballar."
+      },
+      {
+        "title": "Farciment a mida fixa",
+        "body": "Cada missatge s'omple fins a una mida fixa abans de segellar-lo, de manera que la seva longitud no revela res del contingut."
+      }
+    ]
+  },
+  "crypto": {
+    "eyebrow": "La criptografia",
+    "title": "Xifratge d'extrem a extrem, ben fet",
+    "lead": "PrivaMesh fa servir les mateixes primitives provades que protegeixen les millors missatgeries xifrades, adaptades a un món sense servidors. Cada missatge rep una clau nova, de manera que una clau compromesa no obre ni les converses passades ni les futures.",
+    "more": "El xifratge explicat en llenguatge planer →",
+    "rows": [
+      "Un intercanvi sobre Curve25519 estableix un secret compartit sense un servidor de claus de confiança.",
+      "HKDF + HMAC-SHA256 canvien la clau a cada missatge: secret cap endavant i seguretat després d'un compromís.",
+      "El xifratge autenticat segella cada missatge, farcit fins a una mida fixa per amagar-ne la longitud."
+    ]
+  },
+  "gallery": {
+    "title": "Mira-ho al teu iPhone",
+    "lead": "Una app de missatgeria privada que sembla i es nota com un xat prèmium, sense cap vigilància a sota.",
+    "shots": [
+      {
+        "title": "Privadesa per defecte",
+        "alt": "Pantalla de benvinguda de PrivaMesh: privadesa per defecte, una clau Double Ratchet per missatge i adreces d'un sol ús, a l'iPhone"
+      },
+      {
+        "title": "Xat xifrat d'extrem a extrem",
+        "alt": "Pantalla de xat xifrat de PrivaMesh amb una conversa privada, xifrada d'extrem a extrem, a l'iPhone"
+      },
+      {
+        "title": "Els teus xats",
+        "alt": "Llista de xats de PrivaMesh amb noms i sobrenoms, sense números de telèfon, a l'iPhone"
+      },
+      {
+        "title": "Sense servidors, de debò",
+        "alt": "Pantalla de benvinguda de PrivaMesh que explica que no hi ha servidor central: res a piratejar ni a coaccionar, a l'iPhone"
+      },
+      {
+        "title": "Seguretat al dispositiu",
+        "alt": "Pantalla de benvinguda de PrivaMesh: claus darrere de Face ID, missatges temporals i contactes signats, a l'iPhone"
+      },
+      {
+        "title": "Un graf social privat",
+        "alt": "Graf de contactes anònim de PrivaMesh que mostra les teves connexions en privat, sense números de telèfon, a l'iPhone"
+      }
+    ]
+  },
+  "compare": {
+    "title": "PrivaMesh davant les missatgeries que coneixes",
+    "lead": "Signal és excel·lent. Telegram és popular. Cap dels dos funciona sense servidors. Aquí tens la versió curta.",
+    "feature": "Funció",
+    "rows": [
+      "Sense servidors",
+      "Sense número de telèfon",
+      "Protecció de metadades",
+      "Xifrat d'extrem a extrem",
+      "Codi obert"
+    ],
+    "vsSignal": "PrivaMesh vs Signal →",
+    "vsTelegram": "PrivaMesh vs Telegram →",
+    "vsSession": "PrivaMesh vs Session →",
+    "best": "Millors apps de missatgeria privada 2026 →"
+  },
+  "faq": [
+    {
+      "q": "PrivaMesh funciona de debò sense servidors?",
+      "a": "Sí. PrivaMesh no té servidor de comptes, relé ni base de dades de missatges. Els missatges xifrats viatgen per un transport públic i descentralitzat, així que no hi ha res de central que es pugui piratejar, requerir judicialment, registrar o apagar."
+    },
+    {
+      "q": "Com xifra PrivaMesh?",
+      "a": "PrivaMesh estableix les claus amb un intercanvi X3DH sobre Curve25519 i després un Double Ratchet (HKDF i HMAC-SHA256) dona una clau nova a cada missatge. El contingut se segella amb AES-256-GCM i s'omple fins a una mida fixa. El secret cap endavant i la seguretat després d'un compromís són per defecte."
+    },
+    {
+      "q": "Puc fer servir PrivaMesh sense número de telèfon ni correu?",
+      "a": "Sí. Ni número de telèfon ni correu. El teu compte és una frase del compte de la qual es deriven claus desades al clauer d'iOS, només al dispositiu i protegides per Face ID o Touch ID."
+    },
+    {
+      "q": "Quines metadades recull PrivaMesh?",
+      "a": "Cap en cap servidor, perquè no n'hi ha. L'entrega a adreces d'un sol ús amaga el graf social, el trànsit de cobertura amaga quan envies i el farciment a mida fixa amaga la longitud del missatge."
+    },
+    {
+      "q": "Què passa si perdo el telèfon?",
+      "a": "Restaura la frase del compte en un dispositiu nou i recuperaràs la teva identitat. Per disseny, l'historial no es recupera: el secret cap endavant vol dir que les claus antigues s'han esborrat, de manera que ningú, ni tan sols tu, no pot desxifrar missatges passats només amb la frase."
+    }
+  ],
+  "cta": {
+    "title": "Deixa de confiar les teves converses a les empreses",
+    "lead": "PrivaMesh substitueix l'empresa per matemàtiques i el servidor per un transport públic i descentralitzat. Les teves claus, el teu dispositiu, les teves paraules.",
+    "policy": "Llegeix la política de privadesa"
+  }
+}

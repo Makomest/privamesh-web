@@ -1,0 +1,186 @@
+{
+  "meta": {
+    "title": "PrivaMesh - yksityinen salattu pikaviestin",
+    "description": "Yksityinen päästä päähän salattu pikaviestin iPhonelle, Androidille ja Windowsille. Ei puhelinnumeroa, ei sähköpostia, ei tiliä - avaimesi ja keskustelusi eivät koskaan poistu laitteeltasi."
+  },
+  "hero": {
+    "badge": "Päästä päähän salattu · Ei puhelinnumeroa",
+    "title": "{scramble} pikaviestin, joka ei tiedä sinusta mitään",
+    "scramble": "Yksityinen",
+    "lead": "Yksityistä viestintää ilman puhelinnumeroa ja ilman tilitietokantaa. Viestit salataan päästä päähän laitteellasi ja toimitetaan kertakäyttöisiin osoitteisiin julkisen, hajautetun siirtokanavan kautta. PrivaMesh on tehty minimoimaan metatiedot - ei teeskentelemään, ettei niitä ole.",
+    "cta": "Hanki PrivaMesh",
+    "threatModel": "Lue uhkamalli",
+    "architecture": "Arkkitehtuuri",
+    "limitations": "Tunnetut rajoitukset",
+    "security": "Tietoturva",
+    "source": "Lähdekoodi",
+    "trust": [
+      "Ei puhelinnumeroa",
+      "Ei palvelimia",
+      "Päästä päähän salattu"
+    ],
+    "phoneAlt": "Yksityisen PrivaMesh-pikaviestimen esittely iPhonella - yksityisyys oletuksena, päästä päähän salattu"
+  },
+  "noServers": {
+    "eyebrow": "Mikä tekee eron",
+    "title": "Ei palvelimia - konkreettisesti",
+    "lead": "Useimmat ”yksityiset” pikaviestimet pyörittävät yhä palvelimia, jotka näkevät, kenen kanssa puhut. PrivaMeshillä niitä ei ole. Tässä tarkalleen, missä jokainen tietosi osa sijaitsee.",
+    "colWhat": "Mitä",
+    "colWhere": "Missä se on",
+    "colHow": "Miten",
+    "rows": [
+      {
+        "what": "Viestisi",
+        "where": "Julkinen, hajautettu siirtokanava",
+        "how": "Salattuja lohkoja, osoitettu kertakäyttöisiin osoitteisiin"
+      },
+      {
+        "what": "Saapuneet viestisi",
+        "where": "Itse julkinen siirtokanava",
+        "how": "Haetaan ja puretaan vain laitteellasi"
+      },
+      {
+        "what": "Avaimesi",
+        "where": "Vain laitteen avainsäilö",
+        "how": "Biometrisesti lukittu, ei koskaan poistu laitteelta"
+      },
+      {
+        "what": "Yhteystietosi ja historiasi",
+        "where": "Laite, joka ne vastaanotti",
+        "how": "Ei koskaan synkronoida, ei ladata minnekään"
+      },
+      {
+        "what": "Identiteettisi",
+        "where": "Tilin lause, joka on sinulla",
+        "how": "Salausavaimet laitteellasi - ei puhelinta, ei sähköpostia"
+      },
+      {
+        "what": "”PrivaMesh-palvelin”",
+        "where": "Ei ole olemassa",
+        "how": "Ei tilipalvelinta; siirtokanava on julkinen ja vaihdettavissa"
+      }
+    ],
+    "more": "Näin palvelimeton arkkitehtuuri toimii →"
+  },
+  "lifecycle": {
+    "title": "Yksi viesti, kolme vaihetta",
+    "lead": "Lähetä → Siirto → Vastaanota. Ei välikättä, ei saapuneet-kansiota jonkun muun koneella.",
+    "steps": [
+      {
+        "label": "Lähetä",
+        "body": "Viesti täydennetään kiinteään kokoon ja sinetöidään AES-256-GCM:llä uudella Double Ratchet -avaimella - laitteellasi, ennen kuin se lähtee."
+      },
+      {
+        "label": "Siirto",
+        "body": "Salattu lohko kulkee julkista, hajautettua siirtokanavaa pitkin kertakäyttöiseen osoitteeseen. Mikään tilipalvelin ei koskaan säilytä sitä."
+      },
+      {
+        "label": "Vastaanota",
+        "body": "Laitteesi hakee sen ja purkaa salauksen paikallisesti avaimilla, jotka ovat vain sinulla, ja siirtää ratchetia eteenpäin. Vain laitteesi voi lukea sen."
+      }
+    ]
+  },
+  "metadata": {
+    "title": "Piilota kuka. Piilota milloin. Piilota miten.",
+    "lead": "Salaus piilottaa viestin. PrivaMesh piilottaa myös metatiedot - kuka, milloin ja miten, jotka palvelin muuten näkisi.",
+    "more": "Lue lisää",
+    "cards": [
+      {
+        "title": "Kertakäyttöiset osoitteet",
+        "body": "Jokainen viesti toimitetaan uuteen kertakäyttöiseen osoitteeseen, joten tarkkailija ei pysty päättelemään, kuka puhuu kenen kanssa. Sosiaalinen verkko pysyy piilossa."
+      },
+      {
+        "title": "Peiteliikenne",
+        "body": "Houkutusviestit sekoittuvat oikeisiin, joten tarkkailija ei tiedä, milloin oikeasti lähetät. Ajoitusanalyysillä ei ole mitään, mihin tarttua."
+      },
+      {
+        "title": "Täydennys kiinteään kokoon",
+        "body": "Jokainen viesti täydennetään kiinteään kokoon ennen sinetöintiä, joten sen pituus ei paljasta sisällöstä mitään."
+      }
+    ]
+  },
+  "crypto": {
+    "eyebrow": "Kryptografia",
+    "title": "Päästä päähän -salaus oikein tehtynä",
+    "lead": "PrivaMesh käyttää samoja koeteltuja rakennuspalikoita, jotka suojaavat parhaita salattuja pikaviestimiä, sovitettuna maailmaan ilman palvelimia. Jokainen viesti saa uuden avaimen, joten vaarantunut avain ei avaa menneitä eikä tulevia keskustelujasi.",
+    "more": "Salaus selkokielellä selitettynä →",
+    "rows": [
+      "Curve25519-kättely luo jaetun salaisuuden ilman luotettua avainpalvelinta.",
+      "HKDF + HMAC-SHA256 vaihtavat avaimen jokaisella viestillä - eteenpäin suuntautuva salaisuus ja suoja vaarantumisen jälkeen.",
+      "Todennettu salaus sinetöi jokaisen viestin, joka on täydennetty kiinteään kokoon pituuden piilottamiseksi."
+    ]
+  },
+  "gallery": {
+    "title": "Katso iPhonellasi",
+    "lead": "Yksityinen viestisovellus, joka näyttää ja tuntuu premium-chatilta - ilman minkäänlaista valvontaa pinnan alla.",
+    "shots": [
+      {
+        "title": "Yksityisyys oletuksena",
+        "alt": "PrivaMeshin esittely - yksityisyys oletuksena, Double Ratchet -avain jokaiselle viestille ja kertakäyttöiset osoitteet, iPhonella"
+      },
+      {
+        "title": "Päästä päähän salattu chat",
+        "alt": "PrivaMeshin salattu chat-näkymä yksityisellä keskustelulla, päästä päähän salattu, iPhonella"
+      },
+      {
+        "title": "Keskustelusi",
+        "alt": "PrivaMeshin keskustelulista nimillä ja lempinimillä, ilman puhelinnumeroita, iPhonella"
+      },
+      {
+        "title": "Ei palvelimia, oikeasti",
+        "alt": "PrivaMeshin esittely, joka kertoo, ettei keskuspalvelinta ole - ei mitään murrettavaa tai painostettavaa, iPhonella"
+      },
+      {
+        "title": "Tietoturva laitteella",
+        "alt": "PrivaMeshin esittely - avaimet Face ID:n takana, katoavat viestit ja allekirjoitetut yhteystiedot, iPhonella"
+      },
+      {
+        "title": "Yksityinen sosiaalinen verkko",
+        "alt": "PrivaMeshin anonyymi yhteystietoverkko, joka näyttää yhteytesi yksityisesti, ilman puhelinnumeroita, iPhonella"
+      }
+    ]
+  },
+  "compare": {
+    "title": "PrivaMesh vastaan tutut pikaviestimet",
+    "lead": "Signal on erinomainen. Telegram on suosittu. Kumpikaan ei ole palvelimeton. Tässä lyhyt versio.",
+    "feature": "Ominaisuus",
+    "rows": [
+      "Ei palvelimia",
+      "Ei puhelinnumeroa",
+      "Metatietojen suojaus",
+      "Päästä päähän salattu",
+      "Avoin lähdekoodi"
+    ],
+    "vsSignal": "PrivaMesh vs Signal →",
+    "vsTelegram": "PrivaMesh vs Telegram →",
+    "vsSession": "PrivaMesh vs Session →",
+    "best": "Parhaat yksityiset pikaviestimet 2026 →"
+  },
+  "faq": [
+    {
+      "q": "Onko PrivaMesh todella palvelimeton?",
+      "a": "Kyllä. PrivaMeshillä ei ole tilipalvelinta, välityspalvelinta eikä viestitietokantaa. Salatut viestit kulkevat julkisen, hajautetun siirtokanavan kautta, joten ei ole mitään keskitettyä, mitä voisi murtaa, vaatia luovutettavaksi, kirjata tai sulkea."
+    },
+    {
+      "q": "Miten PrivaMesh salataan?",
+      "a": "PrivaMesh luo avaimet X3DH-kättelyllä Curve25519:n päällä, ja sen jälkeen Double Ratchet (HKDF ja HMAC-SHA256) antaa jokaiselle viestille uuden avaimen. Sisältö sinetöidään AES-256-GCM:llä ja täydennetään kiinteään kokoon. Eteenpäin suuntautuva salaisuus ja suoja vaarantumisen jälkeen ovat oletuksena."
+    },
+    {
+      "q": "Voinko käyttää PrivaMeshiä ilman puhelinnumeroa tai sähköpostia?",
+      "a": "Kyllä. Ei puhelinnumeroa, ei sähköpostia. Tilisi on tilin lause, josta johdetaan iOS:n avainnippuun tallennetut avaimet - vain laitteella ja Face ID:n tai Touch ID:n suojaamina."
+    },
+    {
+      "q": "Mitä metatietoja PrivaMesh kerää?",
+      "a": "Ei mitään millään palvelimella, koska palvelinta ei ole. Toimitus kertakäyttöisiin osoitteisiin piilottaa sosiaalisen verkon, peiteliikenne piilottaa lähetysajat ja kiinteän koon täydennys piilottaa viestin pituuden."
+    },
+    {
+      "q": "Mitä tapahtuu, jos kadotan puhelimeni?",
+      "a": "Palauta tilin lause uudelle laitteelle, niin identiteettisi palaa. Keskusteluhistoria ei tarkoituksella palaa: eteenpäin suuntautuva salaisuus tarkoittaa, että vanhat viestiavaimet on poistettu, joten kukaan, et edes sinä, voi purkaa vanhoja viestejä pelkällä lauseella."
+    }
+  ],
+  "cta": {
+    "title": "Lakkaa uskomasta keskustelujasi yrityksille",
+    "lead": "PrivaMesh korvaa yrityksen matematiikalla ja palvelimen julkisella, hajautetulla siirtokanavalla. Sinun avaimesi, sinun laitteesi, sinun sanasi.",
+    "policy": "Lue tietosuojakäytäntö"
+  }
+}

@@ -1,0 +1,186 @@
+{
+  "meta": {
+    "title": "PrivaMesh - privé versleutelde messenger",
+    "description": "Privé messenger met end-to-end-versleuteling voor iPhone, Android en Windows. Geen telefoonnummer, geen e-mail, geen account - je sleutels en chats verlaten nooit je apparaat."
+  },
+  "hero": {
+    "badge": "End-to-end versleuteld · Geen telefoonnummer",
+    "title": "De {scramble} messenger die niets over je weet",
+    "scramble": "privé",
+    "lead": "Privé berichten zonder telefoonnummer en zonder accountdatabase. Berichten worden op je apparaat end-to-end versleuteld en via een openbaar, gedecentraliseerd transport bezorgd op eenmalige adressen. PrivaMesh is gebouwd om metadata tot een minimum te beperken - niet om te doen alsof ze niet bestaan.",
+    "cta": "PrivaMesh downloaden",
+    "threatModel": "Lees het dreigingsmodel",
+    "architecture": "Architectuur",
+    "limitations": "Bekende beperkingen",
+    "security": "Beveiliging",
+    "source": "Broncode",
+    "trust": [
+      "Geen telefoonnummer",
+      "Geen servers",
+      "End-to-end versleuteld"
+    ],
+    "phoneAlt": "Onboarding van de privé messenger PrivaMesh op iPhone - standaard privé, end-to-end versleuteld"
+  },
+  "noServers": {
+    "eyebrow": "Het verschil",
+    "title": "Geen servers - concreet",
+    "lead": "De meeste 'privé' messengers draaien nog steeds servers die zien met wie je praat. PrivaMesh heeft er geen. Zo staat precies waar elk stukje van je gegevens zich bevindt.",
+    "colWhat": "Wat",
+    "colWhere": "Waar het staat",
+    "colHow": "Hoe",
+    "rows": [
+      {
+        "what": "Je berichten",
+        "where": "Een openbaar, gedecentraliseerd transport",
+        "how": "Versleutelde blokken, gericht aan eenmalige adressen"
+      },
+      {
+        "what": "Je inbox",
+        "where": "Het openbare transport zelf",
+        "how": "Alleen op je apparaat opgehaald en ontsleuteld"
+      },
+      {
+        "what": "Je sleutels",
+        "where": "Alleen de sleutelopslag van je apparaat",
+        "how": "Biometrisch vergrendeld, verlaten nooit het apparaat"
+      },
+      {
+        "what": "Je contacten en geschiedenis",
+        "where": "Het apparaat dat ze ontving",
+        "how": "Nooit gesynchroniseerd, nergens naartoe geüpload"
+      },
+      {
+        "what": "Je identiteit",
+        "where": "Een accountzin die jij bewaart",
+        "how": "Versleutelingssleutels op je apparaat - geen telefoon, geen e-mail"
+      },
+      {
+        "what": "De 'PrivaMesh-server'",
+        "where": "Bestaat niet",
+        "how": "Geen accountserver; het transport is openbaar en vervangbaar"
+      }
+    ],
+    "more": "Zo werkt de serverloze architectuur →"
+  },
+  "lifecycle": {
+    "title": "Eén bericht, drie stappen",
+    "lead": "Versturen → Transport → Ontvangen. Geen tussenstation, geen inbox op de computer van een ander.",
+    "steps": [
+      {
+        "label": "Versturen",
+        "body": "Je bericht wordt aangevuld tot een vaste grootte en verzegeld met AES-256-GCM onder een nieuwe Double Ratchet-sleutel - op je apparaat, voordat het vertrekt."
+      },
+      {
+        "label": "Transport",
+        "body": "Het versleutelde blok reist via een openbaar, gedecentraliseerd transport naar een eenmalig adres. Geen enkele accountserver bewaart het."
+      },
+      {
+        "label": "Ontvangen",
+        "body": "Je apparaat haalt het op, ontsleutelt het lokaal met sleutels die alleen jij hebt en zet de ratchet door. Alleen jouw apparaat kan het lezen."
+      }
+    ]
+  },
+  "metadata": {
+    "title": "Verberg wie. Verberg wanneer. Verberg hoe.",
+    "lead": "Versleuteling verbergt het bericht. PrivaMesh verbergt ook de metadata - het wie, wanneer en hoe dat een server anders zou zien.",
+    "more": "Meer informatie",
+    "cards": [
+      {
+        "title": "Eenmalige adressen",
+        "body": "Elk bericht wordt bezorgd op een nieuw eenmalig adres, zodat een waarnemer niet kan reconstrueren wie met wie praat. De sociale graaf blijft verborgen."
+      },
+      {
+        "title": "Dekverkeer",
+        "body": "Lokberichten mengen zich met echte, zodat een waarnemer niet kan zien wanneer je echt iets verstuurt. Tijdsanalyse heeft niets om mee te werken."
+      },
+      {
+        "title": "Aanvulling tot vaste grootte",
+        "body": "Elk bericht wordt vóór het verzegelen aangevuld tot een vaste grootte, zodat de lengte niets over de inhoud verraadt."
+      }
+    ]
+  },
+  "crypto": {
+    "eyebrow": "De cryptografie",
+    "title": "End-to-end-versleuteling, goed gedaan",
+    "lead": "PrivaMesh gebruikt dezelfde beproefde bouwstenen die de beste versleutelde messengers beschermen, aangepast aan een wereld zonder servers. Elk bericht krijgt een nieuwe sleutel, zodat een gecompromitteerde sleutel je eerdere of toekomstige gesprekken niet opent.",
+    "more": "Versleuteling in gewone taal uitgelegd →",
+    "rows": [
+      "Een handshake op Curve25519 maakt een gedeeld geheim aan zonder vertrouwde sleutelserver.",
+      "HKDF + HMAC-SHA256 wisselen de sleutel bij elk bericht - forward secrecy en beveiliging na compromittering.",
+      "Geauthenticeerde versleuteling verzegelt elk bericht, aangevuld tot een vaste grootte om de lengte te verbergen."
+    ]
+  },
+  "gallery": {
+    "title": "Bekijk het op je iPhone",
+    "lead": "Een privé berichtenapp die eruitziet en aanvoelt als een premium chatapp - zonder enige surveillance eronder.",
+    "shots": [
+      {
+        "title": "Standaard privé",
+        "alt": "PrivaMesh-onboarding - standaard privé, een Double Ratchet-sleutel per bericht en eenmalige adressen, op iPhone"
+      },
+      {
+        "title": "End-to-end versleutelde chat",
+        "alt": "Versleuteld chatscherm van PrivaMesh met een privégesprek, end-to-end versleuteld, op iPhone"
+      },
+      {
+        "title": "Je chats",
+        "alt": "Chatlijst van PrivaMesh met namen en bijnamen, zonder telefoonnummers, op iPhone"
+      },
+      {
+        "title": "Geen servers, echt niet",
+        "alt": "PrivaMesh-onboarding die uitlegt dat er geen centrale server is - niets om te hacken of onder druk te zetten, op iPhone"
+      },
+      {
+        "title": "Beveiliging op het apparaat",
+        "alt": "PrivaMesh-onboarding - sleutels achter Face ID, verdwijnende berichten en ondertekende contacten, op iPhone"
+      },
+      {
+        "title": "Een privé sociale graaf",
+        "alt": "Anonieme contactgraaf van PrivaMesh die je verbindingen privé toont, zonder telefoonnummers, op iPhone"
+      }
+    ]
+  },
+  "compare": {
+    "title": "PrivaMesh tegenover de messengers die je kent",
+    "lead": "Signal is uitstekend. Telegram is populair. Geen van beide is serverloos. Dit is de korte versie.",
+    "feature": "Functie",
+    "rows": [
+      "Geen servers",
+      "Geen telefoonnummer",
+      "Bescherming van metadata",
+      "End-to-end versleuteld",
+      "Open source"
+    ],
+    "vsSignal": "PrivaMesh vs Signal →",
+    "vsTelegram": "PrivaMesh vs Telegram →",
+    "vsSession": "PrivaMesh vs Session →",
+    "best": "Beste privé berichtenapps 2026 →"
+  },
+  "faq": [
+    {
+      "q": "Is PrivaMesh echt serverloos?",
+      "a": "Ja. PrivaMesh heeft geen accountserver, relay of berichtendatabase. Versleutelde berichten reizen via een openbaar, gedecentraliseerd transport, dus er is niets centraals om te hacken, te vorderen, te loggen of uit te schakelen."
+    },
+    {
+      "q": "Hoe versleutelt PrivaMesh?",
+      "a": "PrivaMesh maakt sleutels aan met een X3DH-handshake op Curve25519, waarna een Double Ratchet (HKDF en HMAC-SHA256) elk bericht een nieuwe sleutel geeft. De inhoud wordt verzegeld met AES-256-GCM en aangevuld tot een vaste grootte. Forward secrecy en beveiliging na compromittering zijn standaard."
+    },
+    {
+      "q": "Kan ik PrivaMesh gebruiken zonder telefoonnummer of e-mail?",
+      "a": "Ja. Geen telefoonnummer, geen e-mail. Je account is een accountzin waaruit sleutels worden afgeleid die in de iOS-sleutelhanger staan - alleen op het apparaat en beschermd door Face ID of Touch ID."
+    },
+    {
+      "q": "Welke metadata verzamelt PrivaMesh?",
+      "a": "Geen op een server, want er is geen server. Bezorging op eenmalige adressen verbergt de sociale graaf, dekverkeer verbergt wanneer je verstuurt en aanvulling tot vaste grootte verbergt de berichtlengte."
+    },
+    {
+      "q": "Wat gebeurt er als ik mijn telefoon kwijtraak?",
+      "a": "Herstel je accountzin op een nieuw apparaat om je identiteit terug te krijgen. Je chatgeschiedenis komt bewust niet terug: forward secrecy betekent dat oude berichtsleutels gewist zijn, zodat niemand, ook jij niet, eerdere berichten alleen met de zin kan ontsleutelen."
+    }
+  ],
+  "cta": {
+    "title": "Vertrouw je gesprekken niet langer toe aan bedrijven",
+    "lead": "PrivaMesh vervangt het bedrijf door wiskunde en de server door een openbaar, gedecentraliseerd transport. Jouw sleutels, jouw apparaat, jouw woorden.",
+    "policy": "Lees het privacybeleid"
+  }
+}

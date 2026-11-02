@@ -1,0 +1,186 @@
+{
+  "meta": {
+    "title": "PrivaMesh - súkromný šifrovaný komunikátor",
+    "description": "Súkromný komunikátor s koncovým šifrovaním pre iPhone, Android a Windows. Žiadne telefónne číslo, žiadny e-mail, žiadny účet - vaše kľúče a konverzácie nikdy neopustia zariadenie."
+  },
+  "hero": {
+    "badge": "Koncové šifrovanie · Bez telefónneho čísla",
+    "title": "{scramble} komunikátor, ktorý o vás nič nevie",
+    "scramble": "Súkromný",
+    "lead": "Súkromné správy bez telefónneho čísla a bez databázy účtov. Správy sa šifrujú koncovým šifrovaním vo vašom zariadení a doručujú sa na jednorazové adresy cez verejný decentralizovaný prenos. PrivaMesh je postavený tak, aby metadáta obmedzil na minimum - nie aby predstieral, že neexistujú.",
+    "cta": "Získať PrivaMesh",
+    "threatModel": "Prečítať model hrozieb",
+    "architecture": "Architektúra",
+    "limitations": "Známe obmedzenia",
+    "security": "Bezpečnosť",
+    "source": "Zdrojový kód",
+    "trust": [
+      "Bez telefónneho čísla",
+      "Bez serverov",
+      "Koncové šifrovanie"
+    ],
+    "phoneAlt": "Úvodná obrazovka súkromného komunikátora PrivaMesh na iPhone - súkromie predvolene, koncové šifrovanie"
+  },
+  "noServers": {
+    "eyebrow": "V čom je rozdiel",
+    "title": "Bez serverov - konkrétne",
+    "lead": "Väčšina „súkromných“ komunikátorov stále prevádzkuje servery, ktoré vidia, s kým hovoríte. PrivaMesh nemá žiadne. Tu je presne, kde je každý kúsok vašich dát.",
+    "colWhat": "Čo",
+    "colWhere": "Kde je",
+    "colHow": "Ako",
+    "rows": [
+      {
+        "what": "Vaše správy",
+        "where": "Verejný decentralizovaný prenos",
+        "how": "Šifrované bloky adresované na jednorazové adresy"
+      },
+      {
+        "what": "Vaša schránka",
+        "where": "Samotný verejný prenos",
+        "how": "Sťahuje sa a dešifruje len vo vašom zariadení"
+      },
+      {
+        "what": "Vaše kľúče",
+        "where": "Len úložisko kľúčov zariadenia",
+        "how": "Uzamknuté biometriou, nikdy neopustia zariadenie"
+      },
+      {
+        "what": "Kontakty a história",
+        "where": "Zariadenie, ktoré ich prijalo",
+        "how": "Nikdy sa nesynchronizujú ani nikam nenahrávajú"
+      },
+      {
+        "what": "Vaša identita",
+        "where": "Fráza účtu, ktorú máte vy",
+        "how": "Šifrovacie kľúče vo vašom zariadení - bez telefónu, bez e-mailu"
+      },
+      {
+        "what": "„Server PrivaMesh“",
+        "where": "Neexistuje",
+        "how": "Žiadny server účtov; prenos je verejný a nahraditeľný"
+      }
+    ],
+    "more": "Ako funguje architektúra bez serverov →"
+  },
+  "lifecycle": {
+    "title": "Jedna správa, tri kroky",
+    "lead": "Odoslanie → Prenos → Príjem. Žiadny sprostredkovateľ, žiadna schránka na cudzom počítači.",
+    "steps": [
+      {
+        "label": "Odoslanie",
+        "body": "Správa sa doplní na pevnú veľkosť a zapečatí AES-256-GCM pod novým kľúčom Double Ratchet - vo vašom zariadení, ešte kým ho opustí."
+      },
+      {
+        "label": "Prenos",
+        "body": "Šifrovaný blok putuje verejným decentralizovaným prenosom na jednorazovú adresu. Žiadny server účtov ho nikdy nedrží."
+      },
+      {
+        "label": "Príjem",
+        "body": "Vaše zariadenie ho stiahne a dešifruje lokálne kľúčmi, ktoré máte len vy, a posunie ratchet. Prečítať ho môže len vaše zariadenie."
+      }
+    ]
+  },
+  "metadata": {
+    "title": "Skryť kto. Skryť kedy. Skryť ako.",
+    "lead": "Šifrovanie skrýva správu. PrivaMesh skrýva aj metadáta - kto, kedy a ako, čo by inak videl server.",
+    "more": "Zistiť viac",
+    "cards": [
+      {
+        "title": "Jednorazové adresy",
+        "body": "Každá správa sa doručí na novú jednorazovú adresu, takže pozorovateľ nedokáže zrekonštruovať, kto s kým hovorí. Sociálny graf zostáva skrytý."
+      },
+      {
+        "title": "Krycia prevádzka",
+        "body": "Návnadové správy sa miešajú so skutočnými, takže pozorovateľ nepozná, kedy naozaj niečo posielate. Časová analýza nemá z čoho vychádzať."
+      },
+      {
+        "title": "Doplnenie na pevnú veľkosť",
+        "body": "Každá správa sa pred zapečatením doplní na pevnú veľkosť, takže jej dĺžka nič neprezradí o obsahu."
+      }
+    ]
+  },
+  "crypto": {
+    "eyebrow": "Kryptografia",
+    "title": "Koncové šifrovanie, ako má byť",
+    "lead": "PrivaMesh používa rovnaké osvedčené primitíva, aké chránia najlepšie šifrované komunikátory, prispôsobené svetu bez serverov. Každá správa dostane nový kľúč, takže kompromitovaný kľúč neotvorí minulé ani budúce konverzácie.",
+    "more": "Šifrovanie zrozumiteľne vysvetlené →",
+    "rows": [
+      "Handshake na Curve25519 vytvorí zdieľané tajomstvo bez dôveryhodného servera kľúčov.",
+      "HKDF + HMAC-SHA256 menia kľúč pri každej správe - dopredné utajenie a ochrana po kompromitácii.",
+      "Autentizované šifrovanie zapečatí každú správu doplnenú na pevnú veľkosť, aby skrylo jej dĺžku."
+    ]
+  },
+  "gallery": {
+    "title": "Pozrite sa na iPhone",
+    "lead": "Súkromná aplikácia na správy, ktorá vyzerá a pôsobí ako prémiový chat - bez akéhokoľvek sledovania pod povrchom.",
+    "shots": [
+      {
+        "title": "Súkromie predvolene",
+        "alt": "Úvodná obrazovka PrivaMesh - súkromie predvolene, kľúč Double Ratchet pre každú správu a jednorazové adresy, na iPhone"
+      },
+      {
+        "title": "Chat s koncovým šifrovaním",
+        "alt": "Obrazovka šifrovaného chatu PrivaMesh so súkromnou konverzáciou, koncové šifrovanie, na iPhone"
+      },
+      {
+        "title": "Vaše chaty",
+        "alt": "Zoznam chatov PrivaMesh s menami a prezývkami, bez telefónnych čísel, na iPhone"
+      },
+      {
+        "title": "Bez serverov, naozaj",
+        "alt": "Úvodná obrazovka PrivaMesh vysvetľujúca, že neexistuje centrálny server - nič na hacknutie ani vynútenie, na iPhone"
+      },
+      {
+        "title": "Bezpečnosť v zariadení",
+        "alt": "Úvodná obrazovka PrivaMesh - kľúče za Face ID, miznúce správy a podpísané kontakty, na iPhone"
+      },
+      {
+        "title": "Súkromný sociálny graf",
+        "alt": "Anonymný graf kontaktov PrivaMesh zobrazujúci vaše väzby súkromne, bez telefónnych čísel, na iPhone"
+      }
+    ]
+  },
+  "compare": {
+    "title": "PrivaMesh vs komunikátory, ktoré poznáte",
+    "lead": "Signal je výborný. Telegram je populárny. Ani jeden nefunguje bez serverov. Tu je krátka verzia.",
+    "feature": "Funkcia",
+    "rows": [
+      "Bez serverov",
+      "Bez telefónneho čísla",
+      "Ochrana metadát",
+      "Koncové šifrovanie",
+      "Otvorený kód"
+    ],
+    "vsSignal": "PrivaMesh vs Signal →",
+    "vsTelegram": "PrivaMesh vs Telegram →",
+    "vsSession": "PrivaMesh vs Session →",
+    "best": "Najlepšie súkromné komunikátory 2026 →"
+  },
+  "faq": [
+    {
+      "q": "Funguje PrivaMesh naozaj bez serverov?",
+      "a": "Áno. PrivaMesh nemá server účtov, relay ani databázu správ. Šifrované správy putujú verejným decentralizovaným prenosom, takže neexistuje nič centrálne, čo by sa dalo hacknúť, vyžiadať súdne, logovať alebo vypnúť."
+    },
+    {
+      "q": "Ako PrivaMesh šifruje?",
+      "a": "PrivaMesh vytvára kľúče handshakom X3DH na Curve25519 a potom Double Ratchet (HKDF a HMAC-SHA256) dá každej správe nový kľúč. Obsah sa zapečatí AES-256-GCM a doplní na pevnú veľkosť. Dopredné utajenie a ochrana po kompromitácii sú predvolené."
+    },
+    {
+      "q": "Môžem PrivaMesh používať bez telefónneho čísla a e-mailu?",
+      "a": "Áno. Žiadne telefónne číslo, žiadny e-mail. Váš účet je fráza účtu, z ktorej sa odvodzujú kľúče uložené v kľúčenke iOS - len v zariadení a chránené Face ID alebo Touch ID."
+    },
+    {
+      "q": "Aké metadáta PrivaMesh zbiera?",
+      "a": "Na žiadnom serveri žiadne, pretože žiadny server nie je. Doručovanie na jednorazové adresy skrýva sociálny graf, krycia prevádzka skrýva, kedy posielate, a doplnenie na pevnú veľkosť skrýva dĺžku správy."
+    },
+    {
+      "q": "Čo sa stane, keď stratím telefón?",
+      "a": "Obnovte frázu účtu v novom zariadení a vaša identita sa vráti. História chatu sa zámerne neobnoví: dopredné utajenie znamená, že staré kľúče správ sú zmazané, takže nikto, ani vy, nedešifruje minulé správy len pomocou frázy."
+    }
+  ],
+  "cta": {
+    "title": "Prestaňte zverovať svoje konverzácie firmám",
+    "lead": "PrivaMesh nahrádza firmu matematikou a server verejným decentralizovaným prenosom. Vaše kľúče, vaše zariadenie, vaše slová.",
+    "policy": "Prečítať zásady ochrany súkromia"
+  }
+}

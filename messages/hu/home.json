@@ -1,0 +1,186 @@
+{
+  "meta": {
+    "title": "PrivaMesh - privát titkosított üzenetküldő",
+    "description": "Privát, végponttól végpontig titkosított üzenetküldő iPhone-ra, Androidra és Windowsra. Nincs telefonszám, nincs e-mail, nincs fiók - a kulcsaid és a beszélgetéseid sosem hagyják el az eszközödet."
+  },
+  "hero": {
+    "badge": "Végponttól végpontig titkosítva · Nincs telefonszám",
+    "title": "A {scramble} üzenetküldő, amely semmit sem tud rólad",
+    "scramble": "privát",
+    "lead": "Privát üzenetküldés telefonszám és fiókadatbázis nélkül. Az üzenetek az eszközödön végponttól végpontig titkosítódnak, és egy nyilvános, decentralizált átvitelen keresztül egyszer használatos címekre érkeznek. A PrivaMesh arra készült, hogy minimálisra csökkentse a metaadatokat - nem arra, hogy úgy tegyen, mintha nem léteznének.",
+    "cta": "PrivaMesh letöltése",
+    "threatModel": "Olvasd el a fenyegetésmodellt",
+    "architecture": "Architektúra",
+    "limitations": "Ismert korlátok",
+    "security": "Biztonság",
+    "source": "Forráskód",
+    "trust": [
+      "Nincs telefonszám",
+      "Nincsenek szerverek",
+      "Végponttól végpontig titkosítva"
+    ],
+    "phoneAlt": "A PrivaMesh privát üzenetküldő bemutatója iPhone-on - alapértelmezett adatvédelem, végponttól végpontig titkosítás"
+  },
+  "noServers": {
+    "eyebrow": "A különbség",
+    "title": "Nincsenek szerverek - konkrétan",
+    "lead": "A legtöbb „privát” üzenetküldő ma is olyan szervereket üzemeltet, amelyek látják, kivel beszélsz. A PrivaMesh-nek egy sincs. Íme, pontosan hol van az adataid minden darabja.",
+    "colWhat": "Mi",
+    "colWhere": "Hol van",
+    "colHow": "Hogyan",
+    "rows": [
+      {
+        "what": "Az üzeneteid",
+        "where": "Nyilvános, decentralizált átvitel",
+        "how": "Titkosított blokkok egyszer használatos címekre"
+      },
+      {
+        "what": "A beérkező leveleid",
+        "where": "Maga a nyilvános átvitel",
+        "how": "Csak az eszközödön töltődik le és fejtődik vissza"
+      },
+      {
+        "what": "A kulcsaid",
+        "where": "Csak az eszköz kulcstára",
+        "how": "Biometriával zárva, sosem hagyják el az eszközt"
+      },
+      {
+        "what": "Ismerősök és előzmények",
+        "where": "Az eszköz, amely megkapta őket",
+        "how": "Soha nem szinkronizálódnak, sehova nem töltődnek fel"
+      },
+      {
+        "what": "A személyazonosságod",
+        "where": "Egy fiókkifejezés, amely nálad van",
+        "how": "Titkosítási kulcsok az eszközödön - se telefon, se e-mail"
+      },
+      {
+        "what": "A „PrivaMesh-szerver”",
+        "where": "Nem létezik",
+        "how": "Nincs fiókszerver; az átvitel nyilvános és lecserélhető"
+      }
+    ],
+    "more": "Így működik a szerver nélküli architektúra →"
+  },
+  "lifecycle": {
+    "title": "Egy üzenet, három lépés",
+    "lead": "Küldés → Átvitel → Fogadás. Nincs köztes doboz, nincs postafiók valaki más gépén.",
+    "steps": [
+      {
+        "label": "Küldés",
+        "body": "Az üzenet rögzített méretre egészül ki, és AES-256-GCM-mel pecsételődik le egy új Double Ratchet-kulccsal - az eszközödön, mielőtt elhagyná azt."
+      },
+      {
+        "label": "Átvitel",
+        "body": "A titkosított blokk nyilvános, decentralizált átvitelen jut el egy egyszer használatos címre. Egyetlen fiókszerver sem tárolja."
+      },
+      {
+        "label": "Fogadás",
+        "body": "Az eszközöd letölti, helyben visszafejti olyan kulcsokkal, amelyek csak nálad vannak, majd továbblépteti a ratchetet. Csak a te eszközöd tudja elolvasni."
+      }
+    ]
+  },
+  "metadata": {
+    "title": "Rejtsd el, ki. Rejtsd el, mikor. Rejtsd el, hogyan.",
+    "lead": "A titkosítás elrejti az üzenetet. A PrivaMesh a metaadatokat is elrejti - a kit, mikor és hogyan kérdését, amelyet különben egy szerver látna.",
+    "more": "Tudj meg többet",
+    "cards": [
+      {
+        "title": "Egyszer használatos címek",
+        "body": "Minden üzenet új, egyszer használatos címre érkezik, így egy megfigyelő nem tudja összerakni, ki kivel beszél. A kapcsolati háló rejtve marad."
+      },
+      {
+        "title": "Takaróforgalom",
+        "body": "Csaliüzenetek keverednek a valódiak közé, így egy megfigyelő nem tudja, mikor küldesz valóban. Az időzítéselemzésnek nincs mibe kapaszkodnia."
+      },
+      {
+        "title": "Kiegészítés rögzített méretre",
+        "body": "Minden üzenet lezárás előtt rögzített méretre egészül ki, így a hossza semmit nem árul el a tartalomról."
+      }
+    ]
+  },
+  "crypto": {
+    "eyebrow": "A kriptográfia",
+    "title": "Végponttól végpontig titkosítás, ahogy kell",
+    "lead": "A PrivaMesh ugyanazokat a jól bevált építőelemeket használja, amelyek a legjobb titkosított üzenetküldőket védik, szerver nélküli világra szabva. Minden üzenet új kulcsot kap, így egy kompromittált kulcs sem a múltbeli, sem a jövőbeli beszélgetéseidet nem nyitja meg.",
+    "more": "A titkosítás közérthetően elmagyarázva →",
+    "rows": [
+      "A Curve25519-alapú kézfogás közös titkot hoz létre megbízható kulcsszerver nélkül.",
+      "A HKDF + HMAC-SHA256 minden üzenetnél kulcsot vált - előremenő titkosság és kompromittálás utáni védelem.",
+      "A hitelesített titkosítás lezár minden üzenetet, rögzített méretre kiegészítve, hogy elrejtse a hosszt."
+    ]
+  },
+  "gallery": {
+    "title": "Nézd meg az iPhone-odon",
+    "lead": "Egy privát üzenetküldő app, amely prémium csevegőappnak néz ki és annak is érződik - alatta pedig nincs semmilyen megfigyelés.",
+    "shots": [
+      {
+        "title": "Alapértelmezett adatvédelem",
+        "alt": "PrivaMesh bemutató - alapértelmezett adatvédelem, üzenetenként új Double Ratchet-kulcs és egyszer használatos címek, iPhone-on"
+      },
+      {
+        "title": "Végponttól végpontig titkosított csevegés",
+        "alt": "A PrivaMesh titkosított csevegőképernyője egy privát beszélgetéssel, végponttól végpontig titkosítva, iPhone-on"
+      },
+      {
+        "title": "A csevegéseid",
+        "alt": "A PrivaMesh csevegéslistája nevekkel és becenevekkel, telefonszámok nélkül, iPhone-on"
+      },
+      {
+        "title": "Nincsenek szerverek, komolyan",
+        "alt": "PrivaMesh bemutató, amely elmagyarázza, hogy nincs központi szerver - nincs mit feltörni vagy kikényszeríteni, iPhone-on"
+      },
+      {
+        "title": "Biztonság az eszközön",
+        "alt": "PrivaMesh bemutató - kulcsok a Face ID mögött, eltűnő üzenetek és aláírt ismerősök, iPhone-on"
+      },
+      {
+        "title": "Privát kapcsolati háló",
+        "alt": "A PrivaMesh névtelen ismerősgráfja, amely privát módon mutatja a kapcsolataidat, telefonszámok nélkül, iPhone-on"
+      }
+    ]
+  },
+  "compare": {
+    "title": "PrivaMesh az ismert üzenetküldőkkel szemben",
+    "lead": "A Signal kiváló. A Telegram népszerű. Egyik sem szerver nélküli. Íme a rövid változat.",
+    "feature": "Funkció",
+    "rows": [
+      "Nincsenek szerverek",
+      "Nincs telefonszám",
+      "Metaadatok védelme",
+      "Végponttól végpontig titkosítva",
+      "Nyílt forráskód"
+    ],
+    "vsSignal": "PrivaMesh vs Signal →",
+    "vsTelegram": "PrivaMesh vs Telegram →",
+    "vsSession": "PrivaMesh vs Session →",
+    "best": "A legjobb privát üzenetküldők 2026 →"
+  },
+  "faq": [
+    {
+      "q": "Tényleg szerver nélküli a PrivaMesh?",
+      "a": "Igen. A PrivaMesh-nek nincs fiókszervere, relay-e vagy üzenetadatbázisa. A titkosított üzenetek nyilvános, decentralizált átvitelen haladnak, így nincs semmi központi, amit fel lehetne törni, bírósági úton kikérni, naplózni vagy lekapcsolni."
+    },
+    {
+      "q": "Hogyan titkosít a PrivaMesh?",
+      "a": "A PrivaMesh X3DH-kézfogással hozza létre a kulcsokat Curve25519-en, majd egy Double Ratchet (HKDF és HMAC-SHA256) minden üzenetnek új kulcsot ad. A tartalmat AES-256-GCM pecsételi le, rögzített méretre kiegészítve. Az előremenő titkosság és a kompromittálás utáni védelem alapértelmezett."
+    },
+    {
+      "q": "Használhatom a PrivaMesh-t telefonszám és e-mail nélkül?",
+      "a": "Igen. Se telefonszám, se e-mail. A fiókod egy fiókkifejezés, amelyből az iOS kulcskarikájában tárolt kulcsok származnak - csak az eszközön, Face ID vagy Touch ID védelme alatt."
+    },
+    {
+      "q": "Milyen metaadatokat gyűjt a PrivaMesh?",
+      "a": "Egyetlen szerveren sem gyűjt semmit, mert nincs szerver. Az egyszer használatos címekre történő kézbesítés elrejti a kapcsolati hálót, a takaróforgalom elrejti, mikor küldesz, a rögzített méretre való kiegészítés pedig az üzenet hosszát."
+    },
+    {
+      "q": "Mi történik, ha elveszítem a telefonomat?",
+      "a": "Állítsd vissza a fiókkifejezésedet egy új eszközön, és visszakapod a személyazonosságodat. A csevegési előzmények szándékosan nem térnek vissza: az előremenő titkosság azt jelenti, hogy a régi üzenetkulcsok törlődtek, így senki - te sem - fejtheti vissza a korábbi üzeneteket pusztán a kifejezéssel."
+    }
+  ],
+  "cta": {
+    "title": "Ne bízd többé a beszélgetéseidet cégekre",
+    "lead": "A PrivaMesh a céget matematikára, a szervert pedig nyilvános, decentralizált átvitelre cseréli. A te kulcsaid, a te eszközöd, a te szavaid.",
+    "policy": "Olvasd el az adatvédelmi szabályzatot"
+  }
+}

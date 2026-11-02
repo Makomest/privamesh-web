@@ -1,0 +1,186 @@
+{
+  "meta": {
+    "title": "PrivaMesh - messenger pribadi terenkripsi",
+    "description": "Messenger pribadi dengan enkripsi ujung ke ujung untuk iPhone, Android, dan Windows. Tanpa nomor telepon, tanpa email, tanpa akun - kunci dan obrolan Anda tidak pernah meninggalkan perangkat."
+  },
+  "hero": {
+    "badge": "Terenkripsi ujung ke ujung · Tanpa nomor telepon",
+    "title": "Messenger {scramble} yang tidak tahu apa pun tentang Anda",
+    "scramble": "pribadi",
+    "lead": "Pesan pribadi tanpa nomor telepon dan tanpa basis data akun. Pesan dienkripsi ujung ke ujung di perangkat Anda dan dikirim ke alamat sekali pakai melalui transport publik yang terdesentralisasi. PrivaMesh dibuat untuk meminimalkan metadata - bukan berpura-pura metadata itu tidak ada.",
+    "cta": "Dapatkan PrivaMesh",
+    "threatModel": "Baca model ancaman",
+    "architecture": "Arsitektur",
+    "limitations": "Keterbatasan yang diketahui",
+    "security": "Keamanan",
+    "source": "Kode sumber",
+    "trust": [
+      "Tanpa nomor telepon",
+      "Tanpa server",
+      "Terenkripsi ujung ke ujung"
+    ],
+    "phoneAlt": "Layar pembuka messenger pribadi PrivaMesh di iPhone - privasi secara default, terenkripsi ujung ke ujung"
+  },
+  "noServers": {
+    "eyebrow": "Pembedanya",
+    "title": "Tanpa server - secara konkret",
+    "lead": "Sebagian besar messenger \"pribadi\" masih menjalankan server yang melihat dengan siapa Anda berbicara. PrivaMesh tidak punya satu pun. Inilah tepatnya tempat setiap bagian data Anda berada.",
+    "colWhat": "Apa",
+    "colWhere": "Di mana",
+    "colHow": "Bagaimana",
+    "rows": [
+      {
+        "what": "Pesan Anda",
+        "where": "Transport publik yang terdesentralisasi",
+        "how": "Blok terenkripsi yang ditujukan ke alamat sekali pakai"
+      },
+      {
+        "what": "Kotak masuk Anda",
+        "where": "Transport publik itu sendiri",
+        "how": "Diambil dan didekripsi hanya di perangkat Anda"
+      },
+      {
+        "what": "Kunci Anda",
+        "where": "Hanya penyimpanan kunci perangkat",
+        "how": "Dikunci biometrik, tidak pernah meninggalkan perangkat"
+      },
+      {
+        "what": "Kontak dan riwayat",
+        "where": "Perangkat yang menerimanya",
+        "how": "Tidak pernah disinkronkan, tidak pernah diunggah ke mana pun"
+      },
+      {
+        "what": "Identitas Anda",
+        "where": "Frasa akun yang Anda pegang",
+        "how": "Kunci enkripsi di perangkat - tanpa telepon, tanpa email"
+      },
+      {
+        "what": "\"Server PrivaMesh\"",
+        "where": "Tidak ada",
+        "how": "Tidak ada server akun; transportnya publik dan bisa diganti"
+      }
+    ],
+    "more": "Cara kerja arsitektur tanpa server →"
+  },
+  "lifecycle": {
+    "title": "Satu pesan, tiga langkah",
+    "lead": "Kirim → Transport → Terima. Tanpa perantara, tanpa kotak masuk di komputer orang lain.",
+    "steps": [
+      {
+        "label": "Kirim",
+        "body": "Pesan Anda diisi hingga ukuran tetap dan disegel dengan AES-256-GCM di bawah kunci Double Ratchet baru - di perangkat Anda, sebelum keluar."
+      },
+      {
+        "label": "Transport",
+        "body": "Blok terenkripsi melintasi transport publik yang terdesentralisasi menuju alamat sekali pakai. Tidak ada server akun yang pernah menyimpannya."
+      },
+      {
+        "label": "Terima",
+        "body": "Perangkat Anda mengambil dan mendekripsinya secara lokal dengan kunci yang hanya Anda miliki, lalu memajukan ratchet. Hanya perangkat Anda yang bisa membacanya."
+      }
+    ]
+  },
+  "metadata": {
+    "title": "Sembunyikan siapa. Sembunyikan kapan. Sembunyikan bagaimana.",
+    "lead": "Enkripsi menyembunyikan pesan. PrivaMesh juga menyembunyikan metadata - siapa, kapan, dan bagaimana yang sebaliknya akan dilihat server.",
+    "more": "Selengkapnya",
+    "cards": [
+      {
+        "title": "Alamat sekali pakai",
+        "body": "Setiap pesan dikirim ke alamat sekali pakai yang baru, sehingga pengamat tidak bisa merekonstruksi siapa berbicara dengan siapa. Graf sosial tetap tersembunyi."
+      },
+      {
+        "title": "Lalu lintas penyamar",
+        "body": "Pesan umpan bercampur dengan pesan asli sehingga pengamat tidak tahu kapan Anda benar-benar mengirim. Analisis waktu tidak punya pegangan."
+      },
+      {
+        "title": "Pengisian ukuran tetap",
+        "body": "Setiap pesan diisi hingga ukuran tetap sebelum disegel, sehingga panjangnya tidak membocorkan apa pun tentang isinya."
+      }
+    ]
+  },
+  "crypto": {
+    "eyebrow": "Kriptografinya",
+    "title": "Enkripsi ujung ke ujung yang dikerjakan dengan benar",
+    "lead": "PrivaMesh memakai primitif teruji yang sama yang melindungi messenger terenkripsi terbaik, disesuaikan untuk dunia tanpa server. Setiap pesan mendapat kunci baru, sehingga kunci yang bocor tidak bisa membuka percakapan lama maupun yang akan datang.",
+    "more": "Penjelasan enkripsi dalam bahasa sederhana →",
+    "rows": [
+      "Jabat tangan di atas Curve25519 membuat rahasia bersama tanpa server kunci tepercaya.",
+      "HKDF + HMAC-SHA256 mengganti kunci setiap pesan - kerahasiaan maju dan keamanan pasca-kompromi.",
+      "Enkripsi terautentikasi menyegel setiap pesan, diisi hingga ukuran tetap untuk menyembunyikan panjangnya."
+    ]
+  },
+  "gallery": {
+    "title": "Lihat di iPhone Anda",
+    "lead": "Aplikasi pesan pribadi yang tampil dan terasa seperti aplikasi obrolan premium - tanpa pengawasan apa pun di baliknya.",
+    "shots": [
+      {
+        "title": "Privasi secara default",
+        "alt": "Layar pembuka PrivaMesh - privasi secara default, kunci Double Ratchet per pesan, dan alamat sekali pakai, di iPhone"
+      },
+      {
+        "title": "Obrolan terenkripsi ujung ke ujung",
+        "alt": "Layar obrolan terenkripsi PrivaMesh dengan percakapan pribadi, terenkripsi ujung ke ujung, di iPhone"
+      },
+      {
+        "title": "Obrolan Anda",
+        "alt": "Daftar obrolan PrivaMesh dengan nama dan nama panggilan, tanpa nomor telepon, di iPhone"
+      },
+      {
+        "title": "Tanpa server, sungguhan",
+        "alt": "Layar pembuka PrivaMesh yang menjelaskan tidak ada server pusat - tidak ada yang bisa diretas atau dipaksa, di iPhone"
+      },
+      {
+        "title": "Keamanan di perangkat",
+        "alt": "Layar pembuka PrivaMesh - kunci di balik Face ID, pesan sementara, dan kontak bertanda tangan, di iPhone"
+      },
+      {
+        "title": "Graf sosial pribadi",
+        "alt": "Graf kontak anonim PrivaMesh yang menampilkan koneksi Anda secara pribadi, tanpa nomor telepon, di iPhone"
+      }
+    ]
+  },
+  "compare": {
+    "title": "PrivaMesh vs messenger yang Anda kenal",
+    "lead": "Signal luar biasa. Telegram populer. Keduanya tidak tanpa server. Ini versi singkatnya.",
+    "feature": "Fitur",
+    "rows": [
+      "Tanpa server",
+      "Tanpa nomor telepon",
+      "Perlindungan metadata",
+      "Terenkripsi ujung ke ujung",
+      "Sumber terbuka"
+    ],
+    "vsSignal": "PrivaMesh vs Signal →",
+    "vsTelegram": "PrivaMesh vs Telegram →",
+    "vsSession": "PrivaMesh vs Session →",
+    "best": "Aplikasi pesan pribadi terbaik 2026 →"
+  },
+  "faq": [
+    {
+      "q": "Apakah PrivaMesh benar-benar tanpa server?",
+      "a": "Ya. PrivaMesh tidak punya server akun, relay, atau basis data pesan. Pesan terenkripsi melintasi transport publik yang terdesentralisasi, jadi tidak ada sesuatu yang terpusat untuk diretas, dimintai paksa, dicatat, atau dimatikan."
+    },
+    {
+      "q": "Bagaimana PrivaMesh dienkripsi?",
+      "a": "PrivaMesh membuat kunci dengan jabat tangan X3DH di atas Curve25519, lalu Double Ratchet (HKDF dan HMAC-SHA256) memberi setiap pesan kunci baru. Isi pesan disegel dengan AES-256-GCM dan diisi hingga ukuran tetap. Kerahasiaan maju dan keamanan pasca-kompromi aktif secara default."
+    },
+    {
+      "q": "Bisakah saya memakai PrivaMesh tanpa nomor telepon atau email?",
+      "a": "Bisa. Tanpa nomor telepon, tanpa email. Akun Anda adalah frasa akun yang menurunkan kunci yang disimpan di Keychain iOS - hanya di perangkat dan dilindungi Face ID atau Touch ID."
+    },
+    {
+      "q": "Metadata apa yang dikumpulkan PrivaMesh?",
+      "a": "Tidak ada di server mana pun, karena tidak ada server. Pengiriman ke alamat sekali pakai menyembunyikan graf sosial, lalu lintas penyamar menyembunyikan kapan Anda mengirim, dan pengisian ukuran tetap menyembunyikan panjang pesan."
+    },
+    {
+      "q": "Apa yang terjadi jika ponsel saya hilang?",
+      "a": "Pulihkan frasa akun Anda di perangkat baru untuk mendapatkan kembali identitas Anda. Riwayat obrolan sengaja tidak dipulihkan: kerahasiaan maju berarti kunci pesan lama sudah dihapus, sehingga tidak seorang pun, termasuk Anda, bisa mendekripsi pesan lama hanya dengan frasa."
+    }
+  ],
+  "cta": {
+    "title": "Berhentilah memercayakan percakapan Anda kepada perusahaan",
+    "lead": "PrivaMesh mengganti perusahaan dengan matematika dan server dengan transport publik yang terdesentralisasi. Kunci Anda, perangkat Anda, kata-kata Anda.",
+    "policy": "Baca Kebijakan Privasi"
+  }
+}

@@ -1,0 +1,186 @@
+{
+  "meta": {
+    "title": "PrivaMesh - privatni šifrirani messenger",
+    "description": "Privatni messenger s end-to-end šifriranjem za iPhone, Android i Windows. Bez broja telefona, bez e-pošte, bez računa - vaši ključevi i razgovori nikad ne napuštaju uređaj."
+  },
+  "hero": {
+    "badge": "End-to-end šifriranje · Bez broja telefona",
+    "title": "{scramble} messenger koji ništa ne zna o vama",
+    "scramble": "Privatni",
+    "lead": "Privatne poruke bez broja telefona i bez baze računa. Poruke se šifriraju end-to-end na vašem uređaju i dostavljaju na jednokratne adrese preko javnog decentraliziranog prijenosa. PrivaMesh je napravljen da metapodatke svede na minimum - ne da se pravi da ne postoje.",
+    "cta": "Preuzmi PrivaMesh",
+    "threatModel": "Pročitaj model prijetnji",
+    "architecture": "Arhitektura",
+    "limitations": "Poznata ograničenja",
+    "security": "Sigurnost",
+    "source": "Izvorni kod",
+    "trust": [
+      "Bez broja telefona",
+      "Bez poslužitelja",
+      "End-to-end šifriranje"
+    ],
+    "phoneAlt": "Uvodni zaslon privatnog messengera PrivaMesh na iPhoneu - privatnost prema zadanim postavkama, end-to-end šifriranje"
+  },
+  "noServers": {
+    "eyebrow": "Ono po čemu se razlikuje",
+    "title": "Bez poslužitelja - konkretno",
+    "lead": "Većina „privatnih” messengera i dalje vodi poslužitelje koji vide s kim razgovarate. PrivaMesh nema nijedan. Evo točno gdje se nalazi svaki dio vaših podataka.",
+    "colWhat": "Što",
+    "colWhere": "Gdje se nalazi",
+    "colHow": "Kako",
+    "rows": [
+      {
+        "what": "Vaše poruke",
+        "where": "Javni decentralizirani prijenos",
+        "how": "Šifrirani blokovi adresirani na jednokratne adrese"
+      },
+      {
+        "what": "Vaš sandučić",
+        "where": "Sam javni prijenos",
+        "how": "Preuzima se i dešifrira samo na vašem uređaju"
+      },
+      {
+        "what": "Vaši ključevi",
+        "where": "Samo spremište ključeva uređaja",
+        "how": "Zaključani biometrijom, nikad ne napuštaju uređaj"
+      },
+      {
+        "what": "Kontakti i povijest",
+        "where": "Uređaj koji ih je primio",
+        "how": "Nikad se ne sinkroniziraju i nikamo ne učitavaju"
+      },
+      {
+        "what": "Vaš identitet",
+        "where": "Fraza računa koju čuvate vi",
+        "how": "Ključevi za šifriranje na uređaju - bez telefona, bez e-pošte"
+      },
+      {
+        "what": "„PrivaMesh poslužitelj”",
+        "where": "Ne postoji",
+        "how": "Nema poslužitelja računa; prijenos je javan i zamjenjiv"
+      }
+    ],
+    "more": "Kako radi arhitektura bez poslužitelja →"
+  },
+  "lifecycle": {
+    "title": "Jedna poruka, tri koraka",
+    "lead": "Slanje → Prijenos → Primanje. Bez posrednika, bez sandučića na tuđem računalu.",
+    "steps": [
+      {
+        "label": "Slanje",
+        "body": "Poruka se nadopunjuje do fiksne veličine i zapečaćuje AES-256-GCM-om pod novim Double Ratchet ključem - na vašem uređaju, prije nego što ga napusti."
+      },
+      {
+        "label": "Prijenos",
+        "body": "Šifrirani blok putuje javnim decentraliziranim prijenosom na jednokratnu adresu. Nijedan poslužitelj računa ga ne drži."
+      },
+      {
+        "label": "Primanje",
+        "body": "Vaš ga uređaj preuzima i dešifrira lokalno ključevima koje imate samo vi te pomiče ratchet. Pročitati ga može samo vaš uređaj."
+      }
+    ]
+  },
+  "metadata": {
+    "title": "Sakrij tko. Sakrij kada. Sakrij kako.",
+    "lead": "Šifriranje skriva poruku. PrivaMesh skriva i metapodatke - tko, kada i kako, što bi inače vidio poslužitelj.",
+    "more": "Saznajte više",
+    "cards": [
+      {
+        "title": "Jednokratne adrese",
+        "body": "Svaka se poruka dostavlja na novu jednokratnu adresu pa promatrač ne može rekonstruirati tko s kim razgovara. Društveni graf ostaje skriven."
+      },
+      {
+        "title": "Prikrivajući promet",
+        "body": "Lažne poruke miješaju se sa stvarnima pa promatrač ne može znati kada stvarno šaljete. Vremenska analiza nema s čime raditi."
+      },
+      {
+        "title": "Nadopuna do fiksne veličine",
+        "body": "Svaka se poruka prije zapečaćivanja nadopunjuje do fiksne veličine pa njezina duljina ništa ne otkriva o sadržaju."
+      }
+    ]
+  },
+  "crypto": {
+    "eyebrow": "Kriptografija",
+    "title": "End-to-end šifriranje, napravljeno kako treba",
+    "lead": "PrivaMesh koristi iste provjerene primitive koje štite najbolje šifrirane messengere, prilagođene svijetu bez poslužitelja. Svaka poruka dobiva novi ključ pa kompromitirani ključ ne otvara ni prošle ni buduće razgovore.",
+    "more": "Šifriranje objašnjeno jednostavnim riječima →",
+    "rows": [
+      "Rukovanje na Curve25519 uspostavlja zajedničku tajnu bez pouzdanog poslužitelja ključeva.",
+      "HKDF + HMAC-SHA256 mijenjaju ključ pri svakoj poruci - unaprijedna tajnost i zaštita nakon kompromitacije.",
+      "Autentificirano šifriranje zapečaćuje svaku poruku nadopunjenu do fiksne veličine kako bi skrilo duljinu."
+    ]
+  },
+  "gallery": {
+    "title": "Pogledajte na iPhoneu",
+    "lead": "Privatna aplikacija za poruke koja izgleda i djeluje kao premium chat - bez ikakvog nadzora ispod površine.",
+    "shots": [
+      {
+        "title": "Privatnost prema zadanim postavkama",
+        "alt": "Uvodni zaslon PrivaMesha - privatnost prema zadanim postavkama, Double Ratchet ključ po poruci i jednokratne adrese, na iPhoneu"
+      },
+      {
+        "title": "End-to-end šifrirani chat",
+        "alt": "Zaslon šifriranog chata PrivaMesha s privatnim razgovorom, end-to-end šifrirano, na iPhoneu"
+      },
+      {
+        "title": "Vaši chatovi",
+        "alt": "Popis chatova PrivaMesha s imenima i nadimcima, bez brojeva telefona, na iPhoneu"
+      },
+      {
+        "title": "Bez poslužitelja, ozbiljno",
+        "alt": "Uvodni zaslon PrivaMesha koji objašnjava da nema središnjeg poslužitelja - ništa za hakirati ni prisiliti, na iPhoneu"
+      },
+      {
+        "title": "Sigurnost na uređaju",
+        "alt": "Uvodni zaslon PrivaMesha - ključevi iza Face ID-ja, nestajuće poruke i potpisani kontakti, na iPhoneu"
+      },
+      {
+        "title": "Privatni društveni graf",
+        "alt": "Anonimni graf kontakata PrivaMesha koji privatno prikazuje vaše veze, bez brojeva telefona, na iPhoneu"
+      }
+    ]
+  },
+  "compare": {
+    "title": "PrivaMesh naspram messengera koje poznajete",
+    "lead": "Signal je izvrstan. Telegram je popularan. Nijedan nije bez poslužitelja. Evo kratke verzije.",
+    "feature": "Značajka",
+    "rows": [
+      "Bez poslužitelja",
+      "Bez broja telefona",
+      "Zaštita metapodataka",
+      "End-to-end šifriranje",
+      "Otvoreni kod"
+    ],
+    "vsSignal": "PrivaMesh vs Signal →",
+    "vsTelegram": "PrivaMesh vs Telegram →",
+    "vsSession": "PrivaMesh vs Session →",
+    "best": "Najbolje privatne aplikacije za poruke 2026 →"
+  },
+  "faq": [
+    {
+      "q": "Radi li PrivaMesh stvarno bez poslužitelja?",
+      "a": "Da. PrivaMesh nema poslužitelj računa, relay ni bazu poruka. Šifrirane poruke putuju javnim decentraliziranim prijenosom pa ne postoji ništa središnje što bi se moglo hakirati, sudski zatražiti, bilježiti ili ugasiti."
+    },
+    {
+      "q": "Kako PrivaMesh šifrira?",
+      "a": "PrivaMesh uspostavlja ključeve X3DH rukovanjem na Curve25519, a zatim Double Ratchet (HKDF i HMAC-SHA256) svakoj poruci daje novi ključ. Sadržaj se zapečaćuje AES-256-GCM-om i nadopunjuje do fiksne veličine. Unaprijedna tajnost i zaštita nakon kompromitacije zadane su."
+    },
+    {
+      "q": "Mogu li koristiti PrivaMesh bez broja telefona i e-pošte?",
+      "a": "Da. Bez broja telefona, bez e-pošte. Vaš račun je fraza računa iz koje se izvode ključevi pohranjeni u iOS privjesku ključeva - samo na uređaju i zaštićeni Face ID-jem ili Touch ID-jem."
+    },
+    {
+      "q": "Koje metapodatke PrivaMesh prikuplja?",
+      "a": "Nijedne ni na jednom poslužitelju, jer poslužitelja nema. Dostava na jednokratne adrese skriva društveni graf, prikrivajući promet skriva kada šaljete, a nadopuna do fiksne veličine skriva duljinu poruke."
+    },
+    {
+      "q": "Što ako izgubim telefon?",
+      "a": "Vratite frazu računa na novom uređaju i vaš će se identitet vratiti. Povijest chata namjerno se ne vraća: unaprijedna tajnost znači da su stari ključevi poruka izbrisani, pa nitko, pa ni vi, ne može dešifrirati prošle poruke samo frazom."
+    }
+  ],
+  "cta": {
+    "title": "Prestanite povjeravati svoje razgovore tvrtkama",
+    "lead": "PrivaMesh zamjenjuje tvrtku matematikom, a poslužitelj javnim decentraliziranim prijenosom. Vaši ključevi, vaš uređaj, vaše riječi.",
+    "policy": "Pročitajte pravila privatnosti"
+  }
+}

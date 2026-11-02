@@ -20,6 +20,11 @@ export default function HeroScramble({ text }: { text: string }) {
     const reduce = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
     if (reduce) return
 
+    // Latin words scramble through code-like glyphs. Any other script would
+    // flash Latin symbols of a different width through a Japanese or Arabic
+    // word, so those scramble through the word's own characters instead.
+    const pool = /^[\x00-\x7F]*$/.test(text) ? GLYPHS : text.replace(/\s/g, '')
+
     setAnimating(true)
     let frame = 0
     const total = 28
@@ -31,7 +36,7 @@ export default function HeroScramble({ text }: { text: string }) {
       for (let i = 0; i < text.length; i++) {
         if (text[i] === ' ') out += ' '
         else if (i < revealed) out += text[i]
-        else out += GLYPHS[Math.floor(Math.random() * GLYPHS.length)]
+        else out += pool[Math.floor(Math.random() * pool.length)]
       }
       setDisplay(out)
       frame++
@@ -58,7 +63,7 @@ export default function HeroScramble({ text }: { text: string }) {
       <span className={animating ? 'opacity-0' : undefined}>{text}</span>
       {/* Decorative scramble overlay, fades out; hidden from a11y and crawlers. */}
       {animating && (
-        <span aria-hidden="true" className="absolute inset-0">
+        <span aria-hidden="true" className="absolute inset-0 whitespace-nowrap">
           {display}
         </span>
       )}

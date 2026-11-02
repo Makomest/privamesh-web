@@ -1,0 +1,101 @@
+{
+  "meta": {
+    "title": "PrivaMesh - Private Encrypted Messenger",
+    "description": "Private, end-to-end encrypted messenger for iPhone, Android and Windows. No phone number, no email, no account - your keys and chats never leave your device."
+  },
+  "hero": {
+    "badge": "End-to-end encrypted · No phone number",
+    "title": "The {scramble} messenger that knows nothing about you",
+    "scramble": "Private",
+    "lead": "Private messaging with no phone number and no account database. Messages are end-to-end encrypted on your device and delivered to one-time addresses over a public decentralized transport. PrivaMesh is built to minimise metadata - not to pretend it does not exist.",
+    "cta": "Get PrivaMesh",
+    "threatModel": "Read the threat model",
+    "architecture": "Architecture",
+    "limitations": "Known limitations",
+    "security": "Security",
+    "source": "Source code",
+    "trust": ["No Phone Number", "No Servers", "E2E Encrypted"],
+    "phoneAlt": "PrivaMesh private messenger onboarding on iPhone - privacy by default, end-to-end encrypted"
+  },
+  "noServers": {
+    "eyebrow": "The differentiator",
+    "title": "No servers - concretely",
+    "lead": "Most \"private\" messengers still run servers that see who you talk to. PrivaMesh has none. Here is exactly where every piece of your data lives.",
+    "colWhat": "What",
+    "colWhere": "Where it lives",
+    "colHow": "How",
+    "rows": [
+      { "what": "Your messages", "where": "A public, decentralized transport", "how": "Encrypted blobs, addressed to one-time addresses" },
+      { "what": "Your inbox", "where": "The public transport itself", "how": "Retrieved and decrypted only on your device" },
+      { "what": "Your keys", "where": "Your device keystore only", "how": "Biometric-locked, never leave the device" },
+      { "what": "Your contacts & history", "where": "The device that received them", "how": "Never synced, never uploaded anywhere" },
+      { "what": "Your identity", "where": "An account phrase you hold", "how": "Encryption keys on your device - no phone, no email" },
+      { "what": "The \"PrivaMesh server\"", "where": "Does not exist", "how": "No account server; the transport is public and swappable" }
+    ],
+    "more": "How the serverless architecture works →"
+  },
+  "lifecycle": {
+    "title": "One message, three steps",
+    "lead": "Send → Transport → Receive. No middle box, no inbox on someone else's computer.",
+    "steps": [
+      { "label": "Send", "body": "Your message is padded to a fixed size and sealed with AES-256-GCM under a fresh Double Ratchet key - on your device, before it ever leaves." },
+      { "label": "Transport", "body": "The encrypted blob travels over a public, decentralized transport, addressed to a one-time address. No account server ever holds it." },
+      { "label": "Receive", "body": "Your device retrieves and decrypts it locally with keys only you hold, then advances the ratchet. Only your device can read it." }
+    ]
+  },
+  "metadata": {
+    "title": "Hide who. Hide when. Hide how.",
+    "lead": "Encryption hides the message. PrivaMesh also hides the metadata - the who, when and how that a server would otherwise see.",
+    "more": "Learn more",
+    "cards": [
+      { "title": "One-time addresses", "body": "Every message is delivered to a fresh one-time address, so an observer cannot reconstruct who talks to whom. The social graph stays hidden." },
+      { "title": "Cover traffic", "body": "Decoy messages blend with real ones so an observer cannot tell when you actually send. Timing analysis gets nothing to work with." },
+      { "title": "Fixed-size padding", "body": "Every message is padded to a fixed size before it is sealed, so its length leaks nothing about the content inside." }
+    ]
+  },
+  "crypto": {
+    "eyebrow": "The cryptography",
+    "title": "End-to-end encryption, done properly",
+    "lead": "PrivaMesh uses the same battle-tested primitives that secure the best encrypted messengers, adapted for a serverless world. Every message gets a fresh key, so a compromised key can't unlock your past or future conversations.",
+    "more": "Read the plain-English encryption explainer →",
+    "rows": [
+      "Curve25519 handshake establishes a shared secret without a trusted key server.",
+      "HKDF + HMAC-SHA256 rotate keys every message for forward secrecy and post-compromise security.",
+      "Authenticated encryption seals each payload, padded to a fixed size to hide length."
+    ]
+  },
+  "gallery": {
+    "title": "See it on your iPhone",
+    "lead": "A private messaging app that looks and feels like a premium chat app - with none of the surveillance underneath.",
+    "shots": [
+      { "title": "Privacy by default", "alt": "PrivaMesh onboarding screen - privacy by default, Double Ratchet key per message and one-time addresses, on iPhone" },
+      { "title": "End-to-end encrypted chat", "alt": "PrivaMesh encrypted chat screen showing a private conversation, end-to-end encrypted, on iPhone" },
+      { "title": "Your chats", "alt": "PrivaMesh chat list showing conversations with names and nicknames, no phone numbers, on iPhone" },
+      { "title": "No servers, seriously", "alt": "PrivaMesh onboarding screen explaining there is no central server - nothing to hack or coerce, on iPhone" },
+      { "title": "On-device security", "alt": "PrivaMesh onboarding screen - keys behind Face ID, disappearing messages and signed contacts, on iPhone" },
+      { "title": "A private social graph", "alt": "PrivaMesh anonymous contact graph visualising your connections privately, no phone numbers, on iPhone" }
+    ]
+  },
+  "compare": {
+    "title": "PrivaMesh vs the messengers you know",
+    "lead": "Signal is excellent. Telegram is popular. Neither is serverless. Here is the short version.",
+    "feature": "Feature",
+    "rows": ["No servers", "No phone number", "Metadata protection", "End-to-end encrypted", "Open source"],
+    "vsSignal": "PrivaMesh vs Signal →",
+    "vsTelegram": "PrivaMesh vs Telegram →",
+    "vsSession": "PrivaMesh vs Session →",
+    "best": "Best private messaging apps 2026 →"
+  },
+  "faq": [
+    { "q": "Is PrivaMesh really serverless?", "a": "Yes. There is no PrivaMesh account server, relay, or message database. Encrypted messages travel over a public, decentralized transport, so there is nothing central to breach, subpoena, log, or shut down." },
+    { "q": "How is PrivaMesh encrypted?", "a": "PrivaMesh uses an X3DH handshake over Curve25519 to establish keys, then a Double Ratchet (HKDF and HMAC-SHA256) that gives every message a new key. Payloads are sealed with AES-256-GCM and padded to a fixed size. You get forward secrecy and post-compromise security by default." },
+    { "q": "Can I use PrivaMesh without a phone number or email?", "a": "Yes. There is no phone number and no email. Your account is an account phrase that maps to encryption keys stored in the iOS Keychain - device-only and protected by Face ID or Touch ID." },
+    { "q": "What metadata does PrivaMesh collect?", "a": "None on any server, because there is no server. Delivery uses one-time addresses to hide the social graph, cover traffic hides when you send, and fixed-size padding hides message length." },
+    { "q": "What happens if I lose my phone?", "a": "Restore your account phrase on a new device to recover your identity. By design your chat history is not recovered - forward secrecy means old message keys are deleted, so nobody, including you, can decrypt past messages from the phrase alone." }
+  ],
+  "cta": {
+    "title": "Stop trusting companies with your conversations",
+    "lead": "PrivaMesh replaces the company with math and the server with a public, decentralized transport. Your keys, your device, your words.",
+    "policy": "Read the Privacy Policy"
+  }
+}
