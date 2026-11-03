@@ -1,0 +1,127 @@
+{
+  "meta": {
+    "title": "Arxitektura: har bir komponent va u nimani ko'radi",
+    "description": "PrivaMesh'dagi har bir komponent va u nimani kuzata olishi: iOS mijozi, to'lov xizmatimiz, RPC nuqtasi, Solana va StoreKit. Yashirilmagan, nomi bilan."
+  },
+  "eyebrow": "Arxitektura",
+  "title": "Har bir komponent va u nimani ko'ra olishi",
+  "lead": "Maxfiylik haqidagi da'vo o'quvchi tekshira oladigan darajadagina qadrli. Bu tizim qismlarining to'liq ro'yxati, har birini kim boshqarishi va har biri nimani kuzata olishi - o'zimiz ishga tushiradigan yagona mashina ham shu yerda.",
+  "ldDescription": "PrivaMesh xabari qanday yo'l bosadi va har bir komponent nimani kuzatadi.",
+  "summary": "PrivaMesh'da hisoblar bazasi ham, xabarlar ombori ham yo'q. Ammo har bir tranzaksiya uchun to'lovchi to'lov xizmati, uchinchi tomon boshqaradigan RPC nuqtasi va shifrlangan matnni abadiy saqlaydigan ochiq zanjir bor. Uchalasi ham nimani kuzata olishi bilan birga quyida keltirilgan.",
+  "flowHeading": "Xabar qanday yo'l bosadi",
+  "flow": [
+    {
+      "label": "Sizning iPhone",
+      "detail": "Xabarni shifrlaydi va to'ldiradi, bir martalik manzilni hosil qiladi"
+    },
+    {
+      "label": "To'lov xizmati",
+      "detail": "Tarmoq to'lovini to'laydi, bitta ko'r tokenni sarflaydi"
+    },
+    {
+      "label": "RPC nuqtasi",
+      "detail": "Tranzaksiyani tarmoqqa yuboradi"
+    },
+    {
+      "label": "Solana",
+      "detail": "To'ldirilgan shifrlangan matnni bir martalik manzilga yetkazadi"
+    },
+    {
+      "label": "Qabul qiluvchining iPhone'i",
+      "detail": "O'z bir martalik manzillarini qidiradi va mahalliy ravishda shifrni ochadi"
+    }
+  ],
+  "tableHeading": "Har bir komponent nimani kuzata oladi",
+  "tableCaption": "PrivaMesh komponentlari, ularni kim boshqarishi va har biri nimani ko'rishi va saqlashi",
+  "cols": {
+    "component": "Komponent",
+    "operator": "Kim boshqaradi",
+    "sees": "Nimani ko'radi",
+    "stores": "Nimani saqlaydi",
+    "replaceable": "Almashtirsa bo'ladimi"
+  },
+  "replaceable": {
+    "yes": "Ha",
+    "no": "Yo'q",
+    "partly": "Qisman"
+  },
+  "components": [
+    {
+      "name": "iOS mijozi",
+      "operator": "Siz",
+      "sees": "Ochiq matn, kalitlar, kontaktlar",
+      "stores": "Hammasi, faqat qurilmada",
+      "note": "Ochiq matn va kalitlar mavjud bo'lgan yagona joy. Kalitlar Face ID ortidagi iOS Keychain'da turadi va hech qachon iCloud bilan sinxronlanmaydi."
+    },
+    {
+      "name": "To'lov xizmati",
+      "operator": "PrivaMesh",
+      "sees": "Yaroqli, sarflanmagan ko'r token va to'lanadigan tranzaksiya - anonim yo'lda hisob yo'q",
+      "stores": "Faqat ish jurnallari - ochiq matn ham, qabul qiluvchi ham yo'q",
+      "note": "SOL saqlashingizga hojat qolmasligi uchun tarmoq to'lovini to'laydi - biz ishga tushiradigan yagona mashina. Yuborishlar shaxsni ko'rsatmaydigan anonim ko'r token bilan tasdiqlanadi, shuning uchun xizmat yuborishni xarid bilan ham, boshqa yuborish bilan ham, hisob bilan ham bog'lay olmaydi. Eski hisob yo'li hali ham bor va u tabiatan shaxsni aniqlaydigan ochiq qidiruv taxallusini e'lon qilish uchun kerak. Uning manba kodi ochiq, mijoz bilan bir repozitoriydagi relay/ ichida."
+    },
+    {
+      "name": "Solana RPC",
+      "operator": "Uchinchi tomon provayderi",
+      "sees": "IP manzilingiz, so'rovlar vaqti, yuboradigan tranzaksiyalaringiz",
+      "stores": "Provayder nimani qayd etishni tanlasa, o'sha",
+      "note": "Almashtirsa va o'zingiz joylashtirsangiz bo'ladi. Tarmoq darajasidagi faoliyatingizni ko'rish ehtimoli eng yuqori komponent shu va biz uni eng kam nazorat qilamiz."
+    },
+    {
+      "name": "Solana tarmog'i",
+      "operator": "Hech kim alohida emas",
+      "sees": "Shifrlangan matn, bir martalik manzillar, tranzaksiyalar vaqti",
+      "stores": "Abadiy va ochiq",
+      "note": "Transport. Bu yerga yozilgan hamma narsa bir martalik kalitga yo'naltirilgan to'ldirilgan shifrlangan matn, lekin u abadiy yoziladi."
+    },
+    {
+      "name": "StoreKit",
+      "operator": "Apple",
+      "sees": "Xaridingiz va Apple ID'ingiz",
+      "stores": "Apple qoidalariga ko'ra",
+      "note": "iOS'da ilova ichidagi xaridlar uchun muqarrar. Xaridni xabar almashuvingiz bilan bog'lashga yo'l qo'ymaydigan narsa - aynan ko'r tokenlar."
+    }
+  ],
+  "whyHeading": "To'lov xizmati nima uchun bor",
+  "why": [
+    "Har bir xabar Solana tranzaksiyasi, tranzaksiyalar esa tarmoq to'lovini talab qiladi. Xabar yuborish uchun foydalanuvchilarni SOL saqlashga majbur qilish yomonroq mahsulot va maxfiylik uchun ham yomonroq bo'lardi, chunki hamyonni to'ldirishning o'zi bog'lanishi mumkin bo'lgan harakat. Shuning uchun to'lovni xizmat to'laydi.",
+    "Bu aniq savolni tug'diradi: to'lovchi kim kim bilan gaplashayotganini biladimi? Yo'q. Ilova obunasini bir marta isbotlaydi va RSA ko'r imzolari to'plamini oladi; har bir yuborish bitta tokenni sarflaydi. Xizmat token yaroqli va sarflanmaganini tekshira oladi, lekin uni xarid bilan ham, boshqa token bilan ham, hisob bilan ham bog'lay olmaydi - anonim yo'l umuman hisob yubormaydi. Eski hisob yo'li faqat tabiatan shaxsni aniqlaydigan ochiq qidiruv taxallusini e'lon qilish uchun qolgan."
+  ],
+  "gapsHeading": "Bu dizayn nimani hal qilmaydi",
+  "gaps": "RPC nuqtasi IP'ingizni va so'rovlaringiz vaqtini ko'radi. Zanjir shifrlangan matnni abadiy saqlaydi. Yuqoridagilarning hech biri buni yashirmaydi, shuning uchun ikkalasi ham jadvalda va shuning uchun [cheklovlar sahifasi bor](/limitations). Agar tahdid modelingizga tarmoq darajasidagi kuzatuvchi kirsa, PrivaMesh'ni VPN yoki Tor bilan birga ishlating va RPC'ni o'zingiz joylashtiring.",
+  "faq": [
+    {
+      "q": "PrivaMesh biror server ishga tushiradimi?",
+      "a": "Bittasini. To'lov xizmati SOL saqlashingizga hech qachon hojat qolmasligi uchun har bir tranzaksiyaning Solana tarmoq to'lovini to'laydi. Anonim yo'lda u yaroqli, sarflanmagan ko'r token va to'lanadigan tranzaksiyani ko'radi - hisob ham, ochiq matn ham, qabul qiluvchi ham yo'q. Hisoblar bazasi ham, xabarlar ombori ham yo'q."
+    },
+    {
+      "q": "RPC provayderi nimani ko'radi?",
+      "a": "IP manzilingizni, so'rovlaringiz vaqtini va yuboradigan tranzaksiyalaringizni. Bu tarmoq darajasidagi faoliyatingizni eng aniq ko'radigan komponent, shuning uchun uni almashtirish va o'zingiz joylashtirish mumkin."
+    },
+    {
+      "q": "To'lov xizmati ishlamay qolsa nima bo'ladi?",
+      "a": "U qaytmaguncha yoki tranzaksiyalarni o'zingiz to'lay boshlamaguningizcha yuborish ishlamaydi. Shaxsingiz, kontaktlaringiz va xabarlar tarixingiz zarar ko'rmaydi - ular qurilmangizda va biz ishga tushiradigan hech narsaga bog'liq emas."
+    },
+    {
+      "q": "Apple kimga yozayotganimni ko'radimi?",
+      "a": "Apple obuna sotib olganingizni va qaysi Apple ID bilan olganingizni ko'radi. Xabarlaringiz va kontaktlaringizni ko'rmaydi. Xaridni yuborish faoliyatingiz bilan bog'lashga yo'l qo'ymaydigan narsa - aynan ko'r tokenlar."
+    }
+  ],
+  "related": [
+    {
+      "href": "/limitations",
+      "label": "Ma'lum cheklovlar",
+      "blurb": "PrivaMesh sizni nimadan himoya qilmaydi - ochiq aytilgan."
+    },
+    {
+      "href": "/threat-model",
+      "label": "Tahdid modeli",
+      "blurb": "Raqib-raqib: har biri nimani ko'radi va uni nima to'xtatadi."
+    },
+    {
+      "href": "/security",
+      "label": "Xavfsizlik va oshkor qilish",
+      "blurb": "Zaiflik haqida qanday xabar berish va nimaga majburiyat olishimiz."
+    }
+  ]
+}

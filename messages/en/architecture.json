@@ -1,0 +1,112 @@
+{
+  "meta": {
+    "title": "Architecture: every component, and what it sees",
+    "description": "Every component in PrivaMesh and what it can observe: the iOS client, our fee worker, the RPC endpoint, Solana and StoreKit. Named, not hidden."
+  },
+  "eyebrow": "Architecture",
+  "title": "Every component, and what it can see",
+  "lead": "A privacy claim is only worth what a reader can check. This is the full list of parts in the system, who runs each one, and what each can observe - including the one machine we run ourselves.",
+  "ldDescription": "How a PrivaMesh message travels and what each component observes.",
+  "summary": "PrivaMesh has no account database and no message store. It does have a fee worker that sponsors each transaction, an RPC endpoint operated by a third party, and a public chain that stores ciphertext permanently. All three are listed below with what they can observe.",
+  "flowHeading": "How a message travels",
+  "flow": [
+    { "label": "Your iPhone", "detail": "Encrypts and pads the message, derives the one-time address" },
+    { "label": "Fee worker", "detail": "Sponsors the network fee, spends one blind token" },
+    { "label": "RPC endpoint", "detail": "Submits the transaction to the network" },
+    { "label": "Solana", "detail": "Carries the padded ciphertext to a one-time address" },
+    { "label": "Their iPhone", "detail": "Scans for its own one-time addresses and decrypts locally" }
+  ],
+  "tableHeading": "What each component can observe",
+  "tableCaption": "PrivaMesh components, their operators, and what each can see and store",
+  "cols": {
+    "component": "Component",
+    "operator": "Operated by",
+    "sees": "What it sees",
+    "stores": "What it stores",
+    "replaceable": "Replaceable"
+  },
+  "replaceable": {
+    "yes": "Yes",
+    "no": "No",
+    "partly": "Partly"
+  },
+  "components": [
+    {
+      "name": "iOS client",
+      "operator": "You",
+      "sees": "Plaintext, keys, contacts",
+      "stores": "Everything, on device only",
+      "note": "The only place plaintext and keys ever exist. Keys sit in the iOS Keychain behind Face ID and never sync to iCloud."
+    },
+    {
+      "name": "Fee worker",
+      "operator": "PrivaMesh",
+      "sees": "A valid unspent blind token and the transaction to sponsor - no account on the anonymous path",
+      "stores": "Operational logs only - no plaintext, no recipient",
+      "note": "Sponsors the network fee so you never hold SOL - the one machine we run. Sends authenticate with an anonymous blind token that carries no identity, so the worker cannot link a send to a purchase, to another send, or to an account. A legacy account path still exists and is required for publishing a public discovery nickname, which is identifying by nature. Its source is public, under relay/ in the same repository as the client."
+    },
+    {
+      "name": "Solana RPC",
+      "operator": "A third-party provider",
+      "sees": "Your IP address, request timing, transactions you submit",
+      "stores": "Whatever that provider chooses to log",
+      "note": "Swappable and self-hostable. This is the component most likely to see your network-level activity, and the one we have least control over."
+    },
+    {
+      "name": "Solana network",
+      "operator": "Nobody in particular",
+      "sees": "Ciphertext, one-time addresses, transaction timing",
+      "stores": "Permanently, and publicly",
+      "note": "The transport. Everything written here is padded ciphertext addressed to a one-time key, but it is written forever."
+    },
+    {
+      "name": "StoreKit",
+      "operator": "Apple",
+      "sees": "Your purchase and your Apple ID",
+      "stores": "Per Apple policy",
+      "note": "Unavoidable for in-app purchases on iOS. Blind tokens are what stop the purchase from being linkable to your messaging activity."
+    }
+  ],
+  "whyHeading": "Why the fee worker exists",
+  "why": [
+    "Every message is a Solana transaction, and transactions cost a network fee. Making users hold SOL to send a message would be a worse product and a worse privacy story, because funding a wallet is itself a linkable act. So a worker sponsors the fee instead.",
+    "That creates the obvious question: does the sponsor learn who is talking to whom? It does not. The app proves its subscription once and receives a pool of RSA blind signatures; each send spends one token. The worker can verify a token is valid and unspent and cannot link it to the purchase, to any other token, or to an account - the anonymous path sends no account at all. The legacy account path remains only for publishing a public discovery nickname, which is identifying by its nature."
+  ],
+  "gapsHeading": "What this design does not fix",
+  "gaps": "The RPC endpoint sees your IP and the timing of your requests. The chain stores ciphertext permanently. Neither is hidden by anything above, which is why both are in the table and why [the limitations page exists](/limitations). If your threat model includes a network-level observer, pair PrivaMesh with a VPN or Tor and self-host the RPC.",
+  "faq": [
+    {
+      "q": "Does PrivaMesh run any servers?",
+      "a": "One. A fee worker sponsors the Solana network fee for each transaction so you never have to hold SOL. On the anonymous path it sees a valid unspent blind token and the transaction to sponsor - no account, no plaintext, no recipient. There is no account database and no message store."
+    },
+    {
+      "q": "What can the RPC provider see?",
+      "a": "Your IP address, the timing of your requests, and the transactions you submit. It is the component with the clearest view of your network-level activity, which is why it is swappable and self-hostable."
+    },
+    {
+      "q": "What happens if the fee worker goes offline?",
+      "a": "Sending stops working until it comes back or you fund transactions yourself. Your identity, contacts and message history are unaffected - they live on your device and depend on nothing we run."
+    },
+    {
+      "q": "Can Apple see who I message?",
+      "a": "Apple sees that you bought a subscription and which Apple ID bought it. It does not see your messages or your contacts. Blind tokens are what keep the purchase from being linkable to your sending activity."
+    }
+  ],
+  "related": [
+    {
+      "href": "/limitations",
+      "label": "Known limitations",
+      "blurb": "What PrivaMesh does not protect you from, stated plainly."
+    },
+    {
+      "href": "/threat-model",
+      "label": "Threat model",
+      "blurb": "Adversary by adversary: what each one sees and what stops them."
+    },
+    {
+      "href": "/security",
+      "label": "Security and disclosure",
+      "blurb": "How to report a vulnerability, and what we commit to."
+    }
+  ]
+}

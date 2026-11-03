@@ -1,0 +1,127 @@
+{
+  "meta": {
+    "title": "Seni bina: setiap komponen, dan apa yang dilihatnya",
+    "description": "Setiap komponen dalam PrivaMesh dan apa yang boleh diperhatikannya: klien iOS, perkhidmatan yuran kami, titik akhir RPC, Solana dan StoreKit. Dinamakan, bukan disorokkan."
+  },
+  "eyebrow": "Seni bina",
+  "title": "Setiap komponen, dan apa yang boleh dilihatnya",
+  "lead": "Dakwaan privasi hanya bernilai setakat apa yang boleh disemak oleh pembaca. Ini senarai penuh bahagian sistem, siapa yang mengendalikan setiap satu dan apa yang boleh diperhatikan setiap satu - termasuk satu mesin yang kami jalankan sendiri.",
+  "ldDescription": "Bagaimana mesej PrivaMesh bergerak dan apa yang diperhatikan setiap komponen.",
+  "summary": "PrivaMesh tidak mempunyai pangkalan data akaun dan tiada simpanan mesej. Namun ada perkhidmatan yuran yang membayar setiap transaksi, titik akhir RPC yang dikendalikan pihak ketiga dan rantaian awam yang menyimpan teks tersulit secara kekal. Ketiga-tiganya disenaraikan di bawah bersama apa yang boleh diperhatikannya.",
+  "flowHeading": "Bagaimana mesej bergerak",
+  "flow": [
+    {
+      "label": "iPhone anda",
+      "detail": "Menyulit dan mengisi mesej, menerbitkan alamat sekali guna"
+    },
+    {
+      "label": "Perkhidmatan yuran",
+      "detail": "Membayar yuran rangkaian, menggunakan satu token buta"
+    },
+    {
+      "label": "Titik akhir RPC",
+      "detail": "Menghantar transaksi ke rangkaian"
+    },
+    {
+      "label": "Solana",
+      "detail": "Membawa teks tersulit yang diisi ke alamat sekali guna"
+    },
+    {
+      "label": "iPhone penerima",
+      "detail": "Mengimbas alamat sekali gunanya sendiri dan menyahsulit secara setempat"
+    }
+  ],
+  "tableHeading": "Apa yang boleh diperhatikan setiap komponen",
+  "tableCaption": "Komponen PrivaMesh, pengendalinya dan apa yang boleh dilihat dan disimpan setiap satu",
+  "cols": {
+    "component": "Komponen",
+    "operator": "Dikendalikan oleh",
+    "sees": "Apa yang dilihat",
+    "stores": "Apa yang disimpan",
+    "replaceable": "Boleh diganti"
+  },
+  "replaceable": {
+    "yes": "Ya",
+    "no": "Tidak",
+    "partly": "Sebahagian"
+  },
+  "components": [
+    {
+      "name": "Klien iOS",
+      "operator": "Anda",
+      "sees": "Teks biasa, kunci, kenalan",
+      "stores": "Semuanya, hanya pada peranti",
+      "note": "Satu-satunya tempat teks biasa dan kunci wujud. Kunci disimpan dalam iOS Keychain di sebalik Face ID dan tidak pernah disegerakkan ke iCloud."
+    },
+    {
+      "name": "Perkhidmatan yuran",
+      "operator": "PrivaMesh",
+      "sees": "Token buta yang sah dan belum digunakan serta transaksi untuk dibayar - tiada akaun pada laluan tanpa nama",
+      "stores": "Log operasi sahaja - tiada teks biasa, tiada penerima",
+      "note": "Membayar yuran rangkaian supaya anda tidak perlu memegang SOL - satu-satunya mesin yang kami jalankan. Penghantaran disahkan dengan token buta tanpa nama yang tidak membawa identiti, jadi perkhidmatan tidak boleh mengaitkan penghantaran dengan pembelian, dengan penghantaran lain atau dengan akaun. Laluan akaun lama masih wujud dan diperlukan untuk menerbitkan nama samaran carian awam, yang secara semula jadi mengenal pasti. Kod sumbernya terbuka, di bawah relay/ dalam repositori yang sama dengan klien."
+    },
+    {
+      "name": "Solana RPC",
+      "operator": "Penyedia pihak ketiga",
+      "sees": "Alamat IP anda, masa permintaan, transaksi yang anda hantar",
+      "stores": "Apa sahaja yang dipilih penyedia itu untuk dilog",
+      "note": "Boleh ditukar dan dihoskan sendiri. Inilah komponen yang paling mungkin melihat aktiviti rangkaian anda, dan yang paling sedikit kami kawal."
+    },
+    {
+      "name": "Rangkaian Solana",
+      "operator": "Tiada sesiapa secara khusus",
+      "sees": "Teks tersulit, alamat sekali guna, masa transaksi",
+      "stores": "Secara kekal dan awam",
+      "note": "Pengangkutnya. Semua yang ditulis di sini ialah teks tersulit yang diisi dan dialamatkan kepada kunci sekali guna, tetapi ia ditulis selama-lamanya."
+    },
+    {
+      "name": "StoreKit",
+      "operator": "Apple",
+      "sees": "Pembelian dan Apple ID anda",
+      "stores": "Mengikut dasar Apple",
+      "note": "Tidak dapat dielakkan untuk pembelian dalam aplikasi di iOS. Token buta yang menghalang pembelian dikaitkan dengan aktiviti pesanan anda."
+    }
+  ],
+  "whyHeading": "Mengapa perkhidmatan yuran wujud",
+  "why": [
+    "Setiap mesej ialah transaksi Solana, dan transaksi memerlukan yuran rangkaian. Memaksa pengguna memegang SOL untuk menghantar mesej akan menjadi produk yang lebih buruk dan lebih buruk untuk privasi, kerana mengisi dompet itu sendiri ialah tindakan yang boleh dikaitkan. Jadi sebuah perkhidmatan membayar yuran itu.",
+    "Ini menimbulkan soalan yang jelas: adakah pembayar mengetahui siapa bercakap dengan siapa? Tidak. Aplikasi membuktikan langganannya sekali dan menerima sekumpulan tandatangan buta RSA; setiap penghantaran menggunakan satu token. Perkhidmatan boleh mengesahkan bahawa token sah dan belum digunakan, tetapi tidak boleh mengaitkannya dengan pembelian, dengan token lain atau dengan akaun - laluan tanpa nama langsung tidak menghantar akaun. Laluan akaun lama kekal hanya untuk menerbitkan nama samaran carian awam, yang secara semula jadi mengenal pasti."
+  ],
+  "gapsHeading": "Apa yang tidak dibaiki oleh reka bentuk ini",
+  "gaps": "Titik akhir RPC melihat IP anda dan masa permintaan anda. Rantaian menyimpan teks tersulit secara kekal. Tiada apa-apa di atas yang menyembunyikannya, sebab itu kedua-duanya ada dalam jadual dan sebab itu [halaman had wujud](/limitations). Jika model ancaman anda termasuk pemerhati di peringkat rangkaian, gunakan PrivaMesh bersama VPN atau Tor dan hoskan RPC sendiri.",
+  "faq": [
+    {
+      "q": "Adakah PrivaMesh menjalankan pelayan?",
+      "a": "Satu. Perkhidmatan yuran membayar yuran rangkaian Solana untuk setiap transaksi supaya anda tidak perlu memegang SOL. Pada laluan tanpa nama ia melihat token buta yang sah dan belum digunakan serta transaksi untuk dibayar - tiada akaun, tiada teks biasa, tiada penerima. Tiada pangkalan data akaun dan tiada simpanan mesej."
+    },
+    {
+      "q": "Apa yang boleh dilihat penyedia RPC?",
+      "a": "Alamat IP anda, masa permintaan anda dan transaksi yang anda hantar. Ia komponen dengan pandangan paling jelas terhadap aktiviti rangkaian anda, sebab itu ia boleh ditukar dan dihoskan sendiri."
+    },
+    {
+      "q": "Apa berlaku jika perkhidmatan yuran tergendala?",
+      "a": "Penghantaran berhenti berfungsi sehingga ia kembali atau sehingga anda membayar transaksi sendiri. Identiti, kenalan dan sejarah mesej anda tidak terjejas - semuanya ada pada peranti anda dan tidak bergantung pada apa-apa yang kami jalankan."
+    },
+    {
+      "q": "Bolehkah Apple melihat siapa yang saya hantar mesej?",
+      "a": "Apple melihat bahawa anda membeli langganan dan dengan Apple ID mana. Ia tidak melihat mesej atau kenalan anda. Token buta yang menghalang pembelian dikaitkan dengan aktiviti penghantaran anda."
+    }
+  ],
+  "related": [
+    {
+      "href": "/limitations",
+      "label": "Had yang diketahui",
+      "blurb": "Daripada apa PrivaMesh tidak melindungi anda, secara terus terang."
+    },
+    {
+      "href": "/threat-model",
+      "label": "Model ancaman",
+      "blurb": "Musuh demi musuh: apa yang dilihat setiap satu dan apa yang menghalangnya."
+    },
+    {
+      "href": "/security",
+      "label": "Keselamatan dan pendedahan",
+      "blurb": "Cara melaporkan kelemahan dan komitmen kami."
+    }
+  ]
+}

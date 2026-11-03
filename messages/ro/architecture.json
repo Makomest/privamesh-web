@@ -1,0 +1,127 @@
+{
+  "meta": {
+    "title": "Arhitectură: fiecare componentă și ce vede",
+    "description": "Fiecare componentă din PrivaMesh și ce poate observa: clientul iOS, serviciul nostru de comisioane, endpointul RPC, Solana și StoreKit. Numite, nu ascunse."
+  },
+  "eyebrow": "Arhitectură",
+  "title": "Fiecare componentă și ce poate vedea",
+  "lead": "O promisiune de confidențialitate valorează doar cât poate verifica cititorul. Aceasta este lista completă a părților sistemului, cine operează fiecare parte și ce poate observa fiecare - inclusiv singura mașină pe care o rulăm noi.",
+  "ldDescription": "Cum călătorește un mesaj PrivaMesh și ce observă fiecare componentă.",
+  "summary": "PrivaMesh nu are bază de date de conturi și nici depozit de mesaje. Are în schimb un serviciu de comisioane care plătește fiecare tranzacție, un endpoint RPC operat de un terț și un lanț public care stochează textul criptat permanent. Toate trei sunt enumerate mai jos, cu ce pot observa.",
+  "flowHeading": "Cum călătorește un mesaj",
+  "flow": [
+    {
+      "label": "iPhone-ul tău",
+      "detail": "Criptează și completează mesajul, derivă adresa de unică folosință"
+    },
+    {
+      "label": "Serviciul de comisioane",
+      "detail": "Plătește comisionul de rețea, cheltuie un token orb"
+    },
+    {
+      "label": "Endpoint RPC",
+      "detail": "Trimite tranzacția în rețea"
+    },
+    {
+      "label": "Solana",
+      "detail": "Duce textul criptat completat la o adresă de unică folosință"
+    },
+    {
+      "label": "iPhone-ul destinatarului",
+      "detail": "Caută propriile adrese de unică folosință și decriptează local"
+    }
+  ],
+  "tableHeading": "Ce poate observa fiecare componentă",
+  "tableCaption": "Componentele PrivaMesh, operatorii lor și ce poate vedea și stoca fiecare",
+  "cols": {
+    "component": "Componentă",
+    "operator": "Operată de",
+    "sees": "Ce vede",
+    "stores": "Ce stochează",
+    "replaceable": "Înlocuibilă"
+  },
+  "replaceable": {
+    "yes": "Da",
+    "no": "Nu",
+    "partly": "Parțial"
+  },
+  "components": [
+    {
+      "name": "Client iOS",
+      "operator": "Tu",
+      "sees": "Text clar, chei, contacte",
+      "stores": "Totul, doar pe dispozitiv",
+      "note": "Singurul loc în care textul clar și cheile există vreodată. Cheile stau în Brelocul iOS, în spatele Face ID, și nu se sincronizează niciodată cu iCloud."
+    },
+    {
+      "name": "Serviciul de comisioane",
+      "operator": "PrivaMesh",
+      "sees": "Un token orb valid și necheltuit și tranzacția de plătit - fără cont pe calea anonimă",
+      "stores": "Doar jurnale operaționale - fără text clar, fără destinatar",
+      "note": "Plătește comisionul de rețea ca să nu fii nevoit să deții SOL - singura mașină pe care o rulăm. Trimiterile se autentifică cu un token orb anonim care nu poartă identitate, așa că serviciul nu poate lega o trimitere de o achiziție, de altă trimitere sau de un cont. O cale veche cu cont încă există și este necesară pentru publicarea unui pseudonim public de căutare, care prin natura lui identifică. Codul ei sursă este public, în relay/, în același depozit cu clientul."
+    },
+    {
+      "name": "Solana RPC",
+      "operator": "Un furnizor terț",
+      "sees": "Adresa ta IP, momentul cererilor, tranzacțiile trimise",
+      "stores": "Ce alege acel furnizor să înregistreze",
+      "note": "Înlocuibil și poate fi găzduit de tine. Este componenta cea mai probabil să-ți vadă activitatea la nivel de rețea și cea asupra căreia avem cel mai puțin control."
+    },
+    {
+      "name": "Rețeaua Solana",
+      "operator": "Nimeni anume",
+      "sees": "Text criptat, adrese de unică folosință, momentul tranzacțiilor",
+      "stores": "Permanent și public",
+      "note": "Transportul. Tot ce se scrie aici este text criptat completat adresat unei chei de unică folosință, dar este scris pentru totdeauna."
+    },
+    {
+      "name": "StoreKit",
+      "operator": "Apple",
+      "sees": "Achiziția ta și ID-ul tău Apple",
+      "stores": "Conform politicii Apple",
+      "note": "Inevitabil pentru achizițiile din aplicație pe iOS. Tokenurile oarbe sunt cele care împiedică legarea achiziției de activitatea ta de mesagerie."
+    }
+  ],
+  "whyHeading": "De ce există serviciul de comisioane",
+  "why": [
+    "Fiecare mesaj este o tranzacție Solana, iar tranzacțiile costă un comision de rețea. Să-i obligi pe utilizatori să dețină SOL ca să trimită un mesaj ar fi un produs mai prost și mai prost pentru confidențialitate, pentru că alimentarea unui portofel este în sine un act care poate fi legat. Așa că un serviciu plătește comisionul.",
+    "De aici întrebarea evidentă: cel care plătește află cine vorbește cu cine? Nu. Aplicația își dovedește o dată abonamentul și primește un set de semnături oarbe RSA; fiecare trimitere cheltuie un token. Serviciul poate verifica faptul că un token e valid și necheltuit, dar nu îl poate lega de achiziție, de alt token sau de un cont - calea anonimă nu trimite deloc cont. Calea veche cu cont rămâne doar pentru publicarea unui pseudonim public de căutare, care prin natura lui identifică."
+  ],
+  "gapsHeading": "Ce nu rezolvă acest design",
+  "gaps": "Endpointul RPC îți vede IP-ul și momentul cererilor. Lanțul stochează textul criptat permanent. Nimic din cele de mai sus nu ascunde asta, de aceea ambele sunt în tabel și de aceea [există pagina de limitări](/limitations). Dacă modelul tău de amenințări include un observator la nivel de rețea, folosește PrivaMesh împreună cu un VPN sau Tor și găzduiește tu RPC-ul.",
+  "faq": [
+    {
+      "q": "Rulează PrivaMesh vreun server?",
+      "a": "Unul. Un serviciu de comisioane plătește comisionul de rețea Solana pentru fiecare tranzacție, ca să nu fii niciodată nevoit să deții SOL. Pe calea anonimă vede un token orb valid și necheltuit și tranzacția de plătit - fără cont, fără text clar, fără destinatar. Nu există bază de date de conturi și nici depozit de mesaje."
+    },
+    {
+      "q": "Ce poate vedea furnizorul RPC?",
+      "a": "Adresa ta IP, momentul cererilor tale și tranzacțiile pe care le trimiți. Este componenta cu cea mai clară imagine asupra activității tale la nivel de rețea, de aceea este înlocuibilă și poate fi găzduită de tine."
+    },
+    {
+      "q": "Ce se întâmplă dacă serviciul de comisioane cade?",
+      "a": "Trimiterea nu mai funcționează până revine sau până plătești tu tranzacțiile. Identitatea, contactele și istoricul mesajelor nu sunt afectate - sunt pe dispozitivul tău și nu depind de nimic din ce rulăm noi."
+    },
+    {
+      "q": "Poate Apple să vadă cui scriu?",
+      "a": "Apple vede că ai cumpărat un abonament și cu ce ID Apple. Nu îți vede mesajele sau contactele. Tokenurile oarbe sunt cele care împiedică legarea achiziției de activitatea ta de trimitere."
+    }
+  ],
+  "related": [
+    {
+      "href": "/limitations",
+      "label": "Limitări cunoscute",
+      "blurb": "De ce nu te protejează PrivaMesh, spus direct."
+    },
+    {
+      "href": "/threat-model",
+      "label": "Model de amenințări",
+      "blurb": "Adversar cu adversar: ce vede fiecare și ce îl oprește."
+    },
+    {
+      "href": "/security",
+      "label": "Securitate și divulgare",
+      "blurb": "Cum raportezi o vulnerabilitate și la ce ne angajăm."
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "meta": {
+    "title": "Arquitectura: cada component i el que veu",
+    "description": "Cada component de PrivaMesh i el que pot observar: el client d'iOS, el nostre servei de comissions, l'endpoint RPC, Solana i StoreKit. Amb nom, no amagats."
+  },
+  "eyebrow": "Arquitectura",
+  "title": "Cada component i el que pot veure",
+  "lead": "Una promesa de privadesa només val el que un lector pot comprovar. Aquesta és la llista completa de les peces del sistema, qui opera cadascuna i què pot observar cadascuna, inclosa l'única màquina que fem funcionar nosaltres.",
+  "ldDescription": "Com viatja un missatge de PrivaMesh i què observa cada component.",
+  "summary": "PrivaMesh no té base de dades de comptes ni magatzem de missatges. Sí que té un servei de comissions que paga cada transacció, un endpoint RPC operat per un tercer i una cadena pública que desa el text xifrat per sempre. Tots tres apareixen a continuació amb el que poden observar.",
+  "flowHeading": "Com viatja un missatge",
+  "flow": [
+    {
+      "label": "El teu iPhone",
+      "detail": "Xifra i omple el missatge, deriva l'adreça d'un sol ús"
+    },
+    {
+      "label": "Servei de comissions",
+      "detail": "Paga la comissió de xarxa, gasta un token cec"
+    },
+    {
+      "label": "Endpoint RPC",
+      "detail": "Envia la transacció a la xarxa"
+    },
+    {
+      "label": "Solana",
+      "detail": "Porta el text xifrat omplert a una adreça d'un sol ús"
+    },
+    {
+      "label": "El seu iPhone",
+      "detail": "Cerca les seves pròpies adreces d'un sol ús i desxifra localment"
+    }
+  ],
+  "tableHeading": "Què pot observar cada component",
+  "tableCaption": "Components de PrivaMesh, qui els opera i què pot veure i desar cadascun",
+  "cols": {
+    "component": "Component",
+    "operator": "Operat per",
+    "sees": "Què veu",
+    "stores": "Què desa",
+    "replaceable": "Substituïble"
+  },
+  "replaceable": {
+    "yes": "Sí",
+    "no": "No",
+    "partly": "En part"
+  },
+  "components": [
+    {
+      "name": "Client d'iOS",
+      "operator": "Tu",
+      "sees": "Text en clar, claus, contactes",
+      "stores": "Tot, només al dispositiu",
+      "note": "L'únic lloc on existeixen el text en clar i les claus. Les claus són al clauer d'iOS darrere de Face ID i no se sincronitzen mai amb iCloud."
+    },
+    {
+      "name": "Servei de comissions",
+      "operator": "PrivaMesh",
+      "sees": "Un token cec vàlid i no gastat i la transacció a pagar; cap compte a la ruta anònima",
+      "stores": "Només registres operatius; ni text en clar ni destinatari",
+      "note": "Paga la comissió de xarxa perquè no hagis de tenir mai SOL: l'única màquina que fem funcionar. Els enviaments s'autentiquen amb un token cec anònim que no porta identitat, de manera que el servei no pot vincular un enviament amb una compra, amb un altre enviament ni amb un compte. Encara existeix una ruta antiga amb compte, necessària per publicar un sobrenom públic de cerca, que identifica per naturalesa. El seu codi font és públic, a relay/ dins del mateix repositori que el client."
+    },
+    {
+      "name": "Solana RPC",
+      "operator": "Un proveïdor extern",
+      "sees": "La teva adreça IP, l'hora de les sol·licituds, les transaccions que envies",
+      "stores": "El que aquest proveïdor decideixi registrar",
+      "note": "Substituïble i autoallotjable. És el component amb més probabilitats de veure la teva activitat a nivell de xarxa, i el que menys controlem."
+    },
+    {
+      "name": "Xarxa Solana",
+      "operator": "Ningú en concret",
+      "sees": "Text xifrat, adreces d'un sol ús, hora de les transaccions",
+      "stores": "Per sempre i públicament",
+      "note": "El transport. Tot el que s'hi escriu és text xifrat omplert adreçat a una clau d'un sol ús, però s'escriu per sempre."
+    },
+    {
+      "name": "StoreKit",
+      "operator": "Apple",
+      "sees": "La teva compra i el teu Apple ID",
+      "stores": "Segons la política d'Apple",
+      "note": "Inevitable per a les compres dins de l'app a iOS. Els tokens cecs són el que impedeix vincular la compra amb la teva activitat de missatgeria."
+    }
+  ],
+  "whyHeading": "Per què existeix el servei de comissions",
+  "why": [
+    "Cada missatge és una transacció de Solana, i les transaccions costen una comissió de xarxa. Obligar els usuaris a tenir SOL per enviar un missatge seria un producte pitjor i pitjor per a la privadesa, perquè recarregar un moneder ja és un acte vinculable. Per això un servei paga la comissió.",
+    "Això planteja la pregunta òbvia: qui paga s'assabenta de qui parla amb qui? No. L'app demostra la subscripció una vegada i rep un lot de signatures cegues RSA; cada enviament gasta un token. El servei pot verificar que un token és vàlid i no s'ha gastat, però no el pot vincular amb la compra, amb un altre token ni amb un compte: la ruta anònima no envia cap compte. La ruta antiga amb compte només es manté per publicar un sobrenom públic de cerca, que identifica per naturalesa."
+  ],
+  "gapsHeading": "El que aquest disseny no resol",
+  "gaps": "L'endpoint RPC veu la teva IP i l'hora de les teves sol·licituds. La cadena desa el text xifrat per sempre. Res del que hi ha a dalt ho amaga; per això tots dos són a la taula i per això [existeix la pàgina de limitacions](/limitations). Si el teu model d'amenaces inclou un observador a nivell de xarxa, combina PrivaMesh amb una VPN o Tor i allotja tu mateix el RPC.",
+  "faq": [
+    {
+      "q": "PrivaMesh fa funcionar algun servidor?",
+      "a": "Un. Un servei de comissions paga la comissió de xarxa de Solana de cada transacció perquè no hagis de tenir mai SOL. A la ruta anònima veu un token cec vàlid i no gastat i la transacció a pagar: ni compte, ni text en clar, ni destinatari. No hi ha base de dades de comptes ni magatzem de missatges."
+    },
+    {
+      "q": "Què pot veure el proveïdor RPC?",
+      "a": "La teva adreça IP, l'hora de les teves sol·licituds i les transaccions que envies. És el component amb la visió més clara de la teva activitat a nivell de xarxa, per això és substituïble i autoallotjable."
+    },
+    {
+      "q": "Què passa si el servei de comissions cau?",
+      "a": "L'enviament deixa de funcionar fins que torni o fins que paguis tu les transaccions. La teva identitat, els contactes i l'historial no es veuen afectats: són al teu dispositiu i no depenen de res que fem funcionar."
+    },
+    {
+      "q": "Apple pot veure a qui escric?",
+      "a": "Apple veu que has comprat una subscripció i amb quin Apple ID. No veu els teus missatges ni els teus contactes. Els tokens cecs són el que impedeix vincular la compra amb la teva activitat d'enviament."
+    }
+  ],
+  "related": [
+    {
+      "href": "/limitations",
+      "label": "Limitacions conegudes",
+      "blurb": "De què no et protegeix PrivaMesh, dit clarament."
+    },
+    {
+      "href": "/threat-model",
+      "label": "Model d'amenaces",
+      "blurb": "Adversari per adversari: què veu cadascun i què l'atura."
+    },
+    {
+      "href": "/security",
+      "label": "Seguretat i divulgació",
+      "blurb": "Com informar d'una vulnerabilitat i a què ens comprometem."
+    }
+  ]
+}

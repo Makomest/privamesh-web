@@ -1,0 +1,127 @@
+{
+  "meta": {
+    "title": "Architektúra: minden komponens, és amit lát",
+    "description": "A PrivaMesh minden komponense és amit megfigyelhet: az iOS-kliens, a díjszolgáltatásunk, az RPC-végpont, a Solana és a StoreKit. Megnevezve, nem elrejtve."
+  },
+  "eyebrow": "Architektúra",
+  "title": "Minden komponens, és amit láthat",
+  "lead": "Egy adatvédelmi ígéret csak annyit ér, amennyit az olvasó ellenőrizni tud. Ez a rendszer részeinek teljes listája: ki üzemelteti mindegyiket, és mindegyik mit figyelhet meg - beleértve az egyetlen gépet, amelyet mi magunk futtatunk.",
+  "ldDescription": "Hogyan halad egy PrivaMesh-üzenet, és mit figyel meg az egyes komponens.",
+  "summary": "A PrivaMeshnek nincs fiókadatbázisa és nincs üzenettárolója. Van viszont egy díjszolgáltatása, amely minden tranzakciót kifizet, egy harmadik fél által üzemeltetett RPC-végpontja, és egy nyilvános lánc, amely a titkosított szöveget véglegesen tárolja. Mindhármat alább soroljuk fel, azzal együtt, amit megfigyelhetnek.",
+  "flowHeading": "Hogyan halad egy üzenet",
+  "flow": [
+    {
+      "label": "Az ön iPhone-ja",
+      "detail": "Titkosítja és kitölti az üzenetet, előállítja az egyszer használatos címet"
+    },
+    {
+      "label": "Díjszolgáltatás",
+      "detail": "Kifizeti a hálózati díjat, elkölt egy vak tokent"
+    },
+    {
+      "label": "RPC-végpont",
+      "detail": "Beküldi a tranzakciót a hálózatba"
+    },
+    {
+      "label": "Solana",
+      "detail": "Elviszi a kitöltött titkosított szöveget egy egyszer használatos címre"
+    },
+    {
+      "label": "A címzett iPhone-ja",
+      "detail": "Megkeresi a saját egyszer használatos címeit, és helyben visszafejti"
+    }
+  ],
+  "tableHeading": "Mit figyelhet meg az egyes komponens",
+  "tableCaption": "A PrivaMesh komponensei, üzemeltetőik, és hogy mindegyik mit láthat és tárolhat",
+  "cols": {
+    "component": "Komponens",
+    "operator": "Üzemelteti",
+    "sees": "Mit lát",
+    "stores": "Mit tárol",
+    "replaceable": "Lecserélhető"
+  },
+  "replaceable": {
+    "yes": "Igen",
+    "no": "Nem",
+    "partly": "Részben"
+  },
+  "components": [
+    {
+      "name": "iOS-kliens",
+      "operator": "Ön",
+      "sees": "Nyílt szöveg, kulcsok, névjegyek",
+      "stores": "Mindent, csak az eszközön",
+      "note": "Az egyetlen hely, ahol a nyílt szöveg és a kulcsok egyáltalán léteznek. A kulcsok az iOS-kulcskarikában vannak, Face ID mögött, és soha nem szinkronizálódnak az iCloudba."
+    },
+    {
+      "name": "Díjszolgáltatás",
+      "operator": "PrivaMesh",
+      "sees": "Egy érvényes, el nem költött vak token és a kifizetendő tranzakció - az anonim úton nincs fiók",
+      "stores": "Csak üzemi naplók - se nyílt szöveg, se címzett",
+      "note": "Kifizeti a hálózati díjat, hogy önnek soha ne kelljen SOL-t tartania - az egyetlen gép, amelyet futtatunk. A küldések egy identitást nem hordozó, anonim vak tokennel hitelesítenek, így a szolgáltatás nem tud egy küldést vásárláshoz, másik küldéshez vagy fiókhoz kapcsolni. Egy régebbi fiókos út még létezik, és szükséges egy nyilvános, kereshető becenév közzétételéhez, amely természeténél fogva azonosító. A forráskódja nyilvános, a relay/ mappában, ugyanabban a tárolóban, mint a kliens."
+    },
+    {
+      "name": "Solana RPC",
+      "operator": "Egy harmadik fél szolgáltató",
+      "sees": "Az ön IP-címe, a kérések időpontja, a beküldött tranzakciók",
+      "stores": "Amit a szolgáltató naplózni dönt",
+      "note": "Lecserélhető és saját magunk is üzemeltethetjük. Ez a komponens látja a legnagyobb valószínűséggel az ön hálózati szintű tevékenységét, és efölött van a legkevesebb ellenőrzésünk."
+    },
+    {
+      "name": "Solana-hálózat",
+      "operator": "Senki konkrétan",
+      "sees": "Titkosított szöveg, egyszer használatos címek, tranzakciók időpontja",
+      "stores": "Véglegesen és nyilvánosan",
+      "note": "A szállítóréteg. Minden, ami ide kerül, egy egyszer használatos kulcsnak címzett, kitöltött titkosított szöveg, de örökre beíródik."
+    },
+    {
+      "name": "StoreKit",
+      "operator": "Apple",
+      "sees": "Az ön vásárlása és Apple ID-ja",
+      "stores": "Az Apple szabályai szerint",
+      "note": "Az iOS-en az alkalmazáson belüli vásárlásokhoz elkerülhetetlen. A vak tokenek akadályozzák meg, hogy a vásárlást az üzenetküldési tevékenységéhez lehessen kötni."
+    }
+  ],
+  "whyHeading": "Miért létezik a díjszolgáltatás",
+  "why": [
+    "Minden üzenet egy Solana-tranzakció, és a tranzakcióknak hálózati díja van. Ha a felhasználóknak SOL-t kellene tartaniuk egy üzenet elküldéséhez, az rosszabb termék lenne és az adatvédelemnek is rosszabb, mert egy tárca feltöltése önmagában összekapcsolható cselekedet. Ezért a díjat egy szolgáltatás fizeti.",
+    "Ebből adódik a kézenfekvő kérdés: megtudja-e a fizető, ki kivel beszél? Nem. Az alkalmazás egyszer igazolja az előfizetését, és kap egy készletet RSA vak aláírásokból; minden küldés elkölt egy tokent. A szolgáltatás ellenőrizheti, hogy egy token érvényes és el nem költött, de nem tudja a vásárláshoz, másik tokenhez vagy fiókhoz kötni - az anonim út egyáltalán nem küld fiókot. A régebbi fiókos út csak egy nyilvános, kereshető becenév közzétételére maradt meg, amely természeténél fogva azonosító."
+  ],
+  "gapsHeading": "Amit ez a kialakítás nem old meg",
+  "gaps": "Az RPC-végpont látja az IP-címét és a kérései időpontját. A lánc véglegesen tárolja a titkosított szöveget. A fentiek egyike sem rejti el ezt, ezért mindkettő szerepel a táblázatban, és ezért [létezik a korlátok oldala](/limitations). Ha a fenyegetési modelljébe beletartozik egy hálózati szintű megfigyelő, használja a PrivaMesht VPN-nel vagy Torral, és üzemeltesse saját maga az RPC-t.",
+  "faq": [
+    {
+      "q": "Futtat a PrivaMesh szervereket?",
+      "a": "Egyet. Egy díjszolgáltatás fizeti minden tranzakció Solana hálózati díját, hogy önnek soha ne kelljen SOL-t tartania. Az anonim úton egy érvényes, el nem költött vak tokent és a kifizetendő tranzakciót látja - se fiókot, se nyílt szöveget, se címzettet. Nincs fiókadatbázis és nincs üzenettároló."
+    },
+    {
+      "q": "Mit lát az RPC-szolgáltató?",
+      "a": "Az IP-címét, a kérései időpontját és a beküldött tranzakciókat. Ez a komponens látja a legtisztábban a hálózati szintű tevékenységét, ezért lecserélhető és saját maga is üzemeltetheti."
+    },
+    {
+      "q": "Mi történik, ha a díjszolgáltatás leáll?",
+      "a": "A küldés addig nem működik, amíg vissza nem tér, vagy amíg a tranzakciókat ön nem fizeti. Az identitását, a névjegyeit és az üzenetelőzményeit ez nem érinti - az eszközén vannak, és semmitől nem függnek, amit mi futtatunk."
+    },
+    {
+      "q": "Látja az Apple, kinek írok?",
+      "a": "Az Apple látja, hogy előfizetést vásárolt, és melyik Apple ID-val. Az üzeneteit és a névjegyeit nem látja. A vak tokenek akadályozzák meg, hogy a vásárlást a küldési tevékenységéhez lehessen kötni."
+    }
+  ],
+  "related": [
+    {
+      "href": "/limitations",
+      "label": "Ismert korlátok",
+      "blurb": "Mi ellen nem véd a PrivaMesh, kertelés nélkül."
+    },
+    {
+      "href": "/threat-model",
+      "label": "Fenyegetési modell",
+      "blurb": "Támadóról támadóra: mit lát mindegyik, és mi állítja meg."
+    },
+    {
+      "href": "/security",
+      "label": "Biztonság és bejelentés",
+      "blurb": "Hogyan jelentsen be sebezhetőséget, és mit vállalunk."
+    }
+  ]
+}

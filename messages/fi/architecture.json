@@ -1,0 +1,127 @@
+{
+  "meta": {
+    "title": "Arkkitehtuuri: jokainen osa ja mitä se näkee",
+    "description": "Jokainen PrivaMeshin osa ja mitä se voi havaita: iOS-asiakasohjelma, maksupalvelumme, RPC-päätepiste, Solana ja StoreKit. Nimettyinä, ei piilotettuina."
+  },
+  "eyebrow": "Arkkitehtuuri",
+  "title": "Jokainen osa ja mitä se voi nähdä",
+  "lead": "Yksityisyyslupaus on vain sen arvoinen, minkä lukija voi tarkistaa. Tässä on täydellinen luettelo järjestelmän osista, kuka kutakin ylläpitää ja mitä kukin voi havaita - mukaan lukien se yksi kone, jota ajamme itse.",
+  "ldDescription": "Miten PrivaMesh-viesti kulkee ja mitä kukin osa havaitsee.",
+  "summary": "PrivaMeshillä ei ole tilitietokantaa eikä viestivarastoa. Siinä on kuitenkin maksupalvelu, joka maksaa jokaisen transaktion, kolmannen osapuolen ylläpitämä RPC-päätepiste ja julkinen ketju, joka tallentaa salatekstin pysyvästi. Kaikki kolme on lueteltu alla sen kanssa, mitä ne voivat havaita.",
+  "flowHeading": "Miten viesti kulkee",
+  "flow": [
+    {
+      "label": "Sinun iPhonesi",
+      "detail": "Salaa ja täyttää viestin, johtaa kertakäyttöisen osoitteen"
+    },
+    {
+      "label": "Maksupalvelu",
+      "detail": "Maksaa verkkomaksun, käyttää yhden sokean tokenin"
+    },
+    {
+      "label": "RPC-päätepiste",
+      "detail": "Lähettää transaktion verkkoon"
+    },
+    {
+      "label": "Solana",
+      "detail": "Kuljettaa täytetyn salatekstin kertakäyttöiseen osoitteeseen"
+    },
+    {
+      "label": "Vastaanottajan iPhone",
+      "detail": "Etsii omia kertakäyttöisiä osoitteitaan ja purkaa salauksen paikallisesti"
+    }
+  ],
+  "tableHeading": "Mitä kukin osa voi havaita",
+  "tableCaption": "PrivaMeshin osat, niiden ylläpitäjät ja mitä kukin voi nähdä ja tallentaa",
+  "cols": {
+    "component": "Osa",
+    "operator": "Ylläpitäjä",
+    "sees": "Mitä se näkee",
+    "stores": "Mitä se tallentaa",
+    "replaceable": "Korvattavissa"
+  },
+  "replaceable": {
+    "yes": "Kyllä",
+    "no": "Ei",
+    "partly": "Osittain"
+  },
+  "components": [
+    {
+      "name": "iOS-asiakasohjelma",
+      "operator": "Sinä",
+      "sees": "Selväkieliset viestit, avaimet, yhteystiedot",
+      "stores": "Kaikki, vain laitteella",
+      "note": "Ainoa paikka, jossa selväkielinen teksti ja avaimet ylipäätään ovat olemassa. Avaimet ovat iOS:n avainnipussa Face ID:n takana eivätkä koskaan synkronoidu iCloudiin."
+    },
+    {
+      "name": "Maksupalvelu",
+      "operator": "PrivaMesh",
+      "sees": "Kelvollinen käyttämätön sokea token ja maksettava transaktio - anonyymillä polulla ei tiliä",
+      "stores": "Vain toimintalokit - ei selväkielistä tekstiä, ei vastaanottajaa",
+      "note": "Maksaa verkkomaksun, jotta sinun ei koskaan tarvitse pitää SOLia - se yksi kone, jota ajamme. Lähetykset todennetaan anonyymillä sokealla tokenilla, jossa ei ole identiteettiä, joten palvelu ei voi yhdistää lähetystä ostoon, toiseen lähetykseen tai tiliin. Vanhempi tilipolku on yhä olemassa, ja sitä tarvitaan julkisen hakunimimerkin julkaisemiseen, joka on luonteeltaan tunnistava. Sen lähdekoodi on julkinen, hakemistossa relay/ samassa repositoriossa kuin asiakasohjelma."
+    },
+    {
+      "name": "Solana RPC",
+      "operator": "Kolmannen osapuolen palveluntarjoaja",
+      "sees": "IP-osoitteesi, pyyntöjen ajankohdat, lähettämäsi transaktiot",
+      "stores": "Mitä palveluntarjoaja päättää kirjata",
+      "note": "Vaihdettavissa ja ylläpidettävissä itse. Tämä osa näkee todennäköisimmin toimintasi verkkotasolla, ja siihen meillä on vähiten vaikutusvaltaa."
+    },
+    {
+      "name": "Solana-verkko",
+      "operator": "Ei kukaan erityisesti",
+      "sees": "Salateksti, kertakäyttöiset osoitteet, transaktioiden ajankohdat",
+      "stores": "Pysyvästi ja julkisesti",
+      "note": "Kuljetuskerros. Kaikki tänne kirjoitettu on kertakäyttöiselle avaimelle osoitettua täytettyä salatekstiä, mutta se kirjoitetaan ikuisesti."
+    },
+    {
+      "name": "StoreKit",
+      "operator": "Apple",
+      "sees": "Ostoksesi ja Apple ID:si",
+      "stores": "Applen käytäntöjen mukaan",
+      "note": "Väistämätön sovelluksen sisäisissä ostoissa iOS:ssä. Sokeat tokenit estävät ostoksen yhdistämisen viestintääsi."
+    }
+  ],
+  "whyHeading": "Miksi maksupalvelu on olemassa",
+  "why": [
+    "Jokainen viesti on Solana-transaktio, ja transaktiot maksavat verkkomaksun. Käyttäjien pakottaminen pitämään SOLia viestin lähettämistä varten olisi huonompi tuote ja huonompi yksityisyyden kannalta, koska lompakon täyttäminen on itsessään yhdistettävissä oleva teko. Siksi maksun maksaa palvelu.",
+    "Tästä herää ilmeinen kysymys: saako maksaja tietää, kuka puhuu kenen kanssa? Ei saa. Sovellus todistaa tilauksensa kerran ja saa joukon RSA-sokeita allekirjoituksia; jokainen lähetys käyttää yhden tokenin. Palvelu voi varmistaa, että token on kelvollinen ja käyttämätön, mutta ei voi yhdistää sitä ostoon, toiseen tokeniin tai tiliin - anonyymi polku ei lähetä tiliä lainkaan. Vanhempi tilipolku on jäljellä vain julkisen hakunimimerkin julkaisemista varten, joka on luonteeltaan tunnistava."
+  ],
+  "gapsHeading": "Mitä tämä rakenne ei korjaa",
+  "gaps": "RPC-päätepiste näkee IP-osoitteesi ja pyyntöjesi ajankohdat. Ketju tallentaa salatekstin pysyvästi. Mikään yllä mainituista ei piilota tätä, siksi molemmat ovat taulukossa ja siksi [rajoitussivu on olemassa](/limitations). Jos uhkamalliisi kuuluu verkkotason tarkkailija, käytä PrivaMeshia VPN:n tai Torin kanssa ja ylläpidä RPC:tä itse.",
+  "faq": [
+    {
+      "q": "Ajaako PrivaMesh palvelimia?",
+      "a": "Yhtä. Maksupalvelu maksaa Solanan verkkomaksun jokaisesta transaktiosta, jotta sinun ei koskaan tarvitse pitää SOLia. Anonyymillä polulla se näkee kelvollisen käyttämättömän sokean tokenin ja maksettavan transaktion - ei tiliä, ei selväkielistä tekstiä, ei vastaanottajaa. Tilitietokantaa tai viestivarastoa ei ole."
+    },
+    {
+      "q": "Mitä RPC-palveluntarjoaja näkee?",
+      "a": "IP-osoitteesi, pyyntöjesi ajankohdat ja lähettämäsi transaktiot. Se on osa, jolla on selkein näkymä verkkotason toimintaasi, ja siksi se on vaihdettavissa ja ylläpidettävissä itse."
+    },
+    {
+      "q": "Mitä tapahtuu, jos maksupalvelu kaatuu?",
+      "a": "Lähettäminen lakkaa toimimasta, kunnes palvelu palaa tai kunnes maksat transaktiot itse. Identiteettisi, yhteystietosi ja viestihistoriasi eivät kärsi - ne ovat laitteellasi eivätkä riipu mistään, mitä me ajamme."
+    },
+    {
+      "q": "Näkeekö Apple, kenelle viestin?",
+      "a": "Apple näkee, että ostit tilauksen ja millä Apple ID:llä. Se ei näe viestejäsi eikä yhteystietojasi. Sokeat tokenit estävät ostoksen yhdistämisen lähetystoimintaasi."
+    }
+  ],
+  "related": [
+    {
+      "href": "/limitations",
+      "label": "Tunnetut rajoitukset",
+      "blurb": "Miltä PrivaMesh ei suojaa sinua, suoraan sanottuna."
+    },
+    {
+      "href": "/threat-model",
+      "label": "Uhkamalli",
+      "blurb": "Vastustaja kerrallaan: mitä kukin näkee ja mikä hänet pysäyttää."
+    },
+    {
+      "href": "/security",
+      "label": "Tietoturva ja ilmoittaminen",
+      "blurb": "Miten ilmoitat haavoittuvuudesta ja mihin sitoudumme."
+    }
+  ]
+}

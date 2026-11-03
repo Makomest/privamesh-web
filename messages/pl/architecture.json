@@ -1,0 +1,127 @@
+{
+  "meta": {
+    "title": "Architektura: każdy komponent i co widzi",
+    "description": "Każdy komponent PrivaMesh i co może obserwować: klient iOS, nasza usługa opłat, punkt RPC, Solana i StoreKit. Nazwane, nie ukryte."
+  },
+  "eyebrow": "Architektura",
+  "title": "Każdy komponent i co może zobaczyć",
+  "lead": "Deklaracja prywatności jest warta tyle, ile czytelnik może sprawdzić. Oto pełna lista części systemu, kto obsługuje każdą z nich i co każda może zobaczyć - łącznie z jedyną maszyną, którą uruchamiamy sami.",
+  "ldDescription": "Jak podróżuje wiadomość PrivaMesh i co obserwuje każdy komponent.",
+  "summary": "PrivaMesh nie ma bazy kont ani magazynu wiadomości. Ma natomiast usługę opłat, która opłaca każdą transakcję, punkt RPC obsługiwany przez zewnętrznego dostawcę i publiczny łańcuch, który przechowuje szyfrogram na zawsze. Wszystkie trzy wymieniono poniżej wraz z tym, co mogą zobaczyć.",
+  "flowHeading": "Jak podróżuje wiadomość",
+  "flow": [
+    {
+      "label": "Twój iPhone",
+      "detail": "Szyfruje i dopełnia wiadomość, wyprowadza jednorazowy adres"
+    },
+    {
+      "label": "Usługa opłat",
+      "detail": "Opłaca opłatę sieciową, wydaje jeden ślepy token"
+    },
+    {
+      "label": "Punkt RPC",
+      "detail": "Przekazuje transakcję do sieci"
+    },
+    {
+      "label": "Solana",
+      "detail": "Niesie dopełniony szyfrogram na jednorazowy adres"
+    },
+    {
+      "label": "iPhone odbiorcy",
+      "detail": "Szuka własnych jednorazowych adresów i odszyfrowuje lokalnie"
+    }
+  ],
+  "tableHeading": "Co może zobaczyć każdy komponent",
+  "tableCaption": "Komponenty PrivaMesh, ich operatorzy i co każdy może widzieć i przechowywać",
+  "cols": {
+    "component": "Komponent",
+    "operator": "Obsługiwany przez",
+    "sees": "Co widzi",
+    "stores": "Co przechowuje",
+    "replaceable": "Wymienny"
+  },
+  "replaceable": {
+    "yes": "Tak",
+    "no": "Nie",
+    "partly": "Częściowo"
+  },
+  "components": [
+    {
+      "name": "Klient iOS",
+      "operator": "Ty",
+      "sees": "Tekst jawny, klucze, kontakty",
+      "stores": "Wszystko, tylko na urządzeniu",
+      "note": "Jedyne miejsce, w którym w ogóle istnieją tekst jawny i klucze. Klucze leżą w pęku kluczy iOS za Face ID i nigdy nie synchronizują się z iCloud."
+    },
+    {
+      "name": "Usługa opłat",
+      "operator": "PrivaMesh",
+      "sees": "Ważny, niewydany ślepy token i transakcję do opłacenia - na ścieżce anonimowej bez konta",
+      "stores": "Tylko logi operacyjne - bez tekstu jawnego, bez odbiorcy",
+      "note": "Opłaca opłatę sieciową, żebyś nigdy nie musiał trzymać SOL - jedyna maszyna, którą uruchamiamy. Wysyłki uwierzytelniają się anonimowym ślepym tokenem bez tożsamości, więc usługa nie może powiązać wysyłki ani z zakupem, ani z inną wysyłką, ani z kontem. Wciąż istnieje starsza ścieżka z kontem, potrzebna do opublikowania publicznego pseudonimu do wyszukiwania, który z natury identyfikuje. Jej kod źródłowy jest publiczny, w katalogu relay/ tego samego repozytorium co klient."
+    },
+    {
+      "name": "Solana RPC",
+      "operator": "Zewnętrzny dostawca",
+      "sees": "Twój adres IP, czas żądań, wysyłane transakcje",
+      "stores": "To, co ten dostawca zdecyduje się logować",
+      "note": "Wymienny i możliwy do samodzielnego hostowania. To komponent, który najpewniej widzi twoją aktywność na poziomie sieci, i ten, nad którym mamy najmniejszą kontrolę."
+    },
+    {
+      "name": "Sieć Solana",
+      "operator": "Nikt konkretny",
+      "sees": "Szyfrogram, jednorazowe adresy, czas transakcji",
+      "stores": "Na zawsze i publicznie",
+      "note": "Transport. Wszystko, co tu zapisano, to dopełniony szyfrogram zaadresowany do jednorazowego klucza, ale zapisany na zawsze."
+    },
+    {
+      "name": "StoreKit",
+      "operator": "Apple",
+      "sees": "Twój zakup i twój Apple ID",
+      "stores": "Zgodnie z zasadami Apple",
+      "note": "Nieunikniony przy zakupach w aplikacji na iOS. To ślepe tokeny sprawiają, że zakupu nie da się powiązać z twoją aktywnością w wiadomościach."
+    }
+  ],
+  "whyHeading": "Po co jest usługa opłat",
+  "why": [
+    "Każda wiadomość to transakcja Solana, a transakcje kosztują opłatę sieciową. Zmuszanie użytkowników do trzymania SOL, by wysłać wiadomość, dałoby gorszy produkt i gorszą prywatność, bo zasilenie portfela samo w sobie jest czynnością, którą da się powiązać. Dlatego opłatę pokrywa usługa.",
+    "Rodzi to oczywiste pytanie: czy płacący dowiaduje się, kto z kim rozmawia? Nie. Aplikacja raz potwierdza subskrypcję i otrzymuje pulę ślepych podpisów RSA; każda wysyłka wydaje jeden token. Usługa może sprawdzić, że token jest ważny i niewydany, ale nie może powiązać go z zakupem, z innym tokenem ani z kontem - ścieżka anonimowa w ogóle nie przesyła konta. Starsza ścieżka z kontem zostaje tylko do publikowania publicznego pseudonimu, który z natury identyfikuje."
+  ],
+  "gapsHeading": "Czego ten projekt nie naprawia",
+  "gaps": "Punkt RPC widzi twój IP i czas twoich żądań. Łańcuch przechowuje szyfrogram na zawsze. Nic z powyższego tego nie ukrywa, dlatego oba punkty są w tabeli i dlatego [istnieje strona ograniczeń](/limitations). Jeśli twój model zagrożeń obejmuje obserwatora na poziomie sieci, używaj PrivaMesh z VPN lub Tor i hostuj RPC samodzielnie.",
+  "faq": [
+    {
+      "q": "Czy PrivaMesh uruchamia jakieś serwery?",
+      "a": "Jeden. Usługa opłat pokrywa opłatę sieciową Solana za każdą transakcję, żebyś nigdy nie musiał trzymać SOL. Na ścieżce anonimowej widzi ważny, niewydany ślepy token i transakcję do opłacenia - bez konta, bez tekstu jawnego, bez odbiorcy. Nie ma bazy kont ani magazynu wiadomości."
+    },
+    {
+      "q": "Co widzi dostawca RPC?",
+      "a": "Twój adres IP, czas twoich żądań i transakcje, które wysyłasz. To komponent z najlepszym wglądem w twoją aktywność na poziomie sieci, dlatego można go wymienić i hostować samodzielnie."
+    },
+    {
+      "q": "Co się stanie, jeśli usługa opłat przestanie działać?",
+      "a": "Wysyłanie przestanie działać, dopóki nie wróci albo dopóki nie zaczniesz sam opłacać transakcji. Twoja tożsamość, kontakty i historia wiadomości nie ucierpią - są na twoim urządzeniu i nie zależą od niczego, co uruchamiamy."
+    },
+    {
+      "q": "Czy Apple widzi, do kogo piszę?",
+      "a": "Apple widzi, że kupiłeś subskrypcję i z jakiego Apple ID. Nie widzi twoich wiadomości ani kontaktów. To ślepe tokeny sprawiają, że zakupu nie da się powiązać z twoją aktywnością wysyłania."
+    }
+  ],
+  "related": [
+    {
+      "href": "/limitations",
+      "label": "Znane ograniczenia",
+      "blurb": "Przed czym PrivaMesh cię nie chroni, powiedziane wprost."
+    },
+    {
+      "href": "/threat-model",
+      "label": "Model zagrożeń",
+      "blurb": "Przeciwnik po przeciwniku: co każdy widzi i co go zatrzymuje."
+    },
+    {
+      "href": "/security",
+      "label": "Bezpieczeństwo i zgłaszanie",
+      "blurb": "Jak zgłosić podatność i do czego się zobowiązujemy."
+    }
+  ]
+}

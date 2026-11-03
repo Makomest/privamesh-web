@@ -1,0 +1,127 @@
+{
+  "meta": {
+    "title": "Architektur: jede Komponente und was sie sieht",
+    "description": "Jede Komponente von PrivaMesh und was sie beobachten kann: der iOS-Client, unser Gebührendienst, der RPC-Endpunkt, Solana und StoreKit. Benannt, nicht versteckt."
+  },
+  "eyebrow": "Architektur",
+  "title": "Jede Komponente und was sie sehen kann",
+  "lead": "Ein Datenschutzversprechen ist nur so viel wert, wie ein Leser nachprüfen kann. Hier steht die vollständige Liste der Systemteile, wer jeden betreibt und was jeder sehen kann - einschließlich des einen Rechners, den wir selbst betreiben.",
+  "ldDescription": "Wie eine PrivaMesh-Nachricht reist und was jede Komponente beobachtet.",
+  "summary": "PrivaMesh hat keine Kontodatenbank und keinen Nachrichtenspeicher. Es gibt aber einen Gebührendienst, der jede Transaktion bezahlt, einen RPC-Endpunkt, den ein Drittanbieter betreibt, und eine öffentliche Chain, die Chiffretext dauerhaft speichert. Alle drei stehen unten, zusammen mit dem, was sie sehen können.",
+  "flowHeading": "Wie eine Nachricht reist",
+  "flow": [
+    {
+      "label": "Ihr iPhone",
+      "detail": "Verschlüsselt und füllt die Nachricht auf, leitet die Einmaladresse ab"
+    },
+    {
+      "label": "Gebührendienst",
+      "detail": "Bezahlt die Netzwerkgebühr, verbraucht ein Blind-Token"
+    },
+    {
+      "label": "RPC-Endpunkt",
+      "detail": "Reicht die Transaktion beim Netzwerk ein"
+    },
+    {
+      "label": "Solana",
+      "detail": "Trägt den aufgefüllten Chiffretext zu einer Einmaladresse"
+    },
+    {
+      "label": "iPhone des Empfängers",
+      "detail": "Sucht nach eigenen Einmaladressen und entschlüsselt lokal"
+    }
+  ],
+  "tableHeading": "Was jede Komponente sehen kann",
+  "tableCaption": "PrivaMesh-Komponenten, ihre Betreiber und was jede sehen und speichern kann",
+  "cols": {
+    "component": "Komponente",
+    "operator": "Betrieben von",
+    "sees": "Was sie sieht",
+    "stores": "Was sie speichert",
+    "replaceable": "Ersetzbar"
+  },
+  "replaceable": {
+    "yes": "Ja",
+    "no": "Nein",
+    "partly": "Teilweise"
+  },
+  "components": [
+    {
+      "name": "iOS-Client",
+      "operator": "Sie",
+      "sees": "Klartext, Schlüssel, Kontakte",
+      "stores": "Alles, nur auf dem Gerät",
+      "note": "Der einzige Ort, an dem Klartext und Schlüssel überhaupt existieren. Die Schlüssel liegen im iOS-Schlüsselbund hinter Face ID und werden nie mit iCloud synchronisiert."
+    },
+    {
+      "name": "Gebührendienst",
+      "operator": "PrivaMesh",
+      "sees": "Ein gültiges, unverbrauchtes Blind-Token und die zu bezahlende Transaktion - auf dem anonymen Weg kein Konto",
+      "stores": "Nur Betriebslogs - kein Klartext, kein Empfänger",
+      "note": "Bezahlt die Netzwerkgebühr, damit Sie nie SOL halten müssen - der eine Rechner, den wir betreiben. Sendungen authentifizieren sich mit einem anonymen Blind-Token ohne Identität, sodass der Dienst eine Sendung weder mit einem Kauf noch mit einer anderen Sendung oder einem Konto verknüpfen kann. Ein älterer Kontoweg existiert noch und ist nötig, um einen öffentlichen Such-Nickname zu veröffentlichen, der naturgemäß identifizierend ist. Sein Quellcode ist öffentlich, unter relay/ im selben Repository wie der Client."
+    },
+    {
+      "name": "Solana RPC",
+      "operator": "Ein Drittanbieter",
+      "sees": "Ihre IP-Adresse, den Zeitpunkt der Anfragen, die eingereichten Transaktionen",
+      "stores": "Was dieser Anbieter zu protokollieren beschließt",
+      "note": "Austauschbar und selbst hostbar. Diese Komponente sieht am wahrscheinlichsten Ihre Aktivität auf Netzwerkebene, und über sie haben wir am wenigsten Kontrolle."
+    },
+    {
+      "name": "Solana-Netzwerk",
+      "operator": "Niemand Bestimmtes",
+      "sees": "Chiffretext, Einmaladressen, Zeitpunkt der Transaktionen",
+      "stores": "Dauerhaft und öffentlich",
+      "note": "Der Transportweg. Alles, was hier geschrieben wird, ist aufgefüllter Chiffretext an einen Einmalschlüssel, aber es wird für immer geschrieben."
+    },
+    {
+      "name": "StoreKit",
+      "operator": "Apple",
+      "sees": "Ihren Kauf und Ihre Apple-ID",
+      "stores": "Gemäß Apples Richtlinien",
+      "note": "Für In-App-Käufe unter iOS unvermeidlich. Blind-Tokens sorgen dafür, dass sich der Kauf nicht mit Ihrer Nachrichtenaktivität verknüpfen lässt."
+    }
+  ],
+  "whyHeading": "Warum es den Gebührendienst gibt",
+  "why": [
+    "Jede Nachricht ist eine Solana-Transaktion, und Transaktionen kosten eine Netzwerkgebühr. Nutzer SOL halten zu lassen, um eine Nachricht zu senden, wäre ein schlechteres Produkt und für den Datenschutz schlechter, denn das Aufladen einer Wallet ist selbst eine verknüpfbare Handlung. Also bezahlt ein Dienst die Gebühr.",
+    "Daraus folgt die naheliegende Frage: Erfährt der Zahler, wer mit wem spricht? Nein. Die App weist ihr Abo einmal nach und erhält einen Vorrat an RSA-Blindsignaturen; jede Sendung verbraucht ein Token. Der Dienst kann prüfen, dass ein Token gültig und unverbraucht ist, kann es aber weder mit dem Kauf noch mit einem anderen Token oder einem Konto verknüpfen - der anonyme Weg sendet überhaupt kein Konto. Der ältere Kontoweg bleibt nur für die Veröffentlichung eines öffentlichen Such-Nicknames, der naturgemäß identifizierend ist."
+  ],
+  "gapsHeading": "Was dieses Design nicht behebt",
+  "gaps": "Der RPC-Endpunkt sieht Ihre IP und den Zeitpunkt Ihrer Anfragen. Die Chain speichert Chiffretext dauerhaft. Nichts von oben verbirgt das, deshalb stehen beide in der Tabelle, und deshalb [gibt es die Seite mit den Einschränkungen](/limitations). Gehört ein Beobachter auf Netzwerkebene zu Ihrem Bedrohungsmodell, kombinieren Sie PrivaMesh mit einem VPN oder Tor und hosten Sie den RPC selbst.",
+  "faq": [
+    {
+      "q": "Betreibt PrivaMesh Server?",
+      "a": "Einen. Ein Gebührendienst bezahlt die Solana-Netzwerkgebühr für jede Transaktion, damit Sie nie SOL halten müssen. Auf dem anonymen Weg sieht er ein gültiges, unverbrauchtes Blind-Token und die zu bezahlende Transaktion - kein Konto, keinen Klartext, keinen Empfänger. Es gibt keine Kontodatenbank und keinen Nachrichtenspeicher."
+    },
+    {
+      "q": "Was kann der RPC-Anbieter sehen?",
+      "a": "Ihre IP-Adresse, den Zeitpunkt Ihrer Anfragen und die Transaktionen, die Sie einreichen. Es ist die Komponente mit dem klarsten Blick auf Ihre Aktivität auf Netzwerkebene, deshalb ist sie austauschbar und selbst hostbar."
+    },
+    {
+      "q": "Was passiert, wenn der Gebührendienst ausfällt?",
+      "a": "Das Senden funktioniert nicht mehr, bis er zurück ist oder Sie Transaktionen selbst bezahlen. Ihre Identität, Kontakte und Ihr Nachrichtenverlauf sind nicht betroffen - sie liegen auf Ihrem Gerät und hängen von nichts ab, was wir betreiben."
+    },
+    {
+      "q": "Kann Apple sehen, wem ich schreibe?",
+      "a": "Apple sieht, dass Sie ein Abo gekauft haben und mit welcher Apple-ID. Ihre Nachrichten und Kontakte sieht Apple nicht. Blind-Tokens verhindern, dass sich der Kauf mit Ihrer Sendeaktivität verknüpfen lässt."
+    }
+  ],
+  "related": [
+    {
+      "href": "/limitations",
+      "label": "Bekannte Einschränkungen",
+      "blurb": "Wovor PrivaMesh Sie nicht schützt, klar gesagt."
+    },
+    {
+      "href": "/threat-model",
+      "label": "Bedrohungsmodell",
+      "blurb": "Angreifer für Angreifer: was jeder sieht und was ihn aufhält."
+    },
+    {
+      "href": "/security",
+      "label": "Sicherheit und Offenlegung",
+      "blurb": "Wie Sie eine Schwachstelle melden und wozu wir uns verpflichten."
+    }
+  ]
+}

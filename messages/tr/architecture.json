@@ -1,0 +1,127 @@
+{
+  "meta": {
+    "title": "Mimari: her bileşen ve neleri gördüğü",
+    "description": "PrivaMesh'teki her bileşen ve neleri gözlemleyebildiği: iOS istemcisi, ücret hizmetimiz, RPC uç noktası, Solana ve StoreKit. Gizlenmeden, adıyla."
+  },
+  "eyebrow": "Mimari",
+  "title": "Her bileşen ve neleri görebildiği",
+  "lead": "Bir gizlilik iddiası, okurun doğrulayabildiği kadar değerlidir. Bu, sistemin tüm parçalarının, her birini kimin işlettiğinin ve her birinin neleri gözlemleyebildiğinin tam listesidir - kendi çalıştırdığımız tek makine dahil.",
+  "ldDescription": "Bir PrivaMesh mesajının nasıl yol aldığı ve her bileşenin neyi gözlemlediği.",
+  "summary": "PrivaMesh'in hesap veritabanı ve mesaj deposu yoktur. Ama her işlemin ücretini ödeyen bir ücret hizmeti, üçüncü bir tarafça işletilen bir RPC uç noktası ve şifreli metni kalıcı olarak saklayan herkese açık bir zincir vardır. Üçü de gözlemleyebildikleriyle birlikte aşağıda listelenmiştir.",
+  "flowHeading": "Bir mesaj nasıl yol alır",
+  "flow": [
+    {
+      "label": "Senin iPhone'un",
+      "detail": "Mesajı şifreler ve doldurur, tek kullanımlık adresi türetir"
+    },
+    {
+      "label": "Ücret hizmeti",
+      "detail": "Ağ ücretini öder, bir kör token harcar"
+    },
+    {
+      "label": "RPC uç noktası",
+      "detail": "İşlemi ağa iletir"
+    },
+    {
+      "label": "Solana",
+      "detail": "Doldurulmuş şifreli metni tek kullanımlık bir adrese taşır"
+    },
+    {
+      "label": "Karşı tarafın iPhone'u",
+      "detail": "Kendi tek kullanımlık adreslerini tarar ve yerelde şifreyi çözer"
+    }
+  ],
+  "tableHeading": "Her bileşen neleri gözlemleyebilir",
+  "tableCaption": "PrivaMesh bileşenleri, işletenleri ve her birinin neleri görüp saklayabildiği",
+  "cols": {
+    "component": "Bileşen",
+    "operator": "İşleten",
+    "sees": "Ne görür",
+    "stores": "Ne saklar",
+    "replaceable": "Değiştirilebilir"
+  },
+  "replaceable": {
+    "yes": "Evet",
+    "no": "Hayır",
+    "partly": "Kısmen"
+  },
+  "components": [
+    {
+      "name": "iOS istemcisi",
+      "operator": "Sen",
+      "sees": "Düz metin, anahtarlar, kişiler",
+      "stores": "Her şey, yalnızca cihazda",
+      "note": "Düz metnin ve anahtarların var olduğu tek yer. Anahtarlar Face ID arkasında iOS Anahtar Zinciri'nde durur ve asla iCloud ile eşitlenmez."
+    },
+    {
+      "name": "Ücret hizmeti",
+      "operator": "PrivaMesh",
+      "sees": "Geçerli, harcanmamış bir kör token ve ödenecek işlem - anonim yolda hesap yok",
+      "stores": "Yalnızca işletim günlükleri - düz metin yok, alıcı yok",
+      "note": "SOL tutmak zorunda kalmaman için ağ ücretini öder - çalıştırdığımız tek makine. Gönderimler kimlik taşımayan anonim bir kör tokenla doğrulanır; bu yüzden hizmet bir gönderimi bir satın almayla, başka bir gönderimle ya da bir hesapla ilişkilendiremez. Eski bir hesap yolu hâlâ vardır ve doğası gereği kimlik belirten herkese açık bir arama takma adı yayımlamak için gereklidir. Kaynak kodu açıktır, istemciyle aynı depoda relay/ altında."
+    },
+    {
+      "name": "Solana RPC",
+      "operator": "Üçüncü taraf bir sağlayıcı",
+      "sees": "IP adresin, istek zamanları, gönderdiğin işlemler",
+      "stores": "O sağlayıcı neyi kaydetmeyi seçerse",
+      "note": "Değiştirilebilir ve kendin barındırabilirsin. Ağ düzeyindeki etkinliğini görme olasılığı en yüksek bileşen budur ve üzerinde en az kontrolümüz olan da odur."
+    },
+    {
+      "name": "Solana ağı",
+      "operator": "Belirli biri değil",
+      "sees": "Şifreli metin, tek kullanımlık adresler, işlem zamanları",
+      "stores": "Kalıcı olarak ve herkese açık",
+      "note": "Taşıma katmanı. Buraya yazılan her şey tek kullanımlık bir anahtara gönderilmiş doldurulmuş şifreli metindir, ama sonsuza dek yazılır."
+    },
+    {
+      "name": "StoreKit",
+      "operator": "Apple",
+      "sees": "Satın alman ve Apple kimliğin",
+      "stores": "Apple politikasına göre",
+      "note": "iOS'ta uygulama içi satın almalar için kaçınılmaz. Satın almanın mesajlaşma etkinliğinle ilişkilendirilmesini önleyen şey kör tokenlardır."
+    }
+  ],
+  "whyHeading": "Ücret hizmeti neden var",
+  "why": [
+    "Her mesaj bir Solana işlemidir ve işlemlerin bir ağ ücreti vardır. Kullanıcıları mesaj göndermek için SOL tutmaya zorlamak hem daha kötü bir ürün hem de gizlilik açısından daha kötü olurdu, çünkü bir cüzdana para yüklemek başlı başına ilişkilendirilebilir bir eylemdir. Bu yüzden ücreti bir hizmet öder.",
+    "Bu da apaçık bir soruyu doğurur: ödeyen taraf kimin kiminle konuştuğunu öğrenir mi? Hayır. Uygulama aboneliğini bir kez kanıtlar ve bir RSA kör imza havuzu alır; her gönderim bir token harcar. Hizmet bir tokenın geçerli ve harcanmamış olduğunu doğrulayabilir, ama onu satın almayla, başka bir tokenla ya da bir hesapla ilişkilendiremez - anonim yol hiç hesap göndermez. Eski hesap yolu yalnızca doğası gereği kimlik belirten herkese açık bir arama takma adı yayımlamak için kalmıştır."
+  ],
+  "gapsHeading": "Bu tasarımın çözmediği şeyler",
+  "gaps": "RPC uç noktası IP'ni ve isteklerinin zamanını görür. Zincir şifreli metni kalıcı olarak saklar. Yukarıdakilerin hiçbiri bunları gizlemez; bu yüzden ikisi de tabloda yer alır ve bu yüzden [sınırlamalar sayfası vardır](/limitations). Tehdit modelin ağ düzeyinde bir gözlemciyi içeriyorsa, PrivaMesh'i bir VPN ya da Tor ile birlikte kullan ve RPC'yi kendin barındır.",
+  "faq": [
+    {
+      "q": "PrivaMesh herhangi bir sunucu çalıştırıyor mu?",
+      "a": "Bir tane. Bir ücret hizmeti, SOL tutmak zorunda kalmaman için her işlemin Solana ağ ücretini öder. Anonim yolda geçerli, harcanmamış bir kör token ve ödenecek işlemi görür - hesap yok, düz metin yok, alıcı yok. Hesap veritabanı ve mesaj deposu yoktur."
+    },
+    {
+      "q": "RPC sağlayıcısı neleri görebilir?",
+      "a": "IP adresini, isteklerinin zamanını ve gönderdiğin işlemleri. Ağ düzeyindeki etkinliğini en net gören bileşendir; bu yüzden değiştirilebilir ve kendin barındırabilirsin."
+    },
+    {
+      "q": "Ücret hizmeti çökerse ne olur?",
+      "a": "Hizmet geri gelene ya da işlemleri kendin ödeyene kadar gönderim çalışmaz. Kimliğin, kişilerin ve mesaj geçmişin etkilenmez - cihazındadırlar ve bizim çalıştırdığımız hiçbir şeye bağlı değildirler."
+    },
+    {
+      "q": "Apple kime mesaj attığımı görebilir mi?",
+      "a": "Apple bir abonelik satın aldığını ve hangi Apple kimliğiyle aldığını görür. Mesajlarını veya kişilerini görmez. Satın almanın gönderim etkinliğinle ilişkilendirilmesini önleyen şey kör tokenlardır."
+    }
+  ],
+  "related": [
+    {
+      "href": "/limitations",
+      "label": "Bilinen sınırlamalar",
+      "blurb": "PrivaMesh'in seni neye karşı korumadığı, açıkça."
+    },
+    {
+      "href": "/threat-model",
+      "label": "Tehdit modeli",
+      "blurb": "Saldırgan saldırgan: her biri ne görür ve onu ne durdurur."
+    },
+    {
+      "href": "/security",
+      "label": "Güvenlik ve bildirim",
+      "blurb": "Bir güvenlik açığı nasıl bildirilir ve neyi taahhüt ediyoruz."
+    }
+  ]
+}

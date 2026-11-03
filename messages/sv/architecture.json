@@ -1,0 +1,127 @@
+{
+  "meta": {
+    "title": "Arkitektur: varje komponent, och vad den ser",
+    "description": "Varje komponent i PrivaMesh och vad den kan observera: iOS-klienten, vår avgiftstjänst, RPC-slutpunkten, Solana och StoreKit. Namngivna, inte dolda."
+  },
+  "eyebrow": "Arkitektur",
+  "title": "Varje komponent, och vad den kan se",
+  "lead": "Ett integritetslöfte är bara värt det en läsare kan kontrollera. Det här är hela listan över systemets delar, vem som driver var och en och vad var och en kan observera - inklusive den enda maskin vi själva kör.",
+  "ldDescription": "Hur ett PrivaMesh-meddelande färdas och vad varje komponent observerar.",
+  "summary": "PrivaMesh har ingen kontodatabas och ingen meddelandelagring. Däremot finns en avgiftstjänst som betalar varje transaktion, en RPC-slutpunkt som drivs av en tredje part och en publik kedja som lagrar chiffertext permanent. Alla tre listas nedan med vad de kan observera.",
+  "flowHeading": "Hur ett meddelande färdas",
+  "flow": [
+    {
+      "label": "Din iPhone",
+      "detail": "Krypterar och fyller ut meddelandet, härleder engångsadressen"
+    },
+    {
+      "label": "Avgiftstjänst",
+      "detail": "Betalar nätverksavgiften, spenderar en blind token"
+    },
+    {
+      "label": "RPC-slutpunkt",
+      "detail": "Skickar in transaktionen till nätverket"
+    },
+    {
+      "label": "Solana",
+      "detail": "Bär den utfyllda chiffertexten till en engångsadress"
+    },
+    {
+      "label": "Mottagarens iPhone",
+      "detail": "Söker efter sina egna engångsadresser och dekrypterar lokalt"
+    }
+  ],
+  "tableHeading": "Vad varje komponent kan observera",
+  "tableCaption": "PrivaMeshs komponenter, deras operatörer och vad var och en kan se och lagra",
+  "cols": {
+    "component": "Komponent",
+    "operator": "Drivs av",
+    "sees": "Vad den ser",
+    "stores": "Vad den lagrar",
+    "replaceable": "Utbytbar"
+  },
+  "replaceable": {
+    "yes": "Ja",
+    "no": "Nej",
+    "partly": "Delvis"
+  },
+  "components": [
+    {
+      "name": "iOS-klient",
+      "operator": "Du",
+      "sees": "Klartext, nycklar, kontakter",
+      "stores": "Allt, bara på enheten",
+      "note": "Det enda stället där klartext och nycklar någonsin finns. Nycklarna ligger i iOS-nyckelringen bakom Face ID och synkas aldrig till iCloud."
+    },
+    {
+      "name": "Avgiftstjänst",
+      "operator": "PrivaMesh",
+      "sees": "En giltig, ospenderad blind token och transaktionen som ska betalas - inget konto på den anonyma vägen",
+      "stores": "Bara driftloggar - ingen klartext, ingen mottagare",
+      "note": "Betalar nätverksavgiften så att du aldrig behöver hålla SOL - den enda maskin vi kör. Utskick autentiseras med en anonym blind token som inte bär någon identitet, så tjänsten kan inte koppla ett utskick till ett köp, till ett annat utskick eller till ett konto. En äldre kontoväg finns kvar och krävs för att publicera ett offentligt sökbart smeknamn, som av naturen är identifierande. Källkoden är öppen, under relay/ i samma repo som klienten."
+    },
+    {
+      "name": "Solana RPC",
+      "operator": "En tredjepartsleverantör",
+      "sees": "Din IP-adress, tidpunkt för förfrågningar, transaktioner du skickar in",
+      "stores": "Det leverantören väljer att logga",
+      "note": "Utbytbar och kan köras själv. Det är den komponent som mest sannolikt ser din aktivitet på nätverksnivå, och den vi har minst kontroll över."
+    },
+    {
+      "name": "Solana-nätverket",
+      "operator": "Ingen särskild",
+      "sees": "Chiffertext, engångsadresser, tidpunkt för transaktioner",
+      "stores": "Permanent, och publikt",
+      "note": "Transporten. Allt som skrivs här är utfylld chiffertext adresserad till en engångsnyckel, men det skrivs för alltid."
+    },
+    {
+      "name": "StoreKit",
+      "operator": "Apple",
+      "sees": "Ditt köp och ditt Apple-ID",
+      "stores": "Enligt Apples policy",
+      "note": "Oundvikligt för köp i appar på iOS. Det är blinda tokens som hindrar att köpet kopplas till din meddelandeaktivitet."
+    }
+  ],
+  "whyHeading": "Varför avgiftstjänsten finns",
+  "why": [
+    "Varje meddelande är en Solana-transaktion, och transaktioner kostar en nätverksavgift. Att låta användare hålla SOL för att skicka ett meddelande vore en sämre produkt och sämre för integriteten, eftersom att fylla på en plånbok i sig är en spårbar handling. Därför betalar en tjänst avgiften i stället.",
+    "Det väcker den uppenbara frågan: får den som betalar veta vem som pratar med vem? Nej. Appen bevisar sin prenumeration en gång och får en pool av RSA-blindsignaturer; varje utskick spenderar en token. Tjänsten kan verifiera att en token är giltig och ospenderad men kan inte koppla den till köpet, till någon annan token eller till ett konto - den anonyma vägen skickar inget konto alls. Den äldre kontovägen finns kvar bara för att publicera ett offentligt sökbart smeknamn, som av naturen är identifierande."
+  ],
+  "gapsHeading": "Vad den här designen inte löser",
+  "gaps": "RPC-slutpunkten ser din IP och tidpunkten för dina förfrågningar. Kedjan lagrar chiffertext permanent. Inget av ovanstående döljer det, och därför finns båda i tabellen och därför [finns sidan med begränsningar](/limitations). Om din hotmodell inkluderar en observatör på nätverksnivå, använd PrivaMesh tillsammans med VPN eller Tor och kör RPC:n själv.",
+  "faq": [
+    {
+      "q": "Kör PrivaMesh några servrar?",
+      "a": "En. En avgiftstjänst betalar Solanas nätverksavgift för varje transaktion så att du aldrig behöver hålla SOL. På den anonyma vägen ser den en giltig, ospenderad blind token och transaktionen som ska betalas - inget konto, ingen klartext, ingen mottagare. Det finns ingen kontodatabas och ingen meddelandelagring."
+    },
+    {
+      "q": "Vad kan RPC-leverantören se?",
+      "a": "Din IP-adress, tidpunkten för dina förfrågningar och de transaktioner du skickar in. Det är den komponent som har tydligast insyn i din aktivitet på nätverksnivå, och därför är den utbytbar och kan köras själv."
+    },
+    {
+      "q": "Vad händer om avgiftstjänsten går ner?",
+      "a": "Utskick slutar fungera tills den är tillbaka eller tills du själv betalar transaktionerna. Din identitet, dina kontakter och din meddelandehistorik påverkas inte - de finns på din enhet och beror inte på något vi kör."
+    },
+    {
+      "q": "Kan Apple se vem jag skriver till?",
+      "a": "Apple ser att du köpt en prenumeration och med vilket Apple-ID. Apple ser inte dina meddelanden eller kontakter. Det är blinda tokens som hindrar att köpet kopplas till din sändaktivitet."
+    }
+  ],
+  "related": [
+    {
+      "href": "/limitations",
+      "label": "Kända begränsningar",
+      "blurb": "Vad PrivaMesh inte skyddar dig mot, rakt på sak."
+    },
+    {
+      "href": "/threat-model",
+      "label": "Hotmodell",
+      "blurb": "Motståndare för motståndare: vad var och en ser och vad som stoppar dem."
+    },
+    {
+      "href": "/security",
+      "label": "Säkerhet och rapportering",
+      "blurb": "Hur du rapporterar en sårbarhet och vad vi förbinder oss till."
+    }
+  ]
+}

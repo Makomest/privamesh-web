@@ -1,0 +1,127 @@
+{
+  "meta": {
+    "title": "Arhitektura: svaka komponenta i što vidi",
+    "description": "Svaka komponenta PrivaMesha i što može promatrati: iOS klijent, naša usluga naknada, RPC krajnja točka, Solana i StoreKit. Imenovano, ne skriveno."
+  },
+  "eyebrow": "Arhitektura",
+  "title": "Svaka komponenta i što može vidjeti",
+  "lead": "Tvrdnja o privatnosti vrijedi onoliko koliko je čitatelj može provjeriti. Ovo je potpuni popis dijelova sustava, tko upravlja svakim i što svaki može promatrati - uključujući jedini stroj koji pokrećemo sami.",
+  "ldDescription": "Kako putuje poruka PrivaMesha i što promatra svaka komponenta.",
+  "summary": "PrivaMesh nema bazu računa ni spremište poruka. Ima, međutim, uslugu naknada koja plaća svaku transakciju, RPC krajnju točku kojom upravlja treća strana i javni lanac koji šifrirani tekst trajno pohranjuje. Sve tri navedene su u nastavku zajedno s onim što mogu promatrati.",
+  "flowHeading": "Kako putuje poruka",
+  "flow": [
+    {
+      "label": "Vaš iPhone",
+      "detail": "Šifrira i nadopunjuje poruku, izvodi jednokratnu adresu"
+    },
+    {
+      "label": "Usluga naknada",
+      "detail": "Plaća mrežnu naknadu, troši jedan slijepi token"
+    },
+    {
+      "label": "RPC krajnja točka",
+      "detail": "Šalje transakciju u mrežu"
+    },
+    {
+      "label": "Solana",
+      "detail": "Nosi nadopunjeni šifrirani tekst na jednokratnu adresu"
+    },
+    {
+      "label": "iPhone primatelja",
+      "detail": "Traži vlastite jednokratne adrese i dešifrira lokalno"
+    }
+  ],
+  "tableHeading": "Što može promatrati svaka komponenta",
+  "tableCaption": "Komponente PrivaMesha, tko njima upravlja i što svaka može vidjeti i pohraniti",
+  "cols": {
+    "component": "Komponenta",
+    "operator": "Upravlja",
+    "sees": "Što vidi",
+    "stores": "Što pohranjuje",
+    "replaceable": "Zamjenjiva"
+  },
+  "replaceable": {
+    "yes": "Da",
+    "no": "Ne",
+    "partly": "Djelomično"
+  },
+  "components": [
+    {
+      "name": "iOS klijent",
+      "operator": "Vi",
+      "sees": "Otvoreni tekst, ključevi, kontakti",
+      "stores": "Sve, samo na uređaju",
+      "note": "Jedino mjesto na kojem uopće postoje otvoreni tekst i ključevi. Ključevi su u iOS privjesku za ključeve iza Face ID-ja i nikad se ne sinkroniziraju s iCloudom."
+    },
+    {
+      "name": "Usluga naknada",
+      "operator": "PrivaMesh",
+      "sees": "Valjan nepotrošen slijepi token i transakciju za plaćanje - na anonimnom putu bez računa",
+      "stores": "Samo operativni zapisi - bez otvorenog teksta, bez primatelja",
+      "note": "Plaća mrežnu naknadu kako nikad ne biste morali držati SOL - jedini stroj koji pokrećemo. Slanja se autentificiraju anonimnim slijepim tokenom bez identiteta, pa usluga ne može povezati slanje s kupnjom, s drugim slanjem ni s računom. I dalje postoji stariji put s računom, potreban za objavu javnog nadimka za pretraživanje, koji po prirodi identificira. Njegov izvorni kod je javan, pod relay/ u istom repozitoriju kao klijent."
+    },
+    {
+      "name": "Solana RPC",
+      "operator": "Vanjski pružatelj",
+      "sees": "Vašu IP adresu, vrijeme zahtjeva, transakcije koje šaljete",
+      "stores": "Što taj pružatelj odluči bilježiti",
+      "note": "Zamjenjiva i može se samostalno hostati. Ova komponenta najvjerojatnije vidi vašu aktivnost na razini mreže, a nad njom imamo najmanje kontrole."
+    },
+    {
+      "name": "Mreža Solana",
+      "operator": "Nitko određen",
+      "sees": "Šifrirani tekst, jednokratne adrese, vrijeme transakcija",
+      "stores": "Trajno i javno",
+      "note": "Prijenos. Sve što se ovdje zapiše nadopunjeni je šifrirani tekst upućen jednokratnom ključu, ali zapisuje se zauvijek."
+    },
+    {
+      "name": "StoreKit",
+      "operator": "Apple",
+      "sees": "Vašu kupnju i vaš Apple ID",
+      "stores": "Prema Appleovim pravilima",
+      "note": "Neizbježan za kupnje unutar aplikacije na iOS-u. Upravo slijepi tokeni sprječavaju da se kupnja poveže s vašom aktivnošću u porukama."
+    }
+  ],
+  "whyHeading": "Zašto postoji usluga naknada",
+  "why": [
+    "Svaka poruka je transakcija na Solani, a transakcije koštaju mrežnu naknadu. Tjerati korisnike da drže SOL kako bi poslali poruku bio bi lošiji proizvod i lošije za privatnost, jer je nadoplata novčanika sama po sebi radnja koja se može povezati. Zato naknadu plaća usluga.",
+    "Iz toga slijedi očito pitanje: saznaje li platitelj tko s kim razgovara? Ne. Aplikacija jednom dokaže pretplatu i dobije zalihu RSA slijepih potpisa; svako slanje troši jedan token. Usluga može provjeriti je li token valjan i nepotrošen, ali ga ne može povezati s kupnjom, s drugim tokenom ni s računom - anonimni put uopće ne šalje račun. Stariji put s računom ostaje samo za objavu javnog nadimka za pretraživanje, koji po prirodi identificira."
+  ],
+  "gapsHeading": "Što ovaj dizajn ne rješava",
+  "gaps": "RPC krajnja točka vidi vaš IP i vrijeme vaših zahtjeva. Lanac trajno pohranjuje šifrirani tekst. Ništa od navedenog to ne skriva, zato su obje stavke u tablici i zato [postoji stranica s ograničenjima](/limitations). Ako vaš model prijetnji uključuje promatrača na razini mreže, koristite PrivaMesh uz VPN ili Tor i sami hostajte RPC.",
+  "faq": [
+    {
+      "q": "Pokreće li PrivaMesh ikakve poslužitelje?",
+      "a": "Jedan. Usluga naknada plaća mrežnu naknadu Solane za svaku transakciju kako nikad ne biste morali držati SOL. Na anonimnom putu vidi valjan nepotrošen slijepi token i transakciju za plaćanje - bez računa, bez otvorenog teksta, bez primatelja. Nema baze računa ni spremišta poruka."
+    },
+    {
+      "q": "Što vidi RPC pružatelj?",
+      "a": "Vašu IP adresu, vrijeme vaših zahtjeva i transakcije koje šaljete. To je komponenta s najjasnijim pogledom na vašu aktivnost na razini mreže, zato je zamjenjiva i može se samostalno hostati."
+    },
+    {
+      "q": "Što se događa ako usluga naknada padne?",
+      "a": "Slanje prestaje raditi dok se ne vrati ili dok sami ne počnete plaćati transakcije. Vaš identitet, kontakti i povijest poruka nisu pogođeni - nalaze se na vašem uređaju i ne ovise ni o čemu što pokrećemo."
+    },
+    {
+      "q": "Vidi li Apple kome pišem?",
+      "a": "Apple vidi da ste kupili pretplatu i kojim Apple ID-jem. Ne vidi vaše poruke ni kontakte. Upravo slijepi tokeni sprječavaju da se kupnja poveže s vašom aktivnošću slanja."
+    }
+  ],
+  "related": [
+    {
+      "href": "/limitations",
+      "label": "Poznata ograničenja",
+      "blurb": "Od čega vas PrivaMesh ne štiti, rečeno izravno."
+    },
+    {
+      "href": "/threat-model",
+      "label": "Model prijetnji",
+      "blurb": "Protivnik po protivnik: što svaki vidi i što ga zaustavlja."
+    },
+    {
+      "href": "/security",
+      "label": "Sigurnost i prijava",
+      "blurb": "Kako prijaviti ranjivost i na što se obvezujemo."
+    }
+  ]
+}

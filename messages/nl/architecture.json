@@ -1,0 +1,127 @@
+{
+  "meta": {
+    "title": "Architectuur: elk onderdeel, en wat het ziet",
+    "description": "Elk onderdeel van PrivaMesh en wat het kan waarnemen: de iOS-client, onze kostendienst, het RPC-eindpunt, Solana en StoreKit. Benoemd, niet verborgen."
+  },
+  "eyebrow": "Architectuur",
+  "title": "Elk onderdeel, en wat het kan zien",
+  "lead": "Een privacybelofte is maar zoveel waard als een lezer kan controleren. Dit is de volledige lijst van onderdelen van het systeem, wie elk onderdeel beheert en wat elk kan waarnemen - inclusief de ene machine die we zelf draaien.",
+  "ldDescription": "Hoe een PrivaMesh-bericht reist en wat elk onderdeel waarneemt.",
+  "summary": "PrivaMesh heeft geen accountdatabase en geen berichtenopslag. Wel is er een kostendienst die elke transactie betaalt, een RPC-eindpunt dat door een derde wordt beheerd en een openbare chain die versleutelde tekst permanent opslaat. Alle drie staan hieronder, met wat ze kunnen waarnemen.",
+  "flowHeading": "Hoe een bericht reist",
+  "flow": [
+    {
+      "label": "Jouw iPhone",
+      "detail": "Versleutelt en vult het bericht op, leidt het eenmalige adres af"
+    },
+    {
+      "label": "Kostendienst",
+      "detail": "Betaalt de netwerkkosten, besteedt één blind token"
+    },
+    {
+      "label": "RPC-eindpunt",
+      "detail": "Dient de transactie in bij het netwerk"
+    },
+    {
+      "label": "Solana",
+      "detail": "Brengt de opgevulde versleutelde tekst naar een eenmalig adres"
+    },
+    {
+      "label": "Hun iPhone",
+      "detail": "Zoekt naar eigen eenmalige adressen en ontsleutelt lokaal"
+    }
+  ],
+  "tableHeading": "Wat elk onderdeel kan waarnemen",
+  "tableCaption": "Onderdelen van PrivaMesh, hun beheerders en wat elk kan zien en opslaan",
+  "cols": {
+    "component": "Onderdeel",
+    "operator": "Beheerd door",
+    "sees": "Wat het ziet",
+    "stores": "Wat het opslaat",
+    "replaceable": "Vervangbaar"
+  },
+  "replaceable": {
+    "yes": "Ja",
+    "no": "Nee",
+    "partly": "Deels"
+  },
+  "components": [
+    {
+      "name": "iOS-client",
+      "operator": "Jij",
+      "sees": "Leesbare tekst, sleutels, contacten",
+      "stores": "Alles, alleen op het apparaat",
+      "note": "De enige plek waar leesbare tekst en sleutels ooit bestaan. Sleutels staan in de iOS-sleutelhanger achter Face ID en synchroniseren nooit met iCloud."
+    },
+    {
+      "name": "Kostendienst",
+      "operator": "PrivaMesh",
+      "sees": "Een geldig, onbesteed blind token en de te betalen transactie - geen account op het anonieme pad",
+      "stores": "Alleen operationele logs - geen leesbare tekst, geen ontvanger",
+      "note": "Betaalt de netwerkkosten zodat je nooit SOL hoeft te bezitten - de ene machine die we draaien. Verzendingen authenticeren met een anoniem blind token zonder identiteit, zodat de dienst een verzending niet kan koppelen aan een aankoop, aan een andere verzending of aan een account. Er bestaat nog een ouder accountpad, nodig om een openbare zoeknaam te publiceren, die van nature identificeert. De broncode is openbaar, onder relay/ in dezelfde repository als de client."
+    },
+    {
+      "name": "Solana RPC",
+      "operator": "Een externe provider",
+      "sees": "Je IP-adres, tijdstip van verzoeken, transacties die je indient",
+      "stores": "Wat die provider besluit te loggen",
+      "note": "Vervangbaar en zelf te hosten. Dit is het onderdeel dat het meest waarschijnlijk je activiteit op netwerkniveau ziet, en waarover we de minste controle hebben."
+    },
+    {
+      "name": "Solana-netwerk",
+      "operator": "Niemand in het bijzonder",
+      "sees": "Versleutelde tekst, eenmalige adressen, tijdstip van transacties",
+      "stores": "Permanent, en openbaar",
+      "note": "Het transport. Alles wat hier wordt geschreven is opgevulde versleutelde tekst gericht aan een eenmalige sleutel, maar het wordt voor altijd geschreven."
+    },
+    {
+      "name": "StoreKit",
+      "operator": "Apple",
+      "sees": "Je aankoop en je Apple ID",
+      "stores": "Volgens het beleid van Apple",
+      "note": "Onvermijdelijk voor in-app-aankopen op iOS. Blinde tokens zorgen ervoor dat de aankoop niet aan je berichtenactiviteit te koppelen is."
+    }
+  ],
+  "whyHeading": "Waarom de kostendienst bestaat",
+  "why": [
+    "Elk bericht is een Solana-transactie, en transacties kosten netwerkkosten. Gebruikers SOL laten bezitten om een bericht te sturen zou een slechter product zijn en slechter voor de privacy, omdat het opwaarderen van een wallet zelf een koppelbare handeling is. Dus betaalt een dienst de kosten.",
+    "Dat roept de voor de hand liggende vraag op: weet de betaler wie met wie praat? Nee. De app bewijst één keer zijn abonnement en krijgt een voorraad RSA-blinde handtekeningen; elke verzending besteedt één token. De dienst kan controleren dat een token geldig en onbesteed is, maar kan het niet koppelen aan de aankoop, aan een ander token of aan een account - het anonieme pad stuurt helemaal geen account. Het oudere accountpad blijft alleen voor het publiceren van een openbare zoeknaam, die van nature identificeert."
+  ],
+  "gapsHeading": "Wat dit ontwerp niet oplost",
+  "gaps": "Het RPC-eindpunt ziet je IP en het tijdstip van je verzoeken. De chain slaat versleutelde tekst permanent op. Niets hierboven verbergt dat, daarom staan beide in de tabel en daarom [bestaat de pagina met beperkingen](/limitations). Hoort een waarnemer op netwerkniveau bij je dreigingsmodel, gebruik PrivaMesh dan met een VPN of Tor en host de RPC zelf.",
+  "faq": [
+    {
+      "q": "Draait PrivaMesh servers?",
+      "a": "Eén. Een kostendienst betaalt de Solana-netwerkkosten voor elke transactie, zodat je nooit SOL hoeft te bezitten. Op het anonieme pad ziet hij een geldig, onbesteed blind token en de te betalen transactie - geen account, geen leesbare tekst, geen ontvanger. Er is geen accountdatabase en geen berichtenopslag."
+    },
+    {
+      "q": "Wat kan de RPC-provider zien?",
+      "a": "Je IP-adres, het tijdstip van je verzoeken en de transacties die je indient. Het is het onderdeel met het helderste zicht op je activiteit op netwerkniveau, daarom is het vervangbaar en zelf te hosten."
+    },
+    {
+      "q": "Wat gebeurt er als de kostendienst uitvalt?",
+      "a": "Verzenden werkt niet meer tot hij terug is of tot je transacties zelf betaalt. Je identiteit, contacten en berichtgeschiedenis blijven onaangetast - ze staan op je apparaat en hangen van niets af wat wij draaien."
+    },
+    {
+      "q": "Kan Apple zien met wie ik berichten stuur?",
+      "a": "Apple ziet dat je een abonnement hebt gekocht en met welke Apple ID. Apple ziet je berichten en contacten niet. Blinde tokens zorgen ervoor dat de aankoop niet aan je verzendactiviteit te koppelen is."
+    }
+  ],
+  "related": [
+    {
+      "href": "/limitations",
+      "label": "Bekende beperkingen",
+      "blurb": "Waartegen PrivaMesh je niet beschermt, gewoon gezegd."
+    },
+    {
+      "href": "/threat-model",
+      "label": "Dreigingsmodel",
+      "blurb": "Tegenstander voor tegenstander: wat elk ziet en wat hem tegenhoudt."
+    },
+    {
+      "href": "/security",
+      "label": "Beveiliging en melding",
+      "blurb": "Hoe je een kwetsbaarheid meldt, en waartoe we ons verplichten."
+    }
+  ]
+}

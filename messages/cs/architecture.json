@@ -1,0 +1,127 @@
+{
+  "meta": {
+    "title": "Architektura: každá komponenta a co vidí",
+    "description": "Každá komponenta PrivaMesh a co může pozorovat: klient pro iOS, naše poplatková služba, koncový bod RPC, Solana a StoreKit. Pojmenované, ne skryté."
+  },
+  "eyebrow": "Architektura",
+  "title": "Každá komponenta a co může vidět",
+  "lead": "Tvrzení o soukromí má cenu jen takovou, jakou si čtenář může ověřit. Tohle je úplný seznam částí systému, kdo každou provozuje a co každá může pozorovat - včetně jediného stroje, který provozujeme sami.",
+  "ldDescription": "Jak putuje zpráva PrivaMesh a co pozoruje každá komponenta.",
+  "summary": "PrivaMesh nemá databázi účtů ani úložiště zpráv. Má ale poplatkovou službu, která platí každou transakci, koncový bod RPC provozovaný třetí stranou a veřejný řetězec, který šifrový text ukládá natrvalo. Všechny tři jsou uvedeny níže spolu s tím, co mohou pozorovat.",
+  "flowHeading": "Jak putuje zpráva",
+  "flow": [
+    {
+      "label": "Váš iPhone",
+      "detail": "Zašifruje a doplní zprávu, odvodí jednorázovou adresu"
+    },
+    {
+      "label": "Poplatková služba",
+      "detail": "Zaplatí síťový poplatek, utratí jeden slepý token"
+    },
+    {
+      "label": "Koncový bod RPC",
+      "detail": "Odešle transakci do sítě"
+    },
+    {
+      "label": "Solana",
+      "detail": "Nese doplněný šifrový text na jednorázovou adresu"
+    },
+    {
+      "label": "iPhone příjemce",
+      "detail": "Hledá vlastní jednorázové adresy a dešifruje lokálně"
+    }
+  ],
+  "tableHeading": "Co může pozorovat každá komponenta",
+  "tableCaption": "Komponenty PrivaMesh, jejich provozovatelé a co každá může vidět a ukládat",
+  "cols": {
+    "component": "Komponenta",
+    "operator": "Provozuje",
+    "sees": "Co vidí",
+    "stores": "Co ukládá",
+    "replaceable": "Nahraditelná"
+  },
+  "replaceable": {
+    "yes": "Ano",
+    "no": "Ne",
+    "partly": "Částečně"
+  },
+  "components": [
+    {
+      "name": "Klient pro iOS",
+      "operator": "Vy",
+      "sees": "Otevřený text, klíče, kontakty",
+      "stores": "Vše, jen v zařízení",
+      "note": "Jediné místo, kde vůbec existují otevřený text a klíče. Klíče leží v klíčence iOS za Face ID a nikdy se nesynchronizují s iCloudem."
+    },
+    {
+      "name": "Poplatková služba",
+      "operator": "PrivaMesh",
+      "sees": "Platný neutracený slepý token a transakci k zaplacení - na anonymní cestě žádný účet",
+      "stores": "Jen provozní logy - žádný otevřený text, žádný příjemce",
+      "note": "Platí síťový poplatek, abyste nikdy nemuseli držet SOL - jediný stroj, který provozujeme. Odeslání se ověřují anonymním slepým tokenem bez identity, takže služba nemůže spojit odeslání s nákupem, s jiným odesláním ani s účtem. Stále existuje starší cesta s účtem, nutná pro zveřejnění veřejné přezdívky pro vyhledávání, která z podstaty identifikuje. Její zdrojový kód je veřejný, v adresáři relay/ ve stejném repozitáři jako klient."
+    },
+    {
+      "name": "Solana RPC",
+      "operator": "Poskytovatel třetí strany",
+      "sees": "Vaši IP adresu, čas požadavků, odesílané transakce",
+      "stores": "Co se ten poskytovatel rozhodne logovat",
+      "note": "Vyměnitelná a dá se hostovat sám. Tato komponenta nejspíš vidí vaši aktivitu na úrovni sítě a máme nad ní nejmenší kontrolu."
+    },
+    {
+      "name": "Síť Solana",
+      "operator": "Nikdo konkrétní",
+      "sees": "Šifrový text, jednorázové adresy, čas transakcí",
+      "stores": "Natrvalo a veřejně",
+      "note": "Přenos. Vše, co se sem zapíše, je doplněný šifrový text adresovaný jednorázovému klíči, ale zapíše se navždy."
+    },
+    {
+      "name": "StoreKit",
+      "operator": "Apple",
+      "sees": "Váš nákup a vaše Apple ID",
+      "stores": "Podle pravidel Apple",
+      "note": "U nákupů v aplikaci na iOS nevyhnutelný. Právě slepé tokeny brání tomu, aby se nákup dal spojit s vaší aktivitou ve zprávách."
+    }
+  ],
+  "whyHeading": "Proč existuje poplatková služba",
+  "why": [
+    "Každá zpráva je transakce Solany a transakce stojí síťový poplatek. Nutit uživatele držet SOL kvůli odeslání zprávy by byl horší produkt a horší pro soukromí, protože dobití peněženky je samo o sobě spojitelný úkon. Poplatek proto platí služba.",
+    "Z toho plyne zjevná otázka: dozví se plátce, kdo s kým mluví? Ne. Aplikace jednou prokáže předplatné a dostane zásobu slepých podpisů RSA; každé odeslání utratí jeden token. Služba může ověřit, že token je platný a neutracený, ale nemůže ho spojit s nákupem, s jiným tokenem ani s účtem - anonymní cesta žádný účet vůbec neposílá. Starší cesta s účtem zůstává jen pro zveřejnění veřejné přezdívky pro vyhledávání, která z podstaty identifikuje."
+  ],
+  "gapsHeading": "Co tento návrh neřeší",
+  "gaps": "Koncový bod RPC vidí vaši IP a čas vašich požadavků. Řetězec ukládá šifrový text natrvalo. Nic z výše uvedeného to neskrývá, proto jsou obě položky v tabulce a proto [existuje stránka s omezeními](/limitations). Pokud váš model hrozeb zahrnuje pozorovatele na úrovni sítě, používejte PrivaMesh s VPN nebo Torem a hostujte RPC sami.",
+  "faq": [
+    {
+      "q": "Provozuje PrivaMesh nějaké servery?",
+      "a": "Jeden. Poplatková služba platí síťový poplatek Solany za každou transakci, abyste nikdy nemuseli držet SOL. Na anonymní cestě vidí platný neutracený slepý token a transakci k zaplacení - žádný účet, žádný otevřený text, žádného příjemce. Neexistuje databáze účtů ani úložiště zpráv."
+    },
+    {
+      "q": "Co vidí poskytovatel RPC?",
+      "a": "Vaši IP adresu, čas vašich požadavků a transakce, které odesíláte. Je to komponenta s nejjasnějším pohledem na vaši aktivitu na úrovni sítě, proto je vyměnitelná a dá se hostovat sám."
+    },
+    {
+      "q": "Co se stane, když poplatková služba vypadne?",
+      "a": "Odesílání přestane fungovat, dokud se nevrátí nebo dokud nezačnete transakce platit sami. Vaše identita, kontakty a historie zpráv zůstanou nedotčené - jsou ve vašem zařízení a nezávisí na ničem, co provozujeme."
+    },
+    {
+      "q": "Vidí Apple, komu píšu?",
+      "a": "Apple vidí, že jste si koupili předplatné a s jakým Apple ID. Vaše zprávy ani kontakty nevidí. Právě slepé tokeny brání tomu, aby se nákup dal spojit s vaší aktivitou odesílání."
+    }
+  ],
+  "related": [
+    {
+      "href": "/limitations",
+      "label": "Známá omezení",
+      "blurb": "Před čím vás PrivaMesh nechrání, řečeno na rovinu."
+    },
+    {
+      "href": "/threat-model",
+      "label": "Model hrozeb",
+      "blurb": "Protivník po protivníkovi: co každý vidí a co ho zastaví."
+    },
+    {
+      "href": "/security",
+      "label": "Bezpečnost a hlášení",
+      "blurb": "Jak nahlásit zranitelnost a k čemu se zavazujeme."
+    }
+  ]
+}

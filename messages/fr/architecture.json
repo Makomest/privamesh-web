@@ -1,0 +1,127 @@
+{
+  "meta": {
+    "title": "Architecture : chaque composant, et ce qu'il voit",
+    "description": "Chaque composant de PrivaMesh et ce qu'il peut observer : le client iOS, notre service de frais, le point d'accès RPC, Solana et StoreKit. Nommés, pas cachés."
+  },
+  "eyebrow": "Architecture",
+  "title": "Chaque composant, et ce qu'il peut voir",
+  "lead": "Une promesse de confidentialité ne vaut que ce qu'un lecteur peut vérifier. Voici la liste complète des éléments du système, qui exploite chacun et ce que chacun peut observer - y compris la seule machine que nous faisons tourner nous-mêmes.",
+  "ldDescription": "Comment voyage un message PrivaMesh et ce que chaque composant observe.",
+  "summary": "PrivaMesh n'a ni base de comptes ni stockage de messages. Il y a en revanche un service de frais qui paie chaque transaction, un point d'accès RPC exploité par un tiers et une chaîne publique qui stocke le texte chiffré de façon permanente. Les trois figurent ci-dessous avec ce qu'ils peuvent observer.",
+  "flowHeading": "Comment voyage un message",
+  "flow": [
+    {
+      "label": "Votre iPhone",
+      "detail": "Chiffre et complète le message, dérive l'adresse à usage unique"
+    },
+    {
+      "label": "Service de frais",
+      "detail": "Paie les frais de réseau, dépense un jeton aveugle"
+    },
+    {
+      "label": "Point d'accès RPC",
+      "detail": "Soumet la transaction au réseau"
+    },
+    {
+      "label": "Solana",
+      "detail": "Achemine le texte chiffré complété vers une adresse à usage unique"
+    },
+    {
+      "label": "Son iPhone",
+      "detail": "Cherche ses propres adresses à usage unique et déchiffre localement"
+    }
+  ],
+  "tableHeading": "Ce que chaque composant peut observer",
+  "tableCaption": "Composants de PrivaMesh, leurs exploitants et ce que chacun peut voir et stocker",
+  "cols": {
+    "component": "Composant",
+    "operator": "Exploité par",
+    "sees": "Ce qu'il voit",
+    "stores": "Ce qu'il stocke",
+    "replaceable": "Remplaçable"
+  },
+  "replaceable": {
+    "yes": "Oui",
+    "no": "Non",
+    "partly": "En partie"
+  },
+  "components": [
+    {
+      "name": "Client iOS",
+      "operator": "Vous",
+      "sees": "Texte en clair, clés, contacts",
+      "stores": "Tout, uniquement sur l'appareil",
+      "note": "Le seul endroit où le texte en clair et les clés existent. Les clés résident dans le trousseau iOS derrière Face ID et ne se synchronisent jamais avec iCloud."
+    },
+    {
+      "name": "Service de frais",
+      "operator": "PrivaMesh",
+      "sees": "Un jeton aveugle valide et non dépensé et la transaction à payer - aucun compte sur le chemin anonyme",
+      "stores": "Journaux d'exploitation uniquement - ni texte en clair, ni destinataire",
+      "note": "Paie les frais de réseau pour que vous n'ayez jamais à détenir de SOL - la seule machine que nous faisons tourner. Les envois s'authentifient avec un jeton aveugle anonyme qui ne porte aucune identité, si bien que le service ne peut relier un envoi ni à un achat, ni à un autre envoi, ni à un compte. Un ancien chemin par compte existe encore et sert à publier un pseudonyme de découverte public, identifiant par nature. Son code source est public, sous relay/ dans le même dépôt que le client."
+    },
+    {
+      "name": "Solana RPC",
+      "operator": "Un fournisseur tiers",
+      "sees": "Votre adresse IP, l'horaire des requêtes, les transactions soumises",
+      "stores": "Ce que ce fournisseur choisit de journaliser",
+      "note": "Remplaçable et auto-hébergeable. C'est le composant le plus susceptible de voir votre activité au niveau réseau, et celui sur lequel nous avons le moins de contrôle."
+    },
+    {
+      "name": "Réseau Solana",
+      "operator": "Personne en particulier",
+      "sees": "Texte chiffré, adresses à usage unique, horaire des transactions",
+      "stores": "En permanence, et publiquement",
+      "note": "Le transport. Tout ce qui y est écrit est du texte chiffré complété adressé à une clé à usage unique, mais c'est écrit pour toujours."
+    },
+    {
+      "name": "StoreKit",
+      "operator": "Apple",
+      "sees": "Votre achat et votre identifiant Apple",
+      "stores": "Selon la politique d'Apple",
+      "note": "Incontournable pour les achats intégrés sur iOS. Ce sont les jetons aveugles qui empêchent de relier l'achat à votre activité de messagerie."
+    }
+  ],
+  "whyHeading": "Pourquoi le service de frais existe",
+  "why": [
+    "Chaque message est une transaction Solana, et les transactions coûtent des frais de réseau. Obliger les utilisateurs à détenir des SOL pour envoyer un message donnerait un produit moins bon et une confidentialité moins bonne, car alimenter un portefeuille est en soi un acte traçable. Un service paie donc les frais à la place.",
+    "D'où la question évidente : celui qui paie apprend-il qui parle à qui ? Non. L'app prouve une fois son abonnement et reçoit un lot de signatures aveugles RSA ; chaque envoi dépense un jeton. Le service peut vérifier qu'un jeton est valide et non dépensé, mais ne peut le relier ni à l'achat, ni à un autre jeton, ni à un compte - le chemin anonyme n'envoie aucun compte. L'ancien chemin par compte ne subsiste que pour publier un pseudonyme de découverte public, identifiant par nature."
+  ],
+  "gapsHeading": "Ce que cette conception ne corrige pas",
+  "gaps": "Le point d'accès RPC voit votre IP et l'horaire de vos requêtes. La chaîne stocke le texte chiffré de façon permanente. Rien de ce qui précède ne le cache, c'est pourquoi les deux figurent dans le tableau et pourquoi [la page des limites existe](/limitations). Si votre modèle de menace inclut un observateur au niveau réseau, associez PrivaMesh à un VPN ou à Tor et hébergez vous-même le RPC.",
+  "faq": [
+    {
+      "q": "PrivaMesh fait-il tourner des serveurs ?",
+      "a": "Un seul. Un service de frais paie les frais de réseau Solana de chaque transaction pour que vous n'ayez jamais à détenir de SOL. Sur le chemin anonyme, il voit un jeton aveugle valide et non dépensé et la transaction à payer - ni compte, ni texte en clair, ni destinataire. Il n'y a ni base de comptes ni stockage de messages."
+    },
+    {
+      "q": "Que peut voir le fournisseur RPC ?",
+      "a": "Votre adresse IP, l'horaire de vos requêtes et les transactions que vous soumettez. C'est le composant qui a la vue la plus nette sur votre activité au niveau réseau, d'où le fait qu'il soit remplaçable et auto-hébergeable."
+    },
+    {
+      "q": "Que se passe-t-il si le service de frais tombe ?",
+      "a": "L'envoi cesse de fonctionner jusqu'à son retour ou jusqu'à ce que vous payiez vous-même les transactions. Votre identité, vos contacts et votre historique ne sont pas touchés - ils sont sur votre appareil et ne dépendent de rien de ce que nous exploitons."
+    },
+    {
+      "q": "Apple peut-il voir à qui j'écris ?",
+      "a": "Apple voit que vous avez acheté un abonnement et avec quel identifiant Apple. Il ne voit ni vos messages ni vos contacts. Ce sont les jetons aveugles qui empêchent de relier l'achat à votre activité d'envoi."
+    }
+  ],
+  "related": [
+    {
+      "href": "/limitations",
+      "label": "Limites connues",
+      "blurb": "Ce dont PrivaMesh ne vous protège pas, dit clairement."
+    },
+    {
+      "href": "/threat-model",
+      "label": "Modèle de menace",
+      "blurb": "Adversaire par adversaire : ce que chacun voit et ce qui l'arrête."
+    },
+    {
+      "href": "/security",
+      "label": "Sécurité et divulgation",
+      "blurb": "Comment signaler une vulnérabilité, et nos engagements."
+    }
+  ]
+}

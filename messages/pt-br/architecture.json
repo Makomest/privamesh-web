@@ -1,0 +1,127 @@
+{
+  "meta": {
+    "title": "Arquitetura: cada componente e o que ele vê",
+    "description": "Cada componente do PrivaMesh e o que ele pode observar: o cliente iOS, nosso serviço de taxas, o endpoint RPC, a Solana e o StoreKit. Nomeados, não escondidos."
+  },
+  "eyebrow": "Arquitetura",
+  "title": "Cada componente e o que ele pode ver",
+  "lead": "Uma promessa de privacidade só vale o que o leitor pode verificar. Esta é a lista completa das partes do sistema, quem opera cada uma e o que cada uma pode observar - incluindo a única máquina que nós mesmos operamos.",
+  "ldDescription": "Como uma mensagem do PrivaMesh viaja e o que cada componente observa.",
+  "summary": "O PrivaMesh não tem banco de dados de contas nem armazenamento de mensagens. Ele tem, sim, um serviço de taxas que paga cada transação, um endpoint RPC operado por terceiros e uma blockchain pública que guarda o texto cifrado para sempre. Os três estão listados abaixo com o que podem observar.",
+  "flowHeading": "Como uma mensagem viaja",
+  "flow": [
+    {
+      "label": "Seu iPhone",
+      "detail": "Cifra e preenche a mensagem, deriva o endereço de uso único"
+    },
+    {
+      "label": "Serviço de taxas",
+      "detail": "Paga a taxa de rede, gasta um token cego"
+    },
+    {
+      "label": "Endpoint RPC",
+      "detail": "Envia a transação para a rede"
+    },
+    {
+      "label": "Solana",
+      "detail": "Leva o texto cifrado preenchido até um endereço de uso único"
+    },
+    {
+      "label": "iPhone da outra pessoa",
+      "detail": "Procura os próprios endereços de uso único e decifra localmente"
+    }
+  ],
+  "tableHeading": "O que cada componente pode observar",
+  "tableCaption": "Componentes do PrivaMesh, quem os opera e o que cada um pode ver e guardar",
+  "cols": {
+    "component": "Componente",
+    "operator": "Operado por",
+    "sees": "O que vê",
+    "stores": "O que guarda",
+    "replaceable": "Substituível"
+  },
+  "replaceable": {
+    "yes": "Sim",
+    "no": "Não",
+    "partly": "Em parte"
+  },
+  "components": [
+    {
+      "name": "Cliente iOS",
+      "operator": "Você",
+      "sees": "Texto puro, chaves, contatos",
+      "stores": "Tudo, só no aparelho",
+      "note": "O único lugar onde texto puro e chaves existem. As chaves ficam nas Chaves do iOS, protegidas pelo Face ID, e nunca sincronizam com o iCloud."
+    },
+    {
+      "name": "Serviço de taxas",
+      "operator": "PrivaMesh",
+      "sees": "Um token cego válido e não gasto e a transação a pagar - nenhuma conta no caminho anônimo",
+      "stores": "Só logs operacionais - nem texto puro, nem destinatário",
+      "note": "Paga a taxa de rede para que você nunca precise ter SOL - a única máquina que operamos. Os envios se autenticam com um token cego anônimo que não carrega identidade, então o serviço não consegue ligar um envio a uma compra, a outro envio ou a uma conta. Ainda existe um caminho antigo com conta, necessário para publicar um apelido público de busca, que identifica por natureza. O código-fonte dele é público, em relay/ no mesmo repositório do cliente."
+    },
+    {
+      "name": "Solana RPC",
+      "operator": "Um provedor terceiro",
+      "sees": "Seu endereço IP, o horário das requisições, as transações que você envia",
+      "stores": "O que esse provedor decidir registrar",
+      "note": "Substituível e auto-hospedável. É o componente com mais chance de ver sua atividade de rede, e aquele sobre o qual temos menos controle."
+    },
+    {
+      "name": "Rede Solana",
+      "operator": "Ninguém em particular",
+      "sees": "Texto cifrado, endereços de uso único, horário das transações",
+      "stores": "Para sempre, e publicamente",
+      "note": "O transporte. Tudo o que é gravado ali é texto cifrado preenchido endereçado a uma chave de uso único, mas é gravado para sempre."
+    },
+    {
+      "name": "StoreKit",
+      "operator": "Apple",
+      "sees": "Sua compra e seu ID Apple",
+      "stores": "Conforme a política da Apple",
+      "note": "Inevitável para compras dentro do app no iOS. Os tokens cegos são o que impede que a compra seja ligada à sua atividade de mensagens."
+    }
+  ],
+  "whyHeading": "Por que o serviço de taxas existe",
+  "why": [
+    "Cada mensagem é uma transação da Solana, e transações custam uma taxa de rede. Fazer os usuários terem SOL para mandar uma mensagem seria um produto pior e pior para a privacidade, porque abastecer uma carteira já é um ato rastreável. Então um serviço paga a taxa.",
+    "Isso levanta a pergunta óbvia: quem paga descobre quem fala com quem? Não. O app comprova a assinatura uma vez e recebe um lote de assinaturas cegas RSA; cada envio gasta um token. O serviço consegue verificar que um token é válido e não foi gasto, mas não consegue ligá-lo à compra, a outro token ou a uma conta - o caminho anônimo não envia conta nenhuma. O caminho antigo com conta só continua existindo para publicar um apelido público de busca, que identifica por natureza."
+  ],
+  "gapsHeading": "O que este design não resolve",
+  "gaps": "O endpoint RPC vê seu IP e o horário das suas requisições. A blockchain guarda o texto cifrado para sempre. Nada acima esconde isso, por isso os dois estão na tabela e por isso [existe a página de limitações](/limitations). Se o seu modelo de ameaças inclui um observador no nível da rede, use o PrivaMesh com VPN ou Tor e hospede o RPC você mesmo.",
+  "faq": [
+    {
+      "q": "O PrivaMesh opera algum servidor?",
+      "a": "Um. Um serviço de taxas paga a taxa de rede da Solana de cada transação para que você nunca precise ter SOL. No caminho anônimo ele vê um token cego válido e não gasto e a transação a pagar - nenhuma conta, nenhum texto puro, nenhum destinatário. Não há banco de dados de contas nem armazenamento de mensagens."
+    },
+    {
+      "q": "O que o provedor RPC pode ver?",
+      "a": "Seu endereço IP, o horário das suas requisições e as transações que você envia. É o componente com a visão mais clara da sua atividade de rede, por isso ele é substituível e auto-hospedável."
+    },
+    {
+      "q": "O que acontece se o serviço de taxas cair?",
+      "a": "O envio para de funcionar até ele voltar ou até você pagar as transações por conta própria. Sua identidade, contatos e histórico não são afetados - ficam no seu aparelho e não dependem de nada que operamos."
+    },
+    {
+      "q": "A Apple consegue ver para quem eu escrevo?",
+      "a": "A Apple vê que você comprou uma assinatura e com qual ID Apple. Ela não vê suas mensagens nem seus contatos. Os tokens cegos são o que impede que a compra seja ligada à sua atividade de envio."
+    }
+  ],
+  "related": [
+    {
+      "href": "/limitations",
+      "label": "Limitações conhecidas",
+      "blurb": "Do que o PrivaMesh não protege você, dito com clareza."
+    },
+    {
+      "href": "/threat-model",
+      "label": "Modelo de ameaças",
+      "blurb": "Adversário por adversário: o que cada um vê e o que o impede."
+    },
+    {
+      "href": "/security",
+      "label": "Segurança e divulgação",
+      "blurb": "Como relatar uma vulnerabilidade e o que nos comprometemos a fazer."
+    }
+  ]
+}

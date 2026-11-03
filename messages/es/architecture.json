@@ -1,0 +1,127 @@
+{
+  "meta": {
+    "title": "Arquitectura: cada componente y lo que ve",
+    "description": "Cada componente de PrivaMesh y lo que puede observar: el cliente de iOS, nuestro servicio de comisiones, el endpoint RPC, Solana y StoreKit. Con nombre, no ocultos."
+  },
+  "eyebrow": "Arquitectura",
+  "title": "Cada componente y lo que puede ver",
+  "lead": "Una promesa de privacidad solo vale lo que un lector puede comprobar. Esta es la lista completa de piezas del sistema, quién opera cada una y qué puede observar cada una, incluida la única máquina que operamos nosotros.",
+  "ldDescription": "Cómo viaja un mensaje de PrivaMesh y qué observa cada componente.",
+  "summary": "PrivaMesh no tiene base de datos de cuentas ni almacén de mensajes. Sí tiene un servicio de comisiones que paga cada transacción, un endpoint RPC operado por un tercero y una cadena pública que guarda el texto cifrado para siempre. Los tres aparecen abajo con lo que pueden observar.",
+  "flowHeading": "Cómo viaja un mensaje",
+  "flow": [
+    {
+      "label": "Tu iPhone",
+      "detail": "Cifra y rellena el mensaje, deriva la dirección de un solo uso"
+    },
+    {
+      "label": "Servicio de comisiones",
+      "detail": "Paga la comisión de red, gasta un token ciego"
+    },
+    {
+      "label": "Endpoint RPC",
+      "detail": "Envía la transacción a la red"
+    },
+    {
+      "label": "Solana",
+      "detail": "Lleva el texto cifrado rellenado a una dirección de un solo uso"
+    },
+    {
+      "label": "Su iPhone",
+      "detail": "Busca sus propias direcciones de un solo uso y descifra localmente"
+    }
+  ],
+  "tableHeading": "Qué puede observar cada componente",
+  "tableCaption": "Componentes de PrivaMesh, quién los opera y qué puede ver y guardar cada uno",
+  "cols": {
+    "component": "Componente",
+    "operator": "Operado por",
+    "sees": "Qué ve",
+    "stores": "Qué guarda",
+    "replaceable": "Reemplazable"
+  },
+  "replaceable": {
+    "yes": "Sí",
+    "no": "No",
+    "partly": "En parte"
+  },
+  "components": [
+    {
+      "name": "Cliente de iOS",
+      "operator": "Tú",
+      "sees": "Texto en claro, claves, contactos",
+      "stores": "Todo, solo en el dispositivo",
+      "note": "El único lugar donde existen el texto en claro y las claves. Las claves están en el llavero de iOS tras Face ID y nunca se sincronizan con iCloud."
+    },
+    {
+      "name": "Servicio de comisiones",
+      "operator": "PrivaMesh",
+      "sees": "Un token ciego válido y sin gastar y la transacción a pagar; ninguna cuenta en la ruta anónima",
+      "stores": "Solo registros operativos; ni texto en claro ni destinatario",
+      "note": "Paga la comisión de red para que nunca tengas que tener SOL: la única máquina que operamos. Los envíos se autentican con un token ciego anónimo que no lleva identidad, así que el servicio no puede vincular un envío con una compra, con otro envío ni con una cuenta. Sigue existiendo una ruta antigua con cuenta, necesaria para publicar un apodo público de búsqueda, que identifica por naturaleza. Su código fuente es público, en relay/ dentro del mismo repositorio que el cliente."
+    },
+    {
+      "name": "Solana RPC",
+      "operator": "Un proveedor externo",
+      "sees": "Tu dirección IP, la hora de las solicitudes, las transacciones que envías",
+      "stores": "Lo que ese proveedor decida registrar",
+      "note": "Reemplazable y autoalojable. Es el componente con más probabilidades de ver tu actividad a nivel de red, y sobre el que menos control tenemos."
+    },
+    {
+      "name": "Red Solana",
+      "operator": "Nadie en particular",
+      "sees": "Texto cifrado, direcciones de un solo uso, hora de las transacciones",
+      "stores": "Para siempre y públicamente",
+      "note": "El transporte. Todo lo que se escribe aquí es texto cifrado rellenado dirigido a una clave de un solo uso, pero se escribe para siempre."
+    },
+    {
+      "name": "StoreKit",
+      "operator": "Apple",
+      "sees": "Tu compra y tu Apple ID",
+      "stores": "Según la política de Apple",
+      "note": "Inevitable para compras dentro de la app en iOS. Los tokens ciegos son lo que impide vincular la compra con tu actividad de mensajería."
+    }
+  ],
+  "whyHeading": "Por qué existe el servicio de comisiones",
+  "why": [
+    "Cada mensaje es una transacción de Solana, y las transacciones cuestan una comisión de red. Obligar a los usuarios a tener SOL para enviar un mensaje sería un peor producto y peor para la privacidad, porque recargar una billetera ya es un acto vinculable. Así que un servicio paga la comisión.",
+    "Eso plantea la pregunta obvia: ¿quien paga se entera de quién habla con quién? No. La app demuestra su suscripción una vez y recibe un lote de firmas ciegas RSA; cada envío gasta un token. El servicio puede verificar que un token es válido y no se ha gastado, pero no puede vincularlo con la compra, con otro token ni con una cuenta: la ruta anónima no envía ninguna cuenta. La ruta antigua con cuenta solo se mantiene para publicar un apodo público de búsqueda, que identifica por naturaleza."
+  ],
+  "gapsHeading": "Lo que este diseño no resuelve",
+  "gaps": "El endpoint RPC ve tu IP y la hora de tus solicitudes. La cadena guarda el texto cifrado para siempre. Nada de lo anterior lo oculta, por eso ambos están en la tabla y por eso [existe la página de limitaciones](/limitations). Si tu modelo de amenazas incluye un observador a nivel de red, combina PrivaMesh con una VPN o Tor y aloja tú mismo el RPC.",
+  "faq": [
+    {
+      "q": "¿PrivaMesh opera algún servidor?",
+      "a": "Uno. Un servicio de comisiones paga la comisión de red de Solana de cada transacción para que nunca tengas que tener SOL. En la ruta anónima ve un token ciego válido y sin gastar y la transacción a pagar: ni cuenta, ni texto en claro, ni destinatario. No hay base de datos de cuentas ni almacén de mensajes."
+    },
+    {
+      "q": "¿Qué puede ver el proveedor RPC?",
+      "a": "Tu dirección IP, la hora de tus solicitudes y las transacciones que envías. Es el componente con la visión más clara de tu actividad a nivel de red, por eso es reemplazable y autoalojable."
+    },
+    {
+      "q": "¿Qué pasa si el servicio de comisiones se cae?",
+      "a": "El envío deja de funcionar hasta que vuelva o hasta que pagues tú las transacciones. Tu identidad, contactos e historial no se ven afectados: están en tu dispositivo y no dependen de nada que operemos."
+    },
+    {
+      "q": "¿Puede Apple ver a quién escribo?",
+      "a": "Apple ve que compraste una suscripción y con qué Apple ID. No ve tus mensajes ni tus contactos. Los tokens ciegos son lo que impide vincular la compra con tu actividad de envío."
+    }
+  ],
+  "related": [
+    {
+      "href": "/limitations",
+      "label": "Limitaciones conocidas",
+      "blurb": "De qué no te protege PrivaMesh, dicho claramente."
+    },
+    {
+      "href": "/threat-model",
+      "label": "Modelo de amenazas",
+      "blurb": "Adversario por adversario: qué ve cada uno y qué lo detiene."
+    },
+    {
+      "href": "/security",
+      "label": "Seguridad y divulgación",
+      "blurb": "Cómo informar de una vulnerabilidad y a qué nos comprometemos."
+    }
+  ]
+}
