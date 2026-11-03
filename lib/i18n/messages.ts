@@ -40,7 +40,6 @@ export function getMessages<T>(locale: string, page: string): T {
  */
 const LEGACY: Record<string, string[]> = {
   ru: [
-    'security',
     'architecture',
     'threat-model',
     'feature-duress-code',

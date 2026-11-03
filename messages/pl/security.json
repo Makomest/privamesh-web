@@ -1,0 +1,74 @@
+{
+  "meta": {
+    "title": "Bezpieczeństwo i zgłaszanie podatności",
+    "description": "Jak zgłosić podatność w PrivaMesh, płatny program bug bounty, co i w jakim czasie zobowiązujemy się naprawić oraz które wersje aplikacji dostają aktualizacje bezpieczeństwa."
+  },
+  "eyebrow": "Bezpieczeństwo",
+  "title": "Bezpieczeństwo i zgłaszanie podatności",
+  "lead": "Jak zgłosić podatność, ile płacimy za znalezisko i do czego się potem zobowiązujemy.",
+  "ldDescription": "Zgłaszanie podatności, bug bounty i nasze zobowiązania dotyczące reakcji.",
+  "open": {
+    "heading": "Otwarty kod, a znaleziona luka jest płatna",
+    "body": [
+      "PrivaMesh opiera się na dobrze zbadanych prymitywach - X3DH, Double Ratchet, AES-256-GCM i ML-KEM-768 na iOS 26. Kod, który je implementuje, jest publiczny dla wszystkich trzech klientów, więc każdy może przeczytać, co dokładnie robi, zamiast wierzyć opisowi na słowo.",
+      "Luka znaleziona w nim jest warta do {critical} w ramach [bug bounty](/bug-bounty)."
+    ]
+  },
+  "report": {
+    "heading": "Zgłaszanie podatności",
+    "lead": "Napisz na [{email}](mailto:{email}?subject=security) ze słowem **security** w temacie.",
+    "steps": [
+      "Podaj wersję aplikacji, model urządzenia i wersję iOS.",
+      "Podaj tyle szczegółów, by dało się odtworzyć problem.",
+      "Nigdy nie wysyłaj frazy odzyskiwania. Nigdy o nią nie poprosimy - z żadnego powodu i w żadnym kontekście."
+    ],
+    "cta": "Zgłoś podatność",
+    "source": "Kod źródłowy"
+  },
+  "commitHeading": "Do czego się zobowiązujemy",
+  "commits": [
+    "**Potwierdzenie w ciągu 2 dni roboczych.** Jeśli nie dostaniesz odpowiedzi, uznaj, że wiadomość zaginęła, i wyślij ją ponownie.",
+    "**Poprawka lub plan w ciągu 30 dni** dla wszystkiego, co pozwala czytać wiadomości, podszywać się pod konto albo powiązać użytkownika z jego aktywnością.",
+    "**Wzmianka, jeśli chcesz, milczenie, jeśli nie.** Nie podamy twojego nazwiska bez pytania.",
+    "**Żadnych gróźb prawnych** za badania w dobrej wierze, które nie są wymierzone w cudze konta ani dane."
+  ],
+  "rewardsHeading": "Nagrody",
+  "rewards": "Potwierdzone znaleziska są opłacane w ramach [programu bug bounty](/bug-bounty) - do {critical} za krytyczną podatność, a wypłata następuje po potwierdzeniu, nie po naprawie. Poziomy, zakres i znane problemy, które się nie kwalifikują, są tam opublikowane, bo program, który po cichu płaci za własne udokumentowane luki, nie jest programem.",
+  "versionsHeading": "Wspierane wersje",
+  "versions": "Poprawki bezpieczeństwa trafiają do kolejnego wydania w App Store. PrivaMesh działa na **iOS 18 lub nowszym** i wydał jedną wersję główną, więc nie ma starszej gałęzi do backportów. Gdy to się zmieni, okres wsparcia zostanie tu wprost podany, a nie zasugerowany.",
+  "fixedHeading": "Co zostało naprawione",
+  "fixed": "Od sierpnia 2026 r. wpłynęło dwanaście zewnętrznych zgłoszeń i przeprowadzono dwa wewnętrzne audyty. Poprawki są gotowe, ale żadna nie trafiła jeszcze na twój telefon: 1.1, wersja w App Store, została zbudowana 13 sierpnia, zanim je napisano, i dotrą do użytkowników z kolejnym wydaniem. Do tego czasu zakładaj, że wydana aplikacja ma problemy, które one naprawiają. To, co udokumentowano zamiast naprawić, jest w [znanych ograniczeniach](/limitations). Kto co zgłosił, nie jest publikowane.",
+  "scopeHeading": "Zakres",
+  "scope": "Klient iOS, protokół on-chain i usługa opłat opisane na [stronie architektury](/architecture) są objęte programem. Infrastruktura zewnętrzna - sama Solana, dostawcy RPC, Apple - nie jest nasza do naprawy, choć chcemy o niej wiedzieć. Granice tego, co chroni projekt, opisują [model zagrożeń](/threat-model) i [znane ograniczenia](/limitations).",
+  "faq": [
+    {
+      "q": "Jak zgłosić podatność?",
+      "a": "Napisz na {email} ze słowem „security” w temacie. Podaj wersję aplikacji, urządzenie i wersję iOS oraz tyle szczegółów, by dało się to odtworzyć. Staramy się potwierdzić odbiór w ciągu 2 dni roboczych."
+    },
+    {
+      "q": "Czy jest bug bounty?",
+      "a": "Tak. Do {critical} za krytyczne znalezisko, {high} za wysokie, {medium} za średnie, {low} za niskie; waga zależy od tego, co znalezisko łamie w naszym modelu zagrożeń. Wszystkie poziomy, zakres i wyłączenia są na stronie bug bounty."
+    },
+    {
+      "q": "Które wersje dostają poprawki bezpieczeństwa?",
+      "a": "Poprawki trafiają do kolejnego wydania w App Store. PrivaMesh wydał na razie jedną wersję główną, więc nie ma jeszcze starszej gałęzi do backportów."
+    }
+  ],
+  "related": [
+    {
+      "href": "/threat-model",
+      "label": "Model zagrożeń",
+      "blurb": "Przeciwnik po przeciwniku: co widać, co jest zatrzymane i co wciąż możliwe."
+    },
+    {
+      "href": "/limitations",
+      "label": "Znane ograniczenia",
+      "blurb": "Przed czym PrivaMesh cię nie chroni."
+    },
+    {
+      "href": "/architecture",
+      "label": "Architektura",
+      "blurb": "Każdy komponent i co może zobaczyć."
+    }
+  ]
+}

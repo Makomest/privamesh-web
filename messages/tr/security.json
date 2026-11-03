@@ -1,0 +1,74 @@
+{
+  "meta": {
+    "title": "Güvenlik ve bildirim",
+    "description": "PrivaMesh'teki bir güvenlik açığını nasıl bildireceğiniz, ücretli bug bounty programı, neyi ne zaman düzeltmeyi taahhüt ettiğimiz ve hangi uygulama sürümlerinin güvenlik güncellemesi aldığı."
+  },
+  "eyebrow": "Güvenlik",
+  "title": "Güvenlik ve bildirim",
+  "lead": "Bir güvenlik açığını nasıl bildireceğiniz, bulmanın ne kazandırdığı ve sonrasında neyi taahhüt ettiğimiz.",
+  "ldDescription": "Güvenlik açığı bildirimi, bug bounty ve yanıt taahhütleri.",
+  "open": {
+    "heading": "Açık kaynak, ve bulunan bir açık ödüllendirilir",
+    "body": [
+      "PrivaMesh iyi incelenmiş temel yapı taşları üzerine kuruludur - X3DH, Double Ratchet, AES-256-GCM ve iOS 26'da ML-KEM-768. Bunları uygulayan kod üç istemcinin tamamı için açıktır; böylece herkes bir açıklamaya güvenmek yerine kodun tam olarak ne yaptığını okuyabilir.",
+      "İçinde bulunan bir açık, [bug bounty](/bug-bounty) aracılığıyla {critical} değerine kadar ödüllendirilir."
+    ]
+  },
+  "report": {
+    "heading": "Güvenlik açığı bildirmek",
+    "lead": "Konu satırına **security** yazarak [{email}](mailto:{email}?subject=security) adresine e-posta gönderin.",
+    "steps": [
+      "Uygulama sürümünü, cihaz modelinizi ve iOS sürümünüzü belirtin.",
+      "Sorunu yeniden üretmeye yetecek ayrıntıyı ekleyin.",
+      "Kurtarma ifadenizi asla eklemeyin. Hiçbir nedenle, hiçbir bağlamda onu asla istemeyeceğiz."
+    ],
+    "cta": "Güvenlik açığı bildir",
+    "source": "Kaynak kodu"
+  },
+  "commitHeading": "Neyi taahhüt ediyoruz",
+  "commits": [
+    "**2 iş günü içinde alındı bildirimi.** Yanıt alamazsanız e-postanın kaybolduğunu varsayın ve tekrar gönderin.",
+    "**30 gün içinde bir düzeltme veya plan** - mesajları okumaya, bir hesabı taklit etmeye ya da bir kullanıcıyı etkinliğiyle ilişkilendirmeye izin veren her şey için.",
+    "**İsterseniz adınız anılır, istemezseniz sessiz kalırız.** Sormadan adınızı vermeyiz.",
+    "**Hukuki tehdit yok** - başkalarının hesaplarını veya verilerini hedef almayan iyi niyetli araştırmalar için."
+  ],
+  "rewardsHeading": "Ödüller",
+  "rewards": "Onaylanan bulgular [bug bounty programı](/bug-bounty) üzerinden ödenir - kritik bir açık için {critical} değerine kadar; ödeme düzeltmede değil, onayda yapılır. Seviyeler, kapsam ve ödüle hak kazandırmayan bilinen sorunların tümü orada yayımlanmıştır, çünkü kendi belgelenmiş açıkları için sessizce ödeme yapan bir program, program değildir.",
+  "versionsHeading": "Desteklenen sürümler",
+  "versions": "Güvenlik düzeltmeleri bir sonraki App Store sürümüyle gelir. PrivaMesh **iOS 18 veya üzeri** sürümlerde çalışır ve tek bir ana sürüm yayımlamıştır; bu nedenle geriye dönük düzeltme yapılacak eski bir dal yoktur. Bu değiştiğinde destek süresi ima edilmek yerine burada açıkça belirtilecektir.",
+  "fixedHeading": "Neler düzeltildi",
+  "fixed": "Ağustos 2026'dan bu yana on iki dış bildirim ve iki iç denetim yapıldı. Düzeltmeler hazır, ancak hiçbiri henüz telefonunuzda değil: App Store'daki sürüm olan 1.1, onlar yazılmadan önce, 13 Ağustos'ta derlendi ve kullanıcılara bir sonraki sürümle ulaşacaklar. O zamana kadar yayımlanmış uygulamada düzelttikleri sorunların bulunduğunu varsayın. Düzeltmek yerine belgelenenler [bilinen sınırlamalar](/limitations) sayfasındadır. Kimin neyi bildirdiği yayımlanmaz.",
+  "scopeHeading": "Kapsam",
+  "scope": "iOS istemcisi, zincir üstü protokol ve [mimari sayfasında](/architecture) anlatılan ücret hizmeti kapsamdadır. Üçüncü taraf altyapı - Solana'nın kendisi, RPC sağlayıcıları, Apple - bizim düzeltebileceğimiz şeyler değil, ama haberdar olmak isteriz. Tasarımın neyi koruduğunun sınırları için [tehdit modeline](/threat-model) ve [bilinen sınırlamalara](/limitations) bakın.",
+  "faq": [
+    {
+      "q": "Bir güvenlik açığını nasıl bildiririm?",
+      "a": "Konu satırına \"security\" yazarak {email} adresine e-posta gönderin. Uygulama sürümünü, cihazınızı ve iOS sürümünüzü, ayrıca yeniden üretmeye yetecek ayrıntıyı ekleyin. 2 iş günü içinde alındı bildirimi göndermeyi hedefliyoruz."
+    },
+    {
+      "q": "Bug bounty var mı?",
+      "a": "Evet. Kritik bir bulgu için {critical}, yüksek için {high}, orta için {medium}, düşük için {low} değerine kadar; önem derecesi, bulgunun tehdit modelimizde neyi bozduğuna göre belirlenir. Tüm seviyeler, kapsam ve istisnalar bug bounty sayfasındadır."
+    },
+    {
+      "q": "Hangi sürümler güvenlik düzeltmesi alır?",
+      "a": "Düzeltmeler bir sonraki App Store sürümüyle gelir. PrivaMesh tek bir ana sürüm yayımladı; bu nedenle henüz geriye dönük düzeltme yapılacak eski bir dal yok."
+    }
+  ],
+  "related": [
+    {
+      "href": "/threat-model",
+      "label": "Tehdit modeli",
+      "blurb": "Saldırgan saldırgan: ne görülüyor, ne durduruluyor ve ne hâlâ mümkün."
+    },
+    {
+      "href": "/limitations",
+      "label": "Bilinen sınırlamalar",
+      "blurb": "PrivaMesh'in sizi neye karşı korumadığı."
+    },
+    {
+      "href": "/architecture",
+      "label": "Mimari",
+      "blurb": "Her bileşen ve neleri görebildiği."
+    }
+  ]
+}

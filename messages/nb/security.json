@@ -1,0 +1,74 @@
+{
+  "meta": {
+    "title": "Sikkerhet og rapportering",
+    "description": "Hvordan du rapporterer en sårbarhet i PrivaMesh, det betalte bug bounty-programmet, hva vi forplikter oss til å fikse og når, og hvilke appversjoner som får sikkerhetsoppdateringer."
+  },
+  "eyebrow": "Sikkerhet",
+  "title": "Sikkerhet og rapportering",
+  "lead": "Hvordan du rapporterer en sårbarhet, hva et funn gir, og hva vi forplikter oss til når du gjør det.",
+  "ldDescription": "Rapportering av sårbarheter, bug bounty og våre responsforpliktelser.",
+  "open": {
+    "heading": "Åpen kildekode, og en funnet feil gir betaling",
+    "body": [
+      "PrivaMesh bygger på velstuderte primitiver - X3DH, Double Ratchet, AES-256-GCM og ML-KEM-768 på iOS 26. Koden som implementerer dem er åpen for alle tre klientene, så hvem som helst kan lese nøyaktig hva den gjør i stedet for å stole på en beskrivelse.",
+      "En feil funnet i den er verdt opptil {critical} gjennom [bug bounty](/bug-bounty)."
+    ]
+  },
+  "report": {
+    "heading": "Rapportere en sårbarhet",
+    "lead": "Send e-post til [{email}](mailto:{email}?subject=security) med **security** i emnefeltet.",
+    "steps": [
+      "Oppgi appversjon, enhetsmodell og iOS-versjon.",
+      "Oppgi nok detaljer til at problemet kan gjenskapes.",
+      "Send aldri gjenopprettingsfrasen din. Vi kommer aldri til å be om den, av noen grunn, i noen sammenheng."
+    ],
+    "cta": "Rapporter en sårbarhet",
+    "source": "Kildekode"
+  },
+  "commitHeading": "Hva vi forplikter oss til",
+  "commits": [
+    "**Bekreftelse innen 2 virkedager.** Hører du ingenting, anta at e-posten forsvant og send den på nytt.",
+    "**En retting eller en plan innen 30 dager** for alt som lar noen lese meldinger, utgi seg for en konto eller knytte en bruker til aktiviteten sin.",
+    "**Kreditering hvis du vil, taushet hvis ikke.** Vi navngir deg ikke uten å spørre.",
+    "**Ingen juridiske trusler** mot forskning i god tro som ikke retter seg mot andres kontoer eller data."
+  ],
+  "rewardsHeading": "Belønninger",
+  "rewards": "Bekreftede funn betales gjennom [bug bounty-programmet](/bug-bounty) - opptil {critical} for en kritisk sårbarhet, og betalingen skjer ved bekreftelse, ikke ved retting. Nivåene, omfanget og de kjente problemene som ikke kvalifiserer er publisert der, fordi et program som i det stille betaler for sine egne dokumenterte hull ikke er et program.",
+  "versionsHeading": "Støttede versjoner",
+  "versions": "Sikkerhetsrettinger kommer i neste App Store-utgivelse. PrivaMesh kjører på **iOS 18 eller nyere** og har gitt ut én hovedversjon, så det finnes ingen eldre gren å tilbakeportere til. Når det endrer seg, blir støtteperioden oppgitt her i stedet for antydet.",
+  "fixedHeading": "Hva som er rettet",
+  "fixed": "Siden august 2026 har det kommet tolv eksterne rapporter og vært to interne revisjoner. Rettingene er ferdige, men ingen av dem er på telefonen din ennå: 1.1, versjonen i App Store, ble bygget 13. august, før de ble skrevet, og de når brukerne med neste utgivelse. Inntil da bør du anta at den utgitte appen har problemene de retter. Det som ble dokumentert i stedet for rettet, står under [kjente begrensninger](/limitations). Hvem som rapporterte hva, publiseres ikke.",
+  "scopeHeading": "Omfang",
+  "scope": "iOS-klienten, protokollen på kjeden og gebyrtjenesten som er beskrevet på [arkitektursiden](/architecture), er alle innenfor omfanget. Tredjepartsinfrastruktur - Solana selv, RPC-leverandører, Apple - er ikke vår å rette, men vi vil gjerne høre om det. For grensene for hva designet beskytter, se [trusselmodellen](/threat-model) og [kjente begrensninger](/limitations).",
+  "faq": [
+    {
+      "q": "Hvordan rapporterer jeg en sårbarhet?",
+      "a": "Send e-post til {email} med «security» i emnefeltet. Oppgi appversjon, enhet og iOS-versjon, og nok detaljer til å gjenskape feilen. Vi tar sikte på å bekrefte innen 2 virkedager."
+    },
+    {
+      "q": "Finnes det en bug bounty?",
+      "a": "Ja. Opptil {critical} for et kritisk funn, {high} for høyt, {medium} for middels og {low} for lavt, der alvorlighetsgraden avgjøres av hva funnet bryter i trusselmodellen vår. Alle nivåer, omfang og unntak står på bug bounty-siden."
+    },
+    {
+      "q": "Hvilke versjoner får sikkerhetsrettinger?",
+      "a": "Rettinger kommer i neste App Store-utgivelse. PrivaMesh har gitt ut én enkelt hovedversjon, så det finnes ennå ingen eldre gren å tilbakeportere til."
+    }
+  ],
+  "related": [
+    {
+      "href": "/threat-model",
+      "label": "Trusselmodell",
+      "blurb": "Motstander for motstander: hva som ses, hva som stoppes og hva som fortsatt er mulig."
+    },
+    {
+      "href": "/limitations",
+      "label": "Kjente begrensninger",
+      "blurb": "Hva PrivaMesh ikke beskytter deg mot."
+    },
+    {
+      "href": "/architecture",
+      "label": "Arkitektur",
+      "blurb": "Hver komponent og hva den kan se."
+    }
+  ]
+}

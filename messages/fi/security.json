@@ -1,0 +1,74 @@
+{
+  "meta": {
+    "title": "Tietoturva ja haavoittuvuuksien ilmoittaminen",
+    "description": "Miten ilmoitat PrivaMeshin haavoittuvuudesta, maksullinen bug bounty -ohjelma, mitä lupaamme korjata ja milloin, sekä mitkä sovellusversiot saavat tietoturvapäivityksiä."
+  },
+  "eyebrow": "Tietoturva",
+  "title": "Tietoturva ja haavoittuvuuksien ilmoittaminen",
+  "lead": "Miten ilmoitat haavoittuvuudesta, mitä löydöstä maksetaan ja mihin sitoudumme sen jälkeen.",
+  "ldDescription": "Haavoittuvuuksien ilmoittaminen, bug bounty ja vastaamista koskevat sitoumuksemme.",
+  "open": {
+    "heading": "Avoin lähdekoodi, ja löydetystä virheestä maksetaan",
+    "body": [
+      "PrivaMesh rakentuu hyvin tutkituille primitiiveille - X3DH, Double Ratchet, AES-256-GCM ja iOS 26:ssa ML-KEM-768. Niitä toteuttava koodi on julkinen kaikille kolmelle asiakasohjelmalle, joten kuka tahansa voi lukea, mitä se tarkalleen tekee, sen sijaan että luottaisi kuvaukseen.",
+      "Siitä löydetty virhe on [bug bountyn](/bug-bounty) kautta jopa {critical} arvoinen."
+    ]
+  },
+  "report": {
+    "heading": "Haavoittuvuudesta ilmoittaminen",
+    "lead": "Lähetä sähköpostia osoitteeseen [{email}](mailto:{email}?subject=security) ja kirjoita aiheriville **security**.",
+    "steps": [
+      "Kerro sovelluksen versio, laitteesi malli ja iOS-versio.",
+      "Kerro riittävästi yksityiskohtia, jotta ongelma voidaan toistaa.",
+      "Älä koskaan lähetä palautuslausettasi. Emme koskaan pyydä sitä, mistään syystä, missään yhteydessä."
+    ],
+    "cta": "Ilmoita haavoittuvuudesta",
+    "source": "Lähdekoodi"
+  },
+  "commitHeading": "Mihin sitoudumme",
+  "commits": [
+    "**Vastaanottokuittaus 2 arkipäivän kuluessa.** Jos et kuule meistä, oleta viestin kadonneen ja lähetä se uudelleen.",
+    "**Korjaus tai suunnitelma 30 päivän kuluessa** kaikkeen, mikä antaa jonkun lukea viestejä, esiintyä tilinä tai yhdistää käyttäjän hänen toimintaansa.",
+    "**Maininta, jos haluat, vaitiolo, jos et.** Emme nimeä sinua kysymättä.",
+    "**Ei oikeudellisia uhkauksia** vilpittömässä mielessä tehdystä tutkimuksesta, joka ei kohdistu muiden tileihin tai tietoihin."
+  ],
+  "rewardsHeading": "Palkkiot",
+  "rewards": "Vahvistetut löydökset maksetaan [bug bounty -ohjelman](/bug-bounty) kautta - jopa {critical} kriittisestä haavoittuvuudesta, ja maksu tapahtuu vahvistuksen eikä korjauksen yhteydessä. Tasot, laajuus ja tunnetut ongelmat, jotka eivät oikeuta palkkioon, on julkaistu siellä, koska ohjelma, joka maksaa hiljaa omista dokumentoiduista puutteistaan, ei ole ohjelma.",
+  "versionsHeading": "Tuetut versiot",
+  "versions": "Tietoturvakorjaukset tulevat seuraavassa App Store -julkaisussa. PrivaMesh toimii **iOS 18:ssa tai uudemmassa** ja on julkaissut yhden pääversion, joten vanhempaa haaraa, johon korjauksia siirrettäisiin, ei ole. Kun tämä muuttuu, tukijakso kerrotaan tässä suoraan eikä vihjaillen.",
+  "fixedHeading": "Mitä on korjattu",
+  "fixed": "Elokuusta 2026 lähtien on tullut kaksitoista ulkoista ilmoitusta ja tehty kaksi sisäistä auditointia. Korjaukset ovat valmiita, mutta yksikään niistä ei ole vielä puhelimessasi: 1.1, App Storessa oleva versio, käännettiin 13. elokuuta, ennen kuin ne kirjoitettiin, ja ne tavoittavat käyttäjät seuraavan julkaisun mukana. Siihen asti oleta, että julkaistussa sovelluksessa on ongelmat, jotka ne korjaavat. Se, mikä dokumentoitiin korjaamisen sijaan, on sivulla [tunnetut rajoitukset](/limitations). Sitä, kuka ilmoitti mistäkin, ei julkaista.",
+  "scopeHeading": "Laajuus",
+  "scope": "iOS-asiakasohjelma, ketjussa toimiva protokolla ja [arkkitehtuurisivulla](/architecture) kuvattu maksupalvelu kuuluvat kaikki laajuuteen. Kolmannen osapuolen infrastruktuuri - Solana itse, RPC-palveluntarjoajat, Apple - ei ole meidän korjattavissamme, mutta haluamme kuulla siitä. Rajat sille, mitä suunnittelu suojaa, löytyvät [uhkamallista](/threat-model) ja [tunnetuista rajoituksista](/limitations).",
+  "faq": [
+    {
+      "q": "Miten ilmoitan haavoittuvuudesta?",
+      "a": "Lähetä sähköpostia osoitteeseen {email} ja kirjoita aiheriville ”security”. Kerro sovelluksen versio, laitteesi ja iOS-versio sekä riittävästi yksityiskohtia toistamiseen. Pyrimme kuittaamaan 2 arkipäivän kuluessa."
+    },
+    {
+      "q": "Onko bug bounty -ohjelmaa?",
+      "a": "On. Jopa {critical} kriittisestä löydöksestä, {high} korkeasta, {medium} keskitasoisesta ja {low} matalasta; vakavuus määräytyy sen mukaan, mitä löydös rikkoo uhkamallissamme. Kaikki tasot, laajuus ja poikkeukset ovat bug bounty -sivulla."
+    },
+    {
+      "q": "Mitkä versiot saavat tietoturvakorjauksia?",
+      "a": "Korjaukset tulevat seuraavassa App Store -julkaisussa. PrivaMesh on julkaissut vain yhden pääversion, joten vanhempaa haaraa korjauksille ei vielä ole."
+    }
+  ],
+  "related": [
+    {
+      "href": "/threat-model",
+      "label": "Uhkamalli",
+      "blurb": "Vastustaja kerrallaan: mitä nähdään, mitä estetään ja mikä on yhä mahdollista."
+    },
+    {
+      "href": "/limitations",
+      "label": "Tunnetut rajoitukset",
+      "blurb": "Miltä PrivaMesh ei suojaa sinua."
+    },
+    {
+      "href": "/architecture",
+      "label": "Arkkitehtuuri",
+      "blurb": "Jokainen osa ja mitä se voi nähdä."
+    }
+  ]
+}

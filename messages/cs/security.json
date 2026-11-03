@@ -1,0 +1,74 @@
+{
+  "meta": {
+    "title": "Bezpečnost a hlášení zranitelností",
+    "description": "Jak nahlásit zranitelnost v PrivaMesh, placený bug bounty, co a do kdy se zavazujeme opravit a které verze aplikace dostávají bezpečnostní aktualizace."
+  },
+  "eyebrow": "Bezpečnost",
+  "title": "Bezpečnost a hlášení zranitelností",
+  "lead": "Jak nahlásit zranitelnost, kolik nález vynese a k čemu se potom zavazujeme.",
+  "ldDescription": "Hlášení zranitelností, bug bounty a naše závazky k reakci.",
+  "open": {
+    "heading": "Otevřený kód, a nalezená chyba se platí",
+    "body": [
+      "PrivaMesh stojí na dobře prozkoumaných primitivech - X3DH, Double Ratchet, AES-256-GCM a ML-KEM-768 na iOS 26. Kód, který je implementuje, je veřejný pro všechny tři klienty, takže si kdokoli může přečíst, co přesně dělá, místo aby věřil popisu.",
+      "Chyba v něm nalezená má přes [bug bounty](/bug-bounty) hodnotu až {critical}."
+    ]
+  },
+  "report": {
+    "heading": "Nahlášení zranitelnosti",
+    "lead": "Napište na [{email}](mailto:{email}?subject=security) se slovem **security** v předmětu.",
+    "steps": [
+      "Uveďte verzi aplikace, model zařízení a verzi iOS.",
+      "Popište problém dostatečně podrobně, aby šel zopakovat.",
+      "Nikdy neposílejte svou frázi pro obnovení. Nikdy o ni nepožádáme - z žádného důvodu a v žádném kontextu."
+    ],
+    "cta": "Nahlásit zranitelnost",
+    "source": "Zdrojový kód"
+  },
+  "commitHeading": "K čemu se zavazujeme",
+  "commits": [
+    "**Potvrzení do 2 pracovních dnů.** Pokud se neozveme, předpokládejte, že se e-mail ztratil, a pošlete ho znovu.",
+    "**Oprava nebo plán do 30 dnů** pro cokoli, co umožňuje číst zprávy, vydávat se za účet nebo spojit uživatele s jeho aktivitou.",
+    "**Uvedení jména, pokud chcete, mlčení, pokud ne.** Bez zeptání vás nejmenujeme.",
+    "**Žádné právní hrozby** za výzkum v dobré víře, který necílí na cizí účty ani data."
+  ],
+  "rewardsHeading": "Odměny",
+  "rewards": "Potvrzené nálezy se platí přes [program bug bounty](/bug-bounty) - až {critical} za kritickou zranitelnost, a platba proběhne při potvrzení, ne až po opravě. Úrovně, rozsah a známé problémy, které se nepočítají, jsou tam zveřejněné, protože program, který potichu platí za vlastní zdokumentované mezery, není program.",
+  "versionsHeading": "Podporované verze",
+  "versions": "Bezpečnostní opravy vycházejí v příštím vydání v App Store. PrivaMesh běží na **iOS 18 nebo novějším** a vydal jednu hlavní verzi, takže neexistuje starší větev pro backporty. Až se to změní, bude doba podpory uvedena zde výslovně, ne jen naznačena.",
+  "fixedHeading": "Co bylo opraveno",
+  "fixed": "Od srpna 2026 přišlo dvanáct externích hlášení a proběhly dva interní audity. Opravy jsou hotové, ale žádná z nich ještě není ve vašem telefonu: 1.1, verze v App Store, byla sestavena 13. srpna, dřív než vznikly, a k uživatelům se dostanou s příštím vydáním. Do té doby počítejte s tím, že vydaná aplikace má problémy, které opravují. Co bylo místo opravy zdokumentováno, je v [známých omezeních](/limitations). Kdo co nahlásil, se nezveřejňuje.",
+  "scopeHeading": "Rozsah",
+  "scope": "Klient pro iOS, on-chain protokol a poplatková služba popsané na [stránce architektury](/architecture) do rozsahu patří. Infrastruktura třetích stran - samotná Solana, poskytovatelé RPC, Apple - není naše k opravě, ale chceme o ní vědět. Hranice toho, co návrh chrání, popisují [model hrozeb](/threat-model) a [známá omezení](/limitations).",
+  "faq": [
+    {
+      "q": "Jak nahlásím zranitelnost?",
+      "a": "Napište na {email} se slovem „security“ v předmětu. Uveďte verzi aplikace, zařízení a verzi iOS a dost podrobností k zopakování. Snažíme se potvrdit přijetí do 2 pracovních dnů."
+    },
+    {
+      "q": "Je k dispozici bug bounty?",
+      "a": "Ano. Až {critical} za kritický nález, {high} za vysoký, {medium} za střední, {low} za nízký; závažnost určuje to, co nález v našem modelu hrozeb rozbíjí. Všechny úrovně, rozsah a výjimky jsou na stránce bug bounty."
+    },
+    {
+      "q": "Které verze dostávají bezpečnostní opravy?",
+      "a": "Opravy vycházejí v příštím vydání v App Store. PrivaMesh zatím vydal jedinou hlavní verzi, takže starší větev pro backporty ještě neexistuje."
+    }
+  ],
+  "related": [
+    {
+      "href": "/threat-model",
+      "label": "Model hrozeb",
+      "blurb": "Protivník po protivníkovi: co je vidět, co je zastaveno a co je stále možné."
+    },
+    {
+      "href": "/limitations",
+      "label": "Známá omezení",
+      "blurb": "Před čím vás PrivaMesh nechrání."
+    },
+    {
+      "href": "/architecture",
+      "label": "Architektura",
+      "blurb": "Každá komponenta a co může vidět."
+    }
+  ]
+}

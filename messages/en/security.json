@@ -1,0 +1,74 @@
+{
+  "meta": {
+    "title": "Security and Disclosure",
+    "description": "How to report a vulnerability in PrivaMesh, the paid bug bounty, what we commit to fixing and when, and which app versions receive security updates."
+  },
+  "eyebrow": "Security",
+  "title": "Security and disclosure",
+  "lead": "How to report a vulnerability, what finding one pays, and what we commit to once you do.",
+  "ldDescription": "Vulnerability disclosure, the bug bounty and response commitments.",
+  "open": {
+    "heading": "Open source, and finding a flaw pays",
+    "body": [
+      "PrivaMesh builds on well-studied primitives - X3DH, the Double Ratchet, AES-256-GCM, and ML-KEM-768 on iOS 26. The code that implements them is public for all three clients, so anyone can read exactly what it does rather than take a description on trust.",
+      "A flaw found in it is worth up to {critical} through the [bug bounty](/bug-bounty)."
+    ]
+  },
+  "report": {
+    "heading": "Reporting a vulnerability",
+    "lead": "Email [{email}](mailto:{email}?subject=security) with **security** in the subject line.",
+    "steps": [
+      "Include the app version, your device model and your iOS version.",
+      "Include enough detail to reproduce the issue.",
+      "Never include your recovery phrase. We will never ask for it, for any reason, in any context."
+    ],
+    "cta": "Report a vulnerability",
+    "source": "Source code"
+  },
+  "commitHeading": "What we commit to",
+  "commits": [
+    "**Acknowledgement within 2 business days.** If you do not hear back, assume the mail was lost and send it again.",
+    "**A fix or a plan within 30 days** for anything that lets someone read messages, impersonate an account, or link a user to their activity.",
+    "**Credit if you want it, silence if you do not.** We will not name you without asking.",
+    "**No legal threats** for good-faith research that does not target other people's accounts or data."
+  ],
+  "rewardsHeading": "Rewards",
+  "rewards": "Confirmed findings are paid through the [bug bounty program](/bug-bounty) - up to {critical} for a critical vulnerability, and payment happens on confirmation rather than on fix. The tiers, the scope and the known issues that do not qualify are all published there, because a program that quietly pays for its own documented gaps is not a program.",
+  "versionsHeading": "Supported versions",
+  "versions": "Security fixes ship in the next App Store release. PrivaMesh runs on **iOS 18 or later** and has shipped one major version, so there is no older branch to backport to. When that changes, the supported window will be stated here rather than implied.",
+  "fixedHeading": "What has been fixed",
+  "fixed": "Since August 2026 there have been twelve external reports and two internal audits. The fixes are done, but none of them is on your phone yet: 1.1, the version on the App Store, was built on 13 August, before they were written, and they reach users with the next release. Until then, read the shipped app as having the problems they fix. What was documented instead of fixed is on [known limitations](/limitations). Who reported what is not published.",
+  "scopeHeading": "Scope",
+  "scope": "The iOS client, the on-chain protocol, and the fee worker described on [the architecture page](/architecture) are all in scope. Third-party infrastructure - Solana itself, RPC providers, Apple - is not ours to fix, though we want to hear about it. For the boundaries of what the design protects, see [the threat model](/threat-model) and [known limitations](/limitations).",
+  "faq": [
+    {
+      "q": "How do I report a vulnerability?",
+      "a": "Email {email} with \"security\" in the subject line. Include the app version, your device and iOS version, and enough detail to reproduce. We aim to acknowledge within 2 business days."
+    },
+    {
+      "q": "Is there a bug bounty?",
+      "a": "Yes. Up to {critical} for a critical finding, {high} high, {medium} medium, {low} low, with severity defined by what the finding breaks in our threat model. Full tiers, scope and exclusions are on the bug bounty page."
+    },
+    {
+      "q": "Which versions get security fixes?",
+      "a": "Fixes ship in the next App Store release. PrivaMesh has shipped a single major version, so there is no older branch to backport to yet."
+    }
+  ],
+  "related": [
+    {
+      "href": "/threat-model",
+      "label": "Threat model",
+      "blurb": "Adversary by adversary: what is seen, stopped, and still possible."
+    },
+    {
+      "href": "/limitations",
+      "label": "Known limitations",
+      "blurb": "What PrivaMesh does not protect you from."
+    },
+    {
+      "href": "/architecture",
+      "label": "Architecture",
+      "blurb": "Every component and what it can observe."
+    }
+  ]
+}

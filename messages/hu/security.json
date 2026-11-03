@@ -1,0 +1,74 @@
+{
+  "meta": {
+    "title": "Biztonság és sebezhetőség-bejelentés",
+    "description": "Hogyan jelentsen be sebezhetőséget a PrivaMeshben, a fizetős bug bounty program, mit vállalunk kijavítani és mikorra, valamint mely alkalmazásverziók kapnak biztonsági frissítést."
+  },
+  "eyebrow": "Biztonság",
+  "title": "Biztonság és sebezhetőség-bejelentés",
+  "lead": "Hogyan jelentsen be sebezhetőséget, mennyit ér egy találat, és mit vállalunk utána.",
+  "ldDescription": "Sebezhetőségek bejelentése, a bug bounty és válaszadási vállalásaink.",
+  "open": {
+    "heading": "Nyílt forráskód, és egy megtalált hiba fizet",
+    "body": [
+      "A PrivaMesh jól tanulmányozott primitívekre épül - X3DH, Double Ratchet, AES-256-GCM, iOS 26-on pedig ML-KEM-768. Az ezeket megvalósító kód mindhárom kliensnél nyilvános, így bárki elolvashatja, pontosan mit csinál, ahelyett hogy egy leírásra hagyatkozna.",
+      "Egy benne talált hiba a [bug bounty](/bug-bounty) révén akár {critical} értékű is lehet."
+    ]
+  },
+  "report": {
+    "heading": "Sebezhetőség bejelentése",
+    "lead": "Írjon a [{email}](mailto:{email}?subject=security) címre, a tárgysorba írja: **security**.",
+    "steps": [
+      "Adja meg az alkalmazás verzióját, az eszköz típusát és az iOS verzióját.",
+      "Adjon meg annyi részletet, hogy a hiba reprodukálható legyen.",
+      "Soha ne küldje el a helyreállítási kifejezését. Soha nem fogjuk kérni, semmilyen okból, semmilyen összefüggésben."
+    ],
+    "cta": "Sebezhetőség bejelentése",
+    "source": "Forráskód"
+  },
+  "commitHeading": "Amit vállalunk",
+  "commits": [
+    "**Visszaigazolás 2 munkanapon belül.** Ha nem jelentkezünk, tételezze fel, hogy a levél elveszett, és küldje el újra.",
+    "**Javítás vagy terv 30 napon belül** mindenre, ami lehetővé teszi üzenetek elolvasását, egy fiók megszemélyesítését vagy egy felhasználó összekapcsolását a tevékenységével.",
+    "**Név szerinti elismerés, ha kéri, hallgatás, ha nem.** Megkérdezés nélkül nem nevezzük meg.",
+    "**Semmilyen jogi fenyegetés** a jóhiszemű kutatásért, amely nem mások fiókjait vagy adatait célozza."
+  ],
+  "rewardsHeading": "Jutalmak",
+  "rewards": "A megerősített találatokért a [bug bounty programon](/bug-bounty) keresztül fizetünk - kritikus sebezhetőségért akár {critical}, és a kifizetés a megerősítéskor történik, nem a javításkor. A szintek, a hatókör és a nem jogosító ismert problémák mind ott vannak közzétéve, mert az a program, amely csendben fizet a saját dokumentált hiányosságaiért, nem program.",
+  "versionsHeading": "Támogatott verziók",
+  "versions": "A biztonsági javítások a következő App Store-kiadásban jelennek meg. A PrivaMesh **iOS 18-on vagy újabbon** fut, és egy főverziót adott ki, így nincs régebbi ág, amelybe visszaportolni kellene. Ha ez megváltozik, a támogatási időszakot itt kifejezetten feltüntetjük, nem csak sejtetjük.",
+  "fixedHeading": "Mi lett kijavítva",
+  "fixed": "2026 augusztusa óta tizenkét külső bejelentés érkezett és két belső audit zajlott. A javítások elkészültek, de egyik sincs még a telefonján: az 1.1, az App Store-ban lévő verzió, augusztus 13-án készült, mielőtt megírták őket, és a következő kiadással érik el a felhasználókat. Addig tekintse úgy, hogy a kiadott alkalmazásban megvannak azok a problémák, amelyeket kijavítanak. Ami javítás helyett dokumentálva lett, az az [ismert korlátok](/limitations) oldalon található. Azt, hogy ki mit jelentett, nem tesszük közzé.",
+  "scopeHeading": "Hatókör",
+  "scope": "Az iOS-kliens, a láncon futó protokoll és az [architektúra oldalon](/architecture) leírt díjszolgáltatás mind a hatókörbe tartozik. A harmadik féltől származó infrastruktúra - maga a Solana, az RPC-szolgáltatók, az Apple - javítása nem a mi dolgunk, de szeretnénk tudni róla. Annak határaihoz, hogy mit véd a kialakítás, lásd a [fenyegetési modellt](/threat-model) és az [ismert korlátokat](/limitations).",
+  "faq": [
+    {
+      "q": "Hogyan jelenthetek be sebezhetőséget?",
+      "a": "Írjon a {email} címre, a tárgysorba írja: „security”. Adja meg az alkalmazás verzióját, az eszközt és az iOS verzióját, valamint a reprodukáláshoz elegendő részletet. Igyekszünk 2 munkanapon belül visszaigazolni."
+    },
+    {
+      "q": "Van bug bounty?",
+      "a": "Igen. Kritikus találatért akár {critical}, magasért {high}, közepesért {medium}, alacsonyért {low}; a súlyosságot az határozza meg, hogy a találat mit tör meg a fenyegetési modellünkben. Az összes szint, a hatókör és a kizárások a bug bounty oldalon találhatók."
+    },
+    {
+      "q": "Mely verziók kapnak biztonsági javításokat?",
+      "a": "A javítások a következő App Store-kiadásban jelennek meg. A PrivaMesh eddig egyetlen főverziót adott ki, így még nincs régebbi ág, amelybe visszaportolni kellene."
+    }
+  ],
+  "related": [
+    {
+      "href": "/threat-model",
+      "label": "Fenyegetési modell",
+      "blurb": "Támadóról támadóra: mi látszik, mi áll meg, és mi lehetséges még."
+    },
+    {
+      "href": "/limitations",
+      "label": "Ismert korlátok",
+      "blurb": "Mi ellen nem véd a PrivaMesh."
+    },
+    {
+      "href": "/architecture",
+      "label": "Architektúra",
+      "blurb": "Minden komponens, és hogy mit láthat."
+    }
+  ]
+}

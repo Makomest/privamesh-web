@@ -1,0 +1,74 @@
+{
+  "meta": {
+    "title": "Beveiliging en melding",
+    "description": "Hoe je een kwetsbaarheid in PrivaMesh meldt, de betaalde bug bounty, wat we beloven te repareren en wanneer, en welke appversies beveiligingsupdates krijgen."
+  },
+  "eyebrow": "Beveiliging",
+  "title": "Beveiliging en melding",
+  "lead": "Hoe je een kwetsbaarheid meldt, wat een vondst oplevert en waartoe we ons daarna verplichten.",
+  "ldDescription": "Melden van kwetsbaarheden, de bug bounty en onze responstoezeggingen.",
+  "open": {
+    "heading": "Open source, en een gevonden fout wordt betaald",
+    "body": [
+      "PrivaMesh bouwt op goed bestudeerde primitieven - X3DH, de Double Ratchet, AES-256-GCM en ML-KEM-768 op iOS 26. De code die ze implementeert is openbaar voor alle drie de clients, zodat iedereen precies kan lezen wat die doet in plaats van een beschrijving op goed vertrouwen aan te nemen.",
+      "Een fout die je erin vindt is via de [bug bounty](/bug-bounty) tot {critical} waard."
+    ]
+  },
+  "report": {
+    "heading": "Een kwetsbaarheid melden",
+    "lead": "Mail naar [{email}](mailto:{email}?subject=security) met **security** in de onderwerpregel.",
+    "steps": [
+      "Vermeld de appversie, je apparaatmodel en je iOS-versie.",
+      "Geef genoeg details om het probleem te reproduceren.",
+      "Stuur nooit je herstelzin mee. We vragen er nooit om, om geen enkele reden en in geen enkele context."
+    ],
+    "cta": "Kwetsbaarheid melden",
+    "source": "Broncode"
+  },
+  "commitHeading": "Waartoe we ons verplichten",
+  "commits": [
+    "**Ontvangstbevestiging binnen 2 werkdagen.** Hoor je niets, ga er dan van uit dat de mail verloren is gegaan en stuur hem opnieuw.",
+    "**Een fix of een plan binnen 30 dagen** voor alles waarmee iemand berichten kan lezen, zich als een account kan voordoen of een gebruiker aan zijn activiteit kan koppelen.",
+    "**Vermelding als je dat wilt, stilte als je dat niet wilt.** We noemen je naam niet zonder te vragen.",
+    "**Geen juridische dreigementen** voor onderzoek te goeder trouw dat niet gericht is op accounts of gegevens van anderen."
+  ],
+  "rewardsHeading": "Beloningen",
+  "rewards": "Bevestigde vondsten worden betaald via het [bug-bountyprogramma](/bug-bounty) - tot {critical} voor een kritieke kwetsbaarheid, en betaling volgt op bevestiging, niet op de fix. De niveaus, de scope en de bekende problemen die niet meetellen staan daar allemaal, want een programma dat stilletjes betaalt voor zijn eigen gedocumenteerde gaten is geen programma.",
+  "versionsHeading": "Ondersteunde versies",
+  "versions": "Beveiligingsfixes komen in de volgende App Store-release. PrivaMesh draait op **iOS 18 of nieuwer** en heeft één hoofdversie uitgebracht, dus er is geen oudere tak om fixes naar terug te zetten. Als dat verandert, wordt de ondersteuningsperiode hier expliciet vermeld in plaats van gesuggereerd.",
+  "fixedHeading": "Wat is opgelost",
+  "fixed": "Sinds augustus 2026 zijn er twaalf externe meldingen en twee interne audits geweest. De fixes zijn klaar, maar geen ervan staat al op je telefoon: 1.1, de versie in de App Store, is op 13 augustus gebouwd, voordat ze werden geschreven, en ze bereiken gebruikers met de volgende release. Ga er tot dan van uit dat de uitgebrachte app de problemen heeft die ze oplossen. Wat gedocumenteerd is in plaats van opgelost, staat bij [bekende beperkingen](/limitations). Wie wat heeft gemeld, wordt niet gepubliceerd.",
+  "scopeHeading": "Scope",
+  "scope": "De iOS-client, het on-chain protocol en de kostendienst die op [de architectuurpagina](/architecture) worden beschreven, vallen allemaal binnen de scope. Infrastructuur van derden - Solana zelf, RPC-providers, Apple - kunnen wij niet repareren, maar we horen het graag. Voor de grenzen van wat het ontwerp beschermt, zie [het dreigingsmodel](/threat-model) en [bekende beperkingen](/limitations).",
+  "faq": [
+    {
+      "q": "Hoe meld ik een kwetsbaarheid?",
+      "a": "Mail naar {email} met \"security\" in de onderwerpregel. Vermeld de appversie, je apparaat en iOS-versie, en genoeg details om het te reproduceren. We streven ernaar binnen 2 werkdagen de ontvangst te bevestigen."
+    },
+    {
+      "q": "Is er een bug bounty?",
+      "a": "Ja. Tot {critical} voor een kritieke vondst, {high} voor hoog, {medium} voor gemiddeld, {low} voor laag, waarbij de ernst wordt bepaald door wat de vondst in ons dreigingsmodel breekt. Alle niveaus, de scope en de uitzonderingen staan op de bug-bountypagina."
+    },
+    {
+      "q": "Welke versies krijgen beveiligingsfixes?",
+      "a": "Fixes komen in de volgende App Store-release. PrivaMesh heeft één hoofdversie uitgebracht, dus er is nog geen oudere tak om fixes naar terug te zetten."
+    }
+  ],
+  "related": [
+    {
+      "href": "/threat-model",
+      "label": "Dreigingsmodel",
+      "blurb": "Tegenstander voor tegenstander: wat wordt gezien, wat wordt gestopt en wat nog mogelijk is."
+    },
+    {
+      "href": "/limitations",
+      "label": "Bekende beperkingen",
+      "blurb": "Waartegen PrivaMesh je niet beschermt."
+    },
+    {
+      "href": "/architecture",
+      "label": "Architectuur",
+      "blurb": "Elk onderdeel en wat het kan zien."
+    }
+  ]
+}

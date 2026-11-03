@@ -63,6 +63,8 @@ export const SITE = {
     { messages: 500, price: '3.99' },
     { messages: 1500, price: '9.99' },
   ],
+  /** Bug bounty payout per severity tier, USD. */
+  bounty: { critical: 500, high: 200, medium: 75, low: 25 },
   // App Store rating for AggregateRating rich snippet (stars in search).
   // Keep null until you have REAL App Store reviews — fake ratings violate
   // Google's guidelines. Then set e.g. { value: '4.8', count: 210 }.

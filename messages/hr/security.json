@@ -1,0 +1,74 @@
+{
+  "meta": {
+    "title": "Sigurnost i prijava ranjivosti",
+    "description": "Kako prijaviti ranjivost u PrivaMeshu, plaćeni bug bounty, što se obvezujemo popraviti i do kada te koje verzije aplikacije dobivaju sigurnosna ažuriranja."
+  },
+  "eyebrow": "Sigurnost",
+  "title": "Sigurnost i prijava ranjivosti",
+  "lead": "Kako prijaviti ranjivost, koliko se plaća pronalazak i na što se nakon toga obvezujemo.",
+  "ldDescription": "Prijava ranjivosti, bug bounty i naše obveze odgovora.",
+  "open": {
+    "heading": "Otvoreni kod, a pronađen propust se plaća",
+    "body": [
+      "PrivaMesh se temelji na dobro proučenim primitivima - X3DH, Double Ratchet, AES-256-GCM i ML-KEM-768 na iOS-u 26. Kod koji ih implementira javan je za sva tri klijenta, pa svatko može pročitati što točno radi umjesto da vjeruje opisu na riječ.",
+      "Propust pronađen u njemu vrijedi do {critical} kroz [bug bounty](/bug-bounty)."
+    ]
+  },
+  "report": {
+    "heading": "Prijava ranjivosti",
+    "lead": "Pošaljite e-poštu na [{email}](mailto:{email}?subject=security) s riječju **security** u naslovu.",
+    "steps": [
+      "Navedite verziju aplikacije, model uređaja i verziju iOS-a.",
+      "Navedite dovoljno detalja da se problem može ponoviti.",
+      "Nikada ne šaljite svoju frazu za oporavak. Nikada je nećemo tražiti - ni iz kojeg razloga, ni u kojem kontekstu."
+    ],
+    "cta": "Prijavi ranjivost",
+    "source": "Izvorni kod"
+  },
+  "commitHeading": "Na što se obvezujemo",
+  "commits": [
+    "**Potvrda primitka unutar 2 radna dana.** Ako se ne javimo, pretpostavite da se poruka izgubila i pošaljite je ponovno.",
+    "**Popravak ili plan unutar 30 dana** za sve što nekome omogućuje čitanje poruka, lažno predstavljanje kao račun ili povezivanje korisnika s njegovom aktivnošću.",
+    "**Navođenje imena ako želite, šutnja ako ne.** Nećemo vas imenovati bez pitanja.",
+    "**Bez pravnih prijetnji** za istraživanje u dobroj vjeri koje ne cilja tuđe račune ili podatke."
+  ],
+  "rewardsHeading": "Nagrade",
+  "rewards": "Potvrđeni nalazi plaćaju se kroz [program bug bounty](/bug-bounty) - do {critical} za kritičnu ranjivost, a isplata slijedi nakon potvrde, ne nakon popravka. Razine, opseg i poznati problemi koji se ne priznaju objavljeni su ondje, jer program koji potiho plaća za vlastite dokumentirane propuste nije program.",
+  "versionsHeading": "Podržane verzije",
+  "versions": "Sigurnosni popravci izlaze u sljedećem izdanju na App Storeu. PrivaMesh radi na **iOS-u 18 ili novijem** i objavio je jednu glavnu verziju, pa nema starije grane za backport. Kad se to promijeni, razdoblje podrške bit će ovdje izričito navedeno, a ne podrazumijevano.",
+  "fixedHeading": "Što je popravljeno",
+  "fixed": "Od kolovoza 2026. stiglo je dvanaest vanjskih prijava i provedena su dva interna audita. Popravci su gotovi, ali nijedan još nije na vašem telefonu: 1.1, verzija na App Storeu, izgrađena je 13. kolovoza, prije nego što su napisani, a do korisnika stižu sa sljedećim izdanjem. Do tada smatrajte da objavljena aplikacija ima probleme koje oni popravljaju. Ono što je dokumentirano umjesto popravljeno nalazi se u [poznatim ograničenjima](/limitations). Tko je što prijavio ne objavljuje se.",
+  "scopeHeading": "Opseg",
+  "scope": "iOS klijent, on-chain protokol i usluga naknada opisani na [stranici arhitekture](/architecture) obuhvaćeni su. Infrastrukturu trećih strana - samu Solanu, RPC pružatelje, Apple - ne možemo mi popraviti, ali želimo znati za nju. Za granice onoga što dizajn štiti pogledajte [model prijetnji](/threat-model) i [poznata ograničenja](/limitations).",
+  "faq": [
+    {
+      "q": "Kako prijaviti ranjivost?",
+      "a": "Pošaljite e-poštu na {email} s riječju „security” u naslovu. Navedite verziju aplikacije, uređaj i verziju iOS-a te dovoljno detalja za ponavljanje. Nastojimo potvrditi primitak unutar 2 radna dana."
+    },
+    {
+      "q": "Postoji li bug bounty?",
+      "a": "Da. Do {critical} za kritičan nalaz, {high} za visok, {medium} za srednji, {low} za nizak; ozbiljnost se određuje prema tome što nalaz ruši u našem modelu prijetnji. Sve razine, opseg i iznimke nalaze se na stranici bug bountyja."
+    },
+    {
+      "q": "Koje verzije dobivaju sigurnosne popravke?",
+      "a": "Popravci izlaze u sljedećem izdanju na App Storeu. PrivaMesh je objavio samo jednu glavnu verziju, pa još nema starije grane za backport."
+    }
+  ],
+  "related": [
+    {
+      "href": "/threat-model",
+      "label": "Model prijetnji",
+      "blurb": "Protivnik po protivnik: što se vidi, što se zaustavlja i što je još moguće."
+    },
+    {
+      "href": "/limitations",
+      "label": "Poznata ograničenja",
+      "blurb": "Od čega vas PrivaMesh ne štiti."
+    },
+    {
+      "href": "/architecture",
+      "label": "Arhitektura",
+      "blurb": "Svaka komponenta i što može vidjeti."
+    }
+  ]
+}

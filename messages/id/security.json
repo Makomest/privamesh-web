@@ -1,0 +1,74 @@
+{
+  "meta": {
+    "title": "Keamanan dan pelaporan",
+    "description": "Cara melaporkan kerentanan di PrivaMesh, program bug bounty berbayar, apa yang kami janjikan untuk diperbaiki dan kapan, serta versi aplikasi mana yang menerima pembaruan keamanan."
+  },
+  "eyebrow": "Keamanan",
+  "title": "Keamanan dan pelaporan",
+  "lead": "Cara melaporkan kerentanan, berapa imbalan untuk temuan, dan apa yang kami janjikan setelahnya.",
+  "ldDescription": "Pelaporan kerentanan, bug bounty, dan komitmen respons kami.",
+  "open": {
+    "heading": "Sumber terbuka, dan menemukan celah dibayar",
+    "body": [
+      "PrivaMesh dibangun di atas primitif yang sudah banyak dikaji - X3DH, Double Ratchet, AES-256-GCM, dan ML-KEM-768 di iOS 26. Kode yang mengimplementasikannya terbuka untuk ketiga klien, sehingga siapa pun bisa membaca persis apa yang dilakukannya alih-alih memercayai deskripsi begitu saja.",
+      "Celah yang ditemukan di dalamnya bernilai hingga {critical} melalui [bug bounty](/bug-bounty)."
+    ]
+  },
+  "report": {
+    "heading": "Melaporkan kerentanan",
+    "lead": "Kirim email ke [{email}](mailto:{email}?subject=security) dengan **security** di baris subjek.",
+    "steps": [
+      "Sertakan versi aplikasi, model perangkat, dan versi iOS Anda.",
+      "Sertakan detail yang cukup untuk mereproduksi masalahnya.",
+      "Jangan pernah menyertakan frasa pemulihan Anda. Kami tidak akan pernah memintanya, dengan alasan apa pun, dalam konteks apa pun."
+    ],
+    "cta": "Laporkan kerentanan",
+    "source": "Kode sumber"
+  },
+  "commitHeading": "Komitmen kami",
+  "commits": [
+    "**Konfirmasi penerimaan dalam 2 hari kerja.** Jika tidak ada kabar, anggap email hilang dan kirim ulang.",
+    "**Perbaikan atau rencana dalam 30 hari** untuk apa pun yang memungkinkan seseorang membaca pesan, menyamar sebagai sebuah akun, atau mengaitkan pengguna dengan aktivitasnya.",
+    "**Kredit jika Anda mau, diam jika tidak.** Kami tidak akan menyebut nama Anda tanpa bertanya.",
+    "**Tanpa ancaman hukum** untuk riset beriktikad baik yang tidak menyasar akun atau data orang lain."
+  ],
+  "rewardsHeading": "Imbalan",
+  "rewards": "Temuan yang terkonfirmasi dibayar melalui [program bug bounty](/bug-bounty) - hingga {critical} untuk kerentanan kritis, dan pembayaran dilakukan saat konfirmasi, bukan saat perbaikan. Tingkatan, cakupan, dan masalah yang sudah diketahui dan tidak memenuhi syarat semuanya dipublikasikan di sana, karena program yang diam-diam membayar celahnya sendiri yang sudah terdokumentasi bukanlah program.",
+  "versionsHeading": "Versi yang didukung",
+  "versions": "Perbaikan keamanan hadir di rilis App Store berikutnya. PrivaMesh berjalan di **iOS 18 atau lebih baru** dan baru merilis satu versi mayor, jadi tidak ada cabang lama untuk backport. Jika itu berubah, periode dukungan akan dinyatakan di sini, bukan hanya tersirat.",
+  "fixedHeading": "Apa yang sudah diperbaiki",
+  "fixed": "Sejak Agustus 2026 ada dua belas laporan eksternal dan dua audit internal. Perbaikannya sudah selesai, tetapi belum ada yang sampai di ponsel Anda: 1.1, versi di App Store, dibuat pada 13 Agustus, sebelum perbaikan itu ditulis, dan perbaikan akan sampai ke pengguna lewat rilis berikutnya. Sampai saat itu, anggap aplikasi yang dirilis masih memiliki masalah yang diperbaikinya. Apa yang didokumentasikan alih-alih diperbaiki ada di [keterbatasan yang diketahui](/limitations). Siapa melaporkan apa tidak dipublikasikan.",
+  "scopeHeading": "Cakupan",
+  "scope": "Klien iOS, protokol on-chain, dan layanan biaya yang dijelaskan di [halaman arsitektur](/architecture) semuanya termasuk cakupan. Infrastruktur pihak ketiga - Solana sendiri, penyedia RPC, Apple - bukan wewenang kami untuk memperbaiki, tetapi kami ingin mendengarnya. Untuk batas apa yang dilindungi desain, lihat [model ancaman](/threat-model) dan [keterbatasan yang diketahui](/limitations).",
+  "faq": [
+    {
+      "q": "Bagaimana cara melaporkan kerentanan?",
+      "a": "Kirim email ke {email} dengan \"security\" di baris subjek. Sertakan versi aplikasi, perangkat dan versi iOS Anda, serta detail yang cukup untuk mereproduksinya. Kami berusaha mengonfirmasi dalam 2 hari kerja."
+    },
+    {
+      "q": "Apakah ada bug bounty?",
+      "a": "Ya. Hingga {critical} untuk temuan kritis, {high} tinggi, {medium} sedang, {low} rendah, dengan tingkat keparahan ditentukan oleh apa yang dirusak temuan itu dalam model ancaman kami. Semua tingkatan, cakupan, dan pengecualian ada di halaman bug bounty."
+    },
+    {
+      "q": "Versi mana yang mendapat perbaikan keamanan?",
+      "a": "Perbaikan hadir di rilis App Store berikutnya. PrivaMesh baru merilis satu versi mayor, jadi belum ada cabang lama untuk backport."
+    }
+  ],
+  "related": [
+    {
+      "href": "/threat-model",
+      "label": "Model ancaman",
+      "blurb": "Musuh demi musuh: apa yang terlihat, apa yang dihentikan, dan apa yang masih mungkin."
+    },
+    {
+      "href": "/limitations",
+      "label": "Keterbatasan yang diketahui",
+      "blurb": "Dari apa PrivaMesh tidak melindungi Anda."
+    },
+    {
+      "href": "/architecture",
+      "label": "Arsitektur",
+      "blurb": "Setiap komponen dan apa yang bisa dilihatnya."
+    }
+  ]
+}

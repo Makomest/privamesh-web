@@ -1,0 +1,74 @@
+{
+  "meta": {
+    "title": "Xavfsizlik va zaifliklarni oshkor qilish",
+    "description": "PrivaMesh'dagi zaiflik haqida qanday xabar berish, pullik bug bounty dasturi, nimani va qachongacha tuzatishga majburiyat olamiz hamda ilovaning qaysi versiyalari xavfsizlik yangilanishlarini oladi."
+  },
+  "eyebrow": "Xavfsizlik",
+  "title": "Xavfsizlik va zaifliklarni oshkor qilish",
+  "lead": "Zaiflik haqida qanday xabar berish, topilma uchun qancha to'lanishi va keyin nimaga majburiyat olishimiz.",
+  "ldDescription": "Zaifliklarni oshkor qilish, bug bounty va javob berish majburiyatlarimiz.",
+  "open": {
+    "heading": "Ochiq kod va topilgan nuqson uchun to'lanadi",
+    "body": [
+      "PrivaMesh yaxshi o'rganilgan primitivlarga asoslangan - X3DH, Double Ratchet, AES-256-GCM va iOS 26'da ML-KEM-768. Ularni amalga oshiruvchi kod uchala mijoz uchun ham ochiq, shuning uchun har kim tavsifga ishonish o'rniga uning aynan nima qilishini o'qiy oladi.",
+      "Unda topilgan nuqson [bug bounty](/bug-bounty) orqali {critical} gacha baholanadi."
+    ]
+  },
+  "report": {
+    "heading": "Zaiflik haqida xabar berish",
+    "lead": "Mavzu qatoriga **security** yozib, [{email}](mailto:{email}?subject=security) manziliga xat yuboring.",
+    "steps": [
+      "Ilova versiyasi, qurilma modeli va iOS versiyasini ko'rsating.",
+      "Muammoni takrorlash uchun yetarli tafsilot bering.",
+      "Tiklash iborangizni hech qachon yubormang. Biz uni hech qachon, hech qanday sabab bilan, hech qanday holatda so'ramaymiz."
+    ],
+    "cta": "Zaiflik haqida xabar berish",
+    "source": "Manba kodi"
+  },
+  "commitHeading": "Nimaga majburiyat olamiz",
+  "commits": [
+    "**2 ish kuni ichida tasdiqlash.** Javob bo'lmasa, xat yo'qolgan deb hisoblang va qayta yuboring.",
+    "**30 kun ichida tuzatish yoki reja** - xabarlarni o'qish, boshqa hisob nomidan chiqish yoki foydalanuvchini uning faoliyati bilan bog'lashga imkon beradigan har qanday narsa uchun.",
+    "**Xohlasangiz, ismingiz tilga olinadi, xohlamasangiz, sukut saqlaymiz.** So'ramasdan ismingizni aytmaymiz.",
+    "**Hech qanday huquqiy tahdid yo'q** - boshqa odamlarning hisoblari yoki ma'lumotlarini nishonga olmaydigan vijdonan tadqiqot uchun."
+  ],
+  "rewardsHeading": "Mukofotlar",
+  "rewards": "Tasdiqlangan topilmalar [bug bounty dasturi](/bug-bounty) orqali to'lanadi - jiddiy zaiflik uchun {critical} gacha, to'lov tuzatilganda emas, tasdiqlanganda amalga oshiriladi. Darajalar, qamrov va hisobga olinmaydigan ma'lum muammolar o'sha yerda e'lon qilingan, chunki o'zining hujjatlashtirilgan kamchiliklari uchun jimgina to'laydigan dastur - dastur emas.",
+  "versionsHeading": "Qo'llab-quvvatlanadigan versiyalar",
+  "versions": "Xavfsizlik tuzatishlari App Store'dagi keyingi relizda chiqadi. PrivaMesh **iOS 18 yoki yangiroq** versiyada ishlaydi va bitta asosiy versiya chiqargan, shuning uchun backport qilinadigan eski tarmoq yo'q. Bu o'zgarganda, qo'llab-quvvatlash muddati shama qilinmasdan, shu yerda aniq ko'rsatiladi.",
+  "fixedHeading": "Nimalar tuzatildi",
+  "fixed": "2026-yil avgustidan beri o'n ikkita tashqi xabar kelib tushdi va ikkita ichki audit o'tkazildi. Tuzatishlar tayyor, lekin ularning hech biri hali telefoningizda emas: App Store'dagi 1.1 versiyasi ular yozilishidan oldin, 13-avgustda yig'ilgan va ular foydalanuvchilarga keyingi reliz bilan yetib boradi. Ungacha chiqarilgan ilovada ular tuzatadigan muammolar bor deb hisoblang. Tuzatish o'rniga hujjatlashtirilganlar [ma'lum cheklovlar](/limitations) sahifasida. Kim nima haqida xabar bergani e'lon qilinmaydi.",
+  "scopeHeading": "Qamrov",
+  "scope": "iOS mijozi, zanjirdagi protokol va [arxitektura sahifasida](/architecture) tasvirlangan to'lov xizmati - barchasi qamrovga kiradi. Uchinchi tomon infratuzilmasini - Solana'ning o'zi, RPC provayderlari, Apple'ni - biz tuzata olmaymiz, ammo bu haqda bilishni istaymiz. Dizayn nimani himoya qilishi chegaralari uchun [tahdid modeli](/threat-model) va [ma'lum cheklovlar](/limitations)ga qarang.",
+  "faq": [
+    {
+      "q": "Zaiflik haqida qanday xabar beraman?",
+      "a": "Mavzu qatoriga \"security\" yozib, {email} manziliga xat yuboring. Ilova versiyasi, qurilmangiz va iOS versiyasini hamda takrorlash uchun yetarli tafsilotni kiriting. Biz 2 ish kuni ichida qabul qilinganini tasdiqlashga harakat qilamiz."
+    },
+    {
+      "q": "Bug bounty bormi?",
+      "a": "Ha. Jiddiy topilma uchun {critical} gacha, yuqori uchun {high}, o'rta uchun {medium}, past uchun {low}; jiddiylik topilma tahdid modelimizda nimani buzishiga qarab belgilanadi. Barcha darajalar, qamrov va istisnolar bug bounty sahifasida."
+    },
+    {
+      "q": "Qaysi versiyalar xavfsizlik tuzatishlarini oladi?",
+      "a": "Tuzatishlar App Store'dagi keyingi relizda chiqadi. PrivaMesh hozircha bitta asosiy versiya chiqargan, shuning uchun backport qilinadigan eski tarmoq hali yo'q."
+    }
+  ],
+  "related": [
+    {
+      "href": "/threat-model",
+      "label": "Tahdid modeli",
+      "blurb": "Raqib-raqib: nima ko'rinadi, nima to'xtatiladi va nima hali ham mumkin."
+    },
+    {
+      "href": "/limitations",
+      "label": "Ma'lum cheklovlar",
+      "blurb": "PrivaMesh sizni nimadan himoya qilmaydi."
+    },
+    {
+      "href": "/architecture",
+      "label": "Arxitektura",
+      "blurb": "Har bir komponent va u nimani ko'ra olishi."
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "meta": {
+    "title": "Sicurezza e divulgazione",
+    "description": "Come segnalare una vulnerabilità in PrivaMesh, il bug bounty a pagamento, cosa ci impegniamo a correggere ed entro quando, e quali versioni dell'app ricevono aggiornamenti di sicurezza."
+  },
+  "eyebrow": "Sicurezza",
+  "title": "Sicurezza e divulgazione",
+  "lead": "Come segnalare una vulnerabilità, quanto vale trovarne una e a cosa ci impegniamo dopo.",
+  "ldDescription": "Divulgazione delle vulnerabilità, bug bounty e impegni di risposta.",
+  "open": {
+    "heading": "Open source, e trovare una falla viene pagato",
+    "body": [
+      "PrivaMesh si basa su primitive ben studiate - X3DH, il Double Ratchet, AES-256-GCM e ML-KEM-768 su iOS 26. Il codice che le implementa è pubblico per tutti e tre i client, quindi chiunque può leggere esattamente cosa fa invece di fidarsi di una descrizione.",
+      "Una falla trovata al suo interno vale fino a {critical} tramite il [bug bounty](/bug-bounty)."
+    ]
+  },
+  "report": {
+    "heading": "Segnalare una vulnerabilità",
+    "lead": "Scrivi a [{email}](mailto:{email}?subject=security) con **security** nell'oggetto.",
+    "steps": [
+      "Indica la versione dell'app, il modello del dispositivo e la versione di iOS.",
+      "Fornisci dettagli sufficienti per riprodurre il problema.",
+      "Non includere mai la tua frase di recupero. Non te la chiederemo mai, per nessun motivo e in nessun contesto."
+    ],
+    "cta": "Segnala una vulnerabilità",
+    "source": "Codice sorgente"
+  },
+  "commitHeading": "A cosa ci impegniamo",
+  "commits": [
+    "**Conferma di ricezione entro 2 giorni lavorativi.** Se non ricevi risposta, considera la mail persa e inviala di nuovo.",
+    "**Una correzione o un piano entro 30 giorni** per qualsiasi cosa permetta di leggere messaggi, impersonare un account o collegare un utente alla sua attività.",
+    "**Riconoscimento se lo vuoi, silenzio se no.** Non faremo il tuo nome senza chiedere.",
+    "**Nessuna minaccia legale** per ricerche in buona fede che non prendano di mira account o dati altrui."
+  ],
+  "rewardsHeading": "Ricompense",
+  "rewards": "Le scoperte confermate vengono pagate tramite il [programma di bug bounty](/bug-bounty) - fino a {critical} per una vulnerabilità critica, e il pagamento avviene alla conferma, non alla correzione. Livelli, ambito e problemi noti che non danno diritto a premio sono tutti pubblicati lì, perché un programma che paga in silenzio per le proprie lacune documentate non è un programma.",
+  "versionsHeading": "Versioni supportate",
+  "versions": "Le correzioni di sicurezza arrivano con la prossima versione sull'App Store. PrivaMesh funziona su **iOS 18 o successivo** e ha rilasciato una sola versione principale, quindi non c'è un ramo più vecchio su cui riportare le correzioni. Quando questo cambierà, il periodo di supporto sarà dichiarato qui invece che sottinteso.",
+  "fixedHeading": "Cosa è stato corretto",
+  "fixed": "Da agosto 2026 ci sono state dodici segnalazioni esterne e due audit interni. Le correzioni sono pronte, ma nessuna è ancora sul tuo telefono: la 1.1, la versione sull'App Store, è stata compilata il 13 agosto, prima che fossero scritte, e arriveranno agli utenti con la prossima versione. Fino ad allora, considera l'app pubblicata come affetta dai problemi che correggono. Ciò che è stato documentato invece che corretto si trova nei [limiti noti](/limitations). Chi ha segnalato cosa non viene pubblicato.",
+  "scopeHeading": "Ambito",
+  "scope": "Il client iOS, il protocollo on-chain e il servizio commissioni descritti nella [pagina dell'architettura](/architecture) rientrano tutti nell'ambito. L'infrastruttura di terzi - Solana stessa, i fornitori RPC, Apple - non spetta a noi correggerla, ma vogliamo saperlo. Per i confini di ciò che il design protegge, vedi [il modello di minaccia](/threat-model) e [i limiti noti](/limitations).",
+  "faq": [
+    {
+      "q": "Come segnalo una vulnerabilità?",
+      "a": "Scrivi a {email} con «security» nell'oggetto. Indica versione dell'app, dispositivo e versione di iOS, e dettagli sufficienti per riprodurla. Cerchiamo di confermare la ricezione entro 2 giorni lavorativi."
+    },
+    {
+      "q": "C'è un bug bounty?",
+      "a": "Sì. Fino a {critical} per una scoperta critica, {high} alta, {medium} media, {low} bassa, con la gravità definita da ciò che la scoperta compromette nel nostro modello di minaccia. Tutti i livelli, l'ambito e le esclusioni sono nella pagina del bug bounty."
+    },
+    {
+      "q": "Quali versioni ricevono correzioni di sicurezza?",
+      "a": "Le correzioni arrivano con la prossima versione sull'App Store. PrivaMesh ha rilasciato una sola versione principale, quindi non esiste ancora un ramo più vecchio su cui riportarle."
+    }
+  ],
+  "related": [
+    {
+      "href": "/threat-model",
+      "label": "Modello di minaccia",
+      "blurb": "Avversario per avversario: cosa si vede, cosa si ferma e cosa resta possibile."
+    },
+    {
+      "href": "/limitations",
+      "label": "Limiti noti",
+      "blurb": "Da cosa PrivaMesh non ti protegge."
+    },
+    {
+      "href": "/architecture",
+      "label": "Architettura",
+      "blurb": "Ogni componente e cosa può osservare."
+    }
+  ]
+}
