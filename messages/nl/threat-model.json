@@ -1,0 +1,136 @@
+{
+  "meta": {
+    "title": "Dreigingsmodel: wie ziet wat",
+    "description": "Tegenstander voor tegenstander: wat de beheerder, de RPC-provider, een chain-waarnemer, een gestolen apparaat en een kwaadwillend contact elk kunnen zien, en wat nog mogelijk is."
+  },
+  "eyebrow": "Dreigingsmodel",
+  "title": "Wie wat kan zien, en wat hem tegenhoudt",
+  "lead": "Een dreigingsmodel is alleen nuttig als het de tegenstanders waartegen het verliest even duidelijk noemt als die het verslaat. Elke rij hieronder laat zien wat die tegenstander ziet, wat hij niet kan bereiken, welke verdediging er is en wat toch mogelijk blijft.",
+  "ldDescription": "Dreigingsmodel van PrivaMesh, tegenstander voor tegenstander, met restrisico.",
+  "summary": "PrivaMesh is ontworpen tegen een beheerder die je gegevens wil, een chain-waarnemer die alles leest wat openbaar is en een bedrieger die het toevoegen van een contact probeert te onderscheppen. Het is het zwakst tegen een wereldwijde timinganalist en biedt helemaal niets tegen een gecompromitteerd apparaat.",
+  "tableCaption": "Dreigingsmodel van PrivaMesh per tegenstander, met verdediging en restrisico",
+  "cols": {
+    "adversary": "Tegenstander",
+    "sees": "Ziet",
+    "cannot": "Kan niet",
+    "defence": "Verdediging",
+    "residual": "Nog mogelijk"
+  },
+  "adversaries": [
+    {
+      "name": "PrivaMesh, de beheerder",
+      "sees": "Dat een account voor een verzending heeft betaald, en wanneer",
+      "cannot": "Berichten lezen, ontvangers achterhalen, je contacten oplijsten of de geschiedenis reconstrueren",
+      "defence": "Geen accountdatabase of berichtenopslag; blinde tokens ontkoppelen betaling en verzending",
+      "residual": "We kunnen worden gedwongen te tonen dat een account op een bepaald moment iets heeft verzonden"
+    },
+    {
+      "name": "De RPC-provider",
+      "sees": "Je IP-adres, tijdstip van verzoeken, de transacties die je indient",
+      "cannot": "Iets ontsleutelen, of zien welk eenmalig adres van wie is",
+      "defence": "Het eindpunt is vervangbaar en zelf te hosten",
+      "residual": "Een provider die logt, bouwt op netwerkniveau een beeld op van wanneer je actief bent"
+    },
+    {
+      "name": "Een chain-waarnemer",
+      "sees": "Opgevulde versleutelde tekst, eenmalige adressen, exacte transactietijden",
+      "cannot": "Inhoud lezen, of twee berichten uit hetzelfde gesprek koppelen",
+      "defence": "Stealth-adressen, vaste opvulniveaus, optioneel dekverkeer",
+      "residual": "Zonder dekverkeer is je activiteitspatroon over tijd volledig zichtbaar"
+    },
+    {
+      "name": "Een wereldwijde timinganalist",
+      "sees": "Gecorreleerde activiteit over het hele netwerk tegelijk",
+      "cannot": "Ontsleutelen, of adressen cryptografisch koppelen",
+      "defence": "Dekverkeer met willekeurige tussenpozen van 3-10 minuten, indien ingeschakeld",
+      "residual": "Tegen deze tegenstander verdedigen we het slechtst; een waarnemer van het hele netwerk met onbeperkte opslag valt buiten wat enig ontwerp per bericht kan oplossen"
+    },
+    {
+      "name": "Iemand met je ontgrendelde telefoon",
+      "sees": "Alles: leesbare tekst, contacten, sleutels",
+      "cannot": "Berichten herstellen die de ratchet al heeft gewist",
+      "defence": "Opslag in de sleutelhanger achter Face ID of Touch ID; forward secrecy beperkt het verleden; een dwangcode wist het account in plaats van het te openen",
+      "residual": "Compromittering van het apparaat is totaal voor alles wat er nu op staat, en een dwangcode helpt alleen op het moment dat je wordt gevraagd te ontgrendelen - niet als de opslag al eerder is gekopieerd"
+    },
+    {
+      "name": "Iemand met je herstelzin",
+      "sees": "Je identiteit, en kan zich voortaan als jou voordoen",
+      "cannot": "Het ratchet-deel van eerdere gesprekken lezen - die sleutels waren willekeurig en bleven op het apparaat",
+      "defence": "De zin verlaat je apparaat nooit en wordt nooit verzonden",
+      "residual": "Identiteitssleutel, ondertekende prekey en PQ-prekey worden allemaal uit de zin afgeleid en er worden geen eenmalige prekeys gepubliceerd, dus het openingsbericht van elk gesprek kan worden herberekend uit de zin plus de permanente envelop op de chain. Intrekken kan ook niet"
+    },
+    {
+      "name": "Een kwaadwillend contact",
+      "sees": "Alles wat je stuurt, en kan het screenshotten of doorsturen",
+      "cannot": "Andere mensen met wie je praat bereiken of andere gesprekken lezen",
+      "defence": "Blokkeren en aparte sleutels per gesprek",
+      "residual": "Geen cryptografie voorkomt dat je gesprekspartner onbetrouwbaar is"
+    },
+    {
+      "name": "Een bedrieger bij het toevoegen van een contact",
+      "sees": "Niets, als de verificatie slaagt",
+      "cannot": "Zijn sleutel in de plaats zetten van een contact wiens bundel on-chain is ondertekend",
+      "defence": "Met de wallet ondertekende prekey-bundels, on-chain gepubliceerd, zodat geen register de sleutel van een account kan vervangen",
+      "residual": "Er is geen veiligheidsnummer of vingerafdruk om te vergelijken, dus bevestigen dat het account van de bedoelde persoon is, gebeurt volledig buiten de app en zonder hulp"
+    },
+    {
+      "name": "Apple",
+      "sees": "Dat je Apple ID een abonnement heeft gekocht",
+      "cannot": "Berichten of contacten zien, of de aankoop aan je verzendactiviteit koppelen",
+      "defence": "Blinde tokens zitten tussen de aankoop en elke verzending",
+      "residual": "Apple weet dat je klant bent van PrivaMesh; op iOS is dat onvermijdelijk"
+    },
+    {
+      "name": "Een censor op netwerkniveau",
+      "sees": "Dat je een Solana-RPC-eindpunt hebt bereikt",
+      "cannot": "Afzonderlijke berichten lezen of selectief laten vallen",
+      "defence": "RPC-eindpunten zijn vervangbaar, ook door je eigen",
+      "residual": "Wie Solana of elke RPC blokkeert, blokkeert de bezorging volledig"
+    }
+  ],
+  "assumeHeading": "Wat dit model aanneemt",
+  "assume": [
+    "Dat de cryptografische primitieven standhouden: X3DH, de Double Ratchet, AES-256-GCM en, op iOS 26, ML-KEM-768. Dat je apparaat niet al gecompromitteerd is. Dat je controleert of het contact dat je toevoegt de bedoelde persoon is. Faalt een daarvan, dan redt de rest van het ontwerp je niet.",
+    "Het neemt ook aan dat onze implementatie van die primitieven correct is - daarom is de broncode openbaar en [wordt een gevonden fout betaald](/bug-bounty). De volledige lijst van wat niet gedekt is, staat bij [bekende beperkingen](/limitations)."
+  ],
+  "faq": [
+    {
+      "q": "Waartegen verdedigt PrivaMesh het slechtst?",
+      "a": "Tegen een wereldwijde tegenstander die het hele netwerk continu in de gaten houdt en alles bewaart. Dekverkeer verhoogt de kosten van timingcorrelatie, maar verslaat geen waarnemer op die schaal, en de chain bewaart een permanent archief om mee te werken."
+    },
+    {
+      "q": "Als mijn apparaat in beslag wordt genomen, wat ligt er dan bloot?",
+      "a": "Alles wat er nu op staat: leesbare tekst, contacten en sleutels, tenzij het vergrendeld is en de aanvaller niet langs Face ID komt. Forward secrecy beperkt de schade tot wat de ratchet nog niet heeft gewist - oude berichten zijn al onherstelbaar. Word je gedwongen het zelf te ontgrendelen, dan wist een dwangcode het account in plaats van het te openen."
+    },
+    {
+      "q": "Kan PrivaMesh worden gedwongen mijn gegevens af te geven?",
+      "a": "Het kan worden gevraagd. Wat er af te geven valt, is dat een account op een bepaald moment voor een verzending heeft betaald. Er is geen berichtinhoud, geen ontvanger, geen contactenlijst en geen accountgegeven, omdat niets daarvan wordt opgeslagen."
+    },
+    {
+      "q": "Helpt een VPN?",
+      "a": "Ja, tegen de RPC-provider en een waarnemer op netwerkniveau, de twee tegenstanders die je IP zien. Het verandert niets aan wat op de chain wordt geschreven, en dat is al onleesbaar."
+    }
+  ],
+  "related": [
+    {
+      "href": "/architecture",
+      "label": "Architectuur",
+      "blurb": "Elk onderdeel, de beheerder ervan en wat het kan waarnemen."
+    },
+    {
+      "href": "/limitations",
+      "label": "Bekende beperkingen",
+      "blurb": "Waartegen PrivaMesh je niet beschermt, in gewone taal."
+    },
+    {
+      "href": "/features/metadata-protection",
+      "label": "Bescherming van metadata",
+      "blurb": "Stealth-adressen, opvulniveaus en optioneel dekverkeer."
+    },
+    {
+      "href": "/features/duress-code",
+      "label": "Dwangcode",
+      "blurb": "Een tweede code die het account leegmaakt in plaats van het te openen."
+    }
+  ]
+}

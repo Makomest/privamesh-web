@@ -1,0 +1,136 @@
+{
+  "meta": {
+    "title": "Uhkamalli: kuka näkee mitä",
+    "description": "Vastustaja kerrallaan: mitä ylläpitäjä, RPC-palveluntarjoaja, ketjun tarkkailija, varastettu laite ja vihamielinen yhteyshenkilö kukin näkevät, ja mikä on yhä mahdollista."
+  },
+  "eyebrow": "Uhkamalli",
+  "title": "Kuka voi nähdä mitä, ja mikä hänet pysäyttää",
+  "lead": "Uhkamalli on hyödyllinen vain, jos se nimeää vastustajat, joille se häviää, yhtä selvästi kuin ne, jotka se voittaa. Jokainen alla oleva rivi kertoo, mitä vastustaja näkee, mihin se ei yllä, mikä suoja on käytössä ja mikä on silti mahdollista.",
+  "ldDescription": "PrivaMeshin uhkamalli vastustaja kerrallaan, jäännösriskin kanssa.",
+  "summary": "PrivaMesh on suunniteltu ylläpitäjää vastaan, joka haluaa tietosi, ketjun tarkkailijaa vastaan, joka lukee kaiken julkisen, ja huijaria vastaan, joka yrittää kaapata yhteyshenkilön lisäämisen. Se on heikoimmillaan globaalia ajoitusanalyytikkoa vastaan eikä tarjoa mitään vaarantunutta laitetta vastaan.",
+  "tableCaption": "PrivaMeshin uhkamalli vastustajittain, suojausten ja jäännösriskin kanssa",
+  "cols": {
+    "adversary": "Vastustaja",
+    "sees": "Näkee",
+    "cannot": "Ei voi",
+    "defence": "Suoja",
+    "residual": "Yhä mahdollista"
+  },
+  "adversaries": [
+    {
+      "name": "PrivaMesh, ylläpitäjä",
+      "sees": "Että jokin tili maksoi lähetyksen, ja milloin",
+      "cannot": "Lukea viestejä, selvittää vastaanottajia, listata yhteystietojasi tai koota historiaa",
+      "defence": "Ei tilitietokantaa eikä viestivarastoa; sokeat tokenit erottavat maksun lähetyksestä",
+      "residual": "Meidät voitaisiin velvoittaa näyttämään, että jokin tili lähetti jotain tiettynä hetkenä"
+    },
+    {
+      "name": "RPC-palveluntarjoaja",
+      "sees": "IP-osoitteesi, pyyntöjen ajankohdat, lähettämäsi transaktiot",
+      "cannot": "Purkaa mitään tai tietää, kenelle kertakäyttöinen osoite kuuluu",
+      "defence": "Päätepiste on vaihdettavissa ja ylläpidettävissä itse",
+      "residual": "Lokeja keräävä palveluntarjoaja muodostaa verkkotason kuvan siitä, milloin olet aktiivinen"
+    },
+    {
+      "name": "Ketjun tarkkailija",
+      "sees": "Täytetty salateksti, kertakäyttöiset osoitteet, transaktioiden tarkat ajat",
+      "cannot": "Lukea sisältöä tai yhdistää saman keskustelun kahta viestiä",
+      "defence": "Piilo-osoitteet, kiinteät täyttötasot, valinnainen peiteliikenne",
+      "residual": "Ilman peiteliikennettä aktiivisuutesi kuvio ajan mittaan näkyy kokonaan"
+    },
+    {
+      "name": "Globaali ajoitusanalyytikko",
+      "sees": "Korreloitu aktiivisuus koko verkossa kerralla",
+      "cannot": "Purkaa salausta tai yhdistää osoitteita kryptografisesti",
+      "defence": "Peiteliikenne satunnaisin 3-10 minuutin välein, jos se on käytössä",
+      "residual": "Tätä vastustajaa vastaan puolustaudumme heikoiten; koko verkkoa tarkkaileva, kaiken rajattomasti säilyttävä tarkkailija on sen ulkopuolella, minkä mikään viestikohtainen rakenne voi korjata"
+    },
+    {
+      "name": "Joku, jolla on avattu puhelimesi",
+      "sees": "Kaikki: selväkieliset viestit, yhteystiedot, avaimet",
+      "cannot": "Palauttaa viestejä, jotka ratchet on jo poistanut",
+      "defence": "Tallennus avainnippuun Face ID:n tai Touch ID:n taakse; eteenpäin suuntautuva salaisuus rajaa menneisyyttä; pakkokoodi poistaa tilin avaamisen sijaan",
+      "residual": "Laitteen vaarantuminen on täydellinen kaikelle, mitä siinä juuri nyt on, ja pakkokoodi auttaa vain sillä hetkellä, kun sinua pyydetään avaamaan lukitus - ei, jos tallennustila on kopioitu ensin"
+    },
+    {
+      "name": "Joku, jolla on palautuslauseesi",
+      "sees": "Identiteettisi, ja voi tästä eteenpäin esiintyä sinuna",
+      "cannot": "Lukea aiempien keskustelujen ratchet-osaa - ne avaimet olivat satunnaisia ja vain laitteella",
+      "defence": "Lause ei koskaan poistu laitteeltasi eikä sitä koskaan lähetetä",
+      "residual": "Identiteettiavain, allekirjoitettu prekey ja PQ-prekey johdetaan kaikki lauseesta, eikä kertakäyttöisiä prekeyjä julkaista, joten jokaisen keskustelun avausviesti voidaan laskea uudelleen lauseesta ja ketjussa pysyvästi olevasta kirjekuoresta. Peruutusta ei myöskään ole"
+    },
+    {
+      "name": "Vihamielinen yhteyshenkilö",
+      "sees": "Kaiken, mitä lähetät hänelle, ja voi ottaa siitä kuvakaappauksen tai välittää sen",
+      "cannot": "Tavoittaa muita, joiden kanssa puhut, tai lukea muita keskusteluja",
+      "defence": "Estäminen ja keskustelukohtaiset avaimet",
+      "residual": "Mikään kryptografia ei estä keskustelukumppaniasi olemasta epäluotettava"
+    },
+    {
+      "name": "Huijari yhteyshenkilön lisäämisen aikana",
+      "sees": "Ei mitään, jos vahvistus onnistuu",
+      "cannot": "Vaihtaa omaa avaintaan sellaisen yhteyshenkilön tilalle, jonka paketti on allekirjoitettu ketjussa",
+      "defence": "Lompakolla allekirjoitetut prekey-paketit julkaistaan ketjussa, joten mikään rekisteri ei voi vaihtaa tilin avainta",
+      "residual": "Vertailtavaa turvanumeroa tai sormenjälkeä ei ole, joten sen vahvistaminen, että tili kuuluu oikealle henkilölle, tapahtuu kokonaan sovelluksen ulkopuolella ja ilman apua"
+    },
+    {
+      "name": "Apple",
+      "sees": "Että Apple ID:si osti tilauksen",
+      "cannot": "Nähdä viestejä tai yhteystietoja tai yhdistää ostosta lähetystoimintaasi",
+      "defence": "Sokeat tokenit ovat ostoksen ja jokaisen lähetyksen välissä",
+      "residual": "Apple tietää, että olet PrivaMeshin asiakas, mikä on iOS:ssä väistämätöntä"
+    },
+    {
+      "name": "Verkkotason sensori",
+      "sees": "Että otit yhteyden Solanan RPC-päätepisteeseen",
+      "cannot": "Lukea tai valikoiden pudottaa yksittäisiä viestejä",
+      "defence": "RPC-päätepisteet ovat vaihdettavissa, myös omiin",
+      "residual": "Solanan tai kaikkien RPC:iden estäminen estää toimituksen kokonaan"
+    }
+  ],
+  "assumeHeading": "Mitä tämä malli olettaa",
+  "assume": [
+    "Että kryptografiset primitiivit kestävät: X3DH, Double Ratchet, AES-256-GCM ja iOS 26:ssa ML-KEM-768. Että laitettasi ei ole jo vaarannettu. Että tarkistat, onko lisäämäsi yhteyshenkilö se, jonka tarkoitit. Jos jokin näistä pettää, muu rakenne ei pelasta sinua.",
+    "Se olettaa myös, että toteutuksemme näistä primitiiveistä on oikea - siksi lähdekoodi on julkinen ja [siitä löydetystä virheestä maksetaan](/bug-bounty). Täydellinen luettelo siitä, mitä ei kateta, on sivulla [tunnetut rajoitukset](/limitations)."
+  ],
+  "faq": [
+    {
+      "q": "Mitä vastaan PrivaMesh puolustautuu heikoiten?",
+      "a": "Globaalia vastustajaa vastaan, joka tarkkailee koko verkkoa jatkuvasti ja säilyttää kaiken. Peiteliikenne nostaa ajoituskorrelaation hintaa, mutta ei voita sen mittakaavan tarkkailijaa, ja ketju säilyttää hänelle pysyvän tallenteen."
+    },
+    {
+      "q": "Jos laitteeni takavarikoidaan, mikä paljastuu?",
+      "a": "Kaikki, mitä siinä juuri nyt on: selväkieliset viestit, yhteystiedot ja avaimet, ellei se ole lukittu eikä hyökkääjä pääse Face ID:n ohi. Eteenpäin suuntautuva salaisuus rajaa vahingon siihen, mitä ratchet ei ole vielä poistanut - vanhoja viestejä ei voi enää palauttaa. Jos sinut pakotetaan avaamaan lukitus itse, pakkokoodi poistaa tilin avaamisen sijaan."
+    },
+    {
+      "q": "Voidaanko PrivaMesh pakottaa luovuttamaan tietoni?",
+      "a": "Sitä voidaan pyytää. Luovutettavissa on vain tieto siitä, että jokin tili maksoi lähetyksen tiettynä hetkenä. Viestien sisältöä, vastaanottajaa, yhteystietoluetteloa tai tilitietuetta ei ole, koska mitään niistä ei tallenneta."
+    },
+    {
+      "q": "Auttaako VPN?",
+      "a": "Kyllä, RPC-palveluntarjoajaa ja verkkotason tarkkailijaa vastaan - ne ovat ne kaksi vastustajaa, jotka näkevät IP-osoitteesi. Ketjuun kirjoitettuun se ei vaikuta mitenkään, ja se on jo valmiiksi lukukelvotonta."
+    }
+  ],
+  "related": [
+    {
+      "href": "/architecture",
+      "label": "Arkkitehtuuri",
+      "blurb": "Jokainen osa, sen ylläpitäjä ja mitä se voi havaita."
+    },
+    {
+      "href": "/limitations",
+      "label": "Tunnetut rajoitukset",
+      "blurb": "Miltä PrivaMesh ei suojaa sinua, selkokielellä."
+    },
+    {
+      "href": "/features/metadata-protection",
+      "label": "Metatietojen suojaus",
+      "blurb": "Piilo-osoitteet, täyttötasot ja valinnainen peiteliikenne."
+    },
+    {
+      "href": "/features/duress-code",
+      "label": "Pakkokoodi",
+      "blurb": "Toinen koodi, joka tyhjentää tilin avaamisen sijaan."
+    }
+  ]
+}

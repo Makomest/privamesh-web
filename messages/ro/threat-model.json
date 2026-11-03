@@ -1,0 +1,136 @@
+{
+  "meta": {
+    "title": "Model de amenințări: cine ce vede",
+    "description": "Adversar cu adversar: ce pot vedea operatorul, furnizorul RPC, un observator al lanțului, un dispozitiv furat și un contact rău-intenționat, și ce rămâne posibil."
+  },
+  "eyebrow": "Model de amenințări",
+  "title": "Cine ce poate vedea și ce îl oprește",
+  "lead": "Un model de amenințări este util doar dacă îi numește pe adversarii în fața cărora pierde la fel de clar ca pe cei pe care îi învinge. Fiecare rând de mai jos arată ce vede acel adversar, ce nu poate atinge, ce apărare există și ce rămâne totuși posibil.",
+  "ldDescription": "Modelul de amenințări PrivaMesh, adversar cu adversar, cu riscul rezidual.",
+  "summary": "PrivaMesh este conceput împotriva unui operator care îți vrea datele, a unui observator al lanțului care citește tot ce e public și a unui impostor care încearcă să intercepteze adăugarea unui contact. Este cel mai slab în fața unui analist global al momentelor și nu oferă nimic împotriva unui dispozitiv compromis.",
+  "tableCaption": "Modelul de amenințări PrivaMesh pe adversari, cu apărări și risc rezidual",
+  "cols": {
+    "adversary": "Adversar",
+    "sees": "Vede",
+    "cannot": "Nu poate",
+    "defence": "Apărare",
+    "residual": "Încă posibil"
+  },
+  "adversaries": [
+    {
+      "name": "PrivaMesh, operatorul",
+      "sees": "Că un cont a plătit o trimitere, și când",
+      "cannot": "Să citească mesaje, să afle destinatarii, să-ți listeze contactele sau să reconstruiască istoricul",
+      "defence": "Fără bază de date de conturi sau depozit de mesaje; tokenurile oarbe despart plata de trimitere",
+      "residual": "Am putea fi obligați să arătăm că un cont a trimis ceva la un anumit moment"
+    },
+    {
+      "name": "Furnizorul RPC",
+      "sees": "Adresa ta IP, momentul cererilor, tranzacțiile trimise",
+      "cannot": "Să decripteze ceva sau să știe a cui e o adresă de unică folosință",
+      "defence": "Endpointul este înlocuibil și poate fi găzduit de tine",
+      "residual": "Un furnizor care înregistrează își face, la nivel de rețea, o imagine a momentelor în care ești activ"
+    },
+    {
+      "name": "Un observator al lanțului",
+      "sees": "Text criptat completat, adrese de unică folosință, momentele exacte ale tranzacțiilor",
+      "cannot": "Să citească conținutul sau să lege două mesaje din aceeași conversație",
+      "defence": "Adrese ascunse, niveluri fixe de completare, trafic de acoperire opțional",
+      "residual": "Cu traficul de acoperire oprit, tiparul tău de activitate în timp este complet vizibil"
+    },
+    {
+      "name": "Un analist global al momentelor",
+      "sees": "Activitatea corelată din întreaga rețea deodată",
+      "cannot": "Să decripteze sau să lege adrese criptografic",
+      "defence": "Trafic de acoperire la intervale aleatoare de 3-10 minute, când este activat",
+      "residual": "Acesta este adversarul împotriva căruia ne apărăm cel mai slab; un observator al întregii rețele cu păstrare nelimitată depășește ce poate rezolva orice design la nivel de mesaj"
+    },
+    {
+      "name": "Cineva care îți ține telefonul deblocat",
+      "sees": "Tot: text clar, contacte, chei",
+      "cannot": "Să recupereze mesaje deja șterse de ratchet",
+      "defence": "Stocare în Breloc în spatele Face ID sau Touch ID; secretul înainte limitează trecutul; un cod de constrângere șterge contul în loc să-l deschidă",
+      "residual": "Compromiterea dispozitivului e totală pentru tot ce se află pe el acum, iar un cod de constrângere ajută doar în momentul în care ți se cere să deblochezi - nu dacă stocarea a fost copiată înainte"
+    },
+    {
+      "name": "Cineva care are fraza ta de recuperare",
+      "sees": "Identitatea ta, și se poate da drept tine de acum înainte",
+      "cannot": "Să citească partea ratchet a conversațiilor trecute - acele chei erau aleatoare și locale dispozitivului",
+      "defence": "Fraza nu părăsește niciodată dispozitivul și nu este transmisă niciodată",
+      "residual": "Cheia de identitate, prekey-ul semnat și prekey-ul PQ derivă toate din frază și nu se publică prekey-uri de unică folosință, deci mesajul de deschidere al fiecărei conversații poate fi recalculat din frază plus plicul permanent de pe lanț. Nu există nici revocare"
+    },
+    {
+      "name": "Un contact rău-intenționat",
+      "sees": "Tot ce îi trimiți, și poate face captură de ecran sau redirecționa",
+      "cannot": "Să ajungă la alte persoane cu care vorbești sau să citească alte conversații",
+      "defence": "Blocare și chei separate pentru fiecare conversație",
+      "residual": "Nicio criptografie nu împiedică persoana cu care vorbești să nu fie de încredere"
+    },
+    {
+      "name": "Un impostor la adăugarea unui contact",
+      "sees": "Nimic, dacă verificarea reușește",
+      "cannot": "Să-și substituie cheia celei a unui contact al cărui pachet e semnat pe lanț",
+      "defence": "Pachete de prekey semnate cu portofelul și publicate pe lanț, astfel că niciun registru nu poate substitui cheia unui cont",
+      "residual": "Nu există număr de siguranță sau amprentă de comparat, deci confirmarea că un cont aparține persoanei dorite se face complet în afara aplicației și fără ajutor"
+    },
+    {
+      "name": "Apple",
+      "sees": "Că ID-ul tău Apple a cumpărat un abonament",
+      "cannot": "Să vadă mesaje, contacte sau să lege achiziția de activitatea ta de trimitere",
+      "defence": "Tokenurile oarbe stau între achiziție și fiecare trimitere",
+      "residual": "Apple știe că ești client PrivaMesh, lucru inevitabil pe iOS"
+    },
+    {
+      "name": "Un cenzor la nivel de rețea",
+      "sees": "Că ai accesat un endpoint RPC Solana",
+      "cannot": "Să citească sau să arunce selectiv mesaje individuale",
+      "defence": "Endpointurile RPC sunt înlocuibile, inclusiv cu unele rulate de tine",
+      "residual": "Blocarea Solana sau a tuturor RPC-urilor blochează complet livrarea"
+    }
+  ],
+  "assumeHeading": "Ce presupune acest model",
+  "assume": [
+    "Că primitivele criptografice rezistă: X3DH, Double Ratchet, AES-256-GCM și, pe iOS 26, ML-KEM-768. Că dispozitivul tău nu e deja compromis. Că verifici că persoana pe care o adaugi este cea pe care o voiai. Dacă oricare dintre acestea eșuează, restul designului nu te salvează.",
+    "Mai presupune că implementarea noastră a acestor primitive este corectă - de aceea codul sursă este public și [o vulnerabilitate găsită este plătită](/bug-bounty). Lista completă a ce nu este acoperit se află la [limitări cunoscute](/limitations)."
+  ],
+  "faq": [
+    {
+      "q": "Împotriva a ce se apără PrivaMesh cel mai slab?",
+      "a": "Împotriva unui adversar global care urmărește întreaga rețea continuu și păstrează totul. Traficul de acoperire crește costul corelării momentelor, dar nu învinge un observator la acea scară, iar lanțul păstrează pentru el o înregistrare permanentă."
+    },
+    {
+      "q": "Dacă îmi este confiscat dispozitivul, ce este expus?",
+      "a": "Tot ce se află pe el: text clar, contacte și chei, cu excepția cazului în care e blocat și atacatorul nu trece de Face ID. Secretul înainte limitează paguba la ce ratchet-ul nu a șters încă - mesajele vechi sunt deja irecuperabile. Dacă ești forțat să-l deblochezi tu, un cod de constrângere șterge contul în loc să-l deschidă."
+    },
+    {
+      "q": "Poate fi PrivaMesh obligat să predea datele mele?",
+      "a": "I se poate cere. Ce există de predat este că un cont a plătit o trimitere la un anumit moment. Nu există conținut de mesaj, destinatar, listă de contacte sau înregistrare de cont, pentru că nimic din toate acestea nu este stocat."
+    },
+    {
+      "q": "Ajută un VPN?",
+      "a": "Da, împotriva furnizorului RPC și a unui observator la nivel de rețea, cei doi adversari care îți văd IP-ul. Nu schimbă nimic din ce se scrie pe lanț, care oricum este ilizibil."
+    }
+  ],
+  "related": [
+    {
+      "href": "/architecture",
+      "label": "Arhitectură",
+      "blurb": "Fiecare componentă, operatorul ei și ce poate observa."
+    },
+    {
+      "href": "/limitations",
+      "label": "Limitări cunoscute",
+      "blurb": "De ce nu te protejează PrivaMesh, pe înțelesul tuturor."
+    },
+    {
+      "href": "/features/metadata-protection",
+      "label": "Protecția metadatelor",
+      "blurb": "Adrese ascunse, niveluri de completare și trafic de acoperire opțional."
+    },
+    {
+      "href": "/features/duress-code",
+      "label": "Cod de constrângere",
+      "blurb": "Un al doilea cod care golește contul în loc să-l deschidă."
+    }
+  ]
+}

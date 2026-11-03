@@ -1,0 +1,136 @@
+{
+  "meta": {
+    "title": "Fenyegetési modell: ki mit lát",
+    "description": "Támadóról támadóra: mit láthat az üzemeltető, az RPC-szolgáltató, a lánc megfigyelője, egy ellopott eszköz és egy rosszindulatú kapcsolat, és mi lehetséges még."
+  },
+  "eyebrow": "Fenyegetési modell",
+  "title": "Ki mit láthat, és mi állítja meg",
+  "lead": "Egy fenyegetési modell csak akkor hasznos, ha azokat a támadókat, akikkel szemben veszít, ugyanolyan világosan megnevezi, mint akiket legyőz. Az alábbi sorok mindegyike megmutatja, mit lát az adott támadó, mit nem ér el, milyen védelem működik, és mi lehetséges mégis.",
+  "ldDescription": "A PrivaMesh fenyegetési modellje támadóról támadóra, a fennmaradó kockázattal.",
+  "summary": "A PrivaMesh olyan üzemeltető ellen készült, aki az adataira pályázik, egy lánc-megfigyelő ellen, aki minden nyilvánosat elolvas, és egy csaló ellen, aki egy kapcsolat felvételét próbálja elfogni. Leggyengébb egy globális időzítés-elemzővel szemben, egy kompromittált eszköz ellen pedig semmit sem nyújt.",
+  "tableCaption": "A PrivaMesh fenyegetési modellje támadók szerint, védelemmel és fennmaradó kockázattal",
+  "cols": {
+    "adversary": "Támadó",
+    "sees": "Látja",
+    "cannot": "Nem képes",
+    "defence": "Védelem",
+    "residual": "Még lehetséges"
+  },
+  "adversaries": [
+    {
+      "name": "A PrivaMesh, az üzemeltető",
+      "sees": "Hogy egy fiók fizetett egy küldésért, és mikor",
+      "cannot": "Üzeneteket olvasni, címzetteket megtudni, a névjegyeit kilistázni vagy az előzményeket helyreállítani",
+      "defence": "Nincs fiókadatbázis és üzenettároló; a vak tokenek elválasztják a fizetést a küldéstől",
+      "residual": "Kötelezhetnek minket annak megmutatására, hogy egy fiók egy adott időpontban küldött valamit"
+    },
+    {
+      "name": "Az RPC-szolgáltató",
+      "sees": "Az ön IP-címe, a kérések időpontja, a beküldött tranzakciók",
+      "cannot": "Bármit visszafejteni, vagy megmondani, melyik egyszer használatos cím kié",
+      "defence": "A végpont lecserélhető és saját magunk is üzemeltethetjük",
+      "residual": "Egy naplózó szolgáltató hálózati szinten képet alkot arról, mikor aktív"
+    },
+    {
+      "name": "Egy lánc-megfigyelő",
+      "sees": "Kitöltött titkosított szöveg, egyszer használatos címek, a tranzakciók pontos ideje",
+      "cannot": "Tartalmat olvasni, vagy ugyanazon beszélgetés két üzenetét összekötni",
+      "defence": "Rejtett címek, rögzített kitöltési szintek, opcionális álcaforgalom",
+      "residual": "Kikapcsolt álcaforgalom mellett a tevékenységi mintázata időben teljesen látható"
+    },
+    {
+      "name": "Egy globális időzítés-elemző",
+      "sees": "A teljes hálózat korrelált tevékenységét egyszerre",
+      "cannot": "Visszafejteni, vagy a címeket kriptográfiailag összekötni",
+      "defence": "Álcaforgalom 3-10 perces véletlenszerű időközönként, ha be van kapcsolva",
+      "residual": "Ez az a támadó, akivel szemben a leggyengébben védekezünk; a teljes hálózatot korlátlan megőrzéssel figyelő megfigyelő kívül esik azon, amit bármely üzenetenkénti kialakítás megoldhat"
+    },
+    {
+      "name": "Valaki, akinél ott a feloldott telefonja",
+      "sees": "Mindent: nyílt szöveget, névjegyeket, kulcsokat",
+      "cannot": "Visszaállítani a ratchet által már törölt üzeneteket",
+      "defence": "Tárolás a kulcskarikában Face ID vagy Touch ID mögött; a továbbítási titkosság korlátozza a múltat; a kényszerkód megnyitás helyett törli a fiókot",
+      "residual": "Egy kompromittált eszköz mindenre nézve teljes, ami épp rajta van, a kényszerkód pedig csak abban a pillanatban segít, amikor a feloldást kérik öntől - akkor nem, ha a tárolót korábban lemásolták"
+    },
+    {
+      "name": "Valaki, akinél ott a helyreállítási kifejezése",
+      "sees": "Az identitását, és mostantól ön helyett felléphet",
+      "cannot": "Elolvasni a korábbi beszélgetések ratchet-részét - azok a kulcsok véletlenszerűek voltak és csak az eszközön léteztek",
+      "defence": "A kifejezés soha nem hagyja el az eszközét, és soha nem kerül továbbításra",
+      "residual": "Az identitáskulcs, az aláírt prekey és a PQ prekey mind a kifejezésből származik, egyszer használatos prekey pedig nincs közzétéve, így minden beszélgetés nyitóüzenete újraszámolható a kifejezésből és a láncon lévő állandó borítékból. Visszavonás sincs"
+    },
+    {
+      "name": "Egy rosszindulatú kapcsolat",
+      "sees": "Mindent, amit küld neki, és képernyőképet készíthet vagy továbbíthatja",
+      "cannot": "Elérni azokat, akikkel még beszél, vagy más beszélgetéseket olvasni",
+      "defence": "Letiltás és beszélgetésenként külön kulcsok",
+      "residual": "Semmilyen kriptográfia nem akadályozza meg, hogy a beszélgetőpartnere megbízhatatlan legyen"
+    },
+    {
+      "name": "Egy csaló a kapcsolat felvételekor",
+      "sees": "Semmit, ha az ellenőrzés sikeres",
+      "cannot": "A saját kulcsát becserélni egy olyan kapcsolatéra, akinek a csomagja a láncon alá van írva",
+      "defence": "A tárcával aláírt, láncon közzétett prekey-csomagok miatt egyetlen nyilvántartás sem tudja kicserélni egy fiók kulcsát",
+      "residual": "Nincs biztonsági szám vagy ujjlenyomat az összevetéshez, így annak megerősítése, hogy a fiók a megfelelő személyé, teljesen az alkalmazáson kívül és segítség nélkül történik"
+    },
+    {
+      "name": "Apple",
+      "sees": "Hogy az Apple ID-ja előfizetést vásárolt",
+      "cannot": "Üzeneteket, névjegyeket látni, vagy a vásárlást a küldési tevékenységéhez kötni",
+      "defence": "A vak tokenek a vásárlás és minden küldés között állnak",
+      "residual": "Az Apple tudja, hogy ön a PrivaMesh ügyfele, ami iOS-en elkerülhetetlen"
+    },
+    {
+      "name": "Egy hálózati szintű cenzor",
+      "sees": "Hogy elért egy Solana RPC-végpontot",
+      "cannot": "Egyes üzeneteket elolvasni vagy szelektíven eldobni",
+      "defence": "Az RPC-végpontok lecserélhetők, akár saját üzemeltetésűre is",
+      "residual": "A Solana vagy minden RPC letiltása teljesen megakasztja a kézbesítést"
+    }
+  ],
+  "assumeHeading": "Amit ez a modell feltételez",
+  "assume": [
+    "Hogy a kriptográfiai primitívek kitartanak: X3DH, Double Ratchet, AES-256-GCM és iOS 26-on ML-KEM-768. Hogy az eszköze még nem kompromittált. Hogy ellenőrzi: a hozzáadott kapcsolat az a személy, akire gondolt. Ha ezek bármelyike nem teljesül, a kialakítás többi része nem menti meg.",
+    "Azt is feltételezi, hogy ezeknek a primitíveknek a mi megvalósításunk helyes - ezért nyilvános a forráskód, és [egy benne talált hibáért fizetünk](/bug-bounty). Annak teljes listája, amire a védelem nem terjed ki, az [ismert korlátok](/limitations) oldalon található."
+  ],
+  "faq": [
+    {
+      "q": "Mi ellen véd a PrivaMesh a leggyengébben?",
+      "a": "Egy globális támadó ellen, aki folyamatosan figyeli a teljes hálózatot és mindent megőriz. Az álcaforgalom megdrágítja az időzítési korrelációt, de nem győzi le az ilyen léptékű megfigyelőt, a lánc pedig állandó nyilvántartást őriz meg számára."
+    },
+    {
+      "q": "Ha lefoglalják az eszközömet, mi derül ki?",
+      "a": "Minden, ami éppen rajta van: nyílt szöveg, névjegyek és kulcsok, hacsak nincs lezárva, és a támadó nem jut át a Face ID-n. A továbbítási titkosság arra korlátozza a kárt, amit a ratchet még nem törölt - a régi üzenetek már nem állíthatók vissza. Ha arra kényszerítik, hogy ön oldja fel, a kényszerkód megnyitás helyett törli a fiókot."
+    },
+    {
+      "q": "Kényszeríthető a PrivaMesh az adataim kiadására?",
+      "a": "Kérni lehet. Kiadni csak azt lehet, hogy egy fiók egy adott időpontban fizetett egy küldésért. Nincs üzenettartalom, címzett, névjegylista és fiókrekord, mert ezek egyikét sem tároljuk."
+    },
+    {
+      "q": "Segít a VPN?",
+      "a": "Igen, az RPC-szolgáltatóval és a hálózati szintű megfigyelővel szemben - ez az a két támadó, amely látja az IP-címét. Azon, ami a láncra kerül, semmit sem változtat, az amúgy is olvashatatlan."
+    }
+  ],
+  "related": [
+    {
+      "href": "/architecture",
+      "label": "Architektúra",
+      "blurb": "Minden komponens, az üzemeltetője, és amit megfigyelhet."
+    },
+    {
+      "href": "/limitations",
+      "label": "Ismert korlátok",
+      "blurb": "Mi ellen nem véd a PrivaMesh, közérthetően."
+    },
+    {
+      "href": "/features/metadata-protection",
+      "label": "Metaadatok védelme",
+      "blurb": "Rejtett címek, kitöltési szintek és opcionális álcaforgalom."
+    },
+    {
+      "href": "/features/duress-code",
+      "label": "Kényszerkód",
+      "blurb": "Egy második kód, amely megnyitás helyett kiüríti a fiókot."
+    }
+  ]
+}

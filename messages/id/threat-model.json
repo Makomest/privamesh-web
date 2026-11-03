@@ -1,0 +1,136 @@
+{
+  "meta": {
+    "title": "Model ancaman: siapa melihat apa",
+    "description": "Musuh demi musuh: apa yang bisa dilihat operator, penyedia RPC, pengamat rantai, perangkat yang dicuri, dan kontak jahat, serta apa yang masih mungkin."
+  },
+  "eyebrow": "Model ancaman",
+  "title": "Siapa bisa melihat apa, dan apa yang menghentikannya",
+  "lead": "Model ancaman hanya berguna jika menyebut musuh yang mengalahkannya sejelas musuh yang dikalahkannya. Setiap baris di bawah menunjukkan apa yang dilihat musuh itu, apa yang tidak bisa dijangkaunya, pertahanan yang ada, dan apa yang tetap mungkin.",
+  "ldDescription": "Model ancaman PrivaMesh, musuh demi musuh, dengan risiko sisa.",
+  "summary": "PrivaMesh dirancang melawan operator yang menginginkan data Anda, pengamat rantai yang membaca semua yang publik, dan penyamar yang mencoba mencegat penambahan kontak. PrivaMesh paling lemah melawan analis waktu global dan sama sekali tidak menawarkan apa pun melawan perangkat yang sudah disusupi.",
+  "tableCaption": "Model ancaman PrivaMesh per musuh, dengan pertahanan dan risiko sisa",
+  "cols": {
+    "adversary": "Musuh",
+    "sees": "Melihat",
+    "cannot": "Tidak bisa",
+    "defence": "Pertahanan",
+    "residual": "Masih mungkin"
+  },
+  "adversaries": [
+    {
+      "name": "PrivaMesh, operator",
+      "sees": "Bahwa sebuah akun membayar pengiriman, dan kapan",
+      "cannot": "Membaca pesan, mengetahui penerima, mendaftar kontak Anda, atau merekonstruksi riwayat",
+      "defence": "Tanpa basis data akun atau penyimpanan pesan; token buta memutus kaitan pembayaran dengan pengiriman",
+      "residual": "Kami bisa dipaksa menunjukkan bahwa suatu akun mengirim sesuatu pada waktu tertentu"
+    },
+    {
+      "name": "Penyedia RPC",
+      "sees": "Alamat IP Anda, waktu permintaan, transaksi yang Anda kirim",
+      "cannot": "Mendekripsi apa pun, atau mengetahui alamat sekali pakai milik siapa",
+      "defence": "Titik akhir bisa diganti dan di-host sendiri",
+      "residual": "Penyedia yang mencatat log menyusun gambaran di tingkat jaringan tentang kapan Anda aktif"
+    },
+    {
+      "name": "Pengamat rantai",
+      "sees": "Teks terenkripsi yang diisi, alamat sekali pakai, waktu transaksi yang tepat",
+      "cannot": "Membaca isi, atau mengaitkan dua pesan dalam percakapan yang sama",
+      "defence": "Alamat siluman, tingkat pengisian tetap, lalu lintas penyamar opsional",
+      "residual": "Dengan lalu lintas penyamar mati, pola aktivitas Anda dari waktu ke waktu terlihat sepenuhnya"
+    },
+    {
+      "name": "Analis waktu global",
+      "sees": "Aktivitas yang berkorelasi di seluruh jaringan sekaligus",
+      "cannot": "Mendekripsi, atau mengaitkan alamat secara kriptografis",
+      "defence": "Lalu lintas penyamar dengan selang acak 3-10 menit, jika dinyalakan",
+      "residual": "Inilah musuh yang paling lemah kami lawan; pengamat seluruh jaringan dengan penyimpanan tak terbatas berada di luar apa yang bisa diperbaiki desain per pesan mana pun"
+    },
+    {
+      "name": "Seseorang yang memegang ponsel Anda yang tidak terkunci",
+      "sees": "Semuanya: teks asli, kontak, kunci",
+      "cannot": "Memulihkan pesan yang sudah dihapus ratchet",
+      "defence": "Penyimpanan di Keychain di balik Face ID atau Touch ID; kerahasiaan maju membatasi masa lalu; kode paksaan menghapus akun alih-alih membukanya",
+      "residual": "Penyusupan perangkat bersifat total untuk semua yang ada di perangkat saat itu, dan kode paksaan hanya membantu saat Anda diminta membuka kunci - tidak jika penyimpanannya sudah disalin lebih dulu"
+    },
+    {
+      "name": "Seseorang yang memiliki frasa pemulihan Anda",
+      "sees": "Identitas Anda, dan bisa menyamar sebagai Anda ke depannya",
+      "cannot": "Membaca bagian ratchet dari percakapan lama - kunci-kunci itu acak dan hanya ada di perangkat",
+      "defence": "Frasa tidak pernah meninggalkan perangkat Anda dan tidak pernah dikirim",
+      "residual": "Kunci identitas, prekey bertanda tangan, dan prekey PQ semuanya diturunkan dari frasa dan tidak ada prekey sekali pakai yang dipublikasikan, sehingga pesan pembuka setiap percakapan bisa dihitung ulang dari frasa ditambah amplop permanen di rantai. Juga tidak ada pencabutan"
+    },
+    {
+      "name": "Kontak jahat",
+      "sees": "Semua yang Anda kirim kepadanya, dan bisa mengambil tangkapan layar atau meneruskannya",
+      "cannot": "Menjangkau orang lain yang Anda ajak bicara, atau membaca percakapan lain",
+      "defence": "Pemblokiran dan pemisahan kunci per percakapan",
+      "residual": "Tidak ada kriptografi yang bisa mencegah lawan bicara Anda tidak bisa dipercaya"
+    },
+    {
+      "name": "Penyamar saat menambah kontak",
+      "sees": "Tidak ada, jika verifikasi berhasil",
+      "cannot": "Mengganti kunci kontak yang paketnya ditandatangani di rantai dengan kuncinya sendiri",
+      "defence": "Paket prekey yang ditandatangani dompet dan dipublikasikan di rantai, sehingga tidak ada registri yang bisa mengganti kunci sebuah akun",
+      "residual": "Tidak ada nomor keamanan atau sidik jari untuk dibandingkan, sehingga memastikan akun itu milik orang yang dimaksud sepenuhnya dilakukan di luar aplikasi dan tanpa bantuan"
+    },
+    {
+      "name": "Apple",
+      "sees": "Bahwa Apple ID Anda membeli langganan",
+      "cannot": "Melihat pesan, kontak, atau mengaitkan pembelian dengan aktivitas pengiriman Anda",
+      "defence": "Token buta berada di antara pembelian dan setiap pengiriman",
+      "residual": "Apple tahu Anda pelanggan PrivaMesh, yang tidak terhindarkan di iOS"
+    },
+    {
+      "name": "Penyensor di tingkat jaringan",
+      "sees": "Bahwa Anda menghubungi titik akhir RPC Solana",
+      "cannot": "Membaca atau secara selektif membuang pesan tertentu",
+      "defence": "Titik akhir RPC bisa diganti, termasuk dengan milik Anda sendiri",
+      "residual": "Memblokir Solana atau semua RPC memblokir pengiriman sepenuhnya"
+    }
+  ],
+  "assumeHeading": "Apa yang diasumsikan model ini",
+  "assume": [
+    "Bahwa primitif kriptografinya bertahan: X3DH, Double Ratchet, AES-256-GCM, dan di iOS 26, ML-KEM-768. Bahwa perangkat Anda belum disusupi. Bahwa Anda memverifikasi kontak yang ditambahkan adalah orang yang Anda maksud. Jika salah satunya gagal, sisa desain tidak akan menyelamatkan Anda.",
+    "Model ini juga mengasumsikan implementasi kami atas primitif tersebut benar - itulah sebabnya kode sumbernya terbuka dan [menemukan celah di dalamnya dibayar](/bug-bounty). Daftar lengkap apa yang tidak dicakup ada di [keterbatasan yang diketahui](/limitations)."
+  ],
+  "faq": [
+    {
+      "q": "Terhadap apa PrivaMesh paling lemah bertahan?",
+      "a": "Terhadap musuh global yang mengawasi seluruh jaringan terus-menerus dan menyimpan semuanya. Lalu lintas penyamar menaikkan biaya korelasi waktu tetapi tidak mengalahkan pengamat sebesar itu, dan rantai menyimpan catatan permanen yang bisa mereka olah."
+    },
+    {
+      "q": "Jika perangkat saya disita, apa yang terekspos?",
+      "a": "Semua yang ada di dalamnya saat itu: teks asli, kontak, dan kunci, kecuali perangkat terkunci dan penyerang tidak bisa melewati Face ID. Kerahasiaan maju membatasi kerusakan pada apa yang belum dihapus ratchet - pesan lama sudah tidak bisa dipulihkan. Jika Anda dipaksa membukanya sendiri, kode paksaan menghapus akun alih-alih membukanya."
+    },
+    {
+      "q": "Bisakah PrivaMesh dipaksa menyerahkan data saya?",
+      "a": "Bisa diminta. Yang ada untuk diserahkan hanyalah bahwa sebuah akun membayar pengiriman pada waktu tertentu. Tidak ada isi pesan, penerima, daftar kontak, atau catatan akun, karena tidak ada yang disimpan."
+    },
+    {
+      "q": "Apakah VPN membantu?",
+      "a": "Ya, melawan penyedia RPC dan pengamat di tingkat jaringan, dua musuh yang melihat IP Anda. VPN tidak mengubah apa pun pada yang ditulis ke rantai, yang memang sudah tidak terbaca."
+    }
+  ],
+  "related": [
+    {
+      "href": "/architecture",
+      "label": "Arsitektur",
+      "blurb": "Setiap komponen, operatornya, dan apa yang bisa diamatinya."
+    },
+    {
+      "href": "/limitations",
+      "label": "Keterbatasan yang diketahui",
+      "blurb": "Dari apa PrivaMesh tidak melindungi Anda, dengan bahasa sederhana."
+    },
+    {
+      "href": "/features/metadata-protection",
+      "label": "Perlindungan metadata",
+      "blurb": "Alamat siluman, tingkat pengisian, dan lalu lintas penyamar opsional."
+    },
+    {
+      "href": "/features/duress-code",
+      "label": "Kode paksaan",
+      "blurb": "Kode sandi kedua yang mengosongkan akun alih-alih membukanya."
+    }
+  ]
+}

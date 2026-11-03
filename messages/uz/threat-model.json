@@ -1,0 +1,136 @@
+{
+  "meta": {
+    "title": "Tahdid modeli: kim nimani ko'radi",
+    "description": "Raqib-raqib: operator, RPC provayderi, zanjir kuzatuvchisi, o'g'irlangan qurilma va yomon niyatli kontakt nimani ko'ra oladi va nima hali ham mumkin."
+  },
+  "eyebrow": "Tahdid modeli",
+  "title": "Kim nimani ko'ra oladi va uni nima to'xtatadi",
+  "lead": "Tahdid modeli o'zi yutqazadigan raqiblarni ham yengadiganlari kabi aniq nomlasa foydali bo'ladi. Quyidagi har bir qatorda o'sha raqib nimani ko'rishi, nimaga yeta olmasligi, qanday himoya borligi va baribir nima mumkin bo'lib qolishi ko'rsatilgan.",
+  "ldDescription": "PrivaMesh tahdid modeli, raqib-raqib, qoldiq xavf bilan.",
+  "summary": "PrivaMesh ma'lumotlaringizni istaydigan operatorga, ochiq hamma narsani o'qiydigan zanjir kuzatuvchisiga va kontakt qo'shishni tutib qolmoqchi bo'lgan firibgarga qarshi ishlab chiqilgan. U global vaqt tahlilchisiga qarshi eng zaif va buzilgan qurilmaga qarshi hech narsa taklif qilmaydi.",
+  "tableCaption": "Raqiblar bo'yicha PrivaMesh tahdid modeli, himoya va qoldiq xavf bilan",
+  "cols": {
+    "adversary": "Raqib",
+    "sees": "Ko'radi",
+    "cannot": "Qila olmaydi",
+    "defence": "Himoya",
+    "residual": "Hali ham mumkin"
+  },
+  "adversaries": [
+    {
+      "name": "PrivaMesh, operator",
+      "sees": "Biror hisob yuborish uchun to'laganini va qachon",
+      "cannot": "Xabarlarni o'qish, qabul qiluvchilarni bilish, kontaktlaringizni sanab chiqish yoki tarixni tiklash",
+      "defence": "Hisoblar bazasi va xabarlar ombori yo'q; ko'r tokenlar to'lovni yuborishdan ajratadi",
+      "residual": "Bizni biror hisob ma'lum vaqtda nimadir yuborganini ko'rsatishga majbur qilishlari mumkin"
+    },
+    {
+      "name": "RPC provayderi",
+      "sees": "IP manzilingiz, so'rovlar vaqti, yuboradigan tranzaksiyalaringiz",
+      "cannot": "Biror narsaning shifrini ochish yoki bir martalik manzil kimga tegishli ekanini bilish",
+      "defence": "Nuqtani almashtirish va o'zingiz joylashtirish mumkin",
+      "residual": "Jurnal yurituvchi provayder qachon faol ekaningizning tarmoq darajasidagi manzarasini tuzadi"
+    },
+    {
+      "name": "Zanjir kuzatuvchisi",
+      "sees": "To'ldirilgan shifrlangan matn, bir martalik manzillar, tranzaksiyalarning aniq vaqti",
+      "cannot": "Mazmunni o'qish yoki bitta suhbatdagi ikki xabarni bog'lash",
+      "defence": "Yashirin manzillar, qat'iy to'ldirish darajalari, ixtiyoriy niqob trafik",
+      "residual": "Niqob trafik o'chiq bo'lsa, vaqt bo'yicha faollik naqshingiz to'liq ko'rinadi"
+    },
+    {
+      "name": "Global vaqt tahlilchisi",
+      "sees": "Butun tarmoqdagi o'zaro bog'liq faollikni bir vaqtda",
+      "cannot": "Shifrni ochish yoki manzillarni kriptografik bog'lash",
+      "defence": "Yoqilgan bo'lsa, 3-10 daqiqalik tasodifiy oraliqlarda niqob trafik",
+      "residual": "Bu raqibdan eng yomon himoyalanamiz; cheksiz saqlaydigan butun tarmoq kuzatuvchisi xabar darajasidagi har qanday dizayn hal qila oladigan narsadan tashqarida"
+    },
+    {
+      "name": "Qulfi ochiq telefoningizni ushlab turgan kishi",
+      "sees": "Hammasi: ochiq matn, kontaktlar, kalitlar",
+      "cannot": "Ratchet allaqachon o'chirgan xabarlarni tiklash",
+      "defence": "Face ID yoki Touch ID ortidagi Keychain'da saqlash; oldinga maxfiylik o'tmishni cheklaydi; majburlash kodi hisobni ochish o'rniga o'chiradi",
+      "residual": "Qurilma buzilsa, hozir undagi hamma narsa to'liq ochiladi, majburlash kodi esa faqat qulfni ochish so'ralgan paytda yordam beradi - ombor oldindan nusxalangan bo'lsa, yordam bermaydi"
+    },
+    {
+      "name": "Tiklash iborangiz qo'lida bo'lgan kishi",
+      "sees": "Shaxsingizni, va bundan buyon sizning nomingizdan chiqa oladi",
+      "cannot": "O'tgan suhbatlarning ratchet qismini o'qish - u kalitlar tasodifiy bo'lgan va faqat qurilmada turgan",
+      "defence": "Ibora qurilmangizdan hech qachon chiqmaydi va hech qachon uzatilmaydi",
+      "residual": "Shaxs kaliti, imzolangan prekey va PQ prekey hammasi iboradan hosil qilinadi, bir martalik prekey esa e'lon qilinmaydi, shuning uchun har bir suhbatning ochilish xabarini ibora va zanjirdagi abadiy konvert orqali qayta hisoblash mumkin. Bekor qilish imkoniyati ham yo'q"
+    },
+    {
+      "name": "Yomon niyatli kontakt",
+      "sees": "Unga yuborgan hamma narsangiz, va u skrinshot olishi yoki boshqaga yuborishi mumkin",
+      "cannot": "Siz gaplashadigan boshqa odamlarga yetish yoki boshqa suhbatlarni o'qish",
+      "defence": "Bloklash va har bir suhbat uchun alohida kalitlar",
+      "residual": "Hech qanday kriptografiya suhbatdoshingizning ishonchsiz bo'lishiga to'sqinlik qila olmaydi"
+    },
+    {
+      "name": "Kontakt qo'shishdagi firibgar",
+      "sees": "Tekshiruv muvaffaqiyatli bo'lsa, hech narsa",
+      "cannot": "Paketi zanjirda imzolangan kontaktning o'rniga o'z kalitini qo'yish",
+      "defence": "Hamyon bilan imzolanib, zanjirda e'lon qilingan prekey paketlari, shuning uchun hech qanday reyestr hisob kalitini almashtira olmaydi",
+      "residual": "Solishtirish uchun xavfsizlik raqami yoki barmoq izi yo'q, shuning uchun hisob aynan kerakli odamga tegishli ekanini tasdiqlash butunlay ilovadan tashqarida va yordamsiz amalga oshiriladi"
+    },
+    {
+      "name": "Apple",
+      "sees": "Apple ID'ingiz obuna sotib olganini",
+      "cannot": "Xabarlarni, kontaktlarni ko'rish yoki xaridni yuborish faoliyatingiz bilan bog'lash",
+      "defence": "Ko'r tokenlar xarid va har bir yuborish o'rtasida turadi",
+      "residual": "Apple siz PrivaMesh mijozi ekaningizni biladi, iOS'da bu muqarrar"
+    },
+    {
+      "name": "Tarmoq darajasidagi senzor",
+      "sees": "Solana RPC nuqtasiga ulanganingizni",
+      "cannot": "Alohida xabarlarni o'qish yoki tanlab tashlab yuborish",
+      "defence": "RPC nuqtalarini almashtirish mumkin, jumladan o'zingiz ishga tushirganlarga",
+      "residual": "Solana yoki barcha RPC'ni bloklash yetkazishni butunlay to'xtatadi"
+    }
+  ],
+  "assumeHeading": "Bu model nimani taxmin qiladi",
+  "assume": [
+    "Kriptografik primitivlar mustahkam ekanini: X3DH, Double Ratchet, AES-256-GCM va iOS 26'da ML-KEM-768. Qurilmangiz hali buzilmaganini. Qo'shayotgan kontaktingiz aynan o'zingiz nazarda tutgan odam ekanini tekshirishingizni. Bularning biri bajarilmasa, dizaynning qolgan qismi sizni qutqarmaydi.",
+    "Shuningdek, bu primitivlarni to'g'ri amalga oshirganimizni taxmin qiladi - shuning uchun manba kodi ochiq va [undagi topilgan nuqson uchun to'lanadi](/bug-bounty). Qamrab olinmagan narsalarning to'liq ro'yxati [ma'lum cheklovlar](/limitations) sahifasida."
+  ],
+  "faq": [
+    {
+      "q": "PrivaMesh nimadan eng yomon himoya qiladi?",
+      "a": "Butun tarmoqni uzluksiz kuzatadigan va hamma narsani saqlaydigan global raqibdan. Niqob trafik vaqt bo'yicha bog'lash narxini oshiradi, lekin bunday miqyosdagi kuzatuvchini yenga olmaydi, zanjir esa unga ishlash uchun abadiy yozuvni saqlaydi."
+    },
+    {
+      "q": "Qurilmamni musodara qilishsa, nima oshkor bo'ladi?",
+      "a": "Hozir undagi hamma narsa: ochiq matn, kontaktlar va kalitlar - agar u qulflanmagan bo'lsa yoki hujumchi Face ID'dan o'ta olsa. Oldinga maxfiylik zararni ratchet hali o'chirmagan narsalar bilan cheklaydi - eski xabarlarni allaqachon tiklab bo'lmaydi. Agar sizni o'zingiz ochishga majburlashsa, majburlash kodi hisobni ochish o'rniga o'chiradi."
+    },
+    {
+      "q": "PrivaMesh'ni ma'lumotlarimni topshirishga majburlash mumkinmi?",
+      "a": "So'rash mumkin. Topshirish uchun mavjud yagona narsa - biror hisob ma'lum vaqtda yuborish uchun to'lagani. Xabar mazmuni ham, qabul qiluvchi ham, kontaktlar ro'yxati ham, hisob yozuvi ham yo'q, chunki ularning hech biri saqlanmaydi."
+    },
+    {
+      "q": "VPN yordam beradimi?",
+      "a": "Ha, RPC provayderi va tarmoq darajasidagi kuzatuvchiga qarshi - IP'ingizni ko'radigan ikki raqib aynan shular. Zanjirga yoziladigan narsaga hech qanday ta'siri yo'q, u baribir o'qib bo'lmaydi."
+    }
+  ],
+  "related": [
+    {
+      "href": "/architecture",
+      "label": "Arxitektura",
+      "blurb": "Har bir komponent, uni kim boshqarishi va u nimani kuzata olishi."
+    },
+    {
+      "href": "/limitations",
+      "label": "Ma'lum cheklovlar",
+      "blurb": "PrivaMesh sizni nimadan himoya qilmaydi - oddiy tilda."
+    },
+    {
+      "href": "/features/metadata-protection",
+      "label": "Metama'lumotlarni himoyalash",
+      "blurb": "Yashirin manzillar, to'ldirish darajalari va ixtiyoriy niqob trafik."
+    },
+    {
+      "href": "/features/duress-code",
+      "label": "Majburlash kodi",
+      "blurb": "Hisobni ochish o'rniga bo'shatadigan ikkinchi parol."
+    }
+  ]
+}

@@ -1,0 +1,136 @@
+{
+  "meta": {
+    "title": "Model d'amenaces: qui veu què",
+    "description": "Adversari per adversari: què poden veure l'operador, el proveïdor RPC, un observador de la cadena, un dispositiu robat i un contacte maliciós, i què continua sent possible."
+  },
+  "eyebrow": "Model d'amenaces",
+  "title": "Qui pot veure què i què l'atura",
+  "lead": "Un model d'amenaces només és útil si anomena els adversaris davant dels quals perd amb la mateixa claredat que els que venç. Cada fila de sota indica què veu aquell adversari, on no pot arribar, quina defensa hi ha i què continua sent possible igualment.",
+  "ldDescription": "Model d'amenaces de PrivaMesh, adversari per adversari, amb risc residual.",
+  "summary": "PrivaMesh està dissenyat contra un operador que vol les teves dades, un observador de la cadena que llegeix tot el que és públic i un impostor que intenta interceptar quan afegeixes un contacte. És més feble davant d'un analista de temps global i no ofereix res davant d'un dispositiu compromès.",
+  "tableCaption": "Model d'amenaces de PrivaMesh per adversari, amb defenses i risc residual",
+  "cols": {
+    "adversary": "Adversari",
+    "sees": "Veu",
+    "cannot": "No pot",
+    "defence": "Defensa",
+    "residual": "Encara és possible"
+  },
+  "adversaries": [
+    {
+      "name": "PrivaMesh, l'operador",
+      "sees": "Que un compte va pagar un enviament, i quan",
+      "cannot": "Llegir missatges, saber destinataris, llistar els teus contactes o reconstruir l'historial",
+      "defence": "Sense base de dades de comptes ni magatzem de missatges; els tokens cecs desvinculen el pagament de l'enviament",
+      "residual": "Ens podrien obligar a mostrar que algun compte va enviar alguna cosa en un moment donat"
+    },
+    {
+      "name": "El proveïdor RPC",
+      "sees": "La teva adreça IP, l'hora de les sol·licituds, les transaccions que envies",
+      "cannot": "Desxifrar res, ni saber de qui és cada adreça d'un sol ús",
+      "defence": "L'endpoint és substituïble i autoallotjable",
+      "residual": "Un proveïdor que ho registra tot construeix una imatge, a nivell de xarxa, de quan estàs actiu"
+    },
+    {
+      "name": "Un observador de la cadena",
+      "sees": "Text xifrat omplert, adreces d'un sol ús, hores exactes de les transaccions",
+      "cannot": "Llegir el contingut o vincular dos missatges de la mateixa conversa",
+      "defence": "Adreces ocultes, nivells d'emplenament fixos, trànsit de cobertura opcional",
+      "residual": "Sense trànsit de cobertura, el teu patró d'activitat al llarg del temps és completament visible"
+    },
+    {
+      "name": "Un analista de temps global",
+      "sees": "Activitat correlacionada a tota la xarxa alhora",
+      "cannot": "Desxifrar o vincular adreces criptogràficament",
+      "defence": "Trànsit de cobertura a intervals aleatoris de 3 a 10 minuts, si està activat",
+      "residual": "És l'adversari contra el qual pitjor ens defensem; un observador de tota la xarxa amb retenció il·limitada queda fora del que pot resoldre qualsevol disseny per missatge"
+    },
+    {
+      "name": "Algú amb el teu telèfon desbloquejat",
+      "sees": "Tot: text en clar, contactes, claus",
+      "cannot": "Recuperar missatges que el ratchet ja ha esborrat",
+      "defence": "Emmagatzematge al clauer darrere de Face ID o Touch ID; el secret cap endavant limita el passat; un codi de coacció esborra el compte en lloc d'obrir-lo",
+      "residual": "El compromís del dispositiu és total per a tot el que hi ha ara, i un codi de coacció només ajuda en el moment en què et demanen desbloquejar - no si l'emmagatzematge ja s'havia copiat"
+    },
+    {
+      "name": "Algú que té la teva frase de recuperació",
+      "sees": "La teva identitat, i pot fer-se passar per tu d'ara endavant",
+      "cannot": "Llegir la part ratchet de les converses passades: aquelles claus eren aleatòries i locals al dispositiu",
+      "defence": "La frase no surt mai del teu dispositiu ni es transmet",
+      "residual": "La clau d'identitat, la prekey signada i la prekey PQ es deriven totes de la frase i no es publiquen prekeys d'un sol ús, de manera que el missatge inicial de cada conversa es pot recalcular a partir de la frase i el sobre permanent a la cadena. Tampoc no hi ha revocació"
+    },
+    {
+      "name": "Un contacte maliciós",
+      "sees": "Tot el que li envies, i pot fer captures o reenviar-ho",
+      "cannot": "Arribar a altres persones amb qui parles o llegir altres converses",
+      "defence": "Bloqueig i separació de claus per conversa",
+      "residual": "Cap criptografia impedeix que la persona amb qui parles no sigui de fiar"
+    },
+    {
+      "name": "Un impostor en afegir un contacte",
+      "sees": "Res, si la verificació té èxit",
+      "cannot": "Substituir la seva clau per la d'un contacte el paquet del qual està signat a la cadena",
+      "defence": "Paquets de prekeys signats amb el moneder i publicats a la cadena, de manera que cap registre pot substituir la clau d'un compte",
+      "residual": "No hi ha número de seguretat ni empremta per comparar, així que confirmar que el compte és de la persona correcta es fa completament fora de l'app i sense ajuda"
+    },
+    {
+      "name": "Apple",
+      "sees": "Que el teu Apple ID va comprar una subscripció",
+      "cannot": "Veure missatges, contactes o vincular la compra amb la teva activitat d'enviament",
+      "defence": "Els tokens cecs s'interposen entre la compra i cada enviament",
+      "residual": "Apple sap que ets client de PrivaMesh, cosa inevitable a iOS"
+    },
+    {
+      "name": "Un censor a nivell de xarxa",
+      "sees": "Que et vas connectar a un endpoint RPC de Solana",
+      "cannot": "Llegir o descartar selectivament missatges individuals",
+      "defence": "Els endpoints RPC són substituïbles, fins i tot pels teus",
+      "residual": "Bloquejar Solana o tots els RPC bloqueja el lliurament del tot"
+    }
+  ],
+  "assumeHeading": "Què suposa aquest model",
+  "assume": [
+    "Que les primitives criptogràfiques resisteixen: X3DH, el Double Ratchet, AES-256-GCM i, a iOS 26, ML-KEM-768. Que el teu dispositiu no està ja compromès. Que verifiques que el contacte que afegeixes és la persona que volies. Si alguna d'aquestes coses falla, la resta del disseny no et salva.",
+    "També suposa que la nostra implementació d'aquestes primitives és correcta; per això el codi és públic i [trobar-hi una fallada té recompensa](/bug-bounty). La llista completa del que no està cobert és a [limitacions conegudes](/limitations)."
+  ],
+  "faq": [
+    {
+      "q": "Contra què es defensa pitjor PrivaMesh?",
+      "a": "Contra un adversari global que vigila tota la xarxa de manera contínua i ho desa tot. El trànsit de cobertura encareix la correlació de temps, però no derrota un observador d'aquesta escala, i la cadena li ofereix un registre permanent amb què treballar."
+    },
+    {
+      "q": "Si em confisquen el dispositiu, què queda exposat?",
+      "a": "Tot el que hi ha: text en clar, contactes i claus, llevat que estigui bloquejat i l'atacant no pugui passar Face ID. El secret cap endavant limita el dany al que el ratchet encara no ha esborrat: els missatges antics ja són irrecuperables. Si t'obliguen a desbloquejar-lo tu, un codi de coacció esborra el compte en lloc d'obrir-lo."
+    },
+    {
+      "q": "Poden obligar PrivaMesh a lliurar les meves dades?",
+      "a": "Ho poden demanar. L'únic que existeix per lliurar és que un compte va pagar un enviament en un moment donat. No hi ha contingut de missatges, ni destinatari, ni llista de contactes, ni registre de compte, perquè res d'això es desa."
+    },
+    {
+      "q": "Serveix una VPN?",
+      "a": "Sí, contra el proveïdor RPC i un observador a nivell de xarxa, els dos adversaris que veuen la teva IP. No canvia res del que s'escriu a la cadena, que ja és il·legible."
+    }
+  ],
+  "related": [
+    {
+      "href": "/architecture",
+      "label": "Arquitectura",
+      "blurb": "Cada component, qui l'opera i què pot observar."
+    },
+    {
+      "href": "/limitations",
+      "label": "Limitacions conegudes",
+      "blurb": "De què no et protegeix PrivaMesh, en llenguatge planer."
+    },
+    {
+      "href": "/features/metadata-protection",
+      "label": "Protecció de metadades",
+      "blurb": "Adreces ocultes, nivells d'emplenament i trànsit de cobertura opcional."
+    },
+    {
+      "href": "/features/duress-code",
+      "label": "Codi de coacció",
+      "blurb": "Un segon codi que buida el compte en lloc d'obrir-lo."
+    }
+  ]
+}

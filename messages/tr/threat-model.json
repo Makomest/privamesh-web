@@ -1,0 +1,136 @@
+{
+  "meta": {
+    "title": "Tehdit modeli: kim neyi görür",
+    "description": "Saldırgan saldırgan: işletmeci, RPC sağlayıcısı, zincir gözlemcisi, çalınmış bir cihaz ve kötü niyetli bir kişi neleri görebilir ve ne hâlâ mümkün."
+  },
+  "eyebrow": "Tehdit modeli",
+  "title": "Kim neyi görebilir ve onu ne durdurur",
+  "lead": "Bir tehdit modeli, kaybettiği saldırganları da yendikleri kadar açıkça adlandırıyorsa işe yarar. Aşağıdaki her satır o saldırganın ne gördüğünü, neye ulaşamadığını, hangi savunmanın olduğunu ve yine de neyin mümkün kaldığını gösterir.",
+  "ldDescription": "PrivaMesh tehdit modeli, saldırgan saldırgan, kalan riskle birlikte.",
+  "summary": "PrivaMesh; verilerini isteyen bir işletmeciye, herkese açık her şeyi okuyan bir zincir gözlemcisine ve kişi eklemeyi araya girip ele geçirmeye çalışan bir sahtekâra karşı tasarlanmıştır. En zayıf olduğu yer küresel bir zamanlama analistidir ve ele geçirilmiş bir cihaza karşı hiçbir şey sunmaz.",
+  "tableCaption": "Saldırgana göre PrivaMesh tehdit modeli, savunmalar ve kalan riskle",
+  "cols": {
+    "adversary": "Saldırgan",
+    "sees": "Görür",
+    "cannot": "Yapamaz",
+    "defence": "Savunma",
+    "residual": "Hâlâ mümkün"
+  },
+  "adversaries": [
+    {
+      "name": "PrivaMesh, işletmeci",
+      "sees": "Bir hesabın bir gönderim için ödeme yaptığını ve ne zaman",
+      "cannot": "Mesajları okumak, alıcıları öğrenmek, kişilerini listelemek ya da geçmişi yeniden kurmak",
+      "defence": "Hesap veritabanı veya mesaj deposu yok; kör tokenlar ödemeyi gönderimden ayırır",
+      "residual": "Bir hesabın belirli bir zamanda bir şey gönderdiğini göstermeye zorlanabiliriz"
+    },
+    {
+      "name": "RPC sağlayıcısı",
+      "sees": "IP adresin, istek zamanları, gönderdiğin işlemler",
+      "cannot": "Herhangi bir şeyin şifresini çözmek ya da hangi tek kullanımlık adresin kime ait olduğunu anlamak",
+      "defence": "Uç nokta değiştirilebilir ve kendin barındırabilirsin",
+      "residual": "Kayıt tutan bir sağlayıcı ne zaman aktif olduğunun ağ düzeyinde bir resmini çıkarır"
+    },
+    {
+      "name": "Bir zincir gözlemcisi",
+      "sees": "Doldurulmuş şifreli metin, tek kullanımlık adresler, kesin işlem zamanları",
+      "cannot": "İçeriği okumak ya da aynı sohbetteki iki mesajı ilişkilendirmek",
+      "defence": "Gizli adresler, sabit doldurma seviyeleri, isteğe bağlı örtü trafiği",
+      "residual": "Örtü trafiği kapalıyken zaman içindeki etkinlik desenin tamamen görünür"
+    },
+    {
+      "name": "Küresel bir zamanlama analisti",
+      "sees": "Tüm ağdaki ilişkili etkinliği aynı anda",
+      "cannot": "Şifre çözmek ya da adresleri kriptografik olarak ilişkilendirmek",
+      "defence": "Etkinse 3-10 dakikalık rastgele aralıklarla örtü trafiği",
+      "residual": "En kötü savunduğumuz saldırgan budur; sınırsız saklama yapan, tüm ağı izleyen bir gözlemci, mesaj başına çalışan hiçbir tasarımın çözebileceği şeylerin dışındadır"
+    },
+    {
+      "name": "Kilidi açık telefonunu elinde tutan biri",
+      "sees": "Her şey: düz metin, kişiler, anahtarlar",
+      "cannot": "Ratchet'ın zaten sildiği mesajları kurtarmak",
+      "defence": "Face ID veya Touch ID arkasında Anahtar Zinciri'nde saklama; ileri gizlilik geçmişi sınırlar; zorlama kodu hesabı açmak yerine siler",
+      "residual": "Cihazın ele geçirilmesi, o an üzerindeki her şey için tamdır; zorlama kodu ise yalnızca kilidi açman istendiği anda işe yarar - depolama önceden kopyalanmışsa yaramaz"
+    },
+    {
+      "name": "Kurtarma ifadene sahip biri",
+      "sees": "Kimliğin, ve bundan sonra senin yerine geçebilir",
+      "cannot": "Geçmiş sohbetlerin ratchet kısmını okumak - o anahtarlar rastgeleydi ve yalnızca cihazdaydı",
+      "defence": "İfade cihazından asla çıkmaz ve asla iletilmez",
+      "residual": "Kimlik anahtarı, imzalı prekey ve PQ prekey'in tümü ifadeden türetilir ve tek kullanımlık prekey yayımlanmaz; bu yüzden her sohbetin açılış mesajı, ifade ve zincirdeki kalıcı zarf kullanılarak yeniden hesaplanabilir. İptal mekanizması da yoktur"
+    },
+    {
+      "name": "Kötü niyetli bir kişi",
+      "sees": "Ona gönderdiğin her şey, ve ekran görüntüsü alabilir ya da iletebilir",
+      "cannot": "Konuştuğun diğer kişilere ulaşmak ya da başka sohbetleri okumak",
+      "defence": "Engelleme ve sohbet başına ayrı anahtarlar",
+      "residual": "Hiçbir kriptografi konuştuğun kişinin güvenilmez olmasını engelleyemez"
+    },
+    {
+      "name": "Kişi eklerken bir sahtekâr",
+      "sees": "Doğrulama başarılıysa hiçbir şey",
+      "cannot": "Paketi zincirde imzalı bir kişinin yerine kendi anahtarını koymak",
+      "defence": "Cüzdanla imzalanmış ve zincirde yayımlanmış prekey paketleri; böylece hiçbir kayıt bir hesabın anahtarını değiştiremez",
+      "residual": "Karşılaştırılacak güvenlik numarası veya parmak izi yoktur; hesabın doğru kişiye ait olduğunu doğrulamak tamamen uygulama dışında ve yardımsız yapılır"
+    },
+    {
+      "name": "Apple",
+      "sees": "Apple kimliğinin bir abonelik satın aldığını",
+      "cannot": "Mesajları, kişileri görmek ya da satın almayı gönderim etkinliğinle ilişkilendirmek",
+      "defence": "Kör tokenlar satın alma ile her gönderim arasında durur",
+      "residual": "Apple senin PrivaMesh müşterisi olduğunu bilir; iOS'ta bu kaçınılmazdır"
+    },
+    {
+      "name": "Ağ düzeyinde bir sansürcü",
+      "sees": "Bir Solana RPC uç noktasına bağlandığını",
+      "cannot": "Tek tek mesajları okumak ya da seçerek düşürmek",
+      "defence": "RPC uç noktaları değiştirilebilir, kendi çalıştırdıkların dahil",
+      "residual": "Solana'yı ya da tüm RPC'leri engellemek teslimatı tamamen engeller"
+    }
+  ],
+  "assumeHeading": "Bu model neyi varsayar",
+  "assume": [
+    "Kriptografik temel yapıların sağlam olduğunu: X3DH, Double Ratchet, AES-256-GCM ve iOS 26'da ML-KEM-768. Cihazının zaten ele geçirilmemiş olduğunu. Eklediğin kişinin kastettiğin kişi olduğunu doğruladığını. Bunlardan biri tutmazsa tasarımın geri kalanı seni kurtarmaz.",
+    "Ayrıca bu temel yapıları doğru uyguladığımızı varsayar - kaynak kodun açık olmasının ve [içinde bulunan bir açığın ödüllendirilmesinin](/bug-bounty) nedeni budur. Kapsanmayanların tam listesi için [bilinen sınırlamalara](/limitations) bakın."
+  ],
+  "faq": [
+    {
+      "q": "PrivaMesh en kötü neye karşı savunur?",
+      "a": "Tüm ağı sürekli izleyen ve her şeyi saklayan küresel bir saldırgana karşı. Örtü trafiği zamanlama ilişkilendirmesinin maliyetini artırır ama o ölçekteki bir gözlemciyi yenemez; zincir de onun üzerinde çalışabileceği kalıcı bir kayıt tutar."
+    },
+    {
+      "q": "Cihazıma el konulursa ne açığa çıkar?",
+      "a": "O an üzerindeki her şey: düz metin, kişiler ve anahtarlar - kilitli değilse ya da saldırgan Face ID'yi aşabiliyorsa. İleri gizlilik, zararı ratchet'ın henüz silmediği şeylerle sınırlar; eski mesajlar zaten kurtarılamaz. Kilidi kendin açmaya zorlanıyorsan, zorlama kodu hesabı açmak yerine siler."
+    },
+    {
+      "q": "PrivaMesh verilerimi teslim etmeye zorlanabilir mi?",
+      "a": "İstenebilir. Teslim edilebilecek tek şey, bir hesabın belirli bir zamanda bir gönderim için ödeme yaptığıdır. Mesaj içeriği, alıcı, kişi listesi ve hesap kaydı yoktur, çünkü bunların hiçbiri saklanmaz."
+    },
+    {
+      "q": "VPN işe yarar mı?",
+      "a": "Evet, RPC sağlayıcısına ve ağ düzeyindeki bir gözlemciye karşı; IP'ni gören iki saldırgan bunlardır. Zincire yazılanlar üzerinde hiçbir etkisi yoktur, onlar zaten okunamaz."
+    }
+  ],
+  "related": [
+    {
+      "href": "/architecture",
+      "label": "Mimari",
+      "blurb": "Her bileşen, işleteni ve neleri gözlemleyebildiği."
+    },
+    {
+      "href": "/limitations",
+      "label": "Bilinen sınırlamalar",
+      "blurb": "PrivaMesh'in seni neye karşı korumadığı, sade bir dille."
+    },
+    {
+      "href": "/features/metadata-protection",
+      "label": "Meta veri koruması",
+      "blurb": "Gizli adresler, doldurma seviyeleri ve isteğe bağlı örtü trafiği."
+    },
+    {
+      "href": "/features/duress-code",
+      "label": "Zorlama kodu",
+      "blurb": "Hesabı açmak yerine boşaltan ikinci bir şifre."
+    }
+  ]
+}

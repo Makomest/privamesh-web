@@ -1,0 +1,136 @@
+{
+  "meta": {
+    "title": "Trusselmodell: hvem ser hva",
+    "description": "Motstander for motstander: hva operatøren, RPC-leverandøren, en kjedeobservatør, en stjålet enhet og en ondsinnet kontakt kan se, og hva som fortsatt er mulig."
+  },
+  "eyebrow": "Trusselmodell",
+  "title": "Hvem kan se hva, og hva stopper dem",
+  "lead": "En trusselmodell er bare nyttig hvis den navngir motstanderne den taper mot like tydelig som dem den slår. Hver rad nedenfor viser hva motstanderen ser, hva den ikke når, hvilket forsvar som finnes, og hva som likevel er mulig.",
+  "ldDescription": "PrivaMeshs trusselmodell, motstander for motstander, med gjenværende risiko.",
+  "summary": "PrivaMesh er laget mot en operatør som vil ha dataene dine, en kjedeobservatør som leser alt offentlig og en bedrager som prøver å fange opp når du legger til en kontakt. Det er svakest mot en global tidsanalytiker og tilbyr ingenting mot en kompromittert enhet.",
+  "tableCaption": "PrivaMeshs trusselmodell per motstander, med forsvar og gjenværende risiko",
+  "cols": {
+    "adversary": "Motstander",
+    "sees": "Ser",
+    "cannot": "Kan ikke",
+    "defence": "Forsvar",
+    "residual": "Fortsatt mulig"
+  },
+  "adversaries": [
+    {
+      "name": "PrivaMesh, operatøren",
+      "sees": "At en konto betalte for en sending, og når",
+      "cannot": "Lese meldinger, finne mottakere, liste kontaktene dine eller gjenskape historikken",
+      "defence": "Ingen kontodatabase eller meldingslagring; blinde tokens kobler betaling fra sending",
+      "residual": "Vi kan bli tvunget til å vise at en konto sendte noe på et bestemt tidspunkt"
+    },
+    {
+      "name": "RPC-leverandøren",
+      "sees": "IP-adressen din, tidspunkt for forespørsler, transaksjonene du sender inn",
+      "cannot": "Dekryptere noe, eller se hvilken engangsadresse som tilhører hvem",
+      "defence": "Endepunktet er utskiftbart og kan driftes selv",
+      "residual": "En leverandør som logger, bygger et bilde på nettverksnivå av når du er aktiv"
+    },
+    {
+      "name": "En kjedeobservatør",
+      "sees": "Utfylt chiffertekst, engangsadresser, nøyaktige transaksjonstider",
+      "cannot": "Lese innhold, eller koble sammen to meldinger i samme samtale",
+      "defence": "Stealth-adresser, faste utfyllingsnivåer, valgfri dekktrafikk",
+      "residual": "Med dekktrafikk av er aktivitetsmønsteret ditt over tid helt synlig"
+    },
+    {
+      "name": "En global tidsanalytiker",
+      "sees": "Korrelert aktivitet over hele nettverket på én gang",
+      "cannot": "Dekryptere, eller koble adresser kryptografisk",
+      "defence": "Dekktrafikk med tilfeldige intervaller på 3-10 minutter, når den er slått på",
+      "residual": "Dette er motstanderen vi forsvarer oss dårligst mot; en observatør av hele nettverket med ubegrenset lagring er utenfor det noe design per melding kan løse"
+    },
+    {
+      "name": "Noen som holder den opplåste telefonen din",
+      "sees": "Alt: klartekst, kontakter, nøkler",
+      "cannot": "Gjenopprette meldinger som ratcheten allerede har slettet",
+      "defence": "Lagring i nøkkelringen bak Face ID eller Touch ID; fremoverhemmelighold begrenser fortiden; en tvangskode sletter kontoen i stedet for å åpne den",
+      "residual": "En kompromittert enhet er total for alt som ligger på den nå, og en tvangskode hjelper bare i øyeblikket du blir bedt om å låse opp - ikke hvis lagringen er kopiert på forhånd"
+    },
+    {
+      "name": "Noen som har gjenopprettingsfrasen din",
+      "sees": "Identiteten din, og kan utgi seg for å være deg fremover",
+      "cannot": "Lese ratchet-delen av tidligere samtaler - de nøklene var tilfeldige og fantes bare på enheten",
+      "defence": "Frasen forlater aldri enheten din og overføres aldri",
+      "residual": "Identitetsnøkkel, signert prekey og PQ-prekey avledes alle fra frasen, og ingen engangs-prekeys publiseres, så åpningsmeldingen i hver samtale kan regnes ut på nytt fra frasen pluss den permanente konvolutten på kjeden. Det finnes heller ingen tilbakekalling"
+    },
+    {
+      "name": "En ondsinnet kontakt",
+      "sees": "Alt du sender til dem, og kan ta skjermbilde eller videresende det",
+      "cannot": "Nå andre du snakker med, eller lese andre samtaler",
+      "defence": "Blokkering og egne nøkler per samtale",
+      "residual": "Ingen kryptografi hindrer den du snakker med i å være upålitelig"
+    },
+    {
+      "name": "En bedrager når du legger til en kontakt",
+      "sees": "Ingenting, hvis verifiseringen lykkes",
+      "cannot": "Bytte ut en kontakts nøkkel med sin egen når kontaktens pakke er signert på kjeden",
+      "defence": "Prekey-pakker signert med lommeboken og publisert på kjeden, så ingen register kan bytte ut en kontos nøkkel",
+      "residual": "Det finnes ikke noe sikkerhetsnummer eller fingeravtrykk å sammenligne, så å bekrefte at kontoen tilhører riktig person skjer helt utenfor appen og uten hjelp"
+    },
+    {
+      "name": "Apple",
+      "sees": "At Apple-ID-en din kjøpte et abonnement",
+      "cannot": "Se meldinger eller kontakter, eller knytte kjøpet til sendeaktiviteten din",
+      "defence": "Blinde tokens står mellom kjøpet og hver sending",
+      "residual": "Apple vet at du er PrivaMesh-kunde, noe som er uunngåelig på iOS"
+    },
+    {
+      "name": "En sensor på nettverksnivå",
+      "sees": "At du nådde et Solana-RPC-endepunkt",
+      "cannot": "Lese eller selektivt forkaste enkeltmeldinger",
+      "defence": "RPC-endepunkter er utskiftbare, også med egne",
+      "residual": "Å blokkere Solana eller alle RPC-er blokkerer leveringen fullstendig"
+    }
+  ],
+  "assumeHeading": "Hva denne modellen forutsetter",
+  "assume": [
+    "At de kryptografiske primitivene holder: X3DH, Double Ratchet, AES-256-GCM og, på iOS 26, ML-KEM-768. At enheten din ikke allerede er kompromittert. At du sjekker at kontakten du legger til, er personen du mente. Hvis noe av dette svikter, redder ikke resten av designet deg.",
+    "Den forutsetter også at vår implementering av primitivene er riktig - derfor er kildekoden åpen og [en funnet feil gir betaling](/bug-bounty). Hele listen over hva som ikke dekkes, står under [kjente begrensninger](/limitations)."
+  ],
+  "faq": [
+    {
+      "q": "Hva forsvarer PrivaMesh seg dårligst mot?",
+      "a": "En global motstander som overvåker hele nettverket kontinuerlig og tar vare på alt. Dekktrafikk gjør tidskorrelasjon dyrere, men slår ikke en observatør i den skalaen, og kjeden lagrer et permanent arkiv de kan jobbe med."
+    },
+    {
+      "q": "Hvis enheten min blir beslaglagt, hva er eksponert?",
+      "a": "Alt som ligger på den nå: klartekst, kontakter og nøkler, med mindre den er låst og angriperen ikke kommer forbi Face ID. Fremoverhemmelighold begrenser skaden til det ratcheten ennå ikke har slettet - gamle meldinger kan allerede ikke gjenopprettes. Hvis du blir tvunget til å låse den opp selv, sletter en tvangskode kontoen i stedet for å åpne den."
+    },
+    {
+      "q": "Kan PrivaMesh tvinges til å utlevere dataene mine?",
+      "a": "Man kan spørre. Det som finnes å utlevere, er at en konto betalte for en sending på et bestemt tidspunkt. Det finnes ikke meldingsinnhold, mottaker, kontaktliste eller kontopost, fordi ingenting av det lagres."
+    },
+    {
+      "q": "Hjelper en VPN?",
+      "a": "Ja, mot RPC-leverandøren og en observatør på nettverksnivå, de to motstanderne som ser IP-en din. Den endrer ingenting ved det som skrives til kjeden, og det er allerede uleselig."
+    }
+  ],
+  "related": [
+    {
+      "href": "/architecture",
+      "label": "Arkitektur",
+      "blurb": "Hver komponent, hvem som driver den og hva den kan observere."
+    },
+    {
+      "href": "/limitations",
+      "label": "Kjente begrensninger",
+      "blurb": "Hva PrivaMesh ikke beskytter deg mot, på godt norsk."
+    },
+    {
+      "href": "/features/metadata-protection",
+      "label": "Beskyttelse av metadata",
+      "blurb": "Stealth-adresser, utfyllingsnivåer og valgfri dekktrafikk."
+    },
+    {
+      "href": "/features/duress-code",
+      "label": "Tvangskode",
+      "blurb": "En ekstra kode som tømmer kontoen i stedet for å åpne den."
+    }
+  ]
+}

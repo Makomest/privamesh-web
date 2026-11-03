@@ -1,0 +1,136 @@
+{
+  "meta": {
+    "title": "Hotmodell: vem ser vad",
+    "description": "Motståndare för motståndare: vad operatören, RPC-leverantören, en kedjeobservatör, en stulen enhet och en illasinnad kontakt kan se, och vad som fortfarande är möjligt."
+  },
+  "eyebrow": "Hotmodell",
+  "title": "Vem kan se vad, och vad stoppar dem",
+  "lead": "En hotmodell är bara användbar om den namnger motståndarna den förlorar mot lika tydligt som dem den slår. Varje rad nedan visar vad motståndaren ser, vad den inte når, vilket skydd som finns och vad som ändå är möjligt.",
+  "ldDescription": "PrivaMeshs hotmodell, motståndare för motståndare, med kvarstående risk.",
+  "summary": "PrivaMesh är byggt mot en operatör som vill åt dina data, en kedjeobservatör som läser allt offentligt och en bedragare som försöker fånga upp när du lägger till en kontakt. Det är svagast mot en global tidsanalytiker och erbjuder ingenting alls mot en komprometterad enhet.",
+  "tableCaption": "PrivaMeshs hotmodell per motståndare, med skydd och kvarstående risk",
+  "cols": {
+    "adversary": "Motståndare",
+    "sees": "Ser",
+    "cannot": "Kan inte",
+    "defence": "Skydd",
+    "residual": "Fortfarande möjligt"
+  },
+  "adversaries": [
+    {
+      "name": "PrivaMesh, operatören",
+      "sees": "Att ett konto betalade för ett utskick, och när",
+      "cannot": "Läsa meddelanden, få veta mottagare, lista dina kontakter eller återskapa historiken",
+      "defence": "Ingen kontodatabas eller meddelandelagring; blinda tokens frikopplar betalning från utskick",
+      "residual": "Vi kan tvingas visa att något konto skickade något vid en viss tidpunkt"
+    },
+    {
+      "name": "RPC-leverantören",
+      "sees": "Din IP-adress, tidpunkt för förfrågningar, transaktionerna du skickar in",
+      "cannot": "Dekryptera något eller se vilken engångsadress som tillhör vem",
+      "defence": "Slutpunkten är utbytbar och kan köras själv",
+      "residual": "En leverantör som loggar bygger upp en bild på nätverksnivå av när du är aktiv"
+    },
+    {
+      "name": "En kedjeobservatör",
+      "sees": "Utfylld chiffertext, engångsadresser, exakta transaktionstider",
+      "cannot": "Läsa innehåll eller koppla ihop två meddelanden i samma konversation",
+      "defence": "Stealth-adresser, fasta utfyllnadsnivåer, valfri täcktrafik",
+      "residual": "Med täcktrafiken avstängd är ditt aktivitetsmönster över tid helt synligt"
+    },
+    {
+      "name": "En global tidsanalytiker",
+      "sees": "Korrelerad aktivitet över hela nätverket samtidigt",
+      "cannot": "Dekryptera eller koppla adresser kryptografiskt",
+      "defence": "Täcktrafik med slumpmässiga intervall på 3-10 minuter, om den är påslagen",
+      "residual": "Det här är motståndaren vi skyddar sämst mot; en observatör av hela nätverket med obegränsad lagring ligger utanför vad någon design per meddelande kan lösa"
+    },
+    {
+      "name": "Någon som har din upplåsta telefon",
+      "sees": "Allt: klartext, kontakter, nycklar",
+      "cannot": "Återskapa meddelanden som ratcheten redan har raderat",
+      "defence": "Lagring i nyckelringen bakom Face ID eller Touch ID; framåtsekretess begränsar det förflutna; en tvångskod raderar kontot i stället för att öppna det",
+      "residual": "En komprometterad enhet är total för allt som finns på den just nu, och en tvångskod hjälper bara i stunden då du ombeds låsa upp - inte om lagringen redan har kopierats"
+    },
+    {
+      "name": "Någon som har din återställningsfras",
+      "sees": "Din identitet, och kan utge sig för att vara du framöver",
+      "cannot": "Läsa ratchet-delen av tidigare konversationer - de nycklarna var slumpmässiga och fanns bara på enheten",
+      "defence": "Frasen lämnar aldrig din enhet och överförs aldrig",
+      "residual": "Identitetsnyckel, signerad prekey och PQ-prekey härleds alla ur frasen och inga engångs-prekeys publiceras, så öppningsmeddelandet i varje konversation kan räknas om ur frasen plus det permanenta kuvertet på kedjan. Det finns heller ingen återkallelse"
+    },
+    {
+      "name": "En illasinnad kontakt",
+      "sees": "Allt du skickar till dem, och kan ta skärmbild eller vidarebefordra det",
+      "cannot": "Nå andra du pratar med eller läsa andra konversationer",
+      "defence": "Blockering och separata nycklar per konversation",
+      "residual": "Ingen kryptografi hindrar den du pratar med från att vara opålitlig"
+    },
+    {
+      "name": "En bedragare när du lägger till en kontakt",
+      "sees": "Ingenting, om verifieringen lyckas",
+      "cannot": "Byta ut en kontakts nyckel mot sin egen när kontaktens paket är signerat på kedjan",
+      "defence": "Prekey-paket signerade med plånboken och publicerade på kedjan, så inget register kan byta ut ett kontos nyckel",
+      "residual": "Det finns inget säkerhetsnummer eller fingeravtryck att jämföra, så att bekräfta att kontot tillhör rätt person sker helt utanför appen och utan hjälp"
+    },
+    {
+      "name": "Apple",
+      "sees": "Att ditt Apple-ID köpte en prenumeration",
+      "cannot": "Se meddelanden eller kontakter, eller koppla köpet till din sändaktivitet",
+      "defence": "Blinda tokens sitter mellan köpet och varje utskick",
+      "residual": "Apple vet att du är kund hos PrivaMesh, vilket är oundvikligt på iOS"
+    },
+    {
+      "name": "En censor på nätverksnivå",
+      "sees": "Att du nådde en Solana-RPC-slutpunkt",
+      "cannot": "Läsa eller selektivt slänga enskilda meddelanden",
+      "defence": "RPC-slutpunkter är utbytbara, även mot sådana du kör själv",
+      "residual": "Att blockera Solana eller alla RPC:er blockerar leveransen helt"
+    }
+  ],
+  "assumeHeading": "Vad den här modellen förutsätter",
+  "assume": [
+    "Att de kryptografiska primitiverna håller: X3DH, Double Ratchet, AES-256-GCM och, på iOS 26, ML-KEM-768. Att din enhet inte redan är komprometterad. Att du kontrollerar att kontakten du lägger till är den person du avsåg. Om något av det brister räddar resten av designen dig inte.",
+    "Den förutsätter också att vår implementering av primitiverna är korrekt - därför är källkoden öppen och [ett hittat fel ger betalt](/bug-bounty). Hela listan över vad som inte täcks finns under [kända begränsningar](/limitations)."
+  ],
+  "faq": [
+    {
+      "q": "Vad skyddar PrivaMesh sämst mot?",
+      "a": "En global motståndare som bevakar hela nätverket hela tiden och sparar allt. Täcktrafik gör tidskorrelation dyrare men besegrar inte en observatör i den skalan, och kedjan sparar ett permanent register åt dem att arbeta med."
+    },
+    {
+      "q": "Om min enhet beslagtas, vad blir då exponerat?",
+      "a": "Allt som finns på den just nu: klartext, kontakter och nycklar, om den inte är låst och angriparen inte kommer förbi Face ID. Framåtsekretess begränsar skadan till det ratcheten ännu inte har raderat - gamla meddelanden går redan inte att återskapa. Om du tvingas låsa upp den själv raderar en tvångskod kontot i stället för att öppna det."
+    },
+    {
+      "q": "Kan PrivaMesh tvingas lämna ut mina data?",
+      "a": "Man kan fråga. Det som finns att lämna ut är att ett konto betalade för ett utskick vid en viss tidpunkt. Det finns inget meddelandeinnehåll, ingen mottagare, ingen kontaktlista och ingen kontopost, eftersom inget av det lagras."
+    },
+    {
+      "q": "Hjälper en VPN?",
+      "a": "Ja, mot RPC-leverantören och en observatör på nätverksnivå, de två motståndare som ser din IP. Den ändrar ingenting i det som skrivs till kedjan, och det är redan oläsligt."
+    }
+  ],
+  "related": [
+    {
+      "href": "/architecture",
+      "label": "Arkitektur",
+      "blurb": "Varje komponent, vem som driver den och vad den kan observera."
+    },
+    {
+      "href": "/limitations",
+      "label": "Kända begränsningar",
+      "blurb": "Vad PrivaMesh inte skyddar dig mot, på vanlig svenska."
+    },
+    {
+      "href": "/features/metadata-protection",
+      "label": "Skydd av metadata",
+      "blurb": "Stealth-adresser, utfyllnadsnivåer och valfri täcktrafik."
+    },
+    {
+      "href": "/features/duress-code",
+      "label": "Tvångskod",
+      "blurb": "En andra kod som tömmer kontot i stället för att öppna det."
+    }
+  ]
+}

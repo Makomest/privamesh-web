@@ -1,0 +1,136 @@
+{
+  "meta": {
+    "title": "Modello di minaccia: chi vede cosa",
+    "description": "Avversario per avversario: cosa possono vedere l'operatore, il fornitore RPC, un osservatore della chain, un dispositivo rubato e un contatto malintenzionato, e cosa resta possibile."
+  },
+  "eyebrow": "Modello di minaccia",
+  "title": "Chi può vedere cosa, e cosa lo ferma",
+  "lead": "Un modello di minaccia è utile solo se nomina gli avversari contro cui perde con la stessa chiarezza di quelli che batte. Ogni riga qui sotto indica cosa vede quell'avversario, cosa non può raggiungere, la difesa in atto e cosa resta comunque possibile.",
+  "ldDescription": "Modello di minaccia di PrivaMesh, avversario per avversario, con rischio residuo.",
+  "summary": "PrivaMesh è progettato contro un operatore che vuole i tuoi dati, un osservatore della chain che legge tutto ciò che è pubblico e un impostore che cerca di intercettare l'aggiunta di un contatto. È più debole contro un analista temporale globale e non offre nulla contro un dispositivo compromesso.",
+  "tableCaption": "Modello di minaccia di PrivaMesh per avversario, con difese e rischio residuo",
+  "cols": {
+    "adversary": "Avversario",
+    "sees": "Vede",
+    "cannot": "Non può",
+    "defence": "Difesa",
+    "residual": "Ancora possibile"
+  },
+  "adversaries": [
+    {
+      "name": "PrivaMesh, l'operatore",
+      "sees": "Che un account ha pagato un invio, e quando",
+      "cannot": "Leggere i messaggi, conoscere i destinatari, elencare i tuoi contatti o ricostruire la cronologia",
+      "defence": "Nessun database di account né archivio di messaggi; i token ciechi scollegano il pagamento dall'invio",
+      "residual": "Potremmo essere obbligati a mostrare che un account ha inviato qualcosa in un dato momento"
+    },
+    {
+      "name": "Il fornitore RPC",
+      "sees": "Il tuo indirizzo IP, l'orario delle richieste, le transazioni che invii",
+      "cannot": "Decifrare alcunché, o capire a chi appartiene un indirizzo monouso",
+      "defence": "L'endpoint è sostituibile e auto-ospitabile",
+      "residual": "Un fornitore che registra tutto si costruisce, a livello di rete, un quadro di quando sei attivo"
+    },
+    {
+      "name": "Un osservatore della chain",
+      "sees": "Testo cifrato riempito, indirizzi monouso, orari esatti delle transazioni",
+      "cannot": "Leggere il contenuto o collegare due messaggi della stessa conversazione",
+      "defence": "Indirizzi stealth, livelli di riempimento fissi, traffico di copertura opzionale",
+      "residual": "Senza traffico di copertura, il tuo schema di attività nel tempo è del tutto visibile"
+    },
+    {
+      "name": "Un analista temporale globale",
+      "sees": "L'attività correlata su tutta la rete contemporaneamente",
+      "cannot": "Decifrare o collegare crittograficamente gli indirizzi",
+      "defence": "Traffico di copertura a intervalli casuali di 3-10 minuti, se attivato",
+      "residual": "È l'avversario contro cui ci difendiamo peggio; un osservatore dell'intera rete con conservazione illimitata va oltre ciò che qualsiasi design per singolo messaggio può risolvere"
+    },
+    {
+      "name": "Chi ha in mano il tuo telefono sbloccato",
+      "sees": "Tutto: testo in chiaro, contatti, chiavi",
+      "cannot": "Recuperare messaggi già cancellati dal ratchet",
+      "defence": "Archiviazione nel Portachiavi dietro Face ID o Touch ID; la forward secrecy limita il passato; un codice di coercizione cancella l'account invece di aprirlo",
+      "residual": "La compromissione del dispositivo è totale per tutto ciò che vi si trova, e un codice di coercizione aiuta solo nel momento in cui ti chiedono di sbloccare - non se lo spazio di archiviazione è stato copiato prima"
+    },
+    {
+      "name": "Chi ha la tua frase di recupero",
+      "sees": "La tua identità, e può spacciarsi per te d'ora in poi",
+      "cannot": "Leggere la parte ratchet delle conversazioni passate - quelle chiavi erano casuali e locali al dispositivo",
+      "defence": "La frase non lascia mai il tuo dispositivo e non viene mai trasmessa",
+      "residual": "Chiave di identità, prekey firmata e prekey PQ derivano tutte dalla frase e non vengono pubblicate prekey monouso, quindi il messaggio di apertura di ogni conversazione può essere ricalcolato dalla frase più la busta permanente sulla chain. Non esiste nemmeno la revoca"
+    },
+    {
+      "name": "Un contatto malintenzionato",
+      "sees": "Tutto ciò che gli invii, e può farne uno screenshot o inoltrarlo",
+      "cannot": "Raggiungere le altre persone con cui parli o leggere altre conversazioni",
+      "defence": "Blocco e separazione delle chiavi per conversazione",
+      "residual": "Nessuna crittografia impedisce che la persona con cui parli sia inaffidabile"
+    },
+    {
+      "name": "Un impostore durante l'aggiunta di un contatto",
+      "sees": "Niente, se la verifica riesce",
+      "cannot": "Sostituire la propria chiave a quella di un contatto il cui pacchetto è firmato sulla chain",
+      "defence": "Pacchetti di prekey firmati dal wallet e pubblicati sulla chain, così nessun registro può sostituire la chiave di un account",
+      "residual": "Non c'è un numero di sicurezza né un'impronta da confrontare, quindi confermare che l'account appartiene alla persona giusta avviene interamente fuori dall'app e senza aiuti"
+    },
+    {
+      "name": "Apple",
+      "sees": "Che il tuo ID Apple ha acquistato un abbonamento",
+      "cannot": "Vedere messaggi, contatti, o collegare l'acquisto alla tua attività di invio",
+      "defence": "I token ciechi stanno tra l'acquisto e ogni invio",
+      "residual": "Apple sa che sei cliente di PrivaMesh, cosa inevitabile su iOS"
+    },
+    {
+      "name": "Un censore a livello di rete",
+      "sees": "Che hai raggiunto un endpoint RPC di Solana",
+      "cannot": "Leggere o scartare selettivamente singoli messaggi",
+      "defence": "Gli endpoint RPC sono sostituibili, anche con i tuoi",
+      "residual": "Bloccare Solana o tutti gli RPC blocca del tutto la consegna"
+    }
+  ],
+  "assumeHeading": "Cosa presuppone questo modello",
+  "assume": [
+    "Che le primitive crittografiche reggano: X3DH, il Double Ratchet, AES-256-GCM e, su iOS 26, ML-KEM-768. Che il tuo dispositivo non sia già compromesso. Che tu verifichi che il contatto che aggiungi sia la persona che intendevi. Se una di queste cose viene meno, il resto del design non ti salva.",
+    "Presuppone anche che la nostra implementazione di queste primitive sia corretta - per questo il codice è pubblico e [trovarvi una falla viene pagato](/bug-bounty). L'elenco completo di ciò che non è coperto è nei [limiti noti](/limitations)."
+  ],
+  "faq": [
+    {
+      "q": "Contro cosa PrivaMesh si difende peggio?",
+      "a": "Contro un avversario globale che osserva l'intera rete di continuo e conserva tutto. Il traffico di copertura alza il costo della correlazione temporale ma non sconfigge un osservatore di quella portata, e la chain gli fornisce una registrazione permanente su cui lavorare."
+    },
+    {
+      "q": "Se il mio dispositivo viene sequestrato, cosa è esposto?",
+      "a": "Tutto ciò che contiene: testo in chiaro, contatti e chiavi, a meno che non sia bloccato e l'attaccante non riesca a superare Face ID. La forward secrecy limita il danno a ciò che il ratchet non ha ancora cancellato - i vecchi messaggi sono già irrecuperabili. Se ti costringono a sbloccarlo tu stesso, un codice di coercizione cancella l'account invece di aprirlo."
+    },
+    {
+      "q": "PrivaMesh può essere costretto a consegnare i miei dati?",
+      "a": "Glielo si può chiedere. L'unica cosa che esiste da consegnare è che un account ha pagato un invio in un dato momento. Non c'è contenuto dei messaggi, né destinatario, né elenco di contatti, né scheda dell'account, perché nulla di tutto ciò viene conservato."
+    },
+    {
+      "q": "Una VPN aiuta?",
+      "a": "Sì, contro il fornitore RPC e un osservatore a livello di rete, i due avversari che vedono il tuo IP. Non cambia nulla di ciò che viene scritto sulla chain, che è già illeggibile."
+    }
+  ],
+  "related": [
+    {
+      "href": "/architecture",
+      "label": "Architettura",
+      "blurb": "Ogni componente, chi lo gestisce e cosa può osservare."
+    },
+    {
+      "href": "/limitations",
+      "label": "Limiti noti",
+      "blurb": "Da cosa PrivaMesh non ti protegge, in parole semplici."
+    },
+    {
+      "href": "/features/metadata-protection",
+      "label": "Protezione dei metadati",
+      "blurb": "Indirizzi stealth, livelli di riempimento e traffico di copertura opzionale."
+    },
+    {
+      "href": "/features/duress-code",
+      "label": "Codice di coercizione",
+      "blurb": "Un secondo codice che svuota l'account invece di aprirlo."
+    }
+  ]
+}

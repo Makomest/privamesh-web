@@ -1,0 +1,136 @@
+{
+  "meta": {
+    "title": "Bedrohungsmodell: wer was sieht",
+    "description": "Angreifer für Angreifer: was der Betreiber, der RPC-Anbieter, ein Chain-Beobachter, ein gestohlenes Gerät und ein böswilliger Kontakt jeweils sehen können und was weiterhin möglich ist."
+  },
+  "eyebrow": "Bedrohungsmodell",
+  "title": "Wer was sehen kann - und was ihn aufhält",
+  "lead": "Ein Bedrohungsmodell ist nur nützlich, wenn es die Angreifer, gegen die es verliert, ebenso klar benennt wie die, gegen die es gewinnt. Jede Zeile unten zeigt, was dieser Angreifer sieht, was er nicht erreicht, welche Abwehr greift und was trotzdem möglich bleibt.",
+  "ldDescription": "Bedrohungsmodell von PrivaMesh, Angreifer für Angreifer, mit Restrisiko.",
+  "summary": "PrivaMesh ist gegen einen Betreiber ausgelegt, der Ihre Daten will, gegen einen Chain-Beobachter, der alles Öffentliche liest, und gegen einen Betrüger, der das Hinzufügen eines Kontakts abfangen will. Am schwächsten ist es gegen einen globalen Timing-Analysten, und gegen ein kompromittiertes Gerät bietet es gar nichts.",
+  "tableCaption": "Bedrohungsmodell von PrivaMesh nach Angreifer, mit Abwehr und Restrisiko",
+  "cols": {
+    "adversary": "Angreifer",
+    "sees": "Sieht",
+    "cannot": "Kann nicht",
+    "defence": "Abwehr",
+    "residual": "Weiterhin möglich"
+  },
+  "adversaries": [
+    {
+      "name": "PrivaMesh, der Betreiber",
+      "sees": "Dass ein Konto für eine Sendung bezahlt hat, und wann",
+      "cannot": "Nachrichten lesen, Empfänger erfahren, Ihre Kontakte auflisten oder den Verlauf rekonstruieren",
+      "defence": "Keine Kontodatenbank und kein Nachrichtenspeicher; Blind-Tokens entkoppeln Bezahlung und Senden",
+      "residual": "Wir könnten gezwungen werden zu zeigen, dass ein Konto zu einem bestimmten Zeitpunkt etwas gesendet hat"
+    },
+    {
+      "name": "Der RPC-Anbieter",
+      "sees": "Ihre IP-Adresse, den Zeitpunkt der Anfragen, die eingereichten Transaktionen",
+      "cannot": "Irgendetwas entschlüsseln oder erkennen, welche Einmaladresse wem gehört",
+      "defence": "Der Endpunkt ist austauschbar und selbst hostbar",
+      "residual": "Ein protokollierender Anbieter erstellt auf Netzwerkebene ein Bild davon, wann Sie aktiv sind"
+    },
+    {
+      "name": "Ein Chain-Beobachter",
+      "sees": "Aufgefüllten Chiffretext, Einmaladressen, exakte Transaktionszeiten",
+      "cannot": "Inhalte lesen oder zwei Nachrichten derselben Unterhaltung verknüpfen",
+      "defence": "Stealth-Adressen, feste Auffüllstufen, optionaler Tarnverkehr",
+      "residual": "Bei ausgeschaltetem Tarnverkehr ist Ihr Aktivitätsmuster über die Zeit vollständig sichtbar"
+    },
+    {
+      "name": "Ein globaler Timing-Analyst",
+      "sees": "Korrelierte Aktivität im gesamten Netzwerk zugleich",
+      "cannot": "Entschlüsseln oder Adressen kryptografisch verknüpfen",
+      "defence": "Tarnverkehr in zufälligen Abständen von 3-10 Minuten, wenn aktiviert",
+      "residual": "Gegen diesen Angreifer verteidigen wir am schlechtesten; ein Beobachter des gesamten Netzwerks mit unbegrenzter Speicherung liegt außerhalb dessen, was ein Design pro Nachricht beheben kann"
+    },
+    {
+      "name": "Jemand mit Ihrem entsperrten Telefon",
+      "sees": "Alles: Klartext, Kontakte, Schlüssel",
+      "cannot": "Nachrichten wiederherstellen, die der Ratchet bereits gelöscht hat",
+      "defence": "Speicherung im Schlüsselbund hinter Face ID oder Touch ID; Forward Secrecy begrenzt die Vergangenheit; ein Notfallcode löscht das Konto, statt es zu öffnen",
+      "residual": "Eine Kompromittierung des Geräts ist für alles, was gerade darauf ist, total, und ein Notfallcode hilft nur in dem Moment, in dem Sie zum Entsperren aufgefordert werden - nicht, wenn der Speicher vorher kopiert wurde"
+    },
+    {
+      "name": "Jemand mit Ihrer Wiederherstellungsphrase",
+      "sees": "Ihre Identität, und kann sich künftig als Sie ausgeben",
+      "cannot": "Den Ratchet-Teil vergangener Unterhaltungen lesen - diese Schlüssel waren zufällig und nur auf dem Gerät",
+      "defence": "Die Phrase verlässt Ihr Gerät nie und wird nie übertragen",
+      "residual": "Identitätsschlüssel, signierter Prekey und PQ-Prekey werden alle aus der Phrase abgeleitet, und es werden keine Einmal-Prekeys veröffentlicht, sodass sich die eröffnende Nachricht jeder Unterhaltung aus der Phrase und dem dauerhaften On-Chain-Umschlag neu berechnen lässt. Einen Widerruf gibt es auch nicht"
+    },
+    {
+      "name": "Ein böswilliger Kontakt",
+      "sees": "Alles, was Sie ihm senden, und kann es per Screenshot festhalten oder weiterleiten",
+      "cannot": "Andere Ihrer Gesprächspartner erreichen oder andere Unterhaltungen lesen",
+      "defence": "Blockieren und getrennte Schlüssel pro Unterhaltung",
+      "residual": "Keine Kryptografie verhindert, dass Ihr Gegenüber nicht vertrauenswürdig ist"
+    },
+    {
+      "name": "Ein Betrüger beim Hinzufügen eines Kontakts",
+      "sees": "Nichts, wenn die Prüfung gelingt",
+      "cannot": "Seinen Schlüssel an die Stelle eines Kontakts setzen, dessen Paket on-chain signiert ist",
+      "defence": "Mit der Wallet signierte Prekey-Pakete, on-chain veröffentlicht, sodass kein Verzeichnis den Schlüssel eines Kontos austauschen kann",
+      "residual": "Es gibt keine Sicherheitsnummer und keinen Fingerabdruck zum Vergleichen, also lässt sich nur außerhalb der App und ohne Hilfe bestätigen, dass das Konto der gemeinten Person gehört"
+    },
+    {
+      "name": "Apple",
+      "sees": "Dass Ihre Apple-ID ein Abo gekauft hat",
+      "cannot": "Nachrichten oder Kontakte sehen oder den Kauf mit Ihrer Sendeaktivität verknüpfen",
+      "defence": "Blind-Tokens stehen zwischen dem Kauf und jeder Sendung",
+      "residual": "Apple weiß, dass Sie PrivaMesh-Kunde sind; unter iOS ist das unvermeidlich"
+    },
+    {
+      "name": "Ein Zensor auf Netzwerkebene",
+      "sees": "Dass Sie einen Solana-RPC-Endpunkt erreicht haben",
+      "cannot": "Einzelne Nachrichten lesen oder gezielt verwerfen",
+      "defence": "RPC-Endpunkte sind austauschbar, auch gegen eigene",
+      "residual": "Wer Solana oder alle RPCs blockiert, blockiert die Zustellung vollständig"
+    }
+  ],
+  "assumeHeading": "Was dieses Modell voraussetzt",
+  "assume": [
+    "Dass die kryptografischen Primitive halten: X3DH, der Double Ratchet, AES-256-GCM und unter iOS 26 ML-KEM-768. Dass Ihr Gerät nicht bereits kompromittiert ist. Dass Sie prüfen, ob der Kontakt, den Sie hinzufügen, die gemeinte Person ist. Schlägt eines davon fehl, rettet Sie der Rest des Designs nicht.",
+    "Es setzt außerdem voraus, dass unsere Umsetzung dieser Primitive korrekt ist - deshalb ist der Quellcode öffentlich und [ein darin gefundener Fehler wird bezahlt](/bug-bounty). Die vollständige Liste dessen, was nicht abgedeckt ist, steht unter [bekannte Einschränkungen](/limitations)."
+  ],
+  "faq": [
+    {
+      "q": "Wogegen schützt PrivaMesh am schlechtesten?",
+      "a": "Gegen einen globalen Angreifer, der das gesamte Netzwerk ununterbrochen beobachtet und alles aufbewahrt. Tarnverkehr verteuert die Korrelation über Zeitpunkte, besiegt aber keinen Beobachter dieser Größenordnung, und die Chain hält für ihn eine dauerhafte Aufzeichnung bereit."
+    },
+    {
+      "q": "Was ist offengelegt, wenn mein Gerät beschlagnahmt wird?",
+      "a": "Alles, was gerade darauf ist: Klartext, Kontakte und Schlüssel - es sei denn, es ist gesperrt und der Angreifer kommt nicht an Face ID vorbei. Forward Secrecy begrenzt den Schaden auf das, was der Ratchet noch nicht gelöscht hat - alte Nachrichten sind bereits nicht wiederherstellbar. Werden Sie gezwungen, selbst zu entsperren, löscht ein Notfallcode das Konto, statt es zu öffnen."
+    },
+    {
+      "q": "Kann PrivaMesh gezwungen werden, meine Daten herauszugeben?",
+      "a": "Man kann uns fragen. Herauszugeben gibt es nur, dass ein Konto zu einem bestimmten Zeitpunkt für eine Sendung bezahlt hat. Es gibt keine Nachrichteninhalte, keinen Empfänger, keine Kontaktliste und keinen Kontodatensatz, weil nichts davon gespeichert wird."
+    },
+    {
+      "q": "Hilft ein VPN?",
+      "a": "Ja, gegen den RPC-Anbieter und einen Beobachter auf Netzwerkebene - die beiden Angreifer, die Ihre IP sehen. An dem, was in die Chain geschrieben wird, ändert es nichts; das ist ohnehin unlesbar."
+    }
+  ],
+  "related": [
+    {
+      "href": "/architecture",
+      "label": "Architektur",
+      "blurb": "Jede Komponente, ihr Betreiber und was sie sehen kann."
+    },
+    {
+      "href": "/limitations",
+      "label": "Bekannte Einschränkungen",
+      "blurb": "Wovor PrivaMesh Sie nicht schützt, in klaren Worten."
+    },
+    {
+      "href": "/features/metadata-protection",
+      "label": "Metadatenschutz",
+      "blurb": "Stealth-Adressen, Auffüllstufen und optionaler Tarnverkehr."
+    },
+    {
+      "href": "/features/duress-code",
+      "label": "Notfallcode",
+      "blurb": "Ein zweiter Code, der das Konto leert, statt es zu öffnen."
+    }
+  ]
+}

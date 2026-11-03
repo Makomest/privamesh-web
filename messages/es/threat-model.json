@@ -1,0 +1,136 @@
+{
+  "meta": {
+    "title": "Modelo de amenazas: quién ve qué",
+    "description": "Adversario por adversario: qué pueden ver el operador, el proveedor RPC, un observador de la cadena, un dispositivo robado y un contacto malicioso, y qué sigue siendo posible."
+  },
+  "eyebrow": "Modelo de amenazas",
+  "title": "Quién puede ver qué y qué lo detiene",
+  "lead": "Un modelo de amenazas solo es útil si nombra a los adversarios ante los que pierde con la misma claridad que a los que vence. Cada fila de abajo indica qué ve ese adversario, a qué no puede llegar, qué defensa hay y qué sigue siendo posible de todos modos.",
+  "ldDescription": "Modelo de amenazas de PrivaMesh, adversario por adversario, con riesgo residual.",
+  "summary": "PrivaMesh está diseñado contra un operador que quiere tus datos, un observador de la cadena que lee todo lo público y un impostor que intenta interceptar cuando añades un contacto. Es más débil frente a un analista de tiempos global y no ofrece nada frente a un dispositivo comprometido.",
+  "tableCaption": "Modelo de amenazas de PrivaMesh por adversario, con defensas y riesgo residual",
+  "cols": {
+    "adversary": "Adversario",
+    "sees": "Ve",
+    "cannot": "No puede",
+    "defence": "Defensa",
+    "residual": "Sigue siendo posible"
+  },
+  "adversaries": [
+    {
+      "name": "PrivaMesh, el operador",
+      "sees": "Que una cuenta pagó un envío, y cuándo",
+      "cannot": "Leer mensajes, saber destinatarios, listar tus contactos o reconstruir el historial",
+      "defence": "Sin base de datos de cuentas ni almacén de mensajes; los tokens ciegos desvinculan el pago del envío",
+      "residual": "Podrían obligarnos a mostrar que alguna cuenta envió algo en un momento dado"
+    },
+    {
+      "name": "El proveedor RPC",
+      "sees": "Tu dirección IP, la hora de las solicitudes, las transacciones que envías",
+      "cannot": "Descifrar nada, ni saber de quién es cada dirección de un solo uso",
+      "defence": "El endpoint es reemplazable y autoalojable",
+      "residual": "Un proveedor que registra todo construye una imagen, a nivel de red, de cuándo estás activo"
+    },
+    {
+      "name": "Un observador de la cadena",
+      "sees": "Texto cifrado rellenado, direcciones de un solo uso, horas exactas de las transacciones",
+      "cannot": "Leer el contenido o vincular dos mensajes de la misma conversación",
+      "defence": "Direcciones sigilosas, niveles de relleno fijos, tráfico de cobertura opcional",
+      "residual": "Sin tráfico de cobertura, tu patrón de actividad a lo largo del tiempo es totalmente visible"
+    },
+    {
+      "name": "Un analista de tiempos global",
+      "sees": "Actividad correlacionada en toda la red a la vez",
+      "cannot": "Descifrar o vincular direcciones criptográficamente",
+      "defence": "Tráfico de cobertura a intervalos aleatorios de 3 a 10 minutos, si está activado",
+      "residual": "Es el adversario contra el que peor nos defendemos; un observador de toda la red con retención ilimitada está fuera de lo que puede arreglar cualquier diseño por mensaje"
+    },
+    {
+      "name": "Alguien con tu teléfono desbloqueado",
+      "sees": "Todo: texto en claro, contactos, claves",
+      "cannot": "Recuperar mensajes que el ratchet ya eliminó",
+      "defence": "Almacenamiento en el llavero tras Face ID o Touch ID; el secreto hacia adelante limita el pasado; un código de coacción borra la cuenta en lugar de abrirla",
+      "residual": "El compromiso del dispositivo es total para todo lo que hay en él, y un código de coacción solo ayuda en el momento en que te piden desbloquear - no si el almacenamiento ya se copió antes"
+    },
+    {
+      "name": "Alguien que tiene tu frase de recuperación",
+      "sees": "Tu identidad, y puede hacerse pasar por ti en adelante",
+      "cannot": "Leer la parte ratchet de conversaciones pasadas: esas claves eran aleatorias y locales al dispositivo",
+      "defence": "La frase nunca sale de tu dispositivo ni se transmite",
+      "residual": "La clave de identidad, la prekey firmada y la prekey PQ se derivan todas de la frase y no se publican prekeys de un solo uso, así que el mensaje inicial de cada conversación puede recalcularse a partir de la frase y el sobre permanente en la cadena. Tampoco hay revocación"
+    },
+    {
+      "name": "Un contacto malicioso",
+      "sees": "Todo lo que le envías, y puede hacer capturas o reenviarlo",
+      "cannot": "Llegar a otras personas con las que hablas o leer otras conversaciones",
+      "defence": "Bloqueo y separación de claves por conversación",
+      "residual": "Ninguna criptografía impide que la persona con la que hablas no sea de fiar"
+    },
+    {
+      "name": "Un impostor al añadir un contacto",
+      "sees": "Nada, si la verificación tiene éxito",
+      "cannot": "Sustituir su clave por la de un contacto cuyo paquete está firmado en la cadena",
+      "defence": "Paquetes de prekeys firmados con la billetera y publicados en la cadena, así que ningún registro puede sustituir la clave de una cuenta",
+      "residual": "No hay número de seguridad ni huella que comparar, así que confirmar que la cuenta es de la persona correcta se hace por completo fuera de la app y sin ayuda"
+    },
+    {
+      "name": "Apple",
+      "sees": "Que tu Apple ID compró una suscripción",
+      "cannot": "Ver mensajes, contactos o vincular la compra con tu actividad de envío",
+      "defence": "Los tokens ciegos se interponen entre la compra y cada envío",
+      "residual": "Apple sabe que eres cliente de PrivaMesh, algo inevitable en iOS"
+    },
+    {
+      "name": "Un censor a nivel de red",
+      "sees": "Que te conectaste a un endpoint RPC de Solana",
+      "cannot": "Leer o descartar selectivamente mensajes individuales",
+      "defence": "Los endpoints RPC son reemplazables, incluso por los tuyos",
+      "residual": "Bloquear Solana o todos los RPC bloquea la entrega por completo"
+    }
+  ],
+  "assumeHeading": "Qué supone este modelo",
+  "assume": [
+    "Que las primitivas criptográficas resisten: X3DH, el Double Ratchet, AES-256-GCM y, en iOS 26, ML-KEM-768. Que tu dispositivo no está ya comprometido. Que verificas que el contacto que añades es la persona que querías. Si algo de eso falla, el resto del diseño no te salva.",
+    "También supone que nuestra implementación de esas primitivas es correcta; por eso el código es público y [encontrar un fallo tiene recompensa](/bug-bounty). La lista completa de lo que no está cubierto está en [limitaciones conocidas](/limitations)."
+  ],
+  "faq": [
+    {
+      "q": "¿Contra qué se defiende peor PrivaMesh?",
+      "a": "Contra un adversario global que vigila toda la red de forma continua y lo guarda todo. El tráfico de cobertura encarece la correlación de tiempos, pero no derrota a un observador de esa escala, y la cadena le ofrece un registro permanente con el que trabajar."
+    },
+    {
+      "q": "Si me confiscan el dispositivo, ¿qué queda expuesto?",
+      "a": "Todo lo que hay en él: texto en claro, contactos y claves, salvo que esté bloqueado y el atacante no pueda pasar Face ID. El secreto hacia adelante limita el daño a lo que el ratchet aún no ha eliminado: los mensajes antiguos ya son irrecuperables. Si te obligan a desbloquearlo tú, un código de coacción borra la cuenta en lugar de abrirla."
+    },
+    {
+      "q": "¿Pueden obligar a PrivaMesh a entregar mis datos?",
+      "a": "Pueden pedirlo. Lo único que existe para entregar es que una cuenta pagó un envío en un momento dado. No hay contenido de mensajes, ni destinatario, ni lista de contactos, ni registro de cuenta, porque nada de eso se guarda."
+    },
+    {
+      "q": "¿Sirve una VPN?",
+      "a": "Sí, contra el proveedor RPC y un observador a nivel de red, los dos adversarios que ven tu IP. No cambia nada de lo que se escribe en la cadena, que ya es ilegible."
+    }
+  ],
+  "related": [
+    {
+      "href": "/architecture",
+      "label": "Arquitectura",
+      "blurb": "Cada componente, quién lo opera y qué puede observar."
+    },
+    {
+      "href": "/limitations",
+      "label": "Limitaciones conocidas",
+      "blurb": "De qué no te protege PrivaMesh, en lenguaje claro."
+    },
+    {
+      "href": "/features/metadata-protection",
+      "label": "Protección de metadatos",
+      "blurb": "Direcciones sigilosas, niveles de relleno y tráfico de cobertura opcional."
+    },
+    {
+      "href": "/features/duress-code",
+      "label": "Código de coacción",
+      "blurb": "Un segundo código que vacía la cuenta en lugar de abrirla."
+    }
+  ]
+}

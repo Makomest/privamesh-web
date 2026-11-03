@@ -1,0 +1,136 @@
+{
+  "meta": {
+    "title": "Model hrozieb: kto čo vidí",
+    "description": "Protivník po protivníkovi: čo môže vidieť prevádzkovateľ, poskytovateľ RPC, pozorovateľ reťazca, ukradnuté zariadenie a zlomyseľný kontakt a čo zostáva možné."
+  },
+  "eyebrow": "Model hrozieb",
+  "title": "Kto čo môže vidieť a čo ho zastaví",
+  "lead": "Model hrozieb je užitočný len vtedy, keď protivníkov, s ktorými prehráva, menuje rovnako jasne ako tých, ktorých porazí. Každý riadok nižšie uvádza, čo daný protivník vidí, kam nedosiahne, aká obrana platí a čo napriek tomu zostáva možné.",
+  "ldDescription": "Model hrozieb PrivaMesh, protivník po protivníkovi, so zvyškovým rizikom.",
+  "summary": "PrivaMesh je navrhnutý proti prevádzkovateľovi, ktorý chce vaše dáta, pozorovateľovi reťazca, ktorý číta všetko verejné, a podvodníkovi, ktorý sa snaží zachytiť pridanie kontaktu. Najslabší je proti globálnemu analytikovi časovania a proti kompromitovanému zariadeniu neponúka vôbec nič.",
+  "tableCaption": "Model hrozieb PrivaMesh podľa protivníka, s obranou a zvyškovým rizikom",
+  "cols": {
+    "adversary": "Protivník",
+    "sees": "Vidí",
+    "cannot": "Nemôže",
+    "defence": "Obrana",
+    "residual": "Stále možné"
+  },
+  "adversaries": [
+    {
+      "name": "PrivaMesh, prevádzkovateľ",
+      "sees": "Že nejaký účet zaplatil odoslanie, a kedy",
+      "cannot": "Čítať správy, zistiť príjemcov, vypísať vaše kontakty ani zrekonštruovať históriu",
+      "defence": "Žiadna databáza účtov ani úložisko správ; slepé tokeny oddeľujú platbu od odoslania",
+      "residual": "Mohli by nás prinútiť ukázať, že nejaký účet v daný čas niečo odoslal"
+    },
+    {
+      "name": "Poskytovateľ RPC",
+      "sees": "Vašu IP adresu, čas požiadaviek, odosielané transakcie",
+      "cannot": "Čokoľvek dešifrovať alebo zistiť, komu patrí ktorá jednorazová adresa",
+      "defence": "Koncový bod je vymeniteľný a dá sa hostovať samostatne",
+      "residual": "Poskytovateľ, ktorý loguje, si na úrovni siete zostaví obraz toho, kedy ste aktívni"
+    },
+    {
+      "name": "Pozorovateľ reťazca",
+      "sees": "Doplnený šifrový text, jednorazové adresy, presné časy transakcií",
+      "cannot": "Prečítať obsah alebo spojiť dve správy z tej istej konverzácie",
+      "defence": "Skryté adresy, pevné úrovne doplnenia, voliteľná maskovacia prevádzka",
+      "residual": "Bez maskovacej prevádzky je váš vzorec aktivity v čase úplne viditeľný"
+    },
+    {
+      "name": "Globálny analytik časovania",
+      "sees": "Korelovanú aktivitu v celej sieti naraz",
+      "cannot": "Dešifrovať alebo kryptograficky spojiť adresy",
+      "defence": "Maskovacia prevádzka v náhodných intervaloch 3-10 minút, ak je zapnutá",
+      "residual": "Proti tomuto protivníkovi sa bránime najhoršie; pozorovateľ celej siete s neobmedzeným uchovávaním je mimo toho, čo dokáže vyriešiť akýkoľvek návrh na úrovni jednotlivých správ"
+    },
+    {
+      "name": "Niekto s vaším odomknutým telefónom",
+      "sees": "Všetko: otvorený text, kontakty, kľúče",
+      "cannot": "Obnoviť správy, ktoré ratchet už zmazal",
+      "defence": "Uloženie v kľúčenke za Face ID alebo Touch ID; dopredné utajenie obmedzuje minulosť; núdzový kód účet zmaže, namiesto toho, aby ho otvoril",
+      "residual": "Kompromitácia zariadenia je úplná pre všetko, čo na ňom práve je, a núdzový kód pomôže len vo chvíli, keď vás niekto žiada o odomknutie - nie ak bolo úložisko skopírované vopred"
+    },
+    {
+      "name": "Niekto, kto má vašu frázu na obnovenie",
+      "sees": "Vašu identitu, a môže sa za vás odteraz vydávať",
+      "cannot": "Prečítať ratchetovú časť minulých konverzácií - tie kľúče boli náhodné a len v zariadení",
+      "defence": "Fráza nikdy neopustí vaše zariadenie a nikdy sa neprenáša",
+      "residual": "Kľúč identity, podpísaný prekey aj PQ prekey sa odvodzujú z frázy a žiadne jednorazové prekey sa nezverejňujú, takže úvodnú správu každej konverzácie možno prepočítať z frázy a trvalej obálky v reťazci. Odvolanie tiež neexistuje"
+    },
+    {
+      "name": "Zlomyseľný kontakt",
+      "sees": "Všetko, čo mu posielate, a môže to zachytiť snímkou obrazovky alebo preposlať",
+      "cannot": "Dosiahnuť na ďalších ľudí, s ktorými hovoríte, alebo čítať iné konverzácie",
+      "defence": "Blokovanie a oddelené kľúče pre každú konverzáciu",
+      "residual": "Žiadna kryptografia nezabráni tomu, aby váš partner v rozhovore nebol dôveryhodný"
+    },
+    {
+      "name": "Podvodník pri pridávaní kontaktu",
+      "sees": "Nič, ak overenie uspeje",
+      "cannot": "Podstrčiť svoj kľúč namiesto kontaktu, ktorého balík je podpísaný v reťazci",
+      "defence": "Balíky prekey podpísané peňaženkou a zverejnené v reťazci, takže žiadny register nemôže kľúč účtu podvrhnúť",
+      "residual": "Neexistuje bezpečnostné číslo ani odtlačok na porovnanie, takže potvrdenie, že účet patrí zamýšľanej osobe, prebieha úplne mimo aplikácie a bez pomoci"
+    },
+    {
+      "name": "Apple",
+      "sees": "Že vaše Apple ID kúpilo predplatné",
+      "cannot": "Vidieť správy, kontakty alebo spojiť nákup s vašou aktivitou odosielania",
+      "defence": "Slepé tokeny stoja medzi nákupom a každým odoslaním",
+      "residual": "Apple vie, že ste zákazník PrivaMesh; na iOS sa tomu nedá vyhnúť"
+    },
+    {
+      "name": "Cenzor na úrovni siete",
+      "sees": "Že ste sa spojili s koncovým bodom RPC Solany",
+      "cannot": "Čítať alebo selektívne zahadzovať jednotlivé správy",
+      "defence": "Koncové body RPC sú vymeniteľné, aj za vaše vlastné",
+      "residual": "Blokovanie Solany alebo všetkých RPC úplne zablokuje doručovanie"
+    }
+  ],
+  "assumeHeading": "Čo tento model predpokladá",
+  "assume": [
+    "Že kryptografické primitíva vydržia: X3DH, Double Ratchet, AES-256-GCM a na iOS 26 ML-KEM-768. Že vaše zariadenie už nie je kompromitované. Že overíte, že kontakt, ktorý pridávate, je zamýšľaná osoba. Ak čokoľvek z toho zlyhá, zvyšok návrhu vás nezachráni.",
+    "Predpokladá tiež, že naša implementácia týchto primitív je správna - preto je zdrojový kód verejný a [nájdená chyba sa platí](/bug-bounty). Úplný zoznam toho, čo pokryté nie je, nájdete v [známych obmedzeniach](/limitations)."
+  ],
+  "faq": [
+    {
+      "q": "Proti čomu sa PrivaMesh bráni najhoršie?",
+      "a": "Proti globálnemu protivníkovi, ktorý nepretržite sleduje celú sieť a všetko si uchováva. Maskovacia prevádzka zdražuje koreláciu časovania, ale pozorovateľa takého rozsahu neporazí a reťazec mu uchováva trvalý záznam."
+    },
+    {
+      "q": "Ak mi zaistia zariadenie, čo je odhalené?",
+      "a": "Všetko, čo na ňom práve je: otvorený text, kontakty a kľúče, pokiaľ nie je zamknuté a útočník neprejde cez Face ID. Dopredné utajenie obmedzuje škody na to, čo ratchet ešte nezmazal - staré správy sa už obnoviť nedajú. Ak vás nútia odomknúť ho sami, núdzový kód účet zmaže, namiesto toho, aby ho otvoril."
+    },
+    {
+      "q": "Dá sa PrivaMesh prinútiť vydať moje dáta?",
+      "a": "Požiadať sa dá. Na vydanie existuje len to, že nejaký účet v daný čas zaplatil odoslanie. Nie je tu obsah správ, príjemca, zoznam kontaktov ani záznam účtu, pretože nič z toho sa neukladá."
+    },
+    {
+      "q": "Pomôže VPN?",
+      "a": "Áno, proti poskytovateľovi RPC a pozorovateľovi na úrovni siete - dvom protivníkom, ktorí vidia vašu IP. Na tom, čo sa zapisuje do reťazca, nič nemení, a to je aj tak nečitateľné."
+    }
+  ],
+  "related": [
+    {
+      "href": "/architecture",
+      "label": "Architektúra",
+      "blurb": "Každý komponent, jeho prevádzkovateľ a čo môže pozorovať."
+    },
+    {
+      "href": "/limitations",
+      "label": "Známe obmedzenia",
+      "blurb": "Pred čím vás PrivaMesh nechráni, zrozumiteľne."
+    },
+    {
+      "href": "/features/metadata-protection",
+      "label": "Ochrana metadát",
+      "blurb": "Skryté adresy, úrovne doplnenia a voliteľná maskovacia prevádzka."
+    },
+    {
+      "href": "/features/duress-code",
+      "label": "Núdzový kód",
+      "blurb": "Druhý kód, ktorý účet vyprázdni, namiesto toho, aby ho otvoril."
+    }
+  ]
+}

@@ -1,0 +1,136 @@
+{
+  "meta": {
+    "title": "Model prijetnji: tko što vidi",
+    "description": "Protivnik po protivnik: što mogu vidjeti operater, RPC pružatelj, promatrač lanca, ukradeni uređaj i zlonamjeran kontakt, i što je još moguće."
+  },
+  "eyebrow": "Model prijetnji",
+  "title": "Tko što može vidjeti i što ga zaustavlja",
+  "lead": "Model prijetnji koristan je samo ako protivnike protiv kojih gubi imenuje jednako jasno kao one koje pobjeđuje. Svaki redak u nastavku navodi što taj protivnik vidi, do čega ne može doći, koja obrana postoji i što ipak ostaje moguće.",
+  "ldDescription": "Model prijetnji PrivaMesha, protivnik po protivnik, s preostalim rizikom.",
+  "summary": "PrivaMesh je osmišljen protiv operatera koji želi vaše podatke, promatrača lanca koji čita sve javno i varalice koja pokušava presresti dodavanje kontakta. Najslabiji je protiv globalnog analitičara vremena, a protiv kompromitiranog uređaja ne nudi ništa.",
+  "tableCaption": "Model prijetnji PrivaMesha po protivniku, s obranom i preostalim rizikom",
+  "cols": {
+    "adversary": "Protivnik",
+    "sees": "Vidi",
+    "cannot": "Ne može",
+    "defence": "Obrana",
+    "residual": "Još moguće"
+  },
+  "adversaries": [
+    {
+      "name": "PrivaMesh, operater",
+      "sees": "Da je neki račun platio slanje, i kada",
+      "cannot": "Čitati poruke, saznati primatelje, popisati vaše kontakte ili rekonstruirati povijest",
+      "defence": "Nema baze računa ni spremišta poruka; slijepi tokeni odvajaju plaćanje od slanja",
+      "residual": "Mogli bismo biti prisiljeni pokazati da je neki račun nešto poslao u određeno vrijeme"
+    },
+    {
+      "name": "RPC pružatelj",
+      "sees": "Vašu IP adresu, vrijeme zahtjeva, transakcije koje šaljete",
+      "cannot": "Išta dešifrirati ili saznati čija je koja jednokratna adresa",
+      "defence": "Krajnja točka je zamjenjiva i može se samostalno hostati",
+      "residual": "Pružatelj koji bilježi stvara sliku, na razini mreže, o tome kada ste aktivni"
+    },
+    {
+      "name": "Promatrač lanca",
+      "sees": "Nadopunjeni šifrirani tekst, jednokratne adrese, točna vremena transakcija",
+      "cannot": "Pročitati sadržaj ili povezati dvije poruke iz istog razgovora",
+      "defence": "Skrivene adrese, fiksne razine nadopune, neobavezan maskirni promet",
+      "residual": "Bez maskirnog prometa vaš je obrazac aktivnosti kroz vrijeme potpuno vidljiv"
+    },
+    {
+      "name": "Globalni analitičar vremena",
+      "sees": "Koreliranu aktivnost na cijeloj mreži odjednom",
+      "cannot": "Dešifrirati ili kriptografski povezati adrese",
+      "defence": "Maskirni promet u nasumičnim razmacima od 3 do 10 minuta, ako je uključen",
+      "residual": "Protiv ovog protivnika branimo se najlošije; promatrač cijele mreže s neograničenim čuvanjem izvan je onoga što bilo koji dizajn na razini pojedinačnih poruka može riješiti"
+    },
+    {
+      "name": "Netko s vašim otključanim telefonom",
+      "sees": "Sve: otvoreni tekst, kontakti, ključevi",
+      "cannot": "Vratiti poruke koje je ratchet već izbrisao",
+      "defence": "Pohrana u privjesku za ključeve iza Face ID-ja ili Touch ID-ja; tajnost unaprijed ograničava prošlost; kod pod prisilom briše račun umjesto da ga otvori",
+      "residual": "Kompromitacija uređaja potpuna je za sve što je trenutno na njemu, a kod pod prisilom pomaže samo u trenutku kad se od vas traži otključavanje - ne ako je pohrana prije kopirana"
+    },
+    {
+      "name": "Netko tko ima vašu frazu za oporavak",
+      "sees": "Vaš identitet, i može se ubuduće predstavljati kao vi",
+      "cannot": "Pročitati ratchet dio prošlih razgovora - ti su ključevi bili nasumični i samo na uređaju",
+      "defence": "Fraza nikad ne napušta vaš uređaj i nikad se ne prenosi",
+      "residual": "Ključ identiteta, potpisani prekey i PQ prekey izvode se iz fraze, a jednokratni prekeyji se ne objavljuju, pa se početna poruka svakog razgovora može ponovno izračunati iz fraze i trajne omotnice na lancu. Opoziv također ne postoji"
+    },
+    {
+      "name": "Zlonamjeran kontakt",
+      "sees": "Sve što mu šaljete, i može napraviti snimku zaslona ili proslijediti",
+      "cannot": "Doći do drugih ljudi s kojima razgovarate ili čitati druge razgovore",
+      "defence": "Blokiranje i zasebni ključevi za svaki razgovor",
+      "residual": "Nikakva kriptografija ne sprječava da vaš sugovornik bude nepouzdan"
+    },
+    {
+      "name": "Varalica pri dodavanju kontakta",
+      "sees": "Ništa, ako provjera uspije",
+      "cannot": "Podmetnuti svoj ključ umjesto kontakta čiji je paket potpisan na lancu",
+      "defence": "Paketi prekeyja potpisani novčanikom i objavljeni na lancu, pa nijedan registar ne može podmetnuti ključ računa",
+      "residual": "Nema sigurnosnog broja ni otiska za usporedbu, pa se potvrda da račun pripada željenoj osobi obavlja u potpunosti izvan aplikacije i bez pomoći"
+    },
+    {
+      "name": "Apple",
+      "sees": "Da je vaš Apple ID kupio pretplatu",
+      "cannot": "Vidjeti poruke, kontakte ili povezati kupnju s vašom aktivnošću slanja",
+      "defence": "Slijepi tokeni stoje između kupnje i svakog slanja",
+      "residual": "Apple zna da ste korisnik PrivaMesha, što je na iOS-u neizbježno"
+    },
+    {
+      "name": "Cenzor na razini mreže",
+      "sees": "Da ste se spojili na Solana RPC krajnju točku",
+      "cannot": "Čitati ili selektivno odbacivati pojedinačne poruke",
+      "defence": "RPC krajnje točke su zamjenjive, uključujući vlastite",
+      "residual": "Blokiranje Solane ili svih RPC-ova potpuno blokira dostavu"
+    }
+  ],
+  "assumeHeading": "Što ovaj model pretpostavlja",
+  "assume": [
+    "Da kriptografski primitivi drže: X3DH, Double Ratchet, AES-256-GCM i, na iOS-u 26, ML-KEM-768. Da vaš uređaj već nije kompromitiran. Da provjeravate je li kontakt koji dodajete osoba koju ste namjeravali. Ako išta od toga zakaže, ostatak dizajna vas neće spasiti.",
+    "Pretpostavlja i da je naša implementacija tih primitiva ispravna - zato je izvorni kod javan i [pronađen propust se plaća](/bug-bounty). Potpuni popis onoga što nije obuhvaćeno nalazi se u [poznatim ograničenjima](/limitations)."
+  ],
+  "faq": [
+    {
+      "q": "Protiv čega se PrivaMesh najlošije brani?",
+      "a": "Protiv globalnog protivnika koji neprestano promatra cijelu mrežu i sve čuva. Maskirni promet poskupljuje korelaciju vremena, ali ne pobjeđuje promatrača takvih razmjera, a lanac mu čuva trajan zapis s kojim može raditi."
+    },
+    {
+      "q": "Ako mi zaplijene uređaj, što je izloženo?",
+      "a": "Sve što je trenutno na njemu: otvoreni tekst, kontakti i ključevi, osim ako je zaključan i napadač ne može proći Face ID. Tajnost unaprijed ograničava štetu na ono što ratchet još nije izbrisao - stare poruke već se ne mogu vratiti. Ako vas prisiljavaju da ga sami otključate, kod pod prisilom briše račun umjesto da ga otvori."
+    },
+    {
+      "q": "Može li se PrivaMesh prisiliti da preda moje podatke?",
+      "a": "Može se zatražiti. Jedino što postoji za predaju jest da je neki račun platio slanje u određeno vrijeme. Nema sadržaja poruka, primatelja, popisa kontakata ni zapisa računa, jer se ništa od toga ne pohranjuje."
+    },
+    {
+      "q": "Pomaže li VPN?",
+      "a": "Da, protiv RPC pružatelja i promatrača na razini mreže, dvaju protivnika koji vide vaš IP. Ne mijenja ništa u onome što se zapisuje na lanac, a to je ionako nečitljivo."
+    }
+  ],
+  "related": [
+    {
+      "href": "/architecture",
+      "label": "Arhitektura",
+      "blurb": "Svaka komponenta, tko njome upravlja i što može promatrati."
+    },
+    {
+      "href": "/limitations",
+      "label": "Poznata ograničenja",
+      "blurb": "Od čega vas PrivaMesh ne štiti, jednostavnim jezikom."
+    },
+    {
+      "href": "/features/metadata-protection",
+      "label": "Zaštita metapodataka",
+      "blurb": "Skrivene adrese, razine nadopune i neobavezan maskirni promet."
+    },
+    {
+      "href": "/features/duress-code",
+      "label": "Kod pod prisilom",
+      "blurb": "Druga lozinka koja prazni račun umjesto da ga otvori."
+    }
+  ]
+}

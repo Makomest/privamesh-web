@@ -1,0 +1,136 @@
+{
+  "meta": {
+    "title": "Model zagrożeń: kto co widzi",
+    "description": "Przeciwnik po przeciwniku: co mogą zobaczyć operator, dostawca RPC, obserwator łańcucha, skradzione urządzenie i złośliwy kontakt oraz co wciąż jest możliwe."
+  },
+  "eyebrow": "Model zagrożeń",
+  "title": "Kto co może zobaczyć i co go zatrzymuje",
+  "lead": "Model zagrożeń jest użyteczny tylko wtedy, gdy przeciwników, z którymi przegrywa, nazywa równie jasno jak tych, których pokonuje. Każdy wiersz poniżej mówi, co widzi dany przeciwnik, do czego nie sięga, jaka obrona działa i co mimo to pozostaje możliwe.",
+  "ldDescription": "Model zagrożeń PrivaMesh, przeciwnik po przeciwniku, z ryzykiem szczątkowym.",
+  "summary": "PrivaMesh zaprojektowano przeciw operatorowi, który chce twoich danych, obserwatorowi łańcucha czytającemu wszystko, co publiczne, i oszustowi próbującemu przechwycić dodanie kontaktu. Najsłabszy jest wobec globalnego analityka czasu, a przeciw przejętemu urządzeniu nie daje niczego.",
+  "tableCaption": "Model zagrożeń PrivaMesh według przeciwnika, z obroną i ryzykiem szczątkowym",
+  "cols": {
+    "adversary": "Przeciwnik",
+    "sees": "Widzi",
+    "cannot": "Nie może",
+    "defence": "Obrona",
+    "residual": "Wciąż możliwe"
+  },
+  "adversaries": [
+    {
+      "name": "PrivaMesh, operator",
+      "sees": "Że jakieś konto zapłaciło za wysyłkę, i kiedy",
+      "cannot": "Czytać wiadomości, poznać odbiorców, wypisać twoje kontakty ani odtworzyć historii",
+      "defence": "Brak bazy kont i magazynu wiadomości; ślepe tokeny oddzielają płatność od wysyłki",
+      "residual": "Moglibyśmy zostać zmuszeni do pokazania, że jakieś konto coś wysłało w danym czasie"
+    },
+    {
+      "name": "Dostawca RPC",
+      "sees": "Twój adres IP, czas żądań, wysyłane transakcje",
+      "cannot": "Czegokolwiek odszyfrować ani ustalić, czyj jest jednorazowy adres",
+      "defence": "Punkt końcowy jest wymienny i możliwy do samodzielnego hostowania",
+      "residual": "Dostawca, który loguje, buduje na poziomie sieci obraz tego, kiedy jesteś aktywny"
+    },
+    {
+      "name": "Obserwator łańcucha",
+      "sees": "Dopełniony szyfrogram, jednorazowe adresy, dokładny czas transakcji",
+      "cannot": "Odczytać treści ani powiązać dwóch wiadomości z tej samej rozmowy",
+      "defence": "Ukryte adresy, stałe poziomy dopełnienia, opcjonalny ruch maskujący",
+      "residual": "Bez ruchu maskującego twój wzorzec aktywności w czasie jest w pełni widoczny"
+    },
+    {
+      "name": "Globalny analityk czasu",
+      "sees": "Skorelowaną aktywność w całej sieci naraz",
+      "cannot": "Odszyfrować ani kryptograficznie powiązać adresów",
+      "defence": "Ruch maskujący w losowych odstępach 3-10 minut, jeśli włączony",
+      "residual": "Przed tym przeciwnikiem bronimy najsłabiej; obserwator całej sieci z nieograniczonym przechowywaniem wykracza poza to, co naprawi jakikolwiek projekt na poziomie pojedynczych wiadomości"
+    },
+    {
+      "name": "Ktoś z twoim odblokowanym telefonem",
+      "sees": "Wszystko: tekst jawny, kontakty, klucze",
+      "cannot": "Odzyskać wiadomości, które ratchet już usunął",
+      "defence": "Przechowywanie w pęku kluczy za Face ID lub Touch ID; poufność przyszła ogranicza przeszłość; kod przymusu kasuje konto zamiast je otworzyć",
+      "residual": "Przejęcie urządzenia jest totalne dla wszystkiego, co na nim teraz jest, a kod przymusu pomaga tylko w chwili, gdy ktoś każe ci odblokować - nie wtedy, gdy pamięć skopiowano wcześniej"
+    },
+    {
+      "name": "Ktoś, kto ma twoją frazę odzyskiwania",
+      "sees": "Twoją tożsamość, i może się pod ciebie podszywać od tej pory",
+      "cannot": "Odczytać ratchetowej części dawnych rozmów - te klucze były losowe i lokalne dla urządzenia",
+      "defence": "Fraza nigdy nie opuszcza urządzenia i nigdy nie jest przesyłana",
+      "residual": "Klucz tożsamości, podpisany prekey i prekey PQ są wyprowadzane z frazy, a jednorazowych prekey się nie publikuje, więc wiadomość otwierającą każdą rozmowę da się przeliczyć z frazy i trwałej koperty w łańcuchu. Nie ma też unieważnienia"
+    },
+    {
+      "name": "Złośliwy kontakt",
+      "sees": "Wszystko, co mu wysyłasz, i może zrobić zrzut ekranu lub przekazać dalej",
+      "cannot": "Dotrzeć do innych twoich rozmówców ani czytać innych rozmów",
+      "defence": "Blokowanie i osobne klucze dla każdej rozmowy",
+      "residual": "Żadna kryptografia nie sprawi, że twój rozmówca okaże się godny zaufania"
+    },
+    {
+      "name": "Oszust przy dodawaniu kontaktu",
+      "sees": "Nic, jeśli weryfikacja się powiedzie",
+      "cannot": "Podmienić swój klucz w miejsce kontaktu, którego pakiet jest podpisany w łańcuchu",
+      "defence": "Pakiety prekey podpisane portfelem i opublikowane w łańcuchu, więc żaden rejestr nie może podmienić klucza konta",
+      "residual": "Nie ma numeru bezpieczeństwa ani odcisku do porównania, więc potwierdzenie, że konto należy do właściwej osoby, odbywa się w całości poza aplikacją i bez pomocy"
+    },
+    {
+      "name": "Apple",
+      "sees": "Że twój Apple ID kupił subskrypcję",
+      "cannot": "Widzieć wiadomości, kontakty ani powiązać zakupu z twoimi wysyłkami",
+      "defence": "Ślepe tokeny stoją między zakupem a każdą wysyłką",
+      "residual": "Apple wie, że jesteś klientem PrivaMesh - na iOS tego się nie uniknie"
+    },
+    {
+      "name": "Cenzor na poziomie sieci",
+      "sees": "Że połączyłeś się z punktem RPC Solany",
+      "cannot": "Czytać ani selektywnie odrzucać pojedynczych wiadomości",
+      "defence": "Punkty RPC są wymienne, także na twoje własne",
+      "residual": "Zablokowanie Solany lub wszystkich RPC całkowicie blokuje dostarczanie"
+    }
+  ],
+  "assumeHeading": "Co zakłada ten model",
+  "assume": [
+    "Że prymitywy kryptograficzne się trzymają: X3DH, Double Ratchet, AES-256-GCM i, na iOS 26, ML-KEM-768. Że twoje urządzenie nie jest już przejęte. Że sprawdzasz, czy dodawany kontakt to ta osoba, o którą chodzi. Jeśli któreś z tych założeń zawiedzie, reszta projektu cię nie uratuje.",
+    "Zakłada też, że nasza implementacja tych prymitywów jest poprawna - dlatego kod jest publiczny, a [znaleziona w nim luka jest płatna](/bug-bounty). Pełną listę tego, co nie jest objęte, znajdziesz w [znanych ograniczeniach](/limitations)."
+  ],
+  "faq": [
+    {
+      "q": "Przed czym PrivaMesh broni najsłabiej?",
+      "a": "Przed globalnym przeciwnikiem, który bez przerwy obserwuje całą sieć i wszystko zachowuje. Ruch maskujący podnosi koszt korelacji czasowej, ale nie pokona obserwatora na taką skalę, a łańcuch przechowuje dla niego trwały zapis."
+    },
+    {
+      "q": "Jeśli zatrzymają moje urządzenie, co zostanie ujawnione?",
+      "a": "Wszystko, co jest na nim teraz: tekst jawny, kontakty i klucze, chyba że jest zablokowane, a atakujący nie przejdzie Face ID. Poufność przyszła ogranicza szkody do tego, czego ratchet jeszcze nie usunął - starych wiadomości i tak nie da się odzyskać. Jeśli ktoś zmusza cię do odblokowania, kod przymusu skasuje konto zamiast je otworzyć."
+    },
+    {
+      "q": "Czy PrivaMesh można zmusić do wydania moich danych?",
+      "a": "Można o to poprosić. Do wydania jest tylko to, że jakieś konto zapłaciło za wysyłkę w danym czasie. Nie ma treści wiadomości, odbiorcy, listy kontaktów ani rekordu konta, bo nic z tego nie jest przechowywane."
+    },
+    {
+      "q": "Czy VPN pomaga?",
+      "a": "Tak - przeciw dostawcy RPC i obserwatorowi na poziomie sieci, czyli dwóm przeciwnikom, którzy widzą twój IP. Nie zmienia niczego w tym, co trafia do łańcucha, a to i tak jest nieczytelne."
+    }
+  ],
+  "related": [
+    {
+      "href": "/architecture",
+      "label": "Architektura",
+      "blurb": "Każdy komponent, jego operator i co może obserwować."
+    },
+    {
+      "href": "/limitations",
+      "label": "Znane ograniczenia",
+      "blurb": "Przed czym PrivaMesh cię nie chroni - prostym językiem."
+    },
+    {
+      "href": "/features/metadata-protection",
+      "label": "Ochrona metadanych",
+      "blurb": "Ukryte adresy, poziomy dopełnienia i opcjonalny ruch maskujący."
+    },
+    {
+      "href": "/features/duress-code",
+      "label": "Kod przymusu",
+      "blurb": "Drugi kod, który opróżnia konto zamiast je otworzyć."
+    }
+  ]
+}
