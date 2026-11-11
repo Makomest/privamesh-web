@@ -2,11 +2,10 @@
 
 import { useCallback, useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { Users, Newspaper, Trash2, Loader2, LogOut } from 'lucide-react'
+import { Newspaper, Trash2, Loader2, LogOut } from 'lucide-react'
 import AdminAnalytics, { type DownloadStats, type TrafficStats } from './AdminAnalytics'
 
 type Stats = {
-  waitlist: { total: number; last7: number; recent: { email: string; ts: string }[] }
   updates: number
   downloads?: DownloadStats
   traffic?: TrafficStats
@@ -86,38 +85,11 @@ export default function AdminDashboard() {
       {/* Stats */}
       <div className="mt-8 grid gap-4 sm:grid-cols-3">
         <div className={card}>
-          <Users size={20} className="text-accent" />
-          <p className="mt-3 text-3xl font-bold text-text-primary">{stats?.waitlist.total ?? '—'}</p>
-          <p className="text-sm text-text-muted">Waitlist signups</p>
-        </div>
-        <div className={card}>
-          <Users size={20} className="text-accent" />
-          <p className="mt-3 text-3xl font-bold text-text-primary">{stats?.waitlist.last7 ?? '—'}</p>
-          <p className="text-sm text-text-muted">New this week</p>
-        </div>
-        <div className={card}>
           <Newspaper size={20} className="text-accent" />
           <p className="mt-3 text-3xl font-bold text-text-primary">{stats?.updates ?? '—'}</p>
           <p className="text-sm text-text-muted">Published posts</p>
         </div>
       </div>
-
-      {/* Recent signups */}
-      {stats && stats.waitlist.recent.length > 0 && (
-        <div className={`mt-4 ${card}`}>
-          <p className="font-mono text-xs uppercase tracking-wider text-text-secondary">
-            Recent signups
-          </p>
-          <ul className="mt-3 space-y-1.5">
-            {stats.waitlist.recent.map((r) => (
-              <li key={r.email + r.ts} className="flex justify-between text-sm">
-                <span className="text-text-primary">{r.email}</span>
-                <span className="font-mono text-xs text-text-muted">{fmt(r.ts)}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
 
       <AdminAnalytics
         downloads={stats?.downloads}

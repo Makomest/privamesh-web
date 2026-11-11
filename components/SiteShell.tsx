@@ -1,7 +1,6 @@
 import CloudflareAnalytics from '@/components/CloudflareAnalytics'
 import GoogleTag from '@/components/GoogleTag'
 import UmamiAnalytics from '@/components/UmamiAnalytics'
-import WaitlistModal from '@/components/WaitlistModal'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import JsonLd from '@/components/JsonLd'
@@ -45,7 +44,6 @@ export default function SiteShell({
         <main id="main">{children}</main>
         <Footer locale={locale} ui={ui} />
       </div>
-      <WaitlistModal />
       <CloudflareAnalytics />
       <GoogleTag />
       <UmamiAnalytics />

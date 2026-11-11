@@ -2,7 +2,6 @@
 
 import { Button } from './Button'
 import { SITE } from '@/lib/site'
-import WaitlistTrigger from './WaitlistTrigger'
 import { useI18n } from './I18nProvider'
 import { fill } from '@/lib/i18n/common'
 
@@ -18,9 +17,6 @@ function AppleGlyph({ size = 16 }: { size?: number }) {
  * Primary CTA. Links to the App Store, sending Russian readers to the
  * Russian-language listing. The locale comes from the I18n context, so the
  * button reads correctly wherever it is placed without a prop.
- *
- * If SITE.appStoreLive is ever flipped back to false, the button falls back to
- * the waitlist modal.
  */
 export default function AppStoreButton({
   variant = 'primary',
@@ -39,20 +35,16 @@ export default function AppStoreButton({
   // the shared Navbar reads correctly on the RU pages too.
   const text = label ?? ui.getApp
 
-  if (SITE.appStoreLive) {
-    return (
-      <Button
-        href={isRu ? SITE.appStoreRu : SITE.appStore}
-        external
-        variant={variant}
-        className={className}
-        ariaLabel={fill(ui.onAppStore, { label: text })}
-      >
-        <AppleGlyph />
-        {text}
-      </Button>
-    )
-  }
-
-  return <WaitlistTrigger variant={variant} className={className} label={text} />
+  return (
+    <Button
+      href={isRu ? SITE.appStoreRu : SITE.appStore}
+      external
+      variant={variant}
+      className={className}
+      ariaLabel={fill(ui.onAppStore, { label: text })}
+    >
+      <AppleGlyph />
+      {text}
+    </Button>
+  )
 }

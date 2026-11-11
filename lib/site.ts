@@ -15,9 +15,6 @@ export const SITE = {
   appStoreId: '6785997584',
   appStore: 'https://apps.apple.com/app/privamesh-messenger/id6785997584',
   appStoreRu: 'https://apps.apple.com/app/privamesh-messenger/id6785997584?l=ru',
-  // Live since the App Store release - every "Get PrivaMesh" button now links to
-  // the store instead of opening the waitlist modal.
-  appStoreLive: true,
   /**
    * Per-platform builds. null means the build does not exist yet - the download
    * page renders the platform as unavailable rather than linking somewhere

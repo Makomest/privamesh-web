@@ -42,7 +42,7 @@ export default function AdminLogin() {
           <Lock size={20} />
         </div>
         <h1 className="mt-4 text-xl font-bold tracking-tight text-text-primary">Admin</h1>
-        <p className="mt-1 text-sm text-text-muted">Sign in to manage news and the waitlist.</p>
+        <p className="mt-1 text-sm text-text-muted">Sign in to manage news and see site stats.</p>
         <form onSubmit={submit} className="mt-5 space-y-3">
           <input
             type="text"
