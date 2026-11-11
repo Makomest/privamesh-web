@@ -12,8 +12,9 @@ const WINDOW_MS = 15 * 60 * 1000
 const MAX_FAILURES = 8
 const failures = new Map<string, { count: number; since: number }>()
 
+/** The address Caddy saw. It appends it last, so earlier entries are whatever the client sent. */
 function clientIp(req: Request) {
-  return req.headers.get('x-forwarded-for')?.split(',')[0].trim() || 'local'
+  return req.headers.get('x-forwarded-for')?.split(',').pop()?.trim() || 'local'
 }
 
 export async function POST(req: Request) {
