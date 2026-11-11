@@ -10,7 +10,10 @@ module.exports = {
       cwd: __dirname,
       instances: 1,
       autorestart: true,
-      max_memory_restart: '450M',
+      // Next settles around 420MB with 33 locales loaded and spikes past 600MB
+      // while rendering; at 450M pm2 was killing it every few minutes, dropping
+      // in-flight requests and every in-memory cache with it.
+      max_memory_restart: '900M',
       env: {
         NODE_ENV: 'production',
         PORT: '3000',

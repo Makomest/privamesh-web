@@ -3,7 +3,6 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { Lock, Loader2 } from 'lucide-react'
-import { Container } from '@/components/Container'
 
 export default function AdminLogin() {
   const router = useRouter()
@@ -23,12 +22,11 @@ export default function AdminLogin() {
         body: JSON.stringify({ username, password }),
       })
       if (!res.ok) {
-        setError('Wrong password.')
+        setError(res.status === 429 ? 'Too many attempts. Try again in 15 minutes.' : 'Wrong username or password.')
         setLoading(false)
         return
       }
-      router.push('/admin')
-      router.refresh()
+      router.replace('/admin')
     } catch {
       setError('Something went wrong.')
       setLoading(false)
@@ -36,7 +34,7 @@ export default function AdminLogin() {
   }
 
   return (
-    <Container className="flex min-h-[70vh] items-center justify-center">
+    <div className="flex min-h-screen items-center justify-center px-4">
       <div className="w-full max-w-sm rounded-2xl border border-border bg-white/[0.03] p-7 backdrop-blur-sm">
         <div className="flex h-11 w-11 items-center justify-center rounded-full bg-accent/15 text-accent">
           <Lock size={20} />
@@ -71,6 +69,6 @@ export default function AdminLogin() {
           </button>
         </form>
       </div>
-    </Container>
+    </div>
   )
 }
