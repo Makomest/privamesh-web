@@ -8,6 +8,9 @@ export const SITE = {
   twitterHandle: '@PrivaMesh',
   supportEmail: 'privamesh@proton.me',
   github: 'https://github.com/Makomest/PrivaMesh',
+  youtube: 'https://www.youtube.com/@privameshhq',
+  /** The channel's UC… id - the RSS feed is addressed by it, not by the handle. */
+  youtubeChannelId: 'UC9BFzSlLxuO3H9HnMZ_DsFw',
   whitepaper: 'https://github.com/Makomest/PrivaMesh/blob/main/WHITEPAPER.md',
   // App Store listing for the PrivaMesh iOS app. No country segment on purpose:
   // Apple redirects the visitor to their own storefront. The RU variant only

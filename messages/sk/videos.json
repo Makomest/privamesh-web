@@ -1,0 +1,19 @@
+{
+  "meta": {
+    "title": "PrivaMesh na YouTube: videá o súkromnej komunikácii",
+    "description": "Videá z kanála PrivaMesh: kto môže čítať vaše správy, ako komunikátory vydávajú dáta a pred čím end-to-end šifrovanie chráni a pred čím nie."
+  },
+  "eyebrow": "Videá",
+  "title": "PrivaMesh na YouTube",
+  "lead": "Podrobné vysvetlenia o sledovaní, komunikátoroch a šifrovaní: kto má kľúče, kto dostane dáta a čo vás skutočne chráni.",
+  "subscribe": "Odoberať na YouTube",
+  "latest": "Najnovšie video",
+  "more": "Ďalšie videá",
+  "shorts": "Shorts",
+  "play": "Prehrať: {title}",
+  "views": "Zhliadnutia: {count}",
+  "watch": "Pozerať na YouTube",
+  "playerNote": "Prehrávač sa načíta až po stlačení prehrávania, z youtube-nocookie.com.",
+  "empty": "Prvé videá sú na ceste. Prihláste sa na odber na YouTube a uvidíte ich hneď po vydaní.",
+  "listName": "Videá PrivaMesh"
+}

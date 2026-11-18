@@ -1,0 +1,19 @@
+{
+  "meta": {
+    "title": "PrivaMesh pe YouTube: videoclipuri despre mesageria privată",
+    "description": "Videoclipuri de pe canalul PrivaMesh: cine îți poate citi mesajele, cum predau aplicațiile de mesagerie datele și ce protejează criptarea end-to-end și ce nu."
+  },
+  "eyebrow": "Videoclipuri",
+  "title": "PrivaMesh pe YouTube",
+  "lead": "Explicații pe larg despre supraveghere, aplicații de mesagerie și criptare: cine deține cheile, cine primește datele și ce te protejează cu adevărat.",
+  "subscribe": "Abonează-te pe YouTube",
+  "latest": "Cel mai nou videoclip",
+  "more": "Mai multe videoclipuri",
+  "shorts": "Shorts",
+  "play": "Redă: {title}",
+  "views": "Vizualizări: {count}",
+  "watch": "Vezi pe YouTube",
+  "playerNote": "Playerul se încarcă doar când apeși pe redare, de pe youtube-nocookie.com.",
+  "empty": "Primele videoclipuri sunt pe drum. Abonează-te pe YouTube ca să le vezi imediat ce apar.",
+  "listName": "Videoclipuri PrivaMesh"
+}

@@ -33,7 +33,8 @@ const CSP = [
   "img-src 'self' data: blob: https:",
   "font-src 'self' data:",
   // Google Ads drops a conversion-linker iframe; default-src 'self' would block it.
-  "frame-src 'self' https://td.doubleclick.net https://googleads.g.doubleclick.net https://www.googletagmanager.com",
+  // youtube-nocookie.com is the click-to-play player on /videos and /news.
+  "frame-src 'self' https://www.youtube-nocookie.com https://td.doubleclick.net https://googleads.g.doubleclick.net https://www.googletagmanager.com",
   `connect-src 'self' https://cloudflareinsights.com https://static.cloudflareinsights.com https://www.google-analytics.com https://region1.google-analytics.com https://www.googletagmanager.com https://www.googleadservices.com https://*.doubleclick.net https://www.google.com${UMAMI_ORIGIN ? ` ${UMAMI_ORIGIN}` : ''}`,
   'upgrade-insecure-requests',
 ].join('; ')
@@ -44,6 +45,8 @@ const nextConfig = {
   reactStrictMode: true,
   // Don't advertise the framework in every response.
   poweredByHeader: false,
+  // instrumentation.ts starts the YouTube sync when the server boots.
+  experimental: { instrumentationHook: true },
   images: {
     formats: ['image/avif', 'image/webp'],
   },

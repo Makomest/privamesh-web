@@ -22,6 +22,7 @@ export const PAGES: { id: string; path: string }[] = [
   { id: 'transparency', path: '/transparency' },
   { id: 'changelog', path: '/changelog' },
   { id: 'news', path: '/news' },
+  { id: 'videos', path: '/videos' },
   { id: 'privacy-policy', path: '/privacy-policy' },
   { id: 'terms', path: '/terms' },
   { id: 'feature-no-servers', path: '/features/no-servers' },

@@ -1,0 +1,19 @@
+{
+  "meta": {
+    "title": "PrivaMesh a YouTube: vídeos sobre missatgeria privada",
+    "description": "Vídeos del canal de PrivaMesh: qui pot llegir els teus missatges, com les apps de missatgeria lliuren dades i què protegeix el xifratge d'extrem a extrem i què no."
+  },
+  "eyebrow": "Vídeos",
+  "title": "PrivaMesh a YouTube",
+  "lead": "Explicacions a fons sobre vigilància, missatgeria i xifratge: qui té les claus, qui rep les dades i què et protegeix de debò.",
+  "subscribe": "Subscriu-te a YouTube",
+  "latest": "Últim vídeo",
+  "more": "Més vídeos",
+  "shorts": "Shorts",
+  "play": "Reprodueix: {title}",
+  "views": "{count} visualitzacions",
+  "watch": "Mira-ho a YouTube",
+  "playerNote": "El reproductor només es carrega quan prems reproduir, des de youtube-nocookie.com.",
+  "empty": "Els primers vídeos són de camí. Subscriu-te a YouTube per veure'ls tan bon punt surtin.",
+  "listName": "Vídeos de PrivaMesh"
+}

@@ -54,7 +54,9 @@ export function timeAgo(iso: string, now: number) {
   if (s < 60) return `${s}s ago`
   const m = Math.floor(s / 60)
   if (m < 60) return `${m}m ago`
-  return `${Math.floor(m / 60)}h ago`
+  const h = Math.floor(m / 60)
+  if (h < 48) return `${h}h ago`
+  return `${Math.floor(h / 24)}d ago`
 }
 
 /** ISO 3166-1 alpha-2 to its flag, by offsetting into the regional indicators. */

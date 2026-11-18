@@ -1,0 +1,19 @@
+{
+  "meta": {
+    "title": "PrivaMesh su YouTube: video sulla messaggistica privata",
+    "description": "I video del canale PrivaMesh: chi può leggere i tuoi messaggi, come le app di messaggistica consegnano i dati e cosa protegge la crittografia end-to-end e cosa no."
+  },
+  "eyebrow": "Video",
+  "title": "PrivaMesh su YouTube",
+  "lead": "Approfondimenti su sorveglianza, messaggistica e crittografia: chi ha le chiavi, chi ottiene i dati e cosa ti protegge davvero.",
+  "subscribe": "Iscriviti su YouTube",
+  "latest": "Ultimo video",
+  "more": "Altri video",
+  "shorts": "Shorts",
+  "play": "Riproduci: {title}",
+  "views": "{count} visualizzazioni",
+  "watch": "Guarda su YouTube",
+  "playerNote": "Il player si carica solo quando premi play, da youtube-nocookie.com.",
+  "empty": "I primi video sono in arrivo. Iscriviti su YouTube per vederli appena escono.",
+  "listName": "Video di PrivaMesh"
+}

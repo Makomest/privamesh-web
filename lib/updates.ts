@@ -1,7 +1,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
 
-export type UpdateType = 'news' | 'update' | 'release'
+export type UpdateType = 'news' | 'update' | 'release' | 'video'
 
 export type Update = {
   id: string
@@ -9,6 +9,8 @@ export type Update = {
   title: string
   body: string
   date: string // ISO
+  /** Set on posts made automatically for a new YouTube upload (lib/youtube.ts). */
+  video?: { id: string; url: string }
 }
 
 const FILE = path.join(process.cwd(), 'data', 'updates.json')
@@ -27,14 +29,22 @@ export function getUpdates(): Update[] {
   }
 }
 
-export function addUpdate(input: { type: UpdateType; title: string; body: string }): Update {
+export function addUpdate(input: {
+  type: UpdateType
+  title: string
+  body: string
+  /** Defaults to now; a video post carries the upload's own date. */
+  date?: string
+  video?: Update['video']
+}): Update {
   const all = getUpdates()
   const update: Update = {
     id: `${Date.now().toString(36)}${Math.random().toString(36).slice(2, 6)}`,
     type: input.type,
     title: input.title.trim(),
     body: input.body.trim(),
-    date: new Date().toISOString(),
+    date: input.date ?? new Date().toISOString(),
+    ...(input.video ? { video: input.video } : {}),
   }
   ensureDir()
   fs.writeFileSync(FILE, JSON.stringify([update, ...all], null, 2), 'utf8')
@@ -51,5 +61,5 @@ export function deleteUpdate(id: string): boolean {
 }
 
 export function typeLabel(t: UpdateType): string {
-  return t === 'release' ? 'Release' : t === 'update' ? 'Update' : 'News'
+  return t === 'release' ? 'Release' : t === 'update' ? 'Update' : t === 'video' ? 'Video' : 'News'
 }

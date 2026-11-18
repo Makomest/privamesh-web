@@ -1,0 +1,19 @@
+{
+  "meta": {
+    "title": "PrivaMesh on YouTube: Videos About Private Messaging",
+    "description": "Videos from the PrivaMesh channel: who can read your messages, how messengers hand over data, and what end-to-end encryption does and does not protect."
+  },
+  "eyebrow": "Videos",
+  "title": "PrivaMesh on YouTube",
+  "lead": "Long-form explainers on surveillance, messengers and encryption - who holds the keys, who gets the data, and what actually protects you.",
+  "subscribe": "Subscribe on YouTube",
+  "latest": "Latest video",
+  "more": "More videos",
+  "shorts": "Shorts",
+  "play": "Play: {title}",
+  "views": "{count} views",
+  "watch": "Watch on YouTube",
+  "playerNote": "The video player loads only when you press play, from youtube-nocookie.com.",
+  "empty": "The first videos are on their way. Subscribe on YouTube to see them as soon as they are out.",
+  "listName": "PrivaMesh videos"
+}

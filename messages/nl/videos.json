@@ -1,0 +1,19 @@
+{
+  "meta": {
+    "title": "PrivaMesh op YouTube: video's over privéberichten",
+    "description": "Video's van het PrivaMesh-kanaal: wie je berichten kan lezen, hoe messengers gegevens overdragen en wat end-to-end-versleuteling wel en niet beschermt."
+  },
+  "eyebrow": "Video's",
+  "title": "PrivaMesh op YouTube",
+  "lead": "Uitgebreide uitleg over surveillance, messengers en versleuteling: wie de sleutels heeft, wie de gegevens krijgt en wat je echt beschermt.",
+  "subscribe": "Abonneren op YouTube",
+  "latest": "Nieuwste video",
+  "more": "Meer video's",
+  "shorts": "Shorts",
+  "play": "Afspelen: {title}",
+  "views": "{count} weergaven",
+  "watch": "Bekijken op YouTube",
+  "playerNote": "De videospeler laadt pas als je op afspelen drukt, vanaf youtube-nocookie.com.",
+  "empty": "De eerste video's komen eraan. Abonneer je op YouTube om ze meteen te zien.",
+  "listName": "Video's van PrivaMesh"
+}

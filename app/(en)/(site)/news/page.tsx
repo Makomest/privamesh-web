@@ -5,6 +5,7 @@ import JsonLd from '@/components/JsonLd'
 import { pageMetadata } from '@/lib/seo'
 import { itemListLd } from '@/lib/jsonld'
 import { getUpdates, typeLabel } from '@/lib/updates'
+import YouTubePlayer from '@/components/YouTubePlayer'
 
 export const dynamic = 'force-dynamic'
 
@@ -64,9 +65,26 @@ export default function NewsPage() {
             <h2 className="mt-3 text-xl font-bold tracking-tight text-text-primary sm:text-2xl">
               {u.title}
             </h2>
-            <p className="mt-3 whitespace-pre-line text-[15px] leading-relaxed text-text-muted">
-              {u.body}
-            </p>
+            {u.video && (
+              <div className="mt-5 max-w-2xl">
+                <YouTubePlayer id={u.video.id} title={u.title} playLabel={`Play: ${u.title}`} />
+              </div>
+            )}
+            {u.body && (
+              <p className="mt-4 whitespace-pre-line text-[15px] leading-relaxed text-text-muted">
+                {u.body}
+              </p>
+            )}
+            {u.video && (
+              <a
+                href={u.video.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 inline-block text-sm font-medium text-text-primary hover:underline"
+              >
+                Watch on YouTube ↗
+              </a>
+            )}
           </article>
         ))}
       </div>

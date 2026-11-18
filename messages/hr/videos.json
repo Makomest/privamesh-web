@@ -1,0 +1,19 @@
+{
+  "meta": {
+    "title": "PrivaMesh na YouTubeu: videozapisi o privatnoj komunikaciji",
+    "description": "Videozapisi s kanala PrivaMesh: tko može čitati vaše poruke, kako komunikatori predaju podatke i od čega šifriranje s kraja na kraj štiti, a od čega ne."
+  },
+  "eyebrow": "Videozapisi",
+  "title": "PrivaMesh na YouTubeu",
+  "lead": "Detaljna objašnjenja o nadzoru, komunikatorima i šifriranju: tko ima ključeve, tko dobiva podatke i što vas zaista štiti.",
+  "subscribe": "Pretplati se na YouTubeu",
+  "latest": "Najnoviji videozapis",
+  "more": "Još videozapisa",
+  "shorts": "Shorts",
+  "play": "Reproduciraj: {title}",
+  "views": "Pregledi: {count}",
+  "watch": "Gledaj na YouTubeu",
+  "playerNote": "Reproduktor se učitava tek kad pritisnete reprodukciju, s youtube-nocookie.com.",
+  "empty": "Prvi videozapisi stižu uskoro. Pretplatite se na YouTubeu da ih vidite čim izađu.",
+  "listName": "Videozapisi PrivaMesha"
+}

@@ -1,0 +1,19 @@
+{
+  "meta": {
+    "title": "YouTube의 PrivaMesh: 비공개 메시징에 관한 동영상",
+    "description": "PrivaMesh 채널의 동영상: 누가 내 메시지를 읽을 수 있는지, 메신저가 데이터를 어떻게 넘기는지, 종단 간 암호화가 무엇을 보호하고 무엇을 보호하지 못하는지."
+  },
+  "eyebrow": "동영상",
+  "title": "YouTube의 PrivaMesh",
+  "lead": "감시, 메신저, 암호화에 대한 깊이 있는 해설. 누가 키를 가지고 있는지, 누가 데이터를 받는지, 무엇이 실제로 나를 보호하는지.",
+  "subscribe": "YouTube에서 구독",
+  "latest": "최신 동영상",
+  "more": "더 많은 동영상",
+  "shorts": "Shorts",
+  "play": "재생: {title}",
+  "views": "조회수 {count}회",
+  "watch": "YouTube에서 보기",
+  "playerNote": "동영상 플레이어는 재생을 누를 때만 youtube-nocookie.com에서 불러옵니다.",
+  "empty": "첫 동영상을 준비하고 있습니다. 공개되는 즉시 보려면 YouTube에서 구독하세요.",
+  "listName": "PrivaMesh 동영상"
+}

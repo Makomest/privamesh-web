@@ -1,0 +1,19 @@
+{
+  "meta": {
+    "title": "A PrivaMesh a YouTube-on: videók a privát üzenetküldésről",
+    "description": "Videók a PrivaMesh csatornájáról: ki olvashatja az üzeneteit, hogyan adják ki az üzenetküldők az adatokat, és mit véd és mit nem a végpontok közötti titkosítás."
+  },
+  "eyebrow": "Videók",
+  "title": "A PrivaMesh a YouTube-on",
+  "lead": "Részletes magyarázatok megfigyelésről, üzenetküldőkről és titkosításról: kinél vannak a kulcsok, ki kapja meg az adatokat, és mi védi valójában.",
+  "subscribe": "Feliratkozás a YouTube-on",
+  "latest": "Legújabb videó",
+  "more": "További videók",
+  "shorts": "Shorts",
+  "play": "Lejátszás: {title}",
+  "views": "{count} megtekintés",
+  "watch": "Megnézem a YouTube-on",
+  "playerNote": "A lejátszó csak akkor töltődik be, amikor megnyomja a lejátszást, a youtube-nocookie.com-ról.",
+  "empty": "Az első videók úton vannak. Iratkozzon fel a YouTube-on, hogy azonnal lássa őket.",
+  "listName": "PrivaMesh-videók"
+}

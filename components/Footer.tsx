@@ -17,6 +17,7 @@ const RESOURCES = [
   { href: '/guides', label: 'Guides' },
   { href: '/blog', label: 'Blog' },
   { href: '/news', label: 'News' },
+  { href: '/videos', label: 'Videos' },
   { href: '/glossary', label: 'Glossary' },
   { href: '/about', label: 'About' },
   { href: SITE.whitepaper, label: 'White Paper', external: true },
@@ -42,6 +43,14 @@ function XIcon({ size = 18 }: { size?: number }) {
   return (
     <svg viewBox="0 0 24 24" width={size} height={size} fill="currentColor" aria-hidden="true">
       <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.66l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+    </svg>
+  )
+}
+
+function YouTubeIcon({ size = 19 }: { size?: number }) {
+  return (
+    <svg viewBox="0 0 24 24" width={size} height={size} fill="currentColor" aria-hidden="true">
+      <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4l6.2 3.6z" />
     </svg>
   )
 }
@@ -86,6 +95,15 @@ export default function Footer({ locale = 'en', ui }: { locale?: string; ui: Com
                 aria-label={ui.github}
               >
                 <Github size={18} />
+              </a>
+              <a
+                href={SITE.youtube}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-text-muted transition-colors hover:text-accent"
+                aria-label={ui.youtube}
+              >
+                <YouTubeIcon />
               </a>
               <a
                 href={SITE.twitter}

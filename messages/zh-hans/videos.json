@@ -1,0 +1,19 @@
+{
+  "meta": {
+    "title": "PrivaMesh 的 YouTube 频道：关于私密通讯的视频",
+    "description": "PrivaMesh 频道的视频：谁能读到你的消息、通讯应用如何交出数据，以及端到端加密能保护什么、不能保护什么。"
+  },
+  "eyebrow": "视频",
+  "title": "PrivaMesh 的 YouTube 频道",
+  "lead": "关于监控、通讯应用与加密的深度讲解：谁掌握密钥、谁拿到数据、什么才真正保护你。",
+  "subscribe": "在 YouTube 上订阅",
+  "latest": "最新视频",
+  "more": "更多视频",
+  "shorts": "Shorts",
+  "play": "播放：{title}",
+  "views": "{count} 次观看",
+  "watch": "在 YouTube 上观看",
+  "playerNote": "视频播放器只会在你点击播放时从 youtube-nocookie.com 加载。",
+  "empty": "首批视频即将上线。在 YouTube 上订阅，第一时间观看。",
+  "listName": "PrivaMesh 视频"
+}

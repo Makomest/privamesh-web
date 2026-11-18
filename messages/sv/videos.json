@@ -1,0 +1,19 @@
+{
+  "meta": {
+    "title": "PrivaMesh på YouTube: videor om privat meddelandehantering",
+    "description": "Videor från PrivaMeshs kanal: vem som kan läsa dina meddelanden, hur meddelandeappar lämnar ut data och vad totalsträckskryptering skyddar och inte."
+  },
+  "eyebrow": "Videor",
+  "title": "PrivaMesh på YouTube",
+  "lead": "Fördjupande förklaringar om övervakning, meddelandeappar och kryptering - vem som har nycklarna, vem som får datan och vad som faktiskt skyddar dig.",
+  "subscribe": "Prenumerera på YouTube",
+  "latest": "Senaste videon",
+  "more": "Fler videor",
+  "shorts": "Shorts",
+  "play": "Spela upp: {title}",
+  "views": "{count} visningar",
+  "watch": "Titta på YouTube",
+  "playerNote": "Videospelaren laddas först när du trycker på uppspelning, från youtube-nocookie.com.",
+  "empty": "De första videorna är på väg. Prenumerera på YouTube för att se dem direkt.",
+  "listName": "Videor från PrivaMesh"
+}

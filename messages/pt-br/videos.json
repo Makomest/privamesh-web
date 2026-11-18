@@ -1,0 +1,19 @@
+{
+  "meta": {
+    "title": "PrivaMesh no YouTube: vídeos sobre mensagens privadas",
+    "description": "Vídeos do canal do PrivaMesh: quem pode ler suas mensagens, como os mensageiros entregam dados e o que a criptografia de ponta a ponta protege ou não."
+  },
+  "eyebrow": "Vídeos",
+  "title": "PrivaMesh no YouTube",
+  "lead": "Explicações aprofundadas sobre vigilância, mensageiros e criptografia: quem tem as chaves, quem recebe os dados e o que realmente protege você.",
+  "subscribe": "Inscrever-se no YouTube",
+  "latest": "Vídeo mais recente",
+  "more": "Mais vídeos",
+  "shorts": "Shorts",
+  "play": "Assistir: {title}",
+  "views": "{count} visualizações",
+  "watch": "Assistir no YouTube",
+  "playerNote": "O player só carrega quando você aperta o play, a partir do youtube-nocookie.com.",
+  "empty": "Os primeiros vídeos estão chegando. Inscreva-se no YouTube para vê-los assim que saírem.",
+  "listName": "Vídeos do PrivaMesh"
+}

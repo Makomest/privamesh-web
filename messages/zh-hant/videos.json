@@ -1,0 +1,19 @@
+{
+  "meta": {
+    "title": "PrivaMesh 的 YouTube 頻道：關於私密通訊的影片",
+    "description": "PrivaMesh 頻道的影片：誰能讀到你的訊息、通訊 App 如何交出資料，以及端對端加密能保護什麼、不能保護什麼。"
+  },
+  "eyebrow": "影片",
+  "title": "PrivaMesh 的 YouTube 頻道",
+  "lead": "關於監控、通訊 App 與加密的深度講解：誰握有金鑰、誰拿到資料、什麼才真正保護你。",
+  "subscribe": "在 YouTube 上訂閱",
+  "latest": "最新影片",
+  "more": "更多影片",
+  "shorts": "Shorts",
+  "play": "播放：{title}",
+  "views": "{count} 次觀看",
+  "watch": "在 YouTube 上觀看",
+  "playerNote": "影片播放器只會在你點擊播放時從 youtube-nocookie.com 載入。",
+  "empty": "首批影片即將上線。在 YouTube 上訂閱，第一時間觀看。",
+  "listName": "PrivaMesh 影片"
+}

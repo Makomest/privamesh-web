@@ -1,0 +1,19 @@
+{
+  "meta": {
+    "title": "PrivaMesh na YouTube: filmy o prywatnej komunikacji",
+    "description": "Filmy z kanału PrivaMesh: kto może czytać twoje wiadomości, jak komunikatory przekazują dane i przed czym chroni szyfrowanie end-to-end, a przed czym nie."
+  },
+  "eyebrow": "Filmy",
+  "title": "PrivaMesh na YouTube",
+  "lead": "Szczegółowe omówienia inwigilacji, komunikatorów i szyfrowania: kto ma klucze, kto dostaje dane i co naprawdę cię chroni.",
+  "subscribe": "Subskrybuj na YouTube",
+  "latest": "Najnowszy film",
+  "more": "Więcej filmów",
+  "shorts": "Shorts",
+  "play": "Odtwórz: {title}",
+  "views": "Wyświetlenia: {count}",
+  "watch": "Obejrzyj na YouTube",
+  "playerNote": "Odtwarzacz ładuje się dopiero po naciśnięciu odtwarzania, z youtube-nocookie.com.",
+  "empty": "Pierwsze filmy są w drodze. Subskrybuj na YouTube, by zobaczyć je zaraz po premierze.",
+  "listName": "Filmy PrivaMesh"
+}

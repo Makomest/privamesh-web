@@ -1,0 +1,19 @@
+{
+  "meta": {
+    "title": "PrivaMesh di YouTube: video tentang pesanan peribadi",
+    "description": "Video daripada saluran PrivaMesh: siapa yang boleh membaca mesej anda, bagaimana aplikasi pesanan menyerahkan data, dan apa yang dilindungi penyulitan hujung ke hujung dan apa yang tidak."
+  },
+  "eyebrow": "Video",
+  "title": "PrivaMesh di YouTube",
+  "lead": "Penerangan mendalam tentang pengawasan, aplikasi pesanan dan penyulitan: siapa memegang kunci, siapa mendapat data dan apa yang benar-benar melindungi anda.",
+  "subscribe": "Langgan di YouTube",
+  "latest": "Video terkini",
+  "more": "Lagi video",
+  "shorts": "Shorts",
+  "play": "Main: {title}",
+  "views": "{count} tontonan",
+  "watch": "Tonton di YouTube",
+  "playerNote": "Pemain video hanya dimuatkan apabila anda menekan main, daripada youtube-nocookie.com.",
+  "empty": "Video pertama dalam perjalanan. Langgan di YouTube untuk menontonnya sebaik sahaja ia keluar.",
+  "listName": "Video PrivaMesh"
+}

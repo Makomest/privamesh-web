@@ -1,0 +1,19 @@
+{
+  "meta": {
+    "title": "PrivaMesh auf YouTube: Videos über privates Messaging",
+    "description": "Videos vom PrivaMesh-Kanal: wer Ihre Nachrichten lesen kann, wie Messenger Daten herausgeben und was Ende-zu-Ende-Verschlüsselung schützt und was nicht."
+  },
+  "eyebrow": "Videos",
+  "title": "PrivaMesh auf YouTube",
+  "lead": "Ausführliche Erklärvideos zu Überwachung, Messengern und Verschlüsselung - wer die Schlüssel hat, wer die Daten bekommt und was Sie tatsächlich schützt.",
+  "subscribe": "Auf YouTube abonnieren",
+  "latest": "Neuestes Video",
+  "more": "Weitere Videos",
+  "shorts": "Shorts",
+  "play": "Abspielen: {title}",
+  "views": "{count} Aufrufe",
+  "watch": "Auf YouTube ansehen",
+  "playerNote": "Der Videoplayer lädt erst, wenn Sie auf Abspielen drücken - von youtube-nocookie.com.",
+  "empty": "Die ersten Videos sind unterwegs. Abonnieren Sie auf YouTube, um sie sofort zu sehen.",
+  "listName": "PrivaMesh-Videos"
+}

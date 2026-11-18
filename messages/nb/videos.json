@@ -1,0 +1,19 @@
+{
+  "meta": {
+    "title": "PrivaMesh på YouTube: videoer om privat meldingsutveksling",
+    "description": "Videoer fra PrivaMesh-kanalen: hvem som kan lese meldingene dine, hvordan meldingsapper utleverer data, og hva ende-til-ende-kryptering beskytter og ikke."
+  },
+  "eyebrow": "Videoer",
+  "title": "PrivaMesh på YouTube",
+  "lead": "Grundige forklaringer om overvåking, meldingsapper og kryptering - hvem som har nøklene, hvem som får dataene, og hva som faktisk beskytter deg.",
+  "subscribe": "Abonner på YouTube",
+  "latest": "Nyeste video",
+  "more": "Flere videoer",
+  "shorts": "Shorts",
+  "play": "Spill av: {title}",
+  "views": "{count} visninger",
+  "watch": "Se på YouTube",
+  "playerNote": "Videospilleren lastes først når du trykker på avspilling, fra youtube-nocookie.com.",
+  "empty": "De første videoene er på vei. Abonner på YouTube for å se dem med en gang.",
+  "listName": "Videoer fra PrivaMesh"
+}

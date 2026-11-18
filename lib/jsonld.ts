@@ -12,7 +12,7 @@ export const organizationLd = {
   slogan: SITE.tagline,
   // Every profile that confirms this is the same entity. An assistant
   // reconciling "PrivaMesh" across sources follows these.
-  sameAs: [SITE.twitter, SITE.github, `https://apps.apple.com/app/id${SITE.appStoreId}`],
+  sameAs: [SITE.twitter, SITE.github, SITE.youtube, `https://apps.apple.com/app/id${SITE.appStoreId}`],
   contactPoint: {
     '@type': 'ContactPoint',
     contactType: 'customer support',

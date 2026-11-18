@@ -1,0 +1,19 @@
+{
+  "meta": {
+    "title": "PrivaMesh YouTubessa: videoita yksityisestä viestinnästä",
+    "description": "PrivaMesh-kanavan videot: kuka voi lukea viestejäsi, miten viestisovellukset luovuttavat tietoja ja mitä päästä päähän -salaus suojaa ja mitä ei."
+  },
+  "eyebrow": "Videot",
+  "title": "PrivaMesh YouTubessa",
+  "lead": "Perusteellisia selityksiä valvonnasta, viestisovelluksista ja salauksesta: kenellä avaimet ovat, kuka saa tiedot ja mikä sinua oikeasti suojaa.",
+  "subscribe": "Tilaa YouTubessa",
+  "latest": "Uusin video",
+  "more": "Lisää videoita",
+  "shorts": "Shorts",
+  "play": "Toista: {title}",
+  "views": "{count} katselukertaa",
+  "watch": "Katso YouTubessa",
+  "playerNote": "Videosoitin latautuu vasta, kun painat toistoa, osoitteesta youtube-nocookie.com.",
+  "empty": "Ensimmäiset videot ovat tulossa. Tilaa kanava YouTubessa, niin näet ne heti.",
+  "listName": "PrivaMeshin videot"
+}

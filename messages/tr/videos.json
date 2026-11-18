@@ -1,0 +1,19 @@
+{
+  "meta": {
+    "title": "YouTube'da PrivaMesh: özel mesajlaşma üzerine videolar",
+    "description": "PrivaMesh kanalından videolar: mesajlarınızı kim okuyabilir, mesajlaşma uygulamaları verileri nasıl teslim eder ve uçtan uca şifreleme neyi korur, neyi korumaz."
+  },
+  "eyebrow": "Videolar",
+  "title": "YouTube'da PrivaMesh",
+  "lead": "Gözetim, mesajlaşma uygulamaları ve şifreleme üzerine ayrıntılı anlatımlar: anahtarlar kimde, verileri kim alıyor ve sizi gerçekte ne koruyor.",
+  "subscribe": "YouTube'da abone ol",
+  "latest": "Son video",
+  "more": "Diğer videolar",
+  "shorts": "Shorts",
+  "play": "Oynat: {title}",
+  "views": "{count} görüntüleme",
+  "watch": "YouTube'da izle",
+  "playerNote": "Video oynatıcı yalnızca oynata bastığınızda youtube-nocookie.com'dan yüklenir.",
+  "empty": "İlk videolar yolda. Yayınlanır yayınlanmaz görmek için YouTube'da abone olun.",
+  "listName": "PrivaMesh videoları"
+}

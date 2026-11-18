@@ -1,0 +1,19 @@
+{
+  "meta": {
+    "title": "PrivaMesh YouTube'da: maxfiy yozishmalar haqida videolar",
+    "description": "PrivaMesh kanali videolari: xabarlaringizni kim o'qiy oladi, messenjerlar ma'lumotlarni qanday topshiradi va uchdan-uchgacha shifrlash nimadan himoya qiladi, nimadan yo'q."
+  },
+  "eyebrow": "Videolar",
+  "title": "PrivaMesh YouTube'da",
+  "lead": "Kuzatuv, messenjerlar va shifrlash haqida batafsil tushuntirishlar: kalitlar kimda, ma'lumotlarni kim oladi va sizni aslida nima himoya qiladi.",
+  "subscribe": "YouTube'da obuna bo'lish",
+  "latest": "So'nggi video",
+  "more": "Boshqa videolar",
+  "shorts": "Shorts",
+  "play": "Ko'rish: {title}",
+  "views": "{count} marta ko'rilgan",
+  "watch": "YouTube'da ko'rish",
+  "playerNote": "Pleyer faqat ijro tugmasini bosganingizda youtube-nocookie.com'dan yuklanadi.",
+  "empty": "Birinchi videolar yo'lda. Ular chiqishi bilan ko'rish uchun YouTube'da obuna bo'ling.",
+  "listName": "PrivaMesh videolari"
+}

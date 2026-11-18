@@ -39,6 +39,7 @@ const STATIC_PATHS: { path: string; priority: number; freq: Freq }[] = [
   { path: '/security', priority: 0.8, freq: 'monthly' },
   { path: '/bug-bounty', priority: 0.8, freq: 'monthly' },
   { path: '/blog', priority: 0.6, freq: 'weekly' },
+  { path: '/videos', priority: 0.7, freq: 'weekly' },
 ]
 
 export default function sitemap(): MetadataRoute.Sitemap {

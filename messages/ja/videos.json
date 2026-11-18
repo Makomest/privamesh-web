@@ -1,0 +1,19 @@
+{
+  "meta": {
+    "title": "YouTubeのPrivaMesh：プライベートなメッセージに関する動画",
+    "description": "PrivaMeshチャンネルの動画：誰があなたのメッセージを読めるのか、メッセージアプリはどのようにデータを渡すのか、エンドツーエンド暗号化は何を守り何を守らないのか。"
+  },
+  "eyebrow": "動画",
+  "title": "YouTubeのPrivaMesh",
+  "lead": "監視、メッセージアプリ、暗号化についての詳しい解説。鍵を持つのは誰か、データを受け取るのは誰か、本当にあなたを守るものは何か。",
+  "subscribe": "YouTubeでチャンネル登録",
+  "latest": "最新の動画",
+  "more": "その他の動画",
+  "shorts": "ショート",
+  "play": "再生：{title}",
+  "views": "{count}回視聴",
+  "watch": "YouTubeで見る",
+  "playerNote": "動画プレーヤーは再生ボタンを押したときにだけ、youtube-nocookie.comから読み込まれます。",
+  "empty": "最初の動画を準備中です。公開されたらすぐ見られるよう、YouTubeでチャンネル登録してください。",
+  "listName": "PrivaMeshの動画"
+}
