@@ -1,0 +1,97 @@
+{
+  "meta": {
+    "title": "Codice di coercizione - un secondo codice che cancella l'account",
+    "description": "Due codici invece di uno. Il primo apre PrivaMesh; il secondo cancella ogni messaggio, contatto e chiave sul dispositivo, senza mostrare nulla che dica quale hai digitato."
+  },
+  "eyebrow": "Codice di coercizione",
+  "title": "Un secondo codice che svuota l'account",
+  "lead": "Imposta due codici invece di uno. Il primo apre l'app. Il secondo cancella ogni messaggio, contatto e chiave sul dispositivo e ti disconnette - senza avviso, senza conferma, niente sullo schermo che mostri quale hai digitato.",
+  "ctaSecondary": "Quando aiuta",
+  "summary": "La crittografia risponde alla domanda «possono leggerlo?». Non risponde a «cosa succede quando qualcuno ti sta addosso e pretende il codice?». Un codice di coercizione è una risposta alla seconda domanda, e una risposta circoscritta. Leggi cosa non fa prima di farci affidamento.",
+  "body": [
+    "## Cosa succede quando lo digiti",
+    "La schermata di blocco accetta entrambi i codici. Quello vero sblocca l'app. Quello di coercizione avvia la cancellazione e poi mostra la schermata di benvenuto, esattamente come un'app appena installata - stessa schermata, stesse parole, nessun messaggio, nessun ritardo, nessuna traccia dell'account che c'era un secondo prima.",
+    "La cancellazione è ordinata di proposito perché ciò che è visibile sparisca per primo. Messaggi e contatti vengono eliminati prima delle chiavi, così un processo interrotto a metà lascia un'installazione rotta invece di una conversazione leggibile. La frase di recupero esce dal Portachiavi, entrambi i codici vengono eliminati e lo sblocco biometrico viene disattivato con loro.",
+    "Anche il contatore dei tentativi falliti viene azzerato. Un'app appena cancellata che rifiuta ancora i codici per quattro minuti non è visibilmente un'installazione nuova, e quel dettaglio è tutto il punto.",
+    "## Perché i due codici non si possono distinguere",
+    "Un codice di coercizione non vale nulla se l'app si comporta diversamente con lui. Due cose lo impediscono.",
+    "Primo, entrambi gli hash sono salvati con lo stesso sale, quindi inserire un codice ricava un solo hash e lo confronta con entrambi, in tempo costante. Una versione precedente dava al codice di coercizione un sale proprio, il che significava una seconda derivazione di chiave a ogni sblocco: raddoppiava l'attesa per tutti, e saltarla in caso di mancata corrispondenza avrebbe reso il percorso di coercizione misurabilmente più veloce per chi tiene il telefono e guarda lo schermo.",
+    "Secondo, il codice di coercizione deve avere la stessa lunghezza del tuo codice. Il tastierino invia appena viene inserita l'ultima cifra, quindi un codice di lunghezza diversa non potrebbe mai essere digitato - sarebbe un'impostazione che in silenzio non fa nulla, scoperta nel momento peggiore. Una lunghezza diversa viene rifiutata.",
+    "Nemmeno il codice stesso può essere trasformato nel codice di coercizione. Il controllo verifica prima il codice vero, quindi una coincidenza verrebbe interpretata come «sblocca» e il codice di coercizione smetterebbe silenziosamente di funzionare. Quella modifica viene rifiutata.",
+    "## Cosa non fa",
+    "**Non cancella nulla dalla chain.** Il testo cifrato già pubblicato è permanente e pubblico. Senza le chiavi nessuno può leggerlo, ma il fatto che un indirizzo abbia inviato messaggi, e quando, resta visibile per sempre. Il codice di coercizione distrugge la copia sul tuo dispositivo. Non annulla gli invii.",
+    "**Non cancella il tuo telefono o computer.** Spariscono solo i dati di PrivaMesh. Foto, altre app di messaggistica e tutto il resto restano intatti.",
+    "**Non avvisa nessuno.** Nessun allarme silenzioso, nessun messaggio a un contatto, nessun server da notificare - [non c'è alcun server](/features/no-servers). La cancellazione è l'intera azione.",
+    "**Non mostra un account esca.** Alcuni strumenti aprono invece un secondo profilo innocuo. PrivaMesh svuota quello vero e mostra un'app al primo avvio. Cosa sia più sicuro dipende da chi chiede e da cosa sa già; la nostra è la promessa più semplice, e quella che possiamo davvero mantenere.",
+    "**Non può aiutare se il dispositivo è già stato copiato.** Chi ha copiato lo spazio di archiviazione prima che digitassi qualcosa conserva quella copia. Il codice di coercizione protegge il momento in cui ti chiedono di sbloccare, non il tempo precedente.",
+    "**Non è reversibile.** La tua frase di recupero ripristina identità e contatti su un nuovo dispositivo, mai le conversazioni - [la forward secrecy distrugge quelle chiavi dopo l'uso](/limitations). Digitare il codice di coercizione per sbaglio ti costa la cronologia per sempre. Scegli due codici che non si possano confondere sotto pressione.",
+    "## I tentativi sono limitati, per entrambi i codici",
+    "Cinque inserimenti errati avviano un'attesa crescente - 30 secondi, un minuto, due, quattro e così via fino a un'ora - mostrata sullo schermo perché l'attesa sia chiara e non misteriosa. Durante l'attesa lo sblocco biometrico viene rifiutato, quindi non può essere usato per aggirarla. I codici vengono allungati con una derivazione di chiave lenta prima del confronto, ed è questo che rende costoso indovinare un breve codice numerico per chi ha una copia dello spazio di archiviazione.",
+    "Confermare il codice dentro le Impostazioni - per mostrare la frase o cambiare un codice - non conta per quel limite. Proteggere dagli indovinamenti un'app già sbloccata non serve a nulla, mentre lasciare che un errore di battitura ti chiuda fuori dal tuo account ha un costo reale. Quel controllo rifiuta anche il codice di coercizione: non è un codice di accesso, e accettarlo lì gli permetterebbe di autorizzare modifiche all'impostazione che esiste per proteggere."
+  ],
+  "platformsHeading": "Dove funziona oggi",
+  "platforms": [
+    {
+      "name": "Windows",
+      "status": "Disponibile dalla 1.0.0",
+      "detail": "Entrambi i codici si impostano nelle Impostazioni. La cancellazione elimina il database locale, lo riapre vuoto e cancella le chiavi custodite da Windows DPAPI. L'app torna allo stato del primo avvio."
+    },
+    {
+      "name": "Android",
+      "status": "Disponibile dalla 0.1",
+      "detail": "La cancellazione chiude prima il database, poi ne elimina i file insieme al log write-ahead, ai file delle preferenze e alle cache, e annulla le attività in background che altrimenti lo riaprirebbero."
+    },
+    {
+      "name": "iPhone",
+      "status": "Nel codice sorgente, non ancora sull'App Store",
+      "detail": "Il codice è scritto, testato e pubblico, ma l'attuale versione sull'App Store, la 1.1, è stata compilata il 13 agosto 2026, prima di esso. Arriverà con la prossima versione. Fino ad allora, il codice di coercizione esiste solo sui client desktop e Android."
+    }
+  ],
+  "after": [
+    "Il comportamento è lo stesso su ogni client che lo ha: stessi due codici, stessa regola di uguale lunghezza, stesso confronto in tempo costante, stessa attesa. Le differenze riguardano solo cosa la cancellazione deve eliminare su ciascun sistema, perché un database Windows, un database Android e un portachiavi iOS falliscono in modi diversi se li si elimina con poca cura.",
+    "Tutte e tre le implementazioni sono open source e si possono leggere prima di fidarsene: [iOS](https://github.com/Makomest/PrivaMesh), [Windows](https://github.com/Makomest/privamesh-windows) e [Android](https://github.com/Makomest/privamesh-android)."
+  ],
+  "faq": [
+    {
+      "q": "Cos'è un codice di coercizione?",
+      "a": "Un secondo codice che cancella l'account invece di aprirlo. Imposti entrambi; il primo sblocca l'app, il secondo elimina ogni messaggio, contatto e chiave sul dispositivo e riporta l'app alla schermata del primo avvio, senza nulla che mostri quale sia stato digitato."
+    },
+    {
+      "q": "Si possono distinguere i due codici?",
+      "a": "Non dall'app. Entrambi sono salvati con lo stesso sale, quindi una sola derivazione viene confrontata con entrambi in tempo costante, e il codice di coercizione deve avere la stessa lunghezza del codice. Dopo la cancellazione l'app mostra la schermata di benvenuto di un'installazione nuova, e il contatore dei tentativi falliti viene azzerato perché nulla lo contraddica."
+    },
+    {
+      "q": "Il codice di coercizione cancella i miei messaggi dalla blockchain?",
+      "a": "No. Il testo cifrato già pubblicato su Solana è permanente e pubblico. Nessuno può leggerlo senza le chiavi appena distrutte, ma il fatto che un indirizzo abbia inviato messaggi, e quando, resta visibile. Il codice di coercizione cancella la copia sul tuo dispositivo; non può annullare gli invii."
+    },
+    {
+      "q": "Cancella tutto il mio telefono?",
+      "a": "No. Vengono eliminati solo i dati di PrivaMesh: i suoi messaggi, contatti, chiavi, entrambi i codici e lo sblocco biometrico. Nient'altro sul dispositivo viene toccato."
+    },
+    {
+      "q": "Posso annullarlo o recuperare le mie chat?",
+      "a": "No. La tua frase di recupero ripristina identità e contatti su un nuovo dispositivo, mai le conversazioni - la forward secrecy ha distrutto quelle chiavi dei messaggi dopo l'uso. Scegli due codici che non puoi confondere sotto pressione."
+    },
+    {
+      "q": "Quali versioni di PrivaMesh hanno il codice di coercizione?",
+      "a": "Il client Windows dalla 1.0.0 e il client Android dalla 0.1, entrambi pubblicati il 27 agosto 2026. Su iPhone il codice è scritto e pubblico, ma l'attuale versione sull'App Store, la 1.1, è stata compilata il 13 agosto, prima di esso, quindi arriverà con la prossima versione."
+    }
+  ],
+  "related": [
+    {
+      "href": "/threat-model",
+      "label": "Modello di minaccia",
+      "blurb": "Avversario per avversario, compreso chi tiene in mano il tuo telefono sbloccato."
+    },
+    {
+      "href": "/limitations",
+      "label": "Limiti noti",
+      "blurb": "Da cosa PrivaMesh non ti protegge, detto chiaramente."
+    },
+    {
+      "href": "/features/seed-phrase-accounts",
+      "label": "Account con frase di recupero",
+      "blurb": "Cosa lascia una cancellazione e cosa possono ripristinare dodici parole."
+    }
+  ]
+}

@@ -18,6 +18,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2] / 'messages'
 PH = re.compile(r'\{(\w+)\}')
 LINK = re.compile(r'\]\(([^)]+)\)')
+HEAD = re.compile(r'#{0,3} ?')
 
 
 def leaves(node, path=()):
@@ -54,6 +55,8 @@ def main():
                     print(f'holders  {where}: {PH.findall(val)} != {PH.findall(src)}'); problems += 1
                 if sorted(LINK.findall(src)) != sorted(LINK.findall(val)):
                     print(f'links    {where}: {LINK.findall(val)} != {LINK.findall(src)}'); problems += 1
+                if HEAD.match(src).group() != HEAD.match(val).group():
+                    print(f'heading  {where}: block level differs from English'); problems += 1
             for path in tr:
                 if path not in en:
                     print(f'extra    {loc_dir.name}/{page}:{".".join(map(str, path))}'); problems += 1

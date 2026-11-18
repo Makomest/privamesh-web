@@ -1,0 +1,97 @@
+{
+  "meta": {
+    "title": "Kod przymusu - drugi kod, który kasuje konto",
+    "description": "Dwa kody zamiast jednego. Pierwszy otwiera PrivaMesh, drugi kasuje wszystkie wiadomości, kontakty i klucze na urządzeniu, nie pokazując niczego, co zdradzałoby, który wpisano."
+  },
+  "eyebrow": "Kod przymusu",
+  "title": "Drugi kod, który opróżnia konto",
+  "lead": "Ustaw dwa kody zamiast jednego. Pierwszy otwiera aplikację. Drugi kasuje wszystkie wiadomości, kontakty i klucze na urządzeniu i wylogowuje cię - bez ostrzeżenia, bez potwierdzenia, a na ekranie nic nie pokazuje, który kod wpisałeś.",
+  "ctaSecondary": "Kiedy to pomaga",
+  "summary": "Szyfrowanie odpowiada na pytanie „czy mogą to przeczytać?”. Nie odpowiada na pytanie „co się stanie, gdy ktoś stoi nad tobą i żąda kodu?”. Kod przymusu jest odpowiedzią na to drugie pytanie, i to wąską. Przeczytaj, czego nie robi, zanim zaczniesz na nim polegać.",
+  "body": [
+    "## Co się dzieje, gdy go wpiszesz",
+    "Ekran blokady przyjmuje oba kody. Prawdziwy odblokowuje aplikację. Kod przymusu uruchamia kasowanie, a potem pokazuje ekran powitalny - dokładnie taki jak w świeżo zainstalowanej aplikacji: ten sam ekran, te same słowa, żadnego komunikatu, żadnego opóźnienia, żadnego śladu konta, które było tu sekundę wcześniej.",
+    "Kasowanie jest celowo uporządkowane tak, by najpierw znikało to, co widać. Wiadomości i kontakty są usuwane przed kluczami, więc proces przerwany w połowie zostawi zepsutą instalację, a nie czytelną rozmowę. Fraza odzyskiwania znika z pęku kluczy, oba kody są usuwane, a wraz z nimi wyłącza się odblokowanie biometryczne.",
+    "Licznik nieudanych prób też jest zerowany. Aplikacja, którą właśnie skasowano, a która jeszcze przez cztery minuty odrzuca kody, wyraźnie nie jest świeżą instalacją - a w tym szczególe tkwi cały sens.",
+    "## Dlaczego dwóch kodów nie da się odróżnić",
+    "Kod przymusu jest bezwartościowy, jeśli aplikacja zachowuje się przy nim inaczej. Chronią przed tym dwie rzeczy.",
+    "Po pierwsze, oba skróty są przechowywane z tą samą solą, więc wpisanie kodu wyprowadza jeden skrót i porównuje go z oboma w stałym czasie. Wcześniejsza wersja dawała kodowi przymusu własną sól, co oznaczało drugie wyprowadzenie klucza przy każdym odblokowaniu: podwajało to czas oczekiwania dla wszystkich, a pomijanie go przy niezgodności sprawiłoby, że ścieżka przymusu byłaby wymiernie szybsza dla kogoś, kto trzyma telefon i patrzy na ekran.",
+    "Po drugie, kod przymusu musi mieć tę samą długość co twój kod. Klawiatura zatwierdza od razu po wpisaniu ostatniej cyfry, więc kodu o innej długości nie dałoby się w ogóle wpisać - byłoby to ustawienie, które po cichu nic nie robi i wychodzi na jaw w najgorszym momencie. Inna długość jest odrzucana.",
+    "Samego kodu też nie można zamienić w kod przymusu. Sprawdzenie najpierw testuje prawdziwy kod, więc kolizja zostałaby odczytana jako „odblokuj”, a kod przymusu po cichu przestałby działać. Taka zmiana jest odrzucana.",
+    "## Czego nie robi",
+    "**Niczego nie kasuje z łańcucha.** Już opublikowany szyfrogram jest trwały i publiczny. Bez kluczy nikt go nie przeczyta, ale to, że adres wysyłał wiadomości, i kiedy, pozostaje widoczne na zawsze. Kod przymusu niszczy kopię na twoim urządzeniu. Wysłanego nie cofa.",
+    "**Nie kasuje twojego telefonu ani komputera.** Znikają tylko dane PrivaMesh. Zdjęcia, inne komunikatory i cała reszta pozostają nietknięte.",
+    "**Nikogo nie ostrzega.** Nie ma cichego alarmu, wiadomości do kontaktu ani serwera do powiadomienia - [serwera nie ma wcale](/features/no-servers). Kasowanie to całe działanie.",
+    "**Nie pokazuje konta-przynęty.** Niektóre narzędzia otwierają zamiast tego drugi, niewinny profil. PrivaMesh opróżnia prawdziwe i pokazuje aplikację przy pierwszym uruchomieniu. Co jest bezpieczniejsze, zależy od tego, kto pyta i co już wie; nasza obietnica jest prostsza i taka, której naprawdę możemy dotrzymać.",
+    "**Nie pomoże, jeśli z urządzenia zrobiono już obraz.** Kto skopiował pamięć, zanim cokolwiek wpisałeś, ma tę kopię. Kod przymusu chroni moment, w którym ktoś każe ci odblokować, a nie czas wcześniej.",
+    "**Nie da się go cofnąć.** Fraza odzyskiwania przywraca tożsamość i kontakty na nowym urządzeniu, ale nigdy rozmów - [poufność przyszła niszczy te klucze po użyciu](/limitations). Przypadkowe wpisanie kodu przymusu kosztuje cię historię na zawsze. Wybierz dwa kody, których pod presją nie da się pomylić.",
+    "## Zgadywanie jest hamowane, dla obu kodów tak samo",
+    "Pięć błędnych prób uruchamia rosnącą przerwę - 30 sekund, minuta, dwie, cztery i tak aż do godziny - pokazywaną na ekranie, by oczekiwanie było jasne, a nie tajemnicze. W trakcie przerwy odblokowanie biometryczne jest odrzucane, więc nie da się nim jej obejść. Przed porównaniem kody są rozciągane powolnym wyprowadzaniem klucza, co sprawia, że zgadywanie krótkiego kodu cyfrowego jest kosztowne dla kogoś, kto ma kopię pamięci.",
+    "Potwierdzanie kodu w Ustawieniach - by pokazać frazę lub zmienić kod - nie wlicza się do tego limitu. Ochrona przed zgadywaniem już odblokowanej aplikacji nic nie daje, a pozwolenie, by literówka zablokowała ci dostęp do własnego konta, ma realny koszt. To sprawdzenie również odrzuca kod przymusu: nie jest on kodem dostępu, a przyjęcie go tam pozwoliłoby mu zatwierdzać zmiany w ustawieniu, które ma chronić."
+  ],
+  "platformsHeading": "Gdzie działa dziś",
+  "platforms": [
+    {
+      "name": "Windows",
+      "status": "Dostępny od 1.0.0",
+      "detail": "Oba kody ustawia się w Ustawieniach. Kasowanie usuwa lokalną bazę, otwiera ją ponownie pustą i czyści klucze przechowywane przez Windows DPAPI. Aplikacja wraca do stanu pierwszego uruchomienia."
+    },
+    {
+      "name": "Android",
+      "status": "Dostępny od 0.1",
+      "detail": "Kasowanie najpierw zamyka bazę, potem usuwa jej pliki razem z dziennikiem zapisu z wyprzedzeniem, plikami preferencji i pamięcią podręczną oraz anuluje zadania w tle, które inaczej otworzyłyby ją ponownie."
+    },
+    {
+      "name": "iPhone",
+      "status": "W kodzie źródłowym, jeszcze nie w App Store",
+      "detail": "Kod jest napisany, przetestowany i publiczny, ale obecna wersja w App Store, 1.1, została zbudowana 13 sierpnia 2026 r., wcześniej. Pojawi się w następnym wydaniu. Do tego czasu kod przymusu istnieje tylko w kliencie desktopowym i na Androida."
+    }
+  ],
+  "after": [
+    "Zachowanie jest takie samo na każdym kliencie, który go ma: te same dwa kody, ta sama zasada równej długości, to samo porównanie w stałym czasie, ta sama przerwa. Różnice dotyczą tylko tego, co kasowanie musi usunąć w danym systemie, bo baza Windows, baza Androida i pęk kluczy iOS psują się inaczej, gdy usuwa się je niedbale.",
+    "Wszystkie trzy implementacje są otwarte i można je przeczytać, zanim im zaufasz: [iOS](https://github.com/Makomest/PrivaMesh), [Windows](https://github.com/Makomest/privamesh-windows) i [Android](https://github.com/Makomest/privamesh-android)."
+  ],
+  "faq": [
+    {
+      "q": "Czym jest kod przymusu?",
+      "a": "Drugim kodem, który kasuje konto zamiast je otworzyć. Ustawiasz oba; pierwszy odblokowuje aplikację, drugi usuwa wszystkie wiadomości, kontakty i klucze na urządzeniu i przywraca aplikację do ekranu pierwszego uruchomienia, bez niczego, co pokazywałoby, który wpisano."
+    },
+    {
+      "q": "Czy ktoś może odróżnić te dwa kody?",
+      "a": "Nie po aplikacji. Oba są przechowywane z tą samą solą, więc jedno wyprowadzenie jest porównywane z oboma w stałym czasie, a kod przymusu musi mieć tę samą długość co kod. Po kasowaniu aplikacja pokazuje ten sam ekran powitalny co świeża instalacja, a licznik nieudanych prób jest zerowany, by nic temu nie przeczyło."
+    },
+    {
+      "q": "Czy kod przymusu usuwa moje wiadomości z blockchaina?",
+      "a": "Nie. Już opublikowany w Solanie szyfrogram jest trwały i publiczny. Nikt go nie przeczyta bez właśnie zniszczonych kluczy, ale to, że adres wysyłał wiadomości, i kiedy, pozostaje widoczne. Kod przymusu kasuje kopię na twoim urządzeniu; wysłanego cofnąć nie może."
+    },
+    {
+      "q": "Czy kasuje cały mój telefon?",
+      "a": "Nie. Usuwane są tylko dane PrivaMesh: jego wiadomości, kontakty, klucze, oba kody i odblokowanie biometryczne. Nic innego na urządzeniu nie jest ruszane."
+    },
+    {
+      "q": "Czy mogę to cofnąć albo odzyskać czaty?",
+      "a": "Nie. Fraza odzyskiwania przywraca tożsamość i kontakty na nowym urządzeniu, ale nigdy rozmów - poufność przyszła zniszczyła te klucze wiadomości po użyciu. Wybierz dwa kody, których nie pomylisz pod presją."
+    },
+    {
+      "q": "Które wersje PrivaMesh mają kod przymusu?",
+      "a": "Klient na Windows od 1.0.0 i klient na Androida od 0.1, oba wydane 27 sierpnia 2026 r. Na iPhonie kod jest napisany i publiczny, ale obecna wersja w App Store, 1.1, została zbudowana 13 sierpnia, wcześniej, więc pojawi się w następnym wydaniu."
+    }
+  ],
+  "related": [
+    {
+      "href": "/threat-model",
+      "label": "Model zagrożeń",
+      "blurb": "Przeciwnik po przeciwniku, łącznie z tym, kto trzyma twój odblokowany telefon."
+    },
+    {
+      "href": "/limitations",
+      "label": "Znane ograniczenia",
+      "blurb": "Przed czym PrivaMesh cię nie chroni, powiedziane wprost."
+    },
+    {
+      "href": "/features/seed-phrase-accounts",
+      "label": "Konta na frazie odzyskiwania",
+      "blurb": "Co zostaje po kasowaniu i co może przywrócić dwanaście słów."
+    }
+  ]
+}

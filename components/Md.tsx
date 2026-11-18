@@ -62,6 +62,28 @@ export function md(text: string, locale: string): ReactNode[] {
   return out
 }
 
+/**
+ * An article body: one catalog string per block. A string that starts with
+ * "## " or "### " is a heading at that level; anything else is a paragraph.
+ * Keeping headings in the same list as the prose lets a translation move or
+ * merge paragraphs under a heading without a schema change.
+ */
+export function Blocks({ items, locale }: { items: string[]; locale: string }) {
+  return (
+    <>
+      {items.map((b, i) =>
+        b.startsWith('### ') ? (
+          <h3 key={i}>{md(b.slice(4), locale)}</h3>
+        ) : b.startsWith('## ') ? (
+          <h2 key={i}>{md(b.slice(3), locale)}</h2>
+        ) : (
+          <p key={i}>{md(b, locale)}</p>
+        ),
+      )}
+    </>
+  )
+}
+
 /** A run of paragraphs: one per catalog string. */
 export function Paras({ items, locale }: { items: string[]; locale: string }) {
   return (

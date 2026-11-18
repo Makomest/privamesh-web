@@ -1,0 +1,97 @@
+{
+  "meta": {
+    "title": "Pakkokoodi - toinen koodi, joka tyhjentää tilin",
+    "description": "Kaksi koodia yhden sijaan. Ensimmäinen avaa PrivaMeshin; toinen poistaa laitteelta kaikki viestit, yhteystiedot ja avaimet, eikä mikään paljasta, kumman kirjoitit."
+  },
+  "eyebrow": "Pakkokoodi",
+  "title": "Toinen koodi, joka tyhjentää tilin",
+  "lead": "Aseta kaksi koodia yhden sijaan. Ensimmäinen avaa sovelluksen. Toinen poistaa laitteelta kaikki viestit, yhteystiedot ja avaimet ja kirjaa sinut ulos - ilman varoitusta, ilman vahvistusta, eikä ruudulla näy mitään, mikä kertoisi, kumman kirjoitit.",
+  "ctaSecondary": "Milloin tästä on apua",
+  "summary": "Salaus vastaa kysymykseen ”voivatko he lukea tämän?” Se ei vastaa kysymykseen ”mitä tapahtuu, kun joku seisoo vieressäsi ja vaatii koodia?” Pakkokoodi on vastaus jälkimmäiseen kysymykseen, ja kapea sellainen. Lue, mitä se ei tee, ennen kuin luotat siihen.",
+  "body": [
+    "## Mitä tapahtuu, kun kirjoitat sen",
+    "Lukitusnäyttö hyväksyy molemmat koodit. Oikea avaa sovelluksen. Pakkokoodi käynnistää poiston ja näyttää sitten tervetulonäkymän täsmälleen kuten juuri asennettu sovellus - sama näkymä, samat sanat, ei viestiä, ei viivettä, ei jälkeä tilistä, joka oli siinä sekuntia aiemmin.",
+    "Poisto on tarkoituksella järjestetty niin, että näkyvä lähtee ensin. Viestit ja yhteystiedot poistetaan ennen avaimia, joten kesken keskeytetty prosessi jättää rikkinäisen asennuksen eikä luettavaa keskustelua. Palautuslause poistetaan avainnipusta, molemmat koodit poistetaan ja biometrinen avaus kytketään pois niiden mukana.",
+    "Myös epäonnistuneiden yritysten laskuri nollataan. Juuri tyhjennetty sovellus, joka silti hylkää koodit neljän minuutin ajan, ei selvästikään ole uusi asennus - ja juuri siinä yksityiskohdassa on koko asian ydin.",
+    "## Miksi kahta koodia ei voi erottaa toisistaan",
+    "Pakkokoodi on arvoton, jos sovellus käyttäytyy sen kanssa eri tavalla. Kaksi asiaa estää sen.",
+    "Ensinnäkin molemmat tiivisteet tallennetaan samalla suolalla, joten koodia syötettäessä johdetaan yksi tiiviste, jota verrataan molempiin vakioajassa. Aiemmassa versiossa pakkokoodilla oli oma suolansa, mikä tarkoitti toista avaimen johtamista jokaisella avauskerralla: se kaksinkertaisti odotuksen kaikille, ja sen ohittaminen eroavuuden kohdalla olisi tehnyt pakkopolusta mitattavasti nopeamman sille, joka pitää puhelinta ja katsoo ruutua.",
+    "Toiseksi pakkokoodin on oltava yhtä pitkä kuin koodisi. Näppäimistö lähettää heti viimeisen numeron jälkeen, joten eripituista koodia ei voisi kirjoittaa lainkaan - se olisi asetus, joka hiljaa ei tee mitään ja paljastuu pahimmalla mahdollisella hetkellä. Eripituinen koodi hylätään.",
+    "Itse koodia ei myöskään voi muuttaa pakkokoodiksi. Tarkistus testaa ensin oikean koodin, joten päällekkäisyys tulkittaisiin avaukseksi ja pakkokoodi lakkaisi hiljaa toimimasta. Sellainen muutos hylätään.",
+    "## Mitä se ei tee",
+    "**Se ei poista mitään ketjusta.** Jo julkaistu salateksti on pysyvää ja julkista. Ilman avaimia kukaan ei voi lukea sitä, mutta se, että osoite lähetti viestejä, ja milloin, näkyy ikuisesti. Pakkokoodi tuhoaa laitteellasi olevan kopion. Se ei peru lähetettyä.",
+    "**Se ei tyhjennä puhelintasi tai tietokonettasi.** Vain PrivaMeshin omat tiedot katoavat. Valokuvat, muut viestisovellukset ja kaikki muu jäävät koskemattomiksi.",
+    "**Se ei varoita ketään.** Ei ole hiljaista hälytystä, viestiä yhteyshenkilölle eikä palvelinta, jolle ilmoittaa - [palvelinta ei ole lainkaan](/features/no-servers). Poisto on koko toimenpide.",
+    "**Se ei näytä houkutustiliä.** Jotkin työkalut avaavat sen sijaan toisen, harmittoman profiilin. PrivaMesh tyhjentää oikean tilin ja näyttää ensimmäisen käynnistyksen tilassa olevan sovelluksen. Kumpi on turvallisempi, riippuu siitä, kuka kysyy ja mitä hän jo tietää; meidän lupauksemme on yksinkertaisempi, ja sellainen, jonka voimme oikeasti pitää.",
+    "**Se ei auta, jos laitteesta on jo otettu kopio.** Joka kopioi tallennustilan ennen kuin kirjoitit mitään, pitää sen kopion. Pakkokoodi suojaa sitä hetkeä, jolloin sinua pyydetään avaamaan lukitus, ei sitä edeltävää aikaa.",
+    "**Sitä ei voi perua.** Palautuslause palauttaa identiteettisi ja yhteystietosi uudelle laitteelle, mutta ei koskaan keskusteluja - [eteenpäin suuntautuva salaisuus tuhoaa ne avaimet käytön jälkeen](/limitations). Pakkokoodin kirjoittaminen vahingossa maksaa sinulle historiasi pysyvästi. Valitse kaksi koodia, joita ei voi sekoittaa paineen alla.",
+    "## Arvaamista jarrutetaan, molemmille koodeille samoin",
+    "Viisi väärää syötettä käynnistää kasvavan odotusajan - 30 sekuntia, minuutti, kaksi, neljä ja niin edelleen tuntiin asti - joka näytetään ruudulla, jotta odotus on ymmärrettävä eikä arvoituksellinen. Biometrinen avaus hylätään odotuksen aikana, joten sillä ei voi kiertää odotusta. Koodit venytetään hitaalla avaimen johtamisella ennen vertailua, ja juuri se tekee lyhyen numerokoodin arvaamisesta kallista sille, jolla on kopio tallennustilasta.",
+    "Koodin vahvistaminen Asetuksissa - lauseen näyttämiseksi tai koodin vaihtamiseksi - ei kuluta tätä rajaa. Jo avatun sovelluksen suojaaminen arvaamiselta ei hyödytä mitään, kun taas kirjoitusvirhe, joka lukitsee sinut ulos omalta tililtäsi, maksaa oikeasti. Tämä tarkistus hylkää myös pakkokoodin: se ei ole avauskoodi, ja sen hyväksyminen siellä antaisi sen hyväksyä muutoksia juuri siihen asetukseen, jota sen kuuluu suojata."
+  ],
+  "platformsHeading": "Missä se toimii tänään",
+  "platforms": [
+    {
+      "name": "Windows",
+      "status": "Saatavilla versiosta 1.0.0",
+      "detail": "Molemmat koodit asetetaan Asetuksissa. Poisto poistaa paikallisen tietokannan, avaa sen uudelleen tyhjänä ja tyhjentää Windows DPAPI:n säilyttämät avaimet. Sovellus palaa ensimmäisen käynnistyksen tilaan."
+    },
+    {
+      "name": "Android",
+      "status": "Saatavilla versiosta 0.1",
+      "detail": "Poisto sulkee ensin tietokannan, poistaa sitten sen tiedostot yhdessä ennakkokirjoituslokin, asetustiedostojen ja välimuistien kanssa ja peruu taustatyöt, jotka muuten avaisivat ne uudelleen."
+    },
+    {
+      "name": "iPhone",
+      "status": "Lähdekoodissa, ei vielä App Storessa",
+      "detail": "Koodi on kirjoitettu, testattu ja julkinen, mutta App Storen nykyinen versio 1.1 käännettiin 13. elokuuta 2026, ennen sitä. Se tulee seuraavassa julkaisussa. Siihen asti pakkokoodi on vain työpöytä- ja Android-sovelluksessa."
+    }
+  ],
+  "after": [
+    "Toiminta on sama jokaisessa sovelluksessa, jossa se on: samat kaksi koodia, sama samanpituisuussääntö, sama vakioaikainen vertailu, sama odotusaika. Erot koskevat vain sitä, mitä poiston on poistettava kussakin järjestelmässä, koska Windows-tietokanta, Android-tietokanta ja iOS-avainnippu hajoavat eri tavoin, jos ne poistetaan huolimattomasti.",
+    "Kaikki kolme toteutusta ovat avointa lähdekoodia, ja ne voi lukea ennen kuin luottaa niihin: [iOS](https://github.com/Makomest/PrivaMesh), [Windows](https://github.com/Makomest/privamesh-windows) ja [Android](https://github.com/Makomest/privamesh-android)."
+  ],
+  "faq": [
+    {
+      "q": "Mikä on pakkokoodi?",
+      "a": "Toinen koodi, joka poistaa tilin sen avaamisen sijaan. Asetat molemmat; ensimmäinen avaa sovelluksen, toinen poistaa laitteelta kaikki viestit, yhteystiedot ja avaimet ja palauttaa sovelluksen ensimmäisen käynnistyksen näkymään ilman mitään, mikä näyttäisi, kumpi kirjoitettiin."
+    },
+    {
+      "q": "Voiko joku erottaa koodit toisistaan?",
+      "a": "Ei sovelluksesta. Molemmat tallennetaan samalla suolalla, joten yhtä johtamista verrataan molempiin vakioajassa, ja pakkokoodin on oltava yhtä pitkä kuin koodi. Poiston jälkeen sovellus näyttää saman tervetulonäkymän kuin uusi asennus, ja epäonnistuneiden yritysten laskuri nollataan, jotta mikään ei ole ristiriidassa sen kanssa."
+    },
+    {
+      "q": "Poistaako pakkokoodi viestini lohkoketjusta?",
+      "a": "Ei. Solanaan jo julkaistu salateksti on pysyvää ja julkista. Kukaan ei voi lukea sitä ilman juuri tuhottuja avaimia, mutta se, että osoite lähetti viestejä, ja milloin, näkyy edelleen. Pakkokoodi poistaa laitteellasi olevan kopion; lähetettyä se ei voi perua."
+    },
+    {
+      "q": "Tyhjentääkö se koko puhelimeni?",
+      "a": "Ei. Vain PrivaMeshin tiedot poistetaan: sen viestit, yhteystiedot, avaimet, molemmat koodit ja biometrinen avaus. Muuhun laitteella ei kosketa."
+    },
+    {
+      "q": "Voinko perua sen tai saada keskusteluni takaisin?",
+      "a": "Et. Palautuslause palauttaa identiteettisi ja yhteystietosi uudelle laitteelle, mutta ei koskaan keskusteluja - eteenpäin suuntautuva salaisuus tuhosi ne viestiavaimet käytön jälkeen. Valitse kaksi koodia, joita et voi sekoittaa paineen alla."
+    },
+    {
+      "q": "Missä PrivaMeshin versioissa on pakkokoodi?",
+      "a": "Windows-sovelluksessa versiosta 1.0.0 ja Android-sovelluksessa versiosta 0.1, molemmat julkaistu 27. elokuuta 2026. iPhonessa koodi on kirjoitettu ja julkinen, mutta App Storen nykyinen versio 1.1 käännettiin 13. elokuuta, ennen sitä, joten se tulee seuraavassa julkaisussa."
+    }
+  ],
+  "related": [
+    {
+      "href": "/threat-model",
+      "label": "Uhkamalli",
+      "blurb": "Vastustaja kerrallaan, mukaan lukien se, joka pitää avattua puhelintasi."
+    },
+    {
+      "href": "/limitations",
+      "label": "Tunnetut rajoitukset",
+      "blurb": "Miltä PrivaMesh ei suojaa sinua, suoraan sanottuna."
+    },
+    {
+      "href": "/features/seed-phrase-accounts",
+      "label": "Palautuslauseeseen perustuvat tilit",
+      "blurb": "Mitä poistosta jää jäljelle ja mitä kaksitoista sanaa voi palauttaa."
+    }
+  ]
+}

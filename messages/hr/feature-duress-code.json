@@ -1,0 +1,97 @@
+{
+  "meta": {
+    "title": "Kod pod prisilom - druga lozinka koja briše račun",
+    "description": "Dvije lozinke umjesto jedne. Prva otvara PrivaMesh, druga briše sve poruke, kontakte i ključeve na uređaju i ničim ne otkriva koju ste upisali."
+  },
+  "eyebrow": "Kod pod prisilom",
+  "title": "Druga lozinka koja prazni račun",
+  "lead": "Postavite dvije lozinke umjesto jedne. Prva otvara aplikaciju. Druga briše sve poruke, kontakte i ključeve na uređaju i odjavljuje vas - bez upozorenja, bez potvrde, i ništa na zaslonu ne pokazuje koju ste upisali.",
+  "ctaSecondary": "Kada ovo pomaže",
+  "summary": "Šifriranje odgovara na pitanje „mogu li ovo pročitati?”. Ne odgovara na pitanje „što se događa kad netko stoji nad vama i traži lozinku?”. Kod pod prisilom odgovor je na to drugo pitanje, i to uzak. Prije nego što se na njega oslonite, pročitajte što ne radi.",
+  "body": [
+    "## Što se događa kad ga upišete",
+    "Zaslon zaključavanja prihvaća obje lozinke. Prava otključava aplikaciju. Kod pod prisilom pokreće brisanje i zatim prikazuje zaslon dobrodošlice, točno kao tek instalirana aplikacija - isti zaslon, isti tekst, bez poruke, bez odgode, bez traga računa koji je bio tu sekundu ranije.",
+    "Brisanje je namjerno poredano tako da ono vidljivo nestane prvo. Poruke i kontakti brišu se prije ključeva, pa proces prekinut na pola ostavlja pokvarenu instalaciju, a ne čitljiv razgovor. Fraza za oporavak nestaje iz privjeska za ključeve, obje lozinke se brišu, a s njima se isključuje i biometrijsko otključavanje.",
+    "I brojač neuspjelih pokušaja se poništava. Aplikacija koja je upravo obrisana, ali još četiri minute odbija lozinke, očito nije svježa instalacija - a u tom detalju je cijela poanta.",
+    "## Zašto se dvije lozinke ne mogu razlikovati",
+    "Kod pod prisilom bezvrijedan je ako se aplikacija prema njemu ponaša drukčije. Dvije stvari to sprječavaju.",
+    "Prvo, oba hasha pohranjena su pod istom soli, pa unos lozinke izvodi jedan hash i uspoređuje ga s oba u konstantnom vremenu. Ranija verzija davala je kodu pod prisilom vlastitu sol, što je značilo drugo izvođenje ključa pri svakom otključavanju: udvostručilo je čekanje svima, a preskakanje pri nepodudaranju učinilo bi put prisile mjerljivo bržim za nekoga tko drži telefon i gleda zaslon.",
+    "Drugo, kod pod prisilom mora biti iste duljine kao vaša lozinka. Tipkovnica šalje čim se upiše zadnja znamenka, pa se kod druge duljine uopće ne bi mogao upisati - bila bi to postavka koja tiho ne radi ništa i otkrije se u najgorem trenutku. Drukčija duljina se odbija.",
+    "Ni sama lozinka ne može se pretvoriti u kod pod prisilom. Provjera prvo testira pravu lozinku, pa bi se podudaranje protumačilo kao „otključaj”, a kod pod prisilom bi tiho prestao raditi. Takva promjena se odbija.",
+    "## Što ne radi",
+    "**Ne briše ništa s lanca.** Već objavljeni šifrirani tekst trajan je i javan. Bez ključeva ga nitko ne može pročitati, ali činjenica da je adresa slala poruke, i kada, ostaje vidljiva zauvijek. Kod pod prisilom uništava kopiju na vašem uređaju. Poslano ne poništava.",
+    "**Ne briše vaš telefon ili računalo.** Nestaju samo podaci PrivaMesha. Fotografije, drugi komunikatori i sve ostalo ostaju netaknuti.",
+    "**Nikoga ne upozorava.** Nema tihog alarma, poruke kontaktu ni poslužitelja koji bi se obavijestio - [poslužitelja uopće nema](/features/no-servers). Brisanje je cijela radnja.",
+    "**Ne prikazuje lažni račun.** Neki alati umjesto toga otvaraju drugi, bezazleni profil. PrivaMesh prazni pravi i prikazuje aplikaciju pri prvom pokretanju. Što je sigurnije ovisi o tome tko pita i što već zna; naše je obećanje jednostavnije, i ono koje doista možemo održati.",
+    "**Ne može pomoći ako je uređaj već kopiran.** Tko je kopirao pohranu prije nego što ste išta upisali, ima tu kopiju. Kod pod prisilom štiti trenutak kad se od vas traži otključavanje, ne vrijeme prije toga.",
+    "**Ne može se poništiti.** Fraza za oporavak vraća identitet i kontakte na novom uređaju, ali nikad razgovore - [tajnost unaprijed uništava te ključeve nakon upotrebe](/limitations). Slučajno upisan kod pod prisilom trajno vas košta povijesti. Odaberite dvije lozinke koje se pod pritiskom ne mogu zamijeniti.",
+    "## Pogađanje je usporeno, za obje lozinke jednako",
+    "Pet pogrešnih unosa pokreće rastuću stanku - 30 sekundi, minuta, dvije, četiri i tako do sata - prikazanu na zaslonu kako bi čekanje bilo jasno, a ne tajanstveno. Tijekom stanke biometrijsko otključavanje se odbija, pa se njime ne može zaobići čekanje. Lozinke se prije usporedbe razvlače sporim izvođenjem ključa, i upravo to čini pogađanje kratke brojčane lozinke skupim za nekoga tko ima kopiju pohrane.",
+    "Potvrda lozinke u Postavkama - za prikaz fraze ili promjenu lozinke - ne ubraja se u to ograničenje. Štititi već otključanu aplikaciju od pogađanja ne donosi ništa, a dopustiti da vas tipfeler zaključa izvan vlastitog računa ima stvarnu cijenu. Ta provjera odbija i kod pod prisilom: to nije pristupna lozinka, a prihvaćanje ondje omogućilo bi mu da odobrava promjene upravo one postavke koju treba štititi."
+  ],
+  "platformsHeading": "Gdje radi danas",
+  "platforms": [
+    {
+      "name": "Windows",
+      "status": "Dostupno od 1.0.0",
+      "detail": "Obje lozinke postavljaju se u Postavkama. Brisanje uklanja lokalnu bazu, ponovno je otvara praznu i briše ključeve koje drži Windows DPAPI. Aplikacija se vraća u stanje prvog pokretanja."
+    },
+    {
+      "name": "Android",
+      "status": "Dostupno od 0.1",
+      "detail": "Brisanje najprije zatvara bazu, zatim briše njezine datoteke zajedno s dnevnikom unaprijednog zapisivanja, datotekama postavki i predmemorijama te otkazuje pozadinske zadatke koji bi je inače ponovno otvorili."
+    },
+    {
+      "name": "iPhone",
+      "status": "U izvornom kodu, još ne u App Storeu",
+      "detail": "Kod je napisan, testiran i javan, ali trenutačna verzija u App Storeu, 1.1, izgrađena je 13. kolovoza 2026., prije njega. Stiže u sljedećem izdanju. Do tada kod pod prisilom postoji samo u desktop i Android klijentu."
+    }
+  ],
+  "after": [
+    "Ponašanje je isto na svakom klijentu koji ga ima: iste dvije lozinke, isto pravilo jednake duljine, ista usporedba u konstantnom vremenu, ista stanka. Razlike su samo u tome što brisanje mora ukloniti na svakom sustavu, jer baza Windowsa, baza Androida i iOS privjesak za ključeve zakazuju na različite načine kad ih se nemarno briše.",
+    "Sve tri implementacije otvorenog su koda i mogu se pročitati prije nego što im povjerujete: [iOS](https://github.com/Makomest/PrivaMesh), [Windows](https://github.com/Makomest/privamesh-windows) i [Android](https://github.com/Makomest/privamesh-android)."
+  ],
+  "faq": [
+    {
+      "q": "Što je kod pod prisilom?",
+      "a": "Druga lozinka koja briše račun umjesto da ga otvori. Postavljate obje; prva otključava aplikaciju, druga briše sve poruke, kontakte i ključeve na uređaju i vraća aplikaciju na zaslon prvog pokretanja, bez ičega što pokazuje koja je upisana."
+    },
+    {
+      "q": "Može li netko razlikovati dvije lozinke?",
+      "a": "Ne iz aplikacije. Obje su pohranjene pod istom soli, pa se jedno izvođenje uspoređuje s obje u konstantnom vremenu, a kod pod prisilom mora biti iste duljine kao lozinka. Nakon brisanja aplikacija prikazuje isti zaslon dobrodošlice kao svježa instalacija, a brojač neuspjelih pokušaja se poništava kako mu ništa ne bi proturječilo."
+    },
+    {
+      "q": "Briše li kod pod prisilom moje poruke s blockchaina?",
+      "a": "Ne. Šifrirani tekst već objavljen na Solani trajan je i javan. Nitko ga ne može pročitati bez upravo uništenih ključeva, ali činjenica da je adresa slala poruke, i kada, ostaje vidljiva. Kod pod prisilom briše kopiju na vašem uređaju; poslano ne može poništiti."
+    },
+    {
+      "q": "Briše li cijeli moj telefon?",
+      "a": "Ne. Brišu se samo podaci PrivaMesha: njegove poruke, kontakti, ključevi, obje lozinke i biometrijsko otključavanje. Ništa drugo na uređaju se ne dira."
+    },
+    {
+      "q": "Mogu li to poništiti ili vratiti razgovore?",
+      "a": "Ne. Fraza za oporavak vraća identitet i kontakte na novom uređaju, ali nikad razgovore - tajnost unaprijed uništila je te ključeve poruka nakon upotrebe. Odaberite dvije lozinke koje pod pritiskom ne možete zamijeniti."
+    },
+    {
+      "q": "Koje verzije PrivaMesha imaju kod pod prisilom?",
+      "a": "Windows klijent od 1.0.0 i Android klijent od 0.1, oba objavljena 27. kolovoza 2026. Na iPhoneu je kod napisan i javan, ali trenutačna verzija u App Storeu, 1.1, izgrađena je 13. kolovoza, prije njega, pa stiže u sljedećem izdanju."
+    }
+  ],
+  "related": [
+    {
+      "href": "/threat-model",
+      "label": "Model prijetnji",
+      "blurb": "Protivnik po protivnik, uključujući onoga tko drži vaš otključani telefon."
+    },
+    {
+      "href": "/limitations",
+      "label": "Poznata ograničenja",
+      "blurb": "Od čega vas PrivaMesh ne štiti, rečeno izravno."
+    },
+    {
+      "href": "/features/seed-phrase-accounts",
+      "label": "Računi s frazom za oporavak",
+      "blurb": "Što brisanje ostavlja iza sebe i što dvanaest riječi može vratiti."
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "meta": {
+    "title": "Majburlash kodi - hisobni o'chiradigan ikkinchi parol",
+    "description": "Bitta emas, ikkita parol. Birinchisi PrivaMesh'ni ochadi; ikkinchisi qurilmadagi barcha xabarlar, kontaktlar va kalitlarni o'chiradi va qaysi birini kiritganingizni hech narsa ko'rsatmaydi."
+  },
+  "eyebrow": "Majburlash kodi",
+  "title": "Hisobni bo'shatadigan ikkinchi parol",
+  "lead": "Bitta emas, ikkita kod o'rnating. Birinchisi ilovani ochadi. Ikkinchisi qurilmadagi barcha xabarlar, kontaktlar va kalitlarni o'chiradi va hisobdan chiqaradi - ogohlantirishsiz, tasdiqsiz, ekranda qaysi birini kiritganingizni ko'rsatadigan hech narsa yo'q.",
+  "ctaSecondary": "Bu qachon yordam beradi",
+  "summary": "Shifrlash «ular buni o'qiy oladimi?» degan savolga javob beradi. U «kimdir tepangizda turib parolni talab qilsa nima bo'ladi?» degan savolga javob bermaydi. Majburlash kodi ikkinchi savolga javob, va tor javob. Unga tayanishdan oldin u nima qilmasligini o'qing.",
+  "body": [
+    "## Uni kiritganingizda nima bo'ladi",
+    "Qulf ekrani ikkala kodni ham qabul qiladi. Haqiqiysi ilovani ochadi. Majburlash kodi o'chirishni ishga tushiradi, so'ng xush kelibsiz ekranini ko'rsatadi - xuddi yangi o'rnatilgan ilova kabi: o'sha ekran, o'sha so'zlar, hech qanday xabar, hech qanday kechikish, bir soniya oldin bo'lgan hisobdan hech qanday iz yo'q.",
+    "O'chirish ko'rinadigan narsalar birinchi ketadigan qilib ataylab tartiblangan. Xabarlar va kontaktlar kalitlardan oldin o'chiriladi, shuning uchun yarim yo'lda to'xtatilgan jarayon o'qiladigan yozishmani emas, buzilgan o'rnatishni qoldiradi. Tiklash iborasi Keychain'dan chiqariladi, ikkala parol o'chiriladi va ular bilan birga biometrik ochish ham o'chiriladi.",
+    "Muvaffaqiyatsiz urinishlar hisoblagichi ham nolga tushiriladi. Endigina o'chirilgan, lekin yana to'rt daqiqa parol qabul qilmaydigan ilova yangi o'rnatish emasligi aniq ko'rinadi - butun gap aynan shu tafsilotda.",
+    "## Nega ikki kodni farqlab bo'lmaydi",
+    "Agar ilova unga boshqacha munosabatda bo'lsa, majburlash kodining hech qanday qiymati yo'q. Buni ikki narsa himoya qiladi.",
+    "Birinchidan, ikkala xesh bir xil tuz bilan saqlanadi, shuning uchun kod kiritilganda bitta xesh hosil qilinib, ikkalasi bilan doimiy vaqtda solishtiriladi. Avvalgi versiyada majburlash kodining o'z tuzi bor edi, bu esa har ochishda kalitni ikkinchi marta hosil qilishni anglatardi: bu hamma uchun kutishni ikki baravar oshirardi, mos kelmaganda uni o'tkazib yuborish esa telefonni ushlab, ekranga qarab turgan odam uchun majburlash yo'lini sezilarli darajada tezroq qilardi.",
+    "Ikkinchidan, majburlash kodi parolingiz bilan bir xil uzunlikda bo'lishi kerak. Klaviatura oxirgi raqam kiritilishi bilan yuboradi, shuning uchun boshqa uzunlikdagi kodni umuman kiritib bo'lmasdi - bu jimgina hech narsa qilmaydigan va eng yomon paytda ma'lum bo'ladigan sozlama bo'lardi. Boshqa uzunlik rad etiladi.",
+    "Parolning o'zini ham majburlash kodiga aylantirib bo'lmaydi. Tekshiruv avval haqiqiy parolni sinaydi, shuning uchun mos kelish «ochish» deb hal qilinadi va majburlash kodi jimgina ishlashdan to'xtardi. Bunday o'zgarish rad etiladi.",
+    "## U nima qilmaydi",
+    "**U blokcheyndan hech narsani o'chirmaydi.** Allaqachon e'lon qilingan shifrlangan matn doimiy va ochiq. Kalitlarsiz uni hech kim o'qiy olmaydi, lekin manzil xabar yuborgani va qachon yuborgani abadiy ko'rinib turadi. Majburlash kodi qurilmangizdagi nusxani yo'q qiladi. Yuborilganni qaytarmaydi.",
+    "**U telefoningiz yoki kompyuteringizni o'chirmaydi.** Faqat PrivaMesh'ning o'z ma'lumotlari ketadi. Rasmlar, boshqa messenjerlar va qolgan hamma narsa tegilmaydi.",
+    "**U hech kimni ogohlantirmaydi.** Jimjit signal ham, kontaktga xabar ham, xabar beriladigan server ham yo'q - [server umuman yo'q](/features/no-servers). O'chirishning o'zi - butun harakat.",
+    "**U aldov hisobini ko'rsatmaydi.** Ba'zi vositalar buning o'rniga ikkinchi, zararsiz profilni ochadi. PrivaMesh haqiqiy hisobni bo'shatadi va birinchi ishga tushirilgan ilovani ko'rsatadi. Qaysi biri xavfsizroq ekani kim so'rayotgani va u nimani bilishiga bog'liq; biznikisi - oddiyroq va haqiqatan bajara oladigan va'damiz.",
+    "**Agar qurilmaning nusxasi allaqachon olingan bo'lsa, u yordam bera olmaydi.** Siz biror narsa kiritishdan oldin xotirani nusxalagan odamda o'sha nusxa qoladi. Majburlash kodi qulfni ochish so'ralgan lahzani himoya qiladi, undan oldingi vaqtni emas.",
+    "**Uni qaytarib bo'lmaydi.** Tiklash iborasi yangi qurilmada shaxsingiz va kontaktlaringizni qaytaradi, lekin yozishmalarni hech qachon qaytarmaydi - [oldinga maxfiylik bu kalitlarni ishlatilgandan keyin yo'q qiladi](/limitations). Majburlash kodini tasodifan kiritish tarixingizni butunlay yo'qotadi. Bosim ostida adashtirib bo'lmaydigan ikkita kod tanlang.",
+    "## Topishga urinish cheklangan, ikkala kod uchun ham bir xil",
+    "Beshta noto'g'ri kiritish o'sib boradigan tanaffusni boshlaydi - 30 soniya, bir daqiqa, ikki, to'rt va shu tarzda bir soatgacha - u ekranda ko'rsatiladi, shuning uchun kutish sirli emas, tushunarli bo'ladi. Tanaffus vaqtida biometrik ochish rad etiladi, shuning uchun u bilan kutishni chetlab o'tib bo'lmaydi. Kodlar solishtirilishidan oldin sekin kalit hosil qilish bilan cho'ziladi - aynan shu xotira nusxasiga ega odam uchun qisqa raqamli kodni topishni qimmatga tushiradi.",
+    "Sozlamalar ichida parolni tasdiqlash - iborani ko'rsatish yoki kodni o'zgartirish uchun - bu cheklovga hisoblanmaydi. Allaqachon ochilgan ilovani topishdan himoya qilish hech narsa bermaydi, noto'g'ri terishning sizni o'z hisobingizdan qulflashiga yo'l qo'yish esa haqiqiy narx. Bu tekshiruv majburlash kodini ham rad etadi: u parol emas va u yerda qabul qilinsa, u himoya qilish uchun mavjud bo'lgan sozlamaning o'zgarishlariga ruxsat bera olardi."
+  ],
+  "platformsHeading": "Bugun qayerda ishlaydi",
+  "platforms": [
+    {
+      "name": "Windows",
+      "status": "1.0.0 versiyasidan beri mavjud",
+      "detail": "Ikkala kod ham sozlamalarda o'rnatiladi. O'chirish mahalliy ma'lumotlar bazasini yo'q qiladi, uni bo'sh holda qayta ochadi va Windows DPAPI saqlaydigan kalitlarni tozalaydi. Ilova birinchi ishga tushirish holatiga qaytadi."
+    },
+    {
+      "name": "Android",
+      "status": "0.1 versiyasidan beri mavjud",
+      "detail": "O'chirish avval ma'lumotlar bazasini yopadi, keyin uning fayllarini oldindan yozish jurnali, sozlama fayllari va keshlar bilan birga o'chiradi hamda ularni qayta ochadigan fon vazifalarini bekor qiladi."
+    },
+    {
+      "name": "iPhone",
+      "status": "Manba kodida bor, App Store'da hali yo'q",
+      "detail": "Kod yozilgan, sinovdan o'tgan va ochiq, lekin App Store'dagi joriy 1.1 versiyasi 2026-yil 13-avgustda, undan oldin yig'ilgan. U keyingi relizda keladi. Ungacha majburlash kodi faqat kompyuter va Android mijozlarida mavjud."
+    }
+  ],
+  "after": [
+    "U mavjud bo'lgan har bir mijozda xatti-harakat bir xil: o'sha ikki kod, bir xil uzunlik qoidasi, doimiy vaqtdagi o'sha solishtirish, o'sha tanaffus. Farq faqat har bir tizimda o'chirish nimani yo'q qilishi kerakligida, chunki Windows ma'lumotlar bazasi, Android ma'lumotlar bazasi va iOS kalitlar to'plami beparvo o'chirilganda turlicha buziladi.",
+    "Uchala amalga oshirish ham ochiq kodli va ularga ishonishdan oldin o'qish mumkin: [iOS](https://github.com/Makomest/PrivaMesh), [Windows](https://github.com/Makomest/privamesh-windows) va [Android](https://github.com/Makomest/privamesh-android)."
+  ],
+  "faq": [
+    {
+      "q": "Majburlash kodi nima?",
+      "a": "Hisobni ochish o'rniga o'chiradigan ikkinchi parol. Ikkalasini ham o'zingiz o'rnatasiz; birinchisi ilovani ochadi, ikkinchisi qurilmadagi barcha xabarlar, kontaktlar va kalitlarni o'chirib, ilovani birinchi ishga tushirish ekraniga qaytaradi va qaysi biri kiritilganini hech narsa ko'rsatmaydi."
+    },
+    {
+      "q": "Ikki kodni kimdir farqlay oladimi?",
+      "a": "Ilovadan - yo'q. Ikkalasi ham bir xil tuz bilan saqlanadi, shuning uchun bitta hosil qilish ikkalasi bilan doimiy vaqtda solishtiriladi, majburlash kodi esa parol bilan bir xil uzunlikda bo'lishi kerak. O'chirishdan keyin ilova yangi o'rnatishdagi kabi xush kelibsiz ekranini ko'rsatadi va muvaffaqiyatsiz urinishlar hisoblagichi nolga tushiriladi, shuning uchun bunga zid keladigan hech narsa qolmaydi."
+    },
+    {
+      "q": "Majburlash kodi xabarlarimni blokcheyndan o'chiradimi?",
+      "a": "Yo'q. Solana'da allaqachon e'lon qilingan shifrlangan matn doimiy va ochiq. Endigina yo'q qilingan kalitlarsiz uni hech kim o'qiy olmaydi, lekin manzil xabar yuborgani va qachon yuborgani ko'rinib turadi. Majburlash kodi qurilmangizdagi nusxani o'chiradi; yuborilganni qaytara olmaydi."
+    },
+    {
+      "q": "U butun telefonimni o'chiradimi?",
+      "a": "Yo'q. Faqat PrivaMesh ma'lumotlari o'chiriladi: uning xabarlari, kontaktlari, kalitlari, ikkala parol va biometrik ochish. Qurilmadagi boshqa hech narsaga tegilmaydi."
+    },
+    {
+      "q": "Buni bekor qilish yoki chatlarimni qaytarish mumkinmi?",
+      "a": "Yo'q. Tiklash iborasi yangi qurilmada shaxsingiz va kontaktlaringizni qaytaradi, lekin yozishmalarni hech qachon qaytarmaydi - oldinga maxfiylik bu xabar kalitlarini ishlatilgandan keyin yo'q qilgan. Bosim ostida adashtirmaydigan ikkita kod tanlang."
+    },
+    {
+      "q": "PrivaMesh'ning qaysi versiyalarida majburlash kodi bor?",
+      "a": "Windows mijozida 1.0.0 dan va Android mijozida 0.1 dan boshlab, ikkalasi ham 2026-yil 27-avgustda chiqqan. iPhone'da kod yozilgan va ochiq, lekin App Store'dagi joriy 1.1 versiyasi 13-avgustda, undan oldin yig'ilgan, shuning uchun u keyingi relizda keladi."
+    }
+  ],
+  "related": [
+    {
+      "href": "/threat-model",
+      "label": "Tahdid modeli",
+      "blurb": "Raqib-raqib, jumladan qulfi ochiq telefoningizni ushlab turgan kishi."
+    },
+    {
+      "href": "/limitations",
+      "label": "Ma'lum cheklovlar",
+      "blurb": "PrivaMesh sizni nimadan himoya qilmaydi - ochiq aytilgan."
+    },
+    {
+      "href": "/features/seed-phrase-accounts",
+      "label": "Iboraga asoslangan hisoblar",
+      "blurb": "O'chirishdan keyin nima qoladi va o'n ikki so'z nimani qaytara oladi."
+    }
+  ]
+}

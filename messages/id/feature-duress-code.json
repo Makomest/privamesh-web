@@ -1,0 +1,97 @@
+{
+  "meta": {
+    "title": "Kode paksaan - kode sandi kedua yang menghapus akun",
+    "description": "Dua kode sandi, bukan satu. Yang pertama membuka PrivaMesh; yang kedua menghapus semua pesan, kontak, dan kunci di perangkat, tanpa ada yang menunjukkan mana yang Anda ketik."
+  },
+  "eyebrow": "Kode paksaan",
+  "title": "Kode sandi kedua yang mengosongkan akun",
+  "lead": "Atur dua kode, bukan satu. Yang pertama membuka aplikasi. Yang kedua menghapus semua pesan, kontak, dan kunci di perangkat lalu mengeluarkan Anda - tanpa peringatan, tanpa konfirmasi, tanpa apa pun di layar yang menunjukkan mana yang Anda ketik.",
+  "ctaSecondary": "Kapan ini membantu",
+  "summary": "Enkripsi menjawab pertanyaan “bisakah mereka membaca ini?” Enkripsi tidak menjawab “apa yang terjadi ketika seseorang berdiri di depan Anda dan meminta kode sandi?” Kode paksaan adalah jawaban untuk pertanyaan kedua, dan jawaban yang sempit. Baca apa yang tidak dilakukannya sebelum Anda mengandalkannya.",
+  "body": [
+    "## Apa yang terjadi saat Anda mengetiknya",
+    "Layar kunci menerima kedua kode. Kode yang asli membuka aplikasi. Kode paksaan menjalankan penghapusan lalu menampilkan layar sambutan, persis seperti aplikasi yang baru dipasang - layar yang sama, kata-kata yang sama, tanpa pesan, tanpa jeda, tanpa jejak akun yang ada di sana sedetik sebelumnya.",
+    "Penghapusan sengaja diurutkan agar yang terlihat hilang lebih dulu. Pesan dan kontak dihapus sebelum kunci, sehingga proses yang terhenti di tengah jalan meninggalkan instalasi rusak, bukan percakapan yang bisa dibaca. Frasa pemulihan dikeluarkan dari Keychain, kedua kode sandi dihapus, dan buka kunci biometrik dimatikan bersamanya.",
+    "Penghitung percobaan gagal juga direset. Aplikasi yang baru dihapus tetapi masih menolak kode sandi selama empat menit jelas bukan instalasi baru - dan justru detail itulah intinya.",
+    "## Mengapa kedua kode tidak bisa dibedakan",
+    "Kode paksaan tidak ada gunanya jika aplikasi berperilaku berbeda untuknya. Dua hal melindunginya.",
+    "Pertama, kedua hash disimpan dengan salt yang sama, sehingga memasukkan kode menurunkan satu hash dan membandingkannya dengan keduanya dalam waktu konstan. Versi sebelumnya memberi kode paksaan salt sendiri, yang berarti penurunan kunci kedua di setiap buka kunci: waktu tunggu jadi dua kali lipat untuk semua orang, dan melewatkannya saat tidak cocok akan membuat jalur paksaan terukur lebih cepat bagi orang yang memegang ponsel dan memperhatikan layar.",
+    "Kedua, kode paksaan harus sama panjang dengan kode sandi Anda. Papan angka langsung mengirim begitu digit terakhir dimasukkan, jadi kode dengan panjang lain tidak akan pernah bisa diketik - itu akan menjadi pengaturan yang diam-diam tidak melakukan apa pun dan baru ketahuan di saat terburuk. Panjang yang berbeda ditolak.",
+    "Kode sandi itu sendiri juga tidak bisa diubah menjadi kode paksaan. Pemeriksaan menguji kode sandi asli lebih dulu, sehingga kecocokan akan dianggap “buka kunci” dan kode paksaan diam-diam berhenti berfungsi. Perubahan itu ditolak.",
+    "## Apa yang tidak dilakukannya",
+    "**Ia tidak menghapus apa pun dari rantai.** Teks terenkripsi yang sudah dipublikasikan bersifat permanen dan publik. Tanpa kunci tak seorang pun bisa membacanya, tetapi fakta bahwa suatu alamat mengirim pesan, dan kapan, tetap terlihat selamanya. Kode paksaan menghancurkan salinan di perangkat Anda. Ia tidak membatalkan pengiriman.",
+    "**Ia tidak menghapus ponsel atau komputer Anda.** Hanya data PrivaMesh sendiri yang hilang. Foto, aplikasi pesan lain, dan semua yang lain tidak tersentuh.",
+    "**Ia tidak memperingatkan siapa pun.** Tidak ada alarm senyap, tidak ada pesan ke kontak, dan tidak ada server untuk diberi tahu - [sama sekali tidak ada server](/features/no-servers). Penghapusan adalah seluruh tindakannya.",
+    "**Ia tidak menampilkan akun umpan.** Beberapa alat justru membuka profil kedua yang tidak mencurigakan. PrivaMesh mengosongkan akun yang asli dan menampilkan aplikasi saat pertama dijalankan. Mana yang lebih aman tergantung siapa yang bertanya dan apa yang sudah mereka ketahui; janji kami lebih sederhana, dan memang bisa kami tepati.",
+    "**Ia tidak bisa membantu jika perangkat sudah disalin.** Orang yang menyalin penyimpanan sebelum Anda mengetik apa pun tetap memegang salinan itu. Kode paksaan melindungi saat Anda diminta membuka kunci, bukan waktu sebelumnya.",
+    "**Ia tidak bisa dibatalkan.** Frasa pemulihan memulihkan identitas dan kontak Anda di perangkat baru, tidak pernah percakapannya - [kerahasiaan maju menghancurkan kunci-kunci itu setelah dipakai](/limitations). Mengetik kode paksaan secara tidak sengaja membuat riwayat Anda hilang permanen. Pilih dua kode yang tidak bisa tertukar saat tertekan.",
+    "## Tebakan diperlambat, sama untuk kedua kode",
+    "Lima kali salah memulai jeda yang makin panjang - 30 detik, satu menit, dua, empat, hingga satu jam - yang ditampilkan di layar agar penantian terlihat, bukan misterius. Buka kunci biometrik ditolak selama jeda berlangsung, sehingga tidak bisa dipakai untuk melewatinya. Kode diregangkan dengan penurunan kunci yang lambat sebelum dibandingkan, dan itulah yang membuat menebak kode angka pendek menjadi mahal bagi orang yang memegang salinan penyimpanan.",
+    "Mengonfirmasi kode sandi di Pengaturan - untuk menampilkan frasa atau mengganti kode - tidak dihitung dalam batas itu. Melindungi aplikasi yang sudah terbuka dari tebakan tidak memberi apa-apa, sedangkan salah ketik yang mengunci Anda dari akun sendiri punya biaya nyata. Pemeriksaan itu juga menolak kode paksaan: itu bukan kode sandi, dan menerimanya di sana akan membuatnya bisa mengesahkan perubahan pada pengaturan yang justru ia lindungi."
+  ],
+  "platformsHeading": "Di mana fitur ini sudah berfungsi",
+  "platforms": [
+    {
+      "name": "Windows",
+      "status": "Tersedia sejak 1.0.0",
+      "detail": "Kedua kode diatur di Pengaturan. Penghapusan menghapus basis data lokal, membukanya kembali dalam keadaan kosong, dan membersihkan kunci yang disimpan Windows DPAPI. Aplikasi kembali ke keadaan saat pertama dijalankan."
+    },
+    {
+      "name": "Android",
+      "status": "Tersedia sejak 0.1",
+      "detail": "Penghapusan menutup basis data lebih dulu, lalu menghapus berkasnya bersama log write-ahead, berkas preferensi, dan cache, serta membatalkan tugas latar belakang yang jika tidak akan membukanya lagi."
+    },
+    {
+      "name": "iPhone",
+      "status": "Ada di kode sumber, belum di App Store",
+      "detail": "Kodenya sudah ditulis, diuji, dan terbuka, tetapi versi App Store saat ini, 1.1, dibuat pada 13 Agustus 2026, lebih dulu. Fitur ini hadir di rilis berikutnya. Sampai saat itu, kode paksaan hanya ada di klien desktop dan Android."
+    }
+  ],
+  "after": [
+    "Perilakunya sama di setiap klien yang memilikinya: dua kode yang sama, aturan panjang yang sama, perbandingan waktu konstan yang sama, jeda yang sama. Perbedaannya hanya pada apa yang harus dihapus di tiap sistem, karena basis data Windows, basis data Android, dan keychain iOS rusak dengan cara berbeda jika dihapus sembarangan.",
+    "Ketiga implementasi bersumber terbuka dan bisa dibaca sebelum Anda memercayainya: [iOS](https://github.com/Makomest/PrivaMesh), [Windows](https://github.com/Makomest/privamesh-windows), dan [Android](https://github.com/Makomest/privamesh-android)."
+  ],
+  "faq": [
+    {
+      "q": "Apa itu kode paksaan?",
+      "a": "Kode sandi kedua yang menghapus akun alih-alih membukanya. Anda mengatur keduanya; yang pertama membuka aplikasi, yang kedua menghapus semua pesan, kontak, dan kunci di perangkat dan mengembalikan aplikasi ke layar pertama kali dijalankan, tanpa ada yang menunjukkan mana yang diketik."
+    },
+    {
+      "q": "Bisakah seseorang membedakan kedua kode itu?",
+      "a": "Tidak dari aplikasi. Keduanya disimpan dengan salt yang sama, sehingga satu penurunan dibandingkan dengan keduanya dalam waktu konstan, dan kode paksaan harus sama panjang dengan kode sandi. Setelah penghapusan, aplikasi menampilkan layar sambutan seperti instalasi baru, dan penghitung percobaan gagal direset agar tidak ada yang bertentangan dengan itu."
+    },
+    {
+      "q": "Apakah kode paksaan menghapus pesan saya dari blockchain?",
+      "a": "Tidak. Teks terenkripsi yang sudah dipublikasikan ke Solana bersifat permanen dan publik. Tak seorang pun bisa membacanya tanpa kunci yang baru saja dihancurkan, tetapi fakta bahwa suatu alamat mengirim pesan, dan kapan, tetap terlihat. Kode paksaan menghapus salinan di perangkat Anda; ia tidak bisa membatalkan pengiriman."
+    },
+    {
+      "q": "Apakah ia menghapus seluruh ponsel saya?",
+      "a": "Tidak. Hanya data PrivaMesh yang dihapus: pesan, kontak, kunci, kedua kode sandi, dan buka kunci biometrik. Tidak ada hal lain di perangkat yang disentuh."
+    },
+    {
+      "q": "Bisakah saya membatalkannya atau mendapatkan kembali obrolan saya?",
+      "a": "Tidak. Frasa pemulihan memulihkan identitas dan kontak Anda di perangkat baru, tidak pernah percakapan Anda - kerahasiaan maju sudah menghancurkan kunci pesan itu setelah dipakai. Pilih dua kode yang tidak akan tertukar saat Anda tertekan."
+    },
+    {
+      "q": "Versi PrivaMesh mana yang punya kode paksaan?",
+      "a": "Klien Windows sejak 1.0.0 dan klien Android sejak 0.1, keduanya dirilis 27 Agustus 2026. Di iPhone kodenya sudah ditulis dan terbuka, tetapi versi App Store saat ini, 1.1, dibuat pada 13 Agustus, lebih dulu, jadi fitur ini hadir di rilis berikutnya."
+    }
+  ],
+  "related": [
+    {
+      "href": "/threat-model",
+      "label": "Model ancaman",
+      "blurb": "Musuh demi musuh, termasuk orang yang memegang ponsel Anda yang tidak terkunci."
+    },
+    {
+      "href": "/limitations",
+      "label": "Keterbatasan yang diketahui",
+      "blurb": "Dari apa PrivaMesh tidak melindungi Anda, terus terang."
+    },
+    {
+      "href": "/features/seed-phrase-accounts",
+      "label": "Akun berbasis frasa pemulihan",
+      "blurb": "Apa yang tersisa setelah penghapusan dan apa yang bisa dipulihkan dua belas kata."
+    }
+  ]
+}

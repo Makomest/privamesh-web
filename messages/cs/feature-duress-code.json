@@ -1,0 +1,97 @@
+{
+  "meta": {
+    "title": "Nouzový kód - druhý kód, který smaže účet",
+    "description": "Dva kódy místo jednoho. První otevře PrivaMesh, druhý smaže všechny zprávy, kontakty a klíče v zařízení a nic neprozradí, který jste zadali."
+  },
+  "eyebrow": "Nouzový kód",
+  "title": "Druhý kód, který účet vyprázdní",
+  "lead": "Nastavte dva kódy místo jednoho. První otevře aplikaci. Druhý smaže všechny zprávy, kontakty a klíče v zařízení a odhlásí vás - bez varování, bez potvrzení a nic na obrazovce neukáže, který jste zadali.",
+  "ctaSecondary": "Kdy to pomůže",
+  "summary": "Šifrování odpovídá na otázku „mohou si to přečíst?“. Neodpovídá na otázku „co se stane, když nad vámi někdo stojí a chce kód?“. Nouzový kód je odpovědí na tu druhou otázku, a to úzkou. Než se na něj spolehnete, přečtěte si, co nedělá.",
+  "body": [
+    "## Co se stane, když ho zadáte",
+    "Zamykací obrazovka přijímá oba kódy. Skutečný aplikaci odemkne. Nouzový spustí mazání a pak zobrazí uvítací obrazovku, přesně jako čerstvě nainstalovaná aplikace - stejná obrazovka, stejný text, žádná zpráva, žádné zpoždění, žádná stopa účtu, který tu byl před vteřinou.",
+    "Mazání je záměrně seřazené tak, aby jako první zmizelo to viditelné. Zprávy a kontakty se mažou před klíči, takže proces ukončený v polovině zanechá rozbitou instalaci, nikoli čitelnou konverzaci. Fráze pro obnovení zmizí z klíčenky, oba kódy se smažou a spolu s nimi se vypne biometrické odemykání.",
+    "Vynuluje se i počítadlo neúspěšných pokusů. Aplikace, která byla právě smazána, ale ještě čtyři minuty odmítá kódy, zjevně není čerstvá instalace - a o ten detail jde především.",
+    "## Proč se oba kódy nedají rozlišit",
+    "Nouzový kód je bezcenný, pokud se aplikace k němu chová jinak. Chrání to dvě věci.",
+    "Zaprvé se oba hashe ukládají se stejnou solí, takže zadání kódu odvodí jeden hash a porovná ho s oběma v konstantním čase. Dřívější verze dávala nouzovému kódu vlastní sůl, což znamenalo druhé odvození klíče při každém odemčení: zdvojnásobilo to čekání všem, a kdyby se při neshodě přeskakovalo, byla by nouzová cesta měřitelně rychlejší pro toho, kdo drží telefon a sleduje obrazovku.",
+    "Zadruhé musí mít nouzový kód stejnou délku jako váš kód. Klávesnice odešle hned po zadání poslední číslice, takže kód jiné délky by vůbec nešel zadat - bylo by to nastavení, které potichu nic nedělá a odhalí se v nejhorší chvíli. Jiná délka se odmítne.",
+    "Ani samotný kód nejde změnit na nouzový. Kontrola nejprve testuje skutečný kód, takže shoda by se vyhodnotila jako „odemknout“ a nouzový kód by potichu přestal fungovat. Taková změna se odmítne.",
+    "## Co nedělá",
+    "**Nic nesmaže z řetězce.** Již zveřejněný šifrový text je trvalý a veřejný. Bez klíčů ho nikdo nepřečte, ale to, že adresa posílala zprávy, a kdy, zůstane viditelné navždy. Nouzový kód zničí kopii ve vašem zařízení. Odeslané nevrátí.",
+    "**Nesmaže váš telefon ani počítač.** Zmizí jen data PrivaMesh. Fotky, jiné komunikátory a vše ostatní zůstanou nedotčené.",
+    "**Nikoho nevaruje.** Není tu tichý poplach, zpráva kontaktu ani server, který by se upozornil - [žádný server vůbec není](/features/no-servers). Mazání je celá akce.",
+    "**Neukáže návnadový účet.** Některé nástroje místo toho otevřou druhý, nevinný profil. PrivaMesh vyprázdní ten skutečný a ukáže aplikaci při prvním spuštění. Co je bezpečnější, záleží na tom, kdo se ptá a co už ví; naše řešení je jednodušší slib, a takový, který opravdu dokážeme dodržet.",
+    "**Nepomůže, pokud už ze zařízení někdo pořídil obraz.** Kdo zkopíroval úložiště dřív, než jste cokoli zadali, tu kopii má. Nouzový kód chrání chvíli, kdy vás někdo žádá o odemčení, ne dobu před ní.",
+    "**Nedá se vrátit.** Fráze pro obnovení vrátí identitu a kontakty na novém zařízení, ale nikdy konverzace - [dopředné utajení tyto klíče po použití zničí](/limitations). Omylem zadaný nouzový kód vás natrvalo připraví o historii. Zvolte dva kódy, které pod tlakem nejde zaměnit.",
+    "## Hádání je brzděné, pro oba kódy stejně",
+    "Pět chybných zadání spustí rostoucí prodlevu - 30 sekund, minuta, dvě, čtyři a tak dál až na hodinu - zobrazenou na obrazovce, aby bylo čekání srozumitelné, ne záhadné. Během prodlevy se biometrické odemknutí odmítá, takže jím nejde čekání obejít. Kódy se před porovnáním natahují pomalým odvozením klíče, a právě to dělá hádání krátkého číselného kódu drahým pro toho, kdo má kopii úložiště.",
+    "Potvrzení kódu v Nastavení - kvůli zobrazení fráze nebo změně kódu - se do této brzdy nepočítá. Chránit již odemčenou aplikaci před hádáním nic nepřináší, kdežto nechat překlep zamknout vás z vlastního účtu má skutečnou cenu. Tato kontrola odmítá i nouzový kód: není to přístupový kód, a kdyby ho tam přijímala, mohl by schvalovat změny právě toho nastavení, které má chránit."
+  ],
+  "platformsHeading": "Kde to dnes funguje",
+  "platforms": [
+    {
+      "name": "Windows",
+      "status": "K dispozici od 1.0.0",
+      "detail": "Oba kódy se nastavují v Nastavení. Mazání odstraní místní databázi, znovu ji otevře prázdnou a vymaže klíče uložené ve Windows DPAPI. Aplikace se vrátí do stavu prvního spuštění."
+    },
+    {
+      "name": "Android",
+      "status": "K dispozici od 0.1",
+      "detail": "Mazání nejprve zavře databázi, pak smaže její soubory spolu s žurnálem předběžného zápisu, soubory předvoleb a mezipamětí a zruší úlohy na pozadí, které by ji jinak znovu otevřely."
+    },
+    {
+      "name": "iPhone",
+      "status": "Ve zdrojovém kódu, zatím ne v App Store",
+      "detail": "Kód je napsaný, otestovaný a veřejný, ale aktuální verze v App Store, 1.1, byla sestavena 13. srpna 2026, dříve. Přijde s příštím vydáním. Do té doby existuje nouzový kód jen v desktopovém a androidím klientovi."
+    }
+  ],
+  "after": [
+    "Chování je stejné na každém klientovi, který ho má: stejné dva kódy, stejné pravidlo stejné délky, stejné porovnání v konstantním čase, stejná prodleva. Liší se jen to, co musí mazání na daném systému odstranit, protože databáze Windows, databáze Androidu a klíčenka iOS selhávají při neopatrném mazání každá jinak.",
+    "Všechny tři implementace jsou open source a dají se přečíst dřív, než jim uvěříte: [iOS](https://github.com/Makomest/PrivaMesh), [Windows](https://github.com/Makomest/privamesh-windows) a [Android](https://github.com/Makomest/privamesh-android)."
+  ],
+  "faq": [
+    {
+      "q": "Co je nouzový kód?",
+      "a": "Druhý kód, který účet smaže, místo aby ho otevřel. Nastavíte oba; první odemkne aplikaci, druhý smaže všechny zprávy, kontakty a klíče v zařízení a vrátí aplikaci na obrazovku prvního spuštění, aniž by cokoli ukázalo, který byl zadán."
+    },
+    {
+      "q": "Dají se oba kódy rozlišit?",
+      "a": "Podle aplikace ne. Oba se ukládají se stejnou solí, takže jedno odvození se porovná s oběma v konstantním čase, a nouzový kód musí mít stejnou délku jako kód. Po smazání aplikace ukáže stejnou uvítací obrazovku jako čerstvá instalace a počítadlo neúspěšných pokusů se vynuluje, aby tomu nic neodporovalo."
+    },
+    {
+      "q": "Smaže nouzový kód moje zprávy z blockchainu?",
+      "a": "Ne. Šifrový text již zveřejněný na Solaně je trvalý a veřejný. Bez právě zničených klíčů ho nikdo nepřečte, ale to, že adresa posílala zprávy, a kdy, zůstane viditelné. Nouzový kód smaže kopii ve vašem zařízení; odeslané vrátit nedokáže."
+    },
+    {
+      "q": "Smaže celý můj telefon?",
+      "a": "Ne. Smažou se jen data PrivaMesh: jeho zprávy, kontakty, klíče, oba kódy a biometrické odemykání. Ničeho jiného v zařízení se nedotkne."
+    },
+    {
+      "q": "Můžu to vrátit nebo získat chaty zpět?",
+      "a": "Ne. Fráze pro obnovení vrátí identitu a kontakty na novém zařízení, ale nikdy konverzace - dopředné utajení tyto klíče zpráv po použití zničilo. Zvolte dva kódy, které pod tlakem nezaměníte."
+    },
+    {
+      "q": "Které verze PrivaMesh mají nouzový kód?",
+      "a": "Klient pro Windows od 1.0.0 a klient pro Android od 0.1, oba vydané 27. srpna 2026. Na iPhonu je kód napsaný a veřejný, ale aktuální verze v App Store, 1.1, byla sestavena 13. srpna, dříve, takže přijde s příštím vydáním."
+    }
+  ],
+  "related": [
+    {
+      "href": "/threat-model",
+      "label": "Model hrozeb",
+      "blurb": "Protivník po protivníkovi, včetně toho, kdo drží váš odemčený telefon."
+    },
+    {
+      "href": "/limitations",
+      "label": "Známá omezení",
+      "blurb": "Před čím vás PrivaMesh nechrání, řečeno na rovinu."
+    },
+    {
+      "href": "/features/seed-phrase-accounts",
+      "label": "Účty na frázi pro obnovení",
+      "blurb": "Co po smazání zůstane a co dokáže obnovit dvanáct slov."
+    }
+  ]
+}

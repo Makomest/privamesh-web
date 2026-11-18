@@ -1,0 +1,97 @@
+{
+  "meta": {
+    "title": "Código de coacción: un segundo código que borra la cuenta",
+    "description": "Dos códigos en lugar de uno. El primero abre PrivaMesh; el segundo borra todos los mensajes, contactos y claves del dispositivo, sin mostrar nada que indique cuál escribiste."
+  },
+  "eyebrow": "Código de coacción",
+  "title": "Un segundo código que vacía la cuenta",
+  "lead": "Configura dos códigos en lugar de uno. El primero abre la app. El segundo borra todos los mensajes, contactos y claves del dispositivo y cierra tu sesión: sin aviso, sin confirmación y sin nada en pantalla que muestre cuál escribiste.",
+  "ctaSecondary": "Cuándo ayuda",
+  "summary": "El cifrado responde a la pregunta «¿pueden leer esto?». No responde a «¿qué pasa cuando alguien está encima de ti exigiendo el código?». Un código de coacción es una respuesta a la segunda pregunta, y una muy concreta. Lee lo que no hace antes de confiar en él.",
+  "body": [
+    "## Qué pasa cuando lo escribes",
+    "La pantalla de bloqueo acepta ambos códigos. El real desbloquea la app. El de coacción ejecuta el borrado y luego muestra la pantalla de bienvenida, exactamente como una app recién instalada: la misma pantalla, el mismo texto, ningún mensaje, ningún retraso, ningún rastro de la cuenta que estaba ahí un segundo antes.",
+    "El borrado está ordenado a propósito para que lo visible desaparezca primero. Los mensajes y contactos se eliminan antes que las claves, así que un proceso interrumpido a medias deja una instalación rota, no una conversación legible. La frase de recuperación sale del llavero, ambos códigos se eliminan y el desbloqueo biométrico se desactiva con ellos.",
+    "El contador de intentos fallidos también se reinicia. Una app que acaba de borrarse pero sigue rechazando códigos durante cuatro minutos se nota que no es una instalación nueva, y ese detalle es justamente la clave.",
+    "## Por qué no se pueden distinguir los dos códigos",
+    "Un código de coacción no vale nada si la app se comporta de forma distinta con él. Dos cosas lo protegen.",
+    "Primero, ambos hashes se guardan con la misma sal, así que al introducir un código se deriva un solo hash y se compara con los dos en tiempo constante. Una versión anterior daba al código de coacción su propia sal, lo que suponía una segunda derivación de clave en cada desbloqueo: duplicaba la espera para todos, y saltársela cuando no coincidía habría hecho la ruta de coacción mediblemente más rápida para quien sostiene el teléfono y mira la pantalla.",
+    "Segundo, el código de coacción debe tener la misma longitud que tu código. El teclado envía en cuanto se introduce el último dígito, así que un código de otra longitud nunca podría escribirse: sería un ajuste que en silencio no hace nada y que se descubre en el peor momento. Una longitud distinta se rechaza.",
+    "Tampoco se puede convertir el propio código en el de coacción. La comprobación prueba primero el código real, así que una coincidencia se resolvería como «desbloquear» y el código de coacción dejaría de funcionar sin avisar. Ese cambio se rechaza.",
+    "## Lo que no hace",
+    "**No borra nada de la cadena.** El texto cifrado ya publicado es permanente y público. Sin las claves nadie puede leerlo, pero el hecho de que una dirección envió mensajes, y cuándo, sigue visible para siempre. El código de coacción destruye la copia de tu dispositivo. No anula lo enviado.",
+    "**No borra tu teléfono ni tu ordenador.** Solo desaparecen los datos de PrivaMesh. Las fotos, otras apps de mensajería y todo lo demás quedan intactos.",
+    "**No avisa a nadie.** No hay alarma silenciosa, ni mensaje a un contacto, ni servidor al que notificar: [no hay ningún servidor](/features/no-servers). El borrado es toda la acción.",
+    "**No muestra una cuenta señuelo.** Algunas herramientas abren en su lugar un segundo perfil inofensivo. PrivaMesh vacía la cuenta real y muestra una app en su primer arranque. Qué es más seguro depende de quién pregunta y de lo que ya sabe; la nuestra es la promesa más simple, y la que realmente podemos cumplir.",
+    "**No sirve si ya se copió el dispositivo.** Quien copió el almacenamiento antes de que escribieras nada conserva esa copia. El código de coacción protege el momento en que te piden desbloquear, no el tiempo anterior.",
+    "**No es reversible.** Tu frase de recuperación restaura tu identidad y tus contactos en un dispositivo nuevo, nunca las conversaciones: [el secreto hacia adelante destruye esas claves tras usarlas](/limitations). Escribir el código de coacción por error te cuesta el historial para siempre. Elige dos códigos que no puedas confundir bajo presión.",
+    "## Los intentos están limitados, igual para ambos códigos",
+    "Cinco intentos fallidos inician una espera creciente - 30 segundos, un minuto, dos, cuatro y así hasta una hora - que se muestra en pantalla para que la espera sea visible y no un misterio. El desbloqueo biométrico se rechaza mientras dura la espera, así que no sirve para saltársela. Los códigos se estiran con una derivación de clave lenta antes de compararse, que es lo que encarece adivinar un código numérico corto para quien tiene una copia del almacenamiento.",
+    "Confirmar tu código dentro de Ajustes - para ver la frase o cambiar un código - no cuenta para ese límite. Proteger contra adivinanzas una app ya desbloqueada no aporta nada, y que un error al teclear te deje fuera de tu propia cuenta tiene un coste real. Esa comprobación también rechaza el código de coacción: no es un código de acceso, y aceptarlo ahí le permitiría autorizar cambios en el ajuste que existe para proteger."
+  ],
+  "platformsHeading": "Dónde funciona hoy",
+  "platforms": [
+    {
+      "name": "Windows",
+      "status": "Disponible desde la 1.0.0",
+      "detail": "Ambos códigos se configuran en Ajustes. El borrado elimina la base de datos local, la vuelve a abrir vacía y borra las claves que guarda Windows DPAPI. La app vuelve a su estado de primer arranque."
+    },
+    {
+      "name": "Android",
+      "status": "Disponible desde la 0.1",
+      "detail": "El borrado cierra primero la base de datos, luego elimina sus archivos junto con el registro de escritura anticipada, los archivos de preferencias y las cachés, y cancela las tareas en segundo plano que de otro modo la volverían a abrir."
+    },
+    {
+      "name": "iPhone",
+      "status": "En el código fuente, aún no en el App Store",
+      "detail": "El código está escrito, probado y es público, pero la versión actual del App Store, la 1.1, se compiló el 13 de agosto de 2026, antes que él. Llegará en la próxima versión. Hasta entonces, el código de coacción solo existe en los clientes de escritorio y Android."
+    }
+  ],
+  "after": [
+    "El comportamiento es el mismo en cada cliente que lo tiene: los mismos dos códigos, la misma regla de longitud igual, la misma comparación en tiempo constante, la misma espera. Las diferencias están solo en lo que el borrado tiene que eliminar en cada sistema, porque una base de datos de Windows, una de Android y un llavero de iOS fallan de maneras distintas si se borran sin cuidado.",
+    "Las tres implementaciones son de código abierto y pueden leerse antes de confiar en ellas: [iOS](https://github.com/Makomest/PrivaMesh), [Windows](https://github.com/Makomest/privamesh-windows) y [Android](https://github.com/Makomest/privamesh-android)."
+  ],
+  "faq": [
+    {
+      "q": "¿Qué es un código de coacción?",
+      "a": "Un segundo código que borra la cuenta en lugar de abrirla. Configuras ambos; el primero desbloquea la app, el segundo elimina todos los mensajes, contactos y claves del dispositivo y devuelve la app a su pantalla de primer arranque, sin nada que muestre cuál se escribió."
+    },
+    {
+      "q": "¿Se pueden distinguir los dos códigos?",
+      "a": "Desde la app, no. Ambos se guardan con la misma sal, así que una sola derivación se compara con los dos en tiempo constante, y el código de coacción debe tener la misma longitud que el código. Tras el borrado, la app muestra la pantalla de bienvenida de una instalación nueva, y el contador de intentos fallidos se reinicia para que nada lo contradiga."
+    },
+    {
+      "q": "¿El código de coacción borra mis mensajes de la blockchain?",
+      "a": "No. El texto cifrado ya publicado en Solana es permanente y público. Nadie puede leerlo sin las claves que acaban de destruirse, pero el hecho de que una dirección envió mensajes, y cuándo, sigue visible. El código de coacción borra la copia de tu dispositivo; no puede anular lo enviado."
+    },
+    {
+      "q": "¿Borra todo mi teléfono?",
+      "a": "No. Solo se eliminan los datos de PrivaMesh: sus mensajes, contactos, claves, ambos códigos y el desbloqueo biométrico. Nada más del dispositivo se toca."
+    },
+    {
+      "q": "¿Puedo deshacerlo o recuperar mis chats?",
+      "a": "No. Tu frase de recuperación restaura tu identidad y tus contactos en un dispositivo nuevo, nunca tus conversaciones: el secreto hacia adelante destruyó esas claves de mensaje tras usarlas. Elige dos códigos que no puedas confundir bajo presión."
+    },
+    {
+      "q": "¿Qué versiones de PrivaMesh tienen código de coacción?",
+      "a": "El cliente de Windows desde la 1.0.0 y el de Android desde la 0.1, ambos publicados el 27 de agosto de 2026. En iPhone el código está escrito y es público, pero la versión actual del App Store, la 1.1, se compiló el 13 de agosto, antes que él, así que llegará en la próxima versión."
+    }
+  ],
+  "related": [
+    {
+      "href": "/threat-model",
+      "label": "Modelo de amenazas",
+      "blurb": "Adversario por adversario, incluido quien tiene tu teléfono desbloqueado."
+    },
+    {
+      "href": "/limitations",
+      "label": "Limitaciones conocidas",
+      "blurb": "De qué no te protege PrivaMesh, dicho claramente."
+    },
+    {
+      "href": "/features/seed-phrase-accounts",
+      "label": "Cuentas con frase de recuperación",
+      "blurb": "Qué deja atrás un borrado y qué pueden restaurar doce palabras."
+    }
+  ]
+}

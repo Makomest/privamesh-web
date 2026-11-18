@@ -1,0 +1,97 @@
+{
+  "meta": {
+    "title": "Tvangskode - en ekstra kode som sletter kontoen",
+    "description": "To koder i stedet for én. Den første åpner PrivaMesh; den andre sletter alle meldinger, kontakter og nøkler på enheten, uten at noe viser hvilken du skrev."
+  },
+  "eyebrow": "Tvangskode",
+  "title": "En ekstra kode som tømmer kontoen",
+  "lead": "Sett to koder i stedet for én. Den første åpner appen. Den andre sletter alle meldinger, kontakter og nøkler på enheten og logger deg ut - ingen advarsel, ingen bekreftelse, ingenting på skjermen som viser hvilken du skrev.",
+  "ctaSecondary": "Når det hjelper",
+  "summary": "Kryptering svarer på spørsmålet «kan de lese dette?» Den svarer ikke på «hva skjer når noen står over deg og krever koden?» En tvangskode er et svar på det andre spørsmålet, og et smalt et. Les hva den ikke gjør før du stoler på den.",
+  "body": [
+    "## Hva som skjer når du skriver den",
+    "Låseskjermen godtar begge kodene. Den ekte låser opp appen. Tvangskoden kjører slettingen og viser deretter velkomstskjermen, akkurat som en nyinstallert app - samme skjerm, samme tekst, ingen melding, ingen forsinkelse, ingen spor av kontoen som var der et sekund tidligere.",
+    "Slettingen er bevisst ordnet slik at det synlige forsvinner først. Meldinger og kontakter slettes før nøklene, så en prosess som avbrytes halvveis etterlater en ødelagt installasjon og ikke en lesbar samtale. Gjenopprettingsfrasen fjernes fra nøkkelringen, begge kodene slettes, og biometrisk opplåsing slås av sammen med dem.",
+    "Telleren for mislykkede forsøk nullstilles også. En app som nettopp er slettet, men som fortsatt avviser koder i fire minutter, er synlig ikke en ny installasjon - og den detaljen er hele poenget.",
+    "## Hvorfor de to kodene ikke kan skilles fra hverandre",
+    "En tvangskode er verdiløs hvis appen oppfører seg annerledes for den. To ting sørger for det.",
+    "For det første lagres begge hashene med samme salt, så når en kode skrives inn, avledes én hash som sammenlignes med begge i konstant tid. En tidligere versjon ga tvangskoden sitt eget salt, noe som betydde en ekstra nøkkelavledning ved hver opplåsing: den doblet ventetiden for alle, og å hoppe over den ved avvik ville gjort tvangsveien målbart raskere for den som holder telefonen og ser på skjermen.",
+    "For det andre må tvangskoden være like lang som koden din. Tastaturet sender så snart siste siffer er skrevet inn, så en kode med annen lengde ville aldri kunne skrives i det hele tatt - en innstilling som stille ikke gjør noe og oppdages i verst tenkelige øyeblikk. En avvikende lengde avvises.",
+    "Selve koden kan heller ikke endres til tvangskoden. Kontrollen tester den ekte koden først, så et sammenfall ville blitt tolket som «lås opp», og tvangskoden ville stille sluttet å virke. Den endringen avvises.",
+    "## Hva den ikke gjør",
+    "**Den sletter ingenting fra kjeden.** Chiffertekst som allerede er publisert, er permanent og offentlig. Uten nøklene kan ingen lese den, men at en adresse sendte meldinger, og når, forblir synlig for alltid. Tvangskoden ødelegger kopien på enheten din. Den gjør ingenting ugjort.",
+    "**Den sletter ikke telefonen eller datamaskinen din.** Bare PrivaMesh sine egne data forsvinner. Bilder, andre meldingsapper og alt annet forblir urørt.",
+    "**Den varsler ingen.** Det finnes ingen stille alarm, ingen melding til en kontakt og ingen server å varsle - det finnes [ingen server i det hele tatt](/features/no-servers). Slettingen er hele handlingen.",
+    "**Den viser ingen lokkekonto.** Noen verktøy åpner i stedet en annen, harmløs profil. PrivaMesh tømmer den ekte og viser en app ved første oppstart. Hva som er tryggest, avhenger av hvem som spør og hva de allerede vet; vårt er det enkleste løftet, og det vi faktisk kan holde.",
+    "**Den hjelper ikke hvis enheten allerede er kopiert.** Den som kopierte lagringen før du skrev noe, har den kopien. Tvangskoden beskytter øyeblikket du blir bedt om å låse opp, ikke tiden før.",
+    "**Den kan ikke angres.** Gjenopprettingsfrasen gjenoppretter identiteten og kontaktene dine på en ny enhet, aldri samtalene - [fremoverhemmelighold ødelegger de nøklene etter bruk](/limitations). Å skrive tvangskoden ved et uhell koster deg historikken for alltid. Velg to koder som ikke kan forveksles under press.",
+    "## Gjetting bremses, likt for begge kodene",
+    "Fem feil forsøk starter en økende ventetid - 30 sekunder, ett minutt, to, fire og videre opp til en time - som vises på skjermen så ventetiden er forståelig og ikke mystisk. Biometrisk opplåsing avvises mens en ventetid pågår, så den kan ikke brukes til å omgå den. Kodene strekkes med en langsom nøkkelavledning før de sammenlignes, og det er det som gjør det dyrt å gjette en kort tallkode for den som har en kopi av lagringen.",
+    "Å bekrefte koden din i Innstillinger - for å vise frasen eller endre en kode - teller ikke mot den bremsen. Å beskytte en allerede opplåst app mot gjetting gir ingenting, mens en tastefeil som låser deg ute av din egen konto har en reell kostnad. Den kontrollen avviser også tvangskoden: den er ingen opplåsingskode, og å godta den der ville la den godkjenne endringer i nettopp den innstillingen den skal beskytte."
+  ],
+  "platformsHeading": "Hvor den fungerer i dag",
+  "platforms": [
+    {
+      "name": "Windows",
+      "status": "Tilgjengelig siden 1.0.0",
+      "detail": "Begge kodene settes i Innstillinger. Slettingen fjerner den lokale databasen, åpner den tom på nytt og tømmer nøklene som Windows DPAPI holder. Appen går tilbake til tilstanden ved første oppstart."
+    },
+    {
+      "name": "Android",
+      "status": "Tilgjengelig siden 0.1",
+      "detail": "Slettingen lukker først databasen, sletter deretter filene sammen med write-ahead-loggen, innstillingsfilene og hurtigbufferne, og avbryter bakgrunnsjobbene som ellers ville åpnet dem igjen."
+    },
+    {
+      "name": "iPhone",
+      "status": "I kildekoden, ennå ikke i App Store",
+      "detail": "Koden er skrevet, testet og offentlig, men den nåværende App Store-versjonen, 1.1, ble bygget 13. august 2026 og er eldre. Den kommer i neste utgivelse. Inntil da finnes tvangskoden bare i skrivebords- og Android-klienten."
+    }
+  ],
+  "after": [
+    "Oppførselen er den samme i hver klient som har den: de samme to kodene, den samme regelen om lik lengde, den samme sammenligningen i konstant tid, den samme ventetiden. Forskjellene gjelder bare hva slettingen må fjerne på hvert system, fordi en Windows-database, en Android-database og en iOS-nøkkelring svikter på ulike måter når de slettes uforsiktig.",
+    "Alle tre implementeringene er åpen kildekode og kan leses før du stoler på dem: [iOS](https://github.com/Makomest/PrivaMesh), [Windows](https://github.com/Makomest/privamesh-windows) og [Android](https://github.com/Makomest/privamesh-android)."
+  ],
+  "faq": [
+    {
+      "q": "Hva er en tvangskode?",
+      "a": "En ekstra kode som sletter kontoen i stedet for å åpne den. Du setter begge; den første låser opp appen, den andre sletter alle meldinger, kontakter og nøkler på enheten og setter appen tilbake til oppstartsskjermen, uten noe som viser hvilken som ble skrevet."
+    },
+    {
+      "q": "Kan noen skille de to kodene fra hverandre?",
+      "a": "Ikke via appen. Begge lagres med samme salt, så én avledning sammenlignes med begge i konstant tid, og tvangskoden må være like lang som koden. Etter slettingen viser appen den samme velkomstskjermen som en ny installasjon, og telleren for mislykkede forsøk nullstilles så ingenting motsier det."
+    },
+    {
+      "q": "Sletter tvangskoden meldingene mine fra blokkjeden?",
+      "a": "Nei. Chiffertekst som allerede er publisert på Solana, er permanent og offentlig. Ingen kan lese den uten nøklene som nettopp ble ødelagt, men at en adresse sendte meldinger, og når, forblir synlig. Tvangskoden sletter kopien på enheten din; den kan ikke gjøre noe ugjort."
+    },
+    {
+      "q": "Sletter den hele telefonen min?",
+      "a": "Nei. Bare PrivaMesh-data slettes: meldingene, kontaktene, nøklene, begge kodene og biometrisk opplåsing. Ingenting annet på enheten røres."
+    },
+    {
+      "q": "Kan jeg angre det eller få tilbake chattene mine?",
+      "a": "Nei. Gjenopprettingsfrasen gjenoppretter identiteten og kontaktene dine på en ny enhet, aldri samtalene - fremoverhemmelighold ødela de meldingsnøklene etter bruk. Velg to koder du ikke kan forveksle under press."
+    },
+    {
+      "q": "Hvilke versjoner av PrivaMesh har en tvangskode?",
+      "a": "Windows-klienten fra 1.0.0 og Android-klienten fra 0.1, begge utgitt 27. august 2026. På iPhone er koden skrevet og offentlig, men den nåværende App Store-versjonen, 1.1, ble bygget 13. august og er eldre, så den kommer i neste utgivelse."
+    }
+  ],
+  "related": [
+    {
+      "href": "/threat-model",
+      "label": "Trusselmodell",
+      "blurb": "Motstander for motstander, inkludert den som holder den opplåste telefonen din."
+    },
+    {
+      "href": "/limitations",
+      "label": "Kjente begrensninger",
+      "blurb": "Hva PrivaMesh ikke beskytter deg mot, rett ut."
+    },
+    {
+      "href": "/features/seed-phrase-accounts",
+      "label": "Kontoer med gjenopprettingsfrase",
+      "blurb": "Hva en sletting etterlater og hva tolv ord kan gjenopprette."
+    }
+  ]
+}

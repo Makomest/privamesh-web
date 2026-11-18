@@ -1,0 +1,97 @@
+{
+  "meta": {
+    "title": "Notfallcode - ein zweiter Code, der das Konto löscht",
+    "description": "Zwei Codes statt einem. Der erste öffnet PrivaMesh, der zweite löscht alle Nachrichten, Kontakte und Schlüssel auf dem Gerät - und nichts verrät, welchen Sie eingegeben haben."
+  },
+  "eyebrow": "Notfallcode",
+  "title": "Ein zweiter Code, der das Konto leert",
+  "lead": "Legen Sie zwei Codes statt einem fest. Der erste öffnet die App. Der zweite löscht alle Nachrichten, Kontakte und Schlüssel auf dem Gerät und meldet Sie ab - ohne Warnung, ohne Bestätigung, und nichts auf dem Bildschirm zeigt, welchen Sie eingegeben haben.",
+  "ctaSecondary": "Wann das hilft",
+  "summary": "Verschlüsselung beantwortet die Frage „Können sie das lesen?“ Sie beantwortet nicht die Frage „Was passiert, wenn jemand vor Ihnen steht und den Code verlangt?“ Ein Notfallcode ist eine Antwort auf die zweite Frage - und eine schmale. Lesen Sie, was er nicht tut, bevor Sie sich auf ihn verlassen.",
+  "body": [
+    "## Was passiert, wenn Sie ihn eingeben",
+    "Der Sperrbildschirm akzeptiert beide Codes. Der echte entsperrt die App. Der Notfallcode startet die Löschung und zeigt dann den Willkommensbildschirm, genau wie eine frisch installierte App - derselbe Bildschirm, derselbe Wortlaut, keine Meldung, keine Verzögerung, keine Spur des Kontos, das eine Sekunde zuvor noch da war.",
+    "Die Löschung ist bewusst so angeordnet, dass das Sichtbare zuerst verschwindet. Nachrichten und Kontakte werden vor den Schlüsseln gelöscht, sodass ein mittendrin beendeter Vorgang eine kaputte Installation hinterlässt statt einer lesbaren Unterhaltung. Die Wiederherstellungsphrase verschwindet aus dem Schlüsselbund, beide Codes werden gelöscht, und die biometrische Entsperrung wird mit ihnen abgeschaltet.",
+    "Auch der Zähler für Fehlversuche wird dabei zurückgesetzt. Eine App, die gerade gelöscht wurde, aber noch vier Minuten lang Codes ablehnt, ist erkennbar keine frische Installation - und genau auf dieses Detail kommt es an.",
+    "## Warum sich die beiden Codes nicht unterscheiden lassen",
+    "Ein Notfallcode ist wertlos, wenn sich die App bei ihm anders verhält. Zwei Dinge schützen davor.",
+    "Erstens werden beide Hashes mit demselben Salt gespeichert, sodass bei der Eingabe ein Hash abgeleitet und in konstanter Zeit mit beiden verglichen wird. Eine frühere Version gab dem Notfallcode ein eigenes Salt, was bei jedem Entsperren eine zweite Schlüsselableitung bedeutete: Sie verdoppelte die Wartezeit für alle, und hätte man sie bei Nichtübereinstimmung übersprungen, wäre der Notfallweg für jemanden, der das Telefon hält und auf den Bildschirm schaut, messbar schneller gewesen.",
+    "Zweitens muss der Notfallcode genauso lang sein wie Ihr Code. Das Tastenfeld sendet ab, sobald die letzte Ziffer eingegeben ist, ein Code anderer Länge ließe sich also gar nicht eintippen - es wäre eine Einstellung, die stillschweigend nichts tut und im schlechtesten Moment entdeckt wird. Eine abweichende Länge wird abgelehnt.",
+    "Auch der eigentliche Code lässt sich nicht in den Notfallcode umwandeln. Die Prüfung testet zuerst den echten Code, eine Kollision würde also als „entsperren“ gewertet, und der Notfallcode würde still aufhören zu funktionieren. Diese Änderung wird abgelehnt.",
+    "## Was er nicht tut",
+    "**Er löscht nichts von der Chain.** Bereits veröffentlichter Chiffretext ist dauerhaft und öffentlich. Ohne die Schlüssel kann ihn niemand lesen, aber dass eine Adresse Nachrichten gesendet hat und wann, bleibt für immer sichtbar. Der Notfallcode vernichtet die Kopie auf Ihrem Gerät. Er macht nichts ungeschehen.",
+    "**Er löscht nicht Ihr Telefon oder Ihren Computer.** Nur die Daten von PrivaMesh verschwinden. Fotos, andere Messenger und alles andere bleiben unberührt.",
+    "**Er warnt niemanden.** Es gibt keinen stillen Alarm, keine Nachricht an einen Kontakt und keinen Server, der benachrichtigt würde - es gibt [überhaupt keinen Server](/features/no-servers). Die Löschung ist die ganze Aktion.",
+    "**Er zeigt kein Lockvogel-Konto.** Manche Werkzeuge öffnen stattdessen ein zweites, harmloses Profil. PrivaMesh leert das echte und zeigt eine App im Erststart-Zustand. Was davon sicherer ist, hängt davon ab, wer fragt und was er bereits weiß; unseres ist das einfachere Versprechen, und das, das wir tatsächlich halten können.",
+    "**Er hilft nicht, wenn vom Gerät bereits ein Abbild erstellt wurde.** Wer den Speicher kopiert hat, bevor Sie etwas eingegeben haben, hat diese Kopie. Der Notfallcode schützt den Moment, in dem Sie zum Entsperren aufgefordert werden, nicht die Zeit davor.",
+    "**Er lässt sich nicht rückgängig machen.** Ihre Wiederherstellungsphrase stellt Identität und Kontakte auf einem neuen Gerät wieder her, aber nie die Unterhaltungen - [Forward Secrecy vernichtet diese Schlüssel nach Gebrauch](/limitations). Wer den Notfallcode versehentlich eingibt, verliert seinen Verlauf endgültig. Wählen Sie zwei Codes, die sich unter Druck nicht verwechseln lassen.",
+    "## Raten wird gebremst, für beide Codes gleich",
+    "Fünf falsche Eingaben starten eine wachsende Sperrzeit - 30 Sekunden, eine Minute, zwei, vier und so weiter bis zu einer Stunde -, die auf dem Bildschirm angezeigt wird, damit die Wartezeit nachvollziehbar statt rätselhaft ist. Während einer Sperrzeit wird die biometrische Entsperrung abgelehnt, sodass sie sich nicht zum Umgehen nutzen lässt. Die Codes werden vor dem Vergleich mit einer langsamen Schlüsselableitung gestreckt - das macht das Raten eines kurzen Zahlencodes für jemanden mit einer Kopie des Speichers teuer.",
+    "Die Bestätigung Ihres Codes in den Einstellungen - um die Phrase anzuzeigen oder einen Code zu ändern - zählt nicht zu dieser Bremse. Eine bereits entsperrte App gegen Raten zu schützen bringt nichts, während ein Tippfehler, der Sie aus Ihrem eigenen Konto aussperrt, echte Kosten hat. Diese Prüfung lehnt auch den Notfallcode ab: Er ist kein Code zum Entsperren, und würde er dort akzeptiert, könnte er Änderungen an genau der Einstellung genehmigen, die er schützen soll."
+  ],
+  "platformsHeading": "Wo es heute funktioniert",
+  "platforms": [
+    {
+      "name": "Windows",
+      "status": "Verfügbar seit 1.0.0",
+      "detail": "Beide Codes werden in den Einstellungen festgelegt. Die Löschung entfernt die lokale Datenbank, öffnet sie leer neu und löscht die von Windows DPAPI gehaltenen Schlüssel. Die App kehrt in den Erststart-Zustand zurück."
+    },
+    {
+      "name": "Android",
+      "status": "Verfügbar seit 0.1",
+      "detail": "Die Löschung schließt zuerst die Datenbank, entfernt dann ihre Dateien samt Write-Ahead-Log, Einstellungsdateien und Caches und beendet die Hintergrundprozesse, die sie sonst wieder öffnen würden."
+    },
+    {
+      "name": "iPhone",
+      "status": "Im Quellcode, noch nicht im App Store",
+      "detail": "Der Code ist geschrieben, getestet und öffentlich, aber die aktuelle App-Store-Version 1.1 wurde am 13. August 2026 gebaut und ist älter. Er kommt mit dem nächsten Release. Bis dahin gibt es den Notfallcode nur im Desktop- und im Android-Client."
+    }
+  ],
+  "after": [
+    "Das Verhalten ist auf jedem Client, der ihn hat, dasselbe: dieselben zwei Codes, dieselbe Regel gleicher Länge, derselbe Vergleich in konstanter Zeit, dieselbe Sperrzeit. Unterschiede gibt es nur darin, was eine Löschung auf dem jeweiligen System entfernen muss, denn eine Windows-Datenbank, eine Android-Datenbank und ein iOS-Schlüsselbund scheitern unterschiedlich, wenn man sie nachlässig löscht.",
+    "Alle drei Implementierungen sind Open Source und lassen sich lesen, bevor Sie ihnen vertrauen: [iOS](https://github.com/Makomest/PrivaMesh), [Windows](https://github.com/Makomest/privamesh-windows) und [Android](https://github.com/Makomest/privamesh-android)."
+  ],
+  "faq": [
+    {
+      "q": "Was ist ein Notfallcode?",
+      "a": "Ein zweiter Code, der das Konto löscht, statt es zu öffnen. Sie legen beide fest; der erste entsperrt die App, der zweite löscht alle Nachrichten, Kontakte und Schlüssel auf dem Gerät und setzt die App auf den Erststart-Bildschirm zurück, ohne dass etwas zeigt, welcher eingegeben wurde."
+    },
+    {
+      "q": "Kann jemand die beiden Codes unterscheiden?",
+      "a": "Nicht anhand der App. Beide werden mit demselben Salt gespeichert, sodass eine Ableitung in konstanter Zeit mit beiden verglichen wird, und der Notfallcode muss genauso lang sein wie der Code. Nach der Löschung zeigt die App denselben Willkommensbildschirm wie eine frische Installation, und der Zähler für Fehlversuche wird zurückgesetzt, damit nichts dem widerspricht."
+    },
+    {
+      "q": "Löscht der Notfallcode meine Nachrichten aus der Blockchain?",
+      "a": "Nein. Bereits auf Solana veröffentlichter Chiffretext ist dauerhaft und öffentlich. Niemand kann ihn ohne die gerade vernichteten Schlüssel lesen, aber dass eine Adresse Nachrichten gesendet hat und wann, bleibt sichtbar. Der Notfallcode löscht die Kopie auf Ihrem Gerät; ungeschehen machen kann er nichts."
+    },
+    {
+      "q": "Löscht er mein ganzes Telefon?",
+      "a": "Nein. Gelöscht werden nur die Daten von PrivaMesh: seine Nachrichten, Kontakte, Schlüssel, beide Codes und die biometrische Entsperrung. Sonst wird auf dem Gerät nichts angerührt."
+    },
+    {
+      "q": "Kann ich das rückgängig machen oder meine Chats zurückbekommen?",
+      "a": "Nein. Ihre Wiederherstellungsphrase stellt Identität und Kontakte auf einem neuen Gerät wieder her, aber nie Ihre Unterhaltungen - Forward Secrecy hat diese Nachrichtenschlüssel nach Gebrauch vernichtet. Wählen Sie zwei Codes, die Sie unter Druck nicht verwechseln können."
+    },
+    {
+      "q": "Welche Versionen von PrivaMesh haben einen Notfallcode?",
+      "a": "Der Windows-Client ab 1.0.0 und der Android-Client ab 0.1, beide am 27. August 2026 erschienen. Auf dem iPhone ist der Code geschrieben und öffentlich, aber die aktuelle App-Store-Version 1.1 wurde am 13. August gebaut und ist älter, daher kommt er mit dem nächsten Release."
+    }
+  ],
+  "related": [
+    {
+      "href": "/threat-model",
+      "label": "Bedrohungsmodell",
+      "blurb": "Angreifer für Angreifer, einschließlich desjenigen, der Ihr entsperrtes Telefon hält."
+    },
+    {
+      "href": "/limitations",
+      "label": "Bekannte Einschränkungen",
+      "blurb": "Wovor PrivaMesh Sie nicht schützt, klar gesagt."
+    },
+    {
+      "href": "/features/seed-phrase-accounts",
+      "label": "Konten per Wiederherstellungsphrase",
+      "blurb": "Was eine Löschung zurücklässt und was zwölf Wörter wiederherstellen können."
+    }
+  ]
+}

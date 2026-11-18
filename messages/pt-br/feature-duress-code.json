@@ -1,0 +1,97 @@
+{
+  "meta": {
+    "title": "Código de coação - uma segunda senha que apaga a conta",
+    "description": "Duas senhas em vez de uma. A primeira abre o PrivaMesh; a segunda apaga todas as mensagens, contatos e chaves do aparelho, sem mostrar nada que diga qual você digitou."
+  },
+  "eyebrow": "Código de coação",
+  "title": "Uma segunda senha que esvazia a conta",
+  "lead": "Defina duas senhas em vez de uma. A primeira abre o app. A segunda apaga todas as mensagens, contatos e chaves do aparelho e encerra a sessão - sem aviso, sem confirmação, nada na tela que mostre qual você digitou.",
+  "ctaSecondary": "Quando isso ajuda",
+  "summary": "A criptografia responde à pergunta “eles conseguem ler isso?”. Ela não responde a “o que acontece quando alguém está do seu lado exigindo a senha?”. Um código de coação é uma resposta para a segunda pergunta, e uma resposta estreita. Leia o que ele não faz antes de contar com ele.",
+  "body": [
+    "## O que acontece quando você digita",
+    "A tela de bloqueio aceita as duas senhas. A verdadeira desbloqueia o app. O código de coação executa a limpeza e depois mostra a tela de boas-vindas, exatamente como um app recém-instalado - a mesma tela, as mesmas palavras, nenhuma mensagem, nenhum atraso, nenhum vestígio da conta que estava ali um segundo antes.",
+    "A limpeza segue uma ordem proposital para que o que é visível saia primeiro. Mensagens e contatos são apagados antes das chaves, então um processo interrompido no meio deixa uma instalação quebrada, e não uma conversa legível. A frase de recuperação sai das Chaves, as duas senhas são apagadas e o desbloqueio biométrico é desligado junto.",
+    "O contador de tentativas erradas também é zerado. Um app que acabou de ser apagado mas ainda recusa senhas por quatro minutos visivelmente não é uma instalação nova - e esse detalhe é justamente o ponto.",
+    "## Por que não dá para distinguir as duas senhas",
+    "Um código de coação não vale nada se o app se comporta de outro jeito com ele. Duas coisas garantem isso.",
+    "Primeiro, os dois hashes ficam guardados com o mesmo salt, então digitar uma senha deriva um único hash e o compara com os dois, em tempo constante. Uma versão anterior dava ao código de coação um salt próprio, o que significava uma segunda derivação de chave a cada desbloqueio: dobrava a espera para todo mundo, e pulá-la quando não batesse teria deixado o caminho da coação mensuravelmente mais rápido para quem segura o celular e observa a tela.",
+    "Segundo, o código de coação precisa ter o mesmo tamanho da sua senha. O teclado envia assim que o último dígito é digitado, então um código de outro tamanho nunca poderia ser digitado - seria uma configuração que silenciosamente não faz nada, descoberta no pior momento possível. Um tamanho diferente é recusado.",
+    "Também não dá para transformar a própria senha no código de coação. A verificação testa primeiro a senha verdadeira, então uma colisão seria resolvida como “desbloquear” e o código de coação pararia de funcionar sem aviso. Essa mudança é recusada.",
+    "## O que ele não faz",
+    "**Ele não apaga nada da blockchain.** O texto cifrado já publicado é permanente e público. Sem as chaves ninguém consegue lê-lo, mas o fato de que um endereço enviou mensagens, e quando, continua visível para sempre. O código de coação destrói a cópia no seu aparelho. Ele não desfaz o envio.",
+    "**Ele não apaga seu celular ou computador.** Só os dados do PrivaMesh são removidos. Fotos, outros mensageiros e todo o resto ficam intactos.",
+    "**Ele não avisa ninguém.** Não há alarme silencioso, nem mensagem para um contato, nem servidor para notificar - [não existe servidor nenhum](/features/no-servers). A limpeza é a ação inteira.",
+    "**Ele não mostra uma conta-isca.** Algumas ferramentas abrem em vez disso um segundo perfil inofensivo. O PrivaMesh esvazia a conta real e mostra um app em primeira execução. O que é mais seguro depende de quem está perguntando e do que já sabe; a nossa é a promessa mais simples, e a que conseguimos cumprir de verdade.",
+    "**Ele não ajuda se o aparelho já foi copiado.** Quem copiou o armazenamento antes de você digitar qualquer coisa continua com essa cópia. O código de coação protege o momento em que pedem para você desbloquear, não o tempo antes dele.",
+    "**Ele não tem volta.** Sua frase de recuperação restaura sua identidade e seus contatos em um aparelho novo, nunca as conversas - [o sigilo futuro destrói essas chaves depois do uso](/limitations). Digitar o código de coação sem querer custa seu histórico para sempre. Escolha duas senhas impossíveis de confundir sob pressão.",
+    "## As tentativas são limitadas, para as duas senhas",
+    "Cinco tentativas erradas iniciam uma espera crescente - 30 segundos, um minuto, dois, quatro e assim por diante até uma hora - mostrada na tela para que a espera seja visível, e não um mistério. O desbloqueio biométrico é recusado durante a espera, então não dá para usá-lo para contorná-la. As senhas passam por uma derivação de chave lenta antes da comparação, e é isso que torna caro adivinhar uma senha numérica curta para quem tem uma cópia do armazenamento.",
+    "Confirmar sua senha dentro dos Ajustes - para ver a frase ou trocar uma senha - não conta para esse limite. Proteger contra adivinhação um app já desbloqueado não traz nada, e deixar um erro de digitação trancar você fora da própria conta tem um custo real. Essa verificação também recusa o código de coação: ele não é uma senha de acesso, e aceitá-lo ali permitiria que autorizasse mudanças na própria configuração que ele existe para proteger."
+  ],
+  "platformsHeading": "Onde funciona hoje",
+  "platforms": [
+    {
+      "name": "Windows",
+      "status": "Disponível desde a 1.0.0",
+      "detail": "As duas senhas são definidas nos Ajustes. A limpeza apaga o banco de dados local, reabre-o vazio e limpa as chaves guardadas pelo Windows DPAPI. O app volta ao estado de primeira execução."
+    },
+    {
+      "name": "Android",
+      "status": "Disponível desde a 0.1",
+      "detail": "A limpeza fecha primeiro o banco de dados, depois apaga seus arquivos junto com o log de escrita antecipada, os arquivos de preferências e os caches, e cancela as tarefas em segundo plano que o reabririam."
+    },
+    {
+      "name": "iPhone",
+      "status": "No código-fonte, ainda não na App Store",
+      "detail": "O código está escrito, testado e público, mas a versão atual da App Store, a 1.1, foi compilada em 13 de agosto de 2026, antes dele. Ele chega na próxima versão. Até lá, o código de coação existe só nos clientes de desktop e Android."
+    }
+  ],
+  "after": [
+    "O comportamento é o mesmo em todo cliente que tem o recurso: as mesmas duas senhas, a mesma regra de tamanho igual, a mesma comparação em tempo constante, a mesma espera. As diferenças estão só no que a limpeza precisa apagar em cada sistema, porque um banco de dados do Windows, um do Android e um chaveiro do iOS falham de jeitos diferentes quando apagados sem cuidado.",
+    "As três implementações são de código aberto e podem ser lidas antes de você confiar nelas: [iOS](https://github.com/Makomest/PrivaMesh), [Windows](https://github.com/Makomest/privamesh-windows) e [Android](https://github.com/Makomest/privamesh-android)."
+  ],
+  "faq": [
+    {
+      "q": "O que é um código de coação?",
+      "a": "Uma segunda senha que apaga a conta em vez de abri-la. Você define as duas; a primeira desbloqueia o app, a segunda apaga todas as mensagens, contatos e chaves do aparelho e volta o app para a tela de primeira execução, sem nada que mostre qual foi digitada."
+    },
+    {
+      "q": "Alguém consegue distinguir as duas senhas?",
+      "a": "Pelo app, não. As duas ficam guardadas com o mesmo salt, então uma única derivação é comparada com ambas em tempo constante, e o código de coação precisa ter o mesmo tamanho da senha. Depois da limpeza, o app mostra a mesma tela de boas-vindas de uma instalação nova, e o contador de tentativas erradas é zerado para que nada contradiga isso."
+    },
+    {
+      "q": "O código de coação apaga minhas mensagens da blockchain?",
+      "a": "Não. O texto cifrado já publicado na Solana é permanente e público. Ninguém consegue lê-lo sem as chaves que acabaram de ser destruídas, mas o fato de que um endereço enviou mensagens, e quando, continua visível. O código de coação apaga a cópia no seu aparelho; ele não desfaz envios."
+    },
+    {
+      "q": "Ele apaga meu celular inteiro?",
+      "a": "Não. Só os dados do PrivaMesh são apagados: suas mensagens, contatos, chaves, as duas senhas e o desbloqueio biométrico. Nada mais no aparelho é tocado."
+    },
+    {
+      "q": "Dá para desfazer ou recuperar minhas conversas?",
+      "a": "Não. Sua frase de recuperação restaura sua identidade e seus contatos em um aparelho novo, nunca as conversas - o sigilo futuro destruiu essas chaves de mensagem depois do uso. Escolha duas senhas que você não confunda sob pressão."
+    },
+    {
+      "q": "Quais versões do PrivaMesh têm código de coação?",
+      "a": "O cliente de Windows a partir da 1.0.0 e o de Android a partir da 0.1, ambos lançados em 27 de agosto de 2026. No iPhone o código está escrito e é público, mas a versão atual da App Store, a 1.1, foi compilada em 13 de agosto, antes dele, então ele chega na próxima versão."
+    }
+  ],
+  "related": [
+    {
+      "href": "/threat-model",
+      "label": "Modelo de ameaças",
+      "blurb": "Adversário por adversário, incluindo quem está com seu celular desbloqueado."
+    },
+    {
+      "href": "/limitations",
+      "label": "Limitações conhecidas",
+      "blurb": "Do que o PrivaMesh não protege você, dito com clareza."
+    },
+    {
+      "href": "/features/seed-phrase-accounts",
+      "label": "Contas por frase de recuperação",
+      "blurb": "O que uma limpeza deixa para trás e o que doze palavras conseguem restaurar."
+    }
+  ]
+}

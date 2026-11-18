@@ -1,0 +1,97 @@
+{
+  "meta": {
+    "title": "Code de contrainte - un second code qui efface le compte",
+    "description": "Deux codes au lieu d'un. Le premier ouvre PrivaMesh ; le second efface tous les messages, contacts et clés de l'appareil, sans rien laisser voir de celui que vous avez saisi."
+  },
+  "eyebrow": "Code de contrainte",
+  "title": "Un second code qui vide le compte",
+  "lead": "Définissez deux codes au lieu d'un. Le premier ouvre l'app. Le second efface tous les messages, contacts et clés de l'appareil et vous déconnecte - sans avertissement, sans confirmation, rien à l'écran pour montrer lequel vous avez saisi.",
+  "ctaSecondary": "Quand cela aide",
+  "summary": "Le chiffrement répond à la question « peuvent-ils lire ceci ? ». Il ne répond pas à « que se passe-t-il quand quelqu'un se tient au-dessus de vous et exige le code ? ». Un code de contrainte est une réponse à la seconde question, et une réponse étroite. Lisez ce qu'il ne fait pas avant de compter dessus.",
+  "body": [
+    "## Ce qui se passe quand vous le saisissez",
+    "L'écran de verrouillage accepte les deux codes. Le vrai déverrouille l'app. Le code de contrainte lance l'effacement puis affiche l'écran d'accueil, exactement comme une app fraîchement installée - même écran, même texte, aucun message, aucun délai, aucune trace du compte qui était là une seconde plus tôt.",
+    "L'effacement est volontairement ordonné pour que ce qui est visible parte en premier. Les messages et contacts sont supprimés avant les clés, de sorte qu'un processus interrompu à mi-chemin laisse une installation cassée plutôt qu'une conversation lisible. La phrase de récupération sort du trousseau, les deux codes sont supprimés, et le déverrouillage biométrique est désactivé avec eux.",
+    "Le compteur de tentatives échouées est lui aussi remis à zéro. Une app qui vient d'être effacée mais refuse encore les codes pendant quatre minutes n'est visiblement pas une installation neuve, et ce détail est tout l'enjeu.",
+    "## Pourquoi on ne peut pas distinguer les deux codes",
+    "Un code de contrainte ne vaut rien si l'app se comporte différemment avec lui. Deux choses y veillent.",
+    "D'abord, les deux empreintes sont stockées avec le même sel : saisir un code dérive une seule empreinte, comparée aux deux en temps constant. Une version antérieure donnait au code de contrainte son propre sel, ce qui imposait une seconde dérivation de clé à chaque déverrouillage : l'attente doublait pour tout le monde, et la sauter en cas de non-correspondance aurait rendu le chemin de contrainte sensiblement plus rapide pour quelqu'un tenant le téléphone et observant l'écran.",
+    "Ensuite, le code de contrainte doit avoir la même longueur que votre code. Le pavé valide dès le dernier chiffre saisi, donc un code d'une autre longueur ne pourrait jamais être tapé - ce serait un réglage qui ne fait rien en silence, découvert au pire moment. Une longueur différente est refusée.",
+    "Le code lui-même ne peut pas non plus être changé en code de contrainte. La vérification teste d'abord le vrai code, donc une collision serait interprétée comme « déverrouiller » et le code de contrainte cesserait discrètement de fonctionner. Ce changement est refusé.",
+    "## Ce qu'il ne fait pas",
+    "**Il n'efface rien de la chaîne.** Le texte chiffré déjà publié est permanent et public. Sans les clés personne ne peut le lire, mais le fait qu'une adresse a envoyé des messages, et quand, reste visible pour toujours. Le code de contrainte détruit la copie sur votre appareil. Il ne rappelle rien.",
+    "**Il n'efface pas votre téléphone ni votre ordinateur.** Seules les données de PrivaMesh disparaissent. Photos, autres messageries et tout le reste restent intacts.",
+    "**Il ne prévient personne.** Pas d'alarme silencieuse, pas de message à un contact, pas de serveur à notifier - il n'y a [aucun serveur](/features/no-servers). L'effacement est toute l'action.",
+    "**Il n'affiche pas de compte leurre.** Certains outils ouvrent à la place un second profil anodin. PrivaMesh vide le vrai et affiche une app au premier lancement. Ce qui est le plus sûr dépend de qui demande et de ce qu'il sait déjà ; notre promesse est la plus simple, et celle que nous pouvons réellement tenir.",
+    "**Il ne peut rien si l'appareil a déjà été copié.** Quelqu'un qui a copié le stockage avant que vous saisissiez quoi que ce soit garde cette copie. Le code de contrainte protège le moment où l'on vous demande de déverrouiller, pas le temps d'avant.",
+    "**Il est irréversible.** Votre phrase de récupération restaure votre identité et vos contacts sur un nouvel appareil, jamais les conversations - [la confidentialité persistante détruit ces clés après usage](/limitations). Saisir le code de contrainte par accident vous coûte définitivement votre historique. Choisissez deux codes impossibles à confondre sous la pression.",
+    "## Les tentatives sont limitées, pour les deux codes",
+    "Cinq erreurs déclenchent un délai croissant - 30 secondes, une minute, deux, quatre, jusqu'à une heure - affiché à l'écran pour que l'attente soit visible plutôt que mystérieuse. Le déverrouillage biométrique est refusé pendant ce délai, il ne peut donc pas servir à le contourner. Les codes sont étirés par une dérivation de clé lente avant comparaison, ce qui rend coûteux le devinage d'un court code numérique pour quiconque détient une copie du stockage.",
+    "Confirmer votre code dans les Réglages - pour afficher la phrase ou changer un code - ne compte pas dans cette limite. Protéger contre le devinage une app déjà déverrouillée n'apporte rien, alors qu'une faute de frappe qui vous enfermerait hors de votre propre compte a un vrai coût. Cette vérification refuse aussi le code de contrainte : ce n'est pas un code d'accès, et l'accepter là lui permettrait d'autoriser des changements du réglage même qu'il protège."
+  ],
+  "platformsHeading": "Où il fonctionne aujourd'hui",
+  "platforms": [
+    {
+      "name": "Windows",
+      "status": "Disponible depuis la 1.0.0",
+      "detail": "Les deux codes se définissent dans les Réglages. L'effacement supprime la base locale, la rouvre vide et efface les clés détenues par Windows DPAPI. L'app revient à son état de premier lancement."
+    },
+    {
+      "name": "Android",
+      "status": "Disponible depuis la 0.1",
+      "detail": "L'effacement ferme d'abord la base, puis supprime ses fichiers avec le journal d'écriture anticipée, les fichiers de préférences et les caches, et annule les tâches de fond qui la rouvriraient sinon."
+    },
+    {
+      "name": "iPhone",
+      "status": "Dans le code source, pas encore sur l'App Store",
+      "detail": "Le code est écrit, testé et public, mais la version actuelle sur l'App Store, la 1.1, a été compilée le 13 août 2026, avant lui. Il arrivera avec la prochaine version. D'ici là, le code de contrainte n'existe que sur les clients desktop et Android."
+    }
+  ],
+  "after": [
+    "Le comportement est le même sur chaque client qui l'a : mêmes deux codes, même règle de longueur égale, même comparaison en temps constant, même délai. Les différences portent seulement sur ce que l'effacement doit supprimer sur chaque système, car une base Windows, une base Android et un trousseau iOS échouent différemment quand on les supprime sans soin.",
+    "Les trois implémentations sont open source et peuvent être lues avant de leur faire confiance : [iOS](https://github.com/Makomest/PrivaMesh), [Windows](https://github.com/Makomest/privamesh-windows) et [Android](https://github.com/Makomest/privamesh-android)."
+  ],
+  "faq": [
+    {
+      "q": "Qu'est-ce qu'un code de contrainte ?",
+      "a": "Un second code qui efface le compte au lieu de l'ouvrir. Vous définissez les deux ; le premier déverrouille l'app, le second supprime tous les messages, contacts et clés de l'appareil et ramène l'app à son écran de premier lancement, sans rien montrer de celui qui a été saisi."
+    },
+    {
+      "q": "Peut-on distinguer les deux codes ?",
+      "a": "Pas depuis l'app. Les deux sont stockés avec le même sel, donc une seule dérivation est comparée aux deux en temps constant, et le code de contrainte doit avoir la même longueur que le code. Après l'effacement, l'app affiche l'écran d'accueil d'une installation neuve, et le compteur d'échecs est remis à zéro pour que rien ne le contredise."
+    },
+    {
+      "q": "Le code de contrainte supprime-t-il mes messages de la blockchain ?",
+      "a": "Non. Le texte chiffré déjà publié sur Solana est permanent et public. Personne ne peut le lire sans les clés qui viennent d'être détruites, mais le fait qu'une adresse a envoyé des messages, et quand, reste visible. Le code de contrainte efface la copie sur votre appareil ; il ne peut rien rappeler."
+    },
+    {
+      "q": "Efface-t-il tout mon téléphone ?",
+      "a": "Non. Seules les données de PrivaMesh sont supprimées : ses messages, contacts, clés, les deux codes et le déverrouillage biométrique. Rien d'autre sur l'appareil n'est touché."
+    },
+    {
+      "q": "Puis-je annuler ou récupérer mes conversations ?",
+      "a": "Non. Votre phrase de récupération restaure votre identité et vos contacts sur un nouvel appareil, jamais vos conversations - la confidentialité persistante a détruit ces clés de message après usage. Choisissez deux codes que vous ne pouvez pas confondre sous la pression."
+    },
+    {
+      "q": "Quelles versions de PrivaMesh ont un code de contrainte ?",
+      "a": "Le client Windows depuis la 1.0.0 et le client Android depuis la 0.1, tous deux publiés le 27 août 2026. Sur iPhone, le code est écrit et public, mais la version actuelle sur l'App Store, la 1.1, a été compilée le 13 août, avant lui ; il arrivera donc avec la prochaine version."
+    }
+  ],
+  "related": [
+    {
+      "href": "/threat-model",
+      "label": "Modèle de menace",
+      "blurb": "Adversaire par adversaire, y compris celui qui tient votre téléphone déverrouillé."
+    },
+    {
+      "href": "/limitations",
+      "label": "Limites connues",
+      "blurb": "Ce dont PrivaMesh ne vous protège pas, dit clairement."
+    },
+    {
+      "href": "/features/seed-phrase-accounts",
+      "label": "Comptes par phrase de récupération",
+      "blurb": "Ce qu'un effacement laisse derrière lui, et ce que douze mots peuvent restaurer."
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "meta": {
+    "title": "Dwangcode - een tweede code die het account wist",
+    "description": "Twee codes in plaats van één. De eerste opent PrivaMesh; de tweede wist alle berichten, contacten en sleutels op het apparaat, zonder iets te tonen dat verraadt welke je intikte."
+  },
+  "eyebrow": "Dwangcode",
+  "title": "Een tweede code die het account leegmaakt",
+  "lead": "Stel twee codes in plaats van één in. De eerste opent de app. De tweede wist alle berichten, contacten en sleutels op het apparaat en meldt je af - zonder waarschuwing, zonder bevestiging, niets op het scherm dat laat zien welke je intikte.",
+  "ctaSecondary": "Wanneer dit helpt",
+  "summary": "Versleuteling beantwoordt de vraag ‘kunnen ze dit lezen?’ Ze beantwoordt niet ‘wat gebeurt er als iemand boven je staat en de code eist?’ Een dwangcode is een antwoord op die tweede vraag, en een smal antwoord. Lees wat hij niet doet voordat je erop vertrouwt.",
+  "body": [
+    "## Wat er gebeurt als je hem intikt",
+    "Het vergrendelscherm accepteert beide codes. De echte ontgrendelt de app. De dwangcode voert het wissen uit en toont daarna het welkomstscherm, precies zoals een vers geïnstalleerde app - hetzelfde scherm, dezelfde tekst, geen melding, geen vertraging, geen spoor van het account dat er een seconde eerder nog was.",
+    "Het wissen is bewust zo geordend dat wat zichtbaar is als eerste verdwijnt. Berichten en contacten worden vóór de sleutels verwijderd, zodat een proces dat halverwege wordt afgebroken een kapotte installatie achterlaat in plaats van een leesbaar gesprek. De herstelzin verdwijnt uit de sleutelhanger, beide codes worden verwijderd en biometrisch ontgrendelen wordt meteen uitgezet.",
+    "Ook de teller voor mislukte pogingen wordt gewist. Een app die net is gewist maar nog vier minuten codes weigert, is zichtbaar geen verse installatie - en om dat detail draait het juist.",
+    "## Waarom de twee codes niet te onderscheiden zijn",
+    "Een dwangcode is waardeloos als de app zich er anders bij gedraagt. Twee dingen voorkomen dat.",
+    "Ten eerste worden beide hashes onder dezelfde salt opgeslagen, zodat het invoeren van een code één hash afleidt en die in constante tijd met beide vergelijkt. Een eerdere versie gaf de dwangcode een eigen salt, wat bij elke ontgrendeling een tweede sleutelafleiding betekende: dat verdubbelde de wachttijd voor iedereen, en die overslaan bij geen overeenkomst zou het dwangpad meetbaar sneller hebben gemaakt voor iemand die de telefoon vasthoudt en naar het scherm kijkt.",
+    "Ten tweede moet de dwangcode even lang zijn als je code. Het toetsenblok verstuurt zodra het laatste cijfer is ingevoerd, dus een code van een andere lengte zou nooit kunnen worden ingetikt - een instelling die stilletjes niets doet, ontdekt op het slechtst denkbare moment. Een afwijkende lengte wordt geweigerd.",
+    "Ook de code zelf kan niet in de dwangcode worden veranderd. De controle test eerst de echte code, dus een samenval zou als ‘ontgrendelen’ worden opgevat en de dwangcode zou stilletjes niet meer werken. Die wijziging wordt geweigerd.",
+    "## Wat hij niet doet",
+    "**Hij wist niets van de chain.** Al gepubliceerde versleutelde tekst is permanent en openbaar. Zonder de sleutels kan niemand die lezen, maar dat een adres berichten verstuurde, en wanneer, blijft voor altijd zichtbaar. De dwangcode vernietigt de kopie op je apparaat. Hij maakt niets ongedaan.",
+    "**Hij wist je telefoon of computer niet.** Alleen de eigen gegevens van PrivaMesh verdwijnen. Foto's, andere messengers en al het andere blijven onaangeroerd.",
+    "**Hij waarschuwt niemand.** Er is geen stil alarm, geen bericht aan een contact en geen server om te waarschuwen - er is [helemaal geen server](/features/no-servers). Het wissen is de hele actie.",
+    "**Hij toont geen lokaccount.** Sommige tools openen in plaats daarvan een tweede, onschuldig profiel. PrivaMesh maakt het echte leeg en toont een app bij de eerste start. Wat veiliger is, hangt af van wie het vraagt en wat die al weet; de onze is de eenvoudigere belofte, en de belofte die we echt kunnen nakomen.",
+    "**Hij helpt niet als het apparaat al is gekopieerd.** Wie de opslag kopieerde voordat je iets intikte, heeft die kopie. De dwangcode beschermt het moment waarop je wordt gevraagd te ontgrendelen, niet de tijd daarvoor.",
+    "**Hij is niet terug te draaien.** Je herstelzin herstelt je identiteit en contacten op een nieuw apparaat, nooit de gesprekken - [forward secrecy vernietigt die sleutels na gebruik](/limitations). Wie de dwangcode per ongeluk intikt, raakt zijn geschiedenis voorgoed kwijt. Kies twee codes die je onder druk niet kunt verwarren.",
+    "## Raden wordt afgeremd, voor beide codes gelijk",
+    "Vijf foute pogingen starten een oplopende wachttijd - 30 seconden, een minuut, twee, vier, tot een uur - die op het scherm wordt getoond zodat het wachten zichtbaar is in plaats van raadselachtig. Biometrisch ontgrendelen wordt geweigerd zolang een wachttijd loopt, zodat het niet kan worden gebruikt om die te omzeilen. De codes worden vóór de vergelijking opgerekt met een trage sleutelafleiding, en dat maakt het raden van een korte cijfercode duur voor wie een kopie van de opslag heeft.",
+    "Je code bevestigen in Instellingen - om de zin te tonen of een code te wijzigen - telt niet mee voor die rem. Een al ontgrendelde app tegen raden beschermen levert niets op, en een tikfout die je buitensluit van je eigen account kost echt iets. Die controle weigert ook de dwangcode: dat is geen toegangscode, en hem daar accepteren zou hem wijzigingen laten goedkeuren aan precies de instelling die hij moet beschermen."
+  ],
+  "platformsHeading": "Waar het vandaag werkt",
+  "platforms": [
+    {
+      "name": "Windows",
+      "status": "Beschikbaar sinds 1.0.0",
+      "detail": "Beide codes stel je in bij Instellingen. Het wissen verwijdert de lokale database, opent die leeg opnieuw en wist de sleutels die Windows DPAPI bewaart. De app keert terug naar de toestand van de eerste start."
+    },
+    {
+      "name": "Android",
+      "status": "Beschikbaar sinds 0.1",
+      "detail": "Het wissen sluit eerst de database, verwijdert dan de bestanden samen met het write-ahead-log, de voorkeursbestanden en de caches, en annuleert de achtergrondtaken die ze anders weer zouden openen."
+    },
+    {
+      "name": "iPhone",
+      "status": "In de broncode, nog niet in de App Store",
+      "detail": "De code is geschreven, getest en openbaar, maar de huidige App Store-versie, 1.1, is op 13 augustus 2026 gebouwd en is ouder. Hij komt met de volgende release. Tot dan bestaat de dwangcode alleen in de desktop- en Android-client."
+    }
+  ],
+  "after": [
+    "Het gedrag is hetzelfde op elke client die hem heeft: dezelfde twee codes, dezelfde regel van gelijke lengte, dezelfde vergelijking in constante tijd, dezelfde wachttijd. De verschillen zitten alleen in wat het wissen op elk systeem moet verwijderen, want een Windows-database, een Android-database en een iOS-sleutelhanger falen elk anders als je ze slordig verwijdert.",
+    "Alle drie de implementaties zijn open source en kunnen worden gelezen voordat je ze vertrouwt: [iOS](https://github.com/Makomest/PrivaMesh), [Windows](https://github.com/Makomest/privamesh-windows) en [Android](https://github.com/Makomest/privamesh-android)."
+  ],
+  "faq": [
+    {
+      "q": "Wat is een dwangcode?",
+      "a": "Een tweede code die het account wist in plaats van het te openen. Je stelt beide in; de eerste ontgrendelt de app, de tweede verwijdert alle berichten, contacten en sleutels op het apparaat en zet de app terug naar het scherm van de eerste start, zonder iets dat laat zien welke werd ingetikt."
+    },
+    {
+      "q": "Kan iemand de twee codes uit elkaar houden?",
+      "a": "Niet vanuit de app. Beide worden onder dezelfde salt opgeslagen, zodat één afleiding in constante tijd met beide wordt vergeleken, en de dwangcode moet even lang zijn als de code. Na het wissen toont de app hetzelfde welkomstscherm als een verse installatie, en de teller voor mislukte pogingen wordt gewist zodat niets dat tegenspreekt."
+    },
+    {
+      "q": "Wist de dwangcode mijn berichten van de blockchain?",
+      "a": "Nee. Al op Solana gepubliceerde versleutelde tekst is permanent en openbaar. Niemand kan die lezen zonder de net vernietigde sleutels, maar dat een adres berichten verstuurde, en wanneer, blijft zichtbaar. De dwangcode wist de kopie op je apparaat; ongedaan maken kan hij niet."
+    },
+    {
+      "q": "Wist hij mijn hele telefoon?",
+      "a": "Nee. Alleen gegevens van PrivaMesh worden verwijderd: de berichten, contacten, sleutels, beide codes en biometrisch ontgrendelen. Niets anders op het apparaat wordt aangeraakt."
+    },
+    {
+      "q": "Kan ik het terugdraaien of mijn chats terugkrijgen?",
+      "a": "Nee. Je herstelzin herstelt je identiteit en contacten op een nieuw apparaat, nooit je gesprekken - forward secrecy heeft die berichtsleutels na gebruik vernietigd. Kies twee codes die je onder druk niet kunt verwarren."
+    },
+    {
+      "q": "Welke versies van PrivaMesh hebben een dwangcode?",
+      "a": "De Windows-client vanaf 1.0.0 en de Android-client vanaf 0.1, beide uitgebracht op 27 augustus 2026. Op de iPhone is de code geschreven en openbaar, maar de huidige App Store-versie, 1.1, is op 13 augustus gebouwd en is ouder, dus hij komt met de volgende release."
+    }
+  ],
+  "related": [
+    {
+      "href": "/threat-model",
+      "label": "Dreigingsmodel",
+      "blurb": "Tegenstander voor tegenstander, inclusief degene die je ontgrendelde telefoon vasthoudt."
+    },
+    {
+      "href": "/limitations",
+      "label": "Bekende beperkingen",
+      "blurb": "Waartegen PrivaMesh je niet beschermt, gewoon gezegd."
+    },
+    {
+      "href": "/features/seed-phrase-accounts",
+      "label": "Accounts met een herstelzin",
+      "blurb": "Wat een wisbeurt achterlaat en wat twaalf woorden kunnen herstellen."
+    }
+  ]
+}

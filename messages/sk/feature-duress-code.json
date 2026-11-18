@@ -1,0 +1,97 @@
+{
+  "meta": {
+    "title": "Núdzový kód - druhý kód, ktorý zmaže účet",
+    "description": "Dva kódy namiesto jedného. Prvý otvorí PrivaMesh, druhý zmaže všetky správy, kontakty a kľúče v zariadení a nič neprezradí, ktorý ste zadali."
+  },
+  "eyebrow": "Núdzový kód",
+  "title": "Druhý kód, ktorý účet vyprázdni",
+  "lead": "Nastavte dva kódy namiesto jedného. Prvý otvorí aplikáciu. Druhý zmaže všetky správy, kontakty a kľúče v zariadení a odhlási vás - bez varovania, bez potvrdenia a nič na obrazovke neukáže, ktorý ste zadali.",
+  "ctaSecondary": "Kedy to pomôže",
+  "summary": "Šifrovanie odpovedá na otázku „môžu si to prečítať?“. Neodpovedá na otázku „čo sa stane, keď nad vami niekto stojí a chce kód?“. Núdzový kód je odpoveďou na tú druhú otázku, a to úzkou. Skôr než sa naň spoľahnete, prečítajte si, čo nerobí.",
+  "body": [
+    "## Čo sa stane, keď ho zadáte",
+    "Uzamykacia obrazovka prijíma oba kódy. Skutočný aplikáciu odomkne. Núdzový spustí mazanie a potom zobrazí uvítaciu obrazovku, presne ako čerstvo nainštalovaná aplikácia - rovnaká obrazovka, rovnaký text, žiadna správa, žiadne oneskorenie, žiadna stopa účtu, ktorý tu bol pred sekundou.",
+    "Mazanie je zámerne zoradené tak, aby ako prvé zmizlo to viditeľné. Správy a kontakty sa mažú pred kľúčmi, takže proces ukončený v polovici zanechá rozbitú inštaláciu, nie čitateľnú konverzáciu. Fráza na obnovenie zmizne z kľúčenky, oba kódy sa zmažú a spolu s nimi sa vypne biometrické odomykanie.",
+    "Vynuluje sa aj počítadlo neúspešných pokusov. Aplikácia, ktorá bola práve zmazaná, ale ešte štyri minúty odmieta kódy, zjavne nie je čerstvá inštalácia - a o ten detail ide predovšetkým.",
+    "## Prečo sa oba kódy nedajú rozlíšiť",
+    "Núdzový kód je bezcenný, ak sa aplikácia k nemu správa inak. Chránia to dve veci.",
+    "Po prvé sa oba hashe ukladajú s rovnakou soľou, takže zadanie kódu odvodí jeden hash a porovná ho s oboma v konštantnom čase. Skoršia verzia dávala núdzovému kódu vlastnú soľ, čo znamenalo druhé odvodenie kľúča pri každom odomknutí: zdvojnásobilo to čakanie všetkým, a keby sa pri nezhode preskakovalo, bola by núdzová cesta merateľne rýchlejšia pre toho, kto drží telefón a sleduje obrazovku.",
+    "Po druhé musí mať núdzový kód rovnakú dĺžku ako váš kód. Klávesnica odošle hneď po zadaní poslednej číslice, takže kód inej dĺžky by sa vôbec nedal zadať - bolo by to nastavenie, ktoré potichu nič nerobí a odhalí sa v najhoršej chvíli. Iná dĺžka sa odmietne.",
+    "Ani samotný kód sa nedá zmeniť na núdzový. Kontrola najprv testuje skutočný kód, takže zhoda by sa vyhodnotila ako „odomknúť“ a núdzový kód by potichu prestal fungovať. Taká zmena sa odmietne.",
+    "## Čo nerobí",
+    "**Nič nezmaže z reťazca.** Už zverejnený šifrový text je trvalý a verejný. Bez kľúčov ho nikto neprečíta, ale to, že adresa posielala správy, a kedy, zostane viditeľné navždy. Núdzový kód zničí kópiu vo vašom zariadení. Odoslané nevráti.",
+    "**Nezmaže váš telefón ani počítač.** Zmiznú len dáta PrivaMesh. Fotky, iné komunikátory a všetko ostatné zostanú nedotknuté.",
+    "**Nikoho nevaruje.** Nie je tu tichý poplach, správa kontaktu ani server, ktorý by sa upozornil - [žiadny server vôbec nie je](/features/no-servers). Mazanie je celá akcia.",
+    "**Neukáže návnadový účet.** Niektoré nástroje namiesto toho otvoria druhý, nevinný profil. PrivaMesh vyprázdni ten skutočný a ukáže aplikáciu pri prvom spustení. Čo je bezpečnejšie, záleží na tom, kto sa pýta a čo už vie; naše riešenie je jednoduchší sľub, a taký, ktorý naozaj dokážeme dodržať.",
+    "**Nepomôže, ak už zo zariadenia niekto vytvoril obraz.** Kto skopíroval úložisko skôr, než ste čokoľvek zadali, tú kópiu má. Núdzový kód chráni chvíľu, keď vás niekto žiada o odomknutie, nie čas pred ňou.",
+    "**Nedá sa vrátiť.** Fráza na obnovenie vráti identitu a kontakty na novom zariadení, ale nikdy konverzácie - [dopredné utajenie tieto kľúče po použití zničí](/limitations). Omylom zadaný núdzový kód vás natrvalo pripraví o históriu. Zvoľte dva kódy, ktoré sa pod tlakom nedajú zameniť.",
+    "## Hádanie je brzdené, pre oba kódy rovnako",
+    "Päť chybných zadaní spustí rastúcu prestávku - 30 sekúnd, minúta, dve, štyri a tak ďalej až na hodinu - zobrazenú na obrazovke, aby bolo čakanie zrozumiteľné, nie záhadné. Počas prestávky sa biometrické odomknutie odmieta, takže ním nemožno čakanie obísť. Kódy sa pred porovnaním naťahujú pomalým odvodením kľúča, a práve to robí hádanie krátkeho číselného kódu drahým pre toho, kto má kópiu úložiska.",
+    "Potvrdenie kódu v Nastaveniach - kvôli zobrazeniu frázy alebo zmene kódu - sa do tejto brzdy nepočíta. Chrániť už odomknutú aplikáciu pred hádaním nič neprináša, kým nechať preklep zamknúť vás z vlastného účtu má skutočnú cenu. Táto kontrola odmieta aj núdzový kód: nie je to prístupový kód, a keby ho tam prijímala, mohol by schvaľovať zmeny práve toho nastavenia, ktoré má chrániť."
+  ],
+  "platformsHeading": "Kde to dnes funguje",
+  "platforms": [
+    {
+      "name": "Windows",
+      "status": "K dispozícii od 1.0.0",
+      "detail": "Oba kódy sa nastavujú v Nastaveniach. Mazanie odstráni miestnu databázu, znova ju otvorí prázdnu a vymaže kľúče uložené vo Windows DPAPI. Aplikácia sa vráti do stavu prvého spustenia."
+    },
+    {
+      "name": "Android",
+      "status": "K dispozícii od 0.1",
+      "detail": "Mazanie najprv zatvorí databázu, potom zmaže jej súbory spolu so žurnálom predbežného zápisu, súbormi predvolieb a vyrovnávacími pamäťami a zruší úlohy na pozadí, ktoré by ju inak znova otvorili."
+    },
+    {
+      "name": "iPhone",
+      "status": "V zdrojovom kóde, zatiaľ nie v App Store",
+      "detail": "Kód je napísaný, otestovaný a verejný, ale aktuálna verzia v App Store, 1.1, bola zostavená 13. augusta 2026, skôr. Príde s ďalším vydaním. Dovtedy existuje núdzový kód len v desktopovom a androidovom klientovi."
+    }
+  ],
+  "after": [
+    "Správanie je rovnaké na každom klientovi, ktorý ho má: rovnaké dva kódy, rovnaké pravidlo rovnakej dĺžky, rovnaké porovnanie v konštantnom čase, rovnaká prestávka. Líši sa len to, čo musí mazanie na danom systéme odstrániť, pretože databáza Windows, databáza Androidu a kľúčenka iOS zlyhávajú pri neopatrnom mazaní každá inak.",
+    "Všetky tri implementácie sú open source a dajú sa prečítať skôr, než im uveríte: [iOS](https://github.com/Makomest/PrivaMesh), [Windows](https://github.com/Makomest/privamesh-windows) a [Android](https://github.com/Makomest/privamesh-android)."
+  ],
+  "faq": [
+    {
+      "q": "Čo je núdzový kód?",
+      "a": "Druhý kód, ktorý účet zmaže, namiesto toho, aby ho otvoril. Nastavíte oba; prvý odomkne aplikáciu, druhý zmaže všetky správy, kontakty a kľúče v zariadení a vráti aplikáciu na obrazovku prvého spustenia, bez toho, aby čokoľvek ukázalo, ktorý bol zadaný."
+    },
+    {
+      "q": "Dajú sa oba kódy rozlíšiť?",
+      "a": "Podľa aplikácie nie. Oba sa ukladajú s rovnakou soľou, takže jedno odvodenie sa porovná s oboma v konštantnom čase, a núdzový kód musí mať rovnakú dĺžku ako kód. Po zmazaní aplikácia ukáže rovnakú uvítaciu obrazovku ako čerstvá inštalácia a počítadlo neúspešných pokusov sa vynuluje, aby tomu nič neodporovalo."
+    },
+    {
+      "q": "Zmaže núdzový kód moje správy z blockchainu?",
+      "a": "Nie. Šifrový text už zverejnený na Solane je trvalý a verejný. Bez práve zničených kľúčov ho nikto neprečíta, ale to, že adresa posielala správy, a kedy, zostane viditeľné. Núdzový kód zmaže kópiu vo vašom zariadení; odoslané vrátiť nedokáže."
+    },
+    {
+      "q": "Zmaže celý môj telefón?",
+      "a": "Nie. Zmažú sa len dáta PrivaMesh: jeho správy, kontakty, kľúče, oba kódy a biometrické odomykanie. Ničoho iného v zariadení sa nedotkne."
+    },
+    {
+      "q": "Môžem to vrátiť alebo získať chaty späť?",
+      "a": "Nie. Fráza na obnovenie vráti identitu a kontakty na novom zariadení, ale nikdy konverzácie - dopredné utajenie tieto kľúče správ po použití zničilo. Zvoľte dva kódy, ktoré pod tlakom nezameníte."
+    },
+    {
+      "q": "Ktoré verzie PrivaMesh majú núdzový kód?",
+      "a": "Klient pre Windows od 1.0.0 a klient pre Android od 0.1, oba vydané 27. augusta 2026. Na iPhone je kód napísaný a verejný, ale aktuálna verzia v App Store, 1.1, bola zostavená 13. augusta, skôr, takže príde s ďalším vydaním."
+    }
+  ],
+  "related": [
+    {
+      "href": "/threat-model",
+      "label": "Model hrozieb",
+      "blurb": "Protivník po protivníkovi, vrátane toho, kto drží váš odomknutý telefón."
+    },
+    {
+      "href": "/limitations",
+      "label": "Známe obmedzenia",
+      "blurb": "Pred čím vás PrivaMesh nechráni, povedané na rovinu."
+    },
+    {
+      "href": "/features/seed-phrase-accounts",
+      "label": "Účty na fráze na obnovenie",
+      "blurb": "Čo po zmazaní zostane a čo dokáže obnoviť dvanásť slov."
+    }
+  ]
+}

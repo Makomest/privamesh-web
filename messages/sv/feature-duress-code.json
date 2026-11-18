@@ -1,0 +1,97 @@
+{
+  "meta": {
+    "title": "Tvångskod - en andra kod som raderar kontot",
+    "description": "Två koder i stället för en. Den första öppnar PrivaMesh; den andra raderar alla meddelanden, kontakter och nycklar på enheten, utan att något visar vilken du skrev."
+  },
+  "eyebrow": "Tvångskod",
+  "title": "En andra kod som tömmer kontot",
+  "lead": "Ställ in två koder i stället för en. Den första öppnar appen. Den andra raderar alla meddelanden, kontakter och nycklar på enheten och loggar ut dig - ingen varning, ingen bekräftelse, inget på skärmen som visar vilken du skrev.",
+  "ctaSecondary": "När det hjälper",
+  "summary": "Kryptering besvarar frågan ”kan de läsa det här?” Den besvarar inte ”vad händer när någon står över dig och kräver koden?” En tvångskod är ett svar på den andra frågan, och ett snävt sådant. Läs vad den inte gör innan du förlitar dig på den.",
+  "body": [
+    "## Vad som händer när du skriver den",
+    "Låsskärmen accepterar båda koderna. Den riktiga låser upp appen. Tvångskoden kör raderingen och visar sedan välkomstskärmen, precis som en nyinstallerad app - samma skärm, samma text, inget meddelande, ingen fördröjning, inga spår av kontot som fanns där en sekund tidigare.",
+    "Raderingen är medvetet ordnad så att det synliga försvinner först. Meddelanden och kontakter tas bort före nycklarna, så en process som avbryts halvvägs lämnar en trasig installation snarare än en läsbar konversation. Återställningsfrasen tas bort ur nyckelringen, båda koderna raderas och biometrisk upplåsning stängs av med dem.",
+    "Räknaren för misslyckade försök nollställs också. En app som just har raderats men ändå vägrar koder i fyra minuter är synbart ingen ny installation - och just den detaljen är hela poängen.",
+    "## Varför de två koderna inte går att skilja åt",
+    "En tvångskod är värdelös om appen beter sig annorlunda för den. Två saker skyddar mot det.",
+    "För det första lagras båda hasharna med samma salt, så när en kod skrivs in härleds en hash som jämförs mot båda i konstant tid. En tidigare version gav tvångskoden ett eget salt, vilket innebar en andra nyckelhärledning vid varje upplåsning: den fördubblade väntan för alla, och att hoppa över den vid avvikelse skulle ha gjort tvångsvägen mätbart snabbare för den som håller telefonen och tittar på skärmen.",
+    "För det andra måste tvångskoden vara lika lång som din kod. Knappsatsen skickar så fort den sista siffran är inskriven, så en kod med annan längd skulle aldrig kunna skrivas alls - en inställning som tyst inte gör något och upptäcks i sämsta tänkbara ögonblick. En avvikande längd nekas.",
+    "Själva koden kan inte heller ändras till tvångskoden. Kontrollen testar den riktiga koden först, så en krock skulle tolkas som ”lås upp” och tvångskoden skulle tyst sluta fungera. Den ändringen nekas.",
+    "## Vad den inte gör",
+    "**Den raderar ingenting från kedjan.** Redan publicerad chiffertext är permanent och offentlig. Utan nycklarna kan ingen läsa den, men att en adress skickade meddelanden, och när, förblir synligt för alltid. Tvångskoden förstör kopian på din enhet. Den gör inget ogjort.",
+    "**Den raderar inte din telefon eller dator.** Bara PrivaMeshs egna data försvinner. Foton, andra meddelandeappar och allt annat lämnas orörda.",
+    "**Den varnar ingen.** Det finns inget tyst larm, inget meddelande till en kontakt och ingen server att meddela - det finns [ingen server alls](/features/no-servers). Raderingen är hela åtgärden.",
+    "**Den visar inget lockkonto.** Vissa verktyg öppnar i stället en andra, harmlös profil. PrivaMesh tömmer det riktiga och visar en app vid första start. Vilket som är säkrast beror på vem som frågar och vad hen redan vet; vårt är det enklare löftet, och det vi faktiskt kan hålla.",
+    "**Den hjälper inte om enheten redan har kopierats.** Den som kopierade lagringen innan du skrev något har kvar den kopian. Tvångskoden skyddar ögonblicket då du ombeds låsa upp, inte tiden före.",
+    "**Den går inte att ångra.** Återställningsfrasen återskapar din identitet och dina kontakter på en ny enhet, aldrig konversationerna - [framåtsekretess förstör de nycklarna efter användning](/limitations). Att skriva tvångskoden av misstag kostar dig historiken för alltid. Välj två koder som inte går att förväxla under press.",
+    "## Gissningar bromsas, lika för båda koderna",
+    "Fem felaktiga försök startar en växande väntetid - 30 sekunder, en minut, två, fyra och vidare upp till en timme - som visas på skärmen så att väntan är begriplig snarare än mystisk. Biometrisk upplåsning nekas medan en väntetid pågår, så den kan inte användas för att kringgå väntan. Koderna sträcks med en långsam nyckelhärledning innan de jämförs, och det är det som gör det dyrt att gissa en kort sifferkod för den som har en kopia av lagringen.",
+    "Att bekräfta din kod i Inställningar - för att visa frasen eller byta en kod - räknas inte mot den bromsen. Att skydda en redan upplåst app mot gissningar ger ingenting, medan ett felslag som låser ute dig från ditt eget konto kostar på riktigt. Den kontrollen nekar också tvångskoden: den är ingen upplåsningskod, och att godta den där skulle låta den godkänna ändringar av just den inställning den finns för att skydda."
+  ],
+  "platformsHeading": "Var den fungerar i dag",
+  "platforms": [
+    {
+      "name": "Windows",
+      "status": "Finns sedan 1.0.0",
+      "detail": "Båda koderna ställs in i Inställningar. Raderingen tar bort den lokala databasen, öppnar den tom igen och rensar nycklarna som Windows DPAPI håller. Appen återgår till sitt läge vid första start."
+    },
+    {
+      "name": "Android",
+      "status": "Finns sedan 0.1",
+      "detail": "Raderingen stänger först databasen, tar sedan bort dess filer tillsammans med write-ahead-loggen, inställningsfilerna och cacharna, och avbryter bakgrundsjobben som annars skulle öppna dem igen."
+    },
+    {
+      "name": "iPhone",
+      "status": "I källkoden, ännu inte i App Store",
+      "detail": "Koden är skriven, testad och offentlig, men den nuvarande App Store-versionen, 1.1, byggdes den 13 augusti 2026 och är äldre. Den kommer i nästa version. Till dess finns tvångskoden bara i dator- och Android-klienten."
+    }
+  ],
+  "after": [
+    "Beteendet är detsamma i varje klient som har den: samma två koder, samma regel om lika längd, samma jämförelse i konstant tid, samma väntetid. Skillnaderna gäller bara vad raderingen måste ta bort på varje system, eftersom en Windows-databas, en Android-databas och en iOS-nyckelring går sönder på olika sätt när de raderas slarvigt.",
+    "Alla tre implementeringarna är öppen källkod och kan läsas innan du litar på dem: [iOS](https://github.com/Makomest/PrivaMesh), [Windows](https://github.com/Makomest/privamesh-windows) och [Android](https://github.com/Makomest/privamesh-android)."
+  ],
+  "faq": [
+    {
+      "q": "Vad är en tvångskod?",
+      "a": "En andra kod som raderar kontot i stället för att öppna det. Du ställer in båda; den första låser upp appen, den andra tar bort alla meddelanden, kontakter och nycklar på enheten och återställer appen till startskärmen, utan något som visar vilken som skrevs."
+    },
+    {
+      "q": "Kan någon skilja de två koderna åt?",
+      "a": "Inte via appen. Båda lagras med samma salt, så en härledning jämförs mot båda i konstant tid, och tvångskoden måste vara lika lång som koden. Efter raderingen visar appen samma välkomstskärm som en ny installation, och räknaren för misslyckade försök nollställs så att inget motsäger det."
+    },
+    {
+      "q": "Raderar tvångskoden mina meddelanden från blockkedjan?",
+      "a": "Nej. Chiffertext som redan publicerats på Solana är permanent och offentlig. Ingen kan läsa den utan nycklarna som just förstördes, men att en adress skickade meddelanden, och när, förblir synligt. Tvångskoden raderar kopian på din enhet; den kan inte göra något ogjort."
+    },
+    {
+      "q": "Raderar den hela min telefon?",
+      "a": "Nej. Bara PrivaMeshs data tas bort: dess meddelanden, kontakter, nycklar, båda koderna och biometrisk upplåsning. Inget annat på enheten rörs."
+    },
+    {
+      "q": "Kan jag ångra det eller få tillbaka mina chattar?",
+      "a": "Nej. Återställningsfrasen återskapar din identitet och dina kontakter på en ny enhet, aldrig konversationerna - framåtsekretess förstörde de meddelandenycklarna efter användning. Välj två koder som du inte kan förväxla under press."
+    },
+    {
+      "q": "Vilka versioner av PrivaMesh har en tvångskod?",
+      "a": "Windows-klienten från 1.0.0 och Android-klienten från 0.1, båda släppta den 27 augusti 2026. På iPhone är koden skriven och offentlig, men den nuvarande App Store-versionen, 1.1, byggdes den 13 augusti och är äldre, så den kommer i nästa version."
+    }
+  ],
+  "related": [
+    {
+      "href": "/threat-model",
+      "label": "Hotmodell",
+      "blurb": "Motståndare för motståndare, inklusive den som håller din upplåsta telefon."
+    },
+    {
+      "href": "/limitations",
+      "label": "Kända begränsningar",
+      "blurb": "Vad PrivaMesh inte skyddar dig mot, rakt på sak."
+    },
+    {
+      "href": "/features/seed-phrase-accounts",
+      "label": "Konton med återställningsfras",
+      "blurb": "Vad en radering lämnar kvar och vad tolv ord kan återskapa."
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "meta": {
+    "title": "Kényszerkód - egy második kód, amely törli a fiókot",
+    "description": "Két kód egy helyett. Az első megnyitja a PrivaMesht; a második törli az eszközön lévő összes üzenetet, névjegyet és kulcsot, és semmi nem árulja el, melyiket írta be."
+  },
+  "eyebrow": "Kényszerkód",
+  "title": "Egy második kód, amely kiüríti a fiókot",
+  "lead": "Állítson be két kódot egy helyett. Az első megnyitja az alkalmazást. A második törli az eszközön lévő összes üzenetet, névjegyet és kulcsot, és kijelentkezteti - figyelmeztetés nélkül, megerősítés nélkül, és semmi nem mutatja a képernyőn, melyiket írta be.",
+  "ctaSecondary": "Mikor segít ez",
+  "summary": "A titkosítás arra a kérdésre felel, hogy „el tudják-e olvasni?” Arra nem, hogy „mi történik, ha valaki ön fölött áll, és követeli a kódot?” A kényszerkód a második kérdésre adott válasz, mégpedig szűk válasz. Olvassa el, mit nem csinál, mielőtt rá hagyatkozik.",
+  "body": [
+    "## Mi történik, amikor beírja",
+    "A zárolási képernyő mindkét kódot elfogadja. A valódi feloldja az alkalmazást. A kényszerkód elindítja a törlést, majd az üdvözlőképernyőt mutatja, pontosan úgy, mint egy frissen telepített alkalmazás - ugyanaz a képernyő, ugyanaz a szöveg, nincs üzenet, nincs késleltetés, nyoma sincs a fióknak, amely egy másodperccel korábban még ott volt.",
+    "A törlés szándékosan úgy van sorrendbe állítva, hogy ami látható, az tűnjön el először. Az üzenetek és névjegyek a kulcsok előtt törlődnek, így egy félúton leállított folyamat törött telepítést hagy hátra, nem olvasható beszélgetést. A helyreállítási kifejezés kikerül a kulcskarikából, mindkét kód törlődik, és velük együtt a biometrikus feloldás is kikapcsol.",
+    "A sikertelen próbálkozások számlálója is nullázódik. Egy alkalmazás, amelyet épp most töröltek, de még négy percig elutasítja a kódokat, láthatóan nem friss telepítés - és épp ezen a részleten múlik minden.",
+    "## Miért nem lehet a két kódot megkülönböztetni",
+    "A kényszerkód értéktelen, ha az alkalmazás másként viselkedik vele. Két dolog védi ezt.",
+    "Először is mindkét hash ugyanazzal a sóval tárolódik, így a kód beírásakor egyetlen hash készül, amelyet állandó idő alatt mindkettővel összevet. Egy korábbi verzió saját sót adott a kényszerkódnak, ami minden feloldáskor egy második kulcsszármaztatást jelentett: mindenki számára megduplázta a várakozást, és ha eltérés esetén kihagyják, a kényszerút mérhetően gyorsabb lett volna annak, aki a telefont tartja és a képernyőt figyeli.",
+    "Másodszor a kényszerkódnak ugyanolyan hosszúnak kell lennie, mint a kódjának. A billentyűzet az utolsó számjegy beírásakor azonnal elküldi, így más hosszúságú kódot be sem lehetne írni - olyan beállítás lenne, amely csendben semmit sem tesz, és a lehető legrosszabb pillanatban derül ki. Eltérő hossz nem állítható be.",
+    "Magát a kódot sem lehet kényszerkóddá változtatni. Az ellenőrzés először a valódi kódot vizsgálja, így egy egyezés „feloldásként” értelmeződne, és a kényszerkód csendben működésképtelenné válna. Ez a módosítás nem engedélyezett.",
+    "## Amit nem csinál",
+    "**Semmit nem töröl a láncról.** A már közzétett titkosított szöveg végleges és nyilvános. Kulcsok nélkül senki sem olvashatja el, de az, hogy egy cím üzeneteket küldött, és mikor, örökre látható marad. A kényszerkód az eszközén lévő másolatot semmisíti meg. Az elküldöttet nem vonja vissza.",
+    "**Nem törli a telefonját vagy számítógépét.** Csak a PrivaMesh saját adatai tűnnek el. A fotók, más üzenetküldők és minden más érintetlen marad.",
+    "**Senkit nem figyelmeztet.** Nincs csendes riasztás, nincs üzenet egy kapcsolatnak, és nincs értesítendő szerver - [egyáltalán nincs szerver](/features/no-servers). A törlés maga a teljes művelet.",
+    "**Nem mutat csalifiókot.** Egyes eszközök ehelyett egy második, ártalmatlan profilt nyitnak meg. A PrivaMesh a valódit üríti ki, és egy első indítású alkalmazást mutat. Hogy melyik a biztonságosabb, az attól függ, ki kérdez és mit tud már; a miénk az egyszerűbb ígéret, és az, amelyet ténylegesen be tudunk tartani.",
+    "**Nem segít, ha az eszközről már másolat készült.** Aki lemásolta a tárolót, mielőtt bármit beírt volna, annál megmarad a másolat. A kényszerkód azt a pillanatot védi, amikor a feloldást kérik öntől, nem az azt megelőző időt.",
+    "**Nem vonható vissza.** A helyreállítási kifejezés egy új eszközön visszaállítja az identitását és a névjegyeit, a beszélgetéseket azonban soha - [a továbbítási titkosság használat után megsemmisíti azokat a kulcsokat](/limitations). Ha véletlenül írja be a kényszerkódot, az előzmények végleg elvesznek. Válasszon két olyan kódot, amelyeket nyomás alatt sem lehet összetéveszteni.",
+    "## A találgatás le van lassítva, mindkét kódnál egyformán",
+    "Öt hibás bevitel növekvő várakozást indít - 30 másodperc, egy perc, kettő, négy, és így tovább egy óráig -, amely a képernyőn látható, így a várakozás érthető, nem rejtélyes. A várakozás alatt a biometrikus feloldás elutasításra kerül, így azzal sem lehet megkerülni. A kódokat összehasonlítás előtt lassú kulcsszármaztatással nyújtjuk, és ez teszi drágává egy rövid számkód kitalálását annak, akinek másolata van a tárolóról.",
+    "A kód megerősítése a Beállításokban - a kifejezés megjelenítéséhez vagy egy kód módosításához - nem számít bele ebbe a korlátozásba. Egy már feloldott alkalmazást találgatás ellen védeni semmit sem hoz, viszont ha egy elgépelés kizárja a saját fiókjából, annak valós ára van. Ez az ellenőrzés a kényszerkódot is elutasítja: az nem feloldó kód, és ha ott elfogadnánk, jóváhagyhatna módosításokat éppen abban a beállításban, amelynek védelmére létezik."
+  ],
+  "platformsHeading": "Hol működik ma",
+  "platforms": [
+    {
+      "name": "Windows",
+      "status": "Az 1.0.0 óta elérhető",
+      "detail": "Mindkét kód a Beállításokban adható meg. A törlés eltávolítja a helyi adatbázist, üresen újranyitja, és törli a Windows DPAPI által tárolt kulcsokat. Az alkalmazás visszatér az első indítás állapotába."
+    },
+    {
+      "name": "Android",
+      "status": "A 0.1 óta elérhető",
+      "detail": "A törlés először bezárja az adatbázist, majd törli a fájljait az előreírási naplóval, a beállításfájlokkal és a gyorsítótárakkal együtt, és leállítja a háttérfeladatokat, amelyek különben újra megnyitnák őket."
+    },
+    {
+      "name": "iPhone",
+      "status": "A forráskódban, még nem az App Store-ban",
+      "detail": "A kód megírva, tesztelve és nyilvános, de az App Store jelenlegi 1.1-es verziója 2026. augusztus 13-án készült, korábban. A következő kiadással érkezik. Addig a kényszerkód csak az asztali és az Android-kliensben érhető el."
+    }
+  ],
+  "after": [
+    "A működés minden kliensben ugyanaz, amelyben megvan: ugyanaz a két kód, ugyanaz az egyenlő hosszúság szabálya, ugyanaz az állandó idejű összehasonlítás, ugyanaz a várakozás. A különbség csak abban van, mit kell a törlésnek eltávolítania az egyes rendszereken, mert egy Windows-adatbázis, egy Android-adatbázis és egy iOS-kulcskarika másként romlik el, ha gondatlanul törlik.",
+    "Mindhárom megvalósítás nyílt forráskódú, és elolvasható, mielőtt megbízna bennük: [iOS](https://github.com/Makomest/PrivaMesh), [Windows](https://github.com/Makomest/privamesh-windows) és [Android](https://github.com/Makomest/privamesh-android)."
+  ],
+  "faq": [
+    {
+      "q": "Mi az a kényszerkód?",
+      "a": "Egy második kód, amely megnyitás helyett törli a fiókot. Mindkettőt ön állítja be; az első feloldja az alkalmazást, a második törli az eszközön lévő összes üzenetet, névjegyet és kulcsot, és visszaállítja az alkalmazást az első indítás képernyőjére, anélkül hogy bármi mutatná, melyiket írták be."
+    },
+    {
+      "q": "Meg tudja valaki különböztetni a két kódot?",
+      "a": "Az alkalmazásból nem. Mindkettő ugyanazzal a sóval tárolódik, így egyetlen származtatást vetünk össze mindkettővel állandó idő alatt, és a kényszerkódnak ugyanolyan hosszúnak kell lennie, mint a kódnak. A törlés után az alkalmazás ugyanazt az üdvözlőképernyőt mutatja, mint egy friss telepítés, és a sikertelen próbálkozások számlálója nullázódik, hogy semmi ne mondjon ennek ellent."
+    },
+    {
+      "q": "Törli a kényszerkód az üzeneteimet a blokkláncról?",
+      "a": "Nem. A Solanán már közzétett titkosított szöveg végleges és nyilvános. Senki sem olvashatja el az imént megsemmisített kulcsok nélkül, de az, hogy egy cím üzeneteket küldött, és mikor, látható marad. A kényszerkód az eszközén lévő másolatot törli; az elküldöttet nem tudja visszavonni."
+    },
+    {
+      "q": "Az egész telefonomat törli?",
+      "a": "Nem. Csak a PrivaMesh adatai törlődnek: az üzenetei, névjegyei, kulcsai, mindkét kód és a biometrikus feloldás. Az eszközön semmi máshoz nem nyúl."
+    },
+    {
+      "q": "Visszavonhatom, vagy visszakaphatom a csevegéseimet?",
+      "a": "Nem. A helyreállítási kifejezés egy új eszközön visszaállítja az identitását és a névjegyeit, a beszélgetéseket azonban soha - a továbbítási titkosság használat után megsemmisítette azokat az üzenetkulcsokat. Válasszon két kódot, amelyeket nyomás alatt sem téveszt össze."
+    },
+    {
+      "q": "A PrivaMesh mely verzióiban van kényszerkód?",
+      "a": "A Windows-kliensben az 1.0.0-tól, az Android-kliensben a 0.1-től, mindkettő 2026. augusztus 27-én jelent meg. iPhone-on a kód megírva és nyilvános, de az App Store jelenlegi 1.1-es verziója augusztus 13-án készült, korábban, így a következő kiadással érkezik."
+    }
+  ],
+  "related": [
+    {
+      "href": "/threat-model",
+      "label": "Fenyegetési modell",
+      "blurb": "Támadóról támadóra, beleértve azt is, akinél ott a feloldott telefonja."
+    },
+    {
+      "href": "/limitations",
+      "label": "Ismert korlátok",
+      "blurb": "Mi ellen nem véd a PrivaMesh, kertelés nélkül."
+    },
+    {
+      "href": "/features/seed-phrase-accounts",
+      "label": "Helyreállítási kifejezésen alapuló fiókok",
+      "blurb": "Mit hagy maga után egy törlés, és mit tud visszaállítani tizenkét szó."
+    }
+  ]
+}

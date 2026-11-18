@@ -1,0 +1,97 @@
+{
+  "meta": {
+    "title": "Codi de coacció: un segon codi que esborra el compte",
+    "description": "Dos codis en lloc d'un. El primer obre PrivaMesh; el segon esborra tots els missatges, contactes i claus del dispositiu, sense res que indiqui quin has escrit."
+  },
+  "eyebrow": "Codi de coacció",
+  "title": "Un segon codi que buida el compte",
+  "lead": "Configura dos codis en lloc d'un. El primer obre l'app. El segon esborra tots els missatges, contactes i claus del dispositiu i tanca la sessió: sense avís, sense confirmació i sense res a la pantalla que mostri quin has escrit.",
+  "ctaSecondary": "Quan ajuda",
+  "summary": "El xifratge respon la pregunta «ho poden llegir?». No respon «què passa quan algú és al teu costat exigint el codi?». Un codi de coacció és una resposta a la segona pregunta, i una de molt concreta. Llegeix el que no fa abans de confiar-hi.",
+  "body": [
+    "## Què passa quan l'escrius",
+    "La pantalla de bloqueig accepta tots dos codis. El real desbloqueja l'app. El de coacció executa l'esborrat i després mostra la pantalla de benvinguda, exactament com una app acabada d'instal·lar: la mateixa pantalla, el mateix text, cap missatge, cap retard, cap rastre del compte que hi havia un segon abans.",
+    "L'esborrat està ordenat expressament perquè el que es veu desaparegui primer. Els missatges i contactes s'eliminen abans que les claus, de manera que un procés interromput a mitges deixa una instal·lació trencada, no una conversa llegible. La frase de recuperació surt del clauer, tots dos codis s'eliminen i el desbloqueig biomètric es desactiva amb ells.",
+    "El comptador d'intents fallits també es reinicia. Una app que s'acaba d'esborrar però continua rebutjant codis durant quatre minuts es nota que no és una instal·lació nova, i aquest detall és justament la clau.",
+    "## Per què no es poden distingir els dos codis",
+    "Un codi de coacció no val res si l'app es comporta de manera diferent amb ell. Dues coses ho protegeixen.",
+    "Primer, tots dos hashos es desen amb la mateixa sal, de manera que en introduir un codi es deriva un sol hash i es compara amb tots dos en temps constant. Una versió anterior donava al codi de coacció la seva pròpia sal, cosa que implicava una segona derivació de clau a cada desbloqueig: duplicava l'espera per a tothom, i saltar-se-la quan no coincidia hauria fet la ruta de coacció mesurablement més ràpida per a qui sosté el telèfon i mira la pantalla.",
+    "Segon, el codi de coacció ha de tenir la mateixa longitud que el teu codi. El teclat envia tan bon punt s'introdueix l'últim dígit, així que un codi d'una altra longitud no es podria escriure mai: seria un ajust que en silenci no fa res i que es descobreix en el pitjor moment. Una longitud diferent es rebutja.",
+    "Tampoc es pot convertir el mateix codi en el de coacció. La comprovació prova primer el codi real, així que una coincidència es resoldria com a «desbloqueja» i el codi de coacció deixaria de funcionar sense avisar. Aquest canvi es rebutja.",
+    "## El que no fa",
+    "**No esborra res de la cadena.** El text xifrat ja publicat és permanent i públic. Sense les claus ningú no el pot llegir, però el fet que una adreça enviés missatges, i quan, continua visible per sempre. El codi de coacció destrueix la còpia del teu dispositiu. No anul·la el que s'ha enviat.",
+    "**No esborra el teu telèfon ni l'ordinador.** Només desapareixen les dades de PrivaMesh. Les fotos, altres apps de missatgeria i tota la resta queden intactes.",
+    "**No avisa ningú.** No hi ha alarma silenciosa, ni missatge a un contacte, ni servidor a qui notificar: [no hi ha cap servidor](/features/no-servers). L'esborrat és tota l'acció.",
+    "**No mostra un compte esquer.** Algunes eines obren en lloc d'això un segon perfil innocu. PrivaMesh buida el real i mostra una app en el seu primer inici. Què és més segur depèn de qui pregunta i del que ja sap; la nostra és la promesa més simple, i la que realment podem complir.",
+    "**No serveix si ja s'ha copiat el dispositiu.** Qui va copiar l'emmagatzematge abans que escrivissis res conserva aquella còpia. El codi de coacció protegeix el moment en què et demanen desbloquejar, no el temps anterior.",
+    "**No és reversible.** La frase de recuperació restaura la teva identitat i els contactes en un dispositiu nou, mai les converses: [el secret cap endavant destrueix aquestes claus després d'usar-les](/limitations). Escriure el codi de coacció per error et costa l'historial per sempre. Tria dos codis que no puguis confondre sota pressió.",
+    "## Els intents estan limitats, igual per als dos codis",
+    "Cinc intents erronis inicien una espera creixent - 30 segons, un minut, dos, quatre i així fins a una hora - que es mostra a la pantalla perquè l'espera sigui visible i no un misteri. El desbloqueig biomètric es rebutja mentre dura l'espera, així que no serveix per esquivar-la. Els codis s'estiren amb una derivació de clau lenta abans de comparar-se, que és el que encareix endevinar un codi numèric curt per a qui té una còpia de l'emmagatzematge.",
+    "Confirmar el codi dins d'Ajustos - per veure la frase o canviar un codi - no compta per a aquest límit. Protegir contra endevinalles una app ja desbloquejada no aporta res, i que un error en teclejar et deixi fora del teu propi compte té un cost real. Aquesta comprovació també rebutja el codi de coacció: no és un codi d'accés, i acceptar-lo allà li permetria autoritzar canvis en l'ajust que existeix per protegir."
+  ],
+  "platformsHeading": "On funciona avui",
+  "platforms": [
+    {
+      "name": "Windows",
+      "status": "Disponible des de la 1.0.0",
+      "detail": "Tots dos codis es configuren a Ajustos. L'esborrat elimina la base de dades local, la torna a obrir buida i esborra les claus que guarda Windows DPAPI. L'app torna a l'estat del primer inici."
+    },
+    {
+      "name": "Android",
+      "status": "Disponible des de la 0.1",
+      "detail": "L'esborrat tanca primer la base de dades, després n'elimina els fitxers juntament amb el registre d'escriptura anticipada, els fitxers de preferències i la memòria cau, i cancel·la les tasques en segon pla que altrament la tornarien a obrir."
+    },
+    {
+      "name": "iPhone",
+      "status": "Al codi font, encara no a l'App Store",
+      "detail": "El codi està escrit, provat i és públic, però la versió actual de l'App Store, la 1.1, es va compilar el 13 d'agost de 2026, abans que ell. Arribarà amb la propera versió. Fins aleshores, el codi de coacció només existeix als clients d'escriptori i d'Android."
+    }
+  ],
+  "after": [
+    "El comportament és el mateix a cada client que el té: els mateixos dos codis, la mateixa regla de longitud igual, la mateixa comparació en temps constant, la mateixa espera. Les diferències són només en el que l'esborrat ha d'eliminar a cada sistema, perquè una base de dades de Windows, una d'Android i un clauer d'iOS fallen de maneres diferents si s'esborren sense cura.",
+    "Les tres implementacions són de codi obert i es poden llegir abans de confiar-hi: [iOS](https://github.com/Makomest/PrivaMesh), [Windows](https://github.com/Makomest/privamesh-windows) i [Android](https://github.com/Makomest/privamesh-android)."
+  ],
+  "faq": [
+    {
+      "q": "Què és un codi de coacció?",
+      "a": "Un segon codi que esborra el compte en lloc d'obrir-lo. Configures tots dos; el primer desbloqueja l'app, el segon elimina tots els missatges, contactes i claus del dispositiu i torna l'app a la pantalla del primer inici, sense res que mostri quin s'ha escrit."
+    },
+    {
+      "q": "Es poden distingir els dos codis?",
+      "a": "Des de l'app, no. Tots dos es desen amb la mateixa sal, de manera que una sola derivació es compara amb tots dos en temps constant, i el codi de coacció ha de tenir la mateixa longitud que el codi. Després de l'esborrat, l'app mostra la mateixa pantalla de benvinguda que una instal·lació nova, i el comptador d'intents fallits es reinicia perquè res no ho contradigui."
+    },
+    {
+      "q": "El codi de coacció esborra els meus missatges de la blockchain?",
+      "a": "No. El text xifrat ja publicat a Solana és permanent i públic. Ningú no el pot llegir sense les claus que s'acaben de destruir, però el fet que una adreça enviés missatges, i quan, continua visible. El codi de coacció esborra la còpia del teu dispositiu; no pot anul·lar el que s'ha enviat."
+    },
+    {
+      "q": "Esborra tot el meu telèfon?",
+      "a": "No. Només s'eliminen les dades de PrivaMesh: els seus missatges, contactes, claus, tots dos codis i el desbloqueig biomètric. No es toca res més del dispositiu."
+    },
+    {
+      "q": "Puc desfer-ho o recuperar els xats?",
+      "a": "No. La frase de recuperació restaura la teva identitat i els contactes en un dispositiu nou, mai les converses: el secret cap endavant va destruir aquestes claus de missatge després d'usar-les. Tria dos codis que no puguis confondre sota pressió."
+    },
+    {
+      "q": "Quines versions de PrivaMesh tenen codi de coacció?",
+      "a": "El client de Windows des de la 1.0.0 i el d'Android des de la 0.1, tots dos publicats el 27 d'agost de 2026. A l'iPhone el codi està escrit i és públic, però la versió actual de l'App Store, la 1.1, es va compilar el 13 d'agost, abans que ell, així que arribarà amb la propera versió."
+    }
+  ],
+  "related": [
+    {
+      "href": "/threat-model",
+      "label": "Model d'amenaces",
+      "blurb": "Adversari per adversari, inclòs qui té el teu telèfon desbloquejat."
+    },
+    {
+      "href": "/limitations",
+      "label": "Limitacions conegudes",
+      "blurb": "De què no et protegeix PrivaMesh, dit clarament."
+    },
+    {
+      "href": "/features/seed-phrase-accounts",
+      "label": "Comptes amb frase de recuperació",
+      "blurb": "Què deixa un esborrat i què poden restaurar dotze paraules."
+    }
+  ]
+}

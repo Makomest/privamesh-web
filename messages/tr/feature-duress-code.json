@@ -1,0 +1,97 @@
+{
+  "meta": {
+    "title": "Zorlama kodu - hesabı silen ikinci bir şifre",
+    "description": "Bir yerine iki şifre. Birincisi PrivaMesh'i açar; ikincisi cihazdaki tüm mesajları, kişileri ve anahtarları siler ve hangisini girdiğini gösteren hiçbir şey bırakmaz."
+  },
+  "eyebrow": "Zorlama kodu",
+  "title": "Hesabı boşaltan ikinci bir şifre",
+  "lead": "Bir yerine iki şifre belirle. Birincisi uygulamayı açar. İkincisi cihazdaki tüm mesajları, kişileri ve anahtarları siler ve oturumunu kapatır - uyarı yok, onay yok, ekranda hangisini girdiğini gösteren hiçbir şey yok.",
+  "ctaSecondary": "Ne zaman işe yarar",
+  "summary": "Şifreleme “bunu okuyabilirler mi?” sorusunu yanıtlar. “Biri başında dikilip şifreyi istediğinde ne olur?” sorusunu yanıtlamaz. Zorlama kodu ikinci sorunun yanıtıdır, hem de dar bir yanıt. Ona güvenmeden önce neyi yapmadığını oku.",
+  "body": [
+    "## Girdiğinde ne olur",
+    "Kilit ekranı iki şifreyi de kabul eder. Gerçek olanı uygulamanın kilidini açar. Zorlama kodu silme işlemini başlatır ve ardından karşılama ekranını gösterir - tıpkı yeni kurulmuş bir uygulama gibi: aynı ekran, aynı yazılar, hiçbir mesaj, hiçbir gecikme, bir saniye önce orada olan hesaptan hiçbir iz yok.",
+    "Silme, görünen şeyler önce gidecek şekilde bilerek sıralanmıştır. Mesajlar ve kişiler anahtarlardan önce silinir; böylece yarıda kesilen bir işlem okunabilir bir sohbet değil, bozuk bir kurulum bırakır. Kurtarma ifadesi Anahtar Zinciri'nden çıkarılır, iki şifre de silinir ve biyometrik kilit açma da onlarla birlikte kapatılır.",
+    "Başarısız deneme sayacı da sıfırlanır. Az önce silinmiş ama hâlâ dört dakika boyunca şifre kabul etmeyen bir uygulama, belli ki yeni bir kurulum değildir - ve bütün mesele o ayrıntıdadır.",
+    "## İki şifre neden ayırt edilemez",
+    "Uygulama ona farklı davranıyorsa zorlama kodunun hiçbir değeri yoktur. Bunu iki şey korur.",
+    "Birincisi, iki özet de aynı tuzla saklanır; bir şifre girildiğinde tek bir özet türetilir ve sabit sürede ikisiyle de karşılaştırılır. Önceki bir sürüm zorlama koduna kendi tuzunu veriyordu; bu da her kilit açmada ikinci bir anahtar türetme demekti: herkes için bekleme süresini ikiye katlıyordu, eşleşmediğinde atlanması ise zorlama yolunu telefonu tutup ekrana bakan biri için ölçülebilir biçimde daha hızlı yapardı.",
+    "İkincisi, zorlama kodu şifrenle aynı uzunlukta olmalıdır. Tuş takımı son rakam girilir girilmez gönderir; bu yüzden farklı uzunlukta bir kod hiç girilemezdi - sessizce hiçbir şey yapmayan ve en kötü anda fark edilen bir ayar olurdu. Farklı bir uzunluk reddedilir.",
+    "Şifrenin kendisi de zorlama koduna çevrilemez. Kontrol önce gerçek şifreyi dener; bu yüzden bir çakışma “kilidi aç” olarak sonuçlanır ve zorlama kodu sessizce çalışmayı bırakırdı. Bu değişiklik reddedilir.",
+    "## Neyi yapmaz",
+    "**Zincirden hiçbir şey silmez.** Zaten yayımlanmış şifreli metin kalıcı ve herkese açıktır. Anahtarlar olmadan kimse onu okuyamaz, ama bir adresin mesaj gönderdiği ve ne zaman gönderdiği sonsuza dek görünür kalır. Zorlama kodu cihazındaki kopyayı yok eder. Gönderilmişi geri almaz.",
+    "**Telefonunu veya bilgisayarını silmez.** Yalnızca PrivaMesh'in kendi verileri gider. Fotoğraflar, diğer mesajlaşma uygulamaları ve geri kalan her şey dokunulmadan kalır.",
+    "**Kimseyi uyarmaz.** Sessiz alarm yok, bir kişiye mesaj yok, haber verilecek sunucu yok - [hiç sunucu yok](/features/no-servers). Silme işleminin kendisi eylemin tamamıdır.",
+    "**Tuzak hesap göstermez.** Bazı araçlar bunun yerine ikinci, zararsız bir profil açar. PrivaMesh gerçek olanı boşaltır ve ilk açılıştaki bir uygulama gösterir. Hangisinin daha güvenli olduğu, kimin sorduğuna ve neyi zaten bildiğine bağlıdır; bizimki daha basit olan ve gerçekten tutabileceğimiz sözdür.",
+    "**Cihazın kopyası zaten alınmışsa yardımcı olamaz.** Sen bir şey girmeden önce depolamayı kopyalayan kişi o kopyayı elinde tutar. Zorlama kodu, kilidi açman istendiği anı korur, öncesini değil.",
+    "**Geri alınamaz.** Kurtarma ifaden yeni bir cihazda kimliğini ve kişilerini geri getirir, sohbetlerini asla - [ileri gizlilik bu anahtarları kullanımdan sonra yok eder](/limitations). Zorlama kodunu yanlışlıkla girmek geçmişine kalıcı olarak mal olur. Baskı altında karıştırılamayacak iki şifre seç.",
+    "## Tahmin etme sınırlanır, iki şifre için de aynı",
+    "Beş hatalı giriş artan bir bekleme süresi başlatır - 30 saniye, bir dakika, iki, dört ve böyle bir saate kadar - ve bu süre ekranda gösterilir, böylece bekleme gizemli değil görünür olur. Bekleme sürerken biyometrik kilit açma reddedilir, bu yüzden beklemeyi atlatmak için kullanılamaz. Şifreler karşılaştırılmadan önce yavaş bir anahtar türetmeyle uzatılır; kısa bir sayısal şifreyi tahmin etmeyi depolamanın kopyasını tutan biri için pahalı kılan da budur.",
+    "Ayarlar içinde şifreni onaylamak - ifadeyi göstermek ya da bir şifreyi değiştirmek için - bu sınıra sayılmaz. Zaten kilidi açık bir uygulamayı tahmine karşı korumak hiçbir şey kazandırmaz, bir yazım hatasının seni kendi hesabından kilitlemesine izin vermek ise gerçek bir bedeldir. Bu kontrol zorlama kodunu da reddeder: o bir erişim şifresi değildir ve orada kabul edilmesi, korumak için var olduğu ayarda değişiklik yapmaya yetki vermesine yol açardı."
+  ],
+  "platformsHeading": "Bugün nerede çalışıyor",
+  "platforms": [
+    {
+      "name": "Windows",
+      "status": "1.0.0'dan beri mevcut",
+      "detail": "İki şifre de Ayarlar'dan belirlenir. Silme işlemi yerel veritabanını siler, onu boş olarak yeniden açar ve Windows DPAPI'nin tuttuğu anahtarları temizler. Uygulama ilk açılış durumuna döner."
+    },
+    {
+      "name": "Android",
+      "status": "0.1'den beri mevcut",
+      "detail": "Silme işlemi önce veritabanını kapatır, sonra dosyalarını ileriye yazma günlüğü, tercih dosyaları ve önbelleklerle birlikte siler ve aksi halde onları yeniden açacak arka plan görevlerini iptal eder."
+    },
+    {
+      "name": "iPhone",
+      "status": "Kaynak kodda, henüz App Store'da değil",
+      "detail": "Kod yazıldı, test edildi ve herkese açık, ancak App Store'daki mevcut sürüm 1.1, 13 Ağustos 2026'da derlendi ve ondan önce geliyor. Bir sonraki sürümde gelecek. O zamana kadar zorlama kodu yalnızca masaüstü ve Android istemcilerinde var."
+    }
+  ],
+  "after": [
+    "Davranış, onu sunan her istemcide aynıdır: aynı iki şifre, aynı eşit uzunluk kuralı, aynı sabit süreli karşılaştırma, aynı bekleme süresi. Farklar yalnızca silme işleminin her sistemde neyi silmesi gerektiğindedir; çünkü bir Windows veritabanı, bir Android veritabanı ve bir iOS anahtar zinciri özensizce silindiğinde farklı şekillerde bozulur.",
+    "Üç uygulamanın üçü de açık kaynaktır ve onlara güvenmeden önce okunabilir: [iOS](https://github.com/Makomest/PrivaMesh), [Windows](https://github.com/Makomest/privamesh-windows) ve [Android](https://github.com/Makomest/privamesh-android)."
+  ],
+  "faq": [
+    {
+      "q": "Zorlama kodu nedir?",
+      "a": "Hesabı açmak yerine silen ikinci bir şifre. İkisini de sen belirlersin; birincisi uygulamanın kilidini açar, ikincisi cihazdaki tüm mesajları, kişileri ve anahtarları siler ve uygulamayı ilk açılış ekranına döndürür; hangisinin girildiğini gösteren hiçbir şey olmaz."
+    },
+    {
+      "q": "Biri iki şifreyi ayırt edebilir mi?",
+      "a": "Uygulamaya bakarak edemez. İkisi de aynı tuzla saklanır, bu yüzden tek bir türetme sabit sürede ikisiyle de karşılaştırılır, ve zorlama kodu şifreyle aynı uzunlukta olmalıdır. Silme işleminden sonra uygulama yeni bir kurulumun gösterdiği karşılama ekranını gösterir, başarısız deneme sayacı da sıfırlanır ki bununla çelişen hiçbir şey kalmasın."
+    },
+    {
+      "q": "Zorlama kodu mesajlarımı blokzincirden siler mi?",
+      "a": "Hayır. Solana'da zaten yayımlanmış şifreli metin kalıcı ve herkese açıktır. Az önce yok edilen anahtarlar olmadan kimse onu okuyamaz, ama bir adresin mesaj gönderdiği ve ne zaman gönderdiği görünür kalır. Zorlama kodu cihazındaki kopyayı siler; gönderilmişi geri alamaz."
+    },
+    {
+      "q": "Bütün telefonumu siler mi?",
+      "a": "Hayır. Yalnızca PrivaMesh verileri silinir: mesajları, kişileri, anahtarları, iki şifre ve biyometrik kilit açma. Cihazdaki başka hiçbir şeye dokunulmaz."
+    },
+    {
+      "q": "Geri alabilir miyim ya da sohbetlerimi kurtarabilir miyim?",
+      "a": "Hayır. Kurtarma ifaden yeni bir cihazda kimliğini ve kişilerini geri getirir, sohbetlerini asla - ileri gizlilik bu mesaj anahtarlarını kullanımdan sonra yok etti. Baskı altında karıştıramayacağın iki şifre seç."
+    },
+    {
+      "q": "PrivaMesh'in hangi sürümlerinde zorlama kodu var?",
+      "a": "1.0.0'dan itibaren Windows istemcisinde ve 0.1'den itibaren Android istemcisinde; ikisi de 27 Ağustos 2026'da yayımlandı. iPhone'da kod yazıldı ve herkese açık, ancak App Store'daki mevcut sürüm 1.1, 13 Ağustos'ta derlendi ve ondan önce geliyor; bu yüzden bir sonraki sürümde gelecek."
+    }
+  ],
+  "related": [
+    {
+      "href": "/threat-model",
+      "label": "Tehdit modeli",
+      "blurb": "Saldırgan saldırgan, kilidi açık telefonunu tutan kişi dahil."
+    },
+    {
+      "href": "/limitations",
+      "label": "Bilinen sınırlamalar",
+      "blurb": "PrivaMesh'in seni neye karşı korumadığı, açıkça."
+    },
+    {
+      "href": "/features/seed-phrase-accounts",
+      "label": "Kurtarma ifadeli hesaplar",
+      "blurb": "Silme işleminin geride ne bıraktığı ve on iki kelimenin neyi geri getirebileceği."
+    }
+  ]
+}

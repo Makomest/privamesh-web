@@ -1,0 +1,97 @@
+{
+  "meta": {
+    "title": "Kod paksaan - kod laluan kedua yang memadam akaun",
+    "description": "Dua kod laluan, bukan satu. Yang pertama membuka PrivaMesh; yang kedua memadam semua mesej, kenalan dan kunci pada peranti, tanpa apa-apa yang menunjukkan mana satu yang anda taip."
+  },
+  "eyebrow": "Kod paksaan",
+  "title": "Kod laluan kedua yang mengosongkan akaun",
+  "lead": "Tetapkan dua kod, bukan satu. Yang pertama membuka aplikasi. Yang kedua memadam semua mesej, kenalan dan kunci pada peranti dan mengeluarkan anda - tanpa amaran, tanpa pengesahan, tiada apa-apa di skrin yang menunjukkan mana satu yang anda taip.",
+  "ctaSecondary": "Bila ia membantu",
+  "summary": "Penyulitan menjawab soalan “bolehkah mereka membaca ini?” Ia tidak menjawab “apa berlaku apabila seseorang berdiri di depan anda menuntut kod laluan?” Kod paksaan ialah jawapan kepada soalan kedua, dan jawapan yang sempit. Baca apa yang tidak dilakukannya sebelum anda bergantung padanya.",
+  "body": [
+    "## Apa berlaku apabila anda menaipnya",
+    "Skrin kunci menerima kedua-dua kod. Kod sebenar membuka aplikasi. Kod paksaan menjalankan pemadaman lalu menunjukkan skrin aluan, sama seperti aplikasi yang baru dipasang - skrin yang sama, perkataan yang sama, tiada mesej, tiada kelewatan, tiada kesan akaun yang ada di situ sesaat sebelumnya.",
+    "Pemadaman sengaja disusun supaya yang kelihatan hilang dahulu. Mesej dan kenalan dipadam sebelum kunci, jadi proses yang terhenti separuh jalan meninggalkan pemasangan rosak, bukan perbualan yang boleh dibaca. Frasa pemulihan dikeluarkan dari Keychain, kedua-dua kod laluan dipadam, dan buka kunci biometrik dimatikan bersamanya.",
+    "Pembilang percubaan gagal juga ditetapkan semula. Aplikasi yang baru dipadam tetapi masih menolak kod laluan selama empat minit jelas bukan pemasangan baharu - dan perincian itulah intinya.",
+    "## Mengapa kedua-dua kod tidak dapat dibezakan",
+    "Kod paksaan tidak bernilai jika aplikasi berkelakuan berbeza untuknya. Dua perkara melindunginya.",
+    "Pertama, kedua-dua hash disimpan dengan garam yang sama, jadi memasukkan kod menerbitkan satu hash dan membandingkannya dengan kedua-duanya dalam masa malar. Versi terdahulu memberi kod paksaan garamnya sendiri, yang bermaksud penerbitan kunci kedua pada setiap buka kunci: ia menggandakan masa menunggu untuk semua orang, dan melangkaunya apabila tidak sepadan akan menjadikan laluan paksaan lebih pantas secara ketara bagi orang yang memegang telefon dan memerhati skrin.",
+    "Kedua, kod paksaan mesti sama panjang dengan kod laluan anda. Pad kekunci menghantar sebaik digit terakhir dimasukkan, jadi kod dengan panjang lain tidak akan dapat ditaip langsung - ia akan menjadi tetapan yang diam-diam tidak berbuat apa-apa dan hanya diketahui pada saat terburuk. Panjang yang berbeza ditolak.",
+    "Kod laluan itu sendiri juga tidak boleh ditukar menjadi kod paksaan. Semakan menguji kod laluan sebenar dahulu, jadi pertindihan akan dianggap “buka kunci” dan kod paksaan diam-diam berhenti berfungsi. Perubahan itu ditolak.",
+    "## Apa yang tidak dilakukannya",
+    "**Ia tidak memadam apa-apa dari rantaian.** Teks tersulit yang sudah diterbitkan adalah kekal dan awam. Tanpa kunci tiada sesiapa boleh membacanya, tetapi hakikat bahawa sesuatu alamat menghantar mesej, dan bila, kekal kelihatan selama-lamanya. Kod paksaan memusnahkan salinan pada peranti anda. Ia tidak membatalkan penghantaran.",
+    "**Ia tidak memadam telefon atau komputer anda.** Hanya data PrivaMesh sendiri yang hilang. Foto, aplikasi pesanan lain dan semua yang lain tidak disentuh.",
+    "**Ia tidak memberi amaran kepada sesiapa.** Tiada penggera senyap, tiada mesej kepada kenalan dan tiada pelayan untuk dimaklumkan - [langsung tiada pelayan](/features/no-servers). Pemadaman ialah keseluruhan tindakan.",
+    "**Ia tidak menunjukkan akaun umpan.** Sesetengah alat sebaliknya membuka profil kedua yang tidak mencurigakan. PrivaMesh mengosongkan akaun sebenar dan menunjukkan aplikasi pada larian pertama. Mana yang lebih selamat bergantung pada siapa yang bertanya dan apa yang mereka sudah tahu; janji kami lebih ringkas, dan memang boleh kami tunaikan.",
+    "**Ia tidak dapat membantu jika peranti sudah disalin.** Orang yang menyalin storan sebelum anda menaip apa-apa tetap memegang salinan itu. Kod paksaan melindungi saat anda diminta membuka kunci, bukan masa sebelumnya.",
+    "**Ia tidak boleh dibatalkan.** Frasa pemulihan memulihkan identiti dan kenalan anda pada peranti baharu, tidak pernah perbualan - [kerahsiaan hadapan memusnahkan kunci itu selepas digunakan](/limitations). Menaip kod paksaan secara tidak sengaja menyebabkan sejarah anda hilang selama-lamanya. Pilih dua kod yang tidak boleh tertukar semasa tertekan.",
+    "## Tekaan diperlahankan, sama untuk kedua-dua kod",
+    "Lima cubaan salah memulakan jeda yang semakin panjang - 30 saat, satu minit, dua, empat, hingga satu jam - yang ditunjukkan di skrin supaya penantian jelas, bukan misteri. Buka kunci biometrik ditolak semasa jeda, jadi ia tidak boleh digunakan untuk mengelaknya. Kod diregangkan dengan penerbitan kunci yang perlahan sebelum dibandingkan, dan itulah yang menjadikan meneka kod nombor pendek mahal bagi sesiapa yang memegang salinan storan.",
+    "Mengesahkan kod laluan dalam Tetapan - untuk menunjukkan frasa atau menukar kod - tidak dikira dalam had itu. Melindungi aplikasi yang sudah dibuka daripada tekaan tidak memberi apa-apa, manakala salah taip yang mengunci anda keluar dari akaun sendiri ada kos sebenar. Semakan itu juga menolak kod paksaan: ia bukan kod laluan, dan menerimanya di situ akan membolehkannya meluluskan perubahan pada tetapan yang ia wujud untuk lindungi."
+  ],
+  "platformsHeading": "Di mana ia berfungsi hari ini",
+  "platforms": [
+    {
+      "name": "Windows",
+      "status": "Tersedia sejak 1.0.0",
+      "detail": "Kedua-dua kod ditetapkan dalam Tetapan. Pemadaman membuang pangkalan data tempatan, membukanya semula dalam keadaan kosong dan mengosongkan kunci yang dipegang oleh Windows DPAPI. Aplikasi kembali ke keadaan larian pertama."
+    },
+    {
+      "name": "Android",
+      "status": "Tersedia sejak 0.1",
+      "detail": "Pemadaman menutup pangkalan data dahulu, kemudian memadam failnya bersama log tulis-dahulu, fail keutamaan dan cache, serta membatalkan tugas latar yang sebaliknya akan membukanya semula."
+    },
+    {
+      "name": "iPhone",
+      "status": "Ada dalam kod sumber, belum di App Store",
+      "detail": "Kodnya sudah ditulis, diuji dan terbuka, tetapi versi App Store semasa, 1.1, dibina pada 13 Ogos 2026, lebih awal. Ia akan tiba dalam keluaran seterusnya. Sehingga itu, kod paksaan hanya ada pada klien desktop dan Android."
+    }
+  ],
+  "after": [
+    "Kelakuannya sama pada setiap klien yang memilikinya: dua kod yang sama, peraturan panjang sama yang sama, perbandingan masa malar yang sama, jeda yang sama. Perbezaannya hanya pada apa yang perlu dipadam pada setiap sistem, kerana pangkalan data Windows, pangkalan data Android dan keychain iOS rosak dengan cara berbeza jika dipadam sambil lewa.",
+    "Ketiga-tiga pelaksanaan adalah sumber terbuka dan boleh dibaca sebelum anda mempercayainya: [iOS](https://github.com/Makomest/PrivaMesh), [Windows](https://github.com/Makomest/privamesh-windows) dan [Android](https://github.com/Makomest/privamesh-android)."
+  ],
+  "faq": [
+    {
+      "q": "Apakah kod paksaan?",
+      "a": "Kod laluan kedua yang memadam akaun dan bukan membukanya. Anda menetapkan kedua-duanya; yang pertama membuka aplikasi, yang kedua memadam semua mesej, kenalan dan kunci pada peranti dan mengembalikan aplikasi ke skrin larian pertama, tanpa apa-apa yang menunjukkan mana satu yang ditaip."
+    },
+    {
+      "q": "Bolehkah seseorang membezakan kedua-dua kod?",
+      "a": "Tidak daripada aplikasi. Kedua-duanya disimpan dengan garam yang sama, jadi satu penerbitan dibandingkan dengan kedua-duanya dalam masa malar, dan kod paksaan mesti sama panjang dengan kod laluan. Selepas pemadaman, aplikasi menunjukkan skrin aluan yang sama seperti pemasangan baharu, dan pembilang percubaan gagal ditetapkan semula supaya tiada apa-apa yang bercanggah dengannya."
+    },
+    {
+      "q": "Adakah kod paksaan memadam mesej saya dari blockchain?",
+      "a": "Tidak. Teks tersulit yang sudah diterbitkan ke Solana adalah kekal dan awam. Tiada sesiapa boleh membacanya tanpa kunci yang baru dimusnahkan, tetapi hakikat bahawa sesuatu alamat menghantar mesej, dan bila, kekal kelihatan. Kod paksaan memadam salinan pada peranti anda; ia tidak boleh membatalkan penghantaran."
+    },
+    {
+      "q": "Adakah ia memadam seluruh telefon saya?",
+      "a": "Tidak. Hanya data PrivaMesh dipadam: mesej, kenalan, kunci, kedua-dua kod laluan dan buka kunci biometrik. Tiada apa-apa lagi pada peranti disentuh."
+    },
+    {
+      "q": "Bolehkah saya membatalkannya atau mendapatkan semula sembang saya?",
+      "a": "Tidak. Frasa pemulihan memulihkan identiti dan kenalan anda pada peranti baharu, tidak pernah perbualan - kerahsiaan hadapan telah memusnahkan kunci mesej itu selepas digunakan. Pilih dua kod yang anda tidak akan keliru semasa tertekan."
+    },
+    {
+      "q": "Versi PrivaMesh mana yang mempunyai kod paksaan?",
+      "a": "Klien Windows sejak 1.0.0 dan klien Android sejak 0.1, kedua-duanya dikeluarkan pada 27 Ogos 2026. Pada iPhone kodnya sudah ditulis dan terbuka, tetapi versi App Store semasa, 1.1, dibina pada 13 Ogos, lebih awal, jadi ia akan tiba dalam keluaran seterusnya."
+    }
+  ],
+  "related": [
+    {
+      "href": "/threat-model",
+      "label": "Model ancaman",
+      "blurb": "Musuh demi musuh, termasuk orang yang memegang telefon anda yang tidak berkunci."
+    },
+    {
+      "href": "/limitations",
+      "label": "Had yang diketahui",
+      "blurb": "Daripada apa PrivaMesh tidak melindungi anda, secara terus terang."
+    },
+    {
+      "href": "/features/seed-phrase-accounts",
+      "label": "Akaun berasaskan frasa pemulihan",
+      "blurb": "Apa yang tinggal selepas pemadaman dan apa yang dua belas perkataan boleh pulihkan."
+    }
+  ]
+}

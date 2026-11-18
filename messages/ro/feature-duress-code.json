@@ -1,0 +1,97 @@
+{
+  "meta": {
+    "title": "Cod de constrângere - un al doilea cod care șterge contul",
+    "description": "Două coduri în loc de unul. Primul deschide PrivaMesh; al doilea șterge toate mesajele, contactele și cheile de pe dispozitiv, fără ca ceva să arate pe care l-ai tastat."
+  },
+  "eyebrow": "Cod de constrângere",
+  "title": "Un al doilea cod care golește contul",
+  "lead": "Setează două coduri în loc de unul. Primul deschide aplicația. Al doilea șterge toate mesajele, contactele și cheile de pe dispozitiv și te deconectează - fără avertisment, fără confirmare, nimic pe ecran care să arate pe care l-ai tastat.",
+  "ctaSecondary": "Când ajută",
+  "summary": "Criptarea răspunde la întrebarea „pot citi asta?”. Nu răspunde la „ce se întâmplă când cineva stă lângă tine și îți cere codul?”. Un cod de constrângere este un răspuns la a doua întrebare, și unul îngust. Citește ce nu face înainte să te bazezi pe el.",
+  "body": [
+    "## Ce se întâmplă când îl tastezi",
+    "Ecranul de blocare acceptă ambele coduri. Cel adevărat deblochează aplicația. Codul de constrângere pornește ștergerea și apoi afișează ecranul de bun venit, exact ca o aplicație proaspăt instalată - același ecran, același text, niciun mesaj, nicio întârziere, nicio urmă a contului care era acolo cu o secundă înainte.",
+    "Ștergerea este ordonată intenționat astfel încât ce se vede să dispară primul. Mesajele și contactele sunt șterse înaintea cheilor, așa că un proces oprit la jumătate lasă o instalare stricată, nu o conversație lizibilă. Fraza de recuperare este scoasă din Breloc, ambele coduri sunt șterse și deblocarea biometrică este dezactivată odată cu ele.",
+    "Contorul de încercări eșuate este și el resetat. O aplicație tocmai ștearsă, dar care mai refuză coduri timp de patru minute, se vede clar că nu e o instalare nouă - și tocmai acest detaliu e esențial.",
+    "## De ce cele două coduri nu pot fi deosebite",
+    "Un cod de constrângere nu valorează nimic dacă aplicația se comportă altfel pentru el. Două lucruri previn asta.",
+    "În primul rând, ambele hash-uri sunt stocate cu aceeași sare, așa că introducerea unui cod derivă un singur hash și îl compară cu amândouă în timp constant. O versiune anterioară îi dădea codului de constrângere propria sare, ceea ce însemna o a doua derivare de cheie la fiecare deblocare: dubla așteptarea pentru toată lumea, iar omiterea ei în caz de nepotrivire ar fi făcut calea de constrângere măsurabil mai rapidă pentru cine ține telefonul și urmărește ecranul.",
+    "În al doilea rând, codul de constrângere trebuie să aibă aceeași lungime ca al tău. Tastatura trimite imediat ce ultima cifră e introdusă, așa că un cod de altă lungime n-ar putea fi tastat deloc - ar fi o setare care în tăcere nu face nimic și se descoperă în cel mai prost moment. O lungime diferită este refuzată.",
+    "Nici codul însuși nu poate fi transformat în cod de constrângere. Verificarea testează întâi codul adevărat, așa că o coincidență ar fi interpretată ca „deblocare”, iar codul de constrângere ar înceta discret să funcționeze. Această modificare este refuzată.",
+    "## Ce nu face",
+    "**Nu șterge nimic de pe lanț.** Textul criptat deja publicat este permanent și public. Fără chei nimeni nu-l poate citi, dar faptul că o adresă a trimis mesaje, și când, rămâne vizibil pentru totdeauna. Codul de constrângere distruge copia de pe dispozitivul tău. Nu anulează trimiterile.",
+    "**Nu îți șterge telefonul sau calculatorul.** Dispar doar datele PrivaMesh. Fotografiile, alte aplicații de mesagerie și tot restul rămân neatinse.",
+    "**Nu avertizează pe nimeni.** Nu există alarmă silențioasă, mesaj către un contact sau server de notificat - [nu există niciun server](/features/no-servers). Ștergerea este întreaga acțiune.",
+    "**Nu afișează un cont-momeală.** Unele instrumente deschid în schimb un al doilea profil, inofensiv. PrivaMesh îl golește pe cel real și afișează o aplicație la prima pornire. Ce e mai sigur depinde de cine întreabă și ce știe deja; varianta noastră este promisiunea mai simplă, și cea pe care o putem ține cu adevărat.",
+    "**Nu ajută dacă dispozitivul a fost deja copiat.** Cine a copiat stocarea înainte să tastezi ceva păstrează acea copie. Codul de constrângere protejează momentul în care ți se cere să deblochezi, nu timpul de dinainte.",
+    "**Nu este reversibil.** Fraza de recuperare îți restabilește identitatea și contactele pe un dispozitiv nou, niciodată conversațiile - [secretul înainte distruge acele chei după folosire](/limitations). Tastarea din greșeală a codului de constrângere te costă istoricul definitiv. Alege două coduri care nu pot fi confundate sub presiune.",
+    "## Ghicirea este frânată, la fel pentru ambele coduri",
+    "Cinci introduceri greșite pornesc o pauză crescătoare - 30 de secunde, un minut, două, patru și tot așa până la o oră - afișată pe ecran, ca așteptarea să fie clară, nu misterioasă. Deblocarea biometrică este refuzată pe durata pauzei, deci nu poate fi folosită pentru a o ocoli. Codurile sunt întinse printr-o derivare lentă a cheii înainte de comparare, și asta face scumpă ghicirea unui cod numeric scurt pentru cine are o copie a stocării.",
+    "Confirmarea codului în Setări - pentru a afișa fraza sau a schimba un cod - nu se socotește în această limită. Protejarea unei aplicații deja deblocate împotriva ghicirii nu aduce nimic, iar o greșeală de tastare care te blochează în afara propriului cont are un cost real. Această verificare refuză și codul de constrângere: nu este un cod de deblocare, iar acceptarea lui acolo i-ar permite să aprobe modificări chiar ale setării pe care există ca s-o protejeze."
+  ],
+  "platformsHeading": "Unde funcționează azi",
+  "platforms": [
+    {
+      "name": "Windows",
+      "status": "Disponibil din 1.0.0",
+      "detail": "Ambele coduri se setează în Setări. Ștergerea elimină baza de date locală, o redeschide goală și curăță cheile păstrate de Windows DPAPI. Aplicația revine la starea de la prima pornire."
+    },
+    {
+      "name": "Android",
+      "status": "Disponibil din 0.1",
+      "detail": "Ștergerea închide întâi baza de date, apoi îi șterge fișierele împreună cu jurnalul de scriere anticipată, fișierele de preferințe și cache-urile și anulează sarcinile de fundal care altfel ar redeschide-o."
+    },
+    {
+      "name": "iPhone",
+      "status": "În codul sursă, încă nu în App Store",
+      "detail": "Codul este scris, testat și public, dar versiunea actuală din App Store, 1.1, a fost compilată pe 13 august 2026, înaintea lui. Va sosi în următoarea versiune. Până atunci, codul de constrângere există doar în clienții desktop și Android."
+    }
+  ],
+  "after": [
+    "Comportamentul este același pe fiecare client care îl are: aceleași două coduri, aceeași regulă de lungime egală, aceeași comparare în timp constant, aceeași pauză. Diferențele țin doar de ce trebuie să șteargă ștergerea pe fiecare sistem, pentru că o bază de date Windows, una Android și un breloc iOS se strică diferit când sunt șterse neglijent.",
+    "Toate cele trei implementări sunt open source și pot fi citite înainte să ai încredere în ele: [iOS](https://github.com/Makomest/PrivaMesh), [Windows](https://github.com/Makomest/privamesh-windows) și [Android](https://github.com/Makomest/privamesh-android)."
+  ],
+  "faq": [
+    {
+      "q": "Ce este un cod de constrângere?",
+      "a": "Un al doilea cod care șterge contul în loc să-l deschidă. Le setezi pe amândouă; primul deblochează aplicația, al doilea șterge toate mesajele, contactele și cheile de pe dispozitiv și readuce aplicația la ecranul de prima pornire, fără nimic care să arate care a fost tastat."
+    },
+    {
+      "q": "Poate cineva să deosebească cele două coduri?",
+      "a": "Nu din aplicație. Ambele sunt stocate cu aceeași sare, deci o singură derivare e comparată cu amândouă în timp constant, iar codul de constrângere trebuie să aibă aceeași lungime ca al tău. După ștergere, aplicația afișează același ecran de bun venit ca o instalare nouă, iar contorul de încercări eșuate e resetat, ca nimic să nu contrazică asta."
+    },
+    {
+      "q": "Codul de constrângere îmi șterge mesajele din blockchain?",
+      "a": "Nu. Textul criptat deja publicat pe Solana este permanent și public. Nimeni nu-l poate citi fără cheile tocmai distruse, dar faptul că o adresă a trimis mesaje, și când, rămâne vizibil. Codul de constrângere șterge copia de pe dispozitivul tău; nu poate anula trimiterile."
+    },
+    {
+      "q": "Îmi șterge tot telefonul?",
+      "a": "Nu. Se șterg doar datele PrivaMesh: mesajele, contactele, cheile, ambele coduri și deblocarea biometrică. Nimic altceva de pe dispozitiv nu e atins."
+    },
+    {
+      "q": "Pot anula sau îmi pot recupera conversațiile?",
+      "a": "Nu. Fraza de recuperare îți restabilește identitatea și contactele pe un dispozitiv nou, niciodată conversațiile - secretul înainte a distrus acele chei de mesaj după folosire. Alege două coduri pe care nu le poți confunda sub presiune."
+    },
+    {
+      "q": "Ce versiuni ale PrivaMesh au cod de constrângere?",
+      "a": "Clientul de Windows de la 1.0.0 și clientul de Android de la 0.1, ambele lansate pe 27 august 2026. Pe iPhone codul este scris și public, dar versiunea actuală din App Store, 1.1, a fost compilată pe 13 august, înaintea lui, așa că va sosi în următoarea versiune."
+    }
+  ],
+  "related": [
+    {
+      "href": "/threat-model",
+      "label": "Model de amenințări",
+      "blurb": "Adversar cu adversar, inclusiv cel care îți ține telefonul deblocat."
+    },
+    {
+      "href": "/limitations",
+      "label": "Limitări cunoscute",
+      "blurb": "De ce nu te protejează PrivaMesh, spus direct."
+    },
+    {
+      "href": "/features/seed-phrase-accounts",
+      "label": "Conturi cu frază de recuperare",
+      "blurb": "Ce lasă în urmă o ștergere și ce pot restabili douăsprezece cuvinte."
+    }
+  ]
+}
